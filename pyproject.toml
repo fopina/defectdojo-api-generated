@@ -39,6 +39,9 @@ unfixable = []
 # Allow unused variables when underscore-prefixed.
 dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
 
+[tool.ruff.lint.per-file-ignores]
+"defectdojo_api_generated/*" = ["E402"]
+
 [tool.ruff.format]
 quote-style = "single"
 indent-style = "space"

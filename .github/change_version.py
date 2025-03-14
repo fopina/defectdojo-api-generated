@@ -21,7 +21,7 @@ def main():
     print(f'Current version: {version}')
 
     if args.set:
-        VERSION_PY.write_text(VERSION_RE.sub(f"__version__ = version = '{args.set}'", data))
+        VERSION_PY.write_text(VERSION_RE.sub(f"__version__ = '{args.set}'", data))
         print(f'New version: {args.set}')
 
 

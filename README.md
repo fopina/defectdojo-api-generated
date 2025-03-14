@@ -1,7 +1,8 @@
 # WIP
 
 * Map versions to Dojo version - use postfixes for non-schema changes (such as templating or similar)
-* 
+* Fix unit tests?
+* Re-enable linting?
 
 ## New project checklist
 

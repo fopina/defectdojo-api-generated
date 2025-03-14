@@ -1,0 +1,70 @@
+name: 👷 publish dev
+
+on:
+  push:
+    # TODO: choose your "feature branch" naming (or leave it like this)
+    # or run this on every non-main branch, replacing the whole `branches` with
+    # branches-ignore:
+    #   - main
+    branches: 
+      - dev
+      - dev/*
+      - dev-*
+
+jobs:
+  test_and_publish:
+    uses: ./.github/workflows/publish.yml
+    with:
+      version: '${{ github.run_number }}.0.0'
+      repository: testpypi
+    secrets:
+      twine_username: ${{ secrets.TESTPYPI_USERNAME }}
+      twine_password: ${{ secrets.TESTPYPI_TOKEN }}
+
+  build_image:
+    # TODO: remove this entire job if an image does not make sense (ie: just a library, no CLI)
+    permissions: write-all
+    needs: test_and_publish
+    name: test image
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+        with:
+          platforms: linux/amd64,linux/arm64
+
+      - name: Set up Docker Buildx
+        id: buildx
+        uses: docker/setup-buildx-action@v3
+        with:
+          platforms: linux/amd64,linux/arm64
+      
+      - name: Sanitize branch name
+        id: sanitize_branch
+        run: |
+          SANITIZED_BRANCH=$(echo -n "${{ github.ref_name }}" | tr '/' '-' | tr -c '[:alnum:]-' '-')
+          echo sanitized_branch=$SANITIZED_BRANCH >> $GITHUB_OUTPUT
+
+      - name: Build and push image - release
+        uses: docker/build-push-action@v6
+        with:
+          push: true
+          platforms: linux/amd64,linux/arm64
+          cache-from: ghcr.io/${{ github.repository }}:latest-build-cache
+          tags: |
+            ghcr.io/${{ github.repository }}:${{ steps.sanitize_branch.outputs.sanitized_branch }}
+
+      - name: Show summary
+        run: |
+          echo 'Published:  ' >> ${GITHUB_STEP_SUMMARY}
+          echo '* `ghcr.io/${{ github.repository }}:${{ steps.sanitize_branch.outputs.sanitized_branch }}`' >> ${GITHUB_STEP_SUMMARY}

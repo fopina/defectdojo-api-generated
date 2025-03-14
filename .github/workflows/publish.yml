@@ -1,0 +1,66 @@
+name: publish
+
+on:
+  workflow_call:
+    inputs:
+      version:
+        type: string
+        required: true
+      repository:
+        default: pypi
+        type: string
+    secrets:
+      twine_username:
+        required: true
+      twine_password:
+        required: true
+
+run-name: publish to ${{ inputs.repository }}
+
+jobs:
+  test:
+    uses: ./.github/workflows/test.yml
+
+  publish:
+    name: publish to ${{ inputs.repository }}
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: |
+          pip install pipenv
+          pipenv requirements --dev > reqs.txt
+          pip install -r reqs.txt
+      - name: force right version
+        run: |
+          .github/change_version.py --set '${{ inputs.version }}'
+      - name: Build
+        run: pyproject-build
+      - name: Publish
+        env:
+          TWINE_USERNAME: ${{ secrets.twine_username }}
+          TWINE_PASSWORD: ${{ secrets.twine_password }}
+        run: |
+          pyproject-build
+          twine upload --repository ${{ inputs.repository }} dist/*
+      - name: highlight
+        # TODO: update package name in summary text
+        run: |
+          INDEX=""
+          if [ "${{ inputs.repository }}" != "pypi" ]; then
+            INDEX=" -i ${{ inputs.repository }}"
+          fi
+          cat <<EOF >> ${GITHUB_STEP_SUMMARY}
+          \`example\` uploaded to ${{ inputs.repository }}
+          \`\`\`
+          pip install${INDEX} example==${{ inputs.version }}
+          \`\`\`
+          EOF

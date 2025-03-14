@@ -40,9 +40,13 @@ from defectdojo_api_generated.api.product_type_groups_api import ProductTypeGrou
 from defectdojo_api_generated.api.product_type_members_api import ProductTypeMembersApi
 from defectdojo_api_generated.api.product_types_api import ProductTypesApi
 from defectdojo_api_generated.api.products_api import ProductsApi
-from defectdojo_api_generated.api.questionnaire_answered_questionnaires_api import QuestionnaireAnsweredQuestionnairesApi
+from defectdojo_api_generated.api.questionnaire_answered_questionnaires_api import (
+    QuestionnaireAnsweredQuestionnairesApi,
+)
 from defectdojo_api_generated.api.questionnaire_answers_api import QuestionnaireAnswersApi
-from defectdojo_api_generated.api.questionnaire_engagement_questionnaires_api import QuestionnaireEngagementQuestionnairesApi
+from defectdojo_api_generated.api.questionnaire_engagement_questionnaires_api import (
+    QuestionnaireEngagementQuestionnairesApi,
+)
 from defectdojo_api_generated.api.questionnaire_general_questionnaires_api import QuestionnaireGeneralQuestionnairesApi
 from defectdojo_api_generated.api.questionnaire_questions_api import QuestionnaireQuestionsApi
 from defectdojo_api_generated.api.regulations_api import RegulationsApi
@@ -65,4 +69,3 @@ from defectdojo_api_generated.api.tool_types_api import ToolTypesApi
 from defectdojo_api_generated.api.user_contact_infos_api import UserContactInfosApi
 from defectdojo_api_generated.api.user_profile_api import UserProfileApi
 from defectdojo_api_generated.api.users_api import UsersApi
-

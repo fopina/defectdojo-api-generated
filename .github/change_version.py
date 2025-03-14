@@ -5,7 +5,7 @@ import re
 from pathlib import Path
 
 VERSION_PY = Path(__file__).parent.parent / 'defectdojo_api_generated' / '__init__.py'
-VERSION_RE = re.compile(r"__version__ = version = '(.*?)'")
+VERSION_RE = re.compile(r"__version__ = '(.*?)'")
 
 
 def main():

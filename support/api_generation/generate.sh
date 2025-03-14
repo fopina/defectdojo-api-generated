@@ -3,6 +3,7 @@
 set -eo pipefail
 
 TEMPDIR=apiclient.spec
+OPENAPI_PATH=${OPENAPI_PATH:-"https://demo.defectdojo.org/api/v2/oa3/schema/?format=json"}
 
 # make sure we're on root dir
 cd $(dirname $0)
@@ -15,7 +16,7 @@ rm -fr $TEMPDIR
 cp -r ./support/api_generation/custom_templates/ ./support/api_generation/templates.spec/
 ./support/api_generation/openapi-generator-cli.sh \
                            generate \
-                           -i 'https://demo.defectdojo.org/api/v2/oa3/schema/?format=json' \
+                           -i "${OPENAPI_PATH}" \
                            -g python \
                            -c /local/support/api_generation/config.yaml \
                            --template-dir /local/support/api_generation/templates.spec \

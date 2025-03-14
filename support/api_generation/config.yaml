@@ -1,6 +1,6 @@
 templateDir: local/support/api_generation/templates.spec
 additionalProperties:
-  generateSourceCodeOnly: true
+  # generateSourceCodeOnly: true
   packageName: defectdojo_api_generated
 files:
   simple_client.mustache:

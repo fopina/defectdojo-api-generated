@@ -23,3 +23,4 @@ testpub:
 generate:
 	./support/api_generation/dump_templates.sh
 	./support/api_generation/generate.sh
+	$(MAKE) lint

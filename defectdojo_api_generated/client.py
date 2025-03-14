@@ -1,5 +1,8 @@
 # custom-templates/my_client.mustache
-"""My custom client wrapper"""
+"""DefectDojo Client"""
+
+from urllib.parse import urlparse
+from urllib.request import getproxies, proxy_bypass
 
 from defectdojo_api_generated.api.announcements_api import AnnouncementsApi
 from defectdojo_api_generated.api.api_token_auth_api import ApiTokenAuthApi
@@ -74,10 +77,24 @@ from defectdojo_api_generated.configuration import Configuration
 
 
 class DefectDojo:
-    """A custom wrapper around the generated API client"""
+    """API client for DefectDojo.
 
-    def __init__(self, base_url: str, token: str):
+    :param base_url: base URL of the DefectDojo instance.
+    :param token: API token to use with DefectDojo.
+    :param proxy: proxy required to connect to DefectDojo.
+        Default (None) will use environment settings. Set to False to forcefully disable it.
+    """
+
+    def __init__(self, base_url: str, token: str, proxy=None):
+        # TODO: just python-requests as generator library...
+        if proxy is None:
+            scheme, host, *_ = urlparse(base_url)
+            if not proxy_bypass(host):
+                proxy = getproxies().get(scheme)
+
         self.config = Configuration(host=base_url, api_key={'tokenAuth': token}, api_key_prefix={'tokenAuth': 'Token'})
+        if proxy:  # exclude False or None
+            self.config.proxy = proxy
         self.api_client = _ApiClient(configuration=self.config)
         self.announcements_api = AnnouncementsApi(self.api_client)
         self.api_token_auth_api = ApiTokenAuthApi(self.api_client)

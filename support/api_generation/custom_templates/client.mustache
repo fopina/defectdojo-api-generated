@@ -7,12 +7,28 @@ from {{packageName}}.configuration import Configuration
 from {{packageName}}.api.{{classVarName}} import {{classname}}
 {{/apis}}
 {{/apiInfo}}
-
+from urllib.request import proxy_bypass, getproxies
+from urllib.parse import urlparse
 
 class DefectDojo:
-    """A custom wrapper around the generated API client"""
-    def __init__(self, base_url: str, token: str):
+    """API client for DefectDojo.
+
+    :param base_url: base URL of the DefectDojo instance.
+    :param token: API token to use with DefectDojo.
+    :param proxy: proxy required to connect to DefectDojo.
+        Default (None) will use environment settings. Set to False to forcefully disable it.
+    """
+
+    def __init__(self, base_url: str, token: str, proxy=None):
+        # TODO: just python-requests as generator library...
+        if proxy is None:
+            scheme, host, *_ = urlparse(base_url)
+            if not proxy_bypass(host):
+                proxy = getproxies().get(scheme)
+                
         self.config = Configuration(host=base_url, api_key={'tokenAuth': token}, api_key_prefix={'tokenAuth': 'Token'})
+        if proxy:  # exclude False or None
+            self.config.proxy = proxy
         self.api_client = _ApiClient(configuration=self.config)
         {{#apiInfo}}
         {{#apis}}

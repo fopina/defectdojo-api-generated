@@ -1,6 +1,5 @@
 templateDir: local/support/api_generation/templates.spec
 additionalProperties:
-  # FIXME: docs are not great with current setup
   generateSourceCodeOnly: true
   packageName: defectdojo_api_generated
 files:

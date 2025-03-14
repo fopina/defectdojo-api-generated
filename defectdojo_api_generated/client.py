@@ -68,7 +68,7 @@ from defectdojo_api_generated.api.user_profile_api import UserProfileApi
 from defectdojo_api_generated.api.users_api import UsersApi
 
 
-class ApiClient:
+class DefectDojo:
     """A custom wrapper around the generated API client"""
     def __init__(self, base_url: str, token: str):
         self.config = Configuration(host=base_url, api_key={'tokenAuth': token}, api_key_prefix={'tokenAuth': 'Token'})

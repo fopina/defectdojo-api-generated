@@ -1,9 +1,10 @@
 templateDir: local/support/api_generation/templates.spec
 additionalProperties:
-  # generateSourceCodeOnly: true
+  # FIXME: docs are not great with current setup
+  generateSourceCodeOnly: true
   packageName: defectdojo_api_generated
 files:
-  simple_client.mustache:
+  client.mustache:
     folder: defectdojo_api_generated
-    destinationFilename: simple_client.py
+    destinationFilename: client.py
     templateType: SupportingFiles

@@ -1,8 +1,6 @@
 # custom-templates/my_client.mustache
 """My custom client wrapper"""
 
-import os
-
 from defectdojo_api_generated.api.announcements_api import AnnouncementsApi
 from defectdojo_api_generated.api.api_token_auth_api import ApiTokenAuthApi
 from defectdojo_api_generated.api.configuration_permissions_api import ConfigurationPermissionsApi
@@ -80,7 +78,6 @@ class DefectDojo:
 
     def __init__(self, base_url: str, token: str):
         self.config = Configuration(host=base_url, api_key={'tokenAuth': token}, api_key_prefix={'tokenAuth': 'Token'})
-        self.config.proxy = os.getenv('https_proxy')
         self.api_client = _ApiClient(configuration=self.config)
         self.announcements_api = AnnouncementsApi(self.api_client)
         self.api_token_auth_api = ApiTokenAuthApi(self.api_client)

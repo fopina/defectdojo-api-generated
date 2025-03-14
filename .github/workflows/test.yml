@@ -34,24 +34,19 @@ jobs:
         run: |
           make lint-check
 
-      # FIXME: enable me
-      # - name: Run unit tests
-      #   run: |
-      #     make test
+      - name: Run unit tests
+        run: |
+          make test
       
-      # - name: Upload results to Codecov
-      #   uses: codecov/codecov-action@v4
-      #   with:
-      #     token: ${{ secrets.CODECOV_TOKEN }}
+      - name: Upload results to Codecov
+        uses: codecov/codecov-action@v4
       
-      # - name: Upload test results to Codecov
-      #   if: ${{ !cancelled() }}
-      #   uses: codecov/test-results-action@v1
-      #   with:
-      #     token: ${{ secrets.CODECOV_TOKEN }}
+      - name: Upload test results to Codecov
+        if: ${{ !cancelled() }}
+        uses: codecov/test-results-action@v1
 
-      # - name: Final check
-      #   if: ${{ steps.lint-check.outcome == 'failure' }}
-      #   run: |
-      #     echo Lint check failed, check its log
-      #     exit 1
+      - name: Final check
+        if: ${{ steps.lint-check.outcome == 'failure' }}
+        run: |
+          echo Lint check failed, check its log
+          exit 1

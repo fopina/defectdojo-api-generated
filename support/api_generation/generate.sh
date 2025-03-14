@@ -23,4 +23,7 @@ cp -r ./support/api_generation/custom_templates/ ./support/api_generation/templa
                            -o /local/$TEMPDIR/
 
 rm -fr defectdojo_api_generated
+rm -fr tests
 mv $TEMPDIR/defectdojo_api_generated .
+rm -fr defectdojo_api_generated/docs
+mv defectdojo_api_generated/test tests

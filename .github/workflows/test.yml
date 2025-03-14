@@ -27,12 +27,12 @@ jobs:
           pipenv requirements --dev > reqs.txt
           pip install -r reqs.txt
 
-      # - name: Lint check
-      #   id: lint-check
-      #   # allow unit tests to run even if this fails
-      #   continue-on-error: true
-      #   run: |
-      #     make lint-check
+      - name: Lint check
+        id: lint-check
+        # allow unit tests to run even if this fails
+        continue-on-error: true
+        run: |
+          make lint-check
 
       # FIXME: enable me
       # - name: Run unit tests

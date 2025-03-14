@@ -1,0 +1,9 @@
+templateDir: local/support/api_generation/templates.spec
+additionalProperties:
+  generateSourceCodeOnly: true
+  packageName: defectdojo_cli.api_generated
+files:
+  custom_client.mustache:
+    folder: defectdojo_cli/api_generated
+    destinationFilename: custom_client.py
+    templateType: SupportingFiles

@@ -19,3 +19,7 @@ testpub:
 	rm -fr dist
 	pyproject-build
 	twine upload --repository testpypi dist/*
+
+generate:
+	./support/api_generation/dump_templates.sh
+	./support/api_generation/generate.sh

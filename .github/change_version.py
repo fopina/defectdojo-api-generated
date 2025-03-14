@@ -4,9 +4,8 @@ import argparse
 import re
 from pathlib import Path
 
-# TODO: replace `example` with your package name
-VERSION_PY = Path(__file__).parent.parent / 'example' / '__init__.py'
-VERSION_RE = re.compile(r"__version__ = version = '(.*?)'")
+VERSION_PY = Path(__file__).parent.parent / 'defectdojo_api_generated' / '__init__.py'
+VERSION_RE = re.compile(r"__version__ = '(.*?)'")
 
 
 def main():
@@ -22,7 +21,7 @@ def main():
     print(f'Current version: {version}')
 
     if args.set:
-        VERSION_PY.write_text(VERSION_RE.sub(f"__version__ = version = '{args.set}'", data))
+        VERSION_PY.write_text(VERSION_RE.sub(f"__version__ = '{args.set}'", data))
         print(f'New version: {args.set}')
 
 

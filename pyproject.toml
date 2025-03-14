@@ -3,31 +3,22 @@ requires = ["setuptools>=61.0.0,<69.3.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-# TODO: update with package name in pypi
-name = "fp-github-template-example"
+name = "defectdojo-api-generated"
 authors = [{name="Filipe Pina", email="shelf-corncob-said@duck.com" }]
 dynamic = ["version"]
-# TODO: one-line description of the package
-description = "package example"
+description = "Python library to interact with DefectDojo - generated from OpenAPI"
 readme = "README.md"
 requires-python = ">=3.10"
-dependencies = []
+dependencies = ["pydantic>= 2", "python-dateutil>= 2.8.2"]
 
 [project.urls]
-# TODO: update this
-Homepage = "https://github.com/fopina/python-package-template"
-
-[project.scripts]
-# TODO: remove this if package is not a CLI or update it if it is
-example-cli = "example.__main__:main"
+Homepage = "https://github.com/fopina/defectdojo-api-generated"
 
 [tool.setuptools.packages.find]
-# TODO: replace example with your package name
-include = ["example*"]
+include = ["defectdojo_api_generated*"]
 
 [tool.setuptools.dynamic]
-# TODO: replace example with your package name
-version = {attr = "example.__version__"}
+version = {attr = "defectdojo_api_generated.__version__"}
 
 [tool.ruff]
 line-length = 120
@@ -48,6 +39,10 @@ unfixable = []
 # Allow unused variables when underscore-prefixed.
 dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
 
+[tool.ruff.lint.per-file-ignores]
+"defectdojo_api_generated/*" = ["E402"]
+"defectdojo_api_generated/api_client.py" = ["E721"]
+
 [tool.ruff.format]
 quote-style = "single"
 indent-style = "space"
@@ -62,8 +57,7 @@ testpaths = [
 ]
 
 [tool.coverage.run]
-# TODO: replace
-source = ["example"]
+source = ["defectdojo_api_generated"]
 
 [tool.coverage.report]
 show_missing = true

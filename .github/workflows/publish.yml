@@ -52,7 +52,6 @@ jobs:
           pyproject-build
           twine upload --repository ${{ inputs.repository }} dist/*
       - name: highlight
-        # TODO: update package name in summary text
         run: |
           INDEX=""
           if [ "${{ inputs.repository }}" != "pypi" ]; then
@@ -61,6 +60,6 @@ jobs:
           cat <<EOF >> ${GITHUB_STEP_SUMMARY}
           \`example\` uploaded to ${{ inputs.repository }}
           \`\`\`
-          pip install${INDEX} example==${{ inputs.version }}
+          pip install${INDEX} defectdojo-api-generated==${{ inputs.version }}
           \`\`\`
           EOF

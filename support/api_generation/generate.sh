@@ -21,6 +21,6 @@ cp -r ./support/api_generation/custom_templates/ ./support/api_generation/templa
                            --template-dir /local/support/api_generation/templates.spec \
                            -o /local/$TEMPDIR/
 
-rm -fr defectdojo_cli/api_generated
-mv $TEMPDIR/defectdojo_cli/api_generated defectdojo_cli/
-mv $TEMPDIR/defectdojo_cli/api_generated_README.md defectdojo_cli/api_generated/
+rm -fr defectdojo_api_generated
+mv $TEMPDIR/defectdojo_api_generated .
+# mv $TEMPDIR/defectdojo_cli/api_generated_README.md defectdojo_cli/api_generated/

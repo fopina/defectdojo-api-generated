@@ -15,7 +15,7 @@ rm -fr $TEMPDIR
 cp -r ./support/api_generation/custom_templates/ ./support/api_generation/templates.spec/
 ./support/api_generation/openapi-generator-cli.sh \
                            generate \
-                           -i 'https://defectdojo.eng.netsuite.com/api/v2/oa3/schema/?format=json' \
+                           -i 'https://demo.defectdojo.org/api/v2/oa3/schema/?format=json' \
                            -g python \
                            -c /local/support/api_generation/config.yaml \
                            --template-dir /local/support/api_generation/templates.spec \

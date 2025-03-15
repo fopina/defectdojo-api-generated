@@ -9,7 +9,7 @@ dynamic = ["version"]
 description = "Python library to interact with DefectDojo - generated from OpenAPI"
 readme = "README.md"
 requires-python = ">=3.10"
-dependencies = ["pydantic>= 2", "python-dateutil>= 2.8.2"]
+dependencies = ["pydantic>= 2", "python-dateutil>= 2.8.2", "lazy-import"]
 
 [project.urls]
 Homepage = "https://github.com/fopina/defectdojo-api-generated"

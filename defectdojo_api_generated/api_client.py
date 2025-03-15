@@ -80,7 +80,7 @@ class ApiClient:
             self.default_headers[header_name] = header_value
         self.cookie = cookie
         # Set default User-Agent.
-        self.user_agent = 'OpenAPI-Generator/1.0.0/python'
+        self.user_agent = 'defectdojo-api-generated/1.0.0/python'
         self.client_side_validation = configuration.client_side_validation
 
     def __enter__(self):
@@ -369,6 +369,7 @@ class ApiClient:
         else:
             raise ApiException(status=0, reason='Unsupported content type: {0}'.format(content_type))
 
+        print(response_type)
         return self.__deserialize(data, response_type)
 
     def __deserialize(self, data, klass):

@@ -90,6 +90,7 @@ class ApiTokenAuthApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': 'AuthToken',
         }
+        print(*_param)
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         response_data.read()
         return self.api_client.response_deserialize(

@@ -14,6 +14,7 @@ Do not edit the class manually.
 """  # noqa: E501
 
 __version__ = '1.0.0'
+__openapi_version__ = '2.44.1'
 
 import lazy_import
 from typing import TYPE_CHECKING

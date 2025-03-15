@@ -1,12 +1,18 @@
 # custom-templates/my_client.mustache
 """DefectDojo Client"""
+import lazy_import
+from typing import TYPE_CHECKING
+
 from {{packageName}}.api_client import ApiClient as _ApiClient
 from {{packageName}}.configuration import Configuration
-{{#apiInfo}}
-{{#apis}}
-from {{packageName}}.api.{{classVarName}} import {{classname}}
-{{/apis}}
-{{/apiInfo}}
+
+if TYPE_CHECKING:
+    {{#apiInfo}}{{#apis}}from {{apiPackage}}.{{classFilename}} import {{classname}}
+    {{/apis}}{{/apiInfo}}
+else:
+    {{#apiInfo}}{{#apis}}{{classname}} = lazy_import.lazy_class('{{apiPackage}}.{{classFilename}}.{{classname}}')
+    {{/apis}}{{/apiInfo}}
+
 from urllib.request import proxy_bypass, getproxies
 from urllib.parse import urlparse
 

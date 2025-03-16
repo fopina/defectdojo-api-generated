@@ -84,35 +84,34 @@ class DefectDojo:
         Use this OR auth, not both.
     :param auth: tuple with username and password for basic authentication with DefectDojo.
         Use this OR token, not both.
-    :param proxy: proxy required to connect to DefectDojo.
-        Default (None) will use environment settings. Set to False to forcefully disable it.
+    :param config: Configuration object to use. If provided, all other parameters are ignored.
     """
 
-    def __init__(self, base_url: str, token: str = None, auth: tuple[str] = None, proxy=None):
+    def __init__(self, base_url: str, token: str = None, auth: tuple[str] = None, config: Configuration = None):
         if token is not None and auth is not None:
             raise ValueError('Provide `token` OR `auth`, not both.')
         if auth is not None and (not isinstance(auth, tuple) or len(auth) != 2):
             raise ValueError('`auth` needs to be a tuple with 2 elements, username and password')
 
+        if config is None:
+            # drop last / (if any) as it is already added as part of endpoints
+            kwargs = {'host': base_url.rstrip('/')}
+
+            if token is not None:
+                kwargs.update({'api_key': {'tokenAuth': token}, 'api_key_prefix': {'tokenAuth': 'Token'}})
+            elif auth is not None:
+                kwargs.update({'username': auth[0], 'password': auth[1]})
+
+            self.config = Configuration(**kwargs)
+        else:
+            self.config = config
+
         # TODO: just python-requests as generator library...
-        if proxy is None:
+        if self.config.proxy is None:
             scheme, host, *_ = urlparse(base_url)
             if not proxy_bypass(host):
-                proxy = getproxies().get(scheme)
+                self.config.proxy = getproxies().get(scheme)
 
-        # drop last / (if any) as it is already added as part of endpoints
-        base_url = base_url.rstrip('/')
-
-        if token is not None:
-            self.config = Configuration(
-                host=base_url, api_key={'tokenAuth': token}, api_key_prefix={'tokenAuth': 'Token'}
-            )
-        elif auth is not None:
-            self.config = Configuration(host=base_url, username=auth[0], password=auth[1])
-        else:
-            self.config = Configuration(host=base_url)
-        if proxy:  # exclude False or None
-            self.config.proxy = proxy
         self.api_client = _ApiClient(configuration=self.config)
         self.announcements_api = AnnouncementsApi(self.api_client)
         self.api_token_auth_api = ApiTokenAuthApi(self.api_client)

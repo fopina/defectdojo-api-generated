@@ -19,11 +19,11 @@ pip install defectojo-api-generated
 ## Usage
 
 ```python
-from defectdojo_api_generated.client import DefectDojo
+from defectdojo_api_generated import DefectDojo
 
 # password publicly available in https://github.com/DefectDojo/django-DefectDojo/?tab=readme-ov-file#demo
 # then get API token from https://demo.defectdojo.org/api/key-v2
-dojo = DefectDojo('https://demo.defectdojo.org/', ...)
+dojo = DefectDojo('https://demo.defectdojo.org/', token=...)
 r = dojo.findings_api.findings_list()
 print(r.json())
 ```

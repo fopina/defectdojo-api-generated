@@ -7,16 +7,9 @@
 __version__ = "{{packageVersion}}"
 {{#version}}__openapi_version__ = "{{{.}}}"{{/version}}
 
-import lazy_import
-from typing import TYPE_CHECKING
-
 # import apis into sdk package
-if TYPE_CHECKING:
-    {{#apiInfo}}{{#apis}}from {{apiPackage}}.{{classFilename}} import {{classname}}
-    {{/apis}}{{/apiInfo}}
-else:
-    {{#apiInfo}}{{#apis}}{{classname}} = lazy_import.lazy_class('{{apiPackage}}.{{classFilename}}.{{classname}}')
-    {{/apis}}{{/apiInfo}}
+{{#apiInfo}}{{#apis}}from {{apiPackage}}.{{classFilename}} import {{classname}}
+{{/apis}}{{/apiInfo}}
 # import ApiClient
 from {{packageName}}.api_response import ApiResponse
 from {{packageName}}.api_client import ApiClient
@@ -32,20 +25,11 @@ from {{packageName}}.signing import HttpSigningConfiguration
 {{/hasHttpSignatureMethods}}
 
 # import models into sdk package
-if TYPE_CHECKING:
-    # import models into model package
-    {{#models}}
-    {{#model}}
-    from {{modelPackage}}.{{classFilename}} import {{classname}}
-    {{/model}}
-    {{/models}}
-else:
-    # import models into model package
-    {{#models}}
-    {{#model}}
-    {{classname}} = lazy_import.lazy_class('{{modelPackage}}.{{classFilename}}.{{classname}}')
-    {{/model}}
-    {{/models}}
+{{#models}}
+{{#model}}
+from {{modelPackage}}.{{classFilename}} import {{classname}}
+{{/model}}
+{{/models}}
 {{#recursionLimit}}
 
 __import__('sys').setrecursionlimit({{{.}}})

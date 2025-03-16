@@ -14,6 +14,7 @@ Do not edit the class manually.
 """  # noqa: E501
 
 __version__ = '1.0.0'
+__openapi_version__ = '2.44.1'
 
 # import apis into sdk package
 from defectdojo_api_generated.api.announcements_api import AnnouncementsApi
@@ -88,6 +89,7 @@ from defectdojo_api_generated.api.users_api import UsersApi
 # import ApiClient
 from defectdojo_api_generated.api_response import ApiResponse
 from defectdojo_api_generated.api_client import ApiClient
+from defectdojo_api_generated.client import DefectDojo
 from defectdojo_api_generated.configuration import Configuration
 from defectdojo_api_generated.exceptions import OpenApiException
 from defectdojo_api_generated.exceptions import ApiTypeError

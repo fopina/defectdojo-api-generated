@@ -3,11 +3,7 @@
 
 from {{packageName}}.api_client import ApiClient as _ApiClient
 from {{packageName}}.configuration import Configuration
-{{#apiInfo}}
-{{#apis}}
-from {{packageName}}.api.{{classVarName}} import {{classname}}
-{{/apis}}
-{{/apiInfo}}
+
 from urllib.request import proxy_bypass, getproxies
 from urllib.parse import urlparse
 
@@ -48,8 +44,13 @@ class DefectDojo:
                 self.config.proxy = getproxies().get(scheme)
 
         self.api_client = _ApiClient(configuration=self.config)
-        {{#apiInfo}}
-        {{#apis}}
-        self.{{classVarName}} = {{classname}}(self.api_client)
-        {{/apis}}
-        {{/apiInfo}}
+    
+    {{#apiInfo}}
+    {{#apis}}
+    @property
+    def {{classVarName}}(self):
+        from {{packageName}}.api.{{classVarName}} import {{classname}}
+
+        return {{classname}}(self.api_client)
+    {{/apis}}
+    {{/apiInfo}}

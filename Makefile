@@ -1,12 +1,10 @@
 lint:
 	ruff format
 	ruff check --fix
-	pyproject-pipenv --fix
 
 lint-check:
 	ruff format --diff
 	ruff check
-	pyproject-pipenv
 
 test:
 	if [ -n "$(GITHUB_RUN_ID)" ]; then \

@@ -3,6 +3,7 @@
 pydantic = ">= 2"
 # as required by generator
 python-dateutil = ">= 2.8.2"
+lazy-import = "*"
 
 [dev-packages]
 ruff = "*"

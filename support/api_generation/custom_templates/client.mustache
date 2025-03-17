@@ -1,18 +1,8 @@
 # custom-templates/my_client.mustache
 """DefectDojo Client"""
-import lazy_import
-from typing import TYPE_CHECKING
 
 from {{packageName}}.api_client import ApiClient as _ApiClient
 from {{packageName}}.configuration import Configuration
-
-if TYPE_CHECKING:
-    {{#apiInfo}}{{#apis}}from {{apiPackage}}.{{classFilename}} import {{classname}}
-    {{/apis}}{{/apiInfo}}
-else:
-    {{#apiInfo}}{{#apis}}{{classname}} = lazy_import.lazy_class('{{apiPackage}}.{{classFilename}}.{{classname}}')
-    {{/apis}}{{/apiInfo}}
-
 from urllib.request import proxy_bypass, getproxies
 from urllib.parse import urlparse
 
@@ -21,23 +11,45 @@ class DefectDojo:
 
     :param base_url: base URL of the DefectDojo instance.
     :param token: API token to use with DefectDojo.
-    :param proxy: proxy required to connect to DefectDojo.
-        Default (None) will use environment settings. Set to False to forcefully disable it.
+        Use this OR auth, not both.
+    :param auth: tuple with username and password for basic authentication with DefectDojo.
+        Use this OR token, not both.
+    :param config: Configuration object to use. If provided, all other parameters are ignored.
     """
 
-    def __init__(self, base_url: str, token: str, proxy=None):
+    def __init__(self, base_url: str, token: str = None, auth: tuple[str] = None, config: Configuration = None):
+        if token is not None and auth is not None:
+            raise ValueError('Provide `token` OR `auth`, not both.')
+        if auth is not None and (not isinstance(auth, tuple) or len(auth) != 2):
+            raise ValueError('`auth` needs to be a tuple with 2 elements, username and password')
+
+        if config is None:
+            # drop last / (if any) as it is already added as part of endpoints
+            kwargs = {'host': base_url.rstrip('/')}
+
+            if token is not None:
+                kwargs.update({'api_key': {'tokenAuth': token}, 'api_key_prefix': {'tokenAuth': 'Token'}})
+            elif auth is not None:
+                kwargs.update({'username': auth[0], 'password': auth[1]})
+
+            self.config = Configuration(**kwargs)
+        else:
+            self.config = config
+
         # TODO: just python-requests as generator library...
-        if proxy is None:
+        if self.config.proxy is None:
             scheme, host, *_ = urlparse(base_url)
             if not proxy_bypass(host):
-                proxy = getproxies().get(scheme)
-                
-        self.config = Configuration(host=base_url, api_key={'tokenAuth': token}, api_key_prefix={'tokenAuth': 'Token'})
-        if proxy:  # exclude False or None
-            self.config.proxy = proxy
+                self.config.proxy = getproxies().get(scheme)
+
         self.api_client = _ApiClient(configuration=self.config)
-        {{#apiInfo}}
-        {{#apis}}
-        self.{{classVarName}} = {{classname}}(self.api_client)
-        {{/apis}}
-        {{/apiInfo}}
+
+    {{#apiInfo}}
+    {{#apis}}
+    @property
+    def {{classVarName}}(self):
+        from {{packageName}}.api.{{classVarName}} import {{classname}}
+
+        return {{classname}}(self.api_client)
+    {{/apis}}
+    {{/apiInfo}}

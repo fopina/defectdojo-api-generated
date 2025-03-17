@@ -10,5 +10,5 @@ cd ..
 rm -fr $TEMPDIR
 
 ./support/api_generation/openapi-generator-cli.sh author template \
-                           -g python --library urllib3 \
+                           -g python \
                            --output /local/$TEMPDIR

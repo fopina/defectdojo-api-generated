@@ -3,9 +3,19 @@
 # flake8: noqa
 {{>partial_header}}
 
+import lazy_import
+from typing import TYPE_CHECKING
+
 # import models into model package
-{{#models}}
-{{#model}}
-from {{modelPackage}}.{{classFilename}} import {{classname}}
-{{/model}}
-{{/models}}
+if TYPE_CHECKING:
+    {{#models}}
+    {{#model}}
+    from {{modelPackage}}.{{classFilename}} import {{classname}}
+    {{/model}}
+    {{/models}}
+else:
+    {{#models}}
+    {{#model}}
+    {{classname}} = lazy_import.lazy_class('{{modelPackage}}.{{classFilename}}.{{classname}}')
+    {{/model}}
+    {{/models}}

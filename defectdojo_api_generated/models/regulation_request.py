@@ -33,7 +33,7 @@ class RegulationRequest(BaseModel):
         description='A shortened representation of the name.'
     )
     category: StrictStr = Field(
-        description='The subject of the regulation.  * `privacy` - Privacy * `finance` - Finance * `education` - Education * `medical` - Medical * `corporate` - Corporate * `other` - Other'
+        description='The subject of the regulation.  * `privacy` - Privacy * `finance` - Finance * `education` - Education * `medical` - Medical * `corporate` - Corporate * `security` - Security * `government` - Government * `other` - Other'
     )
     jurisdiction: Annotated[str, Field(min_length=1, strict=True, max_length=64)] = Field(
         description='The territory over which the regulation applies.'
@@ -47,9 +47,11 @@ class RegulationRequest(BaseModel):
     @field_validator('category')
     def category_validate_enum(cls, value):
         """Validates the enum"""
-        if value not in set(['privacy', 'finance', 'education', 'medical', 'corporate', 'other']):
+        if value not in set(
+            ['privacy', 'finance', 'education', 'medical', 'corporate', 'security', 'government', 'other']
+        ):
             raise ValueError(
-                "must be one of enum values ('privacy', 'finance', 'education', 'medical', 'corporate', 'other')"
+                "must be one of enum values ('privacy', 'finance', 'education', 'medical', 'corporate', 'security', 'government', 'other')"
             )
         return value
 

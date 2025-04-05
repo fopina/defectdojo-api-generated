@@ -21,6 +21,8 @@ from typing import Any, ClassVar, Dict, List, Literal, Optional, TypedDict, Unio
 import urllib3
 from typing_extensions import NotRequired, Self
 
+from defectdojo_api_generated import __openapi_version__
+
 JSON_SCHEMA_VALIDATION_KEYWORDS = {
     'multipleOf',
     'maximum',
@@ -566,8 +568,10 @@ class Configuration:
             'Python SDK Debug Report:\n'
             'OS: {env}\n'
             'Python Version: {pyversion}\n'
-            'Version of the API: 2.44.4\n'
-            'SDK Package Version: 1.0.0'.format(env=sys.platform, pyversion=sys.version)
+            'Version of the API: {api_version}\n'
+            'SDK Package Version: 1.0.0'.format(
+                env=sys.platform, pyversion=sys.version, api_version=__openapi_version__
+            )
         )
 
     def get_host_settings(self) -> List[HostSetting]:

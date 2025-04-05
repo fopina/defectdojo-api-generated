@@ -15,6 +15,8 @@ from typing_extensions import NotRequired, Self
 
 import urllib3
 
+from {{packageName}} import __openapi_version__
+
 {{#hasHttpSignatureMethods}}
 from {{packageName}}.signing import HttpSigningConfiguration
 {{/hasHttpSignatureMethods}}
@@ -685,9 +687,9 @@ conf = {{{packageName}}}.Configuration(
         return "Python SDK Debug Report:\n"\
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
-               "Version of the API: {{version}}\n"\
+               "Version of the API: {api_version}\n"\
                "SDK Package Version: {{packageVersion}}".\
-               format(env=sys.platform, pyversion=sys.version)
+               format(env=sys.platform, pyversion=sys.version, api_version=__openapi_version__)
 
     def get_host_settings(self) -> List[HostSetting]:
         """Gets an array of host settings

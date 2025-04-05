@@ -34,7 +34,7 @@ class PatchedRegulationRequest(BaseModel):
     )
     category: Optional[StrictStr] = Field(
         default=None,
-        description='The subject of the regulation.  * `privacy` - Privacy * `finance` - Finance * `education` - Education * `medical` - Medical * `corporate` - Corporate * `other` - Other',
+        description='The subject of the regulation.  * `privacy` - Privacy * `finance` - Finance * `education` - Education * `medical` - Medical * `corporate` - Corporate * `security` - Security * `government` - Government * `other` - Other',
     )
     jurisdiction: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=64)]] = Field(
         default=None, description='The territory over which the regulation applies.'
@@ -51,9 +51,11 @@ class PatchedRegulationRequest(BaseModel):
         if value is None:
             return value
 
-        if value not in set(['privacy', 'finance', 'education', 'medical', 'corporate', 'other']):
+        if value not in set(
+            ['privacy', 'finance', 'education', 'medical', 'corporate', 'security', 'government', 'other']
+        ):
             raise ValueError(
-                "must be one of enum values ('privacy', 'finance', 'education', 'medical', 'corporate', 'other')"
+                "must be one of enum values ('privacy', 'finance', 'education', 'medical', 'corporate', 'security', 'government', 'other')"
             )
         return value
 

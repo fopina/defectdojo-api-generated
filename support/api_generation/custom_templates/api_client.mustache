@@ -458,13 +458,6 @@ class ApiClient:
                 klass = self.NATIVE_TYPES_MAPPING[klass]
             else:
                 klass = getattr({{modelPackage}}, klass)
-                # FIXME: very ugly way to force the callable to load - subclass LazyCallable with a cleaner method just for that (or use another lazy import library)
-                if klass.callable is None:
-                    try:
-                        klass()
-                    except Exception:
-                        """ignore, this is just to load .callable"""
-                klass = klass.callable
 
         if klass in self.PRIMITIVE_TYPES:
             return self.__deserialize_primitive(data, klass)

@@ -20,6 +20,9 @@ testpub:
 	pyproject-build
 	twine upload --repository testpypi dist/*
 
+schema:
+	curl "https://demo.defectdojo.org/api/v2/oa3/schema/?format=json" -o support/openapi.json
+
 generate:
 	./support/api_generation/dump_templates.sh
 	./support/api_generation/generate.sh

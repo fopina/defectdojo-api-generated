@@ -3,7 +3,7 @@
 set -eo pipefail
 
 TEMPDIR=apiclient.spec
-OPENAPI_PATH=${OPENAPI_PATH:-"https://demo.defectdojo.org/api/v2/oa3/schema/?format=json"}
+OPENAPI_PATH=${OPENAPI_PATH:-"/local/support/openapi.json"}
 
 # make sure we're on root dir
 cd $(dirname $0)

@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from pydantic import Field, StrictFloat, StrictInt, StrictStr, validate_call
+from pydantic import Field, StrictFloat, StrictInt, StrictStr
 from typing_extensions import Annotated
 
 from defectdojo_api_generated.api_client import ApiClient, RequestSerialized
@@ -33,7 +33,6 @@ class UserProfileApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    @validate_call
     def user_profile_retrieve(
         self,
         _request_timeout: Union[
@@ -85,7 +84,6 @@ class UserProfileApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def user_profile_retrieve_with_http_info(
         self,
         _request_timeout: Union[
@@ -137,7 +135,6 @@ class UserProfileApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def user_profile_retrieve_without_preload_content(
         self,
         _request_timeout: Union[

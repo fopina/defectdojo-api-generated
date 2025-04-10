@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from pydantic import Field, StrictBool, StrictFloat, StrictInt, StrictStr, validate_call
+from pydantic import Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing_extensions import Annotated
 
 from defectdojo_api_generated.api_client import ApiClient, RequestSerialized
@@ -37,7 +37,6 @@ class AnnouncementsApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    @validate_call
     def announcements_create(
         self,
         announcement_request: Optional[AnnouncementRequest] = None,
@@ -96,7 +95,6 @@ class AnnouncementsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def announcements_create_with_http_info(
         self,
         announcement_request: Optional[AnnouncementRequest] = None,
@@ -155,7 +153,6 @@ class AnnouncementsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def announcements_create_without_preload_content(
         self,
         announcement_request: Optional[AnnouncementRequest] = None,
@@ -269,7 +266,6 @@ class AnnouncementsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def announcements_delete_preview_list(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this announcement.')],
@@ -338,7 +334,6 @@ class AnnouncementsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def announcements_delete_preview_list_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this announcement.')],
@@ -407,7 +402,6 @@ class AnnouncementsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def announcements_delete_preview_list_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this announcement.')],
@@ -529,7 +523,6 @@ class AnnouncementsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def announcements_destroy(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this announcement.')],
@@ -584,7 +577,6 @@ class AnnouncementsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def announcements_destroy_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this announcement.')],
@@ -639,7 +631,6 @@ class AnnouncementsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def announcements_destroy_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this announcement.')],
@@ -735,7 +726,6 @@ class AnnouncementsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def announcements_list(
         self,
         dismissable: Optional[StrictBool] = None,
@@ -817,7 +807,6 @@ class AnnouncementsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def announcements_list_with_http_info(
         self,
         dismissable: Optional[StrictBool] = None,
@@ -899,7 +888,6 @@ class AnnouncementsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def announcements_list_without_preload_content(
         self,
         dismissable: Optional[StrictBool] = None,
@@ -1043,7 +1031,6 @@ class AnnouncementsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def announcements_partial_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this announcement.')],
@@ -1106,7 +1093,6 @@ class AnnouncementsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def announcements_partial_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this announcement.')],
@@ -1169,7 +1155,6 @@ class AnnouncementsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def announcements_partial_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this announcement.')],
@@ -1290,7 +1275,6 @@ class AnnouncementsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def announcements_retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this announcement.')],
@@ -1345,7 +1329,6 @@ class AnnouncementsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def announcements_retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this announcement.')],
@@ -1400,7 +1383,6 @@ class AnnouncementsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def announcements_retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this announcement.')],
@@ -1500,7 +1482,6 @@ class AnnouncementsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def announcements_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this announcement.')],
@@ -1563,7 +1544,6 @@ class AnnouncementsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def announcements_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this announcement.')],
@@ -1626,7 +1606,6 @@ class AnnouncementsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def announcements_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this announcement.')],

@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from pydantic import Field, StrictBool, StrictFloat, StrictInt, StrictStr, validate_call
+from pydantic import Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing_extensions import Annotated
 
 from defectdojo_api_generated.api_client import ApiClient, RequestSerialized
@@ -37,7 +37,6 @@ class CredentialMappingsApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    @validate_call
     def credential_mappings_create(
         self,
         credential_mapping_request: CredentialMappingRequest,
@@ -96,7 +95,6 @@ class CredentialMappingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def credential_mappings_create_with_http_info(
         self,
         credential_mapping_request: CredentialMappingRequest,
@@ -155,7 +153,6 @@ class CredentialMappingsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def credential_mappings_create_without_preload_content(
         self,
         credential_mapping_request: CredentialMappingRequest,
@@ -269,7 +266,6 @@ class CredentialMappingsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def credential_mappings_delete_preview_list(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this cred_ mapping.')],
@@ -338,7 +334,6 @@ class CredentialMappingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def credential_mappings_delete_preview_list_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this cred_ mapping.')],
@@ -407,7 +402,6 @@ class CredentialMappingsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def credential_mappings_delete_preview_list_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this cred_ mapping.')],
@@ -529,7 +523,6 @@ class CredentialMappingsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def credential_mappings_destroy(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this cred_ mapping.')],
@@ -584,7 +577,6 @@ class CredentialMappingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def credential_mappings_destroy_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this cred_ mapping.')],
@@ -639,7 +631,6 @@ class CredentialMappingsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def credential_mappings_destroy_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this cred_ mapping.')],
@@ -735,7 +726,6 @@ class CredentialMappingsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def credential_mappings_list(
         self,
         cred_id: Optional[StrictInt] = None,
@@ -828,7 +818,6 @@ class CredentialMappingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def credential_mappings_list_with_http_info(
         self,
         cred_id: Optional[StrictInt] = None,
@@ -921,7 +910,6 @@ class CredentialMappingsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def credential_mappings_list_without_preload_content(
         self,
         cred_id: Optional[StrictInt] = None,
@@ -1092,7 +1080,6 @@ class CredentialMappingsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def credential_mappings_partial_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this cred_ mapping.')],
@@ -1155,7 +1142,6 @@ class CredentialMappingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def credential_mappings_partial_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this cred_ mapping.')],
@@ -1218,7 +1204,6 @@ class CredentialMappingsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def credential_mappings_partial_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this cred_ mapping.')],
@@ -1339,7 +1324,6 @@ class CredentialMappingsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def credential_mappings_retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this cred_ mapping.')],
@@ -1394,7 +1378,6 @@ class CredentialMappingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def credential_mappings_retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this cred_ mapping.')],
@@ -1449,7 +1432,6 @@ class CredentialMappingsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def credential_mappings_retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this cred_ mapping.')],
@@ -1549,7 +1531,6 @@ class CredentialMappingsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def credential_mappings_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this cred_ mapping.')],
@@ -1612,7 +1593,6 @@ class CredentialMappingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def credential_mappings_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this cred_ mapping.')],
@@ -1675,7 +1655,6 @@ class CredentialMappingsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def credential_mappings_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this cred_ mapping.')],

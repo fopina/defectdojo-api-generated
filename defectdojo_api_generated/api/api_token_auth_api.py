@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from pydantic import Field, StrictFloat, StrictInt, StrictStr, validate_call
+from pydantic import Field, StrictFloat, StrictInt, StrictStr
 from typing_extensions import Annotated
 
 from defectdojo_api_generated.api_client import ApiClient, RequestSerialized
@@ -33,7 +33,6 @@ class ApiTokenAuthApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    @validate_call
     def api_token_auth_create(
         self,
         username: Annotated[str, Field(min_length=1, strict=True)],
@@ -96,7 +95,6 @@ class ApiTokenAuthApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def api_token_auth_create_with_http_info(
         self,
         username: Annotated[str, Field(min_length=1, strict=True)],
@@ -159,7 +157,6 @@ class ApiTokenAuthApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def api_token_auth_create_without_preload_content(
         self,
         username: Annotated[str, Field(min_length=1, strict=True)],

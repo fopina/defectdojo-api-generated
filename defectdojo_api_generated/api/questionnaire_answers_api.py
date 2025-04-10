@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from pydantic import Field, StrictFloat, StrictInt, StrictStr, validate_call
+from pydantic import Field, StrictFloat, StrictInt, StrictStr
 from typing_extensions import Annotated
 
 from defectdojo_api_generated.api_client import ApiClient, RequestSerialized
@@ -34,7 +34,6 @@ class QuestionnaireAnswersApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    @validate_call
     def questionnaire_answers_list(
         self,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -99,7 +98,6 @@ class QuestionnaireAnswersApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def questionnaire_answers_list_with_http_info(
         self,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -164,7 +162,6 @@ class QuestionnaireAnswersApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def questionnaire_answers_list_without_preload_content(
         self,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -279,7 +276,6 @@ class QuestionnaireAnswersApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def questionnaire_answers_retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this answer.')],
@@ -334,7 +330,6 @@ class QuestionnaireAnswersApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def questionnaire_answers_retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this answer.')],
@@ -389,7 +384,6 @@ class QuestionnaireAnswersApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def questionnaire_answers_retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this answer.')],

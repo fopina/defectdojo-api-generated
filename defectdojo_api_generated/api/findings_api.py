@@ -13,7 +13,7 @@ Do not edit the class manually.
 from datetime import date, datetime
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from pydantic import Field, StrictBool, StrictBytes, StrictFloat, StrictInt, StrictStr, validate_call
+from pydantic import Field, StrictBool, StrictBytes, StrictFloat, StrictInt, StrictStr
 from typing_extensions import Annotated
 
 from defectdojo_api_generated.api_client import ApiClient, RequestSerialized
@@ -60,7 +60,6 @@ class FindingsApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    @validate_call
     def findings_accept_risks_create(
         self,
         accepted_risk_request: List[AcceptedRiskRequest],
@@ -688,7 +687,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def findings_accept_risks_create_with_http_info(
         self,
         accepted_risk_request: List[AcceptedRiskRequest],
@@ -1316,7 +1314,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def findings_accept_risks_create_without_preload_content(
         self,
         accepted_risk_request: List[AcceptedRiskRequest],
@@ -2530,7 +2527,6 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def findings_close_create(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -2593,7 +2589,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def findings_close_create_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -2656,7 +2651,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def findings_close_create_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -2777,7 +2771,6 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def findings_create(
         self,
         finding_create_request: FindingCreateRequest,
@@ -2836,7 +2829,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def findings_create_with_http_info(
         self,
         finding_create_request: FindingCreateRequest,
@@ -2895,7 +2887,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def findings_create_without_preload_content(
         self,
         finding_create_request: FindingCreateRequest,
@@ -3009,7 +3000,6 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def findings_delete_preview_list(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -3078,7 +3068,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def findings_delete_preview_list_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -3147,7 +3136,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def findings_delete_preview_list_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -3269,7 +3257,6 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def findings_destroy(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -3324,7 +3311,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def findings_destroy_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -3379,7 +3365,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def findings_destroy_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -3475,7 +3460,6 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def findings_duplicate_list(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -3530,7 +3514,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def findings_duplicate_list_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -3585,7 +3568,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def findings_duplicate_list_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -3685,7 +3667,6 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def findings_duplicate_reset_create(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -3740,7 +3721,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def findings_duplicate_reset_create_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -3795,7 +3775,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def findings_duplicate_reset_create_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -3891,7 +3870,6 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def findings_files_create(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -3958,7 +3936,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def findings_files_create_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -4025,7 +4002,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def findings_files_create_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -4151,7 +4127,6 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def findings_files_download_retrieve(
         self,
         file_id: Annotated[str, Field(strict=True)],
@@ -4214,7 +4189,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def findings_files_download_retrieve_with_http_info(
         self,
         file_id: Annotated[str, Field(strict=True)],
@@ -4277,7 +4251,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def findings_files_download_retrieve_without_preload_content(
         self,
         file_id: Annotated[str, Field(strict=True)],
@@ -4388,7 +4361,6 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def findings_files_retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -4443,7 +4415,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def findings_files_retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -4498,7 +4469,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def findings_files_retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -4598,7 +4568,6 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def findings_generate_report_create(
         self,
         report_generate_option_request: Optional[ReportGenerateOptionRequest] = None,
@@ -4657,7 +4626,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def findings_generate_report_create_with_http_info(
         self,
         report_generate_option_request: Optional[ReportGenerateOptionRequest] = None,
@@ -4716,7 +4684,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def findings_generate_report_create_without_preload_content(
         self,
         report_generate_option_request: Optional[ReportGenerateOptionRequest] = None,
@@ -4830,7 +4797,6 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def findings_list(
         self,
         active: Optional[StrictBool] = None,
@@ -5470,7 +5436,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def findings_list_with_http_info(
         self,
         active: Optional[StrictBool] = None,
@@ -6110,7 +6075,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def findings_list_without_preload_content(
         self,
         active: Optional[StrictBool] = None,
@@ -7331,7 +7295,6 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def findings_metadata_create(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -7396,7 +7359,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def findings_metadata_create_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -7461,7 +7423,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def findings_metadata_create_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -7584,7 +7545,6 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def findings_metadata_destroy(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -7654,7 +7614,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def findings_metadata_destroy_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -7724,7 +7683,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def findings_metadata_destroy_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -7839,7 +7797,6 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def findings_metadata_list(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -7895,7 +7852,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def findings_metadata_list_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -7951,7 +7907,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def findings_metadata_list_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -8052,7 +8007,6 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def findings_metadata_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -8117,7 +8071,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def findings_metadata_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -8182,7 +8135,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def findings_metadata_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -8305,7 +8257,6 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def findings_notes_create(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -8368,7 +8319,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def findings_notes_create_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -8431,7 +8381,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def findings_notes_create_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -8552,7 +8501,6 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def findings_notes_retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -8607,7 +8555,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def findings_notes_retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -8662,7 +8609,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def findings_notes_retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -8762,7 +8708,6 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def findings_original_create(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -8825,7 +8770,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def findings_original_create_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -8888,7 +8832,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def findings_original_create_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -8995,7 +8938,6 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def findings_partial_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -9058,7 +9000,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def findings_partial_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -9121,7 +9062,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def findings_partial_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -9242,7 +9182,6 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def findings_remove_note_partial_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -9306,7 +9245,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def findings_remove_note_partial_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -9370,7 +9308,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def findings_remove_note_partial_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -9488,7 +9425,6 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def findings_remove_tags_partial_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -9552,7 +9488,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def findings_remove_tags_partial_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -9616,7 +9551,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def findings_remove_tags_partial_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -9734,7 +9668,6 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def findings_remove_tags_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -9798,7 +9731,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def findings_remove_tags_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -9862,7 +9794,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def findings_remove_tags_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -9980,7 +9911,6 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def findings_request_response_create(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -10043,7 +9973,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def findings_request_response_create_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -10106,7 +10035,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def findings_request_response_create_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -10227,7 +10155,6 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def findings_request_response_retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -10282,7 +10209,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def findings_request_response_retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -10337,7 +10263,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def findings_request_response_retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -10437,7 +10362,6 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def findings_retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -10512,7 +10436,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def findings_retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -10587,7 +10510,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def findings_retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -10717,7 +10639,6 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def findings_tags_create(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -10780,7 +10701,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def findings_tags_create_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -10843,7 +10763,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def findings_tags_create_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -10964,7 +10883,6 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def findings_tags_retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -11019,7 +10937,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def findings_tags_retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -11074,7 +10991,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def findings_tags_retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -11174,7 +11090,6 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def findings_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -11237,7 +11152,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def findings_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -11300,7 +11214,6 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def findings_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],

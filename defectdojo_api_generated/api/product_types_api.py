@@ -13,7 +13,7 @@ Do not edit the class manually.
 from datetime import datetime
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from pydantic import Field, StrictBool, StrictFloat, StrictInt, StrictStr, validate_call
+from pydantic import Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing_extensions import Annotated
 
 from defectdojo_api_generated.api_client import ApiClient, RequestSerialized
@@ -40,7 +40,6 @@ class ProductTypesApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    @validate_call
     def product_types_create(
         self,
         product_type_request: ProductTypeRequest,
@@ -99,7 +98,6 @@ class ProductTypesApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def product_types_create_with_http_info(
         self,
         product_type_request: ProductTypeRequest,
@@ -158,7 +156,6 @@ class ProductTypesApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def product_types_create_without_preload_content(
         self,
         product_type_request: ProductTypeRequest,
@@ -272,7 +269,6 @@ class ProductTypesApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def product_types_delete_preview_list(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ type.')],
@@ -341,7 +337,6 @@ class ProductTypesApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def product_types_delete_preview_list_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ type.')],
@@ -410,7 +405,6 @@ class ProductTypesApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def product_types_delete_preview_list_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ type.')],
@@ -532,7 +526,6 @@ class ProductTypesApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def product_types_destroy(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ type.')],
@@ -587,7 +580,6 @@ class ProductTypesApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def product_types_destroy_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ type.')],
@@ -642,7 +634,6 @@ class ProductTypesApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def product_types_destroy_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ type.')],
@@ -738,7 +729,6 @@ class ProductTypesApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def product_types_generate_report_create(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ type.')],
@@ -801,7 +791,6 @@ class ProductTypesApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def product_types_generate_report_create_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ type.')],
@@ -864,7 +853,6 @@ class ProductTypesApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def product_types_generate_report_create_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ type.')],
@@ -985,7 +973,6 @@ class ProductTypesApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def product_types_list(
         self,
         created: Optional[datetime] = None,
@@ -1081,7 +1068,6 @@ class ProductTypesApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def product_types_list_with_http_info(
         self,
         created: Optional[datetime] = None,
@@ -1177,7 +1163,6 @@ class ProductTypesApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def product_types_list_without_preload_content(
         self,
         created: Optional[datetime] = None,
@@ -1359,7 +1344,6 @@ class ProductTypesApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def product_types_partial_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ type.')],
@@ -1422,7 +1406,6 @@ class ProductTypesApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def product_types_partial_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ type.')],
@@ -1485,7 +1468,6 @@ class ProductTypesApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def product_types_partial_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ type.')],
@@ -1606,7 +1588,6 @@ class ProductTypesApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def product_types_retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ type.')],
@@ -1672,7 +1653,6 @@ class ProductTypesApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def product_types_retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ type.')],
@@ -1738,7 +1718,6 @@ class ProductTypesApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def product_types_retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ type.')],
@@ -1855,7 +1834,6 @@ class ProductTypesApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def product_types_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ type.')],
@@ -1918,7 +1896,6 @@ class ProductTypesApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def product_types_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ type.')],
@@ -1981,7 +1958,6 @@ class ProductTypesApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def product_types_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ type.')],

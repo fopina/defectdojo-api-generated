@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from pydantic import Field, StrictFloat, StrictInt, StrictStr, validate_call
+from pydantic import Field, StrictFloat, StrictInt, StrictStr
 from typing_extensions import Annotated
 
 from defectdojo_api_generated.api_client import ApiClient, RequestSerialized
@@ -37,7 +37,6 @@ class DojoGroupsApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    @validate_call
     def dojo_groups_create(
         self,
         dojo_group_request: DojoGroupRequest,
@@ -96,7 +95,6 @@ class DojoGroupsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def dojo_groups_create_with_http_info(
         self,
         dojo_group_request: DojoGroupRequest,
@@ -155,7 +153,6 @@ class DojoGroupsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def dojo_groups_create_without_preload_content(
         self,
         dojo_group_request: DojoGroupRequest,
@@ -269,7 +266,6 @@ class DojoGroupsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def dojo_groups_delete_preview_list(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this dojo_ group.')],
@@ -338,7 +334,6 @@ class DojoGroupsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def dojo_groups_delete_preview_list_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this dojo_ group.')],
@@ -407,7 +402,6 @@ class DojoGroupsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def dojo_groups_delete_preview_list_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this dojo_ group.')],
@@ -529,7 +523,6 @@ class DojoGroupsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def dojo_groups_destroy(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this dojo_ group.')],
@@ -584,7 +577,6 @@ class DojoGroupsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def dojo_groups_destroy_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this dojo_ group.')],
@@ -639,7 +631,6 @@ class DojoGroupsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def dojo_groups_destroy_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this dojo_ group.')],
@@ -735,7 +726,6 @@ class DojoGroupsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def dojo_groups_list(
         self,
         id: Optional[StrictInt] = None,
@@ -822,7 +812,6 @@ class DojoGroupsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def dojo_groups_list_with_http_info(
         self,
         id: Optional[StrictInt] = None,
@@ -909,7 +898,6 @@ class DojoGroupsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def dojo_groups_list_without_preload_content(
         self,
         id: Optional[StrictInt] = None,
@@ -1064,7 +1052,6 @@ class DojoGroupsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def dojo_groups_partial_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this dojo_ group.')],
@@ -1127,7 +1114,6 @@ class DojoGroupsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def dojo_groups_partial_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this dojo_ group.')],
@@ -1190,7 +1176,6 @@ class DojoGroupsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def dojo_groups_partial_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this dojo_ group.')],
@@ -1311,7 +1296,6 @@ class DojoGroupsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def dojo_groups_retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this dojo_ group.')],
@@ -1377,7 +1361,6 @@ class DojoGroupsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def dojo_groups_retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this dojo_ group.')],
@@ -1443,7 +1426,6 @@ class DojoGroupsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def dojo_groups_retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this dojo_ group.')],
@@ -1560,7 +1542,6 @@ class DojoGroupsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def dojo_groups_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this dojo_ group.')],
@@ -1623,7 +1604,6 @@ class DojoGroupsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def dojo_groups_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this dojo_ group.')],
@@ -1686,7 +1666,6 @@ class DojoGroupsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def dojo_groups_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this dojo_ group.')],

@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from pydantic import Field, StrictFloat, StrictInt, StrictStr, validate_call
+from pydantic import Field, StrictFloat, StrictInt, StrictStr
 from typing_extensions import Annotated
 
 from defectdojo_api_generated.api_client import ApiClient, RequestSerialized
@@ -37,7 +37,6 @@ class JiraFindingMappingsApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    @validate_call
     def jira_finding_mappings_create(
         self,
         jira_issue_request: JIRAIssueRequest,
@@ -96,7 +95,6 @@ class JiraFindingMappingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def jira_finding_mappings_create_with_http_info(
         self,
         jira_issue_request: JIRAIssueRequest,
@@ -155,7 +153,6 @@ class JiraFindingMappingsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def jira_finding_mappings_create_without_preload_content(
         self,
         jira_issue_request: JIRAIssueRequest,
@@ -269,7 +266,6 @@ class JiraFindingMappingsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def jira_finding_mappings_delete_preview_list(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this jir a_ issue.')],
@@ -338,7 +334,6 @@ class JiraFindingMappingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def jira_finding_mappings_delete_preview_list_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this jir a_ issue.')],
@@ -407,7 +402,6 @@ class JiraFindingMappingsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def jira_finding_mappings_delete_preview_list_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this jir a_ issue.')],
@@ -529,7 +523,6 @@ class JiraFindingMappingsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def jira_finding_mappings_destroy(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this jir a_ issue.')],
@@ -584,7 +577,6 @@ class JiraFindingMappingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def jira_finding_mappings_destroy_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this jir a_ issue.')],
@@ -639,7 +631,6 @@ class JiraFindingMappingsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def jira_finding_mappings_destroy_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this jir a_ issue.')],
@@ -735,7 +726,6 @@ class JiraFindingMappingsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def jira_finding_mappings_list(
         self,
         engagement: Optional[StrictInt] = None,
@@ -824,7 +814,6 @@ class JiraFindingMappingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def jira_finding_mappings_list_with_http_info(
         self,
         engagement: Optional[StrictInt] = None,
@@ -913,7 +902,6 @@ class JiraFindingMappingsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def jira_finding_mappings_list_without_preload_content(
         self,
         engagement: Optional[StrictInt] = None,
@@ -1076,7 +1064,6 @@ class JiraFindingMappingsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def jira_finding_mappings_partial_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this jir a_ issue.')],
@@ -1139,7 +1126,6 @@ class JiraFindingMappingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def jira_finding_mappings_partial_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this jir a_ issue.')],
@@ -1202,7 +1188,6 @@ class JiraFindingMappingsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def jira_finding_mappings_partial_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this jir a_ issue.')],
@@ -1323,7 +1308,6 @@ class JiraFindingMappingsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def jira_finding_mappings_retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this jir a_ issue.')],
@@ -1378,7 +1362,6 @@ class JiraFindingMappingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def jira_finding_mappings_retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this jir a_ issue.')],
@@ -1433,7 +1416,6 @@ class JiraFindingMappingsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def jira_finding_mappings_retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this jir a_ issue.')],
@@ -1533,7 +1515,6 @@ class JiraFindingMappingsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def jira_finding_mappings_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this jir a_ issue.')],
@@ -1596,7 +1577,6 @@ class JiraFindingMappingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def jira_finding_mappings_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this jir a_ issue.')],
@@ -1659,7 +1639,6 @@ class JiraFindingMappingsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def jira_finding_mappings_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this jir a_ issue.')],

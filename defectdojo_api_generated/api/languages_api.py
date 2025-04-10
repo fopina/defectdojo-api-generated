@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from pydantic import Field, StrictFloat, StrictInt, StrictStr, validate_call
+from pydantic import Field, StrictFloat, StrictInt, StrictStr
 from typing_extensions import Annotated
 
 from defectdojo_api_generated.api_client import ApiClient, RequestSerialized
@@ -37,7 +37,6 @@ class LanguagesApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    @validate_call
     def languages_create(
         self,
         language_request: LanguageRequest,
@@ -96,7 +95,6 @@ class LanguagesApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def languages_create_with_http_info(
         self,
         language_request: LanguageRequest,
@@ -155,7 +153,6 @@ class LanguagesApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def languages_create_without_preload_content(
         self,
         language_request: LanguageRequest,
@@ -269,7 +266,6 @@ class LanguagesApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def languages_delete_preview_list(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this languages.')],
@@ -338,7 +334,6 @@ class LanguagesApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def languages_delete_preview_list_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this languages.')],
@@ -407,7 +402,6 @@ class LanguagesApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def languages_delete_preview_list_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this languages.')],
@@ -529,7 +523,6 @@ class LanguagesApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def languages_destroy(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this languages.')],
@@ -584,7 +577,6 @@ class LanguagesApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def languages_destroy_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this languages.')],
@@ -639,7 +631,6 @@ class LanguagesApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def languages_destroy_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this languages.')],
@@ -735,7 +726,6 @@ class LanguagesApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def languages_list(
         self,
         id: Optional[StrictInt] = None,
@@ -819,7 +809,6 @@ class LanguagesApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def languages_list_with_http_info(
         self,
         id: Optional[StrictInt] = None,
@@ -903,7 +892,6 @@ class LanguagesApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def languages_list_without_preload_content(
         self,
         id: Optional[StrictInt] = None,
@@ -1055,7 +1043,6 @@ class LanguagesApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def languages_partial_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this languages.')],
@@ -1118,7 +1105,6 @@ class LanguagesApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def languages_partial_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this languages.')],
@@ -1181,7 +1167,6 @@ class LanguagesApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def languages_partial_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this languages.')],
@@ -1302,7 +1287,6 @@ class LanguagesApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def languages_retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this languages.')],
@@ -1368,7 +1352,6 @@ class LanguagesApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def languages_retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this languages.')],
@@ -1434,7 +1417,6 @@ class LanguagesApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def languages_retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this languages.')],
@@ -1551,7 +1533,6 @@ class LanguagesApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def languages_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this languages.')],
@@ -1614,7 +1595,6 @@ class LanguagesApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def languages_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this languages.')],
@@ -1677,7 +1657,6 @@ class LanguagesApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def languages_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this languages.')],

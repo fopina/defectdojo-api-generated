@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from pydantic import Field, StrictBool, StrictFloat, StrictInt, StrictStr, validate_call
+from pydantic import Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing_extensions import Annotated
 
 from defectdojo_api_generated.api_client import ApiClient, RequestSerialized
@@ -39,7 +39,6 @@ class EndpointsApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    @validate_call
     def endpoints_create(
         self,
         endpoint_request: Optional[EndpointRequest] = None,
@@ -98,7 +97,6 @@ class EndpointsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def endpoints_create_with_http_info(
         self,
         endpoint_request: Optional[EndpointRequest] = None,
@@ -157,7 +155,6 @@ class EndpointsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def endpoints_create_without_preload_content(
         self,
         endpoint_request: Optional[EndpointRequest] = None,
@@ -271,7 +268,6 @@ class EndpointsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def endpoints_delete_preview_list(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this endpoint.')],
@@ -340,7 +336,6 @@ class EndpointsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def endpoints_delete_preview_list_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this endpoint.')],
@@ -409,7 +404,6 @@ class EndpointsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def endpoints_delete_preview_list_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this endpoint.')],
@@ -531,7 +525,6 @@ class EndpointsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def endpoints_destroy(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this endpoint.')],
@@ -586,7 +579,6 @@ class EndpointsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def endpoints_destroy_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this endpoint.')],
@@ -641,7 +633,6 @@ class EndpointsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def endpoints_destroy_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this endpoint.')],
@@ -737,7 +728,6 @@ class EndpointsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def endpoints_generate_report_create(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this endpoint.')],
@@ -800,7 +790,6 @@ class EndpointsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def endpoints_generate_report_create_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this endpoint.')],
@@ -863,7 +852,6 @@ class EndpointsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def endpoints_generate_report_create_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this endpoint.')],
@@ -984,7 +972,6 @@ class EndpointsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def endpoints_list(
         self,
         fragment: Optional[StrictStr] = None,
@@ -1126,7 +1113,6 @@ class EndpointsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def endpoints_list_with_http_info(
         self,
         fragment: Optional[StrictStr] = None,
@@ -1268,7 +1254,6 @@ class EndpointsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def endpoints_list_without_preload_content(
         self,
         fragment: Optional[StrictStr] = None,
@@ -1529,7 +1514,6 @@ class EndpointsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def endpoints_partial_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this endpoint.')],
@@ -1592,7 +1576,6 @@ class EndpointsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def endpoints_partial_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this endpoint.')],
@@ -1655,7 +1638,6 @@ class EndpointsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def endpoints_partial_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this endpoint.')],
@@ -1776,7 +1758,6 @@ class EndpointsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def endpoints_retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this endpoint.')],
@@ -1831,7 +1812,6 @@ class EndpointsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def endpoints_retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this endpoint.')],
@@ -1886,7 +1866,6 @@ class EndpointsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def endpoints_retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this endpoint.')],
@@ -1986,7 +1965,6 @@ class EndpointsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def endpoints_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this endpoint.')],
@@ -2049,7 +2027,6 @@ class EndpointsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def endpoints_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this endpoint.')],
@@ -2112,7 +2089,6 @@ class EndpointsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def endpoints_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this endpoint.')],

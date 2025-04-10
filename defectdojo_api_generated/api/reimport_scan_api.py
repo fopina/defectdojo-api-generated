@@ -13,7 +13,7 @@ Do not edit the class manually.
 from datetime import date
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from pydantic import Field, StrictBool, StrictBytes, StrictFloat, StrictInt, StrictStr, validate_call
+from pydantic import Field, StrictBool, StrictBytes, StrictFloat, StrictInt, StrictStr
 from typing_extensions import Annotated
 
 from defectdojo_api_generated.api_client import ApiClient, RequestSerialized
@@ -34,7 +34,6 @@ class ReimportScanApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    @validate_call
     def reimport_scan_create(
         self,
         scan_type: Annotated[
@@ -305,7 +304,6 @@ class ReimportScanApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def reimport_scan_create_with_http_info(
         self,
         scan_type: Annotated[
@@ -576,7 +574,6 @@ class ReimportScanApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def reimport_scan_create_without_preload_content(
         self,
         scan_type: Annotated[

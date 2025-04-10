@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from pydantic import Field, StrictFloat, StrictInt, StrictStr, validate_call
+from pydantic import Field, StrictFloat, StrictInt, StrictStr
 from typing_extensions import Annotated
 
 from defectdojo_api_generated.api_client import ApiClient, RequestSerialized
@@ -34,7 +34,6 @@ class RolesApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    @validate_call
     def roles_list(
         self,
         id: Optional[StrictInt] = None,
@@ -107,7 +106,6 @@ class RolesApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def roles_list_with_http_info(
         self,
         id: Optional[StrictInt] = None,
@@ -180,7 +178,6 @@ class RolesApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def roles_list_without_preload_content(
         self,
         id: Optional[StrictInt] = None,
@@ -311,7 +308,6 @@ class RolesApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def roles_retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this role.')],
@@ -366,7 +362,6 @@ class RolesApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def roles_retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this role.')],
@@ -421,7 +416,6 @@ class RolesApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def roles_retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this role.')],

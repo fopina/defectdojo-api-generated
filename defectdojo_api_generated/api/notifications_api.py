@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from pydantic import Field, StrictBool, StrictFloat, StrictInt, StrictStr, validate_call
+from pydantic import Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing_extensions import Annotated
 
 from defectdojo_api_generated.api_client import ApiClient, RequestSerialized
@@ -37,7 +37,6 @@ class NotificationsApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    @validate_call
     def notifications_create(
         self,
         notifications_request: Optional[NotificationsRequest] = None,
@@ -96,7 +95,6 @@ class NotificationsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def notifications_create_with_http_info(
         self,
         notifications_request: Optional[NotificationsRequest] = None,
@@ -155,7 +153,6 @@ class NotificationsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def notifications_create_without_preload_content(
         self,
         notifications_request: Optional[NotificationsRequest] = None,
@@ -269,7 +266,6 @@ class NotificationsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def notifications_delete_preview_list(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notifications.')],
@@ -338,7 +334,6 @@ class NotificationsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def notifications_delete_preview_list_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notifications.')],
@@ -407,7 +402,6 @@ class NotificationsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def notifications_delete_preview_list_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notifications.')],
@@ -529,7 +523,6 @@ class NotificationsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def notifications_destroy(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notifications.')],
@@ -584,7 +577,6 @@ class NotificationsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def notifications_destroy_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notifications.')],
@@ -639,7 +631,6 @@ class NotificationsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def notifications_destroy_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notifications.')],
@@ -735,7 +726,6 @@ class NotificationsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def notifications_list(
         self,
         id: Optional[StrictInt] = None,
@@ -823,7 +813,6 @@ class NotificationsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def notifications_list_with_http_info(
         self,
         id: Optional[StrictInt] = None,
@@ -911,7 +900,6 @@ class NotificationsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def notifications_list_without_preload_content(
         self,
         id: Optional[StrictInt] = None,
@@ -1071,7 +1059,6 @@ class NotificationsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def notifications_partial_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notifications.')],
@@ -1134,7 +1121,6 @@ class NotificationsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def notifications_partial_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notifications.')],
@@ -1197,7 +1183,6 @@ class NotificationsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def notifications_partial_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notifications.')],
@@ -1318,7 +1303,6 @@ class NotificationsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def notifications_retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notifications.')],
@@ -1384,7 +1368,6 @@ class NotificationsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def notifications_retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notifications.')],
@@ -1450,7 +1433,6 @@ class NotificationsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def notifications_retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notifications.')],
@@ -1567,7 +1549,6 @@ class NotificationsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def notifications_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notifications.')],
@@ -1630,7 +1611,6 @@ class NotificationsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def notifications_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notifications.')],
@@ -1693,7 +1673,6 @@ class NotificationsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def notifications_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notifications.')],

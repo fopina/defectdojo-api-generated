@@ -13,7 +13,7 @@ Do not edit the class manually.
 from datetime import datetime
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from pydantic import Field, StrictBool, StrictFloat, StrictInt, StrictStr, validate_call
+from pydantic import Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing_extensions import Annotated
 
 from defectdojo_api_generated.api_client import ApiClient, RequestSerialized
@@ -37,7 +37,6 @@ class NotesApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    @validate_call
     def notes_list(
         self,
         author: Optional[StrictInt] = None,
@@ -134,7 +133,6 @@ class NotesApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def notes_list_with_http_info(
         self,
         author: Optional[StrictInt] = None,
@@ -231,7 +229,6 @@ class NotesApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def notes_list_without_preload_content(
         self,
         author: Optional[StrictInt] = None,
@@ -416,7 +413,6 @@ class NotesApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def notes_partial_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notes.')],
@@ -479,7 +475,6 @@ class NotesApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def notes_partial_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notes.')],
@@ -542,7 +537,6 @@ class NotesApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def notes_partial_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notes.')],
@@ -663,7 +657,6 @@ class NotesApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def notes_retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notes.')],
@@ -718,7 +711,6 @@ class NotesApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def notes_retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notes.')],
@@ -773,7 +765,6 @@ class NotesApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def notes_retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notes.')],
@@ -873,7 +864,6 @@ class NotesApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def notes_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notes.')],
@@ -936,7 +926,6 @@ class NotesApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def notes_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notes.')],
@@ -999,7 +988,6 @@ class NotesApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def notes_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notes.')],

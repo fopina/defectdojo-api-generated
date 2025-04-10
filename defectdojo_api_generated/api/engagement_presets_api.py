@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from pydantic import Field, StrictFloat, StrictInt, StrictStr, validate_call
+from pydantic import Field, StrictFloat, StrictInt, StrictStr
 from typing_extensions import Annotated
 
 from defectdojo_api_generated.api_client import ApiClient, RequestSerialized
@@ -37,7 +37,6 @@ class EngagementPresetsApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    @validate_call
     def engagement_presets_create(
         self,
         engagement_presets_request: EngagementPresetsRequest,
@@ -96,7 +95,6 @@ class EngagementPresetsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def engagement_presets_create_with_http_info(
         self,
         engagement_presets_request: EngagementPresetsRequest,
@@ -155,7 +153,6 @@ class EngagementPresetsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def engagement_presets_create_without_preload_content(
         self,
         engagement_presets_request: EngagementPresetsRequest,
@@ -269,7 +266,6 @@ class EngagementPresetsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def engagement_presets_delete_preview_list(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement_ presets.')],
@@ -338,7 +334,6 @@ class EngagementPresetsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def engagement_presets_delete_preview_list_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement_ presets.')],
@@ -407,7 +402,6 @@ class EngagementPresetsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def engagement_presets_delete_preview_list_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement_ presets.')],
@@ -529,7 +523,6 @@ class EngagementPresetsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def engagement_presets_destroy(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement_ presets.')],
@@ -584,7 +577,6 @@ class EngagementPresetsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def engagement_presets_destroy_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement_ presets.')],
@@ -639,7 +631,6 @@ class EngagementPresetsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def engagement_presets_destroy_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement_ presets.')],
@@ -735,7 +726,6 @@ class EngagementPresetsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def engagement_presets_list(
         self,
         id: Optional[StrictInt] = None,
@@ -819,7 +809,6 @@ class EngagementPresetsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def engagement_presets_list_with_http_info(
         self,
         id: Optional[StrictInt] = None,
@@ -903,7 +892,6 @@ class EngagementPresetsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def engagement_presets_list_without_preload_content(
         self,
         id: Optional[StrictInt] = None,
@@ -1055,7 +1043,6 @@ class EngagementPresetsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def engagement_presets_partial_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement_ presets.')],
@@ -1118,7 +1105,6 @@ class EngagementPresetsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def engagement_presets_partial_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement_ presets.')],
@@ -1181,7 +1167,6 @@ class EngagementPresetsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def engagement_presets_partial_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement_ presets.')],
@@ -1302,7 +1287,6 @@ class EngagementPresetsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def engagement_presets_retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement_ presets.')],
@@ -1368,7 +1352,6 @@ class EngagementPresetsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def engagement_presets_retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement_ presets.')],
@@ -1434,7 +1417,6 @@ class EngagementPresetsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def engagement_presets_retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement_ presets.')],
@@ -1551,7 +1533,6 @@ class EngagementPresetsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def engagement_presets_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement_ presets.')],
@@ -1614,7 +1595,6 @@ class EngagementPresetsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def engagement_presets_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement_ presets.')],
@@ -1677,7 +1657,6 @@ class EngagementPresetsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def engagement_presets_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement_ presets.')],

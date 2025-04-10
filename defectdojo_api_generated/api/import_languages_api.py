@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from pydantic import Field, StrictBytes, StrictFloat, StrictInt, StrictStr, validate_call
+from pydantic import Field, StrictBytes, StrictFloat, StrictInt, StrictStr
 from typing_extensions import Annotated
 
 from defectdojo_api_generated.api_client import ApiClient, RequestSerialized
@@ -33,7 +33,6 @@ class ImportLanguagesApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    @validate_call
     def import_languages_create(
         self,
         product: StrictInt,
@@ -96,7 +95,6 @@ class ImportLanguagesApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def import_languages_create_with_http_info(
         self,
         product: StrictInt,
@@ -159,7 +157,6 @@ class ImportLanguagesApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def import_languages_create_without_preload_content(
         self,
         product: StrictInt,

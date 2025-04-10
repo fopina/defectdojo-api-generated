@@ -13,7 +13,7 @@ Do not edit the class manually.
 from datetime import date, datetime
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from pydantic import Field, StrictBool, StrictBytes, StrictFloat, StrictInt, StrictStr, validate_call
+from pydantic import Field, StrictBool, StrictBytes, StrictFloat, StrictInt, StrictStr
 from typing_extensions import Annotated
 
 from defectdojo_api_generated.api_client import ApiClient, RequestSerialized
@@ -52,7 +52,6 @@ class EngagementsApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    @validate_call
     def engagements_accept_risks_create(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
@@ -115,7 +114,6 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def engagements_accept_risks_create_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
@@ -178,7 +176,6 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def engagements_accept_risks_create_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
@@ -301,7 +298,6 @@ class EngagementsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def engagements_close_create(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
@@ -356,7 +352,6 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def engagements_close_create_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
@@ -411,7 +406,6 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def engagements_close_create_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
@@ -507,7 +501,6 @@ class EngagementsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def engagements_complete_checklist_create(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
@@ -570,7 +563,6 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def engagements_complete_checklist_create_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
@@ -633,7 +625,6 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def engagements_complete_checklist_create_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
@@ -754,7 +745,6 @@ class EngagementsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def engagements_complete_checklist_retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
@@ -809,7 +799,6 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def engagements_complete_checklist_retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
@@ -864,7 +853,6 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def engagements_complete_checklist_retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
@@ -964,7 +952,6 @@ class EngagementsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def engagements_create(
         self,
         engagement_request: EngagementRequest,
@@ -1023,7 +1010,6 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def engagements_create_with_http_info(
         self,
         engagement_request: EngagementRequest,
@@ -1082,7 +1068,6 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def engagements_create_without_preload_content(
         self,
         engagement_request: EngagementRequest,
@@ -1196,7 +1181,6 @@ class EngagementsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def engagements_delete_preview_list(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
@@ -1265,7 +1249,6 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def engagements_delete_preview_list_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
@@ -1334,7 +1317,6 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def engagements_delete_preview_list_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
@@ -1456,7 +1438,6 @@ class EngagementsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def engagements_destroy(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
@@ -1511,7 +1492,6 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def engagements_destroy_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
@@ -1566,7 +1546,6 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def engagements_destroy_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
@@ -1662,7 +1641,6 @@ class EngagementsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def engagements_files_create(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
@@ -1729,7 +1707,6 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def engagements_files_create_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
@@ -1796,7 +1773,6 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def engagements_files_create_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
@@ -1922,7 +1898,6 @@ class EngagementsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def engagements_files_download_retrieve(
         self,
         file_id: Annotated[str, Field(strict=True)],
@@ -1985,7 +1960,6 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def engagements_files_download_retrieve_with_http_info(
         self,
         file_id: Annotated[str, Field(strict=True)],
@@ -2048,7 +2022,6 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def engagements_files_download_retrieve_without_preload_content(
         self,
         file_id: Annotated[str, Field(strict=True)],
@@ -2159,7 +2132,6 @@ class EngagementsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def engagements_files_retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
@@ -2214,7 +2186,6 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def engagements_files_retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
@@ -2269,7 +2240,6 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def engagements_files_retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
@@ -2369,7 +2339,6 @@ class EngagementsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def engagements_generate_report_create(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
@@ -2432,7 +2401,6 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def engagements_generate_report_create_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
@@ -2495,7 +2463,6 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def engagements_generate_report_create_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
@@ -2616,7 +2583,6 @@ class EngagementsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def engagements_list(
         self,
         active: Optional[StrictBool] = None,
@@ -2809,7 +2775,6 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def engagements_list_with_http_info(
         self,
         active: Optional[StrictBool] = None,
@@ -3002,7 +2967,6 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def engagements_list_without_preload_content(
         self,
         active: Optional[StrictBool] = None,
@@ -3363,7 +3327,6 @@ class EngagementsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def engagements_notes_create(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
@@ -3426,7 +3389,6 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def engagements_notes_create_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
@@ -3489,7 +3451,6 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def engagements_notes_create_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
@@ -3610,7 +3571,6 @@ class EngagementsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def engagements_notes_retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
@@ -3665,7 +3625,6 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def engagements_notes_retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
@@ -3720,7 +3679,6 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def engagements_notes_retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
@@ -3820,7 +3778,6 @@ class EngagementsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def engagements_partial_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
@@ -3883,7 +3840,6 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def engagements_partial_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
@@ -3946,7 +3902,6 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def engagements_partial_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
@@ -4067,7 +4022,6 @@ class EngagementsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def engagements_reopen_create(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
@@ -4122,7 +4076,6 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def engagements_reopen_create_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
@@ -4177,7 +4130,6 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def engagements_reopen_create_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
@@ -4273,7 +4225,6 @@ class EngagementsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def engagements_retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
@@ -4328,7 +4279,6 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def engagements_retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
@@ -4383,7 +4333,6 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def engagements_retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
@@ -4483,7 +4432,6 @@ class EngagementsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def engagements_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
@@ -4546,7 +4494,6 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def engagements_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
@@ -4609,7 +4556,6 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def engagements_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
@@ -4730,7 +4676,6 @@ class EngagementsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def engagements_update_jira_epic_create(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
@@ -4793,7 +4738,6 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def engagements_update_jira_epic_create_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
@@ -4856,7 +4800,6 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def engagements_update_jira_epic_create_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],

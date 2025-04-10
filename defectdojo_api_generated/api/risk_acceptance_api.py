@@ -13,7 +13,7 @@ Do not edit the class manually.
 from datetime import datetime
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from pydantic import Field, StrictBool, StrictFloat, StrictInt, StrictStr, validate_call
+from pydantic import Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing_extensions import Annotated
 
 from defectdojo_api_generated.api_client import ApiClient, RequestSerialized
@@ -39,7 +39,6 @@ class RiskAcceptanceApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    @validate_call
     def risk_acceptance_create(
         self,
         risk_acceptance_request: RiskAcceptanceRequest,
@@ -98,7 +97,6 @@ class RiskAcceptanceApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def risk_acceptance_create_with_http_info(
         self,
         risk_acceptance_request: RiskAcceptanceRequest,
@@ -157,7 +155,6 @@ class RiskAcceptanceApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def risk_acceptance_create_without_preload_content(
         self,
         risk_acceptance_request: RiskAcceptanceRequest,
@@ -271,7 +268,6 @@ class RiskAcceptanceApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def risk_acceptance_delete_preview_list(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this risk_ acceptance.')],
@@ -340,7 +336,6 @@ class RiskAcceptanceApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def risk_acceptance_delete_preview_list_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this risk_ acceptance.')],
@@ -409,7 +404,6 @@ class RiskAcceptanceApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def risk_acceptance_delete_preview_list_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this risk_ acceptance.')],
@@ -531,7 +525,6 @@ class RiskAcceptanceApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def risk_acceptance_destroy(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this risk_ acceptance.')],
@@ -586,7 +579,6 @@ class RiskAcceptanceApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def risk_acceptance_destroy_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this risk_ acceptance.')],
@@ -641,7 +633,6 @@ class RiskAcceptanceApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def risk_acceptance_destroy_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this risk_ acceptance.')],
@@ -737,7 +728,6 @@ class RiskAcceptanceApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def risk_acceptance_download_proof_retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this risk_ acceptance.')],
@@ -792,7 +782,6 @@ class RiskAcceptanceApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def risk_acceptance_download_proof_retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this risk_ acceptance.')],
@@ -847,7 +836,6 @@ class RiskAcceptanceApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def risk_acceptance_download_proof_retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this risk_ acceptance.')],
@@ -947,7 +935,6 @@ class RiskAcceptanceApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def risk_acceptance_list(
         self,
         accepted_by: Optional[StrictStr] = None,
@@ -1084,7 +1071,6 @@ class RiskAcceptanceApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def risk_acceptance_list_with_http_info(
         self,
         accepted_by: Optional[StrictStr] = None,
@@ -1221,7 +1207,6 @@ class RiskAcceptanceApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def risk_acceptance_list_without_preload_content(
         self,
         accepted_by: Optional[StrictStr] = None,
@@ -1493,7 +1478,6 @@ class RiskAcceptanceApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def risk_acceptance_partial_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this risk_ acceptance.')],
@@ -1556,7 +1540,6 @@ class RiskAcceptanceApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def risk_acceptance_partial_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this risk_ acceptance.')],
@@ -1619,7 +1602,6 @@ class RiskAcceptanceApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def risk_acceptance_partial_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this risk_ acceptance.')],
@@ -1740,7 +1722,6 @@ class RiskAcceptanceApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def risk_acceptance_retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this risk_ acceptance.')],
@@ -1795,7 +1776,6 @@ class RiskAcceptanceApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def risk_acceptance_retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this risk_ acceptance.')],
@@ -1850,7 +1830,6 @@ class RiskAcceptanceApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def risk_acceptance_retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this risk_ acceptance.')],
@@ -1950,7 +1929,6 @@ class RiskAcceptanceApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def risk_acceptance_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this risk_ acceptance.')],
@@ -2013,7 +1991,6 @@ class RiskAcceptanceApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def risk_acceptance_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this risk_ acceptance.')],
@@ -2076,7 +2053,6 @@ class RiskAcceptanceApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def risk_acceptance_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this risk_ acceptance.')],

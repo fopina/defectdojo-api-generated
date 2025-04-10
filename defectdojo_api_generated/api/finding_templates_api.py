@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from pydantic import Field, StrictFloat, StrictInt, StrictStr, validate_call
+from pydantic import Field, StrictFloat, StrictInt, StrictStr
 from typing_extensions import Annotated
 
 from defectdojo_api_generated.api_client import ApiClient, RequestSerialized
@@ -37,7 +37,6 @@ class FindingTemplatesApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    @validate_call
     def finding_templates_create(
         self,
         finding_template_request: FindingTemplateRequest,
@@ -96,7 +95,6 @@ class FindingTemplatesApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def finding_templates_create_with_http_info(
         self,
         finding_template_request: FindingTemplateRequest,
@@ -155,7 +153,6 @@ class FindingTemplatesApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def finding_templates_create_without_preload_content(
         self,
         finding_template_request: FindingTemplateRequest,
@@ -269,7 +266,6 @@ class FindingTemplatesApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def finding_templates_delete_preview_list(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding_ template.')],
@@ -338,7 +334,6 @@ class FindingTemplatesApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def finding_templates_delete_preview_list_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding_ template.')],
@@ -407,7 +402,6 @@ class FindingTemplatesApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def finding_templates_delete_preview_list_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding_ template.')],
@@ -529,7 +523,6 @@ class FindingTemplatesApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def finding_templates_destroy(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding_ template.')],
@@ -584,7 +577,6 @@ class FindingTemplatesApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def finding_templates_destroy_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding_ template.')],
@@ -639,7 +631,6 @@ class FindingTemplatesApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def finding_templates_destroy_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding_ template.')],
@@ -735,7 +726,6 @@ class FindingTemplatesApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def finding_templates_list(
         self,
         cwe: Optional[StrictInt] = None,
@@ -861,7 +851,6 @@ class FindingTemplatesApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def finding_templates_list_with_http_info(
         self,
         cwe: Optional[StrictInt] = None,
@@ -987,7 +976,6 @@ class FindingTemplatesApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def finding_templates_list_without_preload_content(
         self,
         cwe: Optional[StrictInt] = None,
@@ -1216,7 +1204,6 @@ class FindingTemplatesApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def finding_templates_partial_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding_ template.')],
@@ -1279,7 +1266,6 @@ class FindingTemplatesApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def finding_templates_partial_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding_ template.')],
@@ -1342,7 +1328,6 @@ class FindingTemplatesApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def finding_templates_partial_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding_ template.')],
@@ -1463,7 +1448,6 @@ class FindingTemplatesApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def finding_templates_retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding_ template.')],
@@ -1518,7 +1502,6 @@ class FindingTemplatesApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def finding_templates_retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding_ template.')],
@@ -1573,7 +1556,6 @@ class FindingTemplatesApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def finding_templates_retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding_ template.')],
@@ -1673,7 +1655,6 @@ class FindingTemplatesApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def finding_templates_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding_ template.')],
@@ -1736,7 +1717,6 @@ class FindingTemplatesApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def finding_templates_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding_ template.')],
@@ -1799,7 +1779,6 @@ class FindingTemplatesApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def finding_templates_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding_ template.')],

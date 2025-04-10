@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from pydantic import Field, StrictFloat, StrictInt, StrictStr, validate_call
+from pydantic import Field, StrictFloat, StrictInt, StrictStr
 from typing_extensions import Annotated
 
 from defectdojo_api_generated.api_client import ApiClient, RequestSerialized
@@ -36,7 +36,6 @@ class ProductMembersApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    @validate_call
     def product_members_create(
         self,
         product_member_request: ProductMemberRequest,
@@ -95,7 +94,6 @@ class ProductMembersApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def product_members_create_with_http_info(
         self,
         product_member_request: ProductMemberRequest,
@@ -154,7 +152,6 @@ class ProductMembersApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def product_members_create_without_preload_content(
         self,
         product_member_request: ProductMemberRequest,
@@ -268,7 +265,6 @@ class ProductMembersApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def product_members_delete_preview_list(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ member.')],
@@ -337,7 +333,6 @@ class ProductMembersApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def product_members_delete_preview_list_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ member.')],
@@ -406,7 +401,6 @@ class ProductMembersApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def product_members_delete_preview_list_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ member.')],
@@ -528,7 +522,6 @@ class ProductMembersApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def product_members_destroy(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ member.')],
@@ -583,7 +576,6 @@ class ProductMembersApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def product_members_destroy_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ member.')],
@@ -638,7 +630,6 @@ class ProductMembersApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def product_members_destroy_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ member.')],
@@ -734,7 +725,6 @@ class ProductMembersApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def product_members_list(
         self,
         id: Optional[StrictInt] = None,
@@ -818,7 +808,6 @@ class ProductMembersApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def product_members_list_with_http_info(
         self,
         id: Optional[StrictInt] = None,
@@ -902,7 +891,6 @@ class ProductMembersApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def product_members_list_without_preload_content(
         self,
         id: Optional[StrictInt] = None,
@@ -1054,7 +1042,6 @@ class ProductMembersApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def product_members_retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ member.')],
@@ -1120,7 +1107,6 @@ class ProductMembersApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def product_members_retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ member.')],
@@ -1186,7 +1172,6 @@ class ProductMembersApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def product_members_retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ member.')],
@@ -1303,7 +1288,6 @@ class ProductMembersApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def product_members_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ member.')],
@@ -1366,7 +1350,6 @@ class ProductMembersApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def product_members_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ member.')],
@@ -1429,7 +1412,6 @@ class ProductMembersApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def product_members_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ member.')],

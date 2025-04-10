@@ -13,7 +13,7 @@ Do not edit the class manually.
 from datetime import datetime
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from pydantic import Field, StrictBool, StrictBytes, StrictFloat, StrictInt, StrictStr, validate_call
+from pydantic import Field, StrictBool, StrictBytes, StrictFloat, StrictInt, StrictStr
 from typing_extensions import Annotated
 
 from defectdojo_api_generated.api_client import ApiClient, RequestSerialized
@@ -50,7 +50,6 @@ class TestsApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    @validate_call
     def tests_accept_risks_create(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
@@ -113,7 +112,6 @@ class TestsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def tests_accept_risks_create_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
@@ -176,7 +174,6 @@ class TestsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def tests_accept_risks_create_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
@@ -299,7 +296,6 @@ class TestsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def tests_create(
         self,
         test_create_request: TestCreateRequest,
@@ -358,7 +354,6 @@ class TestsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def tests_create_with_http_info(
         self,
         test_create_request: TestCreateRequest,
@@ -417,7 +412,6 @@ class TestsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def tests_create_without_preload_content(
         self,
         test_create_request: TestCreateRequest,
@@ -531,7 +525,6 @@ class TestsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def tests_delete_preview_list(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
@@ -600,7 +593,6 @@ class TestsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def tests_delete_preview_list_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
@@ -669,7 +661,6 @@ class TestsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def tests_delete_preview_list_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
@@ -791,7 +782,6 @@ class TestsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def tests_destroy(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
@@ -846,7 +836,6 @@ class TestsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def tests_destroy_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
@@ -901,7 +890,6 @@ class TestsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def tests_destroy_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
@@ -997,7 +985,6 @@ class TestsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def tests_files_create(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
@@ -1064,7 +1051,6 @@ class TestsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def tests_files_create_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
@@ -1131,7 +1117,6 @@ class TestsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def tests_files_create_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
@@ -1257,7 +1242,6 @@ class TestsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def tests_files_download_retrieve(
         self,
         file_id: Annotated[str, Field(strict=True)],
@@ -1320,7 +1304,6 @@ class TestsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def tests_files_download_retrieve_with_http_info(
         self,
         file_id: Annotated[str, Field(strict=True)],
@@ -1383,7 +1366,6 @@ class TestsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def tests_files_download_retrieve_without_preload_content(
         self,
         file_id: Annotated[str, Field(strict=True)],
@@ -1494,7 +1476,6 @@ class TestsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def tests_files_retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
@@ -1549,7 +1530,6 @@ class TestsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def tests_files_retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
@@ -1604,7 +1584,6 @@ class TestsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def tests_files_retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
@@ -1704,7 +1683,6 @@ class TestsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def tests_generate_report_create(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
@@ -1767,7 +1745,6 @@ class TestsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def tests_generate_report_create_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
@@ -1830,7 +1807,6 @@ class TestsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def tests_generate_report_create_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
@@ -1951,7 +1927,6 @@ class TestsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def tests_list(
         self,
         actual_time: Optional[StrictStr] = None,
@@ -2159,7 +2134,6 @@ class TestsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def tests_list_with_http_info(
         self,
         actual_time: Optional[StrictStr] = None,
@@ -2367,7 +2341,6 @@ class TestsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def tests_list_without_preload_content(
         self,
         actual_time: Optional[StrictStr] = None,
@@ -2757,7 +2730,6 @@ class TestsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def tests_notes_create(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
@@ -2820,7 +2792,6 @@ class TestsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def tests_notes_create_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
@@ -2883,7 +2854,6 @@ class TestsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def tests_notes_create_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
@@ -3004,7 +2974,6 @@ class TestsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def tests_notes_retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
@@ -3059,7 +3028,6 @@ class TestsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def tests_notes_retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
@@ -3114,7 +3082,6 @@ class TestsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def tests_notes_retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
@@ -3214,7 +3181,6 @@ class TestsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def tests_partial_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
@@ -3277,7 +3243,6 @@ class TestsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def tests_partial_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
@@ -3340,7 +3305,6 @@ class TestsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def tests_partial_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
@@ -3461,7 +3425,6 @@ class TestsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def tests_retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
@@ -3516,7 +3479,6 @@ class TestsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def tests_retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
@@ -3571,7 +3533,6 @@ class TestsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def tests_retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
@@ -3671,7 +3632,6 @@ class TestsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def tests_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
@@ -3734,7 +3694,6 @@ class TestsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def tests_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
@@ -3797,7 +3756,6 @@ class TestsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def tests_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],

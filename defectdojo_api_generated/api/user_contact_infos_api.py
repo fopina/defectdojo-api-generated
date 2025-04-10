@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from pydantic import Field, StrictBool, StrictFloat, StrictInt, StrictStr, validate_call
+from pydantic import Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing_extensions import Annotated
 
 from defectdojo_api_generated.api_client import ApiClient, RequestSerialized
@@ -37,7 +37,6 @@ class UserContactInfosApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    @validate_call
     def user_contact_infos_create(
         self,
         user_contact_info_request: UserContactInfoRequest,
@@ -96,7 +95,6 @@ class UserContactInfosApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def user_contact_infos_create_with_http_info(
         self,
         user_contact_info_request: UserContactInfoRequest,
@@ -155,7 +153,6 @@ class UserContactInfosApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def user_contact_infos_create_without_preload_content(
         self,
         user_contact_info_request: UserContactInfoRequest,
@@ -269,7 +266,6 @@ class UserContactInfosApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def user_contact_infos_delete_preview_list(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this user contact info.')],
@@ -338,7 +334,6 @@ class UserContactInfosApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def user_contact_infos_delete_preview_list_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this user contact info.')],
@@ -407,7 +402,6 @@ class UserContactInfosApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def user_contact_infos_delete_preview_list_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this user contact info.')],
@@ -529,7 +523,6 @@ class UserContactInfosApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def user_contact_infos_destroy(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this user contact info.')],
@@ -584,7 +577,6 @@ class UserContactInfosApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def user_contact_infos_destroy_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this user contact info.')],
@@ -639,7 +631,6 @@ class UserContactInfosApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def user_contact_infos_destroy_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this user contact info.')],
@@ -735,7 +726,6 @@ class UserContactInfosApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def user_contact_infos_list(
         self,
         block_execution: Optional[StrictBool] = None,
@@ -847,7 +837,6 @@ class UserContactInfosApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def user_contact_infos_list_with_http_info(
         self,
         block_execution: Optional[StrictBool] = None,
@@ -959,7 +948,6 @@ class UserContactInfosApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def user_contact_infos_list_without_preload_content(
         self,
         block_execution: Optional[StrictBool] = None,
@@ -1167,7 +1155,6 @@ class UserContactInfosApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def user_contact_infos_partial_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this user contact info.')],
@@ -1230,7 +1217,6 @@ class UserContactInfosApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def user_contact_infos_partial_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this user contact info.')],
@@ -1293,7 +1279,6 @@ class UserContactInfosApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def user_contact_infos_partial_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this user contact info.')],
@@ -1414,7 +1399,6 @@ class UserContactInfosApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def user_contact_infos_retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this user contact info.')],
@@ -1480,7 +1464,6 @@ class UserContactInfosApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def user_contact_infos_retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this user contact info.')],
@@ -1546,7 +1529,6 @@ class UserContactInfosApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def user_contact_infos_retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this user contact info.')],
@@ -1663,7 +1645,6 @@ class UserContactInfosApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def user_contact_infos_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this user contact info.')],
@@ -1726,7 +1707,6 @@ class UserContactInfosApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def user_contact_infos_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this user contact info.')],
@@ -1789,7 +1769,6 @@ class UserContactInfosApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def user_contact_infos_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this user contact info.')],

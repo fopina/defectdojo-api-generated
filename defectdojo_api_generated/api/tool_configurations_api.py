@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from pydantic import Field, StrictFloat, StrictInt, StrictStr, validate_call
+from pydantic import Field, StrictFloat, StrictInt, StrictStr
 from typing_extensions import Annotated
 
 from defectdojo_api_generated.api_client import ApiClient, RequestSerialized
@@ -37,7 +37,6 @@ class ToolConfigurationsApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    @validate_call
     def tool_configurations_create(
         self,
         tool_configuration_request: ToolConfigurationRequest,
@@ -96,7 +95,6 @@ class ToolConfigurationsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def tool_configurations_create_with_http_info(
         self,
         tool_configuration_request: ToolConfigurationRequest,
@@ -155,7 +153,6 @@ class ToolConfigurationsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def tool_configurations_create_without_preload_content(
         self,
         tool_configuration_request: ToolConfigurationRequest,
@@ -269,7 +266,6 @@ class ToolConfigurationsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def tool_configurations_delete_preview_list(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this tool_ configuration.')],
@@ -338,7 +334,6 @@ class ToolConfigurationsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def tool_configurations_delete_preview_list_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this tool_ configuration.')],
@@ -407,7 +402,6 @@ class ToolConfigurationsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def tool_configurations_delete_preview_list_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this tool_ configuration.')],
@@ -529,7 +523,6 @@ class ToolConfigurationsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def tool_configurations_destroy(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this tool_ configuration.')],
@@ -584,7 +577,6 @@ class ToolConfigurationsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def tool_configurations_destroy_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this tool_ configuration.')],
@@ -639,7 +631,6 @@ class ToolConfigurationsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def tool_configurations_destroy_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this tool_ configuration.')],
@@ -735,7 +726,6 @@ class ToolConfigurationsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def tool_configurations_list(
         self,
         authentication_type: Annotated[
@@ -829,7 +819,6 @@ class ToolConfigurationsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def tool_configurations_list_with_http_info(
         self,
         authentication_type: Annotated[
@@ -923,7 +912,6 @@ class ToolConfigurationsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def tool_configurations_list_without_preload_content(
         self,
         authentication_type: Annotated[
@@ -1093,7 +1081,6 @@ class ToolConfigurationsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def tool_configurations_partial_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this tool_ configuration.')],
@@ -1156,7 +1143,6 @@ class ToolConfigurationsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def tool_configurations_partial_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this tool_ configuration.')],
@@ -1219,7 +1205,6 @@ class ToolConfigurationsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def tool_configurations_partial_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this tool_ configuration.')],
@@ -1340,7 +1325,6 @@ class ToolConfigurationsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def tool_configurations_retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this tool_ configuration.')],
@@ -1406,7 +1390,6 @@ class ToolConfigurationsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def tool_configurations_retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this tool_ configuration.')],
@@ -1472,7 +1455,6 @@ class ToolConfigurationsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def tool_configurations_retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this tool_ configuration.')],
@@ -1589,7 +1571,6 @@ class ToolConfigurationsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def tool_configurations_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this tool_ configuration.')],
@@ -1652,7 +1633,6 @@ class ToolConfigurationsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def tool_configurations_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this tool_ configuration.')],
@@ -1715,7 +1695,6 @@ class ToolConfigurationsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def tool_configurations_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this tool_ configuration.')],

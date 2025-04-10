@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from pydantic import Field, StrictFloat, StrictInt, StrictStr, validate_call
+from pydantic import Field, StrictFloat, StrictInt, StrictStr
 from typing_extensions import Annotated
 
 from defectdojo_api_generated.api_client import ApiClient, RequestSerialized
@@ -37,7 +37,6 @@ class GlobalRolesApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    @validate_call
     def global_roles_create(
         self,
         global_role_request: Optional[GlobalRoleRequest] = None,
@@ -96,7 +95,6 @@ class GlobalRolesApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def global_roles_create_with_http_info(
         self,
         global_role_request: Optional[GlobalRoleRequest] = None,
@@ -155,7 +153,6 @@ class GlobalRolesApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def global_roles_create_without_preload_content(
         self,
         global_role_request: Optional[GlobalRoleRequest] = None,
@@ -269,7 +266,6 @@ class GlobalRolesApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def global_roles_delete_preview_list(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this global_ role.')],
@@ -338,7 +334,6 @@ class GlobalRolesApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def global_roles_delete_preview_list_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this global_ role.')],
@@ -407,7 +402,6 @@ class GlobalRolesApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def global_roles_delete_preview_list_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this global_ role.')],
@@ -529,7 +523,6 @@ class GlobalRolesApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def global_roles_destroy(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this global_ role.')],
@@ -584,7 +577,6 @@ class GlobalRolesApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def global_roles_destroy_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this global_ role.')],
@@ -639,7 +631,6 @@ class GlobalRolesApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def global_roles_destroy_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this global_ role.')],
@@ -735,7 +726,6 @@ class GlobalRolesApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def global_roles_list(
         self,
         group: Optional[StrictInt] = None,
@@ -823,7 +813,6 @@ class GlobalRolesApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def global_roles_list_with_http_info(
         self,
         group: Optional[StrictInt] = None,
@@ -911,7 +900,6 @@ class GlobalRolesApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def global_roles_list_without_preload_content(
         self,
         group: Optional[StrictInt] = None,
@@ -1071,7 +1059,6 @@ class GlobalRolesApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def global_roles_partial_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this global_ role.')],
@@ -1134,7 +1121,6 @@ class GlobalRolesApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def global_roles_partial_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this global_ role.')],
@@ -1197,7 +1183,6 @@ class GlobalRolesApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def global_roles_partial_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this global_ role.')],
@@ -1318,7 +1303,6 @@ class GlobalRolesApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def global_roles_retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this global_ role.')],
@@ -1384,7 +1368,6 @@ class GlobalRolesApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def global_roles_retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this global_ role.')],
@@ -1450,7 +1433,6 @@ class GlobalRolesApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def global_roles_retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this global_ role.')],
@@ -1567,7 +1549,6 @@ class GlobalRolesApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def global_roles_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this global_ role.')],
@@ -1630,7 +1611,6 @@ class GlobalRolesApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def global_roles_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this global_ role.')],
@@ -1693,7 +1673,6 @@ class GlobalRolesApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def global_roles_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this global_ role.')],

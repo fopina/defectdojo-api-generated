@@ -38,6 +38,7 @@ class PaginatedSLAConfigurationList(BaseModel):
         populate_by_name=True,
         validate_assignment=True,
         protected_namespaces=(),
+        defer_build=True,
     )
 
     def to_str(self) -> str:

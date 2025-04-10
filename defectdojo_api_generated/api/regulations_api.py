@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from pydantic import Field, StrictFloat, StrictInt, StrictStr, validate_call
+from pydantic import Field, StrictFloat, StrictInt, StrictStr
 from typing_extensions import Annotated
 
 from defectdojo_api_generated.api_client import ApiClient, RequestSerialized
@@ -37,7 +37,6 @@ class RegulationsApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    @validate_call
     def regulations_create(
         self,
         regulation_request: RegulationRequest,
@@ -96,7 +95,6 @@ class RegulationsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def regulations_create_with_http_info(
         self,
         regulation_request: RegulationRequest,
@@ -155,7 +153,6 @@ class RegulationsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def regulations_create_without_preload_content(
         self,
         regulation_request: RegulationRequest,
@@ -269,7 +266,6 @@ class RegulationsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def regulations_delete_preview_list(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this regulation.')],
@@ -338,7 +334,6 @@ class RegulationsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def regulations_delete_preview_list_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this regulation.')],
@@ -407,7 +402,6 @@ class RegulationsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def regulations_delete_preview_list_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this regulation.')],
@@ -529,7 +523,6 @@ class RegulationsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def regulations_destroy(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this regulation.')],
@@ -584,7 +577,6 @@ class RegulationsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def regulations_destroy_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this regulation.')],
@@ -639,7 +631,6 @@ class RegulationsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def regulations_destroy_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this regulation.')],
@@ -735,7 +726,6 @@ class RegulationsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def regulations_list(
         self,
         description: Optional[StrictStr] = None,
@@ -812,7 +802,6 @@ class RegulationsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def regulations_list_with_http_info(
         self,
         description: Optional[StrictStr] = None,
@@ -889,7 +878,6 @@ class RegulationsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def regulations_list_without_preload_content(
         self,
         description: Optional[StrictStr] = None,
@@ -1028,7 +1016,6 @@ class RegulationsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def regulations_partial_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this regulation.')],
@@ -1091,7 +1078,6 @@ class RegulationsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def regulations_partial_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this regulation.')],
@@ -1154,7 +1140,6 @@ class RegulationsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def regulations_partial_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this regulation.')],
@@ -1275,7 +1260,6 @@ class RegulationsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def regulations_retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this regulation.')],
@@ -1330,7 +1314,6 @@ class RegulationsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def regulations_retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this regulation.')],
@@ -1385,7 +1368,6 @@ class RegulationsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def regulations_retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this regulation.')],
@@ -1485,7 +1467,6 @@ class RegulationsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def regulations_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this regulation.')],
@@ -1548,7 +1529,6 @@ class RegulationsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def regulations_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this regulation.')],
@@ -1611,7 +1591,6 @@ class RegulationsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def regulations_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this regulation.')],

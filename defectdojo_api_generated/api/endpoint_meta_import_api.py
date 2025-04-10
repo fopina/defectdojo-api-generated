@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from pydantic import Field, StrictBool, StrictBytes, StrictFloat, StrictInt, StrictStr, validate_call
+from pydantic import Field, StrictBool, StrictBytes, StrictFloat, StrictInt, StrictStr
 from typing_extensions import Annotated
 
 from defectdojo_api_generated.api_client import ApiClient, RequestSerialized
@@ -33,7 +33,6 @@ class EndpointMetaImportApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    @validate_call
     def endpoint_meta_import_create(
         self,
         file: Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]],
@@ -113,7 +112,6 @@ class EndpointMetaImportApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def endpoint_meta_import_create_with_http_info(
         self,
         file: Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]],
@@ -193,7 +191,6 @@ class EndpointMetaImportApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def endpoint_meta_import_create_without_preload_content(
         self,
         file: Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]],

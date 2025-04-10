@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from pydantic import Field, StrictFloat, StrictInt, StrictStr, validate_call
+from pydantic import Field, StrictFloat, StrictInt, StrictStr
 from typing_extensions import Annotated
 
 from defectdojo_api_generated.api_client import ApiClient, RequestSerialized
@@ -37,7 +37,6 @@ class DevelopmentEnvironmentsApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    @validate_call
     def development_environments_create(
         self,
         development_environment_request: DevelopmentEnvironmentRequest,
@@ -96,7 +95,6 @@ class DevelopmentEnvironmentsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def development_environments_create_with_http_info(
         self,
         development_environment_request: DevelopmentEnvironmentRequest,
@@ -155,7 +153,6 @@ class DevelopmentEnvironmentsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def development_environments_create_without_preload_content(
         self,
         development_environment_request: DevelopmentEnvironmentRequest,
@@ -269,7 +266,6 @@ class DevelopmentEnvironmentsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def development_environments_delete_preview_list(
         self,
         id: Annotated[
@@ -340,7 +336,6 @@ class DevelopmentEnvironmentsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def development_environments_delete_preview_list_with_http_info(
         self,
         id: Annotated[
@@ -411,7 +406,6 @@ class DevelopmentEnvironmentsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def development_environments_delete_preview_list_without_preload_content(
         self,
         id: Annotated[
@@ -535,7 +529,6 @@ class DevelopmentEnvironmentsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def development_environments_destroy(
         self,
         id: Annotated[
@@ -592,7 +585,6 @@ class DevelopmentEnvironmentsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def development_environments_destroy_with_http_info(
         self,
         id: Annotated[
@@ -649,7 +641,6 @@ class DevelopmentEnvironmentsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def development_environments_destroy_without_preload_content(
         self,
         id: Annotated[
@@ -747,7 +738,6 @@ class DevelopmentEnvironmentsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def development_environments_list(
         self,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -812,7 +802,6 @@ class DevelopmentEnvironmentsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def development_environments_list_with_http_info(
         self,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -877,7 +866,6 @@ class DevelopmentEnvironmentsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def development_environments_list_without_preload_content(
         self,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -992,7 +980,6 @@ class DevelopmentEnvironmentsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def development_environments_partial_update(
         self,
         id: Annotated[
@@ -1057,7 +1044,6 @@ class DevelopmentEnvironmentsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def development_environments_partial_update_with_http_info(
         self,
         id: Annotated[
@@ -1122,7 +1108,6 @@ class DevelopmentEnvironmentsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def development_environments_partial_update_without_preload_content(
         self,
         id: Annotated[
@@ -1245,7 +1230,6 @@ class DevelopmentEnvironmentsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def development_environments_retrieve(
         self,
         id: Annotated[
@@ -1302,7 +1286,6 @@ class DevelopmentEnvironmentsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def development_environments_retrieve_with_http_info(
         self,
         id: Annotated[
@@ -1359,7 +1342,6 @@ class DevelopmentEnvironmentsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def development_environments_retrieve_without_preload_content(
         self,
         id: Annotated[
@@ -1461,7 +1443,6 @@ class DevelopmentEnvironmentsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def development_environments_update(
         self,
         id: Annotated[
@@ -1526,7 +1507,6 @@ class DevelopmentEnvironmentsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def development_environments_update_with_http_info(
         self,
         id: Annotated[
@@ -1591,7 +1571,6 @@ class DevelopmentEnvironmentsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def development_environments_update_without_preload_content(
         self,
         id: Annotated[

@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from pydantic import Field, StrictFloat, StrictInt, StrictStr, validate_call
+from pydantic import Field, StrictFloat, StrictInt, StrictStr
 from typing_extensions import Annotated
 
 from defectdojo_api_generated.api_client import ApiClient, RequestSerialized
@@ -41,7 +41,6 @@ class RequestResponsePairsApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    @validate_call
     def request_response_pairs_create(
         self,
         burp_raw_request_response_multi_request: BurpRawRequestResponseMultiRequest,
@@ -100,7 +99,6 @@ class RequestResponsePairsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def request_response_pairs_create_with_http_info(
         self,
         burp_raw_request_response_multi_request: BurpRawRequestResponseMultiRequest,
@@ -159,7 +157,6 @@ class RequestResponsePairsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def request_response_pairs_create_without_preload_content(
         self,
         burp_raw_request_response_multi_request: BurpRawRequestResponseMultiRequest,
@@ -273,7 +270,6 @@ class RequestResponsePairsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def request_response_pairs_delete_preview_list(
         self,
         id: Annotated[
@@ -344,7 +340,6 @@ class RequestResponsePairsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def request_response_pairs_delete_preview_list_with_http_info(
         self,
         id: Annotated[
@@ -415,7 +410,6 @@ class RequestResponsePairsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def request_response_pairs_delete_preview_list_without_preload_content(
         self,
         id: Annotated[
@@ -539,7 +533,6 @@ class RequestResponsePairsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def request_response_pairs_destroy(
         self,
         id: Annotated[
@@ -596,7 +589,6 @@ class RequestResponsePairsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def request_response_pairs_destroy_with_http_info(
         self,
         id: Annotated[
@@ -653,7 +645,6 @@ class RequestResponsePairsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def request_response_pairs_destroy_without_preload_content(
         self,
         id: Annotated[
@@ -751,7 +742,6 @@ class RequestResponsePairsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def request_response_pairs_list(
         self,
         finding: Optional[StrictInt] = None,
@@ -820,7 +810,6 @@ class RequestResponsePairsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def request_response_pairs_list_with_http_info(
         self,
         finding: Optional[StrictInt] = None,
@@ -889,7 +878,6 @@ class RequestResponsePairsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def request_response_pairs_list_without_preload_content(
         self,
         finding: Optional[StrictInt] = None,
@@ -1012,7 +1000,6 @@ class RequestResponsePairsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def request_response_pairs_partial_update(
         self,
         id: Annotated[
@@ -1077,7 +1064,6 @@ class RequestResponsePairsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def request_response_pairs_partial_update_with_http_info(
         self,
         id: Annotated[
@@ -1142,7 +1128,6 @@ class RequestResponsePairsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def request_response_pairs_partial_update_without_preload_content(
         self,
         id: Annotated[
@@ -1265,7 +1250,6 @@ class RequestResponsePairsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def request_response_pairs_retrieve(
         self,
         id: Annotated[
@@ -1322,7 +1306,6 @@ class RequestResponsePairsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def request_response_pairs_retrieve_with_http_info(
         self,
         id: Annotated[
@@ -1379,7 +1362,6 @@ class RequestResponsePairsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def request_response_pairs_retrieve_without_preload_content(
         self,
         id: Annotated[
@@ -1481,7 +1463,6 @@ class RequestResponsePairsApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def request_response_pairs_update(
         self,
         id: Annotated[
@@ -1546,7 +1527,6 @@ class RequestResponsePairsApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def request_response_pairs_update_with_http_info(
         self,
         id: Annotated[
@@ -1611,7 +1591,6 @@ class RequestResponsePairsApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def request_response_pairs_update_without_preload_content(
         self,
         id: Annotated[

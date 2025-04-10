@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 
-from pydantic import Field, StrictFloat, StrictInt, StrictStr, validate_call
+from pydantic import Field, StrictFloat, StrictInt, StrictStr
 from typing_extensions import Annotated
 
 from defectdojo_api_generated.api_client import ApiClient, RequestSerialized
@@ -37,7 +37,6 @@ class QuestionnaireEngagementQuestionnairesApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    @validate_call
     def questionnaire_engagement_questionnaires_link_engagement_create(
         self,
         engagement_id: StrictInt,
@@ -100,7 +99,6 @@ class QuestionnaireEngagementQuestionnairesApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def questionnaire_engagement_questionnaires_link_engagement_create_with_http_info(
         self,
         engagement_id: StrictInt,
@@ -163,7 +161,6 @@ class QuestionnaireEngagementQuestionnairesApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def questionnaire_engagement_questionnaires_link_engagement_create_without_preload_content(
         self,
         engagement_id: StrictInt,
@@ -274,7 +271,6 @@ class QuestionnaireEngagementQuestionnairesApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def questionnaire_engagement_questionnaires_list(
         self,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -339,7 +335,6 @@ class QuestionnaireEngagementQuestionnairesApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def questionnaire_engagement_questionnaires_list_with_http_info(
         self,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -404,7 +399,6 @@ class QuestionnaireEngagementQuestionnairesApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def questionnaire_engagement_questionnaires_list_without_preload_content(
         self,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -519,7 +513,6 @@ class QuestionnaireEngagementQuestionnairesApi:
             _request_auth=_request_auth,
         )
 
-    @validate_call
     def questionnaire_engagement_questionnaires_retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this Engagement Survey.')],
@@ -574,7 +567,6 @@ class QuestionnaireEngagementQuestionnairesApi:
             response_types_map=_response_types_map,
         ).data
 
-    @validate_call
     def questionnaire_engagement_questionnaires_retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this Engagement Survey.')],
@@ -629,7 +621,6 @@ class QuestionnaireEngagementQuestionnairesApi:
             response_types_map=_response_types_map,
         )
 
-    @validate_call
     def questionnaire_engagement_questionnaires_retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this Engagement Survey.')],

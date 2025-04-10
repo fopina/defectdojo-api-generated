@@ -17,5 +17,6 @@ class ApiResponse(BaseModel, Generic[T]):
     raw_data: StrictBytes = Field(description="Raw data (HTTP response body)")
 
     model_config = {
-        "arbitrary_types_allowed": True
+        "arbitrary_types_allowed": True,
+        "defer_build": True,
     }

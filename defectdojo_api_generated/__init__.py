@@ -13,7 +13,7 @@ Do not edit the class manually.
 """  # noqa: E501
 
 __version__ = '1.0.0'
-__openapi_version__ = '2.44.4'
+__openapi_version__ = '2.45.0'
 
 import lazy_import
 from typing import TYPE_CHECKING

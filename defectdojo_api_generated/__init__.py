@@ -13,7 +13,7 @@ Do not edit the class manually.
 """  # noqa: E501
 
 __version__ = '1.0.0'
-__openapi_version__ = '2.45.0'
+__openapi_version__ = '2.46.2'
 
 # import apis into sdk package
 from defectdojo_api_generated.api.announcements_api import AnnouncementsApi

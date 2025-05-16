@@ -103,7 +103,7 @@ class TestDeltaStatisticsRequest(unittest.TestCase):
                     high = , 
                     critical = , 
                     total = , ),
-                left_untouched = defectdojo_api_generated.models.severity_status_statistics_request.SeverityStatusStatisticsRequest(
+                untouched = defectdojo_api_generated.models.severity_status_statistics_request.SeverityStatusStatisticsRequest(
                     info = defectdojo_api_generated.models.status_statistics_request.StatusStatisticsRequest(
                         active = 56, 
                         verified = 56, 
@@ -198,7 +198,7 @@ class TestDeltaStatisticsRequest(unittest.TestCase):
                     high = , 
                     critical = , 
                     total = , ),
-                left_untouched = defectdojo_api_generated.models.severity_status_statistics_request.SeverityStatusStatisticsRequest(
+                untouched = defectdojo_api_generated.models.severity_status_statistics_request.SeverityStatusStatisticsRequest(
                     info = defectdojo_api_generated.models.status_statistics_request.StatusStatisticsRequest(
                         active = 56, 
                         verified = 56, 

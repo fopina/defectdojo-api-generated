@@ -18,7 +18,7 @@ import re  # noqa: F401
 from datetime import datetime
 from typing import Any, ClassVar, Dict, List, Optional, Set
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr, field_validator
 from typing_extensions import Annotated, Self
 
 
@@ -28,14 +28,20 @@ class RiskAcceptance(BaseModel):
     """  # noqa: E501
 
     id: StrictInt
-    recommendation: StrictStr
-    decision: StrictStr
     path: StrictStr
     name: Annotated[str, Field(strict=True, max_length=300)] = Field(
         description='Descriptive name which in the future may also be used to group risk acceptances together across engagements and products'
     )
+    recommendation: Optional[StrictStr] = Field(
+        default=None,
+        description='Recommendation from the security team.  * `A` - Accept (The risk is acknowledged, yet remains) * `V` - Avoid (Do not engage with whatever creates the risk) * `M` - Mitigate (The risk still exists, yet compensating controls make it less of a threat) * `F` - Fix (The risk is eradicated) * `T` - Transfer (The risk is transferred to a 3rd party)',
+    )
     recommendation_details: Optional[StrictStr] = Field(
         default=None, description='Explanation of security recommendation'
+    )
+    decision: Optional[StrictStr] = Field(
+        default=None,
+        description='Risk treatment decision by risk owner  * `A` - Accept (The risk is acknowledged, yet remains) * `V` - Avoid (Do not engage with whatever creates the risk) * `M` - Mitigate (The risk still exists, yet compensating controls make it less of a threat) * `F` - Fix (The risk is eradicated) * `T` - Transfer (The risk is transferred to a 3rd party)',
     )
     decision_details: Optional[StrictStr] = Field(
         default=None,
@@ -70,11 +76,11 @@ class RiskAcceptance(BaseModel):
     notes: List[StrictInt]
     __properties: ClassVar[List[str]] = [
         'id',
-        'recommendation',
-        'decision',
         'path',
         'name',
+        'recommendation',
         'recommendation_details',
+        'decision',
         'decision_details',
         'accepted_by',
         'expiration_date',
@@ -88,6 +94,26 @@ class RiskAcceptance(BaseModel):
         'accepted_findings',
         'notes',
     ]
+
+    @field_validator('recommendation')
+    def recommendation_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set(['A', 'V', 'M', 'F', 'T']):
+            raise ValueError("must be one of enum values ('A', 'V', 'M', 'F', 'T')")
+        return value
+
+    @field_validator('decision')
+    def decision_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set(['A', 'V', 'M', 'F', 'T']):
+            raise ValueError("must be one of enum values ('A', 'V', 'M', 'F', 'T')")
+        return value
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -124,14 +150,10 @@ class RiskAcceptance(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
-        * OpenAPI `readOnly` fields are excluded.
-        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set(
             [
                 'id',
-                'recommendation',
-                'decision',
                 'path',
                 'created',
                 'updated',
@@ -188,11 +210,11 @@ class RiskAcceptance(BaseModel):
         _obj = cls.model_validate(
             {
                 'id': obj.get('id'),
-                'recommendation': obj.get('recommendation'),
-                'decision': obj.get('decision'),
                 'path': obj.get('path'),
                 'name': obj.get('name'),
+                'recommendation': obj.get('recommendation'),
                 'recommendation_details': obj.get('recommendation_details'),
+                'decision': obj.get('decision'),
                 'decision_details': obj.get('decision_details'),
                 'accepted_by': obj.get('accepted_by'),
                 'expiration_date': obj.get('expiration_date'),

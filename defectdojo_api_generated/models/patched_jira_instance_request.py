@@ -32,8 +32,13 @@ class PatchedJIRAInstanceRequest(BaseModel):
     url: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=2000)]] = Field(
         default=None, description='For more information how to configure Jira, read the DefectDojo documentation.'
     )
-    username: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=2000)]] = None
-    password: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=2000)]] = None
+    username: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=2000)]] = Field(
+        default=None, description='Username or Email Address, see DefectDojo documentation for more information.'
+    )
+    password: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=2000)]] = Field(
+        default=None,
+        description='Password, API Token, or Personal Access Token, see DefectDojo documentation for more information.',
+    )
     default_issue_type: Optional[StrictStr] = Field(
         default=None,
         description='You can define extra issue types in settings.py  * `Task` - Task * `Story` - Story * `Epic` - Epic * `Spike` - Spike * `Bug` - Bug * `Security` - Security',

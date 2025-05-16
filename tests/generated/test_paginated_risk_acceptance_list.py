@@ -40,11 +40,11 @@ class TestPaginatedRiskAcceptanceList(unittest.TestCase):
                 results = [
                     defectdojo_api_generated.models.risk_acceptance.RiskAcceptance(
                         id = 56, 
-                        recommendation = '', 
-                        decision = '', 
                         path = '', 
                         name = '', 
+                        recommendation = 'A', 
                         recommendation_details = '', 
+                        decision = 'A', 
                         decision_details = '', 
                         accepted_by = '', 
                         expiration_date = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
@@ -69,11 +69,11 @@ class TestPaginatedRiskAcceptanceList(unittest.TestCase):
                 results = [
                     defectdojo_api_generated.models.risk_acceptance.RiskAcceptance(
                         id = 56, 
-                        recommendation = '', 
-                        decision = '', 
                         path = '', 
                         name = '', 
+                        recommendation = 'A', 
                         recommendation_details = '', 
+                        decision = 'A', 
                         decision_details = '', 
                         accepted_by = '', 
                         expiration_date = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 

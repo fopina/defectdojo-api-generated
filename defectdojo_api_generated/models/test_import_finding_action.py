@@ -31,7 +31,7 @@ class TestImportFindingAction(BaseModel):
     created: datetime
     modified: datetime
     action: Optional[StrictStr] = Field(
-        default=None, description='* `N` - created * `C` - closed * `R` - reactivated * `U` - left untouched'
+        default=None, description='* `N` - created * `C` - closed * `R` - reactivated * `U` - untouched'
     )
     test_import: StrictInt
     finding: StrictInt

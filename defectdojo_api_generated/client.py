@@ -36,7 +36,7 @@ class DefectDojo:
             raise ValueError('`auth` needs to be a tuple with 2 elements, username and password')
 
         if config is None:
-            kwargs = {'verify_ssl': verify_ssl}
+            kwargs = {}
             if base_url is not None:
                 kwargs['host'] = base_url
 
@@ -46,11 +46,12 @@ class DefectDojo:
                 kwargs.update({'username': auth[0], 'password': auth[1]})
 
             self.config = Configuration(**kwargs)
+            self.config.verify_ssl = verify_ssl
         else:
             self.config = config
 
-        if self.config.proxy is None:
-            scheme, host, *_ = urlparse(base_url)
+        if self.config.proxy is None and self.config.host:
+            scheme, host, *_ = urlparse(self.config.host)
             if not proxy_bypass(host):
                 self.config.proxy = getproxies().get(scheme)
 

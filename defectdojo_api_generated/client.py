@@ -1,7 +1,7 @@
 # custom-templates/my_client.mustache
 """DefectDojo Client"""
 
-from typing import Optional
+from typing import Optional, Tuple, overload
 from urllib.parse import urlparse
 from urllib.request import getproxies, proxy_bypass
 
@@ -21,12 +21,29 @@ class DefectDojo:
     :param config: Configuration object to use. If provided, all other parameters are ignored.
     """
 
+    @overload
     def __init__(
         self,
         *,
         base_url: Optional[str] = None,
         token: Optional[str] = None,
-        auth: Optional[tuple[str]] = None,
+        auth: Optional[Tuple[str, str]] = None,
+        verify_ssl: bool = True,
+    ): ...
+
+    @overload
+    def __init__(
+        self,
+        *,
+        config: Configuration,
+    ): ...
+
+    def __init__(
+        self,
+        *,
+        base_url: Optional[str] = None,
+        token: Optional[str] = None,
+        auth: Optional[Tuple[str, str]] = None,
         verify_ssl: bool = True,
         config: Optional[Configuration] = None,
     ):

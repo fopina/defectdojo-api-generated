@@ -89,7 +89,7 @@ class TestImportStatistics(unittest.TestCase):
                         critical = , 
                         total = , ), 
                     reactivated = , 
-                    left_untouched = , ),
+                    untouched = , ),
                 after = defectdojo_api_generated.models.severity_status_statistics.SeverityStatusStatistics(
                     info = defectdojo_api_generated.models.status_statistics.StatusStatistics(
                         active = 56, 

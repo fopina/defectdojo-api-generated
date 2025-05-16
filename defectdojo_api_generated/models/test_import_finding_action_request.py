@@ -27,7 +27,7 @@ class TestImportFindingActionRequest(BaseModel):
     """  # noqa: E501
 
     action: Optional[StrictStr] = Field(
-        default=None, description='* `N` - created * `C` - closed * `R` - reactivated * `U` - left untouched'
+        default=None, description='* `N` - created * `C` - closed * `R` - reactivated * `U` - untouched'
     )
     __properties: ClassVar[List[str]] = ['action']
 

@@ -33,7 +33,9 @@ class JIRAInstance(BaseModel):
     url: Annotated[str, Field(strict=True, max_length=2000)] = Field(
         description='For more information how to configure Jira, read the DefectDojo documentation.'
     )
-    username: Annotated[str, Field(strict=True, max_length=2000)]
+    username: Annotated[str, Field(strict=True, max_length=2000)] = Field(
+        description='Username or Email Address, see DefectDojo documentation for more information.'
+    )
     default_issue_type: Optional[StrictStr] = Field(
         default=None,
         description='You can define extra issue types in settings.py  * `Task` - Task * `Story` - Story * `Epic` - Epic * `Spike` - Spike * `Bug` - Bug * `Security` - Security',

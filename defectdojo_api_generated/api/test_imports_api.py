@@ -746,7 +746,7 @@ class TestImportsApi:
         test: Optional[StrictInt] = None,
         test_import_finding_action__action: Annotated[
             Optional[StrictStr],
-            Field(description='* `N` - created * `C` - closed * `R` - reactivated * `U` - left untouched'),
+            Field(description='* `N` - created * `C` - closed * `R` - reactivated * `U` - untouched'),
         ] = None,
         test_import_finding_action__created: Optional[datetime] = None,
         test_import_finding_action__finding: Optional[StrictInt] = None,
@@ -780,7 +780,7 @@ class TestImportsApi:
         :type offset: int
         :param test:
         :type test: int
-        :param test_import_finding_action__action: * `N` - created * `C` - closed * `R` - reactivated * `U` - left untouched
+        :param test_import_finding_action__action: * `N` - created * `C` - closed * `R` - reactivated * `U` - untouched
         :type test_import_finding_action__action: str
         :param test_import_finding_action__created:
         :type test_import_finding_action__created: datetime
@@ -858,7 +858,7 @@ class TestImportsApi:
         test: Optional[StrictInt] = None,
         test_import_finding_action__action: Annotated[
             Optional[StrictStr],
-            Field(description='* `N` - created * `C` - closed * `R` - reactivated * `U` - left untouched'),
+            Field(description='* `N` - created * `C` - closed * `R` - reactivated * `U` - untouched'),
         ] = None,
         test_import_finding_action__created: Optional[datetime] = None,
         test_import_finding_action__finding: Optional[StrictInt] = None,
@@ -892,7 +892,7 @@ class TestImportsApi:
         :type offset: int
         :param test:
         :type test: int
-        :param test_import_finding_action__action: * `N` - created * `C` - closed * `R` - reactivated * `U` - left untouched
+        :param test_import_finding_action__action: * `N` - created * `C` - closed * `R` - reactivated * `U` - untouched
         :type test_import_finding_action__action: str
         :param test_import_finding_action__created:
         :type test_import_finding_action__created: datetime
@@ -970,7 +970,7 @@ class TestImportsApi:
         test: Optional[StrictInt] = None,
         test_import_finding_action__action: Annotated[
             Optional[StrictStr],
-            Field(description='* `N` - created * `C` - closed * `R` - reactivated * `U` - left untouched'),
+            Field(description='* `N` - created * `C` - closed * `R` - reactivated * `U` - untouched'),
         ] = None,
         test_import_finding_action__created: Optional[datetime] = None,
         test_import_finding_action__finding: Optional[StrictInt] = None,
@@ -1004,7 +1004,7 @@ class TestImportsApi:
         :type offset: int
         :param test:
         :type test: int
-        :param test_import_finding_action__action: * `N` - created * `C` - closed * `R` - reactivated * `U` - left untouched
+        :param test_import_finding_action__action: * `N` - created * `C` - closed * `R` - reactivated * `U` - untouched
         :type test_import_finding_action__action: str
         :param test_import_finding_action__created:
         :type test_import_finding_action__created: datetime

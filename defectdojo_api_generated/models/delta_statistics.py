@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 from typing import Any, ClassVar, Dict, List, Optional, Set
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict
 from typing_extensions import Self
 
 from defectdojo_api_generated.models.severity_status_statistics import SeverityStatusStatistics
@@ -31,8 +31,8 @@ class DeltaStatistics(BaseModel):
     created: SeverityStatusStatistics
     closed: SeverityStatusStatistics
     reactivated: SeverityStatusStatistics
-    left_untouched: SeverityStatusStatistics = Field(alias='left untouched')
-    __properties: ClassVar[List[str]] = ['created', 'closed', 'reactivated', 'left untouched']
+    untouched: SeverityStatusStatistics
+    __properties: ClassVar[List[str]] = ['created', 'closed', 'reactivated', 'untouched']
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -81,9 +81,9 @@ class DeltaStatistics(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of reactivated
         if self.reactivated:
             _dict['reactivated'] = self.reactivated.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of left_untouched
-        if self.left_untouched:
-            _dict['left untouched'] = self.left_untouched.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of untouched
+        if self.untouched:
+            _dict['untouched'] = self.untouched.to_dict()
         return _dict
 
     @classmethod
@@ -104,8 +104,8 @@ class DeltaStatistics(BaseModel):
                 'reactivated': SeverityStatusStatistics.from_dict(obj['reactivated'])
                 if obj.get('reactivated') is not None
                 else None,
-                'left untouched': SeverityStatusStatistics.from_dict(obj['left untouched'])
-                if obj.get('left untouched') is not None
+                'untouched': SeverityStatusStatistics.from_dict(obj['untouched'])
+                if obj.get('untouched') is not None
                 else None,
             }
         )

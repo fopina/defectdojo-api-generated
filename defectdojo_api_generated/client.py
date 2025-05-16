@@ -49,7 +49,6 @@ class DefectDojo:
         else:
             self.config = config
 
-        # TODO: just python-requests as generator library...
         if self.config.proxy is None:
             scheme, host, *_ = urlparse(base_url)
             if not proxy_bypass(host):

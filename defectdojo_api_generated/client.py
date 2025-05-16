@@ -1,6 +1,7 @@
 # custom-templates/my_client.mustache
 """DefectDojo Client"""
 
+from typing import Optional, Tuple, overload
 from urllib.parse import urlparse
 from urllib.request import getproxies, proxy_bypass
 
@@ -11,23 +12,50 @@ from defectdojo_api_generated.configuration import Configuration
 class DefectDojo:
     """API client for DefectDojo.
 
-    :param base_url: base URL of the DefectDojo instance.
+    :param base_url: Base URL of the DefectDojo instance.
     :param token: API token to use with DefectDojo.
         Use this OR auth, not both.
-    :param auth: tuple with username and password for basic authentication with DefectDojo.
+    :param auth: Tuple with username and password for basic authentication with DefectDojo.
         Use this OR token, not both.
+    :param verify_ssl: Set this to false to skip verifying SSL server certificate.
     :param config: Configuration object to use. If provided, all other parameters are ignored.
     """
 
-    def __init__(self, base_url: str, token: str = None, auth: tuple[str] = None, config: Configuration = None):
+    @overload
+    def __init__(
+        self,
+        *,
+        base_url: Optional[str] = None,
+        token: Optional[str] = None,
+        auth: Optional[Tuple[str, str]] = None,
+        verify_ssl: bool = True,
+    ): ...
+
+    @overload
+    def __init__(
+        self,
+        *,
+        config: Configuration,
+    ): ...
+
+    def __init__(
+        self,
+        *,
+        base_url: Optional[str] = None,
+        token: Optional[str] = None,
+        auth: Optional[Tuple[str, str]] = None,
+        verify_ssl: bool = True,
+        config: Optional[Configuration] = None,
+    ):
         if token is not None and auth is not None:
             raise ValueError('Provide `token` OR `auth`, not both.')
         if auth is not None and (not isinstance(auth, tuple) or len(auth) != 2):
             raise ValueError('`auth` needs to be a tuple with 2 elements, username and password')
 
         if config is None:
-            # drop last / (if any) as it is already added as part of endpoints
-            kwargs = {'host': base_url.rstrip('/')}
+            kwargs = {}
+            if base_url is not None:
+                kwargs['host'] = base_url
 
             if token is not None:
                 kwargs.update({'api_key': {'tokenAuth': token}, 'api_key_prefix': {'tokenAuth': 'Token'}})
@@ -35,12 +63,12 @@ class DefectDojo:
                 kwargs.update({'username': auth[0], 'password': auth[1]})
 
             self.config = Configuration(**kwargs)
+            self.config.verify_ssl = verify_ssl
         else:
             self.config = config
 
-        # TODO: just python-requests as generator library...
-        if self.config.proxy is None:
-            scheme, host, *_ = urlparse(base_url)
+        if self.config.proxy is None and self.config.host:
+            scheme, host, *_ = urlparse(self.config.host)
             if not proxy_bypass(host):
                 self.config.proxy = getproxies().get(scheme)
 

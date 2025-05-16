@@ -536,12 +536,12 @@
         },
         "pyproject-pipenv": {
             "hashes": [
-                "sha256:20d40959b29c30c576c062b0e2f002b2bcf18b4d5918aee6207d867cced6e817",
-                "sha256:9e5eaa788b760e2583d2d33df4318556a4a5b72e4aaf00a65cfddb4a80717b75"
+                "sha256:8eef81ee44657cdf232550975820bb28a7cc70c31f3d61abced9092d0b264ae3",
+                "sha256:b2eddb37eee3c704f10618923b2d8b494b8f81432964a54400f9bf5792c730ac"
             ],
             "index": "pypi",
-            "markers": "python_version >= '3.9'",
-            "version": "==1.0.1"
+            "markers": "python_version >= '3.9' and python_version < '4'",
+            "version": "==1.1.3"
         },
         "pytest": {
             "hashes": [

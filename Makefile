@@ -10,7 +10,7 @@ lint-check:
 
 test:
 	if [ -n "$(GITHUB_RUN_ID)" ]; then \
-		pytest --cov --cov-report=xml --junitxml=junit.xml -o junit_family=legacy; \
+		python -m pytest --cov --cov-report=xml --junitxml=junit.xml -o junit_family=legacy; \
 	else \
 		python -m pytest --cov; \
 	fi

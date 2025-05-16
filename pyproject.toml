@@ -8,7 +8,7 @@ authors = [{name="Filipe Pina", email="shelf-corncob-said@duck.com" }]
 dynamic = ["version"]
 description = "Python library to interact with DefectDojo - generated from OpenAPI"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.9,<4"
 dependencies = ["pydantic>= 2", "python-dateutil>= 2.8.2"]
 
 [project.urls]

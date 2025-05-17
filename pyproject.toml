@@ -51,7 +51,7 @@ line-ending = "auto"
 
 [tool.pytest.ini_options]
 minversion = "6.0"
-addopts = "-ra -q --disable-socket"
+addopts = "-ra -q --disable-socket --allow-hosts=127.0.0.1"
 testpaths = [
     "tests",
 ]

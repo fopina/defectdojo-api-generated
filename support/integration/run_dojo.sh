@@ -19,7 +19,7 @@ echo "Waiting for service to be ready at $SERVICE_URL..."
 
 SECONDS=0
 while (( SECONDS < TIMEOUT )); do
-    STATUS=$(curl -s -o /dev/null -Lw "%{http_code}" "$SERVICE_URL" || true)
+    STATUS=$(curl -s -o /dev/null -w "%{http_code}" "$SERVICE_URL/api/v2/api-token-auth/" -d username=admin -d password=admin || true)
     if [[ "$STATUS" == "200" ]]; then
         echo "Service is ready!"
         exit 0

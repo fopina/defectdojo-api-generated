@@ -15,6 +15,10 @@ test:
 		python -m pytest --cov; \
 	fi
 
+test-e2e: export DD_INTEGRATION_TESTS=1
+test-e2e:
+	python -m pytest tests/integration
+
 testpub:
 	rm -fr dist
 	pyproject-build

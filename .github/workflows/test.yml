@@ -79,6 +79,6 @@ jobs:
           pipenv requirements --dev > reqs.txt
           pip install -r reqs.txt
 
-      - name: Run unit tests
+      - name: Run e2e tests
         run: |
-          python example.py
+          make test-e2e

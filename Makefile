@@ -15,15 +15,21 @@ test:
 		python -m pytest --cov; \
 	fi
 
+test-e2e: export DD_INTEGRATION_TESTS=1
+test-e2e:
+	python -m pytest tests/integration
+
 testpub:
 	rm -fr dist
 	pyproject-build
 	twine upload --repository testpypi dist/*
 
 schema:
-	curl "https://demo.defectdojo.org/api/v2/oa3/schema/?format=json" -o support/openapi.json
+	./support/fetch_openapi.py
+
+templates:
+	./support/api_generation/dump_templates.sh
 
 generate:
-	./support/api_generation/dump_templates.sh
 	./support/api_generation/generate.sh
 	$(MAKE) lint

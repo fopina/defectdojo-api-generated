@@ -23,7 +23,9 @@ testpub:
 schema:
 	curl "https://demo.defectdojo.org/api/v2/oa3/schema/?format=json" -o support/openapi.json
 
-generate:
+templates:
 	./support/api_generation/dump_templates.sh
+
+generate:
 	./support/api_generation/generate.sh
 	$(MAKE) lint

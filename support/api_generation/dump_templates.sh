@@ -13,4 +13,4 @@ rm -fr $TEMPDIR
 
 ./support/api_generation/openapi-generator-cli.sh author template \
                            -g python \
-                           --output /local/$TEMPDIR
+                           --output $TEMPDIR

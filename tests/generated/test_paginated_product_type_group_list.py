@@ -148,13 +148,7 @@ class TestPaginatedProductTypeGroupList(unittest.TestCase):
                                         critical_product = True, 
                                         key_product = True, 
                                         updated = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                        created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                        members = [
-                                            56
-                                            ], 
-                                        authorization_groups = [
-                                            56
-                                            ], )
+                                        created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
                                     }, ), )
                         }, 
                     product_type = {
@@ -165,9 +159,7 @@ class TestPaginatedProductTypeGroupList(unittest.TestCase):
                             critical_product = True, 
                             key_product = True, 
                             updated = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                            created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                            members = , 
-                            authorization_groups = , )
+                            created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
                         }, 
                     role = {
                         'key' : defectdojo_api_generated.models.role.Role(
@@ -178,50 +170,6 @@ class TestPaginatedProductTypeGroupList(unittest.TestCase):
             )
         else:
             return PaginatedProductTypeGroupList(
-                count = 123,
-                results = [
-                    defectdojo_api_generated.models.product_type_group.ProductTypeGroup(
-                        id = 56, 
-                        product_type = 56, 
-                        group = 56, 
-                        role = 56, 
-                        prefetch = defectdojo_api_generated.models.paginated_product_type_group_list_prefetch.PaginatedProductTypeGroupList_prefetch(
-                            group = {
-                                'key' : defectdojo_api_generated.models.dojo_group.DojoGroup(
-                                    id = 56, 
-                                    configuration_permissions = [
-                                        56
-                                        ], 
-                                    name = '', 
-                                    description = '', 
-                                    social_provider = 'AzureAD', 
-                                    users = [
-                                        56
-                                        ], )
-                                }, 
-                            product_type = {
-                                'key' : defectdojo_api_generated.models.product_type.ProductType(
-                                    id = 56, 
-                                    name = '', 
-                                    description = '', 
-                                    critical_product = True, 
-                                    key_product = True, 
-                                    updated = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                    created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                    members = [
-                                        56
-                                        ], 
-                                    authorization_groups = [
-                                        56
-                                        ], )
-                                }, 
-                            role = {
-                                'key' : defectdojo_api_generated.models.role.Role(
-                                    id = 56, 
-                                    name = '', 
-                                    is_owner = True, )
-                                }, ), )
-                    ],
         )
         """
 

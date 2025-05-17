@@ -29,10 +29,10 @@ class FindingTemplate(BaseModel):
     FindingTemplate
     """  # noqa: E501
 
-    id: StrictInt
+    id: Optional[StrictInt] = None
     tags: Optional[List[StrictStr]] = None
     vulnerability_ids: Optional[List[VulnerabilityIdTemplate]] = None
-    title: Annotated[str, Field(strict=True, max_length=1000)]
+    title: Optional[Annotated[str, Field(strict=True, max_length=1000)]] = None
     cwe: Optional[Annotated[int, Field(le=2147483647, strict=True, ge=-2147483648)]] = None
     cvssv3: Optional[Annotated[str, Field(strict=True, max_length=117)]] = None
     severity: Optional[Annotated[str, Field(strict=True, max_length=200)]] = None
@@ -40,8 +40,8 @@ class FindingTemplate(BaseModel):
     mitigation: Optional[StrictStr] = None
     impact: Optional[StrictStr] = None
     references: Optional[StrictStr] = None
-    last_used: Optional[datetime]
-    numerical_severity: Optional[StrictStr]
+    last_used: Optional[datetime] = None
+    numerical_severity: Optional[StrictStr] = None
     template_match: Optional[StrictBool] = Field(
         default=None,
         description='Enables this template for matching remediation advice. Match will be applied to all active, verified findings by CWE.',

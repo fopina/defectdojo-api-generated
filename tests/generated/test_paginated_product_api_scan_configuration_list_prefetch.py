@@ -90,13 +90,7 @@ class TestPaginatedProductAPIScanConfigurationListPrefetch(unittest.TestCase):
                                     critical_product = True, 
                                     key_product = True, 
                                     updated = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                    created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                    members = [
-                                        56
-                                        ], 
-                                    authorization_groups = [
-                                        56
-                                        ], )
+                                    created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
                                 }, 
                             product_manager = {
                                 'key' : defectdojo_api_generated.models.user_stub.UserStub(

@@ -144,63 +144,6 @@ class TestPaginatedQuestionnaireAnsweredSurveyList(unittest.TestCase):
             )
         else:
             return PaginatedQuestionnaireAnsweredSurveyList(
-                count = 123,
-                results = [
-                    defectdojo_api_generated.models.questionnaire_answered_survey.QuestionnaireAnsweredSurvey(
-                        id = 56, 
-                        completed = True, 
-                        answered_on = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
-                        engagement = 56, 
-                        survey = 56, 
-                        assignee = 56, 
-                        responder = 56, 
-                        prefetch = defectdojo_api_generated.models.paginated_questionnaire_answered_survey_list_prefetch.PaginatedQuestionnaireAnsweredSurveyList_prefetch(
-                            assignee = {
-                                'key' : defectdojo_api_generated.models.user_stub.UserStub(
-                                    id = 56, 
-                                    username = 'A', 
-                                    first_name = '', 
-                                    last_name = '', )
-                                }, 
-                            engagement = {
-                                'key' : defectdojo_api_generated.models.finding_engagement.FindingEngagement(
-                                    id = 56, 
-                                    name = '', 
-                                    description = '', 
-                                    product = defectdojo_api_generated.models.finding_product.FindingProduct(
-                                        id = 56, 
-                                        name = '', 
-                                        prod_type = defectdojo_api_generated.models.finding_prod_type.FindingProdType(
-                                            id = 56, 
-                                            name = '', ), ), 
-                                    target_start = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
-                                    target_end = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
-                                    branch_tag = '', 
-                                    engagement_type = 'Interactive', 
-                                    build_id = '', 
-                                    commit_hash = '', 
-                                    version = '', 
-                                    created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                    updated = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
-                                }, 
-                            responder = {
-                                'key' : defectdojo_api_generated.models.user_stub.UserStub(
-                                    id = 56, 
-                                    username = 'A', 
-                                    first_name = '', 
-                                    last_name = '', )
-                                }, 
-                            survey = {
-                                'key' : defectdojo_api_generated.models.questionnaire_engagement_survey.QuestionnaireEngagementSurvey(
-                                    id = 56, 
-                                    questions = [
-                                        ''
-                                        ], 
-                                    name = '', 
-                                    description = '', 
-                                    active = True, )
-                                }, ), )
-                    ],
         )
         """
 

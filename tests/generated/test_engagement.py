@@ -104,45 +104,6 @@ class TestEngagement(unittest.TestCase):
             )
         else:
             return Engagement(
-                id = 56,
-                target_start = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(),
-                target_end = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(),
-                updated = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                active = True,
-                progress = '',
-                tmodel_path = '',
-                done_testing = True,
-                product = 56,
-                notes = [
-                    defectdojo_api_generated.models.note.Note(
-                        id = 56, 
-                        author = null, 
-                        editor = null, 
-                        history = [
-                            defectdojo_api_generated.models.note_history.NoteHistory(
-                                id = 56, 
-                                current_editor = null, 
-                                note_type = null, 
-                                data = '', 
-                                time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
-                            ], 
-                        note_type = null, 
-                        entry = '', 
-                        date = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        private = True, 
-                        edited = True, 
-                        edit_time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
-                    ],
-                files = [
-                    defectdojo_api_generated.models.file.File(
-                        id = 56, 
-                        file = '', 
-                        title = '', )
-                    ],
-                risk_acceptance = [
-                    56
-                    ],
         )
         """
 

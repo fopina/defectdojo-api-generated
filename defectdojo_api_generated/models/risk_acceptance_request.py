@@ -27,8 +27,9 @@ class RiskAcceptanceRequest(BaseModel):
     RiskAcceptanceRequest
     """  # noqa: E501
 
-    name: Annotated[str, Field(min_length=1, strict=True, max_length=300)] = Field(
-        description='Descriptive name which in the future may also be used to group risk acceptances together across engagements and products'
+    name: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=300)]] = Field(
+        default=None,
+        description='Descriptive name which in the future may also be used to group risk acceptances together across engagements and products',
     )
     recommendation: Optional[StrictStr] = Field(
         default=None,
@@ -65,10 +66,11 @@ class RiskAcceptanceRequest(BaseModel):
     restart_sla_expired: Optional[StrictBool] = Field(
         default=None, description='When enabled, the SLA for findings is restarted when the risk acceptance expires.'
     )
-    owner: StrictInt = Field(
-        description='User in DefectDojo owning this acceptance. Only the owner and staff users can edit the risk acceptance.'
+    owner: Optional[StrictInt] = Field(
+        default=None,
+        description='User in DefectDojo owning this acceptance. Only the owner and staff users can edit the risk acceptance.',
     )
-    accepted_findings: List[StrictInt]
+    accepted_findings: Optional[List[StrictInt]] = None
     __properties: ClassVar[List[str]] = [
         'name',
         'recommendation',

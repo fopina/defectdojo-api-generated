@@ -26,8 +26,12 @@ class BurpRawRequestResponseMultiRequest(BaseModel):
     BurpRawRequestResponseMultiRequest
     """  # noqa: E501
 
-    burp_request_base64: Annotated[str, Field(min_length=1, strict=True)] = Field(alias='burpRequestBase64')
-    burp_response_base64: Annotated[str, Field(min_length=1, strict=True)] = Field(alias='burpResponseBase64')
+    burp_request_base64: Optional[Annotated[str, Field(min_length=1, strict=True)]] = Field(
+        default=None, alias='burpRequestBase64'
+    )
+    burp_response_base64: Optional[Annotated[str, Field(min_length=1, strict=True)]] = Field(
+        default=None, alias='burpResponseBase64'
+    )
     finding: Optional[StrictInt] = None
     __properties: ClassVar[List[str]] = ['burpRequestBase64', 'burpResponseBase64', 'finding']
 

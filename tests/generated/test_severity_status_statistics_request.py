@@ -86,65 +86,10 @@ class TestSeverityStatusStatisticsRequest(unittest.TestCase):
                     false_p = 56, 
                     out_of_scope = 56, 
                     is_mitigated = 56, 
-                    risk_accepted = 56, 
-                    total = 56, )
+                    risk_accepted = 56, )
             )
         else:
             return SeverityStatusStatisticsRequest(
-                info = defectdojo_api_generated.models.status_statistics_request.StatusStatisticsRequest(
-                    active = 56, 
-                    verified = 56, 
-                    duplicate = 56, 
-                    false_p = 56, 
-                    out_of_scope = 56, 
-                    is_mitigated = 56, 
-                    risk_accepted = 56, 
-                    total = 56, ),
-                low = defectdojo_api_generated.models.status_statistics_request.StatusStatisticsRequest(
-                    active = 56, 
-                    verified = 56, 
-                    duplicate = 56, 
-                    false_p = 56, 
-                    out_of_scope = 56, 
-                    is_mitigated = 56, 
-                    risk_accepted = 56, 
-                    total = 56, ),
-                medium = defectdojo_api_generated.models.status_statistics_request.StatusStatisticsRequest(
-                    active = 56, 
-                    verified = 56, 
-                    duplicate = 56, 
-                    false_p = 56, 
-                    out_of_scope = 56, 
-                    is_mitigated = 56, 
-                    risk_accepted = 56, 
-                    total = 56, ),
-                high = defectdojo_api_generated.models.status_statistics_request.StatusStatisticsRequest(
-                    active = 56, 
-                    verified = 56, 
-                    duplicate = 56, 
-                    false_p = 56, 
-                    out_of_scope = 56, 
-                    is_mitigated = 56, 
-                    risk_accepted = 56, 
-                    total = 56, ),
-                critical = defectdojo_api_generated.models.status_statistics_request.StatusStatisticsRequest(
-                    active = 56, 
-                    verified = 56, 
-                    duplicate = 56, 
-                    false_p = 56, 
-                    out_of_scope = 56, 
-                    is_mitigated = 56, 
-                    risk_accepted = 56, 
-                    total = 56, ),
-                total = defectdojo_api_generated.models.status_statistics_request.StatusStatisticsRequest(
-                    active = 56, 
-                    verified = 56, 
-                    duplicate = 56, 
-                    false_p = 56, 
-                    out_of_scope = 56, 
-                    is_mitigated = 56, 
-                    risk_accepted = 56, 
-                    total = 56, ),
         )
         """
 

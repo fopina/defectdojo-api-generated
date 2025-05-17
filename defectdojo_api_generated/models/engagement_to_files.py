@@ -28,8 +28,8 @@ class EngagementToFiles(BaseModel):
     EngagementToFiles
     """  # noqa: E501
 
-    engagement_id: Optional[StrictInt]
-    files: List[File]
+    engagement_id: Optional[StrictInt] = None
+    files: Optional[List[File]] = None
     __properties: ClassVar[List[str]] = ['engagement_id', 'files']
 
     model_config = ConfigDict(

@@ -44,10 +44,6 @@ class TestToolProductSettingsRequest(unittest.TestCase):
             )
         else:
             return ToolProductSettingsRequest(
-                setting_url = '0',
-                product = 56,
-                name = '0',
-                tool_configuration = 56,
         )
         """
 

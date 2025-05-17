@@ -35,8 +35,8 @@ class ApiTokenAuthApi:
 
     def api_token_auth_create(
         self,
-        username: Annotated[str, Field(min_length=1, strict=True)],
-        password: Annotated[str, Field(min_length=1, strict=True)],
+        username: Optional[Annotated[str, Field(min_length=1, strict=True)]] = None,
+        password: Optional[Annotated[str, Field(min_length=1, strict=True)]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -50,9 +50,9 @@ class ApiTokenAuthApi:
         """api_token_auth_create
 
 
-        :param username: (required)
+        :param username:
         :type username: str
-        :param password: (required)
+        :param password:
         :type password: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -97,8 +97,8 @@ class ApiTokenAuthApi:
 
     def api_token_auth_create_with_http_info(
         self,
-        username: Annotated[str, Field(min_length=1, strict=True)],
-        password: Annotated[str, Field(min_length=1, strict=True)],
+        username: Optional[Annotated[str, Field(min_length=1, strict=True)]] = None,
+        password: Optional[Annotated[str, Field(min_length=1, strict=True)]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -112,9 +112,9 @@ class ApiTokenAuthApi:
         """api_token_auth_create
 
 
-        :param username: (required)
+        :param username:
         :type username: str
-        :param password: (required)
+        :param password:
         :type password: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -159,8 +159,8 @@ class ApiTokenAuthApi:
 
     def api_token_auth_create_without_preload_content(
         self,
-        username: Annotated[str, Field(min_length=1, strict=True)],
-        password: Annotated[str, Field(min_length=1, strict=True)],
+        username: Optional[Annotated[str, Field(min_length=1, strict=True)]] = None,
+        password: Optional[Annotated[str, Field(min_length=1, strict=True)]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -174,9 +174,9 @@ class ApiTokenAuthApi:
         """api_token_auth_create
 
 
-        :param username: (required)
+        :param username:
         :type username: str
-        :param password: (required)
+        :param password:
         :type password: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request

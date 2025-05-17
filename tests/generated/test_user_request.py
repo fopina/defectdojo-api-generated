@@ -47,8 +47,6 @@ class TestUserRequest(unittest.TestCase):
             )
         else:
             return UserRequest(
-                username = 'A0',
-                email = '0',
         )
         """
 

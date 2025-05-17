@@ -44,8 +44,6 @@ class TestLanguageRequest(unittest.TestCase):
             )
         else:
             return LanguageRequest(
-                language = 56,
-                product = 56,
         )
         """
 

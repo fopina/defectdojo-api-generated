@@ -28,11 +28,11 @@ class MetaMain(BaseModel):
     MetaMain
     """  # noqa: E501
 
-    id: StrictInt
+    id: Optional[StrictInt] = None
     product: Optional[StrictInt] = None
     endpoint: Optional[StrictInt] = None
     finding: Optional[StrictInt] = None
-    metadata: List[Metadata]
+    metadata: Optional[List[Metadata]] = None
     __properties: ClassVar[List[str]] = ['id', 'product', 'endpoint', 'finding', 'metadata']
 
     model_config = ConfigDict(

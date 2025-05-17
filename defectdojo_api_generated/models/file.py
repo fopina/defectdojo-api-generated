@@ -26,9 +26,9 @@ class File(BaseModel):
     File
     """  # noqa: E501
 
-    id: StrictInt
-    file: StrictStr
-    title: Annotated[str, Field(strict=True, max_length=100)]
+    id: Optional[StrictInt] = None
+    file: Optional[StrictStr] = None
+    title: Optional[Annotated[str, Field(strict=True, max_length=100)]] = None
     __properties: ClassVar[List[str]] = ['id', 'file', 'title']
 
     model_config = ConfigDict(

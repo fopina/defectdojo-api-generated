@@ -29,10 +29,10 @@ class PaginatedJIRAProjectList(BaseModel):
     PaginatedJIRAProjectList
     """  # noqa: E501
 
-    count: StrictInt
+    count: Optional[StrictInt] = None
     next: Optional[StrictStr] = None
     previous: Optional[StrictStr] = None
-    results: List[JIRAProject]
+    results: Optional[List[JIRAProject]] = None
     prefetch: Optional[JIRAProjectPrefetch] = None
     __properties: ClassVar[List[str]] = ['count', 'next', 'previous', 'results', 'prefetch']
 

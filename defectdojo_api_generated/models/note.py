@@ -31,16 +31,16 @@ class Note(BaseModel):
     Note
     """  # noqa: E501
 
-    id: StrictInt
-    author: UserStub
-    editor: Optional[UserStub]
-    history: List[NoteHistory]
-    note_type: NoteType
-    entry: StrictStr
-    var_date: datetime = Field(alias='date')
+    id: Optional[StrictInt] = None
+    author: Optional[UserStub] = None
+    editor: Optional[UserStub] = None
+    history: Optional[List[NoteHistory]] = None
+    note_type: Optional[NoteType] = None
+    entry: Optional[StrictStr] = None
+    var_date: Optional[datetime] = Field(default=None, alias='date')
     private: Optional[StrictBool] = None
     edited: Optional[StrictBool] = None
-    edit_time: Optional[datetime]
+    edit_time: Optional[datetime] = None
     __properties: ClassVar[List[str]] = [
         'id',
         'author',

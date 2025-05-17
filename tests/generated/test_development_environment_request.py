@@ -38,7 +38,6 @@ class TestDevelopmentEnvironmentRequest(unittest.TestCase):
             )
         else:
             return DevelopmentEnvironmentRequest(
-                name = '0',
         )
         """
 

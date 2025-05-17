@@ -26,7 +26,7 @@ class NoteHistoryRequest(BaseModel):
     NoteHistoryRequest
     """  # noqa: E501
 
-    data: Annotated[str, Field(min_length=1, strict=True)]
+    data: Optional[Annotated[str, Field(min_length=1, strict=True)]] = None
     __properties: ClassVar[List[str]] = ['data']
 
     model_config = ConfigDict(

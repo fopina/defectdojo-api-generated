@@ -30,10 +30,10 @@ class ProductTypeMember(BaseModel):
     ProductTypeMember
     """  # noqa: E501
 
-    id: StrictInt
-    product_type: StrictInt
-    user: StrictInt
-    role: StrictInt
+    id: Optional[StrictInt] = None
+    product_type: Optional[StrictInt] = None
+    user: Optional[StrictInt] = None
+    role: Optional[StrictInt] = None
     prefetch: Optional[PaginatedProductTypeMemberListPrefetch] = None
     __properties: ClassVar[List[str]] = ['id', 'product_type', 'user', 'role', 'prefetch']
 

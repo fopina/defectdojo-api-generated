@@ -27,10 +27,10 @@ class JIRAIssue(BaseModel):
     JIRAIssue
     """  # noqa: E501
 
-    id: StrictInt
-    url: StrictStr
-    jira_id: Annotated[str, Field(strict=True, max_length=200)]
-    jira_key: Annotated[str, Field(strict=True, max_length=200)]
+    id: Optional[StrictInt] = None
+    url: Optional[StrictStr] = None
+    jira_id: Optional[Annotated[str, Field(strict=True, max_length=200)]] = None
+    jira_key: Optional[Annotated[str, Field(strict=True, max_length=200)]] = None
     jira_creation: Optional[datetime] = Field(
         default=None, description='The date a Jira issue was created from this finding.'
     )

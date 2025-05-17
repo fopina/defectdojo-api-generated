@@ -41,10 +41,6 @@ class TestSonarqubeIssueTransitionRequest(unittest.TestCase):
             )
         else:
             return SonarqubeIssueTransitionRequest(
-                finding_status = '0',
-                sonarqube_status = '0',
-                transitions = '0',
-                sonarqube_issue = 56,
         )
         """
 

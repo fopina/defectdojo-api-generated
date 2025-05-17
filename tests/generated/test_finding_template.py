@@ -57,10 +57,6 @@ class TestFindingTemplate(unittest.TestCase):
             )
         else:
             return FindingTemplate(
-                id = 56,
-                title = '',
-                last_used = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                numerical_severity = '',
         )
         """
 

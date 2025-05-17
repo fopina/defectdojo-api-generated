@@ -42,8 +42,6 @@ class TestMetaRequest(unittest.TestCase):
             )
         else:
             return MetaRequest(
-                name = '0',
-                value = '0',
         )
         """
 

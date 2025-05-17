@@ -28,7 +28,7 @@ class Notifications(BaseModel):
     Notifications
     """  # noqa: E501
 
-    id: StrictInt
+    id: Optional[StrictInt] = None
     product: Optional[StrictInt] = None
     user: Optional[StrictInt] = None
     product_type_added: Optional[List[StrictStr]] = None

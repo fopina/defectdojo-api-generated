@@ -106,13 +106,7 @@ class TestProduct(unittest.TestCase):
                             critical_product = True, 
                             key_product = True, 
                             updated = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                            created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                            members = [
-                                56
-                                ], 
-                            authorization_groups = [
-                                56
-                                ], )
+                            created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
                         }, 
                     product_manager = {
                         'key' : defectdojo_api_generated.models.user_stub.UserStub(
@@ -154,26 +148,6 @@ class TestProduct(unittest.TestCase):
             )
         else:
             return Product(
-                id = 56,
-                findings_count = 56,
-                findings_list = [
-                    56
-                    ],
-                product_meta = [
-                    defectdojo_api_generated.models.product_meta.ProductMeta(
-                        name = '', 
-                        value = '', )
-                    ],
-                name = '',
-                description = '',
-                created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                prod_type = 56,
-                members = [
-                    56
-                    ],
-                authorization_groups = [
-                    56
-                    ],
         )
         """
 

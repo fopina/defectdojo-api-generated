@@ -27,15 +27,15 @@ class ProductType(BaseModel):
     ProductType
     """  # noqa: E501
 
-    id: StrictInt
-    name: Annotated[str, Field(strict=True, max_length=255)]
+    id: Optional[StrictInt] = None
+    name: Optional[Annotated[str, Field(strict=True, max_length=255)]] = None
     description: Optional[Annotated[str, Field(strict=True, max_length=4000)]] = None
     critical_product: Optional[StrictBool] = None
     key_product: Optional[StrictBool] = None
-    updated: Optional[datetime]
-    created: Optional[datetime]
-    members: List[StrictInt]
-    authorization_groups: List[StrictInt]
+    updated: Optional[datetime] = None
+    created: Optional[datetime] = None
+    members: Optional[List[StrictInt]] = None
+    authorization_groups: Optional[List[StrictInt]] = None
     prefetch: Optional[PaginatedProductTypeListPrefetch] = None
     __properties: ClassVar[List[str]] = [
         'id',

@@ -28,10 +28,10 @@ class PaginatedCredentialMappingList(BaseModel):
     PaginatedCredentialMappingList
     """  # noqa: E501
 
-    count: StrictInt
+    count: Optional[StrictInt] = None
     next: Optional[StrictStr] = None
     previous: Optional[StrictStr] = None
-    results: List[CredentialMapping]
+    results: Optional[List[CredentialMapping]] = None
     __properties: ClassVar[List[str]] = ['count', 'next', 'previous', 'results']
 
     model_config = ConfigDict(

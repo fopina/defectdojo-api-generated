@@ -26,7 +26,7 @@ class RiskAcceptanceProof(BaseModel):
     RiskAcceptanceProof
     """  # noqa: E501
 
-    path: StrictStr
+    path: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ['path']
 
     model_config = ConfigDict(

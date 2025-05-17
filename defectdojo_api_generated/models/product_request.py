@@ -27,8 +27,8 @@ class ProductRequest(BaseModel):
     """  # noqa: E501
 
     tags: Optional[List[Annotated[str, Field(min_length=1, strict=True)]]] = None
-    name: Annotated[str, Field(min_length=1, strict=True, max_length=255)]
-    description: Annotated[str, Field(min_length=1, strict=True, max_length=4000)]
+    name: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=255)]] = None
+    description: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=4000)]] = None
     prod_numeric_grade: Optional[Annotated[int, Field(le=2147483647, strict=True, ge=-2147483648)]] = None
     business_criticality: Optional[StrictStr] = Field(
         default=None,
@@ -75,7 +75,7 @@ class ProductRequest(BaseModel):
     product_manager: Optional[StrictInt] = None
     technical_contact: Optional[StrictInt] = None
     team_manager: Optional[StrictInt] = None
-    prod_type: StrictInt
+    prod_type: Optional[StrictInt] = None
     sla_configuration: Optional[StrictInt] = None
     regulations: Optional[List[StrictInt]] = None
     __properties: ClassVar[List[str]] = [

@@ -26,7 +26,7 @@ class Announcement(BaseModel):
     Announcement
     """  # noqa: E501
 
-    id: StrictInt
+    id: Optional[StrictInt] = None
     message: Optional[Annotated[str, Field(strict=True, max_length=500)]] = Field(
         default=None,
         description="This dismissable message will be displayed on all pages for authenticated users. It can contain basic html tags, for example <a href='https://www.fred.com' style='color: #337ab7;' target='_blank'>https://example.com</a>",

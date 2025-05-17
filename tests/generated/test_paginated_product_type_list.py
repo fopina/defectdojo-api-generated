@@ -107,9 +107,6 @@ class TestPaginatedProductTypeList(unittest.TestCase):
                                         members = [
                                             56
                                             ], 
-                                        authorization_groups = [
-                                            56
-                                            ], 
                                         regulations = [
                                             56
                                             ], )
@@ -122,13 +119,7 @@ class TestPaginatedProductTypeList(unittest.TestCase):
                                         critical_product = True, 
                                         key_product = True, 
                                         updated = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                        created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                        members = [
-                                            56
-                                            ], 
-                                        authorization_groups = [
-                                            56
-                                            ], )
+                                        created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
                                     }, ), )
                         }, 
                     members = {
@@ -141,24 +132,6 @@ class TestPaginatedProductTypeList(unittest.TestCase):
             )
         else:
             return PaginatedProductTypeList(
-                count = 123,
-                results = [
-                    defectdojo_api_generated.models.product_type.ProductType(
-                        id = 56, 
-                        name = '', 
-                        description = '', 
-                        critical_product = True, 
-                        key_product = True, 
-                        updated = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        members = [
-                            56
-                            ], 
-                        authorization_groups = [
-                            56
-                            ], 
-                        prefetch = defectdojo_api_generated.models.paginated_product_type_list_prefetch.PaginatedProductTypeList_prefetch(), )
-                    ],
         )
         """
 

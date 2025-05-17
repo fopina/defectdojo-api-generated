@@ -40,7 +40,6 @@ class TestUserStubRequest(unittest.TestCase):
             )
         else:
             return UserStubRequest(
-                username = 'A0',
         )
         """
 

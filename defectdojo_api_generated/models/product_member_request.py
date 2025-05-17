@@ -26,9 +26,9 @@ class ProductMemberRequest(BaseModel):
     ProductMemberRequest
     """  # noqa: E501
 
-    product: StrictInt
-    user: StrictInt
-    role: StrictInt
+    product: Optional[StrictInt] = None
+    user: Optional[StrictInt] = None
+    role: Optional[StrictInt] = None
     __properties: ClassVar[List[str]] = ['product', 'user', 'role']
 
     model_config = ConfigDict(

@@ -56,17 +56,6 @@ class TestJIRAInstance(unittest.TestCase):
             )
         else:
             return JIRAInstance(
-                id = 56,
-                url = '',
-                username = '',
-                epic_name_id = -2147483648,
-                open_status_key = -2147483648,
-                close_status_key = -2147483648,
-                info_mapping_severity = '',
-                low_mapping_severity = '',
-                medium_mapping_severity = '',
-                high_mapping_severity = '',
-                critical_mapping_severity = '',
         )
         """
 

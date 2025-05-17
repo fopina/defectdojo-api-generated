@@ -39,8 +39,6 @@ class TestFindingGroupRequest(unittest.TestCase):
             )
         else:
             return FindingGroupRequest(
-                name = '0',
-                test = 56,
         )
         """
 

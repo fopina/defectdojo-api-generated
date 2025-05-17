@@ -28,10 +28,10 @@ class PaginatedStubFindingList(BaseModel):
     PaginatedStubFindingList
     """  # noqa: E501
 
-    count: StrictInt
+    count: Optional[StrictInt] = None
     next: Optional[StrictStr] = None
     previous: Optional[StrictStr] = None
-    results: List[StubFinding]
+    results: Optional[List[StubFinding]] = None
     __properties: ClassVar[List[str]] = ['count', 'next', 'previous', 'results']
 
     model_config = ConfigDict(

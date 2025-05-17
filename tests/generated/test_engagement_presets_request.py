@@ -47,7 +47,6 @@ class TestEngagementPresetsRequest(unittest.TestCase):
             )
         else:
             return EngagementPresetsRequest(
-                product = 56,
         )
         """
 

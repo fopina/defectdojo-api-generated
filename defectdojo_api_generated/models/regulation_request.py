@@ -26,17 +26,18 @@ class RegulationRequest(BaseModel):
     RegulationRequest
     """  # noqa: E501
 
-    name: Annotated[str, Field(min_length=1, strict=True, max_length=128)] = Field(
-        description='The name of the regulation.'
+    name: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=128)]] = Field(
+        default=None, description='The name of the regulation.'
     )
-    acronym: Annotated[str, Field(min_length=1, strict=True, max_length=20)] = Field(
-        description='A shortened representation of the name.'
+    acronym: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=20)]] = Field(
+        default=None, description='A shortened representation of the name.'
     )
-    category: StrictStr = Field(
-        description='The subject of the regulation.  * `privacy` - Privacy * `finance` - Finance * `education` - Education * `medical` - Medical * `corporate` - Corporate * `security` - Security * `government` - Government * `other` - Other'
+    category: Optional[StrictStr] = Field(
+        default=None,
+        description='The subject of the regulation.  * `privacy` - Privacy * `finance` - Finance * `education` - Education * `medical` - Medical * `corporate` - Corporate * `security` - Security * `government` - Government * `other` - Other',
     )
-    jurisdiction: Annotated[str, Field(min_length=1, strict=True, max_length=64)] = Field(
-        description='The territory over which the regulation applies.'
+    jurisdiction: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=64)]] = Field(
+        default=None, description='The territory over which the regulation applies.'
     )
     description: Optional[StrictStr] = Field(default=None, description="Information about the regulation's purpose.")
     reference: Optional[Annotated[str, Field(strict=True, max_length=200)]] = Field(
@@ -47,6 +48,9 @@ class RegulationRequest(BaseModel):
     @field_validator('category')
     def category_validate_enum(cls, value):
         """Validates the enum"""
+        if value is None:
+            return value
+
         if value not in set(
             ['privacy', 'finance', 'education', 'medical', 'corporate', 'security', 'government', 'other']
         ):

@@ -108,44 +108,6 @@ class TestPaginatedProductTypeMemberList(unittest.TestCase):
             )
         else:
             return PaginatedProductTypeMemberList(
-                count = 123,
-                results = [
-                    defectdojo_api_generated.models.product_type_member.ProductTypeMember(
-                        id = 56, 
-                        product_type = 56, 
-                        user = 56, 
-                        role = 56, 
-                        prefetch = defectdojo_api_generated.models.paginated_product_type_member_list_prefetch.PaginatedProductTypeMemberList_prefetch(
-                            product_type = {
-                                'key' : defectdojo_api_generated.models.product_type.ProductType(
-                                    id = 56, 
-                                    name = '', 
-                                    description = '', 
-                                    critical_product = True, 
-                                    key_product = True, 
-                                    updated = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                    created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                    members = [
-                                        56
-                                        ], 
-                                    authorization_groups = [
-                                        56
-                                        ], )
-                                }, 
-                            role = {
-                                'key' : defectdojo_api_generated.models.role.Role(
-                                    id = 56, 
-                                    name = '', 
-                                    is_owner = True, )
-                                }, 
-                            user = {
-                                'key' : defectdojo_api_generated.models.user_stub.UserStub(
-                                    id = 56, 
-                                    username = 'A', 
-                                    first_name = '', 
-                                    last_name = '', )
-                                }, ), )
-                    ],
         )
         """
 

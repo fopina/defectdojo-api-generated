@@ -69,21 +69,6 @@ class TestUserContactInfo(unittest.TestCase):
             )
         else:
             return UserContactInfo(
-                id = 56,
-                user_profile = defectdojo_api_generated.models.user.User(
-                    id = 56, 
-                    username = 'A', 
-                    first_name = '', 
-                    last_name = '', 
-                    email = '', 
-                    date_joined = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                    last_login = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                    is_active = True, 
-                    is_superuser = True, 
-                    configuration_permissions = [
-                        56
-                        ], ),
-                user = 56,
         )
         """
 

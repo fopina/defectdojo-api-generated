@@ -28,8 +28,8 @@ class FindingToNotes(BaseModel):
     FindingToNotes
     """  # noqa: E501
 
-    finding_id: Optional[StrictInt]
-    notes: List[Note]
+    finding_id: Optional[StrictInt] = None
+    notes: Optional[List[Note]] = None
     __properties: ClassVar[List[str]] = ['finding_id', 'notes']
 
     model_config = ConfigDict(

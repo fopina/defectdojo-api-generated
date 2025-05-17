@@ -28,10 +28,10 @@ class ProductGroup(BaseModel):
     ProductGroup
     """  # noqa: E501
 
-    id: StrictInt
-    product: StrictInt
-    group: StrictInt
-    role: StrictInt
+    id: Optional[StrictInt] = None
+    product: Optional[StrictInt] = None
+    group: Optional[StrictInt] = None
+    role: Optional[StrictInt] = None
     prefetch: Optional[PaginatedProductGroupListPrefetch] = None
     __properties: ClassVar[List[str]] = ['id', 'product', 'group', 'role', 'prefetch']
 

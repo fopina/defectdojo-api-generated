@@ -41,8 +41,6 @@ class TestUserStub(unittest.TestCase):
             )
         else:
             return UserStub(
-                id = 56,
-                username = 'A',
         )
         """
 

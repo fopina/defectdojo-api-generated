@@ -28,8 +28,8 @@ class TestToNotes(BaseModel):
     TestToNotes
     """  # noqa: E501
 
-    test_id: Optional[StrictInt]
-    notes: List[Note]
+    test_id: Optional[StrictInt] = None
+    notes: Optional[List[Note]] = None
     __properties: ClassVar[List[str]] = ['test_id', 'notes']
 
     model_config = ConfigDict(

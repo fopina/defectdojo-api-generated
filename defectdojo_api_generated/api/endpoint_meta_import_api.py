@@ -35,7 +35,7 @@ class EndpointMetaImportApi:
 
     def endpoint_meta_import_create(
         self,
-        file: Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]],
+        file: Optional[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]]] = None,
         create_endpoints: Optional[StrictBool] = None,
         create_tags: Optional[StrictBool] = None,
         create_dojo_meta: Optional[StrictBool] = None,
@@ -55,7 +55,7 @@ class EndpointMetaImportApi:
 
         Imports a CSV file into a product to propagate arbitrary meta and tags on endpoints.  By Names: - Provide `product_name` of existing product  By ID: - Provide the id of the product in the `product` parameter  In this scenario Defect Dojo will look up the product by the provided details.
 
-        :param file: (required)
+        :param file:
         :type file: bytearray
         :param create_endpoints:
         :type create_endpoints: bool
@@ -114,7 +114,7 @@ class EndpointMetaImportApi:
 
     def endpoint_meta_import_create_with_http_info(
         self,
-        file: Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]],
+        file: Optional[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]]] = None,
         create_endpoints: Optional[StrictBool] = None,
         create_tags: Optional[StrictBool] = None,
         create_dojo_meta: Optional[StrictBool] = None,
@@ -134,7 +134,7 @@ class EndpointMetaImportApi:
 
         Imports a CSV file into a product to propagate arbitrary meta and tags on endpoints.  By Names: - Provide `product_name` of existing product  By ID: - Provide the id of the product in the `product` parameter  In this scenario Defect Dojo will look up the product by the provided details.
 
-        :param file: (required)
+        :param file:
         :type file: bytearray
         :param create_endpoints:
         :type create_endpoints: bool
@@ -193,7 +193,7 @@ class EndpointMetaImportApi:
 
     def endpoint_meta_import_create_without_preload_content(
         self,
-        file: Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]],
+        file: Optional[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]]] = None,
         create_endpoints: Optional[StrictBool] = None,
         create_tags: Optional[StrictBool] = None,
         create_dojo_meta: Optional[StrictBool] = None,
@@ -213,7 +213,7 @@ class EndpointMetaImportApi:
 
         Imports a CSV file into a product to propagate arbitrary meta and tags on endpoints.  By Names: - Provide `product_name` of existing product  By ID: - Provide the id of the product in the `product` parameter  In this scenario Defect Dojo will look up the product by the provided details.
 
-        :param file: (required)
+        :param file:
         :type file: bytearray
         :param create_endpoints:
         :type create_endpoints: bool

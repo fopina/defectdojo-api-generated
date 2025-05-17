@@ -51,16 +51,6 @@ class TestPaginatedSonarqubeIssueTransitionList(unittest.TestCase):
             )
         else:
             return PaginatedSonarqubeIssueTransitionList(
-                count = 123,
-                results = [
-                    defectdojo_api_generated.models.sonarqube_issue_transition.SonarqubeIssueTransition(
-                        id = 56, 
-                        created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        finding_status = '', 
-                        sonarqube_status = '', 
-                        transitions = '', 
-                        sonarqube_issue = 56, )
-                    ],
         )
         """
 

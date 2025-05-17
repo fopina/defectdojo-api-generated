@@ -28,10 +28,10 @@ class PaginatedRiskAcceptanceList(BaseModel):
     PaginatedRiskAcceptanceList
     """  # noqa: E501
 
-    count: StrictInt
+    count: Optional[StrictInt] = None
     next: Optional[StrictStr] = None
     previous: Optional[StrictStr] = None
-    results: List[RiskAcceptance]
+    results: Optional[List[RiskAcceptance]] = None
     __properties: ClassVar[List[str]] = ['count', 'next', 'previous', 'results']
 
     model_config = ConfigDict(

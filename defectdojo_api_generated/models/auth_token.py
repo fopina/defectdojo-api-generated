@@ -26,7 +26,7 @@ class AuthToken(BaseModel):
     AuthToken
     """  # noqa: E501
 
-    token: StrictStr
+    token: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ['token']
 
     model_config = ConfigDict(

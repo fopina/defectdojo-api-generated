@@ -49,16 +49,6 @@ class TestPaginatedMetaList(unittest.TestCase):
             )
         else:
             return PaginatedMetaList(
-                count = 123,
-                results = [
-                    defectdojo_api_generated.models.meta.Meta(
-                        id = 56, 
-                        product = 56, 
-                        endpoint = 56, 
-                        finding = 56, 
-                        name = '', 
-                        value = '', )
-                    ],
         )
         """
 

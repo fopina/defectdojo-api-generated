@@ -46,13 +46,6 @@ class TestPaginatedConfigurationPermissionList(unittest.TestCase):
             )
         else:
             return PaginatedConfigurationPermissionList(
-                count = 123,
-                results = [
-                    defectdojo_api_generated.models.configuration_permission.ConfigurationPermission(
-                        id = 56, 
-                        name = '', 
-                        codename = '', )
-                    ],
         )
         """
 

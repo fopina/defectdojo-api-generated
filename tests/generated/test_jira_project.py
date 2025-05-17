@@ -130,7 +130,6 @@ class TestJIRAProject(unittest.TestCase):
                             product_manager = 56, 
                             technical_contact = 56, 
                             team_manager = 56, 
-                            prod_type = 56, 
                             sla_configuration = 56, 
                             members = [
                                 56
@@ -177,7 +176,6 @@ class TestJIRAProject(unittest.TestCase):
             )
         else:
             return JIRAProject(
-                id = 56,
         )
         """
 

@@ -29,17 +29,17 @@ class AppAnalysis(BaseModel):
     AppAnalysis
     """  # noqa: E501
 
-    id: StrictInt
+    id: Optional[StrictInt] = None
     tags: Optional[List[StrictStr]] = None
-    name: Annotated[str, Field(strict=True, max_length=200)]
+    name: Optional[Annotated[str, Field(strict=True, max_length=200)]] = None
     confidence: Optional[Annotated[int, Field(le=2147483647, strict=True, ge=-2147483648)]] = None
     version: Optional[Annotated[str, Field(strict=True, max_length=200)]] = None
     icon: Optional[Annotated[str, Field(strict=True, max_length=200)]] = None
     website: Optional[Annotated[str, Field(strict=True, max_length=400)]] = None
     website_found: Optional[Annotated[str, Field(strict=True, max_length=400)]] = None
-    created: datetime
-    product: StrictInt
-    user: StrictInt
+    created: Optional[datetime] = None
+    product: Optional[StrictInt] = None
+    user: Optional[StrictInt] = None
     prefetch: Optional[AppAnalysisPrefetch] = None
     __properties: ClassVar[List[str]] = [
         'id',

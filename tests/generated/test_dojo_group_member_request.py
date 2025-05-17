@@ -40,9 +40,6 @@ class TestDojoGroupMemberRequest(unittest.TestCase):
             )
         else:
             return DojoGroupMemberRequest(
-                group = 56,
-                user = 56,
-                role = 56,
         )
         """
 

@@ -27,7 +27,7 @@ class NotificationWebhooks(BaseModel):
     NotificationWebhooks
     """  # noqa: E501
 
-    id: StrictInt
+    id: Optional[StrictInt] = None
     name: Optional[Annotated[str, Field(strict=True, max_length=100)]] = Field(
         default=None, description='Name of the incoming webhook'
     )
@@ -40,10 +40,14 @@ class NotificationWebhooks(BaseModel):
     header_value: Optional[Annotated[str, Field(strict=True, max_length=100)]] = Field(
         default=None, description='Content of the header required for interacting with Webhook endpoint'
     )
-    status: StrictStr = Field(description='Status of the incoming webhook')
-    first_error: Optional[datetime] = Field(description='If endpoint is active, when error happened first time')
-    last_error: Optional[datetime] = Field(description='If endpoint is active, when error happened last time')
-    note: Optional[StrictStr] = Field(description='Description of the latest error')
+    status: Optional[StrictStr] = Field(default=None, description='Status of the incoming webhook')
+    first_error: Optional[datetime] = Field(
+        default=None, description='If endpoint is active, when error happened first time'
+    )
+    last_error: Optional[datetime] = Field(
+        default=None, description='If endpoint is active, when error happened last time'
+    )
+    note: Optional[StrictStr] = Field(default=None, description='Description of the latest error')
     owner: Optional[StrictInt] = Field(
         default=None, description='Owner/receiver of notification, if empty processed as system notification'
     )

@@ -30,12 +30,12 @@ class ProductAPIScanConfiguration(BaseModel):
     ProductAPIScanConfiguration
     """  # noqa: E501
 
-    id: StrictInt
+    id: Optional[StrictInt] = None
     service_key_1: Optional[Annotated[str, Field(strict=True, max_length=200)]] = None
     service_key_2: Optional[Annotated[str, Field(strict=True, max_length=200)]] = None
     service_key_3: Optional[Annotated[str, Field(strict=True, max_length=200)]] = None
-    product: StrictInt
-    tool_configuration: StrictInt
+    product: Optional[StrictInt] = None
+    tool_configuration: Optional[StrictInt] = None
     prefetch: Optional[PaginatedProductAPIScanConfigurationListPrefetch] = None
     __properties: ClassVar[List[str]] = [
         'id',

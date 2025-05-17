@@ -39,8 +39,6 @@ class TestImportLanguages(unittest.TestCase):
             )
         else:
             return ImportLanguages(
-                product = 56,
-                file = '',
         )
         """
 

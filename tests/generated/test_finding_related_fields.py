@@ -80,49 +80,6 @@ class TestFindingRelatedFields(unittest.TestCase):
             )
         else:
             return FindingRelatedFields(
-                test = defectdojo_api_generated.models.finding_test.FindingTest(
-                    id = 56, 
-                    title = '', 
-                    test_type = defectdojo_api_generated.models.finding_test_type.FindingTestType(
-                        id = 56, 
-                        name = '', ), 
-                    engagement = defectdojo_api_generated.models.finding_engagement.FindingEngagement(
-                        id = 56, 
-                        name = '', 
-                        description = '', 
-                        product = defectdojo_api_generated.models.finding_product.FindingProduct(
-                            id = 56, 
-                            name = '', 
-                            prod_type = defectdojo_api_generated.models.finding_prod_type.FindingProdType(
-                                id = 56, 
-                                name = '', ), ), 
-                        target_start = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
-                        target_end = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
-                        branch_tag = '', 
-                        engagement_type = 'Interactive', 
-                        build_id = '', 
-                        commit_hash = '', 
-                        version = '', 
-                        created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        updated = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), ), 
-                    environment = defectdojo_api_generated.models.finding_environment.FindingEnvironment(
-                        id = 56, 
-                        name = '', ), 
-                    branch_tag = '', 
-                    build_id = '', 
-                    commit_hash = '', 
-                    version = '', ),
-                jira = defectdojo_api_generated.models.jira_issue.JIRAIssue(
-                    id = 56, 
-                    url = '', 
-                    jira_id = '', 
-                    jira_key = '', 
-                    jira_creation = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                    jira_change = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                    jira_project = 56, 
-                    finding = 56, 
-                    engagement = 56, 
-                    finding_group = 56, ),
         )
         """
 

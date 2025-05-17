@@ -26,12 +26,12 @@ class UserRequest(BaseModel):
     UserRequest
     """  # noqa: E501
 
-    username: Annotated[str, Field(min_length=1, strict=True, max_length=150)] = Field(
-        description='Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.'
+    username: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=150)]] = Field(
+        default=None, description='Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.'
     )
     first_name: Optional[Annotated[str, Field(strict=True, max_length=150)]] = None
     last_name: Optional[Annotated[str, Field(strict=True, max_length=150)]] = None
-    email: Annotated[str, Field(min_length=1, strict=True)]
+    email: Optional[Annotated[str, Field(min_length=1, strict=True)]] = None
     is_active: Optional[StrictBool] = Field(
         default=None,
         description='Designates whether this user should be treated as active. Unselect this instead of deleting accounts.',
@@ -55,6 +55,9 @@ class UserRequest(BaseModel):
     @field_validator('username')
     def username_validate_regular_expression(cls, value):
         """Validates the regular expression"""
+        if value is None:
+            return value
+
         if not re.match(r'^[\w.@+-]+$', value):
             raise ValueError(r'must validate the regular expression /^[\w.@+-]+$/')
         return value

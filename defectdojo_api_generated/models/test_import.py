@@ -29,10 +29,10 @@ class TestImport(BaseModel):
     TestImport
     """  # noqa: E501
 
-    id: StrictInt
-    test_import_finding_action_set: List[TestImportFindingAction]
-    created: datetime
-    modified: datetime
+    id: Optional[StrictInt] = None
+    test_import_finding_action_set: Optional[List[TestImportFindingAction]] = None
+    created: Optional[datetime] = None
+    modified: Optional[datetime] = None
     import_settings: Optional[Any] = None
     type: Optional[Annotated[str, Field(strict=True, max_length=64)]] = None
     version: Optional[Annotated[str, Field(strict=True, max_length=100)]] = None
@@ -45,8 +45,8 @@ class TestImport(BaseModel):
     branch_tag: Optional[Annotated[str, Field(strict=True, max_length=150)]] = Field(
         default=None, description='Tag or branch that was tested, a reimport may update this field.'
     )
-    test: StrictInt
-    findings_affected: List[StrictInt]
+    test: Optional[StrictInt] = None
+    findings_affected: Optional[List[StrictInt]] = None
     __properties: ClassVar[List[str]] = [
         'id',
         'test_import_finding_action_set',

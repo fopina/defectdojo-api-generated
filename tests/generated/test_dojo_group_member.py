@@ -106,13 +106,7 @@ class TestDojoGroupMember(unittest.TestCase):
                                         critical_product = True, 
                                         key_product = True, 
                                         updated = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                        created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                        members = [
-                                            56
-                                            ], 
-                                        authorization_groups = [
-                                            56
-                                            ], )
+                                        created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
                                     }, ), )
                         }, 
                     role = {
@@ -131,10 +125,6 @@ class TestDojoGroupMember(unittest.TestCase):
             )
         else:
             return DojoGroupMember(
-                id = 56,
-                group = 56,
-                user = 56,
-                role = 56,
         )
         """
 

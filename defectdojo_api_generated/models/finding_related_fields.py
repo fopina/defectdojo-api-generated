@@ -29,8 +29,8 @@ class FindingRelatedFields(BaseModel):
     FindingRelatedFields
     """  # noqa: E501
 
-    test: FindingTest
-    jira: JIRAIssue
+    test: Optional[FindingTest] = None
+    jira: Optional[JIRAIssue] = None
     __properties: ClassVar[List[str]] = ['test', 'jira']
 
     model_config = ConfigDict(

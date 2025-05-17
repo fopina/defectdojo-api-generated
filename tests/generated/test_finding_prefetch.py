@@ -322,7 +322,6 @@ class TestFindingPrefetch(unittest.TestCase):
                         planned_remediation_version = '', 
                         effort_for_fixing = '', 
                         test = 56, 
-                        duplicate_finding = 56, 
                         review_requested_by = 56, 
                         defect_review_requested_by = 56, 
                         mitigated_by = 56, 
@@ -485,13 +484,7 @@ class TestFindingPrefetch(unittest.TestCase):
                                     restart_sla_expired = True, 
                                     created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                     updated = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                    owner = 56, 
-                                    accepted_findings = [
-                                        56
-                                        ], 
-                                    notes = [
-                                        56
-                                        ], )
+                                    owner = 56, )
                                 }, 
                             sensitive_issues = {
                                 'key' : 
@@ -510,9 +503,6 @@ class TestFindingPrefetch(unittest.TestCase):
                                 'key' : defectdojo_api_generated.models.test.Test(
                                     id = 56, 
                                     test_type_name = '', 
-                                    finding_groups = [
-                                        
-                                        ], 
                                     scan_type = '', 
                                     title = '', 
                                     description = '', 
@@ -531,33 +521,7 @@ class TestFindingPrefetch(unittest.TestCase):
                                     lead = 56, 
                                     test_type = 56, 
                                     environment = 56, 
-                                    api_scan_configuration = 56, 
-                                    notes = [
-                                        defectdojo_api_generated.models.note.Note(
-                                            id = 56, 
-                                            author = null, 
-                                            editor = null, 
-                                            history = [
-                                                defectdojo_api_generated.models.note_history.NoteHistory(
-                                                    id = 56, 
-                                                    current_editor = null, 
-                                                    note_type = null, 
-                                                    data = '', 
-                                                    time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
-                                                ], 
-                                            note_type = null, 
-                                            entry = '', 
-                                            date = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                            private = True, 
-                                            edited = True, 
-                                            edit_time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
-                                        ], 
-                                    files = [
-                                        defectdojo_api_generated.models.file.File(
-                                            id = 56, 
-                                            file = '', 
-                                            title = '', )
-                                        ], )
+                                    api_scan_configuration = 56, )
                                 }, 
                             test_import_set = {
                                 'key' : defectdojo_api_generated.models.test_import.TestImport(
@@ -579,7 +543,6 @@ class TestFindingPrefetch(unittest.TestCase):
                                     build_id = '', 
                                     commit_hash = '', 
                                     branch_tag = '', 
-                                    test = 56, 
                                     findings_affected = [
                                         56
                                         ], )
@@ -851,7 +814,6 @@ class TestFindingPrefetch(unittest.TestCase):
                             defectdojo_api_generated.models.finding_group.FindingGroup(
                                 id = 56, 
                                 name = '', 
-                                test = 56, 
                                 jira_issue = null, )
                             ], 
                         scan_type = '', 

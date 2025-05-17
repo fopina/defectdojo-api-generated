@@ -28,10 +28,10 @@ class FindingGroup(BaseModel):
     FindingGroup
     """  # noqa: E501
 
-    id: StrictInt
-    name: Annotated[str, Field(strict=True, max_length=255)]
-    test: StrictInt
-    jira_issue: Optional[JIRAIssue]
+    id: Optional[StrictInt] = None
+    name: Optional[Annotated[str, Field(strict=True, max_length=255)]] = None
+    test: Optional[StrictInt] = None
+    jira_issue: Optional[JIRAIssue] = None
     __properties: ClassVar[List[str]] = ['id', 'name', 'test', 'jira_issue']
 
     model_config = ConfigDict(

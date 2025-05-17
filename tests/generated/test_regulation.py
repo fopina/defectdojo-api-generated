@@ -44,11 +44,6 @@ class TestRegulation(unittest.TestCase):
             )
         else:
             return Regulation(
-                id = 56,
-                name = '',
-                acronym = '',
-                category = 'privacy',
-                jurisdiction = '',
         )
         """
 

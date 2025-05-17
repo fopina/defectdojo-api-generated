@@ -40,9 +40,6 @@ class TestTagRequest(unittest.TestCase):
             )
         else:
             return TagRequest(
-                tags = [
-                    '0'
-                    ],
         )
         """
 

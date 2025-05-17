@@ -53,20 +53,6 @@ class TestPaginatedNotificationWebhooksList(unittest.TestCase):
             )
         else:
             return PaginatedNotificationWebhooksList(
-                count = 123,
-                results = [
-                    defectdojo_api_generated.models.notification_webhooks.NotificationWebhooks(
-                        id = 56, 
-                        name = '', 
-                        url = '', 
-                        header_name = '', 
-                        header_value = '', 
-                        status = '', 
-                        first_error = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        last_error = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        note = '', 
-                        owner = 56, )
-                    ],
         )
         """
 

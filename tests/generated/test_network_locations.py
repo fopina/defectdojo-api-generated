@@ -39,8 +39,6 @@ class TestNetworkLocations(unittest.TestCase):
             )
         else:
             return NetworkLocations(
-                id = 56,
-                location = '',
         )
         """
 

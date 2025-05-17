@@ -52,17 +52,6 @@ class TestPaginatedQuestionnaireEngagementSurveyList(unittest.TestCase):
             )
         else:
             return PaginatedQuestionnaireEngagementSurveyList(
-                count = 123,
-                results = [
-                    defectdojo_api_generated.models.questionnaire_engagement_survey.QuestionnaireEngagementSurvey(
-                        id = 56, 
-                        questions = [
-                            ''
-                            ], 
-                        name = '', 
-                        description = '', 
-                        active = True, )
-                    ],
         )
         """
 

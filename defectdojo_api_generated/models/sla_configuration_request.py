@@ -26,8 +26,8 @@ class SLAConfigurationRequest(BaseModel):
     SLAConfigurationRequest
     """  # noqa: E501
 
-    name: Annotated[str, Field(min_length=1, strict=True, max_length=128)] = Field(
-        description='A unique name for the set of SLAs.'
+    name: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=128)]] = Field(
+        default=None, description='A unique name for the set of SLAs.'
     )
     description: Optional[Annotated[str, Field(strict=True, max_length=512)]] = None
     critical: Optional[Annotated[int, Field(le=2147483647, strict=True, ge=-2147483648)]] = Field(

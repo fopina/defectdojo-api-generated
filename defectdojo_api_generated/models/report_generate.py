@@ -36,21 +36,21 @@ class ReportGenerate(BaseModel):
     ReportGenerate
     """  # noqa: E501
 
-    executive_summary: Optional[ExecutiveSummary]
-    product_type: ProductType
-    product: Product
-    engagement: Engagement
-    report_name: Annotated[str, Field(strict=True, max_length=200)]
-    report_info: Annotated[str, Field(strict=True, max_length=200)]
-    test: Test
-    endpoint: Endpoint
-    endpoints: List[Endpoint]
-    findings: List[Finding]
-    user: UserStub
-    team_name: Annotated[str, Field(strict=True, max_length=200)]
-    title: Annotated[str, Field(strict=True, max_length=200)]
-    user_id: StrictInt
-    host: Annotated[str, Field(strict=True, max_length=200)]
+    executive_summary: Optional[ExecutiveSummary] = None
+    product_type: Optional[ProductType] = None
+    product: Optional[Product] = None
+    engagement: Optional[Engagement] = None
+    report_name: Optional[Annotated[str, Field(strict=True, max_length=200)]] = None
+    report_info: Optional[Annotated[str, Field(strict=True, max_length=200)]] = None
+    test: Optional[Test] = None
+    endpoint: Optional[Endpoint] = None
+    endpoints: Optional[List[Endpoint]] = None
+    findings: Optional[List[Finding]] = None
+    user: Optional[UserStub] = None
+    team_name: Optional[Annotated[str, Field(strict=True, max_length=200)]] = None
+    title: Optional[Annotated[str, Field(strict=True, max_length=200)]] = None
+    user_id: Optional[StrictInt] = None
+    host: Optional[Annotated[str, Field(strict=True, max_length=200)]] = None
     finding_notes: Optional[List[FindingToNotes]] = None
     __properties: ClassVar[List[str]] = [
         'executive_summary',

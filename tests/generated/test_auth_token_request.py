@@ -39,8 +39,6 @@ class TestAuthTokenRequest(unittest.TestCase):
             )
         else:
             return AuthTokenRequest(
-                username = '0',
-                password = '0',
         )
         """
 

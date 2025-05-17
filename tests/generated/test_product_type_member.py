@@ -71,10 +71,6 @@ class TestProductTypeMember(unittest.TestCase):
             )
         else:
             return ProductTypeMember(
-                id = 56,
-                product_type = 56,
-                user = 56,
-                role = 56,
         )
         """
 

@@ -45,12 +45,6 @@ class TestPaginatedDevelopmentEnvironmentList(unittest.TestCase):
             )
         else:
             return PaginatedDevelopmentEnvironmentList(
-                count = 123,
-                results = [
-                    defectdojo_api_generated.models.development_environment.DevelopmentEnvironment(
-                        id = 56, 
-                        name = '', )
-                    ],
         )
         """
 

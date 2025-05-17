@@ -38,7 +38,6 @@ class TestAuthToken(unittest.TestCase):
             )
         else:
             return AuthToken(
-                token = '',
         )
         """
 

@@ -116,7 +116,6 @@ class TestSystemSettings(unittest.TestCase):
             )
         else:
             return SystemSettings(
-                id = 56,
         )
         """
 

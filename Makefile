@@ -25,7 +25,7 @@ testpub:
 	twine upload --repository testpypi dist/*
 
 schema:
-	./support/fetch_openapi.py
+	./support/openapi/fetch_openapi.py
 
 templates:
 	./support/api_generation/dump_templates.sh

@@ -29,14 +29,15 @@ class JIRAInstanceRequest(BaseModel):
     configuration_name: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=2000)]] = Field(
         default=None, description='Enter a name to give to this configuration'
     )
-    url: Annotated[str, Field(min_length=1, strict=True, max_length=2000)] = Field(
-        description='For more information how to configure Jira, read the DefectDojo documentation.'
+    url: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=2000)]] = Field(
+        default=None, description='For more information how to configure Jira, read the DefectDojo documentation.'
     )
-    username: Annotated[str, Field(min_length=1, strict=True, max_length=2000)] = Field(
-        description='Username or Email Address, see DefectDojo documentation for more information.'
+    username: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=2000)]] = Field(
+        default=None, description='Username or Email Address, see DefectDojo documentation for more information.'
     )
-    password: Annotated[str, Field(min_length=1, strict=True, max_length=2000)] = Field(
-        description='Password, API Token, or Personal Access Token, see DefectDojo documentation for more information.'
+    password: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=2000)]] = Field(
+        default=None,
+        description='Password, API Token, or Personal Access Token, see DefectDojo documentation for more information.',
     )
     default_issue_type: Optional[StrictStr] = Field(
         default=None,
@@ -46,29 +47,32 @@ class JIRAInstanceRequest(BaseModel):
         default=None,
         description='Choose the folder containing the Django templates used to render the JIRA issue description. These are stored in dojo/templates/issue-trackers. Leave empty to use the default jira_full templates.',
     )
-    epic_name_id: Annotated[int, Field(le=2147483647, strict=True, ge=-2147483648)] = Field(
-        description="To obtain the 'Epic name id' visit https://<YOUR JIRA URL>/rest/api/2/field and search for Epic Name. Copy the number out of cf[number] and paste it here."
+    epic_name_id: Optional[Annotated[int, Field(le=2147483647, strict=True, ge=-2147483648)]] = Field(
+        default=None,
+        description="To obtain the 'Epic name id' visit https://<YOUR JIRA URL>/rest/api/2/field and search for Epic Name. Copy the number out of cf[number] and paste it here.",
     )
-    open_status_key: Annotated[int, Field(le=2147483647, strict=True, ge=-2147483648)] = Field(
-        description='Transition ID to Re-Open JIRA issues, visit https://<YOUR JIRA URL>/rest/api/latest/issue/<ANY VALID ISSUE KEY>/transitions?expand=transitions.fields to find the ID for your JIRA instance'
+    open_status_key: Optional[Annotated[int, Field(le=2147483647, strict=True, ge=-2147483648)]] = Field(
+        default=None,
+        description='Transition ID to Re-Open JIRA issues, visit https://<YOUR JIRA URL>/rest/api/latest/issue/<ANY VALID ISSUE KEY>/transitions?expand=transitions.fields to find the ID for your JIRA instance',
     )
-    close_status_key: Annotated[int, Field(le=2147483647, strict=True, ge=-2147483648)] = Field(
-        description='Transition ID to Close JIRA issues, visit https://<YOUR JIRA URL>/rest/api/latest/issue/<ANY VALID ISSUE KEY>/transitions?expand=transitions.fields to find the ID for your JIRA instance'
+    close_status_key: Optional[Annotated[int, Field(le=2147483647, strict=True, ge=-2147483648)]] = Field(
+        default=None,
+        description='Transition ID to Close JIRA issues, visit https://<YOUR JIRA URL>/rest/api/latest/issue/<ANY VALID ISSUE KEY>/transitions?expand=transitions.fields to find the ID for your JIRA instance',
     )
-    info_mapping_severity: Annotated[str, Field(min_length=1, strict=True, max_length=200)] = Field(
-        description="Maps to the 'Priority' field in Jira. For example: Info"
+    info_mapping_severity: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=200)]] = Field(
+        default=None, description="Maps to the 'Priority' field in Jira. For example: Info"
     )
-    low_mapping_severity: Annotated[str, Field(min_length=1, strict=True, max_length=200)] = Field(
-        description="Maps to the 'Priority' field in Jira. For example: Low"
+    low_mapping_severity: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=200)]] = Field(
+        default=None, description="Maps to the 'Priority' field in Jira. For example: Low"
     )
-    medium_mapping_severity: Annotated[str, Field(min_length=1, strict=True, max_length=200)] = Field(
-        description="Maps to the 'Priority' field in Jira. For example: Medium"
+    medium_mapping_severity: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=200)]] = Field(
+        default=None, description="Maps to the 'Priority' field in Jira. For example: Medium"
     )
-    high_mapping_severity: Annotated[str, Field(min_length=1, strict=True, max_length=200)] = Field(
-        description="Maps to the 'Priority' field in Jira. For example: High"
+    high_mapping_severity: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=200)]] = Field(
+        default=None, description="Maps to the 'Priority' field in Jira. For example: High"
     )
-    critical_mapping_severity: Annotated[str, Field(min_length=1, strict=True, max_length=200)] = Field(
-        description="Maps to the 'Priority' field in Jira. For example: Critical"
+    critical_mapping_severity: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=200)]] = Field(
+        default=None, description="Maps to the 'Priority' field in Jira. For example: Critical"
     )
     finding_text: Optional[StrictStr] = Field(
         default=None,

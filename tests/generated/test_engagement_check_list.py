@@ -71,8 +71,6 @@ class TestEngagementCheckList(unittest.TestCase):
             )
         else:
             return EngagementCheckList(
-                id = 56,
-                engagement = 56,
         )
         """
 

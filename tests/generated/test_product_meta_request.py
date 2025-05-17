@@ -39,8 +39,6 @@ class TestProductMetaRequest(unittest.TestCase):
             )
         else:
             return ProductMetaRequest(
-                name = '0',
-                value = '0',
         )
         """
 

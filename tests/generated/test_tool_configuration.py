@@ -53,9 +53,6 @@ class TestToolConfiguration(unittest.TestCase):
             )
         else:
             return ToolConfiguration(
-                id = 56,
-                name = '',
-                tool_type = 56,
         )
         """
 

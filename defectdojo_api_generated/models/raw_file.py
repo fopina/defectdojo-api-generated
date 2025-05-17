@@ -26,7 +26,7 @@ class RawFile(BaseModel):
     RawFile
     """  # noqa: E501
 
-    file: StrictStr
+    file: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ['file']
 
     model_config = ConfigDict(

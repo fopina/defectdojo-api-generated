@@ -26,9 +26,9 @@ class TestType(BaseModel):
     TestType
     """  # noqa: E501
 
-    id: StrictInt
+    id: Optional[StrictInt] = None
     tags: Optional[List[StrictStr]] = None
-    name: Annotated[str, Field(strict=True, max_length=200)]
+    name: Optional[Annotated[str, Field(strict=True, max_length=200)]] = None
     static_tool: Optional[StrictBool] = None
     dynamic_tool: Optional[StrictBool] = None
     active: Optional[StrictBool] = None

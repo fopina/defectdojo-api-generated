@@ -57,22 +57,6 @@ class TestPaginatedQuestionnaireGeneralSurveyList(unittest.TestCase):
             )
         else:
             return PaginatedQuestionnaireGeneralSurveyList(
-                count = 123,
-                results = [
-                    defectdojo_api_generated.models.questionnaire_general_survey.QuestionnaireGeneralSurvey(
-                        id = 56, 
-                        survey = defectdojo_api_generated.models.questionnaire_engagement_survey.QuestionnaireEngagementSurvey(
-                            id = 56, 
-                            questions = [
-                                ''
-                                ], 
-                            name = '', 
-                            description = '', 
-                            active = True, ), 
-                        num_responses = -2147483648, 
-                        generated = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        expiration = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
-                    ],
         )
         """
 

@@ -28,8 +28,8 @@ class TestToFiles(BaseModel):
     TestToFiles
     """  # noqa: E501
 
-    test_id: Optional[StrictInt]
-    files: List[File]
+    test_id: Optional[StrictInt] = None
+    files: Optional[List[File]] = None
     __properties: ClassVar[List[str]] = ['test_id', 'files']
 
     model_config = ConfigDict(

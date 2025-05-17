@@ -31,11 +31,11 @@ class QuestionnaireAnsweredSurvey(BaseModel):
     QuestionnaireAnsweredSurvey
     """  # noqa: E501
 
-    id: StrictInt
+    id: Optional[StrictInt] = None
     completed: Optional[StrictBool] = None
     answered_on: Optional[date] = None
     engagement: Optional[StrictInt] = None
-    survey: StrictInt
+    survey: Optional[StrictInt] = None
     assignee: Optional[StrictInt] = None
     responder: Optional[StrictInt] = None
     prefetch: Optional[PaginatedQuestionnaireAnsweredSurveyListPrefetch] = None

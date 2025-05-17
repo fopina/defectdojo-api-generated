@@ -26,8 +26,8 @@ class ImportLanguages(BaseModel):
     ImportLanguages
     """  # noqa: E501
 
-    product: StrictInt
-    file: StrictStr
+    product: Optional[StrictInt] = None
+    file: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ['product', 'file']
 
     model_config = ConfigDict(

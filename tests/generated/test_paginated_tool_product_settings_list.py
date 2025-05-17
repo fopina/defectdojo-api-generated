@@ -185,13 +185,7 @@ class TestPaginatedToolProductSettingsList(unittest.TestCase):
                                         critical_product = True, 
                                         key_product = True, 
                                         updated = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                        created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                        members = [
-                                            56
-                                            ], 
-                                        authorization_groups = [
-                                            56
-                                            ], )
+                                        created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
                                     }, 
                                 product_manager = {
                                     'key' : defectdojo_api_generated.models.user_stub.UserStub(
@@ -240,80 +234,6 @@ class TestPaginatedToolProductSettingsList(unittest.TestCase):
             )
         else:
             return PaginatedToolProductSettingsList(
-                count = 123,
-                results = [
-                    defectdojo_api_generated.models.tool_product_settings.ToolProductSettings(
-                        id = 56, 
-                        setting_url = '', 
-                        product = 56, 
-                        name = '', 
-                        description = '', 
-                        url = '', 
-                        tool_project_id = '', 
-                        tool_configuration = 56, 
-                        notes = [
-                            56
-                            ], 
-                        prefetch = defectdojo_api_generated.models.paginated_tool_product_settings_list_prefetch.PaginatedToolProductSettingsList_prefetch(
-                            product = {
-                                'key' : defectdojo_api_generated.models.product.Product(
-                                    id = 56, 
-                                    findings_count = 56, 
-                                    findings_list = [
-                                        56
-                                        ], 
-                                    tags = [
-                                        ''
-                                        ], 
-                                    product_meta = [
-                                        defectdojo_api_generated.models.product_meta.ProductMeta(
-                                            name = '', 
-                                            value = '', )
-                                        ], 
-                                    name = '', 
-                                    description = '', 
-                                    created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                    prod_numeric_grade = -2147483648, 
-                                    business_criticality = 'very high', 
-                                    platform = 'web service', 
-                                    lifecycle = 'construction', 
-                                    origin = 'third party library', 
-                                    user_records = 0, 
-                                    revenue = '-8072888001.', 
-                                    external_audience = True, 
-                                    internet_accessible = True, 
-                                    enable_product_tag_inheritance = True, 
-                                    enable_simple_risk_acceptance = True, 
-                                    enable_full_risk_acceptance = True, 
-                                    disable_sla_breach_notifications = True, 
-                                    product_manager = 56, 
-                                    technical_contact = 56, 
-                                    team_manager = 56, 
-                                    prod_type = 56, 
-                                    sla_configuration = 56, 
-                                    members = [
-                                        56
-                                        ], 
-                                    authorization_groups = [
-                                        56
-                                        ], 
-                                    regulations = [
-                                        56
-                                        ], )
-                                }, 
-                            tool_configuration = {
-                                'key' : defectdojo_api_generated.models.tool_configuration.ToolConfiguration(
-                                    id = 56, 
-                                    name = '', 
-                                    description = '', 
-                                    url = '', 
-                                    authentication_type = 'API', 
-                                    extras = '', 
-                                    username = '', 
-                                    auth_title = '', 
-                                    tool_type = 56, )
-                                }, ), )
-                    ],
         )
         """
 

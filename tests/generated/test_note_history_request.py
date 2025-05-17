@@ -38,7 +38,6 @@ class TestNoteHistoryRequest(unittest.TestCase):
             )
         else:
             return NoteHistoryRequest(
-                data = '0',
         )
         """
 

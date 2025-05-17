@@ -44,13 +44,6 @@ class TestTestToFiles(unittest.TestCase):
             )
         else:
             return TestToFiles(
-                test_id = 56,
-                files = [
-                    defectdojo_api_generated.models.file.File(
-                        id = 56, 
-                        file = '', 
-                        title = '', )
-                    ],
         )
         """
 

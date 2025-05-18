@@ -26,8 +26,8 @@ class NetworkLocationsRequest(BaseModel):
     NetworkLocationsRequest
     """  # noqa: E501
 
-    location: Annotated[str, Field(min_length=1, strict=True, max_length=500)] = Field(
-        description='Location of network testing: Examples: VPN, Internet or Internal.'
+    location: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=500)]] = Field(
+        default=None, description='Location of network testing: Examples: VPN, Internet or Internal.'
     )
     __properties: ClassVar[List[str]] = ['location']
 

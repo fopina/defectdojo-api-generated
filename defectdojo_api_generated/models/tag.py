@@ -26,7 +26,7 @@ class Tag(BaseModel):
     Tag
     """  # noqa: E501
 
-    tags: List[StrictStr]
+    tags: Optional[List[StrictStr]] = None
     __properties: ClassVar[List[str]] = ['tags']
 
     model_config = ConfigDict(

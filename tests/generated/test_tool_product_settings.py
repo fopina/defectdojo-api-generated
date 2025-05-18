@@ -127,14 +127,6 @@ class TestToolProductSettings(unittest.TestCase):
             )
         else:
             return ToolProductSettings(
-                id = 56,
-                setting_url = '',
-                product = 56,
-                name = '',
-                tool_configuration = 56,
-                notes = [
-                    56
-                    ],
         )
         """
 

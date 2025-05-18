@@ -28,8 +28,8 @@ class EngagementToNotes(BaseModel):
     EngagementToNotes
     """  # noqa: E501
 
-    engagement_id: Optional[StrictInt]
-    notes: List[Note]
+    engagement_id: Optional[StrictInt] = None
+    notes: Optional[List[Note]] = None
     __properties: ClassVar[List[str]] = ['engagement_id', 'notes']
 
     model_config = ConfigDict(

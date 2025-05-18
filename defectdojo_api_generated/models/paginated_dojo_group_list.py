@@ -29,10 +29,10 @@ class PaginatedDojoGroupList(BaseModel):
     PaginatedDojoGroupList
     """  # noqa: E501
 
-    count: StrictInt
+    count: Optional[StrictInt] = None
     next: Optional[StrictStr] = None
     previous: Optional[StrictStr] = None
-    results: List[DojoGroup]
+    results: Optional[List[DojoGroup]] = None
     prefetch: Optional[DojoGroupPrefetch] = None
     __properties: ClassVar[List[str]] = ['count', 'next', 'previous', 'results', 'prefetch']
 

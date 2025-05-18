@@ -26,8 +26,8 @@ class NoteTypeRequest(BaseModel):
     NoteTypeRequest
     """  # noqa: E501
 
-    name: Annotated[str, Field(min_length=1, strict=True, max_length=100)]
-    description: Annotated[str, Field(min_length=1, strict=True, max_length=200)]
+    name: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=100)]] = None
+    description: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=200)]] = None
     is_single: Optional[StrictBool] = None
     is_active: Optional[StrictBool] = None
     is_mandatory: Optional[StrictBool] = None

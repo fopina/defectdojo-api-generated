@@ -29,11 +29,11 @@ class QuestionnaireGeneralSurvey(BaseModel):
     QuestionnaireGeneralSurvey
     """  # noqa: E501
 
-    id: StrictInt
-    survey: QuestionnaireEngagementSurvey
+    id: Optional[StrictInt] = None
+    survey: Optional[QuestionnaireEngagementSurvey] = None
     num_responses: Optional[Annotated[int, Field(le=2147483647, strict=True, ge=-2147483648)]] = None
-    generated: Optional[datetime]
-    expiration: datetime
+    generated: Optional[datetime] = None
+    expiration: Optional[datetime] = None
     __properties: ClassVar[List[str]] = ['id', 'survey', 'num_responses', 'generated', 'expiration']
 
     model_config = ConfigDict(

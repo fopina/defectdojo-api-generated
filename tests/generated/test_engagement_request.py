@@ -68,9 +68,6 @@ class TestEngagementRequest(unittest.TestCase):
             )
         else:
             return EngagementRequest(
-                target_start = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(),
-                target_end = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(),
-                product = 56,
         )
         """
 

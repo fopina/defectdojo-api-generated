@@ -28,8 +28,8 @@ class FindingToFiles(BaseModel):
     FindingToFiles
     """  # noqa: E501
 
-    finding_id: Optional[StrictInt]
-    files: List[File]
+    finding_id: Optional[StrictInt] = None
+    files: Optional[List[File]] = None
     __properties: ClassVar[List[str]] = ['finding_id', 'files']
 
     model_config = ConfigDict(

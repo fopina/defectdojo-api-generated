@@ -31,20 +31,20 @@ class Test(BaseModel):
     Test
     """  # noqa: E501
 
-    id: StrictInt
+    id: Optional[StrictInt] = None
     tags: Optional[List[StrictStr]] = None
-    test_type_name: StrictStr
-    finding_groups: List[FindingGroup]
+    test_type_name: Optional[StrictStr] = None
+    finding_groups: Optional[List[FindingGroup]] = None
     scan_type: Optional[StrictStr] = None
     title: Optional[Annotated[str, Field(strict=True, max_length=255)]] = None
     description: Optional[StrictStr] = None
-    target_start: datetime
-    target_end: datetime
-    estimated_time: Optional[StrictStr]
-    actual_time: Optional[StrictStr]
+    target_start: Optional[datetime] = None
+    target_end: Optional[datetime] = None
+    estimated_time: Optional[StrictStr] = None
+    actual_time: Optional[StrictStr] = None
     percent_complete: Optional[Annotated[int, Field(le=2147483647, strict=True, ge=-2147483648)]] = None
-    updated: Optional[datetime]
-    created: Optional[datetime]
+    updated: Optional[datetime] = None
+    created: Optional[datetime] = None
     version: Optional[Annotated[str, Field(strict=True, max_length=100)]] = None
     build_id: Optional[Annotated[str, Field(strict=True, max_length=150)]] = Field(
         default=None, description='Build ID that was tested, a reimport may update this field.'
@@ -55,13 +55,13 @@ class Test(BaseModel):
     branch_tag: Optional[Annotated[str, Field(strict=True, max_length=150)]] = Field(
         default=None, description='Tag or branch that was tested, a reimport may update this field.'
     )
-    engagement: StrictInt
+    engagement: Optional[StrictInt] = None
     lead: Optional[StrictInt] = None
-    test_type: StrictInt
+    test_type: Optional[StrictInt] = None
     environment: Optional[StrictInt] = None
     api_scan_configuration: Optional[StrictInt] = None
-    notes: List[Note]
-    files: List[File]
+    notes: Optional[List[Note]] = None
+    files: Optional[List[File]] = None
     __properties: ClassVar[List[str]] = [
         'id',
         'tags',

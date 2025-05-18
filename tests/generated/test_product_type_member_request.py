@@ -40,9 +40,6 @@ class TestProductTypeMemberRequest(unittest.TestCase):
             )
         else:
             return ProductTypeMemberRequest(
-                product_type = 56,
-                user = 56,
-                role = 56,
         )
         """
 

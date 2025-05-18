@@ -28,10 +28,12 @@ class DojoGroupMember(BaseModel):
     DojoGroupMember
     """  # noqa: E501
 
-    id: StrictInt
-    group: StrictInt
-    user: StrictInt
-    role: StrictInt = Field(description='This role determines the permissions of the user to manage the group.')
+    id: Optional[StrictInt] = None
+    group: Optional[StrictInt] = None
+    user: Optional[StrictInt] = None
+    role: Optional[StrictInt] = Field(
+        default=None, description='This role determines the permissions of the user to manage the group.'
+    )
     prefetch: Optional[DojoGroupMemberPrefetch] = None
     __properties: ClassVar[List[str]] = ['id', 'group', 'user', 'role', 'prefetch']
 

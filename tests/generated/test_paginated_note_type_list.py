@@ -49,16 +49,6 @@ class TestPaginatedNoteTypeList(unittest.TestCase):
             )
         else:
             return PaginatedNoteTypeList(
-                count = 123,
-                results = [
-                    defectdojo_api_generated.models.note_type.NoteType(
-                        id = 56, 
-                        name = '', 
-                        description = '', 
-                        is_single = True, 
-                        is_active = True, 
-                        is_mandatory = True, )
-                    ],
         )
         """
 

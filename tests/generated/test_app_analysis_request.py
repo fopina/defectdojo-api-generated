@@ -48,9 +48,6 @@ class TestAppAnalysisRequest(unittest.TestCase):
             )
         else:
             return AppAnalysisRequest(
-                name = '0',
-                product = 56,
-                user = 56,
         )
         """
 

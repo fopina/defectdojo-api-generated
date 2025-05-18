@@ -29,7 +29,7 @@ class EngagementPresets(BaseModel):
     EngagementPresets
     """  # noqa: E501
 
-    id: StrictInt
+    id: Optional[StrictInt] = None
     title: Optional[Annotated[str, Field(strict=True, max_length=500)]] = Field(
         default=None, description='Brief description of preset.'
     )
@@ -39,8 +39,8 @@ class EngagementPresets(BaseModel):
     scope: Optional[Annotated[str, Field(strict=True, max_length=800)]] = Field(
         default=None, description="Scope of Engagement testing, IP's/Resources/URL's)"
     )
-    created: datetime
-    product: StrictInt
+    created: Optional[datetime] = None
+    product: Optional[StrictInt] = None
     test_type: Optional[List[StrictInt]] = None
     network_locations: Optional[List[StrictInt]] = None
     prefetch: Optional[EngagementPresetsPrefetch] = None

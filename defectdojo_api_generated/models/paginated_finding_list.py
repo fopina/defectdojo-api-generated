@@ -29,10 +29,10 @@ class PaginatedFindingList(BaseModel):
     PaginatedFindingList
     """  # noqa: E501
 
-    count: StrictInt
+    count: Optional[StrictInt] = None
     next: Optional[StrictStr] = None
     previous: Optional[StrictStr] = None
-    results: List[Finding]
+    results: Optional[List[Finding]] = None
     prefetch: Optional[FindingPrefetch] = None
     __properties: ClassVar[List[str]] = ['count', 'next', 'previous', 'results', 'prefetch']
 

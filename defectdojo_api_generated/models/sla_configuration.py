@@ -26,8 +26,10 @@ class SLAConfiguration(BaseModel):
     SLAConfiguration
     """  # noqa: E501
 
-    id: StrictInt
-    name: Annotated[str, Field(strict=True, max_length=128)] = Field(description='A unique name for the set of SLAs.')
+    id: Optional[StrictInt] = None
+    name: Optional[Annotated[str, Field(strict=True, max_length=128)]] = Field(
+        default=None, description='A unique name for the set of SLAs.'
+    )
     description: Optional[Annotated[str, Field(strict=True, max_length=512)]] = None
     critical: Optional[Annotated[int, Field(le=2147483647, strict=True, ge=-2147483648)]] = Field(
         default=None, description='The number of days to remediate a critical finding.'

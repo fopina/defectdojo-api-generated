@@ -35,7 +35,7 @@ class EngagementPresetsRequest(BaseModel):
     scope: Optional[Annotated[str, Field(strict=True, max_length=800)]] = Field(
         default=None, description="Scope of Engagement testing, IP's/Resources/URL's)"
     )
-    product: StrictInt
+    product: Optional[StrictInt] = None
     test_type: Optional[List[StrictInt]] = None
     network_locations: Optional[List[StrictInt]] = None
     __properties: ClassVar[List[str]] = ['title', 'notes', 'scope', 'product', 'test_type', 'network_locations']

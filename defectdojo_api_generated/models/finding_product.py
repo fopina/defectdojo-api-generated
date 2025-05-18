@@ -28,8 +28,8 @@ class FindingProduct(BaseModel):
     FindingProduct
     """  # noqa: E501
 
-    id: StrictInt
-    name: Annotated[str, Field(strict=True, max_length=255)]
+    id: Optional[StrictInt] = None
+    name: Optional[Annotated[str, Field(strict=True, max_length=255)]] = None
     prod_type: Optional[FindingProdType] = None
     __properties: ClassVar[List[str]] = ['id', 'name', 'prod_type']
 

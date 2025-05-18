@@ -46,7 +46,7 @@ class UserContactInfoRequest(BaseModel):
     force_password_reset: Optional[StrictBool] = Field(
         default=None, description='Forces this user to reset their password on next login.'
     )
-    user: StrictInt
+    user: Optional[StrictInt] = None
     __properties: ClassVar[List[str]] = [
         'title',
         'phone_number',

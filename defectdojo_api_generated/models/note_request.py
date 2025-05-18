@@ -26,7 +26,7 @@ class NoteRequest(BaseModel):
     NoteRequest
     """  # noqa: E501
 
-    entry: Annotated[str, Field(min_length=1, strict=True)]
+    entry: Optional[Annotated[str, Field(min_length=1, strict=True)]] = None
     private: Optional[StrictBool] = None
     edited: Optional[StrictBool] = None
     __properties: ClassVar[List[str]] = ['entry', 'private', 'edited']

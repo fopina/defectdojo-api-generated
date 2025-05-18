@@ -102,16 +102,6 @@ class TestFindingCreateRequest(unittest.TestCase):
             )
         else:
             return FindingCreateRequest(
-                test = 56,
-                found_by = [
-                    56
-                    ],
-                title = '0',
-                severity = '0',
-                description = '0',
-                active = True,
-                verified = True,
-                numerical_severity = '0',
         )
         """
 

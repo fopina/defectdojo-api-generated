@@ -26,7 +26,7 @@ class TagRequest(BaseModel):
     TagRequest
     """  # noqa: E501
 
-    tags: List[Annotated[str, Field(min_length=1, strict=True)]]
+    tags: Optional[List[Annotated[str, Field(min_length=1, strict=True)]]] = None
     __properties: ClassVar[List[str]] = ['tags']
 
     model_config = ConfigDict(

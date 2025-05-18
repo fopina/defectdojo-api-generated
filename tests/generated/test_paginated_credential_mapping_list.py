@@ -51,18 +51,6 @@ class TestPaginatedCredentialMappingList(unittest.TestCase):
             )
         else:
             return PaginatedCredentialMappingList(
-                count = 123,
-                results = [
-                    defectdojo_api_generated.models.credential_mapping.CredentialMapping(
-                        id = 56, 
-                        is_authn_provider = True, 
-                        url = '', 
-                        cred_id = 56, 
-                        product = 56, 
-                        finding = 56, 
-                        engagement = 56, 
-                        test = 56, )
-                    ],
         )
         """
 

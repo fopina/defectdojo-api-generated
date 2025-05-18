@@ -48,8 +48,6 @@ class TestToolConfigurationRequest(unittest.TestCase):
             )
         else:
             return ToolConfigurationRequest(
-                name = '0',
-                tool_type = 56,
         )
         """
 

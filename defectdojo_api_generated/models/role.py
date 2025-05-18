@@ -26,8 +26,8 @@ class Role(BaseModel):
     Role
     """  # noqa: E501
 
-    id: StrictInt
-    name: Annotated[str, Field(strict=True, max_length=255)]
+    id: Optional[StrictInt] = None
+    name: Optional[Annotated[str, Field(strict=True, max_length=255)]] = None
     is_owner: Optional[StrictBool] = None
     __properties: ClassVar[List[str]] = ['id', 'name', 'is_owner']
 

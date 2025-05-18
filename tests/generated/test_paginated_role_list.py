@@ -46,13 +46,6 @@ class TestPaginatedRoleList(unittest.TestCase):
             )
         else:
             return PaginatedRoleList(
-                count = 123,
-                results = [
-                    defectdojo_api_generated.models.role.Role(
-                        id = 56, 
-                        name = '', 
-                        is_owner = True, )
-                    ],
         )
         """
 

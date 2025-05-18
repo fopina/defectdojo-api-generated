@@ -159,13 +159,7 @@ class TestPaginatedProductMemberList(unittest.TestCase):
                                         critical_product = True, 
                                         key_product = True, 
                                         updated = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                        created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                        members = [
-                                            56
-                                            ], 
-                                        authorization_groups = [
-                                            56
-                                            ], )
+                                        created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
                                     }, 
                                 product_manager = {
                                     'key' : defectdojo_api_generated.models.user_stub.UserStub(
@@ -211,74 +205,6 @@ class TestPaginatedProductMemberList(unittest.TestCase):
             )
         else:
             return PaginatedProductMemberList(
-                count = 123,
-                results = [
-                    defectdojo_api_generated.models.product_member.ProductMember(
-                        id = 56, 
-                        product = 56, 
-                        user = 56, 
-                        role = 56, 
-                        prefetch = defectdojo_api_generated.models.paginated_product_member_list_prefetch.PaginatedProductMemberList_prefetch(
-                            product = {
-                                'key' : defectdojo_api_generated.models.product.Product(
-                                    id = 56, 
-                                    findings_count = 56, 
-                                    findings_list = [
-                                        56
-                                        ], 
-                                    tags = [
-                                        ''
-                                        ], 
-                                    product_meta = [
-                                        defectdojo_api_generated.models.product_meta.ProductMeta(
-                                            name = '', 
-                                            value = '', )
-                                        ], 
-                                    name = '', 
-                                    description = '', 
-                                    created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                    prod_numeric_grade = -2147483648, 
-                                    business_criticality = 'very high', 
-                                    platform = 'web service', 
-                                    lifecycle = 'construction', 
-                                    origin = 'third party library', 
-                                    user_records = 0, 
-                                    revenue = '-8072888001.', 
-                                    external_audience = True, 
-                                    internet_accessible = True, 
-                                    enable_product_tag_inheritance = True, 
-                                    enable_simple_risk_acceptance = True, 
-                                    enable_full_risk_acceptance = True, 
-                                    disable_sla_breach_notifications = True, 
-                                    product_manager = 56, 
-                                    technical_contact = 56, 
-                                    team_manager = 56, 
-                                    prod_type = 56, 
-                                    sla_configuration = 56, 
-                                    members = [
-                                        56
-                                        ], 
-                                    authorization_groups = [
-                                        56
-                                        ], 
-                                    regulations = [
-                                        56
-                                        ], )
-                                }, 
-                            role = {
-                                'key' : defectdojo_api_generated.models.role.Role(
-                                    id = 56, 
-                                    name = '', 
-                                    is_owner = True, )
-                                }, 
-                            user = {
-                                'key' : defectdojo_api_generated.models.user_stub.UserStub(
-                                    id = 56, 
-                                    username = 'A', 
-                                    first_name = '', 
-                                    last_name = '', )
-                                }, ), )
-                    ],
         )
         """
 

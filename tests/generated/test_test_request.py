@@ -54,9 +54,6 @@ class TestTestRequest(unittest.TestCase):
             )
         else:
             return TestRequest(
-                target_start = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                target_end = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                test_type = 56,
         )
         """
 

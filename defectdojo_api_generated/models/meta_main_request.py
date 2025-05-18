@@ -31,7 +31,7 @@ class MetaMainRequest(BaseModel):
     product: Optional[StrictInt] = None
     endpoint: Optional[StrictInt] = None
     finding: Optional[StrictInt] = None
-    metadata: List[MetadataRequest]
+    metadata: Optional[List[MetadataRequest]] = None
     __properties: ClassVar[List[str]] = ['product', 'endpoint', 'finding', 'metadata']
 
     model_config = ConfigDict(

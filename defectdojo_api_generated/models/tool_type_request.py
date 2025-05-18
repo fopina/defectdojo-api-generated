@@ -26,7 +26,7 @@ class ToolTypeRequest(BaseModel):
     ToolTypeRequest
     """  # noqa: E501
 
-    name: Annotated[str, Field(min_length=1, strict=True, max_length=200)]
+    name: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=200)]] = None
     description: Optional[Annotated[str, Field(strict=True, max_length=2000)]] = None
     __properties: ClassVar[List[str]] = ['name', 'description']
 

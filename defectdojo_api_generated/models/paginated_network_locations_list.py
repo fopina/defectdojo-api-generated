@@ -28,10 +28,10 @@ class PaginatedNetworkLocationsList(BaseModel):
     PaginatedNetworkLocationsList
     """  # noqa: E501
 
-    count: StrictInt
+    count: Optional[StrictInt] = None
     next: Optional[StrictStr] = None
     previous: Optional[StrictStr] = None
-    results: List[NetworkLocations]
+    results: Optional[List[NetworkLocations]] = None
     __properties: ClassVar[List[str]] = ['count', 'next', 'previous', 'results']
 
     model_config = ConfigDict(

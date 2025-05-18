@@ -43,9 +43,6 @@ class TestMeta(unittest.TestCase):
             )
         else:
             return Meta(
-                id = 56,
-                name = '',
-                value = '',
         )
         """
 

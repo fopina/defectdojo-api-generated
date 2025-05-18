@@ -254,50 +254,13 @@ class TestPaginatedFindingList(unittest.TestCase):
                                 'key' : defectdojo_api_generated.models.finding.Finding(
                                     id = 56, 
                                     request_response = null, 
-                                    accepted_risks = [
-                                        defectdojo_api_generated.models.risk_acceptance.RiskAcceptance(
-                                            id = 56, 
-                                            path = '', 
-                                            name = '', 
-                                            recommendation = 'A', 
-                                            recommendation_details = '', 
-                                            decision = 'A', 
-                                            decision_details = '', 
-                                            accepted_by = '', 
-                                            expiration_date = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                            expiration_date_warned = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                            expiration_date_handled = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                            reactivate_expired = True, 
-                                            restart_sla_expired = True, 
-                                            created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                            updated = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                            owner = 56, 
-                                            accepted_findings = [
-                                                56
-                                                ], 
-                                            notes = [
-                                                56
-                                                ], )
-                                        ], 
                                     push_to_jira = True, 
                                     age = 56, 
                                     sla_days_remaining = 56, 
-                                    finding_meta = [
-                                        defectdojo_api_generated.models.finding_meta.FindingMeta(
-                                            name = '', 
-                                            value = '', )
-                                        ], 
                                     related_fields = null, 
                                     jira_creation = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                     jira_change = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                     display_status = '', 
-                                    finding_groups = [
-                                        defectdojo_api_generated.models.finding_group.FindingGroup(
-                                            id = 56, 
-                                            name = '', 
-                                            test = 56, 
-                                            jira_issue = null, )
-                                        ], 
                                     reporter = 56, 
                                     title = '', 
                                     date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
@@ -354,40 +317,10 @@ class TestPaginatedFindingList(unittest.TestCase):
                                     planned_remediation_version = '', 
                                     effort_for_fixing = '', 
                                     test = 56, 
-                                    duplicate_finding = 56, 
                                     review_requested_by = 56, 
                                     mitigated_by = 56, 
                                     last_reviewed_by = 56, 
-                                    sonarqube_issue = 56, 
-                                    endpoints = [
-                                        56
-                                        ], 
-                                    notes = [
-                                        defectdojo_api_generated.models.note.Note(
-                                            id = 56, 
-                                            author = null, 
-                                            editor = null, 
-                                            history = [
-                                                defectdojo_api_generated.models.note_history.NoteHistory(
-                                                    id = 56, 
-                                                    current_editor = null, 
-                                                    note_type = null, 
-                                                    data = '', 
-                                                    time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
-                                                ], 
-                                            note_type = null, 
-                                            entry = '', 
-                                            date = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                            private = True, 
-                                            edited = True, 
-                                            edit_time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
-                                        ], 
-                                    files = [
-                                        56
-                                        ], 
-                                    found_by = [
-                                        56
-                                        ], )
+                                    sonarqube_issue = 56, )
                                 }, 
                             endpoint_set = {
                                 'key' : defectdojo_api_generated.models.endpoint.Endpoint(
@@ -408,7 +341,11 @@ class TestPaginatedFindingList(unittest.TestCase):
                                         ], )
                                 }, 
                             finding_group_set = {
-                                'key' : 
+                                'key' : defectdojo_api_generated.models.finding_group.FindingGroup(
+                                    id = 56, 
+                                    name = '', 
+                                    test = 56, 
+                                    jira_issue = null, )
                                 }, 
                             last_reviewed_by = {
                                 'key' : defectdojo_api_generated.models.user_stub.UserStub(
@@ -430,7 +367,23 @@ class TestPaginatedFindingList(unittest.TestCase):
                                 'key' : 
                                 }, 
                             risk_acceptance_set = {
-                                'key' : 
+                                'key' : defectdojo_api_generated.models.risk_acceptance.RiskAcceptance(
+                                    id = 56, 
+                                    path = '', 
+                                    name = '', 
+                                    recommendation = 'A', 
+                                    recommendation_details = '', 
+                                    decision = 'A', 
+                                    decision_details = '', 
+                                    accepted_by = '', 
+                                    expiration_date = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                                    expiration_date_warned = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                                    expiration_date_handled = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                                    reactivate_expired = True, 
+                                    restart_sla_expired = True, 
+                                    created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                                    updated = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                                    owner = 56, )
                                 }, 
                             sensitive_issues = {
                                 'key' : 
@@ -449,7 +402,6 @@ class TestPaginatedFindingList(unittest.TestCase):
                                 'key' : defectdojo_api_generated.models.test.Test(
                                     id = 56, 
                                     test_type_name = '', 
-                                    finding_groups = , 
                                     scan_type = '', 
                                     title = '', 
                                     description = '', 
@@ -468,14 +420,7 @@ class TestPaginatedFindingList(unittest.TestCase):
                                     lead = 56, 
                                     test_type = 56, 
                                     environment = 56, 
-                                    api_scan_configuration = 56, 
-                                    notes = , 
-                                    files = [
-                                        defectdojo_api_generated.models.file.File(
-                                            id = 56, 
-                                            file = '', 
-                                            title = '', )
-                                        ], )
+                                    api_scan_configuration = 56, )
                                 }, 
                             test_import_set = {
                                 'key' : defectdojo_api_generated.models.test_import.TestImport(
@@ -497,7 +442,6 @@ class TestPaginatedFindingList(unittest.TestCase):
                                     build_id = '', 
                                     commit_hash = '', 
                                     branch_tag = '', 
-                                    test = 56, 
                                     findings_affected = [
                                         56
                                         ], )
@@ -678,7 +622,6 @@ class TestPaginatedFindingList(unittest.TestCase):
                             planned_remediation_version = '', 
                             effort_for_fixing = '', 
                             test = 56, 
-                            duplicate_finding = 56, 
                             review_requested_by = 56, 
                             mitigated_by = 56, 
                             last_reviewed_by = 56, 
@@ -774,13 +717,7 @@ class TestPaginatedFindingList(unittest.TestCase):
                                         restart_sla_expired = True, 
                                         created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                         updated = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                        owner = 56, 
-                                        accepted_findings = [
-                                            56
-                                            ], 
-                                        notes = [
-                                            56
-                                            ], )
+                                        owner = 56, )
                                     }, 
                                 sonarqube_issue = {
                                     'key' : defectdojo_api_generated.models.sonarqube_issue.SonarqubeIssue(
@@ -793,9 +730,6 @@ class TestPaginatedFindingList(unittest.TestCase):
                                     'key' : defectdojo_api_generated.models.test.Test(
                                         id = 56, 
                                         test_type_name = '', 
-                                        finding_groups = [
-                                            
-                                            ], 
                                         scan_type = '', 
                                         title = '', 
                                         description = '', 
@@ -814,33 +748,7 @@ class TestPaginatedFindingList(unittest.TestCase):
                                         lead = 56, 
                                         test_type = 56, 
                                         environment = 56, 
-                                        api_scan_configuration = 56, 
-                                        notes = [
-                                            defectdojo_api_generated.models.note.Note(
-                                                id = 56, 
-                                                author = null, 
-                                                editor = null, 
-                                                history = [
-                                                    defectdojo_api_generated.models.note_history.NoteHistory(
-                                                        id = 56, 
-                                                        current_editor = null, 
-                                                        note_type = null, 
-                                                        data = '', 
-                                                        time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
-                                                    ], 
-                                                note_type = null, 
-                                                entry = '', 
-                                                date = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                                private = True, 
-                                                edited = True, 
-                                                edit_time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
-                                            ], 
-                                        files = [
-                                            defectdojo_api_generated.models.file.File(
-                                                id = 56, 
-                                                file = '', 
-                                                title = '', )
-                                            ], )
+                                        api_scan_configuration = 56, )
                                     }, 
                                 test_import_set = {
                                     'key' : defectdojo_api_generated.models.test_import.TestImport(
@@ -862,7 +770,6 @@ class TestPaginatedFindingList(unittest.TestCase):
                                         build_id = '', 
                                         commit_hash = '', 
                                         branch_tag = '', 
-                                        test = 56, 
                                         findings_affected = [
                                             56
                                             ], )
@@ -878,13 +785,7 @@ class TestPaginatedFindingList(unittest.TestCase):
                             path = '', 
                             query = '', 
                             fragment = '', 
-                            product = 56, 
-                            endpoint_params = [
-                                56
-                                ], 
-                            findings = [
-                                56
-                                ], )
+                            product = 56, )
                         }, 
                     endpoints = {
                         'key' : 
@@ -913,7 +814,16 @@ class TestPaginatedFindingList(unittest.TestCase):
                         'key' : 
                         }, 
                     notes = {
-                        'key' : 
+                        'key' : defectdojo_api_generated.models.note.Note(
+                            id = 56, 
+                            author = null, 
+                            editor = null, 
+                            note_type = null, 
+                            entry = '', 
+                            date = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                            private = True, 
+                            edited = True, 
+                            edit_time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
                         }, 
                     other_issues = {
                         'key' : 
@@ -947,7 +857,6 @@ class TestPaginatedFindingList(unittest.TestCase):
                         'key' : defectdojo_api_generated.models.test.Test(
                             id = 56, 
                             test_type_name = '', 
-                            finding_groups = , 
                             scan_type = '', 
                             title = '', 
                             description = '', 
@@ -966,24 +875,11 @@ class TestPaginatedFindingList(unittest.TestCase):
                             lead = 56, 
                             test_type = 56, 
                             environment = 56, 
-                            api_scan_configuration = 56, 
-                            notes = , 
-                            files = [
-                                
-                                ], )
+                            api_scan_configuration = 56, )
                         }, 
                     test_import_set = {
                         'key' : defectdojo_api_generated.models.test_import.TestImport(
                             id = 56, 
-                            test_import_finding_action_set = [
-                                defectdojo_api_generated.models.test_import_finding_action.TestImportFindingAction(
-                                    id = 56, 
-                                    created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                    modified = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                    action = 'N', 
-                                    test_import = 56, 
-                                    finding = 56, )
-                                ], 
                             created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                             modified = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                             import_settings = null, 
@@ -991,482 +887,11 @@ class TestPaginatedFindingList(unittest.TestCase):
                             version = '', 
                             build_id = '', 
                             commit_hash = '', 
-                            branch_tag = '', 
-                            test = 56, 
-                            findings_affected = [
-                                56
-                                ], )
+                            branch_tag = '', )
                         }, )
             )
         else:
             return PaginatedFindingList(
-                count = 123,
-                results = [
-                    defectdojo_api_generated.models.finding.Finding(
-                        id = 56, 
-                        tags = [
-                            ''
-                            ], 
-                        request_response = null, 
-                        accepted_risks = [
-                            defectdojo_api_generated.models.risk_acceptance.RiskAcceptance(
-                                id = 56, 
-                                path = '', 
-                                name = '', 
-                                recommendation = 'A', 
-                                recommendation_details = '', 
-                                decision = 'A', 
-                                decision_details = '', 
-                                accepted_by = '', 
-                                expiration_date = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                expiration_date_warned = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                expiration_date_handled = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                reactivate_expired = True, 
-                                restart_sla_expired = True, 
-                                created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                updated = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                owner = 56, 
-                                accepted_findings = [
-                                    56
-                                    ], 
-                                notes = [
-                                    56
-                                    ], )
-                            ], 
-                        push_to_jira = True, 
-                        age = 56, 
-                        sla_days_remaining = 56, 
-                        finding_meta = [
-                            defectdojo_api_generated.models.finding_meta.FindingMeta(
-                                name = '', 
-                                value = '', )
-                            ], 
-                        related_fields = null, 
-                        jira_creation = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        jira_change = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        display_status = '', 
-                        finding_groups = [
-                            defectdojo_api_generated.models.finding_group.FindingGroup(
-                                id = 56, 
-                                name = '', 
-                                test = 56, 
-                                jira_issue = null, )
-                            ], 
-                        vulnerability_ids = [
-                            defectdojo_api_generated.models.vulnerability_id.VulnerabilityId(
-                                vulnerability_id = '', )
-                            ], 
-                        reporter = 56, 
-                        title = '', 
-                        date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
-                        sla_start_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
-                        sla_expiration_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
-                        cwe = -2147483648, 
-                        epss_score = 0.0, 
-                        epss_percentile = 0.0, 
-                        cvssv3 = 'PR:U', 
-                        cvssv3_score = 0.0, 
-                        url = '', 
-                        severity = '', 
-                        description = '', 
-                        mitigation = '', 
-                        impact = '', 
-                        steps_to_reproduce = '', 
-                        severity_justification = '', 
-                        references = '', 
-                        active = True, 
-                        verified = True, 
-                        false_p = True, 
-                        duplicate = True, 
-                        out_of_scope = True, 
-                        risk_accepted = True, 
-                        under_review = True, 
-                        last_status_update = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        under_defect_review = True, 
-                        is_mitigated = True, 
-                        thread_id = 56, 
-                        mitigated = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        numerical_severity = '', 
-                        last_reviewed = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        param = '', 
-                        payload = '', 
-                        hash_code = '', 
-                        line = -2147483648, 
-                        file_path = '', 
-                        component_name = '', 
-                        component_version = '', 
-                        static_finding = True, 
-                        dynamic_finding = True, 
-                        created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        scanner_confidence = 56, 
-                        unique_id_from_tool = '', 
-                        vuln_id_from_tool = '', 
-                        sast_source_object = '', 
-                        sast_sink_object = '', 
-                        sast_source_line = -2147483648, 
-                        sast_source_file_path = '', 
-                        nb_occurences = -2147483648, 
-                        publish_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
-                        service = '', 
-                        planned_remediation_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
-                        planned_remediation_version = '', 
-                        effort_for_fixing = '', 
-                        test = 56, 
-                        duplicate_finding = 56, 
-                        review_requested_by = 56, 
-                        defect_review_requested_by = 56, 
-                        mitigated_by = 56, 
-                        last_reviewed_by = 56, 
-                        sonarqube_issue = 56, 
-                        endpoints = [
-                            56
-                            ], 
-                        reviewers = [
-                            56
-                            ], 
-                        notes = [
-                            defectdojo_api_generated.models.note.Note(
-                                id = 56, 
-                                author = null, 
-                                editor = null, 
-                                history = [
-                                    defectdojo_api_generated.models.note_history.NoteHistory(
-                                        id = 56, 
-                                        current_editor = null, 
-                                        note_type = null, 
-                                        data = '', 
-                                        time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
-                                    ], 
-                                note_type = null, 
-                                entry = '', 
-                                date = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                private = True, 
-                                edited = True, 
-                                edit_time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
-                            ], 
-                        files = [
-                            56
-                            ], 
-                        found_by = [
-                            56
-                            ], 
-                        prefetch = defectdojo_api_generated.models.finding_prefetch.Finding_prefetch(
-                            auth_issues = {
-                                'key' : defectdojo_api_generated.models.engagement_check_list.EngagementCheckList(
-                                    id = 56, 
-                                    session_management = '', 
-                                    encryption_crypto = '', 
-                                    configuration_management = '', 
-                                    authentication = '', 
-                                    authorization_and_access_control = '', 
-                                    data_input_sanitization_validation = '', 
-                                    sensitive_data = '', 
-                                    other = '', 
-                                    engagement = 56, 
-                                    session_issues = [
-                                        56
-                                        ], 
-                                    crypto_issues = [
-                                        56
-                                        ], 
-                                    config_issues = [
-                                        56
-                                        ], 
-                                    author_issues = [
-                                        56
-                                        ], 
-                                    data_issues = [
-                                        56
-                                        ], 
-                                    sensitive_issues = [
-                                        56
-                                        ], 
-                                    other_issues = [
-                                        56
-                                        ], )
-                                }, 
-                            author_issues = {
-                                'key' : defectdojo_api_generated.models.engagement_check_list.EngagementCheckList(
-                                    id = 56, 
-                                    session_management = '', 
-                                    encryption_crypto = '', 
-                                    configuration_management = '', 
-                                    authentication = '', 
-                                    authorization_and_access_control = '', 
-                                    data_input_sanitization_validation = '', 
-                                    sensitive_data = '', 
-                                    other = '', 
-                                    engagement = 56, )
-                                }, 
-                            config_issues = {
-                                'key' : 
-                                }, 
-                            crypto_issues = {
-                                'key' : 
-                                }, 
-                            data_issues = {
-                                'key' : 
-                                }, 
-                            defect_review_requested_by = {
-                                'key' : defectdojo_api_generated.models.user_stub.UserStub(
-                                    id = 56, 
-                                    username = 'A', 
-                                    first_name = '', 
-                                    last_name = '', )
-                                }, 
-                            duplicate_finding = {
-                                'key' : defectdojo_api_generated.models.finding.Finding(
-                                    id = 56, 
-                                    request_response = null, 
-                                    accepted_risks = [
-                                        defectdojo_api_generated.models.risk_acceptance.RiskAcceptance(
-                                            id = 56, 
-                                            path = '', 
-                                            name = '', 
-                                            recommendation = 'A', 
-                                            recommendation_details = '', 
-                                            decision = 'A', 
-                                            decision_details = '', 
-                                            accepted_by = '', 
-                                            expiration_date = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                            expiration_date_warned = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                            expiration_date_handled = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                            reactivate_expired = True, 
-                                            restart_sla_expired = True, 
-                                            created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                            updated = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                            owner = 56, 
-                                            accepted_findings = [
-                                                56
-                                                ], 
-                                            notes = [
-                                                56
-                                                ], )
-                                        ], 
-                                    push_to_jira = True, 
-                                    age = 56, 
-                                    sla_days_remaining = 56, 
-                                    finding_meta = [
-                                        defectdojo_api_generated.models.finding_meta.FindingMeta(
-                                            name = '', 
-                                            value = '', )
-                                        ], 
-                                    related_fields = null, 
-                                    jira_creation = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                    jira_change = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                    display_status = '', 
-                                    finding_groups = [
-                                        defectdojo_api_generated.models.finding_group.FindingGroup(
-                                            id = 56, 
-                                            name = '', 
-                                            test = 56, 
-                                            jira_issue = null, )
-                                        ], 
-                                    reporter = 56, 
-                                    title = '', 
-                                    date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
-                                    sla_start_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
-                                    sla_expiration_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
-                                    cwe = -2147483648, 
-                                    epss_score = 0.0, 
-                                    epss_percentile = 0.0, 
-                                    cvssv3 = 'PR:U', 
-                                    cvssv3_score = 0.0, 
-                                    url = '', 
-                                    severity = '', 
-                                    description = '', 
-                                    mitigation = '', 
-                                    impact = '', 
-                                    steps_to_reproduce = '', 
-                                    severity_justification = '', 
-                                    references = '', 
-                                    active = True, 
-                                    verified = True, 
-                                    false_p = True, 
-                                    duplicate = True, 
-                                    out_of_scope = True, 
-                                    risk_accepted = True, 
-                                    under_review = True, 
-                                    last_status_update = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                    under_defect_review = True, 
-                                    is_mitigated = True, 
-                                    thread_id = 56, 
-                                    mitigated = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                    numerical_severity = '', 
-                                    last_reviewed = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                    param = '', 
-                                    payload = '', 
-                                    hash_code = '', 
-                                    line = -2147483648, 
-                                    file_path = '', 
-                                    component_name = '', 
-                                    component_version = '', 
-                                    static_finding = True, 
-                                    dynamic_finding = True, 
-                                    created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                    scanner_confidence = 56, 
-                                    unique_id_from_tool = '', 
-                                    vuln_id_from_tool = '', 
-                                    sast_source_object = '', 
-                                    sast_sink_object = '', 
-                                    sast_source_line = -2147483648, 
-                                    sast_source_file_path = '', 
-                                    nb_occurences = -2147483648, 
-                                    publish_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
-                                    service = '', 
-                                    planned_remediation_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
-                                    planned_remediation_version = '', 
-                                    effort_for_fixing = '', 
-                                    test = 56, 
-                                    duplicate_finding = 56, 
-                                    review_requested_by = 56, 
-                                    mitigated_by = 56, 
-                                    last_reviewed_by = 56, 
-                                    sonarqube_issue = 56, 
-                                    endpoints = [
-                                        56
-                                        ], 
-                                    notes = [
-                                        defectdojo_api_generated.models.note.Note(
-                                            id = 56, 
-                                            author = null, 
-                                            editor = null, 
-                                            history = [
-                                                defectdojo_api_generated.models.note_history.NoteHistory(
-                                                    id = 56, 
-                                                    current_editor = null, 
-                                                    note_type = null, 
-                                                    data = '', 
-                                                    time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
-                                                ], 
-                                            note_type = null, 
-                                            entry = '', 
-                                            date = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                            private = True, 
-                                            edited = True, 
-                                            edit_time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
-                                        ], 
-                                    files = [
-                                        56
-                                        ], 
-                                    found_by = [
-                                        56
-                                        ], )
-                                }, 
-                            endpoint_set = {
-                                'key' : defectdojo_api_generated.models.endpoint.Endpoint(
-                                    id = 56, 
-                                    protocol = '', 
-                                    userinfo = '', 
-                                    host = '', 
-                                    port = -2147483648, 
-                                    path = '', 
-                                    query = '', 
-                                    fragment = '', 
-                                    product = 56, 
-                                    endpoint_params = [
-                                        56
-                                        ], 
-                                    findings = [
-                                        56
-                                        ], )
-                                }, 
-                            finding_group_set = {
-                                'key' : 
-                                }, 
-                            last_reviewed_by = {
-                                'key' : defectdojo_api_generated.models.user_stub.UserStub(
-                                    id = 56, 
-                                    username = 'A', 
-                                    first_name = '', 
-                                    last_name = '', )
-                                }, 
-                            mitigated_by = {
-                                'key' : 
-                                }, 
-                            other_issues = {
-                                'key' : 
-                                }, 
-                            reporter = {
-                                'key' : 
-                                }, 
-                            review_requested_by = {
-                                'key' : 
-                                }, 
-                            risk_acceptance_set = {
-                                'key' : 
-                                }, 
-                            sensitive_issues = {
-                                'key' : 
-                                }, 
-                            session_issues = {
-                                'key' : 
-                                }, 
-                            sonarqube_issue = {
-                                'key' : defectdojo_api_generated.models.sonarqube_issue.SonarqubeIssue(
-                                    id = 56, 
-                                    key = '', 
-                                    status = '', 
-                                    type = '', )
-                                }, 
-                            test = {
-                                'key' : defectdojo_api_generated.models.test.Test(
-                                    id = 56, 
-                                    test_type_name = '', 
-                                    finding_groups = , 
-                                    scan_type = '', 
-                                    title = '', 
-                                    description = '', 
-                                    target_start = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                    target_end = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                    estimated_time = '', 
-                                    actual_time = '', 
-                                    percent_complete = -2147483648, 
-                                    updated = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                    created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                    version = '', 
-                                    build_id = '', 
-                                    commit_hash = '', 
-                                    branch_tag = '', 
-                                    engagement = 56, 
-                                    lead = 56, 
-                                    test_type = 56, 
-                                    environment = 56, 
-                                    api_scan_configuration = 56, 
-                                    notes = , 
-                                    files = [
-                                        defectdojo_api_generated.models.file.File(
-                                            id = 56, 
-                                            file = '', 
-                                            title = '', )
-                                        ], )
-                                }, 
-                            test_import_set = {
-                                'key' : defectdojo_api_generated.models.test_import.TestImport(
-                                    id = 56, 
-                                    test_import_finding_action_set = [
-                                        defectdojo_api_generated.models.test_import_finding_action.TestImportFindingAction(
-                                            id = 56, 
-                                            created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                            modified = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                            action = 'N', 
-                                            test_import = 56, 
-                                            finding = 56, )
-                                        ], 
-                                    created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                    modified = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                    import_settings = null, 
-                                    type = '', 
-                                    version = '', 
-                                    build_id = '', 
-                                    commit_hash = '', 
-                                    branch_tag = '', 
-                                    test = 56, 
-                                    findings_affected = [
-                                        56
-                                        ], )
-                                }, ), )
-                    ],
         )
         """
 

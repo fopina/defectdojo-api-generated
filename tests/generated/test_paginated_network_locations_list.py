@@ -45,12 +45,6 @@ class TestPaginatedNetworkLocationsList(unittest.TestCase):
             )
         else:
             return PaginatedNetworkLocationsList(
-                count = 123,
-                results = [
-                    defectdojo_api_generated.models.network_locations.NetworkLocations(
-                        id = 56, 
-                        location = '', )
-                    ],
         )
         """
 

@@ -26,7 +26,7 @@ class EngagementCheckList(BaseModel):
     EngagementCheckList
     """  # noqa: E501
 
-    id: StrictInt
+    id: Optional[StrictInt] = None
     session_management: Optional[Annotated[str, Field(strict=True, max_length=50)]] = None
     encryption_crypto: Optional[Annotated[str, Field(strict=True, max_length=50)]] = None
     configuration_management: Optional[Annotated[str, Field(strict=True, max_length=50)]] = None
@@ -35,7 +35,7 @@ class EngagementCheckList(BaseModel):
     data_input_sanitization_validation: Optional[Annotated[str, Field(strict=True, max_length=50)]] = None
     sensitive_data: Optional[Annotated[str, Field(strict=True, max_length=50)]] = None
     other: Optional[Annotated[str, Field(strict=True, max_length=50)]] = None
-    engagement: StrictInt
+    engagement: Optional[StrictInt] = None
     session_issues: Optional[List[StrictInt]] = None
     crypto_issues: Optional[List[StrictInt]] = None
     config_issues: Optional[List[StrictInt]] = None

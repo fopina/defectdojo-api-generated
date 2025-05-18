@@ -26,7 +26,7 @@ class SystemSettings(BaseModel):
     SystemSettings
     """  # noqa: E501
 
-    id: StrictInt
+    id: Optional[StrictInt] = None
     enable_deduplication: Optional[StrictBool] = Field(
         default=None,
         description='With this setting turned on, DefectDojo deduplicates findings by comparing endpoints, cwe fields, and titles. If two findings share a URL and have the same CWE or title, DefectDojo marks the recent finding as a duplicate. When deduplication is enabled, a list of deduplicated findings is added to the engagement view.',

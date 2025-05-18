@@ -39,8 +39,6 @@ class TestFileRequest(unittest.TestCase):
             )
         else:
             return FileRequest(
-                file = bytes(b'blah'),
-                title = '0',
         )
         """
 

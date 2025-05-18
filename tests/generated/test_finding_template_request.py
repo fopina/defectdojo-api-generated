@@ -54,7 +54,6 @@ class TestFindingTemplateRequest(unittest.TestCase):
             )
         else:
             return FindingTemplateRequest(
-                title = '0',
         )
         """
 

@@ -62,29 +62,6 @@ class TestPaginatedJIRAInstanceList(unittest.TestCase):
             )
         else:
             return PaginatedJIRAInstanceList(
-                count = 123,
-                results = [
-                    defectdojo_api_generated.models.jira_instance.JIRAInstance(
-                        id = 56, 
-                        configuration_name = '', 
-                        url = '', 
-                        username = '', 
-                        default_issue_type = 'Task', 
-                        issue_template_dir = '', 
-                        epic_name_id = -2147483648, 
-                        open_status_key = -2147483648, 
-                        close_status_key = -2147483648, 
-                        info_mapping_severity = '', 
-                        low_mapping_severity = '', 
-                        medium_mapping_severity = '', 
-                        high_mapping_severity = '', 
-                        critical_mapping_severity = '', 
-                        finding_text = '', 
-                        accepted_mapping_resolution = '', 
-                        false_positive_mapping_resolution = '', 
-                        global_jira_sla_notification = True, 
-                        finding_jira_sync = True, )
-                    ],
         )
         """
 

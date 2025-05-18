@@ -44,10 +44,6 @@ class TestQuestionnaireEngagementSurvey(unittest.TestCase):
             )
         else:
             return QuestionnaireEngagementSurvey(
-                id = 56,
-                questions = [
-                    ''
-                    ],
         )
         """
 

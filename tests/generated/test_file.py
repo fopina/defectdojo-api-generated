@@ -40,9 +40,6 @@ class TestFile(unittest.TestCase):
             )
         else:
             return File(
-                id = 56,
-                file = '',
-                title = '',
         )
         """
 

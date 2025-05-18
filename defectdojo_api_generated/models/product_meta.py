@@ -26,8 +26,8 @@ class ProductMeta(BaseModel):
     ProductMeta
     """  # noqa: E501
 
-    name: Annotated[str, Field(strict=True, max_length=120)]
-    value: Annotated[str, Field(strict=True, max_length=300)]
+    name: Optional[Annotated[str, Field(strict=True, max_length=120)]] = None
+    value: Optional[Annotated[str, Field(strict=True, max_length=300)]] = None
     __properties: ClassVar[List[str]] = ['name', 'value']
 
     model_config = ConfigDict(

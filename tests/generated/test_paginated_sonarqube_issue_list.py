@@ -47,14 +47,6 @@ class TestPaginatedSonarqubeIssueList(unittest.TestCase):
             )
         else:
             return PaginatedSonarqubeIssueList(
-                count = 123,
-                results = [
-                    defectdojo_api_generated.models.sonarqube_issue.SonarqubeIssue(
-                        id = 56, 
-                        key = '', 
-                        status = '', 
-                        type = '', )
-                    ],
         )
         """
 

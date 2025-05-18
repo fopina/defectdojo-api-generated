@@ -28,10 +28,10 @@ class PaginatedNoteList(BaseModel):
     PaginatedNoteList
     """  # noqa: E501
 
-    count: StrictInt
+    count: Optional[StrictInt] = None
     next: Optional[StrictStr] = None
     previous: Optional[StrictStr] = None
-    results: List[Note]
+    results: Optional[List[Note]] = None
     __properties: ClassVar[List[str]] = ['count', 'next', 'previous', 'results']
 
     model_config = ConfigDict(

@@ -26,7 +26,7 @@ class Endpoint(BaseModel):
     Endpoint
     """  # noqa: E501
 
-    id: StrictInt
+    id: Optional[StrictInt] = None
     tags: Optional[List[StrictStr]] = None
     protocol: Optional[Annotated[str, Field(strict=True, max_length=20)]] = Field(
         default=None, description="The communication protocol/scheme such as 'http', 'ftp', 'dns', etc."
@@ -53,8 +53,8 @@ class Endpoint(BaseModel):
         description="The fragment identifier which follows the hash mark. The hash mark should be omitted. For example 'section-13', 'paragraph-2'.",
     )
     product: Optional[StrictInt] = None
-    endpoint_params: List[StrictInt]
-    findings: List[StrictInt]
+    endpoint_params: Optional[List[StrictInt]] = None
+    findings: Optional[List[StrictInt]] = None
     __properties: ClassVar[List[str]] = [
         'id',
         'tags',

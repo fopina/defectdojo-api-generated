@@ -29,10 +29,10 @@ class PaginatedGlobalRoleList(BaseModel):
     PaginatedGlobalRoleList
     """  # noqa: E501
 
-    count: StrictInt
+    count: Optional[StrictInt] = None
     next: Optional[StrictStr] = None
     previous: Optional[StrictStr] = None
-    results: List[GlobalRole]
+    results: Optional[List[GlobalRole]] = None
     prefetch: Optional[DojoGroupMemberPrefetch] = None
     __properties: ClassVar[List[str]] = ['count', 'next', 'previous', 'results', 'prefetch']
 

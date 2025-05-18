@@ -42,8 +42,6 @@ class TestNoteTypeRequest(unittest.TestCase):
             )
         else:
             return NoteTypeRequest(
-                name = '0',
-                description = '0',
         )
         """
 

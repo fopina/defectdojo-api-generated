@@ -27,9 +27,9 @@ class QuestionnaireQuestion(BaseModel):
     QuestionnaireQuestion
     """  # noqa: E501
 
-    id: StrictInt
-    created: datetime
-    modified: datetime
+    id: Optional[StrictInt] = None
+    created: Optional[datetime] = None
+    modified: Optional[datetime] = None
     order: Optional[Annotated[int, Field(le=2147483647, strict=True, ge=0)]] = Field(
         default=None, description='The render order'
     )

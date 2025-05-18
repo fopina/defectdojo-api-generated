@@ -100,67 +100,6 @@ class TestPaginatedTestList(unittest.TestCase):
             )
         else:
             return PaginatedTestList(
-                count = 123,
-                results = [
-                    defectdojo_api_generated.models.test.Test(
-                        id = 56, 
-                        tags = [
-                            ''
-                            ], 
-                        test_type_name = '', 
-                        finding_groups = [
-                            defectdojo_api_generated.models.finding_group.FindingGroup(
-                                id = 56, 
-                                name = '', 
-                                test = 56, 
-                                jira_issue = null, )
-                            ], 
-                        scan_type = '', 
-                        title = '', 
-                        description = '', 
-                        target_start = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        target_end = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        estimated_time = '', 
-                        actual_time = '', 
-                        percent_complete = -2147483648, 
-                        updated = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        version = '', 
-                        build_id = '', 
-                        commit_hash = '', 
-                        branch_tag = '', 
-                        engagement = 56, 
-                        lead = 56, 
-                        test_type = 56, 
-                        environment = 56, 
-                        api_scan_configuration = 56, 
-                        notes = [
-                            defectdojo_api_generated.models.note.Note(
-                                id = 56, 
-                                author = null, 
-                                editor = null, 
-                                history = [
-                                    defectdojo_api_generated.models.note_history.NoteHistory(
-                                        id = 56, 
-                                        current_editor = null, 
-                                        note_type = null, 
-                                        data = '', 
-                                        time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
-                                    ], 
-                                note_type = null, 
-                                entry = '', 
-                                date = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                private = True, 
-                                edited = True, 
-                                edit_time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
-                            ], 
-                        files = [
-                            defectdojo_api_generated.models.file.File(
-                                id = 56, 
-                                file = '', 
-                                title = '', )
-                            ], )
-                    ],
         )
         """
 

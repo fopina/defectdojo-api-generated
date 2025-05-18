@@ -28,7 +28,7 @@ class CredentialMappingRequest(BaseModel):
 
     is_authn_provider: Optional[StrictBool] = None
     url: Optional[Annotated[str, Field(strict=True, max_length=2000)]] = None
-    cred_id: StrictInt
+    cred_id: Optional[StrictInt] = None
     product: Optional[StrictInt] = None
     finding: Optional[StrictInt] = None
     engagement: Optional[StrictInt] = None

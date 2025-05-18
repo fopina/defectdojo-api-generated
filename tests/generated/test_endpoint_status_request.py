@@ -45,8 +45,6 @@ class TestEndpointStatusRequest(unittest.TestCase):
             )
         else:
             return EndpointStatusRequest(
-                endpoint = 56,
-                finding = 56,
         )
         """
 

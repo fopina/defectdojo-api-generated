@@ -26,7 +26,7 @@ class BurpRawRequestResponseRequest(BaseModel):
     BurpRawRequestResponseRequest
     """  # noqa: E501
 
-    req_resp: List[Dict[str, Annotated[str, Field(min_length=1, strict=True)]]]
+    req_resp: Optional[List[Dict[str, Annotated[str, Field(min_length=1, strict=True)]]]] = None
     __properties: ClassVar[List[str]] = ['req_resp']
 
     model_config = ConfigDict(

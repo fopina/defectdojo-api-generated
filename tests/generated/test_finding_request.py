@@ -96,10 +96,6 @@ class TestFindingRequest(unittest.TestCase):
             )
         else:
             return FindingRequest(
-                title = '0',
-                severity = '0',
-                description = '0',
-                numerical_severity = '0',
         )
         """
 

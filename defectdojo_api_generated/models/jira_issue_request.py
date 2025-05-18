@@ -27,8 +27,8 @@ class JIRAIssueRequest(BaseModel):
     JIRAIssueRequest
     """  # noqa: E501
 
-    jira_id: Annotated[str, Field(min_length=1, strict=True, max_length=200)]
-    jira_key: Annotated[str, Field(min_length=1, strict=True, max_length=200)]
+    jira_id: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=200)]] = None
+    jira_key: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=200)]] = None
     jira_creation: Optional[datetime] = Field(
         default=None, description='The date a Jira issue was created from this finding.'
     )

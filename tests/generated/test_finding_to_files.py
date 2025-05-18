@@ -44,13 +44,6 @@ class TestFindingToFiles(unittest.TestCase):
             )
         else:
             return FindingToFiles(
-                finding_id = 56,
-                files = [
-                    defectdojo_api_generated.models.file.File(
-                        id = 56, 
-                        file = '', 
-                        title = '', )
-                    ],
         )
         """
 

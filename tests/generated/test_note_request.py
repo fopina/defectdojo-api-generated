@@ -40,7 +40,6 @@ class TestNoteRequest(unittest.TestCase):
             )
         else:
             return NoteRequest(
-                entry = '0',
         )
         """
 

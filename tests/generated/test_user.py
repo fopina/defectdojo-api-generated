@@ -49,11 +49,6 @@ class TestUser(unittest.TestCase):
             )
         else:
             return User(
-                id = 56,
-                username = 'A',
-                email = '',
-                date_joined = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                last_login = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
         )
         """
 

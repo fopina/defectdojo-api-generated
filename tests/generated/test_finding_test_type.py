@@ -39,8 +39,6 @@ class TestFindingTestType(unittest.TestCase):
             )
         else:
             return FindingTestType(
-                id = 56,
-                name = '',
         )
         """
 

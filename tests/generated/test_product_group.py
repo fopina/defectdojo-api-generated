@@ -107,10 +107,6 @@ class TestProductGroup(unittest.TestCase):
             )
         else:
             return ProductGroup(
-                id = 56,
-                product = 56,
-                group = 56,
-                role = 56,
         )
         """
 

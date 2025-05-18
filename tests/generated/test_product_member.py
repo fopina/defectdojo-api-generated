@@ -101,10 +101,6 @@ class TestProductMember(unittest.TestCase):
             )
         else:
             return ProductMember(
-                id = 56,
-                product = 56,
-                user = 56,
-                role = 56,
         )
         """
 

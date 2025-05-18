@@ -34,8 +34,8 @@ class EngagementRequest(BaseModel):
         default=None, description='Version of the product the engagement tested.'
     )
     first_contacted: Optional[date] = None
-    target_start: date
-    target_end: date
+    target_start: Optional[date] = None
+    target_end: Optional[date] = None
     reason: Optional[Annotated[str, Field(strict=True, max_length=2000)]] = None
     tracker: Optional[Annotated[str, Field(strict=True, max_length=200)]] = Field(
         default=None, description='Link to epic or ticket system with changes to version.'
@@ -72,7 +72,7 @@ class EngagementRequest(BaseModel):
     requester: Optional[StrictInt] = None
     preset: Optional[StrictInt] = Field(default=None, description='Settings and notes for performing this engagement.')
     report_type: Optional[StrictInt] = None
-    product: StrictInt
+    product: Optional[StrictInt] = None
     build_server: Optional[StrictInt] = Field(default=None, description='Build server responsible for CI/CD test')
     source_code_management_server: Optional[StrictInt] = Field(
         default=None, description='Source code server for CI/CD test'

@@ -38,7 +38,6 @@ class TestRawFile(unittest.TestCase):
             )
         else:
             return RawFile(
-                file = '',
         )
         """
 

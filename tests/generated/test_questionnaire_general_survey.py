@@ -49,17 +49,6 @@ class TestQuestionnaireGeneralSurvey(unittest.TestCase):
             )
         else:
             return QuestionnaireGeneralSurvey(
-                id = 56,
-                survey = defectdojo_api_generated.models.questionnaire_engagement_survey.QuestionnaireEngagementSurvey(
-                    id = 56, 
-                    questions = [
-                        ''
-                        ], 
-                    name = '', 
-                    description = '', 
-                    active = True, ),
-                generated = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                expiration = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
         )
         """
 

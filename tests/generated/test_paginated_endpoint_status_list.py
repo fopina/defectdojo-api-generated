@@ -54,21 +54,6 @@ class TestPaginatedEndpointStatusList(unittest.TestCase):
             )
         else:
             return PaginatedEndpointStatusList(
-                count = 123,
-                results = [
-                    defectdojo_api_generated.models.endpoint_status.EndpointStatus(
-                        id = 56, 
-                        date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
-                        last_modified = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        mitigated = True, 
-                        mitigated_time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        false_positive = True, 
-                        out_of_scope = True, 
-                        risk_accepted = True, 
-                        mitigated_by = 56, 
-                        endpoint = 56, 
-                        finding = 56, )
-                    ],
         )
         """
 

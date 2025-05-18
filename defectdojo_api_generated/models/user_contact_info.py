@@ -31,8 +31,8 @@ class UserContactInfo(BaseModel):
     UserContactInfo
     """  # noqa: E501
 
-    id: StrictInt
-    user_profile: User
+    id: Optional[StrictInt] = None
+    user_profile: Optional[User] = None
     title: Optional[Annotated[str, Field(strict=True, max_length=150)]] = None
     phone_number: Optional[Annotated[str, Field(strict=True, max_length=15)]] = Field(
         default=None, description="Phone number must be entered in the format: '+999999999'. Up to 15 digits allowed."
@@ -53,7 +53,7 @@ class UserContactInfo(BaseModel):
     force_password_reset: Optional[StrictBool] = Field(
         default=None, description='Forces this user to reset their password on next login.'
     )
-    user: StrictInt
+    user: Optional[StrictInt] = None
     prefetch: Optional[PaginatedUserContactInfoListPrefetch] = None
     __properties: ClassVar[List[str]] = [
         'id',

@@ -30,7 +30,7 @@ class FindingTest(BaseModel):
     FindingTest
     """  # noqa: E501
 
-    id: StrictInt
+    id: Optional[StrictInt] = None
     title: Optional[Annotated[str, Field(strict=True, max_length=255)]] = None
     test_type: Optional[FindingTestType] = None
     engagement: Optional[FindingEngagement] = None

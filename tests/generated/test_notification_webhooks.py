@@ -47,11 +47,6 @@ class TestNotificationWebhooks(unittest.TestCase):
             )
         else:
             return NotificationWebhooks(
-                id = 56,
-                status = '',
-                first_error = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                last_error = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                note = '',
         )
         """
 

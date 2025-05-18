@@ -139,13 +139,7 @@ class TestPaginatedDojoGroupMemberList(unittest.TestCase):
                                         critical_product = True, 
                                         key_product = True, 
                                         updated = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                        created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                        members = [
-                                            56
-                                            ], 
-                                        authorization_groups = [
-                                            56
-                                            ], )
+                                        created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
                                     }, ), )
                         }, 
                     role = {
@@ -164,41 +158,6 @@ class TestPaginatedDojoGroupMemberList(unittest.TestCase):
             )
         else:
             return PaginatedDojoGroupMemberList(
-                count = 123,
-                results = [
-                    defectdojo_api_generated.models.dojo_group_member.DojoGroupMember(
-                        id = 56, 
-                        group = 56, 
-                        user = 56, 
-                        role = 56, 
-                        prefetch = defectdojo_api_generated.models.dojo_group_member_prefetch.DojoGroupMember_prefetch(
-                            group = {
-                                'key' : defectdojo_api_generated.models.dojo_group.DojoGroup(
-                                    id = 56, 
-                                    configuration_permissions = [
-                                        56
-                                        ], 
-                                    name = '', 
-                                    description = '', 
-                                    social_provider = 'AzureAD', 
-                                    users = [
-                                        56
-                                        ], )
-                                }, 
-                            role = {
-                                'key' : defectdojo_api_generated.models.role.Role(
-                                    id = 56, 
-                                    name = '', 
-                                    is_owner = True, )
-                                }, 
-                            user = {
-                                'key' : defectdojo_api_generated.models.user_stub.UserStub(
-                                    id = 56, 
-                                    username = 'A', 
-                                    first_name = '', 
-                                    last_name = '', )
-                                }, ), )
-                    ],
         )
         """
 

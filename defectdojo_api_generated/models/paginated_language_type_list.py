@@ -28,10 +28,10 @@ class PaginatedLanguageTypeList(BaseModel):
     PaginatedLanguageTypeList
     """  # noqa: E501
 
-    count: StrictInt
+    count: Optional[StrictInt] = None
     next: Optional[StrictStr] = None
     previous: Optional[StrictStr] = None
-    results: List[LanguageType]
+    results: Optional[List[LanguageType]] = None
     __properties: ClassVar[List[str]] = ['count', 'next', 'previous', 'results']
 
     model_config = ConfigDict(

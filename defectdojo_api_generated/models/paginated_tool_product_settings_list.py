@@ -31,10 +31,10 @@ class PaginatedToolProductSettingsList(BaseModel):
     PaginatedToolProductSettingsList
     """  # noqa: E501
 
-    count: StrictInt
+    count: Optional[StrictInt] = None
     next: Optional[StrictStr] = None
     previous: Optional[StrictStr] = None
-    results: List[ToolProductSettings]
+    results: Optional[List[ToolProductSettings]] = None
     prefetch: Optional[PaginatedToolProductSettingsListPrefetch] = None
     __properties: ClassVar[List[str]] = ['count', 'next', 'previous', 'results', 'prefetch']
 

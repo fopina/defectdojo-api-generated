@@ -80,16 +80,6 @@ class TestImportScan(unittest.TestCase):
             )
         else:
             return ImportScan(
-                test_id = 56,
-                engagement_id = 56,
-                product_id = 56,
-                product_type_id = 56,
-                statistics = defectdojo_api_generated.models.import_statistics.ImportStatistics(
-                    before = null, 
-                    delta = null, 
-                    after = null, ),
-                scan_type = 'Acunetix Scan',
-                test = 56,
         )
         """
 

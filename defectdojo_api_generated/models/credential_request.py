@@ -26,19 +26,19 @@ class CredentialRequest(BaseModel):
     CredentialRequest
     """  # noqa: E501
 
-    name: Annotated[str, Field(min_length=1, strict=True, max_length=200)]
-    username: Annotated[str, Field(min_length=1, strict=True, max_length=200)]
-    role: Annotated[str, Field(min_length=1, strict=True, max_length=200)]
+    name: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=200)]] = None
+    username: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=200)]] = None
+    role: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=200)]] = None
     authentication: Optional[StrictStr] = Field(
         default=None, description='* `Form` - Form Authentication * `SSO` - SSO Redirect'
     )
     http_authentication: Optional[StrictStr] = Field(default=None, description='* `Basic` - Basic * `NTLM` - NTLM')
     description: Optional[Annotated[str, Field(strict=True, max_length=2000)]] = None
-    url: Annotated[str, Field(min_length=1, strict=True, max_length=2000)]
+    url: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=2000)]] = None
     login_regex: Optional[Annotated[str, Field(strict=True, max_length=200)]] = None
     logout_regex: Optional[Annotated[str, Field(strict=True, max_length=200)]] = None
     is_valid: Optional[StrictBool] = None
-    environment: StrictInt
+    environment: Optional[StrictInt] = None
     __properties: ClassVar[List[str]] = [
         'name',
         'username',

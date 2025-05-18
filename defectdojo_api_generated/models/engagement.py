@@ -30,7 +30,7 @@ class Engagement(BaseModel):
     Engagement
     """  # noqa: E501
 
-    id: StrictInt
+    id: Optional[StrictInt] = None
     tags: Optional[List[StrictStr]] = None
     name: Optional[Annotated[str, Field(strict=True, max_length=300)]] = None
     description: Optional[Annotated[str, Field(strict=True, max_length=2000)]] = None
@@ -38,12 +38,12 @@ class Engagement(BaseModel):
         default=None, description='Version of the product the engagement tested.'
     )
     first_contacted: Optional[date] = None
-    target_start: date
-    target_end: date
+    target_start: Optional[date] = None
+    target_end: Optional[date] = None
     reason: Optional[Annotated[str, Field(strict=True, max_length=2000)]] = None
-    updated: Optional[datetime]
-    created: Optional[datetime]
-    active: StrictBool
+    updated: Optional[datetime] = None
+    created: Optional[datetime] = None
+    active: Optional[StrictBool] = None
     tracker: Optional[Annotated[str, Field(strict=True, max_length=200)]] = Field(
         default=None, description='Link to epic or ticket system with changes to version.'
     )
@@ -56,9 +56,9 @@ class Engagement(BaseModel):
         default=None,
         description='* `Not Started` - Not Started * `Blocked` - Blocked * `Cancelled` - Cancelled * `Completed` - Completed * `In Progress` - In Progress * `On Hold` - On Hold * `Waiting for Resource` - Waiting for Resource',
     )
-    progress: StrictStr
-    tmodel_path: Optional[StrictStr]
-    done_testing: StrictBool
+    progress: Optional[StrictStr] = None
+    tmodel_path: Optional[StrictStr] = None
+    done_testing: Optional[StrictBool] = None
     engagement_type: Optional[StrictStr] = Field(
         default=None, description='* `Interactive` - Interactive * `CI/CD` - CI/CD'
     )
@@ -82,7 +82,7 @@ class Engagement(BaseModel):
     requester: Optional[StrictInt] = None
     preset: Optional[StrictInt] = Field(default=None, description='Settings and notes for performing this engagement.')
     report_type: Optional[StrictInt] = None
-    product: StrictInt
+    product: Optional[StrictInt] = None
     build_server: Optional[StrictInt] = Field(default=None, description='Build server responsible for CI/CD test')
     source_code_management_server: Optional[StrictInt] = Field(
         default=None, description='Source code server for CI/CD test'
@@ -90,9 +90,9 @@ class Engagement(BaseModel):
     orchestration_engine: Optional[StrictInt] = Field(
         default=None, description='Orchestration service responsible for CI/CD test'
     )
-    notes: List[Note]
-    files: List[File]
-    risk_acceptance: List[StrictInt]
+    notes: Optional[List[Note]] = None
+    files: Optional[List[File]] = None
+    risk_acceptance: Optional[List[StrictInt]] = None
     __properties: ClassVar[List[str]] = [
         'id',
         'tags',

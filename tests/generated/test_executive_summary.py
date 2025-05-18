@@ -46,15 +46,6 @@ class TestExecutiveSummary(unittest.TestCase):
             )
         else:
             return ExecutiveSummary(
-                engagement_name = '',
-                engagement_target_start = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(),
-                engagement_target_end = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(),
-                test_type_name = '',
-                test_target_start = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                test_target_end = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                test_environment_name = '',
-                test_strategy_ref = '',
-                total_findings = 56,
         )
         """
 

@@ -28,7 +28,7 @@ class GlobalRole(BaseModel):
     GlobalRole
     """  # noqa: E501
 
-    id: StrictInt
+    id: Optional[StrictInt] = None
     user: Optional[StrictInt] = None
     group: Optional[StrictInt] = None
     role: Optional[StrictInt] = Field(

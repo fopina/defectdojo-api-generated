@@ -27,17 +27,17 @@ class EndpointStatus(BaseModel):
     EndpointStatus
     """  # noqa: E501
 
-    id: StrictInt
+    id: Optional[StrictInt] = None
     var_date: Optional[date] = Field(default=None, alias='date')
-    last_modified: Optional[datetime]
+    last_modified: Optional[datetime] = None
     mitigated: Optional[StrictBool] = None
-    mitigated_time: Optional[datetime]
+    mitigated_time: Optional[datetime] = None
     false_positive: Optional[StrictBool] = None
     out_of_scope: Optional[StrictBool] = None
     risk_accepted: Optional[StrictBool] = None
     mitigated_by: Optional[StrictInt] = None
-    endpoint: StrictInt
-    finding: StrictInt
+    endpoint: Optional[StrictInt] = None
+    finding: Optional[StrictInt] = None
     __properties: ClassVar[List[str]] = [
         'id',
         'date',

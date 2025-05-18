@@ -78,15 +78,6 @@ class TestCredential(unittest.TestCase):
             )
         else:
             return Credential(
-                id = 56,
-                name = '',
-                username = '',
-                role = '',
-                url = '',
-                environment = 56,
-                notes = [
-                    56
-                    ],
         )
         """
 

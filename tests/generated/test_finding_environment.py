@@ -39,8 +39,6 @@ class TestFindingEnvironment(unittest.TestCase):
             )
         else:
             return FindingEnvironment(
-                id = 56,
-                name = '',
         )
         """
 

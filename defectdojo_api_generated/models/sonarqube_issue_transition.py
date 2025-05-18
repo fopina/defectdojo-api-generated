@@ -27,12 +27,12 @@ class SonarqubeIssueTransition(BaseModel):
     SonarqubeIssueTransition
     """  # noqa: E501
 
-    id: StrictInt
-    created: datetime
-    finding_status: Annotated[str, Field(strict=True, max_length=100)]
-    sonarqube_status: Annotated[str, Field(strict=True, max_length=50)]
-    transitions: Annotated[str, Field(strict=True, max_length=100)]
-    sonarqube_issue: StrictInt
+    id: Optional[StrictInt] = None
+    created: Optional[datetime] = None
+    finding_status: Optional[Annotated[str, Field(strict=True, max_length=100)]] = None
+    sonarqube_status: Optional[Annotated[str, Field(strict=True, max_length=50)]] = None
+    transitions: Optional[Annotated[str, Field(strict=True, max_length=100)]] = None
+    sonarqube_issue: Optional[StrictInt] = None
     __properties: ClassVar[List[str]] = [
         'id',
         'created',

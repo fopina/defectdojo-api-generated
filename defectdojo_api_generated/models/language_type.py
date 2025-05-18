@@ -26,8 +26,8 @@ class LanguageType(BaseModel):
     LanguageType
     """  # noqa: E501
 
-    id: StrictInt
-    language: Annotated[str, Field(strict=True, max_length=100)]
+    id: Optional[StrictInt] = None
+    language: Optional[Annotated[str, Field(strict=True, max_length=100)]] = None
     color: Optional[Annotated[str, Field(strict=True, max_length=7)]] = None
     __properties: ClassVar[List[str]] = ['id', 'language', 'color']
 

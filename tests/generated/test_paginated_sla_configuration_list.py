@@ -54,21 +54,6 @@ class TestPaginatedSLAConfigurationList(unittest.TestCase):
             )
         else:
             return PaginatedSLAConfigurationList(
-                count = 123,
-                results = [
-                    defectdojo_api_generated.models.sla_configuration.SLAConfiguration(
-                        id = 56, 
-                        name = '', 
-                        description = '', 
-                        critical = -2147483648, 
-                        enforce_critical = True, 
-                        high = -2147483648, 
-                        enforce_high = True, 
-                        medium = -2147483648, 
-                        enforce_medium = True, 
-                        low = -2147483648, 
-                        enforce_low = True, )
-                    ],
         )
         """
 

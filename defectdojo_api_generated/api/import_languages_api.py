@@ -35,8 +35,8 @@ class ImportLanguagesApi:
 
     def import_languages_create(
         self,
-        product: StrictInt,
-        file: Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]],
+        product: Optional[StrictInt] = None,
+        file: Optional[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -50,9 +50,9 @@ class ImportLanguagesApi:
         """import_languages_create
 
 
-        :param product: (required)
+        :param product:
         :type product: int
-        :param file: (required)
+        :param file:
         :type file: bytearray
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -97,8 +97,8 @@ class ImportLanguagesApi:
 
     def import_languages_create_with_http_info(
         self,
-        product: StrictInt,
-        file: Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]],
+        product: Optional[StrictInt] = None,
+        file: Optional[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -112,9 +112,9 @@ class ImportLanguagesApi:
         """import_languages_create
 
 
-        :param product: (required)
+        :param product:
         :type product: int
-        :param file: (required)
+        :param file:
         :type file: bytearray
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -159,8 +159,8 @@ class ImportLanguagesApi:
 
     def import_languages_create_without_preload_content(
         self,
-        product: StrictInt,
-        file: Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]],
+        product: Optional[StrictInt] = None,
+        file: Optional[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -174,9 +174,9 @@ class ImportLanguagesApi:
         """import_languages_create
 
 
-        :param product: (required)
+        :param product:
         :type product: int
-        :param file: (required)
+        :param file:
         :type file: bytearray
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request

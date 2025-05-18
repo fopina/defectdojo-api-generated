@@ -26,9 +26,9 @@ class BurpRawRequestResponseMulti(BaseModel):
     BurpRawRequestResponseMulti
     """  # noqa: E501
 
-    id: StrictInt
-    burp_request_base64: StrictStr = Field(alias='burpRequestBase64')
-    burp_response_base64: StrictStr = Field(alias='burpResponseBase64')
+    id: Optional[StrictInt] = None
+    burp_request_base64: Optional[StrictStr] = Field(default=None, alias='burpRequestBase64')
+    burp_response_base64: Optional[StrictStr] = Field(default=None, alias='burpResponseBase64')
     finding: Optional[StrictInt] = None
     __properties: ClassVar[List[str]] = ['id', 'burpRequestBase64', 'burpResponseBase64', 'finding']
 

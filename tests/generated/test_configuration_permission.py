@@ -40,9 +40,6 @@ class TestConfigurationPermission(unittest.TestCase):
             )
         else:
             return ConfigurationPermission(
-                id = 56,
-                name = '',
-                codename = '',
         )
         """
 

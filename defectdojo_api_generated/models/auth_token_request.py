@@ -26,8 +26,8 @@ class AuthTokenRequest(BaseModel):
     AuthTokenRequest
     """  # noqa: E501
 
-    username: Annotated[str, Field(min_length=1, strict=True)]
-    password: Annotated[str, Field(min_length=1, strict=True)]
+    username: Optional[Annotated[str, Field(min_length=1, strict=True)]] = None
+    password: Optional[Annotated[str, Field(min_length=1, strict=True)]] = None
     __properties: ClassVar[List[str]] = ['username', 'password']
 
     model_config = ConfigDict(

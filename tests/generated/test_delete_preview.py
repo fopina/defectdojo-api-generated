@@ -40,9 +40,6 @@ class TestDeletePreview(unittest.TestCase):
             )
         else:
             return DeletePreview(
-                model = '',
-                id = 56,
-                name = '',
         )
         """
 

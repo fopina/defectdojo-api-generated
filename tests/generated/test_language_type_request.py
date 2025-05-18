@@ -39,7 +39,6 @@ class TestLanguageTypeRequest(unittest.TestCase):
             )
         else:
             return LanguageTypeRequest(
-                language = '0',
         )
         """
 

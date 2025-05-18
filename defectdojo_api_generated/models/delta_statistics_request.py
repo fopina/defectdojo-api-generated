@@ -28,10 +28,10 @@ class DeltaStatisticsRequest(BaseModel):
     DeltaStatisticsRequest
     """  # noqa: E501
 
-    created: SeverityStatusStatisticsRequest
-    closed: SeverityStatusStatisticsRequest
-    reactivated: SeverityStatusStatisticsRequest
-    untouched: SeverityStatusStatisticsRequest
+    created: Optional[SeverityStatusStatisticsRequest] = None
+    closed: Optional[SeverityStatusStatisticsRequest] = None
+    reactivated: Optional[SeverityStatusStatisticsRequest] = None
+    untouched: Optional[SeverityStatusStatisticsRequest] = None
     __properties: ClassVar[List[str]] = ['created', 'closed', 'reactivated', 'untouched']
 
     model_config = ConfigDict(

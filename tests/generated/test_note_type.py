@@ -43,9 +43,6 @@ class TestNoteType(unittest.TestCase):
             )
         else:
             return NoteType(
-                id = 56,
-                name = '',
-                description = '',
         )
         """
 

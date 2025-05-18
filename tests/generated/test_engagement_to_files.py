@@ -44,13 +44,6 @@ class TestEngagementToFiles(unittest.TestCase):
             )
         else:
             return EngagementToFiles(
-                engagement_id = 56,
-                files = [
-                    defectdojo_api_generated.models.file.File(
-                        id = 56, 
-                        file = '', 
-                        title = '', )
-                    ],
         )
         """
 

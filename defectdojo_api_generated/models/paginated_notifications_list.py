@@ -29,10 +29,10 @@ class PaginatedNotificationsList(BaseModel):
     PaginatedNotificationsList
     """  # noqa: E501
 
-    count: StrictInt
+    count: Optional[StrictInt] = None
     next: Optional[StrictStr] = None
     previous: Optional[StrictStr] = None
-    results: List[Notifications]
+    results: Optional[List[Notifications]] = None
     prefetch: Optional[AppAnalysisPrefetch] = None
     __properties: ClassVar[List[str]] = ['count', 'next', 'previous', 'results', 'prefetch']
 

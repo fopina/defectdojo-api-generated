@@ -2,16 +2,16 @@
 
 set -eo pipefail
 
-OPENAPI_PATH=${OPENAPI_PATH:-"support/openapi.json"}
-
 # make sure we're on root dir
 cd $(dirname $0)
 cd ..
 cd ..
 
+./support/openapi/tweak_openapi.py
+
 ./support/api_generation/openapi-generator-cli.sh \
                            generate \
-                           -i "${OPENAPI_PATH}" \
+                           -i support/openapi/build/openapi.json \
                            -c support/api_generation/config.yaml \
                            -o .
 

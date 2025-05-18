@@ -12,11 +12,7 @@ def main():
     with FILE.open('r') as inp:
         data = json.load(inp)
 
-    for schema in data['components']['schemas'].values():
-        try:
-            del schema['required']
-        except KeyError:
-            """nothing to do"""
+    # nothing done for now...
 
     with BUILD.open('w') as out:
         json.dump(data, out, indent=4)

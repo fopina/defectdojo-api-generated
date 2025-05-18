@@ -9,6 +9,7 @@ import requests
 
 DEMO_HOST = 'https://demo.defectdojo.org'
 FILE = Path(__file__).parent / 'openapi.json'
+SCRIPTS = Path(__file__).parent.parent / 'integration'
 
 
 def main():
@@ -18,7 +19,7 @@ def main():
     if args.demo:
         host = DEMO_HOST
     else:
-        subprocess.check_call([Path(__file__).parent / 'integration' / 'run_dojo.sh'])
+        subprocess.check_call([SCRIPTS / 'run_dojo.sh'])
         host = 'http://localhost:8080'
 
     try:
@@ -28,7 +29,7 @@ def main():
             json.dump(r.json(), f, indent=4)
     finally:
         if not args.demo:
-            subprocess.check_call([Path(__file__).parent / 'integration' / 'stop_dojo.sh'])
+            subprocess.check_call([SCRIPTS / 'stop_dojo.sh'])
 
 
 if __name__ == '__main__':

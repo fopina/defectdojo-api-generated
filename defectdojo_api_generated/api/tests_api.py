@@ -11,13 +11,14 @@ Do not edit the class manually.
 """  # noqa: E501
 
 from datetime import datetime
-from typing import Any, Dict, List, Optional, Tuple, Union
+from typing import TYPE_CHECKING, Any, Dict, Generator, List, Optional, Tuple, Union
 
 from pydantic import Field, StrictBool, StrictBytes, StrictFloat, StrictInt, StrictStr
 from typing_extensions import Annotated
 
 from defectdojo_api_generated.api_client import ApiClient, RequestSerialized
 from defectdojo_api_generated.api_response import ApiResponse
+from defectdojo_api_generated.helpers import IteratorResult, get_all_pages
 from defectdojo_api_generated.models.accepted_risk_request import AcceptedRiskRequest
 from defectdojo_api_generated.models.add_new_note_option_request import AddNewNoteOptionRequest
 from defectdojo_api_generated.models.file import File
@@ -36,6 +37,10 @@ from defectdojo_api_generated.models.test_request import TestRequest
 from defectdojo_api_generated.models.test_to_files import TestToFiles
 from defectdojo_api_generated.models.test_to_notes import TestToNotes
 from defectdojo_api_generated.rest import RESTResponseType
+
+if TYPE_CHECKING:
+    """placeholder for IteratorResult types if any"""
+    from defectdojo_api_generated.models import DeletePreview, Test
 
 
 class TestsApi:
@@ -781,6 +786,28 @@ class TestsApi:
             _host=_host,
             _request_auth=_request_auth,
         )
+
+    def tests_delete_preview_list_iterator(
+        self,
+        id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
+        limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
+        offset: Annotated[
+            Optional[StrictInt], Field(description='The initial index from which to return the results.')
+        ] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]],
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> 'Generator[IteratorResult[DeletePreview, PaginatedDeletePreviewList], None, None]':
+        _params = locals()
+        for page in get_all_pages(self.api_client, TestsApi.tests_delete_preview_list, **_params):
+            for result in page.results:
+                yield IteratorResult(result=result, page=page)
 
     def tests_destroy(
         self,
@@ -2729,6 +2756,86 @@ class TestsApi:
             _host=_host,
             _request_auth=_request_auth,
         )
+
+    def tests_list_iterator(
+        self,
+        actual_time: Optional[StrictStr] = None,
+        api_scan_configuration: Optional[StrictInt] = None,
+        branch_tag: Optional[StrictStr] = None,
+        build_id: Optional[StrictStr] = None,
+        commit_hash: Optional[StrictStr] = None,
+        engagement: Optional[StrictInt] = None,
+        engagement__product__tags: Annotated[
+            Optional[List[StrictStr]],
+            Field(description='Comma separated list of exact tags present on product (uses OR for multiple values)'),
+        ] = None,
+        engagement__product__tags__and: Annotated[
+            Optional[List[StrictStr]],
+            Field(description='Comma separated list of exact tags to match with an AND expression present on product'),
+        ] = None,
+        engagement__tags: Annotated[
+            Optional[List[StrictStr]],
+            Field(description='Comma separated list of exact tags present on engagement (uses OR for multiple values)'),
+        ] = None,
+        engagement__tags__and: Annotated[
+            Optional[List[StrictStr]],
+            Field(
+                description='Comma separated list of exact tags to match with an AND expression present on engagement'
+            ),
+        ] = None,
+        has_tags: Annotated[Optional[StrictBool], Field(description='Has tags')] = None,
+        id: Optional[StrictInt] = None,
+        limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
+        not_engagement__product__tags: Annotated[
+            Optional[List[StrictStr]], Field(description='Comma separated list of exact tags not present on product')
+        ] = None,
+        not_engagement__tags: Annotated[
+            Optional[List[StrictStr]], Field(description='Comma separated list of exact tags not present on engagement')
+        ] = None,
+        not_tag: Annotated[Optional[StrictStr], Field(description='Not Tag name contains')] = None,
+        not_tags: Annotated[
+            Optional[List[StrictStr]], Field(description='Comma separated list of exact tags not present on model')
+        ] = None,
+        notes: Optional[List[StrictInt]] = None,
+        o: Annotated[
+            Optional[List[StrictStr]],
+            Field(
+                description='Ordering  * `title` - Title * `-title` - Title (descending) * `version` - Version * `-version` - Version (descending) * `target_start` - Target start * `-target_start` - Target start (descending) * `target_end` - Target end * `-target_end` - Target end (descending) * `test_type` - Test type * `-test_type` - Test type (descending) * `lead` - Lead * `-lead` - Lead (descending) * `branch_tag` - Branch tag * `-branch_tag` - Branch tag (descending) * `build_id` - Build id * `-build_id` - Build id (descending) * `commit_hash` - Commit hash * `-commit_hash` - Commit hash (descending) * `api_scan_configuration` - Api scan configuration * `-api_scan_configuration` - Api scan configuration (descending) * `engagement` - Engagement * `-engagement` - Engagement (descending) * `created` - Created * `-created` - Created (descending) * `updated` - Updated * `-updated` - Updated (descending)'
+            ),
+        ] = None,
+        offset: Annotated[
+            Optional[StrictInt], Field(description='The initial index from which to return the results.')
+        ] = None,
+        percent_complete: Optional[StrictInt] = None,
+        scan_type: Optional[StrictStr] = None,
+        tag: Annotated[Optional[StrictStr], Field(description='Tag name contains')] = None,
+        tags: Annotated[
+            Optional[List[StrictStr]],
+            Field(description='Comma separated list of exact tags (uses OR for multiple values)'),
+        ] = None,
+        tags__and: Annotated[
+            Optional[List[StrictStr]],
+            Field(description='Comma separated list of exact tags to match with an AND expression'),
+        ] = None,
+        target_end: Optional[datetime] = None,
+        target_start: Optional[datetime] = None,
+        test_type: Optional[StrictInt] = None,
+        title: Optional[StrictStr] = None,
+        version: Optional[StrictStr] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]],
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> 'Generator[IteratorResult[Test, PaginatedTestList], None, None]':
+        _params = locals()
+        for page in get_all_pages(self.api_client, TestsApi.tests_list, **_params):
+            for result in page.results:
+                yield IteratorResult(result=result, page=page)
 
     def tests_notes_create(
         self,

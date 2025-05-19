@@ -11,13 +11,14 @@ Do not edit the class manually.
 """  # noqa: E501
 
 from datetime import datetime
-from typing import Any, Dict, List, Optional, Tuple, Union
+from typing import TYPE_CHECKING, Any, Dict, Generator, List, Optional, Tuple, Union
 
 from pydantic import Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing_extensions import Annotated
 
 from defectdojo_api_generated.api_client import ApiClient, RequestSerialized
 from defectdojo_api_generated.api_response import ApiResponse
+from defectdojo_api_generated.helpers import IteratorResult, get_all_pages
 from defectdojo_api_generated.models.paginated_delete_preview_list import PaginatedDeletePreviewList
 from defectdojo_api_generated.models.paginated_product_list import PaginatedProductList
 from defectdojo_api_generated.models.patched_product_request import PatchedProductRequest
@@ -26,6 +27,10 @@ from defectdojo_api_generated.models.product_request import ProductRequest
 from defectdojo_api_generated.models.report_generate import ReportGenerate
 from defectdojo_api_generated.models.report_generate_option_request import ReportGenerateOptionRequest
 from defectdojo_api_generated.rest import RESTResponseType
+
+if TYPE_CHECKING:
+    """placeholder for IteratorResult types if any"""
+    from defectdojo_api_generated.models import DeletePreview, Product
 
 
 class ProductsApi:
@@ -525,6 +530,28 @@ class ProductsApi:
             _host=_host,
             _request_auth=_request_auth,
         )
+
+    def products_delete_preview_list_iterator(
+        self,
+        id: Annotated[StrictInt, Field(description='A unique integer value identifying this product.')],
+        limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
+        offset: Annotated[
+            Optional[StrictInt], Field(description='The initial index from which to return the results.')
+        ] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]],
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> 'Generator[IteratorResult[DeletePreview, PaginatedDeletePreviewList], None, None]':
+        _params = locals()
+        for page in get_all_pages(self.api_client, ProductsApi.products_delete_preview_list, **_params):
+            for result in page.results:
+                yield IteratorResult(result=result, page=page)
 
     def products_destroy(
         self,
@@ -1847,6 +1874,101 @@ class ProductsApi:
             _host=_host,
             _request_auth=_request_auth,
         )
+
+    def products_list_iterator(
+        self,
+        business_criticality: Optional[StrictStr] = None,
+        created: Annotated[
+            Optional[datetime],
+            Field(
+                description='* `None` - Any date * `1` - Today * `2` - Past 7 days * `3` - Past 30 days * `4` - Past 90 days * `5` - Current month * `6` - Current year * `7` - Past year'
+            ),
+        ] = None,
+        description: Optional[StrictStr] = None,
+        external_audience: Optional[StrictBool] = None,
+        has_tags: Annotated[Optional[StrictBool], Field(description='Has tags')] = None,
+        id: Annotated[
+            Optional[List[StrictInt]], Field(description='Multiple values may be separated by commas.')
+        ] = None,
+        internet_accessible: Optional[StrictBool] = None,
+        lifecycle: Optional[StrictStr] = None,
+        limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
+        name: Optional[StrictStr] = None,
+        name_exact: Optional[StrictStr] = None,
+        not_tag: Annotated[Optional[StrictStr], Field(description='Not Tag name contains')] = None,
+        not_tags: Annotated[
+            Optional[List[StrictStr]], Field(description='Comma separated list of exact tags not present on product')
+        ] = None,
+        o: Annotated[
+            Optional[List[StrictStr]],
+            Field(
+                description='Ordering  * `id` - Id * `-id` - Id (descending) * `tid` - Tid * `-tid` - Tid (descending) * `name` - Name * `-name` - Name (descending) * `created` - Created * `-created` - Created (descending) * `prod_numeric_grade` - Prod numeric grade * `-prod_numeric_grade` - Prod numeric grade (descending) * `business_criticality` - Business criticality * `-business_criticality` - Business criticality (descending) * `platform` - Platform * `-platform` - Platform (descending) * `lifecycle` - Lifecycle * `-lifecycle` - Lifecycle (descending) * `origin` - Origin * `-origin` - Origin (descending) * `revenue` - Revenue * `-revenue` - Revenue (descending) * `external_audience` - External audience * `-external_audience` - External audience (descending) * `internet_accessible` - Internet accessible * `-internet_accessible` - Internet accessible (descending) * `product_manager` - Product manager * `-product_manager` - Product manager (descending) * `product_manager__first_name` - Product manager  first name * `-product_manager__first_name` - Product manager  first name (descending) * `product_manager__last_name` - Product manager  last name * `-product_manager__last_name` - Product manager  last name (descending) * `technical_contact` - Technical contact * `-technical_contact` - Technical contact (descending) * `technical_contact__first_name` - Technical contact  first name * `-technical_contact__first_name` - Technical contact  first name (descending) * `technical_contact__last_name` - Technical contact  last name * `-technical_contact__last_name` - Technical contact  last name (descending) * `team_manager` - Team manager * `-team_manager` - Team manager (descending) * `team_manager__first_name` - Team manager  first name * `-team_manager__first_name` - Team manager  first name (descending) * `team_manager__last_name` - Team manager  last name * `-team_manager__last_name` - Team manager  last name (descending) * `prod_type` - Prod type * `-prod_type` - Prod type (descending) * `prod_type__name` - Prod type  name * `-prod_type__name` - Prod type  name (descending) * `updated` - Updated * `-updated` - Updated (descending) * `user_records` - User records * `-user_records` - User records (descending)'
+            ),
+        ] = None,
+        offset: Annotated[
+            Optional[StrictInt], Field(description='The initial index from which to return the results.')
+        ] = None,
+        origin: Optional[StrictStr] = None,
+        outside_of_sla: Optional[Union[StrictFloat, StrictInt]] = None,
+        platform: Optional[StrictStr] = None,
+        prefetch: Annotated[
+            Optional[List[StrictStr]],
+            Field(description='List of fields for which to prefetch model instances and add those to the response'),
+        ] = None,
+        prod_numeric_grade: Annotated[
+            Optional[List[StrictInt]], Field(description='Multiple values may be separated by commas.')
+        ] = None,
+        prod_type: Annotated[
+            Optional[List[StrictInt]], Field(description='Multiple values may be separated by commas.')
+        ] = None,
+        product_manager: Annotated[
+            Optional[List[StrictInt]], Field(description='Multiple values may be separated by commas.')
+        ] = None,
+        regulations: Annotated[
+            Optional[List[StrictInt]], Field(description='Multiple values may be separated by commas.')
+        ] = None,
+        revenue: Optional[Union[StrictFloat, StrictInt]] = None,
+        tag: Annotated[Optional[StrictStr], Field(description='Tag name contains')] = None,
+        tags: Annotated[
+            Optional[List[StrictStr]],
+            Field(description='Comma separated list of exact tags (uses OR for multiple values)'),
+        ] = None,
+        tags__and: Annotated[
+            Optional[List[StrictStr]],
+            Field(description='Comma separated list of exact tags to match with an AND expression'),
+        ] = None,
+        team_manager: Annotated[
+            Optional[List[StrictInt]], Field(description='Multiple values may be separated by commas.')
+        ] = None,
+        technical_contact: Annotated[
+            Optional[List[StrictInt]], Field(description='Multiple values may be separated by commas.')
+        ] = None,
+        tid: Annotated[
+            Optional[List[StrictInt]], Field(description='Multiple values may be separated by commas.')
+        ] = None,
+        updated: Annotated[
+            Optional[datetime],
+            Field(
+                description='* `None` - Any date * `1` - Today * `2` - Past 7 days * `3` - Past 30 days * `4` - Past 90 days * `5` - Current month * `6` - Current year * `7` - Past year'
+            ),
+        ] = None,
+        user_records: Annotated[
+            Optional[List[StrictInt]], Field(description='Multiple values may be separated by commas.')
+        ] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]],
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> 'Generator[IteratorResult[Product, PaginatedProductList], None, None]':
+        _params = locals()
+        for page in get_all_pages(self.api_client, ProductsApi.products_list, **_params):
+            for result in page.results:
+                yield IteratorResult(result=result, page=page)
 
     def products_partial_update(
         self,

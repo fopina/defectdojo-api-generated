@@ -11,19 +11,24 @@ Do not edit the class manually.
 """  # noqa: E501
 
 from datetime import datetime
-from typing import Any, Dict, List, Optional, Tuple, Union
+from typing import TYPE_CHECKING, Any, Dict, Generator, List, Optional, Tuple, Union
 
 from pydantic import Field, StrictFloat, StrictInt, StrictStr
 from typing_extensions import Annotated
 
 from defectdojo_api_generated.api_client import ApiClient, RequestSerialized
 from defectdojo_api_generated.api_response import ApiResponse
+from defectdojo_api_generated.helpers import IteratorResult, get_all_pages
 from defectdojo_api_generated.models.paginated_delete_preview_list import PaginatedDeletePreviewList
 from defectdojo_api_generated.models.paginated_test_import_list import PaginatedTestImportList
 from defectdojo_api_generated.models.patched_test_import_request import PatchedTestImportRequest
 from defectdojo_api_generated.models.test_import import TestImport
 from defectdojo_api_generated.models.test_import_request import TestImportRequest
 from defectdojo_api_generated.rest import RESTResponseType
+
+if TYPE_CHECKING:
+    """placeholder for IteratorResult types if any"""
+    from defectdojo_api_generated.models import DeletePreview, TestImport
 
 
 class TestImportsApi:
@@ -523,6 +528,28 @@ class TestImportsApi:
             _host=_host,
             _request_auth=_request_auth,
         )
+
+    def test_imports_delete_preview_list_iterator(
+        self,
+        id: Annotated[StrictInt, Field(description='A unique integer value identifying this test_ import.')],
+        limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
+        offset: Annotated[
+            Optional[StrictInt], Field(description='The initial index from which to return the results.')
+        ] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]],
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> 'Generator[IteratorResult[DeletePreview, PaginatedDeletePreviewList], None, None]':
+        _params = locals()
+        for page in get_all_pages(self.api_client, TestImportsApi.test_imports_delete_preview_list, **_params):
+            for result in page.results:
+                yield IteratorResult(result=result, page=page)
 
     def test_imports_destroy(
         self,
@@ -1163,6 +1190,45 @@ class TestImportsApi:
             _host=_host,
             _request_auth=_request_auth,
         )
+
+    def test_imports_list_iterator(
+        self,
+        branch_tag: Optional[StrictStr] = None,
+        build_id: Optional[StrictStr] = None,
+        commit_hash: Optional[StrictStr] = None,
+        findings_affected: Optional[List[StrictInt]] = None,
+        limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
+        o: Annotated[
+            Optional[List[StrictStr]],
+            Field(
+                description='Ordering  * `id` - Id * `-id` - Id (descending) * `created` - Created * `-created` - Created (descending) * `modified` - Modified * `-modified` - Modified (descending) * `version` - Version * `-version` - Version (descending) * `branch_tag` - Branch tag * `-branch_tag` - Branch tag (descending) * `build_id` - Build id * `-build_id` - Build id (descending) * `commit_hash` - Commit hash * `-commit_hash` - Commit hash (descending)'
+            ),
+        ] = None,
+        offset: Annotated[
+            Optional[StrictInt], Field(description='The initial index from which to return the results.')
+        ] = None,
+        test: Optional[StrictInt] = None,
+        test_import_finding_action__action: Annotated[
+            Optional[StrictStr],
+            Field(description='* `N` - created * `C` - closed * `R` - reactivated * `U` - untouched'),
+        ] = None,
+        test_import_finding_action__created: Optional[datetime] = None,
+        test_import_finding_action__finding: Optional[StrictInt] = None,
+        version: Optional[StrictStr] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]],
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> 'Generator[IteratorResult[TestImport, PaginatedTestImportList], None, None]':
+        _params = locals()
+        for page in get_all_pages(self.api_client, TestImportsApi.test_imports_list, **_params):
+            for result in page.results:
+                yield IteratorResult(result=result, page=page)
 
     def test_imports_partial_update(
         self,

@@ -11,13 +11,14 @@ Do not edit the class manually.
 """  # noqa: E501
 
 from datetime import date
-from typing import Any, Dict, List, Optional, Tuple, Union
+from typing import TYPE_CHECKING, Any, Dict, Generator, List, Optional, Tuple, Union
 
 from pydantic import Field, StrictFloat, StrictInt, StrictStr
 from typing_extensions import Annotated
 
 from defectdojo_api_generated.api_client import ApiClient, RequestSerialized
 from defectdojo_api_generated.api_response import ApiResponse
+from defectdojo_api_generated.helpers import IteratorResult, get_all_pages
 from defectdojo_api_generated.models.paginated_delete_preview_list import PaginatedDeletePreviewList
 from defectdojo_api_generated.models.paginated_stub_finding_list import PaginatedStubFindingList
 from defectdojo_api_generated.models.patched_stub_finding_request import PatchedStubFindingRequest
@@ -26,6 +27,10 @@ from defectdojo_api_generated.models.stub_finding_create import StubFindingCreat
 from defectdojo_api_generated.models.stub_finding_create_request import StubFindingCreateRequest
 from defectdojo_api_generated.models.stub_finding_request import StubFindingRequest
 from defectdojo_api_generated.rest import RESTResponseType
+
+if TYPE_CHECKING:
+    """placeholder for IteratorResult types if any"""
+    from defectdojo_api_generated.models import DeletePreview, StubFinding
 
 
 class StubFindingsApi:
@@ -525,6 +530,28 @@ class StubFindingsApi:
             _host=_host,
             _request_auth=_request_auth,
         )
+
+    def stub_findings_delete_preview_list_iterator(
+        self,
+        id: Annotated[StrictInt, Field(description='A unique integer value identifying this stub_ finding.')],
+        limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
+        offset: Annotated[
+            Optional[StrictInt], Field(description='The initial index from which to return the results.')
+        ] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]],
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> 'Generator[IteratorResult[DeletePreview, PaginatedDeletePreviewList], None, None]':
+        _params = locals()
+        for page in get_all_pages(self.api_client, StubFindingsApi.stub_findings_delete_preview_list, **_params):
+            for result in page.results:
+                yield IteratorResult(result=result, page=page)
 
     def stub_findings_destroy(
         self,
@@ -1053,6 +1080,32 @@ class StubFindingsApi:
             _host=_host,
             _request_auth=_request_auth,
         )
+
+    def stub_findings_list_iterator(
+        self,
+        var_date: Optional[date] = None,
+        description: Optional[StrictStr] = None,
+        id: Optional[StrictInt] = None,
+        limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
+        offset: Annotated[
+            Optional[StrictInt], Field(description='The initial index from which to return the results.')
+        ] = None,
+        severity: Optional[StrictStr] = None,
+        title: Optional[StrictStr] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]],
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> 'Generator[IteratorResult[StubFinding, PaginatedStubFindingList], None, None]':
+        _params = locals()
+        for page in get_all_pages(self.api_client, StubFindingsApi.stub_findings_list, **_params):
+            for result in page.results:
+                yield IteratorResult(result=result, page=page)
 
     def stub_findings_partial_update(
         self,

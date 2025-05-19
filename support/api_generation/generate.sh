@@ -15,5 +15,5 @@ cd ..
                            -c support/api_generation/config.yaml \
                            -o .
 
-rm -fr tests/generated
-mv defectdojo_api_generated/test tests/generated
+mkdir -p tests/generated
+mv defectdojo_api_generated/test/* tests/generated/

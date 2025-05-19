@@ -2,8 +2,8 @@
 
 {{>partial_header}}
 import warnings
-from pydantic import Field, StrictFloat, StrictStr, StrictInt
-from typing import Any, Dict, List, Optional, Tuple, Union
+from pydantic import Field, StrictFloat, StrictStr, StrictInt, BaseModel
+from typing import Any, Dict, List, Optional, Tuple, Union, TypeVar, Generic, TYPE_CHECKING, Generator
 from typing_extensions import Annotated
 
 {{#imports}}
@@ -13,7 +13,17 @@ from typing_extensions import Annotated
 from {{packageName}}.api_client import ApiClient, RequestSerialized
 from {{packageName}}.api_response import ApiResponse
 from {{packageName}}.rest import RESTResponseType
+from {{packageName}}.helpers import IteratorResult, get_all_pages
 
+{{#operations}}
+if TYPE_CHECKING:
+    """placeholder for IteratorResult types if any"""
+{{#operation}}
+{{#vendorExtensions.x-has-iterator}}
+    from {{packageName}}.models import {{vendorExtensions.x-iterator-item}}
+{{/vendorExtensions.x-has-iterator}}
+{{/operation}}
+{{/operations}}
 
 {{#operations}}
 class {{classname}}:
@@ -232,6 +242,12 @@ class {{classname}}:
             _request_auth=_request_auth
         )
 
-
+    {{#vendorExtensions.x-has-iterator}}
+    def {{operationId}}_iterator{{>partial_api_args}} -> 'Generator[IteratorResult[{{vendorExtensions.x-iterator-item}}, {{returnType}}], None, None]':
+        _params = locals()
+        for page in get_all_pages(self.api_client, {{classname}}.{{operationId}}, **_params):
+            for result in page.results:
+                yield IteratorResult(result=result, page=page)
+    {{/vendorExtensions.x-has-iterator}}
 {{/operation}}
 {{/operations}}

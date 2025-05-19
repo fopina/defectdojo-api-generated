@@ -11,13 +11,14 @@ Do not edit the class manually.
 """  # noqa: E501
 
 from datetime import datetime
-from typing import Any, Dict, List, Optional, Tuple, Union
+from typing import TYPE_CHECKING, Any, Dict, Generator, List, Optional, Tuple, Union
 
 from pydantic import Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing_extensions import Annotated
 
 from defectdojo_api_generated.api_client import ApiClient, RequestSerialized
 from defectdojo_api_generated.api_response import ApiResponse
+from defectdojo_api_generated.helpers import IteratorResult, get_all_pages
 from defectdojo_api_generated.models.paginated_delete_preview_list import PaginatedDeletePreviewList
 from defectdojo_api_generated.models.paginated_product_type_list import PaginatedProductTypeList
 from defectdojo_api_generated.models.patched_product_type_request import PatchedProductTypeRequest
@@ -26,6 +27,10 @@ from defectdojo_api_generated.models.product_type_request import ProductTypeRequ
 from defectdojo_api_generated.models.report_generate import ReportGenerate
 from defectdojo_api_generated.models.report_generate_option_request import ReportGenerateOptionRequest
 from defectdojo_api_generated.rest import RESTResponseType
+
+if TYPE_CHECKING:
+    """placeholder for IteratorResult types if any"""
+    from defectdojo_api_generated.models import DeletePreview, ProductType
 
 
 class ProductTypesApi:
@@ -525,6 +530,28 @@ class ProductTypesApi:
             _host=_host,
             _request_auth=_request_auth,
         )
+
+    def product_types_delete_preview_list_iterator(
+        self,
+        id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ type.')],
+        limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
+        offset: Annotated[
+            Optional[StrictInt], Field(description='The initial index from which to return the results.')
+        ] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]],
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> 'Generator[IteratorResult[DeletePreview, PaginatedDeletePreviewList], None, None]':
+        _params = locals()
+        for page in get_all_pages(self.api_client, ProductTypesApi.product_types_delete_preview_list, **_params):
+            for result in page.results:
+                yield IteratorResult(result=result, page=page)
 
     def product_types_destroy(
         self,
@@ -1343,6 +1370,37 @@ class ProductTypesApi:
             _host=_host,
             _request_auth=_request_auth,
         )
+
+    def product_types_list_iterator(
+        self,
+        created: Optional[datetime] = None,
+        critical_product: Optional[StrictBool] = None,
+        id: Optional[StrictInt] = None,
+        key_product: Optional[StrictBool] = None,
+        limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
+        name: Optional[StrictStr] = None,
+        offset: Annotated[
+            Optional[StrictInt], Field(description='The initial index from which to return the results.')
+        ] = None,
+        prefetch: Annotated[
+            Optional[List[StrictStr]],
+            Field(description='List of fields for which to prefetch model instances and add those to the response'),
+        ] = None,
+        updated: Optional[datetime] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]],
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> 'Generator[IteratorResult[ProductType, PaginatedProductTypeList], None, None]':
+        _params = locals()
+        for page in get_all_pages(self.api_client, ProductTypesApi.product_types_list, **_params):
+            for result in page.results:
+                yield IteratorResult(result=result, page=page)
 
     def product_types_partial_update(
         self,

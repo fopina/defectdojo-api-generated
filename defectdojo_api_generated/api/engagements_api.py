@@ -11,13 +11,14 @@ Do not edit the class manually.
 """  # noqa: E501
 
 from datetime import date, datetime
-from typing import Any, Dict, List, Optional, Tuple, Union
+from typing import TYPE_CHECKING, Any, Dict, Generator, List, Optional, Tuple, Union
 
 from pydantic import Field, StrictBool, StrictBytes, StrictFloat, StrictInt, StrictStr
 from typing_extensions import Annotated
 
 from defectdojo_api_generated.api_client import ApiClient, RequestSerialized
 from defectdojo_api_generated.api_response import ApiResponse
+from defectdojo_api_generated.helpers import IteratorResult, get_all_pages
 from defectdojo_api_generated.models.accepted_risk_request import AcceptedRiskRequest
 from defectdojo_api_generated.models.add_new_note_option_request import AddNewNoteOptionRequest
 from defectdojo_api_generated.models.engagement import Engagement
@@ -38,6 +39,10 @@ from defectdojo_api_generated.models.report_generate import ReportGenerate
 from defectdojo_api_generated.models.report_generate_option_request import ReportGenerateOptionRequest
 from defectdojo_api_generated.models.risk_acceptance import RiskAcceptance
 from defectdojo_api_generated.rest import RESTResponseType
+
+if TYPE_CHECKING:
+    """placeholder for IteratorResult types if any"""
+    from defectdojo_api_generated.models import DeletePreview, Engagement
 
 
 class EngagementsApi:
@@ -1437,6 +1442,28 @@ class EngagementsApi:
             _host=_host,
             _request_auth=_request_auth,
         )
+
+    def engagements_delete_preview_list_iterator(
+        self,
+        id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
+        limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
+        offset: Annotated[
+            Optional[StrictInt], Field(description='The initial index from which to return the results.')
+        ] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]],
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> 'Generator[IteratorResult[DeletePreview, PaginatedDeletePreviewList], None, None]':
+        _params = locals()
+        for page in get_all_pages(self.api_client, EngagementsApi.engagements_delete_preview_list, **_params):
+            for result in page.results:
+                yield IteratorResult(result=result, page=page)
 
     def engagements_destroy(
         self,
@@ -3326,6 +3353,80 @@ class EngagementsApi:
             _host=_host,
             _request_auth=_request_auth,
         )
+
+    def engagements_list_iterator(
+        self,
+        active: Optional[StrictBool] = None,
+        api_test: Optional[StrictBool] = None,
+        has_tags: Annotated[Optional[StrictBool], Field(description='Has tags')] = None,
+        id: Optional[StrictInt] = None,
+        limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
+        name: Optional[StrictStr] = None,
+        not_product__tags: Annotated[
+            Optional[List[StrictStr]], Field(description='Comma separated list of exact tags not present on product')
+        ] = None,
+        not_tag: Annotated[Optional[StrictStr], Field(description='Not Tag name contains')] = None,
+        not_tags: Annotated[
+            Optional[List[StrictStr]], Field(description='Comma separated list of exact tags not present on model')
+        ] = None,
+        o: Annotated[
+            Optional[List[StrictStr]],
+            Field(
+                description='Ordering  * `name` - Engagement Name * `-name` - Engagement Name (descending) * `version` - Version * `-version` - Version (descending) * `target_start` - Target start * `-target_start` - Target start (descending) * `target_end` - Target end * `-target_end` - Target end (descending) * `status` - Status * `-status` - Status (descending) * `lead` - Lead * `-lead` - Lead (descending) * `created` - Created * `-created` - Created (descending) * `updated` - Updated * `-updated` - Updated (descending)'
+            ),
+        ] = None,
+        offset: Annotated[
+            Optional[StrictInt], Field(description='The initial index from which to return the results.')
+        ] = None,
+        pen_test: Optional[StrictBool] = None,
+        product: Optional[StrictInt] = None,
+        product__prod_type: Annotated[
+            Optional[List[StrictInt]], Field(description='Multiple values may be separated by commas.')
+        ] = None,
+        product__tags: Annotated[
+            Optional[List[StrictStr]],
+            Field(description='Comma separated list of exact tags present on product (uses OR for multiple values)'),
+        ] = None,
+        product__tags__and: Annotated[
+            Optional[List[StrictStr]],
+            Field(description='Comma separated list of exact tags to match with an AND expression present on product'),
+        ] = None,
+        report_type: Optional[StrictInt] = None,
+        requester: Optional[StrictInt] = None,
+        status: Annotated[
+            Optional[StrictStr],
+            Field(
+                description='* `Not Started` - Not Started * `Blocked` - Blocked * `Cancelled` - Cancelled * `Completed` - Completed * `In Progress` - In Progress * `On Hold` - On Hold * `Waiting for Resource` - Waiting for Resource'
+            ),
+        ] = None,
+        tag: Annotated[Optional[StrictStr], Field(description='Tag name contains')] = None,
+        tags: Annotated[
+            Optional[List[StrictStr]],
+            Field(description='Comma separated list of exact tags (uses OR for multiple values)'),
+        ] = None,
+        tags__and: Annotated[
+            Optional[List[StrictStr]],
+            Field(description='Comma separated list of exact tags to match with an AND expression'),
+        ] = None,
+        target_end: Optional[date] = None,
+        target_start: Optional[date] = None,
+        threat_model: Optional[StrictBool] = None,
+        updated: Optional[datetime] = None,
+        version: Optional[StrictStr] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]],
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> 'Generator[IteratorResult[Engagement, PaginatedEngagementList], None, None]':
+        _params = locals()
+        for page in get_all_pages(self.api_client, EngagementsApi.engagements_list, **_params):
+            for result in page.results:
+                yield IteratorResult(result=result, page=page)
 
     def engagements_notes_create(
         self,

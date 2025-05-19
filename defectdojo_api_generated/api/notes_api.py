@@ -11,18 +11,23 @@ Do not edit the class manually.
 """  # noqa: E501
 
 from datetime import datetime
-from typing import Any, Dict, List, Optional, Tuple, Union
+from typing import TYPE_CHECKING, Any, Dict, Generator, List, Optional, Tuple, Union
 
 from pydantic import Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing_extensions import Annotated
 
 from defectdojo_api_generated.api_client import ApiClient, RequestSerialized
 from defectdojo_api_generated.api_response import ApiResponse
+from defectdojo_api_generated.helpers import IteratorResult, get_all_pages
 from defectdojo_api_generated.models.note import Note
 from defectdojo_api_generated.models.note_request import NoteRequest
 from defectdojo_api_generated.models.paginated_note_list import PaginatedNoteList
 from defectdojo_api_generated.models.patched_note_request import PatchedNoteRequest
 from defectdojo_api_generated.rest import RESTResponseType
+
+if TYPE_CHECKING:
+    """placeholder for IteratorResult types if any"""
+    from defectdojo_api_generated.models import Note
 
 
 class NotesApi:
@@ -412,6 +417,35 @@ class NotesApi:
             _host=_host,
             _request_auth=_request_auth,
         )
+
+    def notes_list_iterator(
+        self,
+        author: Optional[StrictInt] = None,
+        var_date: Optional[datetime] = None,
+        edit_time: Optional[datetime] = None,
+        edited: Optional[StrictBool] = None,
+        editor: Optional[StrictInt] = None,
+        entry: Optional[StrictStr] = None,
+        id: Optional[StrictInt] = None,
+        limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
+        offset: Annotated[
+            Optional[StrictInt], Field(description='The initial index from which to return the results.')
+        ] = None,
+        private: Optional[StrictBool] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]],
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> 'Generator[IteratorResult[Note, PaginatedNoteList], None, None]':
+        _params = locals()
+        for page in get_all_pages(self.api_client, NotesApi.notes_list, **_params):
+            for result in page.results:
+                yield IteratorResult(result=result, page=page)
 
     def notes_partial_update(
         self,

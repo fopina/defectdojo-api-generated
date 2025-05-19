@@ -11,7 +11,7 @@ Do not edit the class manually.
 """  # noqa: E501
 
 from datetime import date
-from typing import Any, Dict, List, Optional, Tuple, Union
+from typing import TYPE_CHECKING, Any, Dict, List, Optional, Tuple, Union
 
 from pydantic import Field, StrictBool, StrictBytes, StrictFloat, StrictInt, StrictStr
 from typing_extensions import Annotated
@@ -20,6 +20,9 @@ from defectdojo_api_generated.api_client import ApiClient, RequestSerialized
 from defectdojo_api_generated.api_response import ApiResponse
 from defectdojo_api_generated.models.re_import_scan import ReImportScan
 from defectdojo_api_generated.rest import RESTResponseType
+
+if TYPE_CHECKING:
+    """placeholder for IteratorResult types if any"""
 
 
 class ReimportScanApi:

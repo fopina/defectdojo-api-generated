@@ -11,19 +11,24 @@ Do not edit the class manually.
 """  # noqa: E501
 
 from datetime import datetime
-from typing import Any, Dict, List, Optional, Tuple, Union
+from typing import TYPE_CHECKING, Any, Dict, Generator, List, Optional, Tuple, Union
 
 from pydantic import Field, StrictFloat, StrictInt, StrictStr
 from typing_extensions import Annotated
 
 from defectdojo_api_generated.api_client import ApiClient, RequestSerialized
 from defectdojo_api_generated.api_response import ApiResponse
+from defectdojo_api_generated.helpers import IteratorResult, get_all_pages
 from defectdojo_api_generated.models.notification_webhooks import NotificationWebhooks
 from defectdojo_api_generated.models.notification_webhooks_request import NotificationWebhooksRequest
 from defectdojo_api_generated.models.paginated_delete_preview_list import PaginatedDeletePreviewList
 from defectdojo_api_generated.models.paginated_notification_webhooks_list import PaginatedNotificationWebhooksList
 from defectdojo_api_generated.models.patched_notification_webhooks_request import PatchedNotificationWebhooksRequest
 from defectdojo_api_generated.rest import RESTResponseType
+
+if TYPE_CHECKING:
+    """placeholder for IteratorResult types if any"""
+    from defectdojo_api_generated.models import DeletePreview, NotificationWebhooks
 
 
 class NotificationWebhooksApi:
@@ -523,6 +528,30 @@ class NotificationWebhooksApi:
             _host=_host,
             _request_auth=_request_auth,
         )
+
+    def notification_webhooks_delete_preview_list_iterator(
+        self,
+        id: Annotated[StrictInt, Field(description='A unique integer value identifying this notification_ webhooks.')],
+        limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
+        offset: Annotated[
+            Optional[StrictInt], Field(description='The initial index from which to return the results.')
+        ] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]],
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> 'Generator[IteratorResult[DeletePreview, PaginatedDeletePreviewList], None, None]':
+        _params = locals()
+        for page in get_all_pages(
+            self.api_client, NotificationWebhooksApi.notification_webhooks_delete_preview_list, **_params
+        ):
+            for result in page.results:
+                yield IteratorResult(result=result, page=page)
 
     def notification_webhooks_destroy(
         self,
@@ -1135,6 +1164,41 @@ class NotificationWebhooksApi:
             _host=_host,
             _request_auth=_request_auth,
         )
+
+    def notification_webhooks_list_iterator(
+        self,
+        first_error: Optional[datetime] = None,
+        header_name: Optional[StrictStr] = None,
+        header_value: Optional[StrictStr] = None,
+        last_error: Optional[datetime] = None,
+        limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
+        name: Optional[StrictStr] = None,
+        note: Optional[StrictStr] = None,
+        offset: Annotated[
+            Optional[StrictInt], Field(description='The initial index from which to return the results.')
+        ] = None,
+        owner: Optional[StrictInt] = None,
+        status: Annotated[
+            Optional[StrictStr],
+            Field(
+                description='Status of the incoming webhook  * `active` - Active * `active_tmp` - Active but 5xx (or similar) error detected * `inactive_tmp` - Temporary inactive because of 5xx (or similar) error * `inactive_permanent` - Permanently inactive'
+            ),
+        ] = None,
+        url: Optional[StrictStr] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]],
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> 'Generator[IteratorResult[NotificationWebhooks, PaginatedNotificationWebhooksList], None, None]':
+        _params = locals()
+        for page in get_all_pages(self.api_client, NotificationWebhooksApi.notification_webhooks_list, **_params):
+            for result in page.results:
+                yield IteratorResult(result=result, page=page)
 
     def notification_webhooks_partial_update(
         self,

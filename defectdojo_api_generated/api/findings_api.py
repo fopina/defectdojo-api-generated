@@ -11,13 +11,14 @@ Do not edit the class manually.
 """  # noqa: E501
 
 from datetime import date, datetime
-from typing import Any, Dict, List, Optional, Tuple, Union
+from typing import TYPE_CHECKING, Any, Dict, Generator, List, Optional, Tuple, Union
 
 from pydantic import Field, StrictBool, StrictBytes, StrictFloat, StrictInt, StrictStr
 from typing_extensions import Annotated
 
 from defectdojo_api_generated.api_client import ApiClient, RequestSerialized
 from defectdojo_api_generated.api_response import ApiResponse
+from defectdojo_api_generated.helpers import IteratorResult, get_all_pages
 from defectdojo_api_generated.models.accepted_risk_request import AcceptedRiskRequest
 from defectdojo_api_generated.models.add_new_note_option_request import AddNewNoteOptionRequest
 from defectdojo_api_generated.models.burp_raw_request_response import BurpRawRequestResponse
@@ -46,6 +47,10 @@ from defectdojo_api_generated.models.report_generate_option_request import Repor
 from defectdojo_api_generated.models.tag import Tag
 from defectdojo_api_generated.models.tag_request import TagRequest
 from defectdojo_api_generated.rest import RESTResponseType
+
+if TYPE_CHECKING:
+    """placeholder for IteratorResult types if any"""
+    from defectdojo_api_generated.models import DeletePreview, Finding
 
 
 class FindingsApi:
@@ -3256,6 +3261,28 @@ class FindingsApi:
             _host=_host,
             _request_auth=_request_auth,
         )
+
+    def findings_delete_preview_list_iterator(
+        self,
+        id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
+        limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
+        offset: Annotated[
+            Optional[StrictInt], Field(description='The initial index from which to return the results.')
+        ] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]],
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> 'Generator[IteratorResult[DeletePreview, PaginatedDeletePreviewList], None, None]':
+        _params = locals()
+        for page in get_all_pages(self.api_client, FindingsApi.findings_delete_preview_list, **_params):
+            for result in page.results:
+                yield IteratorResult(result=result, page=page)
 
     def findings_destroy(
         self,
@@ -7294,6 +7321,290 @@ class FindingsApi:
             _host=_host,
             _request_auth=_request_auth,
         )
+
+    def findings_list_iterator(
+        self,
+        active: Optional[StrictBool] = None,
+        component_name: Optional[StrictStr] = None,
+        component_version: Optional[StrictStr] = None,
+        created: Annotated[
+            Optional[datetime],
+            Field(
+                description='The date the finding was created inside DefectDojo.  * `None` - Any date * `1` - Today * `2` - Past 7 days * `3` - Past 30 days * `4` - Past 90 days * `5` - Current month * `6` - Current year * `7` - Past year'
+            ),
+        ] = None,
+        cvssv3: Optional[StrictStr] = None,
+        cvssv3_score: Optional[Union[StrictFloat, StrictInt]] = None,
+        cwe: Annotated[
+            Optional[List[StrictInt]], Field(description='Multiple values may be separated by commas.')
+        ] = None,
+        var_date: Annotated[
+            Optional[date],
+            Field(
+                description='The date the flaw was discovered.  * `None` - Any date * `1` - Today * `2` - Past 7 days * `3` - Past 30 days * `4` - Past 90 days * `5` - Current month * `6` - Current year * `7` - Past year'
+            ),
+        ] = None,
+        defect_review_requested_by: Annotated[
+            Optional[List[StrictInt]], Field(description='Multiple values may be separated by commas.')
+        ] = None,
+        description: Optional[StrictStr] = None,
+        discovered_after: Optional[date] = None,
+        discovered_before: Optional[date] = None,
+        discovered_on: Optional[date] = None,
+        duplicate: Optional[StrictBool] = None,
+        duplicate_finding: Optional[StrictInt] = None,
+        dynamic_finding: Optional[StrictBool] = None,
+        effort_for_fixing: Optional[StrictStr] = None,
+        endpoints: Annotated[
+            Optional[List[StrictInt]], Field(description='Multiple values may be separated by commas.')
+        ] = None,
+        epss_percentile_max: Annotated[
+            Optional[
+                Union[
+                    Annotated[float, Field(le=1.0, strict=True, ge=0.0)], Annotated[int, Field(le=1, strict=True, ge=0)]
+                ]
+            ],
+            Field(
+                description='The range of EPSS percentiles to filter on; the min input is a lower bound, the max is an upper bound. Leaving one empty will skip that bound (e.g., leaving the min bound input empty will filter only on the max bound -- filtering on "less than or equal"). Leading 0 required.'
+            ),
+        ] = None,
+        epss_percentile_min: Annotated[
+            Optional[
+                Union[
+                    Annotated[float, Field(le=1.0, strict=True, ge=0.0)], Annotated[int, Field(le=1, strict=True, ge=0)]
+                ]
+            ],
+            Field(
+                description='The range of EPSS percentiles to filter on; the min input is a lower bound, the max is an upper bound. Leaving one empty will skip that bound (e.g., leaving the min bound input empty will filter only on the max bound -- filtering on "less than or equal"). Leading 0 required.'
+            ),
+        ] = None,
+        epss_score_max: Annotated[
+            Optional[
+                Union[
+                    Annotated[float, Field(le=1.0, strict=True, ge=0.0)], Annotated[int, Field(le=1, strict=True, ge=0)]
+                ]
+            ],
+            Field(
+                description='The range of EPSS score percentages to filter on; the min input is a lower bound, the max is an upper bound. Leaving one empty will skip that bound (e.g., leaving the min bound input empty will filter only on the max bound -- filtering on "less than or equal"). Leading 0 required.'
+            ),
+        ] = None,
+        epss_score_min: Annotated[
+            Optional[
+                Union[
+                    Annotated[float, Field(le=1.0, strict=True, ge=0.0)], Annotated[int, Field(le=1, strict=True, ge=0)]
+                ]
+            ],
+            Field(
+                description='The range of EPSS score percentages to filter on; the min input is a lower bound, the max is an upper bound. Leaving one empty will skip that bound (e.g., leaving the min bound input empty will filter only on the max bound -- filtering on "less than or equal"). Leading 0 required.'
+            ),
+        ] = None,
+        false_p: Optional[StrictBool] = None,
+        file_path: Optional[StrictStr] = None,
+        finding_group: Annotated[
+            Optional[List[Union[StrictFloat, StrictInt]]],
+            Field(description='Multiple values may be separated by commas.'),
+        ] = None,
+        found_by: Annotated[
+            Optional[List[StrictInt]], Field(description='Multiple values may be separated by commas.')
+        ] = None,
+        has_jira: Optional[StrictBool] = None,
+        has_tags: Annotated[Optional[StrictBool], Field(description='Has tags')] = None,
+        hash_code: Optional[StrictStr] = None,
+        id: Annotated[
+            Optional[List[StrictInt]], Field(description='Multiple values may be separated by commas.')
+        ] = None,
+        impact: Optional[StrictStr] = None,
+        inherited_tags: Annotated[
+            Optional[List[List[StrictInt]]],
+            Field(
+                description='Internal use tags sepcifically for maintaining parity with product. This field will be present as a subset in the tags field'
+            ),
+        ] = None,
+        is_mitigated: Optional[StrictBool] = None,
+        jira_change: Annotated[
+            Optional[datetime],
+            Field(
+                description='The date the linked Jira issue was last modified.  * `None` - Any date * `1` - Today * `2` - Past 7 days * `3` - Past 30 days * `4` - Past 90 days * `5` - Current month * `6` - Current year * `7` - Past year'
+            ),
+        ] = None,
+        jira_creation: Annotated[
+            Optional[datetime],
+            Field(
+                description='The date a Jira issue was created from this finding.  * `None` - Any date * `1` - Today * `2` - Past 7 days * `3` - Past 30 days * `4` - Past 90 days * `5` - Current month * `6` - Current year * `7` - Past year'
+            ),
+        ] = None,
+        last_reviewed: Annotated[
+            Optional[datetime],
+            Field(
+                description="Provides the date the flaw was last 'touched' by a tester.  * `None` - Any date * `1` - Today * `2` - Past 7 days * `3` - Past 30 days * `4` - Past 90 days * `5` - Current month * `6` - Current year * `7` - Past year"
+            ),
+        ] = None,
+        last_reviewed_by: Annotated[
+            Optional[List[StrictInt]], Field(description='Multiple values may be separated by commas.')
+        ] = None,
+        last_status_update: Optional[datetime] = None,
+        limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
+        mitigated: Annotated[
+            Optional[datetime],
+            Field(
+                description='Denotes if this flaw has been fixed by storing the date it was fixed.  * `None` - Any date * `1` - Today * `2` - Past 7 days * `3` - Past 30 days * `4` - Past 90 days * `5` - Current month * `6` - Current year * `7` - Past year'
+            ),
+        ] = None,
+        mitigated_after: Annotated[Optional[datetime], Field(description='Mitigated After')] = None,
+        mitigated_before: Optional[datetime] = None,
+        mitigated_by: Annotated[
+            Optional[List[StrictInt]], Field(description='Multiple values may be separated by commas.')
+        ] = None,
+        mitigated_on: Optional[datetime] = None,
+        mitigation: Optional[StrictStr] = None,
+        nb_occurences: Annotated[
+            Optional[List[StrictInt]], Field(description='Multiple values may be separated by commas.')
+        ] = None,
+        not_tag: Annotated[Optional[StrictStr], Field(description='Not Tag name contains')] = None,
+        not_tags: Annotated[
+            Optional[List[StrictStr]], Field(description='Comma separated list of exact tags not present on model')
+        ] = None,
+        not_test__engagement__product__tags: Annotated[
+            Optional[List[StrictStr]], Field(description='Comma separated list of exact tags not present on product')
+        ] = None,
+        not_test__engagement__tags: Annotated[
+            Optional[List[StrictStr]], Field(description='Comma separated list of exact tags not present on engagement')
+        ] = None,
+        not_test__tags: Annotated[
+            Optional[List[StrictStr]], Field(description='Comma separated list of exact tags present on test')
+        ] = None,
+        numerical_severity: Optional[StrictStr] = None,
+        o: Annotated[
+            Optional[List[StrictStr]],
+            Field(
+                description='Ordering  * `active` - Active * `-active` - Active (descending) * `component_name` - Component name * `-component_name` - Component name (descending) * `component_version` - Component version * `-component_version` - Component version (descending) * `created` - Created * `-created` - Created (descending) * `last_status_update` - Last status update * `-last_status_update` - Last status update (descending) * `last_reviewed` - Last reviewed * `-last_reviewed` - Last reviewed (descending) * `cwe` - Cwe * `-cwe` - Cwe (descending) * `date` - Date * `-date` - Date (descending) * `duplicate` - Duplicate * `-duplicate` - Duplicate (descending) * `dynamic_finding` - Dynamic finding * `-dynamic_finding` - Dynamic finding (descending) * `false_p` - False p * `-false_p` - False p (descending) * `found_by` - Found by * `-found_by` - Found by (descending) * `id` - Id * `-id` - Id (descending) * `is_mitigated` - Is mitigated * `-is_mitigated` - Is mitigated (descending) * `numerical_severity` - Numerical severity * `-numerical_severity` - Numerical severity (descending) * `out_of_scope` - Out of scope * `-out_of_scope` - Out of scope (descending) * `severity` - Severity * `-severity` - Severity (descending) * `reviewers` - Reviewers * `-reviewers` - Reviewers (descending) * `static_finding` - Static finding * `-static_finding` - Static finding (descending) * `test__engagement__product__name` - Test  engagement  product  name * `-test__engagement__product__name` - Test  engagement  product  name (descending) * `title` - Title * `-title` - Title (descending) * `under_defect_review` - Under defect review * `-under_defect_review` - Under defect review (descending) * `under_review` - Under review * `-under_review` - Under review (descending) * `verified` - Verified * `-verified` - Verified (descending)'
+            ),
+        ] = None,
+        offset: Annotated[
+            Optional[StrictInt], Field(description='The initial index from which to return the results.')
+        ] = None,
+        out_of_scope: Optional[StrictBool] = None,
+        outside_of_sla: Optional[Union[StrictFloat, StrictInt]] = None,
+        param: Optional[StrictStr] = None,
+        payload: Optional[StrictStr] = None,
+        planned_remediation_date: Optional[date] = None,
+        planned_remediation_version: Optional[StrictStr] = None,
+        prefetch: Annotated[
+            Optional[List[StrictStr]],
+            Field(description='List of fields for which to prefetch model instances and add those to the response'),
+        ] = None,
+        product_lifecycle: Annotated[
+            Optional[StrictStr], Field(description='Comma separated list of exact product lifecycles')
+        ] = None,
+        product_name: Annotated[Optional[StrictStr], Field(description='exact product name')] = None,
+        product_name_contains: Annotated[Optional[StrictStr], Field(description='exact product name')] = None,
+        publish_date: Optional[date] = None,
+        references: Optional[StrictStr] = None,
+        related_fields: Annotated[
+            Optional[StrictBool],
+            Field(
+                description='Expand finding external relations (engagement, environment, product,                                             product_type, test, test_type)'
+            ),
+        ] = None,
+        reporter: Annotated[
+            Optional[List[StrictInt]], Field(description='Multiple values may be separated by commas.')
+        ] = None,
+        review_requested_by: Annotated[
+            Optional[List[StrictInt]], Field(description='Multiple values may be separated by commas.')
+        ] = None,
+        reviewers: Annotated[
+            Optional[List[StrictInt]], Field(description='Multiple values may be separated by commas.')
+        ] = None,
+        risk_acceptance: Optional[Union[StrictFloat, StrictInt]] = None,
+        risk_accepted: Optional[StrictBool] = None,
+        sast_sink_object: Optional[StrictStr] = None,
+        sast_source_file_path: Optional[StrictStr] = None,
+        sast_source_line: Annotated[
+            Optional[List[StrictInt]], Field(description='Multiple values may be separated by commas.')
+        ] = None,
+        sast_source_object: Optional[StrictStr] = None,
+        scanner_confidence: Annotated[
+            Optional[List[StrictInt]], Field(description='Multiple values may be separated by commas.')
+        ] = None,
+        service: Optional[StrictStr] = None,
+        severity: Optional[StrictStr] = None,
+        severity_justification: Optional[StrictStr] = None,
+        sla_expiration_date: Optional[date] = None,
+        sla_start_date: Optional[date] = None,
+        sonarqube_issue: Annotated[
+            Optional[List[StrictInt]], Field(description='Multiple values may be separated by commas.')
+        ] = None,
+        static_finding: Optional[StrictBool] = None,
+        steps_to_reproduce: Optional[StrictStr] = None,
+        tag: Annotated[Optional[StrictStr], Field(description='Tag name contains')] = None,
+        tags: Annotated[
+            Optional[List[StrictStr]],
+            Field(description='Comma separated list of exact tags (uses OR for multiple values)'),
+        ] = None,
+        tags__and: Annotated[
+            Optional[List[StrictStr]],
+            Field(description='Comma separated list of exact tags to match with an AND expression'),
+        ] = None,
+        test: Optional[StrictInt] = None,
+        test__engagement: Annotated[
+            Optional[List[StrictInt]], Field(description='Multiple values may be separated by commas.')
+        ] = None,
+        test__engagement__product: Annotated[
+            Optional[List[StrictInt]], Field(description='Multiple values may be separated by commas.')
+        ] = None,
+        test__engagement__product__prod_type: Annotated[
+            Optional[List[StrictInt]], Field(description='Multiple values may be separated by commas.')
+        ] = None,
+        test__engagement__product__tags: Annotated[
+            Optional[List[StrictStr]],
+            Field(description='Comma separated list of exact tags present on product (uses OR for multiple values)'),
+        ] = None,
+        test__engagement__product__tags__and: Annotated[
+            Optional[List[StrictStr]],
+            Field(description='Comma separated list of exact tags to match with an AND expression present on product'),
+        ] = None,
+        test__engagement__tags: Annotated[
+            Optional[List[StrictStr]],
+            Field(description='Comma separated list of exact tags present on engagement (uses OR for multiple values)'),
+        ] = None,
+        test__engagement__tags__and: Annotated[
+            Optional[List[StrictStr]],
+            Field(
+                description='Comma separated list of exact tags to match with an AND expression present on engagement'
+            ),
+        ] = None,
+        test__tags: Annotated[
+            Optional[List[StrictStr]],
+            Field(description='Comma separated list of exact tags present on test (uses OR for multiple values)'),
+        ] = None,
+        test__tags__and: Annotated[
+            Optional[List[StrictStr]],
+            Field(description='Comma separated list of exact tags to match with an AND expression present on test'),
+        ] = None,
+        test__test_type: Annotated[
+            Optional[List[StrictInt]], Field(description='Multiple values may be separated by commas.')
+        ] = None,
+        title: Optional[StrictStr] = None,
+        under_defect_review: Optional[StrictBool] = None,
+        under_review: Optional[StrictBool] = None,
+        unique_id_from_tool: Optional[StrictStr] = None,
+        verified: Optional[StrictBool] = None,
+        vuln_id_from_tool: Optional[StrictStr] = None,
+        vulnerability_id: Optional[StrictStr] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]],
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> 'Generator[IteratorResult[Finding, PaginatedFindingList], None, None]':
+        _params = locals()
+        for page in get_all_pages(self.api_client, FindingsApi.findings_list, **_params):
+            for result in page.results:
+                yield IteratorResult(result=result, page=page)
 
     def findings_metadata_create(
         self,

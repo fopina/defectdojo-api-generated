@@ -11,13 +11,14 @@ Do not edit the class manually.
 """  # noqa: E501
 
 from datetime import datetime
-from typing import Any, Dict, List, Optional, Tuple, Union
+from typing import TYPE_CHECKING, Any, Dict, Generator, List, Optional, Tuple, Union
 
 from pydantic import Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing_extensions import Annotated
 
 from defectdojo_api_generated.api_client import ApiClient, RequestSerialized
 from defectdojo_api_generated.api_response import ApiResponse
+from defectdojo_api_generated.helpers import IteratorResult, get_all_pages
 from defectdojo_api_generated.models.paginated_delete_preview_list import PaginatedDeletePreviewList
 from defectdojo_api_generated.models.paginated_risk_acceptance_list import PaginatedRiskAcceptanceList
 from defectdojo_api_generated.models.patched_risk_acceptance_request import PatchedRiskAcceptanceRequest
@@ -25,6 +26,10 @@ from defectdojo_api_generated.models.risk_acceptance import RiskAcceptance
 from defectdojo_api_generated.models.risk_acceptance_proof import RiskAcceptanceProof
 from defectdojo_api_generated.models.risk_acceptance_request import RiskAcceptanceRequest
 from defectdojo_api_generated.rest import RESTResponseType
+
+if TYPE_CHECKING:
+    """placeholder for IteratorResult types if any"""
+    from defectdojo_api_generated.models import DeletePreview, RiskAcceptance
 
 
 class RiskAcceptanceApi:
@@ -524,6 +529,28 @@ class RiskAcceptanceApi:
             _host=_host,
             _request_auth=_request_auth,
         )
+
+    def risk_acceptance_delete_preview_list_iterator(
+        self,
+        id: Annotated[StrictInt, Field(description='A unique integer value identifying this risk_ acceptance.')],
+        limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
+        offset: Annotated[
+            Optional[StrictInt], Field(description='The initial index from which to return the results.')
+        ] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]],
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> 'Generator[IteratorResult[DeletePreview, PaginatedDeletePreviewList], None, None]':
+        _params = locals()
+        for page in get_all_pages(self.api_client, RiskAcceptanceApi.risk_acceptance_delete_preview_list, **_params):
+            for result in page.results:
+                yield IteratorResult(result=result, page=page)
 
     def risk_acceptance_destroy(
         self,
@@ -1477,6 +1504,54 @@ class RiskAcceptanceApi:
             _host=_host,
             _request_auth=_request_auth,
         )
+
+    def risk_acceptance_list_iterator(
+        self,
+        accepted_by: Optional[StrictStr] = None,
+        accepted_findings: Optional[List[StrictInt]] = None,
+        decision: Annotated[
+            Optional[StrictStr],
+            Field(
+                description='Risk treatment decision by risk owner  * `A` - Accept (The risk is acknowledged, yet remains) * `V` - Avoid (Do not engage with whatever creates the risk) * `M` - Mitigate (The risk still exists, yet compensating controls make it less of a threat) * `F` - Fix (The risk is eradicated) * `T` - Transfer (The risk is transferred to a 3rd party)'
+            ),
+        ] = None,
+        decision_details: Optional[StrictStr] = None,
+        expiration_date: Optional[datetime] = None,
+        expiration_date_handled: Optional[datetime] = None,
+        expiration_date_warned: Optional[datetime] = None,
+        limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
+        name: Optional[StrictStr] = None,
+        notes: Optional[List[StrictInt]] = None,
+        o: Annotated[
+            Optional[List[StrictStr]], Field(description='Ordering  * `name` - Name * `-name` - Name (descending)')
+        ] = None,
+        offset: Annotated[
+            Optional[StrictInt], Field(description='The initial index from which to return the results.')
+        ] = None,
+        owner: Optional[StrictInt] = None,
+        reactivate_expired: Optional[StrictBool] = None,
+        recommendation: Annotated[
+            Optional[StrictStr],
+            Field(
+                description='Recommendation from the security team.  * `A` - Accept (The risk is acknowledged, yet remains) * `V` - Avoid (Do not engage with whatever creates the risk) * `M` - Mitigate (The risk still exists, yet compensating controls make it less of a threat) * `F` - Fix (The risk is eradicated) * `T` - Transfer (The risk is transferred to a 3rd party)'
+            ),
+        ] = None,
+        recommendation_details: Optional[StrictStr] = None,
+        restart_sla_expired: Optional[StrictBool] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]],
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> 'Generator[IteratorResult[RiskAcceptance, PaginatedRiskAcceptanceList], None, None]':
+        _params = locals()
+        for page in get_all_pages(self.api_client, RiskAcceptanceApi.risk_acceptance_list, **_params):
+            for result in page.results:
+                yield IteratorResult(result=result, page=page)
 
     def risk_acceptance_partial_update(
         self,

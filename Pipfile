@@ -1,8 +1,9 @@
 [packages]
 # as required by generator
 pydantic = ">= 2"
-# as required by generator
 python-dateutil = ">= 2.8.2"
+urllib3 = ">= 2.1.0, < 3.0.0"
+typing-extensions = ">= 4.7.1"
 
 [dev-packages]
 ruff = "*"
@@ -12,6 +13,7 @@ twine = "*"
 build = "*"
 pyproject-pipenv = "*"
 pytest-socket = "*"
+types-python-dateutil = "*"
 
 [requires]
 python_version = "3.10"

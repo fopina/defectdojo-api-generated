@@ -2,6 +2,9 @@ name: 🧪 tests
 
 on:
   workflow_call:
+    secrets:
+      CODECOV_TOKEN:
+        required: false
   push:
     branches-ignore:
       # these are already tested by publish-dev
@@ -23,9 +26,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install pipenv
-          pipenv requirements --dev > reqs.txt
-          pip install -r reqs.txt
+          pip install uv
+          uv sync --dev
 
       - name: Lint check
         run: |
@@ -47,20 +49,18 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install pipenv
-          pipenv requirements --dev > reqs.txt
-          pip install -r reqs.txt
+          pip install uv
+          uv sync --dev
 
       - name: Run unit tests
         run: |
           make test
       
       - name: Upload results to Codecov
-        uses: codecov/codecov-action@v4
-      
-      - name: Upload test results to Codecov
-        if: ${{ !cancelled() }}
-        uses: codecov/test-results-action@v1
+        uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          report_type: test_results
 
   integration-test:
     runs-on: ubuntu-latest
@@ -75,9 +75,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install pipenv
-          pipenv requirements --dev > reqs.txt
-          pip install -r reqs.txt
+          pip install uv
+          uv sync --dev
 
       - name: Run e2e tests
         run: |

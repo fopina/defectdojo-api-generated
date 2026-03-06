@@ -1,28 +1,26 @@
 lint:
-	ruff format
-	ruff check --fix
-	pyproject-pipenv --fix
+	uv run ruff format
+	uv run ruff check --fix
 
 lint-check:
-	ruff format --diff
-	ruff check
-	pyproject-pipenv
+	uv run ruff format --diff
+	uv run ruff check
 
 test:
 	if [ -n "$(GITHUB_RUN_ID)" ]; then \
-		python -m pytest --cov --cov-report=xml --junitxml=junit.xml -o junit_family=legacy; \
+		uv run pytest --cov --cov-report=xml --junitxml=junit.xml -o junit_family=legacy; \
 	else \
-		python -m pytest --cov; \
+		uv run pytest --cov; \
 	fi
 
 test-e2e: export DD_INTEGRATION_TESTS=1
 test-e2e:
-	python -m pytest tests/integration
+	uv run pytest tests/integration
 
 testpub:
 	rm -fr dist
-	pyproject-build
-	twine upload --repository testpypi dist/*
+	uv run pyproject-build
+	uv run twine upload --repository testpypi dist/*
 
 schema:
 	./support/openapi/fetch_openapi.py

@@ -27,7 +27,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install uv
-          uv sync --group dev
+          uv sync --dev
 
       - name: Lint check
         run: |
@@ -50,7 +50,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install uv
-          uv sync --group dev
+          uv sync --dev
 
       - name: Run unit tests
         run: |
@@ -76,7 +76,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install uv
-          uv sync --group dev
+          uv sync --dev
 
       - name: Run e2e tests
         run: |

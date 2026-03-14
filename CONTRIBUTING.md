@@ -12,4 +12,15 @@ Use `make lint` to make sure lint check passes before pushing.
 
 ## Guidelines
 
+### Update openapi-generator version
+
+* Run `make templates`
+* Generate diff from `support/api_generation/custom_templates` with `support/api_generation/templates.spec`
+  * ...
+* Update version in `support/api_generation/openapi-generator-cli.sh`
+* Run `make templates` again
+* Update `support/api_generation/custom_templates` with the new templates considering the changes from first step
+
+### Update Dojo OpenAPI schema
+
 ...

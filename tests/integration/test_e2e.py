@@ -3,9 +3,11 @@ import unittest
 import uuid
 from pathlib import Path
 
+import pydantic
+
 import defectdojo_api_generated
 from defectdojo_api_generated import DefectDojo
-from defectdojo_api_generated.models import ProductRequest, ProductTypeRequest
+from defectdojo_api_generated.models import AddNewNoteOptionRequest, ProductRequest, ProductTypeRequest
 
 DOJO_SCRIPTS = Path(__file__).parent.parent.parent / 'support' / 'integration'
 DATA_DIR = Path(__file__).parent.parent / 'data'
@@ -67,7 +69,25 @@ class Test(unittest.TestCase):
         report = _skip_if_fail(self._reimport_scan)
         page = self.client.findings_api.findings_list(test=report.test)
         self.assertEqual(page.count, 3)
-        self.assertEqual(page.results[0].notes, 1)
+        self.assertEqual(page.results[0].notes, [])
+        try:
+            self.client.findings_api.findings_notes_create(page.results[0].id, AddNewNoteOptionRequest(entry='ehlo'))
+        except pydantic.ValidationError as exc:
+            # this is what SHOULD NOT happen
+            # note was created (because note_type is NOT required) but parsing the resulting Note model fails
+            self.assertIn(
+                """note_type\n  Input should be a valid dictionary or instance of NoteType [type=model_type, input_value=None, input_type=NoneType]""",
+                str(exc),
+            )
+
+        try:
+            page = self.client.findings_api.findings_list(test=report.test)
+        except pydantic.ValidationError as exc:
+            # same for simply listing findings, all broken...
+            self.assertIn(
+                """note_type\n  Input should be a valid dictionary or instance of NoteType [type=model_type, input_value=None, input_type=NoneType]""",
+                str(exc),
+            )
 
 
 def _skip_if_fail(test_dependency):

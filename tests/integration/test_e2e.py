@@ -4,12 +4,14 @@ import unittest
 import uuid
 from pathlib import Path
 
+import pydantic
+
 import defectdojo_api_generated
 from defectdojo_api_generated import DefectDojo
-from defectdojo_api_generated.models.product_request import ProductRequest
-from defectdojo_api_generated.models.product_type_request import ProductTypeRequest
+from defectdojo_api_generated.models import AddNewNoteOptionRequest, ProductRequest, ProductTypeRequest
 
 DOJO_SCRIPTS = Path(__file__).parent.parent.parent / 'support' / 'integration'
+DATA_DIR = Path(__file__).parent.parent / 'data'
 
 
 @unittest.skipUnless(os.getenv('DD_INTEGRATION_TESTS'), 'Integration tests not enabled')
@@ -22,19 +24,73 @@ class Test(unittest.TestCase):
     def tearDownClass(cls):
         subprocess.check_call([DOJO_SCRIPTS / 'stop_dojo.sh'])
 
-    def client(self, url='http://127.0.0.1:8080', user='admin', password='admin'):
+    def setUp(self):
+        self.client = self._client()
+
+    def _client(self, url='http://127.0.0.1:8080', user='admin', password='admin'):
         return DefectDojo(base_url=url, auth=(user, password))
 
     def test_login(self):
-        c = self.client(password='wrong')
+        c = self._client(password='wrong')
         with self.assertRaises(defectdojo_api_generated.exceptions.ForbiddenException):
             c.user_profile_api.user_profile_retrieve()
 
-    def test_init(self):
-        c = self.client()
+    def _create_product(self):
         uniq = str(uuid.uuid4())
-        pt = c.product_types_api.product_types_create(product_type_request=ProductTypeRequest(name=f'Test {uniq}'))
-        c.products_api.products_create(
+        pt = self.client.product_types_api.product_types_create(
+            product_type_request=ProductTypeRequest(name=f'Test {uniq}')
+        )
+        return self.client.products_api.products_create(
             product_request=ProductRequest(name=f'Product {uniq}', description='test', prod_type=pt.id)
         )
-        # TODO: do e2e test for importing a report - just call reimport with a sample report and assert findings
+
+    def test_create_product(self):
+        product = self._create_product()
+        self.assertEqual(product.description, 'test')
+
+    def _reimport_scan(self):
+        product = _skip_if_fail(self._create_product)
+        report = self.client.reimport_scan_api.reimport_scan_create(
+            scan_type='Semgrep JSON Report',
+            product_name=product.name,
+            engagement_name='Test',
+            auto_create_context=True,
+            file=str(DATA_DIR / 'semgrep_report.json'),
+        )
+        return report
+
+    def test_reimport_scan(self):
+        report = self._reimport_scan()
+        self.assertEqual(report.statistics.after.total.total, 3)
+
+    def test_bad_api_model_definitions(self):
+        """This a test to assert issue https://github.com/fopina/defectdojo-api-generated/issues/39"""
+        report = _skip_if_fail(self._reimport_scan)
+        page = self.client.findings_api.findings_list(test=report.test)
+        self.assertEqual(page.count, 3)
+        self.assertEqual(page.results[0].notes, [])
+        try:
+            self.client.findings_api.findings_notes_create(page.results[0].id, AddNewNoteOptionRequest(entry='ehlo'))
+        except pydantic.ValidationError as exc:
+            # this is what SHOULD NOT happen
+            # note was created (because note_type is NOT required) but parsing the resulting Note model fails
+            self.assertIn(
+                """note_type\n  Input should be a valid dictionary or instance of NoteType [type=model_type, input_value=None, input_type=NoneType]""",
+                str(exc),
+            )
+
+        try:
+            page = self.client.findings_api.findings_list(test=report.test)
+        except pydantic.ValidationError as exc:
+            # same for simply listing findings, all broken...
+            self.assertIn(
+                """note_type\n  Input should be a valid dictionary or instance of NoteType [type=model_type, input_value=None, input_type=NoneType]""",
+                str(exc),
+            )
+
+
+def _skip_if_fail(test_dependency):
+    try:
+        return test_dependency()
+    except Exception:
+        raise unittest.SkipTest('dependency failed')

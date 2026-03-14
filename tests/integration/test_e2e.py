@@ -1,3 +1,4 @@
+import os
 import subprocess
 import unittest
 import uuid
@@ -13,16 +14,14 @@ DOJO_SCRIPTS = Path(__file__).parent.parent.parent / 'support' / 'integration'
 DATA_DIR = Path(__file__).parent.parent / 'data'
 
 
-# @unittest.skipUnless(os.getenv('DD_INTEGRATION_TESTS'), 'Integration tests not enabled')
+@unittest.skipUnless(os.getenv('DD_INTEGRATION_TESTS'), 'Integration tests not enabled')
 class Test(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        return
         subprocess.check_call([DOJO_SCRIPTS / 'run_dojo.sh'])
 
     @classmethod
     def tearDownClass(cls):
-        return
         subprocess.check_call([DOJO_SCRIPTS / 'stop_dojo.sh'])
 
     def setUp(self):

@@ -5,8 +5,7 @@ from pathlib import Path
 
 import defectdojo_api_generated
 from defectdojo_api_generated import DefectDojo
-from defectdojo_api_generated.models.product_request import ProductRequest
-from defectdojo_api_generated.models.product_type_request import ProductTypeRequest
+from defectdojo_api_generated.models import ProductRequest, ProductTypeRequest
 
 DOJO_SCRIPTS = Path(__file__).parent.parent.parent / 'support' / 'integration'
 DATA_DIR = Path(__file__).parent.parent / 'data'
@@ -24,40 +23,55 @@ class Test(unittest.TestCase):
         return
         subprocess.check_call([DOJO_SCRIPTS / 'stop_dojo.sh'])
 
-    def client(self, url='http://127.0.0.1:8080', user='admin', password='admin'):
+    def setUp(self):
+        self.client = self._client()
+
+    def _client(self, url='http://127.0.0.1:8080', user='admin', password='admin'):
         return DefectDojo(base_url=url, auth=(user, password))
 
     def test_login(self):
-        c = self.client(password='wrong')
+        c = self._client(password='wrong')
         with self.assertRaises(defectdojo_api_generated.exceptions.ForbiddenException):
             c.user_profile_api.user_profile_retrieve()
 
-    def _create_product(self, skip_if_fail=True):
-        c = self.client()
+    def _create_product(self):
         uniq = str(uuid.uuid4())
-        try:
-            pt = c.product_types_api.product_types_create(product_type_request=ProductTypeRequest(name=f'Test {uniq}'))
-            return c.products_api.products_create(
-                product_request=ProductRequest(name=f'Product {uniq}', description='test', prod_type=pt.id)
-            )
-        except Exception:
-            if skip_if_fail:
-                self.skipTest('product creation failed')
-            else:
-                raise
+        pt = self.client.product_types_api.product_types_create(
+            product_type_request=ProductTypeRequest(name=f'Test {uniq}')
+        )
+        return self.client.products_api.products_create(
+            product_request=ProductRequest(name=f'Product {uniq}', description='test', prod_type=pt.id)
+        )
 
     def test_create_product(self):
-        p = self._create_product(skip_if_fail=False)
-        self.assertEqual(p.description, 'test')
-
-    def test_reimport_scan(self):
-        c = self.client()
         product = self._create_product()
-        report = c.reimport_scan_api.reimport_scan_create(
+        self.assertEqual(product.description, 'test')
+
+    def _reimport_scan(self):
+        product = _skip_if_fail(self._create_product)
+        report = self.client.reimport_scan_api.reimport_scan_create(
             scan_type='Semgrep JSON Report',
             product_name=product.name,
             engagement_name='Test',
             auto_create_context=True,
             file=str(DATA_DIR / 'semgrep_report.json'),
         )
+        return report
+
+    def test_reimport_scan(self):
+        report = self._reimport_scan()
         self.assertEqual(report.statistics.after.total.total, 3)
+
+    def test_bad_api_model_definitions(self):
+        """This a test to assert issue https://github.com/fopina/defectdojo-api-generated/issues/39"""
+        report = _skip_if_fail(self._reimport_scan)
+        page = self.client.findings_api.findings_list(test=report.test)
+        self.assertEqual(page.count, 3)
+        self.assertEqual(page.results[0].notes, 1)
+
+
+def _skip_if_fail(test_dependency):
+    try:
+        return test_dependency()
+    except Exception:
+        raise unittest.SkipTest('dependency failed')

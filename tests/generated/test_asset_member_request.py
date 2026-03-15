@@ -40,9 +40,6 @@ class TestAssetMemberRequest(unittest.TestCase):
             )
         else:
             return AssetMemberRequest(
-                asset = 56,
-                user = 56,
-                role = 56,
         )
         """
 

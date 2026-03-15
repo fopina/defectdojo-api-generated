@@ -40,8 +40,6 @@ class TestLanguageType(unittest.TestCase):
             )
         else:
             return LanguageType(
-                id = 56,
-                language = '',
         )
         """
 

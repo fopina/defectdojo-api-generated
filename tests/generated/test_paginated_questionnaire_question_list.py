@@ -49,16 +49,6 @@ class TestPaginatedQuestionnaireQuestionList(unittest.TestCase):
             )
         else:
             return PaginatedQuestionnaireQuestionList(
-                count = 123,
-                results = [
-                    defectdojo_api_generated.models.questionnaire_question.QuestionnaireQuestion(
-                        id = 56, 
-                        created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        modified = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        order = 0, 
-                        optional = True, 
-                        text = '', )
-                    ],
         )
         """
 

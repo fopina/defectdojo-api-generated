@@ -28,10 +28,10 @@ class PaginatedRoleList(BaseModel):
     PaginatedRoleList
     """  # noqa: E501
 
-    count: StrictInt
+    count: Optional[StrictInt] = None
     next: Optional[StrictStr] = None
     previous: Optional[StrictStr] = None
-    results: List[Role]
+    results: Optional[List[Role]] = None
     __properties: ClassVar[List[str]] = ['count', 'next', 'previous', 'results']
 
     model_config = ConfigDict(

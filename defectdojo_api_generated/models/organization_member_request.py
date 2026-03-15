@@ -26,9 +26,9 @@ class OrganizationMemberRequest(BaseModel):
     OrganizationMemberRequest
     """  # noqa: E501
 
-    organization: StrictInt
-    user: StrictInt
-    role: StrictInt
+    organization: Optional[StrictInt] = None
+    user: Optional[StrictInt] = None
+    role: Optional[StrictInt] = None
     __properties: ClassVar[List[str]] = ['organization', 'user', 'role']
 
     model_config = ConfigDict(

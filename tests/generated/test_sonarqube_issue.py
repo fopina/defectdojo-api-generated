@@ -41,10 +41,6 @@ class TestSonarqubeIssue(unittest.TestCase):
             )
         else:
             return SonarqubeIssue(
-                id = 56,
-                key = '',
-                status = '',
-                type = '',
         )
         """
 

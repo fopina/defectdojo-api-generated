@@ -28,12 +28,12 @@ class SeverityStatusStatistics(BaseModel):
     SeverityStatusStatistics
     """  # noqa: E501
 
-    info: StatusStatistics
-    low: StatusStatistics
-    medium: StatusStatistics
-    high: StatusStatistics
-    critical: StatusStatistics
-    total: StatusStatistics
+    info: Optional[StatusStatistics] = None
+    low: Optional[StatusStatistics] = None
+    medium: Optional[StatusStatistics] = None
+    high: Optional[StatusStatistics] = None
+    critical: Optional[StatusStatistics] = None
+    total: Optional[StatusStatistics] = None
     __properties: ClassVar[List[str]] = ['info', 'low', 'medium', 'high', 'critical', 'total']
 
     model_config = ConfigDict(

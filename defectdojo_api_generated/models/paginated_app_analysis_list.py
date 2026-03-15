@@ -29,10 +29,10 @@ class PaginatedAppAnalysisList(BaseModel):
     PaginatedAppAnalysisList
     """  # noqa: E501
 
-    count: StrictInt
+    count: Optional[StrictInt] = None
     next: Optional[StrictStr] = None
     previous: Optional[StrictStr] = None
-    results: List[AppAnalysis]
+    results: Optional[List[AppAnalysis]] = None
     prefetch: Optional[AppAnalysisPrefetch] = None
     __properties: ClassVar[List[str]] = ['count', 'next', 'previous', 'results', 'prefetch']
 

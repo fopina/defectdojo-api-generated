@@ -31,8 +31,8 @@ class TestRequest(BaseModel):
     scan_type: Optional[Annotated[str, Field(min_length=1, strict=True)]] = None
     title: Optional[Annotated[str, Field(strict=True, max_length=255)]] = None
     description: Optional[StrictStr] = None
-    target_start: datetime
-    target_end: datetime
+    target_start: Optional[datetime] = None
+    target_end: Optional[datetime] = None
     percent_complete: Optional[Annotated[int, Field(le=2147483647, strict=True, ge=-2147483648)]] = None
     version: Optional[Annotated[str, Field(strict=True, max_length=100)]] = None
     build_id: Optional[Annotated[str, Field(strict=True, max_length=150)]] = Field(
@@ -45,7 +45,7 @@ class TestRequest(BaseModel):
         default=None, description='Tag or branch that was tested, a reimport may update this field.'
     )
     lead: Optional[StrictInt] = None
-    test_type: StrictInt
+    test_type: Optional[StrictInt] = None
     environment: Optional[StrictInt] = None
     api_scan_configuration: Optional[StrictInt] = None
     __properties: ClassVar[List[str]] = [

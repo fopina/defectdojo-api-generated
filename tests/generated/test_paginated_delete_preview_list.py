@@ -46,13 +46,6 @@ class TestPaginatedDeletePreviewList(unittest.TestCase):
             )
         else:
             return PaginatedDeletePreviewList(
-                count = 123,
-                results = [
-                    defectdojo_api_generated.models.delete_preview.DeletePreview(
-                        model = '', 
-                        id = 56, 
-                        name = '', )
-                    ],
         )
         """
 

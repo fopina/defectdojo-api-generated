@@ -72,10 +72,6 @@ class TestOrganizationMember(unittest.TestCase):
             )
         else:
             return OrganizationMember(
-                id = 56,
-                organization = 56,
-                user = 56,
-                role = 56,
         )
         """
 

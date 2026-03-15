@@ -44,10 +44,6 @@ class TestStubFinding(unittest.TestCase):
             )
         else:
             return StubFinding(
-                id = 56,
-                title = '',
-                test = 56,
-                reporter = 56,
         )
         """
 

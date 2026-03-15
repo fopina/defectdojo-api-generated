@@ -52,21 +52,6 @@ class TestNoteHistory(unittest.TestCase):
             )
         else:
             return NoteHistory(
-                id = 56,
-                current_editor = defectdojo_api_generated.models.user_stub.UserStub(
-                    id = 56, 
-                    username = 'A', 
-                    first_name = '', 
-                    last_name = '', ),
-                note_type = defectdojo_api_generated.models.note_type.NoteType(
-                    id = 56, 
-                    name = '', 
-                    description = '', 
-                    is_single = True, 
-                    is_active = True, 
-                    is_mandatory = True, ),
-                data = '',
-                time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
         )
         """
 

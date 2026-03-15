@@ -26,9 +26,9 @@ class NetworkLocations(BaseModel):
     NetworkLocations
     """  # noqa: E501
 
-    id: StrictInt
-    location: Annotated[str, Field(strict=True, max_length=500)] = Field(
-        description='Location of network testing: Examples: VPN, Internet or Internal.'
+    id: Optional[StrictInt] = None
+    location: Optional[Annotated[str, Field(strict=True, max_length=500)]] = Field(
+        default=None, description='Location of network testing: Examples: VPN, Internet or Internal.'
     )
     __properties: ClassVar[List[str]] = ['id', 'location']
 

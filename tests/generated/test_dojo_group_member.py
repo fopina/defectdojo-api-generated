@@ -106,13 +106,7 @@ class TestDojoGroupMember(unittest.TestCase):
                                         name = '', 
                                         description = '', 
                                         critical_product = True, 
-                                        key_product = True, 
-                                        members = [
-                                            56
-                                            ], 
-                                        authorization_groups = [
-                                            56
-                                            ], )
+                                        key_product = True, )
                                     }, ), )
                         }, 
                     role = {
@@ -131,10 +125,6 @@ class TestDojoGroupMember(unittest.TestCase):
             )
         else:
             return DojoGroupMember(
-                id = 56,
-                group = 56,
-                user = 56,
-                role = 56,
         )
         """
 

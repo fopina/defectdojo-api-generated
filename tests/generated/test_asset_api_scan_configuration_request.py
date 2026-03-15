@@ -42,8 +42,6 @@ class TestAssetAPIScanConfigurationRequest(unittest.TestCase):
             )
         else:
             return AssetAPIScanConfigurationRequest(
-                asset = 56,
-                tool_configuration = 56,
         )
         """
 

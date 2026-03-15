@@ -26,14 +26,15 @@ class AcceptedRiskRequest(BaseModel):
     AcceptedRiskRequest
     """  # noqa: E501
 
-    vulnerability_id: Annotated[str, Field(min_length=1, strict=True, max_length=50)] = Field(
-        description='An id of a vulnerability in a security advisory associated with this finding. Can be a Common Vulnerabilities and Exposure (CVE) or from other sources.'
+    vulnerability_id: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=50)]] = Field(
+        default=None,
+        description='An id of a vulnerability in a security advisory associated with this finding. Can be a Common Vulnerabilities and Exposure (CVE) or from other sources.',
     )
-    justification: Annotated[str, Field(min_length=1, strict=True)] = Field(
-        description='Justification for accepting findings with this vulnerability id'
+    justification: Optional[Annotated[str, Field(min_length=1, strict=True)]] = Field(
+        default=None, description='Justification for accepting findings with this vulnerability id'
     )
-    accepted_by: Annotated[str, Field(min_length=1, strict=True, max_length=200)] = Field(
-        description='Name or email of person who accepts the risk'
+    accepted_by: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=200)]] = Field(
+        default=None, description='Name or email of person who accepts the risk'
     )
     __properties: ClassVar[List[str]] = ['vulnerability_id', 'justification', 'accepted_by']
 

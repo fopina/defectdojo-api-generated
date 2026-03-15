@@ -59,18 +59,6 @@ class TestRiskAcceptance(unittest.TestCase):
             )
         else:
             return RiskAcceptance(
-                id = 56,
-                path = '',
-                name = '',
-                created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                updated = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                owner = 56,
-                accepted_findings = [
-                    56
-                    ],
-                notes = [
-                    56
-                    ],
         )
         """
 

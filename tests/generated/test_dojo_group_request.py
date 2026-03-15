@@ -43,7 +43,6 @@ class TestDojoGroupRequest(unittest.TestCase):
             )
         else:
             return DojoGroupRequest(
-                name = '0',
         )
         """
 

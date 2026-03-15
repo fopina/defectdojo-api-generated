@@ -41,7 +41,6 @@ class TestTestTypeCreateRequest(unittest.TestCase):
             )
         else:
             return TestTypeCreateRequest(
-                name = '0',
         )
         """
 

@@ -28,10 +28,10 @@ class PaginatedToolTypeList(BaseModel):
     PaginatedToolTypeList
     """  # noqa: E501
 
-    count: StrictInt
+    count: Optional[StrictInt] = None
     next: Optional[StrictStr] = None
     previous: Optional[StrictStr] = None
-    results: List[ToolType]
+    results: Optional[List[ToolType]] = None
     __properties: ClassVar[List[str]] = ['count', 'next', 'previous', 'results']
 
     model_config = ConfigDict(

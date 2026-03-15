@@ -40,9 +40,6 @@ class TestProductGroupRequest(unittest.TestCase):
             )
         else:
             return ProductGroupRequest(
-                product = 56,
-                group = 56,
-                role = 56,
         )
         """
 

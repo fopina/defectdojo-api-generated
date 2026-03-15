@@ -42,8 +42,6 @@ class TestTestType(unittest.TestCase):
             )
         else:
             return TestType(
-                id = 56,
-                name = '',
         )
         """
 

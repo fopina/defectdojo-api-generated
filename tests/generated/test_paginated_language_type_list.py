@@ -46,13 +46,6 @@ class TestPaginatedLanguageTypeList(unittest.TestCase):
             )
         else:
             return PaginatedLanguageTypeList(
-                count = 123,
-                results = [
-                    defectdojo_api_generated.models.language_type.LanguageType(
-                        id = 56, 
-                        language = '', 
-                        color = '', )
-                    ],
         )
         """
 

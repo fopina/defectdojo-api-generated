@@ -65,32 +65,6 @@ class TestPaginatedRiskAcceptanceList(unittest.TestCase):
             )
         else:
             return PaginatedRiskAcceptanceList(
-                count = 123,
-                results = [
-                    defectdojo_api_generated.models.risk_acceptance.RiskAcceptance(
-                        id = 56, 
-                        path = '', 
-                        name = '', 
-                        recommendation = 'A', 
-                        recommendation_details = '', 
-                        decision = 'A', 
-                        decision_details = '', 
-                        accepted_by = '', 
-                        expiration_date = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        expiration_date_warned = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        expiration_date_handled = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        reactivate_expired = True, 
-                        restart_sla_expired = True, 
-                        created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        updated = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        owner = 56, 
-                        accepted_findings = [
-                            56
-                            ], 
-                        notes = [
-                            56
-                            ], )
-                    ],
         )
         """
 

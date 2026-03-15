@@ -39,8 +39,6 @@ class TestFindingProdType(unittest.TestCase):
             )
         else:
             return FindingProdType(
-                id = 56,
-                name = '',
         )
         """
 

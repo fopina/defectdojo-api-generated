@@ -131,36 +131,6 @@ class TestFindingCreate(unittest.TestCase):
             )
         else:
             return FindingCreate(
-                id = 56,
-                notes = [
-                    56
-                    ],
-                test = 56,
-                found_by = [
-                    56
-                    ],
-                created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                updated = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                title = '',
-                severity = '',
-                description = '',
-                active = True,
-                verified = True,
-                last_status_update = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                numerical_severity = '',
-                last_reviewed = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                param = '',
-                payload = '',
-                hash_code = '',
-                scanner_confidence = 56,
-                duplicate_finding = 56,
-                last_reviewed_by = 56,
-                endpoints = [
-                    56
-                    ],
-                files = [
-                    56
-                    ],
         )
         """
 

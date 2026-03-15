@@ -9,7 +9,7 @@ COMPOSE_FILE="docker-compose.yml"
 SERVICE_URL="http://localhost:8080"
 TIMEOUT=300
 INTERVAL=2
-export DJANGO_VERSION="2.46.2"
+export DJANGO_VERSION="2.56.1"
 export NGINX_VERSION="${DJANGO_VERSION}"
 
 # Start docker compose in detached mode

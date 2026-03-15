@@ -41,7 +41,6 @@ class TestProductTypeRequest(unittest.TestCase):
             )
         else:
             return ProductTypeRequest(
-                name = '0',
         )
         """
 

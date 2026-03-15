@@ -31,3 +31,19 @@ print(r.json())
 ## Build
 
 Check out [CONTRIBUTING.md](CONTRIBUTING.md)
+
+## API notes
+
+### Required properties
+
+DefectDojo's OpenAPI schema and actual database/API validations are inconsistent in some places, so this library assumes all properties as **not required** skipping client-side validation and delegating those validations to server.
+
+Refer to https://github.com/fopina/defectdojo-api-generated/issues/31 and https://github.com/fopina/defectdojo-api-generated/issues/39 for more details / reasoning.
+
+### Server versions
+
+This library is versioned after the OpenAPI schema version (DefectDojo version) it was generated against, eg: when re-generated against DefectDojo *2.57.0* schema, it will be released as *2.57.0*
+
+Any changes done to the package (such as packaging metadata or extra schema tweaks), while on the same schema version, will be released as `post` fixes, eg: *2.57.0.post1*
+
+Given the very few validations kept (previous note), there might be no issue using "latest" version of this package against an older DefectDojo. However, if there is any, just install the closest matching version.

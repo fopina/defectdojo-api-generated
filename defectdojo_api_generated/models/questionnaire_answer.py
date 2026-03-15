@@ -27,11 +27,11 @@ class QuestionnaireAnswer(BaseModel):
     QuestionnaireAnswer
     """  # noqa: E501
 
-    id: StrictInt
-    created: datetime
-    modified: datetime
-    question: StrictInt
-    answered_survey: StrictInt
+    id: Optional[StrictInt] = None
+    created: Optional[datetime] = None
+    modified: Optional[datetime] = None
+    question: Optional[StrictInt] = None
+    answered_survey: Optional[StrictInt] = None
     __properties: ClassVar[List[str]] = ['id', 'created', 'modified', 'question', 'answered_survey']
 
     model_config = ConfigDict(

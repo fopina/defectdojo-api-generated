@@ -44,7 +44,6 @@ class TestCredentialMappingRequest(unittest.TestCase):
             )
         else:
             return CredentialMappingRequest(
-                cred_id = 56,
         )
         """
 

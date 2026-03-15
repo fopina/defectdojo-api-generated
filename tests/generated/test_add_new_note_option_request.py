@@ -40,7 +40,6 @@ class TestAddNewNoteOptionRequest(unittest.TestCase):
             )
         else:
             return AddNewNoteOptionRequest(
-                entry = '0',
         )
         """
 

@@ -26,13 +26,13 @@ class ToolProductSettingsRequest(BaseModel):
     ToolProductSettingsRequest
     """  # noqa: E501
 
-    setting_url: Annotated[str, Field(min_length=1, strict=True)]
-    product: StrictInt
-    name: Annotated[str, Field(min_length=1, strict=True, max_length=200)]
+    setting_url: Optional[Annotated[str, Field(min_length=1, strict=True)]] = None
+    product: Optional[StrictInt] = None
+    name: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=200)]] = None
     description: Optional[Annotated[str, Field(strict=True, max_length=2000)]] = None
     url: Optional[Annotated[str, Field(strict=True, max_length=2000)]] = None
     tool_project_id: Optional[Annotated[str, Field(strict=True, max_length=200)]] = None
-    tool_configuration: StrictInt
+    tool_configuration: Optional[StrictInt] = None
     __properties: ClassVar[List[str]] = [
         'setting_url',
         'product',

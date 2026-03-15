@@ -61,28 +61,6 @@ class TestPaginatedEndpointList(unittest.TestCase):
             )
         else:
             return PaginatedEndpointList(
-                count = 123,
-                results = [
-                    defectdojo_api_generated.models.endpoint.Endpoint(
-                        id = 56, 
-                        tags = [
-                            ''
-                            ], 
-                        protocol = '', 
-                        userinfo = '', 
-                        host = '', 
-                        port = -2147483648, 
-                        path = '', 
-                        query = '', 
-                        fragment = '', 
-                        product = 56, 
-                        endpoint_params = [
-                            56
-                            ], 
-                        findings = [
-                            56
-                            ], )
-                    ],
         )
         """
 

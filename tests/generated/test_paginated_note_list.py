@@ -60,27 +60,6 @@ class TestPaginatedNoteList(unittest.TestCase):
             )
         else:
             return PaginatedNoteList(
-                count = 123,
-                results = [
-                    defectdojo_api_generated.models.note.Note(
-                        id = 56, 
-                        author = null, 
-                        editor = null, 
-                        history = [
-                            defectdojo_api_generated.models.note_history.NoteHistory(
-                                id = 56, 
-                                current_editor = null, 
-                                note_type = null, 
-                                data = '', 
-                                time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
-                            ], 
-                        note_type = null, 
-                        entry = '', 
-                        date = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        private = True, 
-                        edited = True, 
-                        edit_time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
-                    ],
         )
         """
 

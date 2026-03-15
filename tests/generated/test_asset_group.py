@@ -106,31 +106,17 @@ class TestAssetGroup(unittest.TestCase):
                                         name = '', 
                                         description = '', 
                                         critical_product = True, 
-                                        key_product = True, 
-                                        members = [
-                                            56
-                                            ], 
-                                        authorization_groups = [
-                                            56
-                                            ], )
+                                        key_product = True, )
                                     }, ), )
                         }, 
                     product = {
                         'key' : defectdojo_api_generated.models.product.Product(
                             id = 56, 
                             findings_count = 56, 
-                            findings_list = [
-                                56
-                                ], 
                             business_criticality = 'very high', 
                             platform = 'web service', 
                             lifecycle = 'construction', 
                             origin = 'third party library', 
-                            product_meta = [
-                                defectdojo_api_generated.models.product_meta.ProductMeta(
-                                    name = '', 
-                                    value = '', )
-                                ], 
                             created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                             name = '', 
                             description = '', 
@@ -147,9 +133,7 @@ class TestAssetGroup(unittest.TestCase):
                             technical_contact = 56, 
                             team_manager = 56, 
                             prod_type = 56, 
-                            sla_configuration = 56, 
-                            members = , 
-                            authorization_groups = , )
+                            sla_configuration = 56, )
                         }, 
                     role = {
                         'key' : defectdojo_api_generated.models.role.Role(
@@ -160,10 +144,6 @@ class TestAssetGroup(unittest.TestCase):
             )
         else:
             return AssetGroup(
-                id = 56,
-                asset = 56,
-                group = 56,
-                role = 56,
         )
         """
 

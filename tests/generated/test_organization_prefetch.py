@@ -86,9 +86,6 @@ class TestOrganizationPrefetch(unittest.TestCase):
                                     members = [
                                         56
                                         ], 
-                                    authorization_groups = [
-                                        56
-                                        ], 
                                     regulations = [
                                         56
                                         ], )
@@ -101,13 +98,7 @@ class TestOrganizationPrefetch(unittest.TestCase):
                                     name = '', 
                                     description = '', 
                                     critical_product = True, 
-                                    key_product = True, 
-                                    members = [
-                                        56
-                                        ], 
-                                    authorization_groups = [
-                                        56
-                                        ], )
+                                    key_product = True, )
                                 }, ), )
                     },
                 members = {

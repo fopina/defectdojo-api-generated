@@ -30,8 +30,8 @@ class ToolConfiguration(BaseModel):
     ToolConfiguration
     """  # noqa: E501
 
-    id: StrictInt
-    name: Annotated[str, Field(strict=True, max_length=200)]
+    id: Optional[StrictInt] = None
+    name: Optional[Annotated[str, Field(strict=True, max_length=200)]] = None
     description: Optional[Annotated[str, Field(strict=True, max_length=2000)]] = None
     url: Optional[Annotated[str, Field(strict=True, max_length=2000)]] = None
     authentication_type: Optional[StrictStr] = Field(
@@ -42,7 +42,7 @@ class ToolConfiguration(BaseModel):
     )
     username: Optional[Annotated[str, Field(strict=True, max_length=200)]] = None
     auth_title: Optional[Annotated[str, Field(strict=True, max_length=200)]] = None
-    tool_type: StrictInt
+    tool_type: Optional[StrictInt] = None
     prefetch: Optional[PaginatedToolConfigurationListPrefetch] = None
     __properties: ClassVar[List[str]] = [
         'id',

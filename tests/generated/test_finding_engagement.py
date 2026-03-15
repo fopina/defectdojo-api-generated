@@ -55,11 +55,6 @@ class TestFindingEngagement(unittest.TestCase):
             )
         else:
             return FindingEngagement(
-                id = 56,
-                target_start = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(),
-                target_end = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(),
-                created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                updated = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
         )
         """
 

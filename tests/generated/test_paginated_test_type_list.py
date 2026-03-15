@@ -48,15 +48,6 @@ class TestPaginatedTestTypeList(unittest.TestCase):
             )
         else:
             return PaginatedTestTypeList(
-                count = 123,
-                results = [
-                    defectdojo_api_generated.models.test_type.TestType(
-                        id = 56, 
-                        name = '', 
-                        static_tool = True, 
-                        dynamic_tool = True, 
-                        active = True, )
-                    ],
         )
         """
 

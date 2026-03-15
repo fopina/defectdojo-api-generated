@@ -26,8 +26,8 @@ class QuestionnaireEngagementSurvey(BaseModel):
     QuestionnaireEngagementSurvey
     """  # noqa: E501
 
-    id: StrictInt
-    questions: List[StrictStr]
+    id: Optional[StrictInt] = None
+    questions: Optional[List[StrictStr]] = None
     name: Optional[Annotated[str, Field(strict=True, max_length=200)]] = None
     description: Optional[StrictStr] = None
     active: Optional[StrictBool] = None

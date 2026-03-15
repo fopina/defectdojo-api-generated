@@ -26,11 +26,15 @@ class SonarqubeIssueRequest(BaseModel):
     SonarqubeIssueRequest
     """  # noqa: E501
 
-    key: Annotated[str, Field(min_length=1, strict=True, max_length=60)] = Field(description='SonarQube issue key')
-    status: Annotated[str, Field(min_length=1, strict=True, max_length=20)] = Field(
-        description='SonarQube issue status'
+    key: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=60)]] = Field(
+        default=None, description='SonarQube issue key'
     )
-    type: Annotated[str, Field(min_length=1, strict=True, max_length=20)] = Field(description='SonarQube issue type')
+    status: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=20)]] = Field(
+        default=None, description='SonarQube issue status'
+    )
+    type: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=20)]] = Field(
+        default=None, description='SonarQube issue type'
+    )
     __properties: ClassVar[List[str]] = ['key', 'status', 'type']
 
     model_config = ConfigDict(

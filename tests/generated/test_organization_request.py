@@ -41,7 +41,6 @@ class TestOrganizationRequest(unittest.TestCase):
             )
         else:
             return OrganizationRequest(
-                name = '0',
         )
         """
 

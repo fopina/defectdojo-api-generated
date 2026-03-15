@@ -43,11 +43,6 @@ class TestTestImportFindingAction(unittest.TestCase):
             )
         else:
             return TestImportFindingAction(
-                id = 56,
-                created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                modified = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                test_import = 56,
-                finding = 56,
         )
         """
 

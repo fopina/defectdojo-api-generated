@@ -27,7 +27,7 @@ class DojoGroupRequest(BaseModel):
     """  # noqa: E501
 
     configuration_permissions: Optional[List[Optional[StrictInt]]] = None
-    name: Annotated[str, Field(min_length=1, strict=True, max_length=255)]
+    name: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=255)]] = None
     description: Optional[Annotated[str, Field(strict=True, max_length=4000)]] = None
     social_provider: Optional[StrictStr] = Field(
         default=None, description='Group imported from a social provider.  * `AzureAD` - AzureAD * `Remote` - Remote'

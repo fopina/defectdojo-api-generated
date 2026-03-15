@@ -40,8 +40,6 @@ class TestRole(unittest.TestCase):
             )
         else:
             return Role(
-                id = 56,
-                name = '',
         )
         """
 

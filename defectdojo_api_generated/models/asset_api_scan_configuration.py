@@ -28,12 +28,12 @@ class AssetAPIScanConfiguration(BaseModel):
     AssetAPIScanConfiguration
     """  # noqa: E501
 
-    id: StrictInt
-    asset: StrictInt
+    id: Optional[StrictInt] = None
+    asset: Optional[StrictInt] = None
     service_key_1: Optional[Annotated[str, Field(strict=True, max_length=200)]] = None
     service_key_2: Optional[Annotated[str, Field(strict=True, max_length=200)]] = None
     service_key_3: Optional[Annotated[str, Field(strict=True, max_length=200)]] = None
-    tool_configuration: StrictInt
+    tool_configuration: Optional[StrictInt] = None
     prefetch: Optional[AssetAPIScanConfigurationPrefetch] = None
     __properties: ClassVar[List[str]] = [
         'id',

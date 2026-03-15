@@ -42,8 +42,6 @@ class TestTestTypeCreate(unittest.TestCase):
             )
         else:
             return TestTypeCreate(
-                id = 56,
-                name = '',
         )
         """
 

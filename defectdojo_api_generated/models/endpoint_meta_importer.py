@@ -26,13 +26,13 @@ class EndpointMetaImporter(BaseModel):
     EndpointMetaImporter
     """  # noqa: E501
 
-    file: StrictStr
+    file: Optional[StrictStr] = None
     create_endpoints: Optional[StrictBool] = True
     create_tags: Optional[StrictBool] = True
     create_dojo_meta: Optional[StrictBool] = False
     product_name: Optional[StrictStr] = None
     product: Optional[StrictInt] = None
-    product_id: StrictInt
+    product_id: Optional[StrictInt] = None
     __properties: ClassVar[List[str]] = [
         'file',
         'create_endpoints',

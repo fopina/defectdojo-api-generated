@@ -29,10 +29,10 @@ class PaginatedProductTypeGroupList(BaseModel):
     PaginatedProductTypeGroupList
     """  # noqa: E501
 
-    count: StrictInt
+    count: Optional[StrictInt] = None
     next: Optional[StrictStr] = None
     previous: Optional[StrictStr] = None
-    results: List[ProductTypeGroup]
+    results: Optional[List[ProductTypeGroup]] = None
     prefetch: Optional[OrganizationGroupPrefetch] = None
     __properties: ClassVar[List[str]] = ['count', 'next', 'previous', 'results', 'prefetch']
 

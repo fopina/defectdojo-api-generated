@@ -29,12 +29,12 @@ class FindingEngagement(BaseModel):
     FindingEngagement
     """  # noqa: E501
 
-    id: StrictInt
+    id: Optional[StrictInt] = None
     name: Optional[Annotated[str, Field(strict=True, max_length=300)]] = None
     description: Optional[Annotated[str, Field(strict=True, max_length=2000)]] = None
     product: Optional[FindingProduct] = None
-    target_start: date
-    target_end: date
+    target_start: Optional[date] = None
+    target_end: Optional[date] = None
     branch_tag: Optional[Annotated[str, Field(strict=True, max_length=150)]] = Field(
         default=None, description='Tag or branch of the product the engagement tested.'
     )
@@ -51,9 +51,11 @@ class FindingEngagement(BaseModel):
         default=None, description='Version of the product the engagement tested.'
     )
     created: Optional[datetime] = Field(
-        description='Time that the object was initially created, and saved to the database'
+        default=None, description='Time that the object was initially created, and saved to the database'
     )
-    updated: Optional[datetime] = Field(description='Time that the object was most recently saved to the database')
+    updated: Optional[datetime] = Field(
+        default=None, description='Time that the object was most recently saved to the database'
+    )
     __properties: ClassVar[List[str]] = [
         'id',
         'name',

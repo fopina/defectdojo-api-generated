@@ -40,9 +40,6 @@ class TestOrganizationMemberRequest(unittest.TestCase):
             )
         else:
             return OrganizationMemberRequest(
-                organization = 56,
-                user = 56,
-                role = 56,
         )
         """
 

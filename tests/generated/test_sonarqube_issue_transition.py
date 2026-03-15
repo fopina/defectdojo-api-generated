@@ -43,12 +43,6 @@ class TestSonarqubeIssueTransition(unittest.TestCase):
             )
         else:
             return SonarqubeIssueTransition(
-                id = 56,
-                created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                finding_status = '',
-                sonarqube_status = '',
-                transitions = '',
-                sonarqube_issue = 56,
         )
         """
 

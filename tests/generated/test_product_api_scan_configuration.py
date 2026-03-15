@@ -102,9 +102,6 @@ class TestProductAPIScanConfiguration(unittest.TestCase):
             )
         else:
             return ProductAPIScanConfiguration(
-                id = 56,
-                product = 56,
-                tool_configuration = 56,
         )
         """
 

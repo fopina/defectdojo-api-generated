@@ -57,24 +57,6 @@ class TestPaginatedUserList(unittest.TestCase):
             )
         else:
             return PaginatedUserList(
-                count = 123,
-                results = [
-                    defectdojo_api_generated.models.user.User(
-                        id = 56, 
-                        username = 'A', 
-                        first_name = '', 
-                        last_name = '', 
-                        email = '', 
-                        date_joined = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        last_login = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        is_active = True, 
-                        is_superuser = True, 
-                        token_last_reset = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        password_last_reset = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        configuration_permissions = [
-                            56
-                            ], )
-                    ],
         )
         """
 

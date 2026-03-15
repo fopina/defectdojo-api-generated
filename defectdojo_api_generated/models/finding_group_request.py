@@ -26,8 +26,8 @@ class FindingGroupRequest(BaseModel):
     FindingGroupRequest
     """  # noqa: E501
 
-    name: Annotated[str, Field(min_length=1, strict=True, max_length=255)]
-    test: StrictInt
+    name: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=255)]] = None
+    test: Optional[StrictInt] = None
     __properties: ClassVar[List[str]] = ['name', 'test']
 
     model_config = ConfigDict(

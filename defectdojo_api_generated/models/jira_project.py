@@ -28,7 +28,7 @@ class JIRAProject(BaseModel):
     JIRAProject
     """  # noqa: E501
 
-    id: StrictInt
+    id: Optional[StrictInt] = None
     project_key: Optional[Annotated[str, Field(strict=True, max_length=200)]] = None
     issue_template_dir: Optional[Annotated[str, Field(strict=True, max_length=255)]] = Field(
         default=None,

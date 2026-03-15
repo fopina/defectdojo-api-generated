@@ -26,9 +26,9 @@ class AssetGroupRequest(BaseModel):
     AssetGroupRequest
     """  # noqa: E501
 
-    asset: StrictInt
-    group: StrictInt
-    role: StrictInt
+    asset: Optional[StrictInt] = None
+    group: Optional[StrictInt] = None
+    role: Optional[StrictInt] = None
     __properties: ClassVar[List[str]] = ['asset', 'group', 'role']
 
     model_config = ConfigDict(

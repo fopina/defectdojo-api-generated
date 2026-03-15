@@ -26,14 +26,14 @@ class StatusStatisticsRequest(BaseModel):
     StatusStatisticsRequest
     """  # noqa: E501
 
-    active: StrictInt
-    verified: StrictInt
-    duplicate: StrictInt
-    false_p: StrictInt
-    out_of_scope: StrictInt
-    is_mitigated: StrictInt
-    risk_accepted: StrictInt
-    total: StrictInt
+    active: Optional[StrictInt] = None
+    verified: Optional[StrictInt] = None
+    duplicate: Optional[StrictInt] = None
+    false_p: Optional[StrictInt] = None
+    out_of_scope: Optional[StrictInt] = None
+    is_mitigated: Optional[StrictInt] = None
+    risk_accepted: Optional[StrictInt] = None
+    total: Optional[StrictInt] = None
     __properties: ClassVar[List[str]] = [
         'active',
         'verified',

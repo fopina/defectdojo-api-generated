@@ -27,7 +27,7 @@ class FindingTemplateRequest(BaseModel):
     """  # noqa: E501
 
     tags: Optional[List[Annotated[str, Field(min_length=1, strict=True)]]] = None
-    title: Annotated[str, Field(min_length=1, strict=True, max_length=1000)]
+    title: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=1000)]] = None
     cwe: Optional[Annotated[int, Field(le=2147483647, strict=True, ge=-2147483648)]] = None
     cvssv3: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=117)]] = Field(
         default=None,

@@ -26,9 +26,9 @@ class ProductTypeGroupRequest(BaseModel):
     ProductTypeGroupRequest
     """  # noqa: E501
 
-    product_type: StrictInt
-    group: StrictInt
-    role: StrictInt
+    product_type: Optional[StrictInt] = None
+    group: Optional[StrictInt] = None
+    role: Optional[StrictInt] = None
     __properties: ClassVar[List[str]] = ['product_type', 'group', 'role']
 
     model_config = ConfigDict(

@@ -27,18 +27,18 @@ class TestCreate(BaseModel):
     TestCreate
     """  # noqa: E501
 
-    id: StrictInt
-    engagement: StrictInt
+    id: Optional[StrictInt] = None
+    engagement: Optional[StrictInt] = None
     notes: Optional[List[Optional[StrictInt]]] = None
     tags: Optional[List[StrictStr]] = None
     scan_type: Optional[StrictStr] = None
     title: Optional[Annotated[str, Field(strict=True, max_length=255)]] = None
     description: Optional[StrictStr] = None
-    target_start: datetime
-    target_end: datetime
+    target_start: Optional[datetime] = None
+    target_end: Optional[datetime] = None
     percent_complete: Optional[Annotated[int, Field(le=2147483647, strict=True, ge=-2147483648)]] = None
-    updated: Optional[datetime]
-    created: Optional[datetime]
+    updated: Optional[datetime] = None
+    created: Optional[datetime] = None
     version: Optional[Annotated[str, Field(strict=True, max_length=100)]] = None
     build_id: Optional[Annotated[str, Field(strict=True, max_length=150)]] = Field(
         default=None, description='Build ID that was tested, a reimport may update this field.'
@@ -50,10 +50,10 @@ class TestCreate(BaseModel):
         default=None, description='Tag or branch that was tested, a reimport may update this field.'
     )
     lead: Optional[StrictInt] = None
-    test_type: StrictInt
+    test_type: Optional[StrictInt] = None
     environment: Optional[StrictInt] = None
     api_scan_configuration: Optional[StrictInt] = None
-    files: List[StrictInt]
+    files: Optional[List[StrictInt]] = None
     __properties: ClassVar[List[str]] = [
         'id',
         'engagement',

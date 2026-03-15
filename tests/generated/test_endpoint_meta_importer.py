@@ -44,8 +44,6 @@ class TestEndpointMetaImporter(unittest.TestCase):
             )
         else:
             return EndpointMetaImporter(
-                file = '',
-                product_id = 56,
         )
         """
 

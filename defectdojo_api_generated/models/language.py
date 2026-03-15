@@ -29,14 +29,14 @@ class Language(BaseModel):
     Language
     """  # noqa: E501
 
-    id: StrictInt
+    id: Optional[StrictInt] = None
     files: Optional[Annotated[int, Field(le=2147483647, strict=True, ge=-2147483648)]] = None
     blank: Optional[Annotated[int, Field(le=2147483647, strict=True, ge=-2147483648)]] = None
     comment: Optional[Annotated[int, Field(le=2147483647, strict=True, ge=-2147483648)]] = None
     code: Optional[Annotated[int, Field(le=2147483647, strict=True, ge=-2147483648)]] = None
-    created: datetime
-    language: StrictInt
-    product: StrictInt
+    created: Optional[datetime] = None
+    language: Optional[StrictInt] = None
+    product: Optional[StrictInt] = None
     user: Optional[StrictInt] = None
     prefetch: Optional[LanguagePrefetch] = None
     __properties: ClassVar[List[str]] = [

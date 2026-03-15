@@ -50,17 +50,6 @@ class TestPaginatedStubFindingList(unittest.TestCase):
             )
         else:
             return PaginatedStubFindingList(
-                count = 123,
-                results = [
-                    defectdojo_api_generated.models.stub_finding.StubFinding(
-                        id = 56, 
-                        title = '', 
-                        date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
-                        severity = '', 
-                        description = '', 
-                        test = 56, 
-                        reporter = 56, )
-                    ],
         )
         """
 

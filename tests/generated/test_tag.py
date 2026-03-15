@@ -40,9 +40,6 @@ class TestTag(unittest.TestCase):
             )
         else:
             return Tag(
-                tags = [
-                    ''
-                    ],
         )
         """
 

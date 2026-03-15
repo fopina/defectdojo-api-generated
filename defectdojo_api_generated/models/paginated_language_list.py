@@ -29,10 +29,10 @@ class PaginatedLanguageList(BaseModel):
     PaginatedLanguageList
     """  # noqa: E501
 
-    count: StrictInt
+    count: Optional[StrictInt] = None
     next: Optional[StrictStr] = None
     previous: Optional[StrictStr] = None
-    results: List[Language]
+    results: Optional[List[Language]] = None
     prefetch: Optional[LanguagePrefetch] = None
     __properties: ClassVar[List[str]] = ['count', 'next', 'previous', 'results', 'prefetch']
 

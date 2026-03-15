@@ -40,8 +40,6 @@ class TestBurpRawRequestResponseMultiRequest(unittest.TestCase):
             )
         else:
             return BurpRawRequestResponseMultiRequest(
-                burp_request_base64 = '0',
-                burp_response_base64 = '0',
         )
         """
 

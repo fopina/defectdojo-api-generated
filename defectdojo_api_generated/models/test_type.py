@@ -26,8 +26,8 @@ class TestType(BaseModel):
     TestType
     """  # noqa: E501
 
-    id: StrictInt
-    name: StrictStr
+    id: Optional[StrictInt] = None
+    name: Optional[StrictStr] = None
     static_tool: Optional[StrictBool] = None
     dynamic_tool: Optional[StrictBool] = None
     active: Optional[StrictBool] = None

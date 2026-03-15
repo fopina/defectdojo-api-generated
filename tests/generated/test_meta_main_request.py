@@ -45,11 +45,6 @@ class TestMetaMainRequest(unittest.TestCase):
             )
         else:
             return MetaMainRequest(
-                metadata = [
-                    defectdojo_api_generated.models.metadata_request.MetadataRequest(
-                        name = '0', 
-                        value = '0', )
-                    ],
         )
         """
 

@@ -26,7 +26,7 @@ class LanguageTypeRequest(BaseModel):
     LanguageTypeRequest
     """  # noqa: E501
 
-    language: Annotated[str, Field(min_length=1, strict=True, max_length=100)]
+    language: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=100)]] = None
     color: Optional[Annotated[str, Field(strict=True, max_length=7)]] = None
     __properties: ClassVar[List[str]] = ['language', 'color']
 

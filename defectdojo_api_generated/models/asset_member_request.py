@@ -26,9 +26,9 @@ class AssetMemberRequest(BaseModel):
     AssetMemberRequest
     """  # noqa: E501
 
-    asset: StrictInt
-    user: StrictInt
-    role: StrictInt
+    asset: Optional[StrictInt] = None
+    user: Optional[StrictInt] = None
+    role: Optional[StrictInt] = None
     __properties: ClassVar[List[str]] = ['asset', 'user', 'role']
 
     model_config = ConfigDict(

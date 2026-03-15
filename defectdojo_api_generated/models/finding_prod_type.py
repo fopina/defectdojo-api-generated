@@ -26,8 +26,8 @@ class FindingProdType(BaseModel):
     FindingProdType
     """  # noqa: E501
 
-    id: StrictInt
-    name: Annotated[str, Field(strict=True, max_length=255)]
+    id: Optional[StrictInt] = None
+    name: Optional[Annotated[str, Field(strict=True, max_length=255)]] = None
     __properties: ClassVar[List[str]] = ['id', 'name']
 
     model_config = ConfigDict(

@@ -29,10 +29,10 @@ class PaginatedProductAPIScanConfigurationList(BaseModel):
     PaginatedProductAPIScanConfigurationList
     """  # noqa: E501
 
-    count: StrictInt
+    count: Optional[StrictInt] = None
     next: Optional[StrictStr] = None
     previous: Optional[StrictStr] = None
-    results: List[ProductAPIScanConfiguration]
+    results: Optional[List[ProductAPIScanConfiguration]] = None
     prefetch: Optional[AssetAPIScanConfigurationPrefetch] = None
     __properties: ClassVar[List[str]] = ['count', 'next', 'previous', 'results', 'prefetch']
 

@@ -28,12 +28,21 @@ def tweak_paginated(data):
         )
 
 
+def tweak_required(data):
+    for schema in data['components']['schemas'].values():
+        try:
+            del schema['required']
+        except KeyError:
+            """nothing to do"""
+
+
 def main():
     BUILD.parent.mkdir(exist_ok=True)
     with FILE.open('r') as inp:
         data = json.load(inp)
 
     tweak_paginated(data)
+    tweak_required(data)
 
     with BUILD.open('w') as out:
         json.dump(data, out, indent=4)

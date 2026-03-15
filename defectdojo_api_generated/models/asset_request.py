@@ -27,7 +27,7 @@ class AssetRequest(BaseModel):
     """  # noqa: E501
 
     tags: Optional[List[Annotated[str, Field(min_length=1, strict=True)]]] = None
-    organization: StrictInt
+    organization: Optional[StrictInt] = None
     asset_numeric_grade: Optional[StrictInt] = None
     enable_asset_tag_inheritance: Optional[StrictBool] = False
     asset_managers: Optional[StrictInt] = None
@@ -47,8 +47,8 @@ class AssetRequest(BaseModel):
         default=None,
         description='* `third party library` - Third Party Library * `purchased` - Purchased * `contractor` - Contractor Developed * `internal` - Internally Developed * `open source` - Open Source * `outsourced` - Outsourced',
     )
-    name: Annotated[str, Field(min_length=1, strict=True, max_length=255)]
-    description: Annotated[str, Field(min_length=1, strict=True, max_length=4000)]
+    name: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=255)]] = None
+    description: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=4000)]] = None
     user_records: Optional[Annotated[int, Field(le=2147483647, strict=True, ge=0)]] = Field(
         default=None, description='Estimate the number of user records within the application.'
     )

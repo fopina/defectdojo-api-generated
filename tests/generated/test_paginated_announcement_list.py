@@ -47,14 +47,6 @@ class TestPaginatedAnnouncementList(unittest.TestCase):
             )
         else:
             return PaginatedAnnouncementList(
-                count = 123,
-                results = [
-                    defectdojo_api_generated.models.announcement.Announcement(
-                        id = 56, 
-                        message = '', 
-                        style = 'info', 
-                        dismissable = True, )
-                    ],
         )
         """
 

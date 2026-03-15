@@ -40,9 +40,6 @@ class TestAcceptedRiskRequest(unittest.TestCase):
             )
         else:
             return AcceptedRiskRequest(
-                vulnerability_id = '0',
-                justification = '0',
-                accepted_by = '0',
         )
         """
 

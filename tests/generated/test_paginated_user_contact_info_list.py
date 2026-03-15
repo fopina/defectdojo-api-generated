@@ -73,32 +73,6 @@ class TestPaginatedUserContactInfoList(unittest.TestCase):
             )
         else:
             return PaginatedUserContactInfoList(
-                count = 123,
-                results = [
-                    defectdojo_api_generated.models.user_contact_info.UserContactInfo(
-                        id = 56, 
-                        user_profile = null, 
-                        title = '', 
-                        phone_number = '+10728880015280', 
-                        cell_number = '+10728880015280', 
-                        twitter_username = '', 
-                        github_username = '', 
-                        slack_username = '', 
-                        slack_user_id = '', 
-                        block_execution = True, 
-                        force_password_reset = True, 
-                        token_last_reset = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        password_last_reset = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        user = 56, 
-                        prefetch = defectdojo_api_generated.models.paginated_user_contact_info_list_prefetch.PaginatedUserContactInfoList_prefetch(
-                            user = {
-                                'key' : defectdojo_api_generated.models.user_stub.UserStub(
-                                    id = 56, 
-                                    username = 'A', 
-                                    first_name = '', 
-                                    last_name = '', )
-                                }, ), )
-                    ],
         )
         """
 

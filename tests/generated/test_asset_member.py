@@ -93,13 +93,7 @@ class TestAssetMember(unittest.TestCase):
                                         name = '', 
                                         description = '', 
                                         critical_product = True, 
-                                        key_product = True, 
-                                        members = [
-                                            56
-                                            ], 
-                                        authorization_groups = [
-                                            56
-                                            ], )
+                                        key_product = True, )
                                     }, 
                                 product_manager = {
                                     'key' : defectdojo_api_generated.models.user_stub.UserStub(
@@ -146,10 +140,6 @@ class TestAssetMember(unittest.TestCase):
             )
         else:
             return AssetMember(
-                id = 56,
-                asset = 56,
-                user = 56,
-                role = 56,
         )
         """
 

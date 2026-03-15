@@ -4032,8 +4032,8 @@ class FindingsApi:
     def findings_files_create(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
-        title: Annotated[str, Field(min_length=1, strict=True, max_length=100)],
-        file: Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]],
+        title: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=100)]] = None,
+        file: Optional[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4049,9 +4049,9 @@ class FindingsApi:
 
         :param id: A unique integer value identifying this finding. (required)
         :type id: int
-        :param title: (required)
+        :param title:
         :type title: str
-        :param file: (required)
+        :param file:
         :type file: bytearray
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -4098,8 +4098,8 @@ class FindingsApi:
     def findings_files_create_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
-        title: Annotated[str, Field(min_length=1, strict=True, max_length=100)],
-        file: Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]],
+        title: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=100)]] = None,
+        file: Optional[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4115,9 +4115,9 @@ class FindingsApi:
 
         :param id: A unique integer value identifying this finding. (required)
         :type id: int
-        :param title: (required)
+        :param title:
         :type title: str
-        :param file: (required)
+        :param file:
         :type file: bytearray
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -4164,8 +4164,8 @@ class FindingsApi:
     def findings_files_create_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
-        title: Annotated[str, Field(min_length=1, strict=True, max_length=100)],
-        file: Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]],
+        title: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=100)]] = None,
+        file: Optional[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]]] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4181,9 +4181,9 @@ class FindingsApi:
 
         :param id: A unique integer value identifying this finding. (required)
         :type id: int
-        :param title: (required)
+        :param title:
         :type title: str
-        :param file: (required)
+        :param file:
         :type file: bytearray
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request

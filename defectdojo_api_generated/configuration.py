@@ -1,5 +1,3 @@
-# coding: utf-8
-
 """
 Defect Dojo API v2
 
@@ -20,8 +18,6 @@ from typing import Any, ClassVar, Dict, List, Literal, Optional, TypedDict, Unio
 
 import urllib3
 from typing_extensions import NotRequired, Self
-
-from defectdojo_api_generated import __openapi_version__
 
 JSON_SCHEMA_VALIDATION_KEYWORDS = {
     'multipleOf',
@@ -168,9 +164,11 @@ class Configuration:
           values before.
         :param ssl_ca_cert: str - the path to a file of concatenated CA certificates
           in PEM format.
-        :param retries: Number of retries for API requests.
+        :param retries: int | urllib3.util.retry.Retry - Retry configuration.
         :param ca_cert_data: verify the peer using concatenated CA certificate data
           in PEM (str) or DER (bytes) format.
+        :param cert_file: the path to a client certificate file, for mTLS.
+        :param key_file: the path to a client key file, for mTLS.
 
         :Example:
 
@@ -226,8 +224,10 @@ class Configuration:
         server_operation_variables: Optional[Dict[int, ServerVariablesT]] = None,
         ignore_operation_servers: bool = False,
         ssl_ca_cert: Optional[str] = None,
-        retries: Optional[int] = None,
+        retries: Optional[Union[int, Any]] = None,
         ca_cert_data: Optional[Union[str, bytes]] = None,
+        cert_file: Optional[str] = None,
+        key_file: Optional[str] = None,
         *,
         debug: Optional[bool] = None,
     ) -> None:
@@ -308,10 +308,10 @@ class Configuration:
         """Set this to verify the peer using PEM (str) or DER (bytes)
            certificate data.
         """
-        self.cert_file = None
+        self.cert_file = cert_file
         """client certificate file
         """
-        self.key_file = None
+        self.key_file = key_file
         """client key file
         """
         self.assert_hostname = None
@@ -340,7 +340,7 @@ class Configuration:
         """Safe chars for path_param
         """
         self.retries = retries
-        """Adding retries to override urllib3 default value 3
+        """Retry configuration
         """
         # Enable client side validation
         self.client_side_validation = True
@@ -524,6 +524,7 @@ class Configuration:
         password = ''
         if self.password is not None:
             password = self.password
+
         return urllib3.util.make_headers(basic_auth=username + ':' + password).get('authorization')
 
     def auth_settings(self) -> AuthSettings:
@@ -568,10 +569,8 @@ class Configuration:
             'Python SDK Debug Report:\n'
             'OS: {env}\n'
             'Python Version: {pyversion}\n'
-            'Version of the API: {api_version}\n'
-            'SDK Package Version: 1.0.0'.format(
-                env=sys.platform, pyversion=sys.version, api_version=__openapi_version__
-            )
+            'Version of the API: 2.46.2\n'
+            'SDK Package Version: 1.0.0'.format(env=sys.platform, pyversion=sys.version)
         )
 
     def get_host_settings(self) -> List[HostSetting]:
@@ -617,7 +616,7 @@ class Configuration:
         for variable_name, variable in server.get('variables', {}).items():
             used_value = variables.get(variable_name, variable['default_value'])
 
-            if 'enum_values' in variable and used_value not in variable['enum_values']:
+            if 'enum_values' in variable and variable['enum_values'] and used_value not in variable['enum_values']:
                 raise ValueError(
                     'The variable `{0}` in the host URL has invalid value {1}. Must be {2}.'.format(
                         variable_name, variables[variable_name], variable['enum_values']

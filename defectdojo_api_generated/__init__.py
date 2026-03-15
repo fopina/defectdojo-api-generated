@@ -13,419 +13,1002 @@ Do not edit the class manually.
 """  # noqa: E501
 
 __version__ = '1.0.0'
-__openapi_version__ = '2.46.2'
+
+# Define package exports
+__all__ = [
+    'AnnouncementsApi',
+    'ApiTokenAuthApi',
+    'ConfigurationPermissionsApi',
+    'CredentialMappingsApi',
+    'CredentialsApi',
+    'DevelopmentEnvironmentsApi',
+    'DojoGroupMembersApi',
+    'DojoGroupsApi',
+    'EndpointMetaImportApi',
+    'EndpointStatusApi',
+    'EndpointsApi',
+    'EngagementPresetsApi',
+    'EngagementsApi',
+    'FindingTemplatesApi',
+    'FindingsApi',
+    'GlobalRolesApi',
+    'ImportLanguagesApi',
+    'ImportScanApi',
+    'JiraConfigurationsApi',
+    'JiraFindingMappingsApi',
+    'JiraInstancesApi',
+    'JiraProductConfigurationsApi',
+    'JiraProjectsApi',
+    'LanguageTypesApi',
+    'LanguagesApi',
+    'MetadataApi',
+    'NetworkLocationsApi',
+    'NoteTypeApi',
+    'NotesApi',
+    'NotificationWebhooksApi',
+    'NotificationsApi',
+    'Oa3Api',
+    'ProductApiScanConfigurationsApi',
+    'ProductGroupsApi',
+    'ProductMembersApi',
+    'ProductTypeGroupsApi',
+    'ProductTypeMembersApi',
+    'ProductTypesApi',
+    'ProductsApi',
+    'QuestionnaireAnsweredQuestionnairesApi',
+    'QuestionnaireAnswersApi',
+    'QuestionnaireEngagementQuestionnairesApi',
+    'QuestionnaireGeneralQuestionnairesApi',
+    'QuestionnaireQuestionsApi',
+    'RegulationsApi',
+    'ReimportScanApi',
+    'RequestResponsePairsApi',
+    'RiskAcceptanceApi',
+    'RolesApi',
+    'SlaConfigurationsApi',
+    'SonarqubeIssuesApi',
+    'SonarqubeTransitionsApi',
+    'StubFindingsApi',
+    'SystemSettingsApi',
+    'TechnologiesApi',
+    'TestImportsApi',
+    'TestTypesApi',
+    'TestsApi',
+    'ToolConfigurationsApi',
+    'ToolProductSettingsApi',
+    'ToolTypesApi',
+    'UserContactInfosApi',
+    'UserProfileApi',
+    'UsersApi',
+    'ApiResponse',
+    'ApiClient',
+    'Configuration',
+    'OpenApiException',
+    'ApiTypeError',
+    'ApiValueError',
+    'ApiKeyError',
+    'ApiAttributeError',
+    'ApiException',
+    'DefectDojo',
+    'AcceptedRiskRequest',
+    'AddNewNoteOptionRequest',
+    'Announcement',
+    'AnnouncementRequest',
+    'AppAnalysis',
+    'AppAnalysisPrefetch',
+    'AppAnalysisRequest',
+    'AuthToken',
+    'AuthTokenRequest',
+    'BurpRawRequestResponse',
+    'BurpRawRequestResponseMulti',
+    'BurpRawRequestResponseMultiRequest',
+    'BurpRawRequestResponseRequest',
+    'ConfigurationPermission',
+    'Credential',
+    'CredentialMapping',
+    'CredentialMappingRequest',
+    'CredentialPrefetch',
+    'CredentialRequest',
+    'DeletePreview',
+    'DeltaStatistics',
+    'DeltaStatisticsRequest',
+    'DevelopmentEnvironment',
+    'DevelopmentEnvironmentRequest',
+    'DojoGroup',
+    'DojoGroupMember',
+    'DojoGroupMemberPrefetch',
+    'DojoGroupMemberRequest',
+    'DojoGroupPrefetch',
+    'DojoGroupRequest',
+    'Endpoint',
+    'EndpointMetaImporter',
+    'EndpointRequest',
+    'EndpointStatus',
+    'EndpointStatusRequest',
+    'Engagement',
+    'EngagementCheckList',
+    'EngagementCheckListRequest',
+    'EngagementPresets',
+    'EngagementPresetsPrefetch',
+    'EngagementPresetsRequest',
+    'EngagementRequest',
+    'EngagementToFiles',
+    'EngagementToNotes',
+    'EngagementUpdateJiraEpic',
+    'EngagementUpdateJiraEpicRequest',
+    'ExecutiveSummary',
+    'File',
+    'FileRequest',
+    'Finding',
+    'FindingClose',
+    'FindingCloseRequest',
+    'FindingCreate',
+    'FindingCreateRequest',
+    'FindingEngagement',
+    'FindingEnvironment',
+    'FindingGroup',
+    'FindingGroupRequest',
+    'FindingMeta',
+    'FindingMetaRequest',
+    'FindingPrefetch',
+    'FindingProdType',
+    'FindingProduct',
+    'FindingRelatedFields',
+    'FindingRequest',
+    'FindingTemplate',
+    'FindingTemplateRequest',
+    'FindingTest',
+    'FindingTestType',
+    'FindingToFiles',
+    'FindingToNotes',
+    'GlobalRole',
+    'GlobalRoleRequest',
+    'ImportLanguages',
+    'ImportScan',
+    'ImportStatistics',
+    'ImportStatisticsRequest',
+    'JIRAInstance',
+    'JIRAInstanceRequest',
+    'JIRAIssue',
+    'JIRAIssueRequest',
+    'JIRAProject',
+    'JIRAProjectPrefetch',
+    'JIRAProjectRequest',
+    'Language',
+    'LanguagePrefetch',
+    'LanguageRequest',
+    'LanguageType',
+    'LanguageTypeRequest',
+    'Meta',
+    'MetaMain',
+    'MetaMainRequest',
+    'MetaRequest',
+    'Metadata',
+    'MetadataRequest',
+    'NetworkLocations',
+    'NetworkLocationsRequest',
+    'Note',
+    'NoteHistory',
+    'NoteHistoryRequest',
+    'NoteRequest',
+    'NoteType',
+    'NoteTypeRequest',
+    'NotificationWebhooks',
+    'NotificationWebhooksRequest',
+    'Notifications',
+    'NotificationsRequest',
+    'PaginatedAnnouncementList',
+    'PaginatedAppAnalysisList',
+    'PaginatedBurpRawRequestResponseMultiList',
+    'PaginatedConfigurationPermissionList',
+    'PaginatedCredentialList',
+    'PaginatedCredentialMappingList',
+    'PaginatedDeletePreviewList',
+    'PaginatedDevelopmentEnvironmentList',
+    'PaginatedDojoGroupList',
+    'PaginatedDojoGroupMemberList',
+    'PaginatedEndpointList',
+    'PaginatedEndpointStatusList',
+    'PaginatedEngagementList',
+    'PaginatedEngagementPresetsList',
+    'PaginatedFindingList',
+    'PaginatedFindingTemplateList',
+    'PaginatedGlobalRoleList',
+    'PaginatedJIRAInstanceList',
+    'PaginatedJIRAIssueList',
+    'PaginatedJIRAProjectList',
+    'PaginatedLanguageList',
+    'PaginatedLanguageTypeList',
+    'PaginatedMetaList',
+    'PaginatedNetworkLocationsList',
+    'PaginatedNoteList',
+    'PaginatedNoteTypeList',
+    'PaginatedNotificationWebhooksList',
+    'PaginatedNotificationsList',
+    'PaginatedProductAPIScanConfigurationList',
+    'PaginatedProductAPIScanConfigurationListPrefetch',
+    'PaginatedProductGroupList',
+    'PaginatedProductGroupListPrefetch',
+    'PaginatedProductList',
+    'PaginatedProductListPrefetch',
+    'PaginatedProductMemberList',
+    'PaginatedProductMemberListPrefetch',
+    'PaginatedProductTypeGroupList',
+    'PaginatedProductTypeGroupListPrefetch',
+    'PaginatedProductTypeList',
+    'PaginatedProductTypeListPrefetch',
+    'PaginatedProductTypeMemberList',
+    'PaginatedProductTypeMemberListPrefetch',
+    'PaginatedQuestionnaireAnswerList',
+    'PaginatedQuestionnaireAnsweredSurveyList',
+    'PaginatedQuestionnaireAnsweredSurveyListPrefetch',
+    'PaginatedQuestionnaireEngagementSurveyList',
+    'PaginatedQuestionnaireGeneralSurveyList',
+    'PaginatedQuestionnaireQuestionList',
+    'PaginatedRegulationList',
+    'PaginatedRiskAcceptanceList',
+    'PaginatedRoleList',
+    'PaginatedSLAConfigurationList',
+    'PaginatedSonarqubeIssueList',
+    'PaginatedSonarqubeIssueTransitionList',
+    'PaginatedStubFindingList',
+    'PaginatedSystemSettingsList',
+    'PaginatedTestImportList',
+    'PaginatedTestList',
+    'PaginatedTestTypeList',
+    'PaginatedToolConfigurationList',
+    'PaginatedToolConfigurationListPrefetch',
+    'PaginatedToolProductSettingsList',
+    'PaginatedToolProductSettingsListPrefetch',
+    'PaginatedToolTypeList',
+    'PaginatedUserContactInfoList',
+    'PaginatedUserContactInfoListPrefetch',
+    'PaginatedUserList',
+    'PatchedAnnouncementRequest',
+    'PatchedAppAnalysisRequest',
+    'PatchedBurpRawRequestResponseMultiRequest',
+    'PatchedCredentialMappingRequest',
+    'PatchedCredentialRequest',
+    'PatchedDevelopmentEnvironmentRequest',
+    'PatchedDojoGroupRequest',
+    'PatchedEndpointRequest',
+    'PatchedEndpointStatusRequest',
+    'PatchedEngagementPresetsRequest',
+    'PatchedEngagementRequest',
+    'PatchedFindingNoteRequest',
+    'PatchedFindingRequest',
+    'PatchedFindingTemplateRequest',
+    'PatchedGlobalRoleRequest',
+    'PatchedJIRAInstanceRequest',
+    'PatchedJIRAIssueRequest',
+    'PatchedJIRAProjectRequest',
+    'PatchedLanguageRequest',
+    'PatchedLanguageTypeRequest',
+    'PatchedMetaMainRequest',
+    'PatchedMetaRequest',
+    'PatchedNetworkLocationsRequest',
+    'PatchedNoteRequest',
+    'PatchedNoteTypeRequest',
+    'PatchedNotificationWebhooksRequest',
+    'PatchedNotificationsRequest',
+    'PatchedProductAPIScanConfigurationRequest',
+    'PatchedProductRequest',
+    'PatchedProductTypeRequest',
+    'PatchedRegulationRequest',
+    'PatchedRiskAcceptanceRequest',
+    'PatchedSLAConfigurationRequest',
+    'PatchedSonarqubeIssueRequest',
+    'PatchedSonarqubeIssueTransitionRequest',
+    'PatchedStubFindingRequest',
+    'PatchedSystemSettingsRequest',
+    'PatchedTagRequest',
+    'PatchedTestImportRequest',
+    'PatchedTestRequest',
+    'PatchedTestTypeRequest',
+    'PatchedToolConfigurationRequest',
+    'PatchedToolProductSettingsRequest',
+    'PatchedToolTypeRequest',
+    'PatchedUserContactInfoRequest',
+    'PatchedUserRequest',
+    'Product',
+    'ProductAPIScanConfiguration',
+    'ProductAPIScanConfigurationRequest',
+    'ProductGroup',
+    'ProductGroupRequest',
+    'ProductMember',
+    'ProductMemberRequest',
+    'ProductMeta',
+    'ProductMetaRequest',
+    'ProductRequest',
+    'ProductType',
+    'ProductTypeGroup',
+    'ProductTypeGroupRequest',
+    'ProductTypeMember',
+    'ProductTypeMemberRequest',
+    'ProductTypeRequest',
+    'QuestionnaireAnswer',
+    'QuestionnaireAnsweredSurvey',
+    'QuestionnaireEngagementSurvey',
+    'QuestionnaireGeneralSurvey',
+    'QuestionnaireQuestion',
+    'RawFile',
+    'ReImportScan',
+    'Regulation',
+    'RegulationRequest',
+    'ReportGenerate',
+    'ReportGenerateOptionRequest',
+    'RiskAcceptance',
+    'RiskAcceptanceProof',
+    'RiskAcceptanceRequest',
+    'Role',
+    'SLAConfiguration',
+    'SLAConfigurationRequest',
+    'SeverityStatusStatistics',
+    'SeverityStatusStatisticsRequest',
+    'SonarqubeIssue',
+    'SonarqubeIssueRequest',
+    'SonarqubeIssueTransition',
+    'SonarqubeIssueTransitionRequest',
+    'StatusStatistics',
+    'StatusStatisticsRequest',
+    'StubFinding',
+    'StubFindingCreate',
+    'StubFindingCreateRequest',
+    'StubFindingRequest',
+    'SystemSettings',
+    'SystemSettingsRequest',
+    'Tag',
+    'TagRequest',
+    'Test',
+    'TestCreate',
+    'TestCreateRequest',
+    'TestImport',
+    'TestImportFindingAction',
+    'TestImportFindingActionRequest',
+    'TestImportRequest',
+    'TestRequest',
+    'TestToFiles',
+    'TestToNotes',
+    'TestType',
+    'TestTypeRequest',
+    'ToolConfiguration',
+    'ToolConfigurationRequest',
+    'ToolProductSettings',
+    'ToolProductSettingsRequest',
+    'ToolType',
+    'ToolTypeRequest',
+    'User',
+    'UserContactInfo',
+    'UserContactInfoRequest',
+    'UserProfile',
+    'UserRequest',
+    'UserStub',
+    'UserStubRequest',
+    'VulnerabilityId',
+    'VulnerabilityIdRequest',
+    'VulnerabilityIdTemplate',
+    'VulnerabilityIdTemplateRequest',
+]
+
+from defectdojo_api_generated.client import DefectDojo
 
 # import apis into sdk package
-from defectdojo_api_generated.api.announcements_api import AnnouncementsApi
-from defectdojo_api_generated.api.api_token_auth_api import ApiTokenAuthApi
-from defectdojo_api_generated.api.configuration_permissions_api import ConfigurationPermissionsApi
-from defectdojo_api_generated.api.credential_mappings_api import CredentialMappingsApi
-from defectdojo_api_generated.api.credentials_api import CredentialsApi
-from defectdojo_api_generated.api.development_environments_api import DevelopmentEnvironmentsApi
-from defectdojo_api_generated.api.dojo_group_members_api import DojoGroupMembersApi
-from defectdojo_api_generated.api.dojo_groups_api import DojoGroupsApi
-from defectdojo_api_generated.api.endpoint_meta_import_api import EndpointMetaImportApi
-from defectdojo_api_generated.api.endpoint_status_api import EndpointStatusApi
-from defectdojo_api_generated.api.endpoints_api import EndpointsApi
-from defectdojo_api_generated.api.engagement_presets_api import EngagementPresetsApi
-from defectdojo_api_generated.api.engagements_api import EngagementsApi
-from defectdojo_api_generated.api.finding_templates_api import FindingTemplatesApi
-from defectdojo_api_generated.api.findings_api import FindingsApi
-from defectdojo_api_generated.api.global_roles_api import GlobalRolesApi
-from defectdojo_api_generated.api.import_languages_api import ImportLanguagesApi
-from defectdojo_api_generated.api.import_scan_api import ImportScanApi
-from defectdojo_api_generated.api.jira_configurations_api import JiraConfigurationsApi
-from defectdojo_api_generated.api.jira_finding_mappings_api import JiraFindingMappingsApi
-from defectdojo_api_generated.api.jira_instances_api import JiraInstancesApi
-from defectdojo_api_generated.api.jira_product_configurations_api import JiraProductConfigurationsApi
-from defectdojo_api_generated.api.jira_projects_api import JiraProjectsApi
-from defectdojo_api_generated.api.language_types_api import LanguageTypesApi
-from defectdojo_api_generated.api.languages_api import LanguagesApi
-from defectdojo_api_generated.api.metadata_api import MetadataApi
-from defectdojo_api_generated.api.network_locations_api import NetworkLocationsApi
-from defectdojo_api_generated.api.note_type_api import NoteTypeApi
-from defectdojo_api_generated.api.notes_api import NotesApi
-from defectdojo_api_generated.api.notification_webhooks_api import NotificationWebhooksApi
-from defectdojo_api_generated.api.notifications_api import NotificationsApi
-from defectdojo_api_generated.api.oa3_api import Oa3Api
-from defectdojo_api_generated.api.product_api_scan_configurations_api import ProductApiScanConfigurationsApi
-from defectdojo_api_generated.api.product_groups_api import ProductGroupsApi
-from defectdojo_api_generated.api.product_members_api import ProductMembersApi
-from defectdojo_api_generated.api.product_type_groups_api import ProductTypeGroupsApi
-from defectdojo_api_generated.api.product_type_members_api import ProductTypeMembersApi
-from defectdojo_api_generated.api.product_types_api import ProductTypesApi
-from defectdojo_api_generated.api.products_api import ProductsApi
+from defectdojo_api_generated.api.announcements_api import AnnouncementsApi as AnnouncementsApi
+from defectdojo_api_generated.api.api_token_auth_api import ApiTokenAuthApi as ApiTokenAuthApi
+from defectdojo_api_generated.api.configuration_permissions_api import (
+    ConfigurationPermissionsApi as ConfigurationPermissionsApi,
+)
+from defectdojo_api_generated.api.credential_mappings_api import CredentialMappingsApi as CredentialMappingsApi
+from defectdojo_api_generated.api.credentials_api import CredentialsApi as CredentialsApi
+from defectdojo_api_generated.api.development_environments_api import (
+    DevelopmentEnvironmentsApi as DevelopmentEnvironmentsApi,
+)
+from defectdojo_api_generated.api.dojo_group_members_api import DojoGroupMembersApi as DojoGroupMembersApi
+from defectdojo_api_generated.api.dojo_groups_api import DojoGroupsApi as DojoGroupsApi
+from defectdojo_api_generated.api.endpoint_meta_import_api import EndpointMetaImportApi as EndpointMetaImportApi
+from defectdojo_api_generated.api.endpoint_status_api import EndpointStatusApi as EndpointStatusApi
+from defectdojo_api_generated.api.endpoints_api import EndpointsApi as EndpointsApi
+from defectdojo_api_generated.api.engagement_presets_api import EngagementPresetsApi as EngagementPresetsApi
+from defectdojo_api_generated.api.engagements_api import EngagementsApi as EngagementsApi
+from defectdojo_api_generated.api.finding_templates_api import FindingTemplatesApi as FindingTemplatesApi
+from defectdojo_api_generated.api.findings_api import FindingsApi as FindingsApi
+from defectdojo_api_generated.api.global_roles_api import GlobalRolesApi as GlobalRolesApi
+from defectdojo_api_generated.api.import_languages_api import ImportLanguagesApi as ImportLanguagesApi
+from defectdojo_api_generated.api.import_scan_api import ImportScanApi as ImportScanApi
+from defectdojo_api_generated.api.jira_configurations_api import JiraConfigurationsApi as JiraConfigurationsApi
+from defectdojo_api_generated.api.jira_finding_mappings_api import JiraFindingMappingsApi as JiraFindingMappingsApi
+from defectdojo_api_generated.api.jira_instances_api import JiraInstancesApi as JiraInstancesApi
+from defectdojo_api_generated.api.jira_product_configurations_api import (
+    JiraProductConfigurationsApi as JiraProductConfigurationsApi,
+)
+from defectdojo_api_generated.api.jira_projects_api import JiraProjectsApi as JiraProjectsApi
+from defectdojo_api_generated.api.language_types_api import LanguageTypesApi as LanguageTypesApi
+from defectdojo_api_generated.api.languages_api import LanguagesApi as LanguagesApi
+from defectdojo_api_generated.api.metadata_api import MetadataApi as MetadataApi
+from defectdojo_api_generated.api.network_locations_api import NetworkLocationsApi as NetworkLocationsApi
+from defectdojo_api_generated.api.note_type_api import NoteTypeApi as NoteTypeApi
+from defectdojo_api_generated.api.notes_api import NotesApi as NotesApi
+from defectdojo_api_generated.api.notification_webhooks_api import NotificationWebhooksApi as NotificationWebhooksApi
+from defectdojo_api_generated.api.notifications_api import NotificationsApi as NotificationsApi
+from defectdojo_api_generated.api.oa3_api import Oa3Api as Oa3Api
+from defectdojo_api_generated.api.product_api_scan_configurations_api import (
+    ProductApiScanConfigurationsApi as ProductApiScanConfigurationsApi,
+)
+from defectdojo_api_generated.api.product_groups_api import ProductGroupsApi as ProductGroupsApi
+from defectdojo_api_generated.api.product_members_api import ProductMembersApi as ProductMembersApi
+from defectdojo_api_generated.api.product_type_groups_api import ProductTypeGroupsApi as ProductTypeGroupsApi
+from defectdojo_api_generated.api.product_type_members_api import ProductTypeMembersApi as ProductTypeMembersApi
+from defectdojo_api_generated.api.product_types_api import ProductTypesApi as ProductTypesApi
+from defectdojo_api_generated.api.products_api import ProductsApi as ProductsApi
 from defectdojo_api_generated.api.questionnaire_answered_questionnaires_api import (
-    QuestionnaireAnsweredQuestionnairesApi,
+    QuestionnaireAnsweredQuestionnairesApi as QuestionnaireAnsweredQuestionnairesApi,
 )
-from defectdojo_api_generated.api.questionnaire_answers_api import QuestionnaireAnswersApi
+from defectdojo_api_generated.api.questionnaire_answers_api import QuestionnaireAnswersApi as QuestionnaireAnswersApi
 from defectdojo_api_generated.api.questionnaire_engagement_questionnaires_api import (
-    QuestionnaireEngagementQuestionnairesApi,
+    QuestionnaireEngagementQuestionnairesApi as QuestionnaireEngagementQuestionnairesApi,
 )
-from defectdojo_api_generated.api.questionnaire_general_questionnaires_api import QuestionnaireGeneralQuestionnairesApi
-from defectdojo_api_generated.api.questionnaire_questions_api import QuestionnaireQuestionsApi
-from defectdojo_api_generated.api.regulations_api import RegulationsApi
-from defectdojo_api_generated.api.reimport_scan_api import ReimportScanApi
-from defectdojo_api_generated.api.request_response_pairs_api import RequestResponsePairsApi
-from defectdojo_api_generated.api.risk_acceptance_api import RiskAcceptanceApi
-from defectdojo_api_generated.api.roles_api import RolesApi
-from defectdojo_api_generated.api.sla_configurations_api import SlaConfigurationsApi
-from defectdojo_api_generated.api.sonarqube_issues_api import SonarqubeIssuesApi
-from defectdojo_api_generated.api.sonarqube_transitions_api import SonarqubeTransitionsApi
-from defectdojo_api_generated.api.stub_findings_api import StubFindingsApi
-from defectdojo_api_generated.api.system_settings_api import SystemSettingsApi
-from defectdojo_api_generated.api.technologies_api import TechnologiesApi
-from defectdojo_api_generated.api.test_imports_api import TestImportsApi
-from defectdojo_api_generated.api.test_types_api import TestTypesApi
-from defectdojo_api_generated.api.tests_api import TestsApi
-from defectdojo_api_generated.api.tool_configurations_api import ToolConfigurationsApi
-from defectdojo_api_generated.api.tool_product_settings_api import ToolProductSettingsApi
-from defectdojo_api_generated.api.tool_types_api import ToolTypesApi
-from defectdojo_api_generated.api.user_contact_infos_api import UserContactInfosApi
-from defectdojo_api_generated.api.user_profile_api import UserProfileApi
-from defectdojo_api_generated.api.users_api import UsersApi
-
+from defectdojo_api_generated.api.questionnaire_general_questionnaires_api import (
+    QuestionnaireGeneralQuestionnairesApi as QuestionnaireGeneralQuestionnairesApi,
+)
+from defectdojo_api_generated.api.questionnaire_questions_api import (
+    QuestionnaireQuestionsApi as QuestionnaireQuestionsApi,
+)
+from defectdojo_api_generated.api.regulations_api import RegulationsApi as RegulationsApi
+from defectdojo_api_generated.api.reimport_scan_api import ReimportScanApi as ReimportScanApi
+from defectdojo_api_generated.api.request_response_pairs_api import RequestResponsePairsApi as RequestResponsePairsApi
+from defectdojo_api_generated.api.risk_acceptance_api import RiskAcceptanceApi as RiskAcceptanceApi
+from defectdojo_api_generated.api.roles_api import RolesApi as RolesApi
+from defectdojo_api_generated.api.sla_configurations_api import SlaConfigurationsApi as SlaConfigurationsApi
+from defectdojo_api_generated.api.sonarqube_issues_api import SonarqubeIssuesApi as SonarqubeIssuesApi
+from defectdojo_api_generated.api.sonarqube_transitions_api import SonarqubeTransitionsApi as SonarqubeTransitionsApi
+from defectdojo_api_generated.api.stub_findings_api import StubFindingsApi as StubFindingsApi
+from defectdojo_api_generated.api.system_settings_api import SystemSettingsApi as SystemSettingsApi
+from defectdojo_api_generated.api.technologies_api import TechnologiesApi as TechnologiesApi
+from defectdojo_api_generated.api.test_imports_api import TestImportsApi as TestImportsApi
+from defectdojo_api_generated.api.test_types_api import TestTypesApi as TestTypesApi
+from defectdojo_api_generated.api.tests_api import TestsApi as TestsApi
+from defectdojo_api_generated.api.tool_configurations_api import ToolConfigurationsApi as ToolConfigurationsApi
+from defectdojo_api_generated.api.tool_product_settings_api import ToolProductSettingsApi as ToolProductSettingsApi
+from defectdojo_api_generated.api.tool_types_api import ToolTypesApi as ToolTypesApi
+from defectdojo_api_generated.api.user_contact_infos_api import UserContactInfosApi as UserContactInfosApi
+from defectdojo_api_generated.api.user_profile_api import UserProfileApi as UserProfileApi
+from defectdojo_api_generated.api.users_api import UsersApi as UsersApi
 
 # import ApiClient
-from defectdojo_api_generated.api_response import ApiResponse
-from defectdojo_api_generated.api_client import ApiClient
-from defectdojo_api_generated.client import DefectDojo
-from defectdojo_api_generated.configuration import Configuration
-from defectdojo_api_generated.exceptions import OpenApiException
-from defectdojo_api_generated.exceptions import ApiTypeError
-from defectdojo_api_generated.exceptions import ApiValueError
-from defectdojo_api_generated.exceptions import ApiKeyError
-from defectdojo_api_generated.exceptions import ApiAttributeError
-from defectdojo_api_generated.exceptions import ApiException
+from defectdojo_api_generated.api_response import ApiResponse as ApiResponse
+from defectdojo_api_generated.api_client import ApiClient as ApiClient
+from defectdojo_api_generated.configuration import Configuration as Configuration
+from defectdojo_api_generated.exceptions import OpenApiException as OpenApiException
+from defectdojo_api_generated.exceptions import ApiTypeError as ApiTypeError
+from defectdojo_api_generated.exceptions import ApiValueError as ApiValueError
+from defectdojo_api_generated.exceptions import ApiKeyError as ApiKeyError
+from defectdojo_api_generated.exceptions import ApiAttributeError as ApiAttributeError
+from defectdojo_api_generated.exceptions import ApiException as ApiException
 
 # import models into sdk package
-from defectdojo_api_generated.models.accepted_risk_request import AcceptedRiskRequest
-from defectdojo_api_generated.models.add_new_note_option_request import AddNewNoteOptionRequest
-from defectdojo_api_generated.models.announcement import Announcement
-from defectdojo_api_generated.models.announcement_request import AnnouncementRequest
-from defectdojo_api_generated.models.app_analysis import AppAnalysis
-from defectdojo_api_generated.models.app_analysis_prefetch import AppAnalysisPrefetch
-from defectdojo_api_generated.models.app_analysis_request import AppAnalysisRequest
-from defectdojo_api_generated.models.auth_token import AuthToken
-from defectdojo_api_generated.models.auth_token_request import AuthTokenRequest
-from defectdojo_api_generated.models.burp_raw_request_response import BurpRawRequestResponse
-from defectdojo_api_generated.models.burp_raw_request_response_multi import BurpRawRequestResponseMulti
-from defectdojo_api_generated.models.burp_raw_request_response_multi_request import BurpRawRequestResponseMultiRequest
-from defectdojo_api_generated.models.burp_raw_request_response_request import BurpRawRequestResponseRequest
-from defectdojo_api_generated.models.configuration_permission import ConfigurationPermission
-from defectdojo_api_generated.models.credential import Credential
-from defectdojo_api_generated.models.credential_mapping import CredentialMapping
-from defectdojo_api_generated.models.credential_mapping_request import CredentialMappingRequest
-from defectdojo_api_generated.models.credential_prefetch import CredentialPrefetch
-from defectdojo_api_generated.models.credential_request import CredentialRequest
-from defectdojo_api_generated.models.delete_preview import DeletePreview
-from defectdojo_api_generated.models.delta_statistics import DeltaStatistics
-from defectdojo_api_generated.models.delta_statistics_request import DeltaStatisticsRequest
-from defectdojo_api_generated.models.development_environment import DevelopmentEnvironment
-from defectdojo_api_generated.models.development_environment_request import DevelopmentEnvironmentRequest
-from defectdojo_api_generated.models.dojo_group import DojoGroup
-from defectdojo_api_generated.models.dojo_group_member import DojoGroupMember
-from defectdojo_api_generated.models.dojo_group_member_prefetch import DojoGroupMemberPrefetch
-from defectdojo_api_generated.models.dojo_group_member_request import DojoGroupMemberRequest
-from defectdojo_api_generated.models.dojo_group_prefetch import DojoGroupPrefetch
-from defectdojo_api_generated.models.dojo_group_request import DojoGroupRequest
-from defectdojo_api_generated.models.endpoint import Endpoint
-from defectdojo_api_generated.models.endpoint_meta_importer import EndpointMetaImporter
-from defectdojo_api_generated.models.endpoint_request import EndpointRequest
-from defectdojo_api_generated.models.endpoint_status import EndpointStatus
-from defectdojo_api_generated.models.endpoint_status_request import EndpointStatusRequest
-from defectdojo_api_generated.models.engagement import Engagement
-from defectdojo_api_generated.models.engagement_check_list import EngagementCheckList
-from defectdojo_api_generated.models.engagement_check_list_request import EngagementCheckListRequest
-from defectdojo_api_generated.models.engagement_presets import EngagementPresets
-from defectdojo_api_generated.models.engagement_presets_prefetch import EngagementPresetsPrefetch
-from defectdojo_api_generated.models.engagement_presets_request import EngagementPresetsRequest
-from defectdojo_api_generated.models.engagement_request import EngagementRequest
-from defectdojo_api_generated.models.engagement_to_files import EngagementToFiles
-from defectdojo_api_generated.models.engagement_to_notes import EngagementToNotes
-from defectdojo_api_generated.models.engagement_update_jira_epic import EngagementUpdateJiraEpic
-from defectdojo_api_generated.models.engagement_update_jira_epic_request import EngagementUpdateJiraEpicRequest
-from defectdojo_api_generated.models.executive_summary import ExecutiveSummary
-from defectdojo_api_generated.models.file import File
-from defectdojo_api_generated.models.file_request import FileRequest
-from defectdojo_api_generated.models.finding import Finding
-from defectdojo_api_generated.models.finding_close import FindingClose
-from defectdojo_api_generated.models.finding_close_request import FindingCloseRequest
-from defectdojo_api_generated.models.finding_create import FindingCreate
-from defectdojo_api_generated.models.finding_create_request import FindingCreateRequest
-from defectdojo_api_generated.models.finding_engagement import FindingEngagement
-from defectdojo_api_generated.models.finding_environment import FindingEnvironment
-from defectdojo_api_generated.models.finding_group import FindingGroup
-from defectdojo_api_generated.models.finding_group_request import FindingGroupRequest
-from defectdojo_api_generated.models.finding_meta import FindingMeta
-from defectdojo_api_generated.models.finding_meta_request import FindingMetaRequest
-from defectdojo_api_generated.models.finding_prefetch import FindingPrefetch
-from defectdojo_api_generated.models.finding_prod_type import FindingProdType
-from defectdojo_api_generated.models.finding_product import FindingProduct
-from defectdojo_api_generated.models.finding_related_fields import FindingRelatedFields
-from defectdojo_api_generated.models.finding_request import FindingRequest
-from defectdojo_api_generated.models.finding_template import FindingTemplate
-from defectdojo_api_generated.models.finding_template_request import FindingTemplateRequest
-from defectdojo_api_generated.models.finding_test import FindingTest
-from defectdojo_api_generated.models.finding_test_type import FindingTestType
-from defectdojo_api_generated.models.finding_to_files import FindingToFiles
-from defectdojo_api_generated.models.finding_to_notes import FindingToNotes
-from defectdojo_api_generated.models.global_role import GlobalRole
-from defectdojo_api_generated.models.global_role_request import GlobalRoleRequest
-from defectdojo_api_generated.models.import_languages import ImportLanguages
-from defectdojo_api_generated.models.import_scan import ImportScan
-from defectdojo_api_generated.models.import_statistics import ImportStatistics
-from defectdojo_api_generated.models.import_statistics_request import ImportStatisticsRequest
-from defectdojo_api_generated.models.jira_instance import JIRAInstance
-from defectdojo_api_generated.models.jira_instance_request import JIRAInstanceRequest
-from defectdojo_api_generated.models.jira_issue import JIRAIssue
-from defectdojo_api_generated.models.jira_issue_request import JIRAIssueRequest
-from defectdojo_api_generated.models.jira_project import JIRAProject
-from defectdojo_api_generated.models.jira_project_prefetch import JIRAProjectPrefetch
-from defectdojo_api_generated.models.jira_project_request import JIRAProjectRequest
-from defectdojo_api_generated.models.language import Language
-from defectdojo_api_generated.models.language_prefetch import LanguagePrefetch
-from defectdojo_api_generated.models.language_request import LanguageRequest
-from defectdojo_api_generated.models.language_type import LanguageType
-from defectdojo_api_generated.models.language_type_request import LanguageTypeRequest
-from defectdojo_api_generated.models.meta import Meta
-from defectdojo_api_generated.models.meta_main import MetaMain
-from defectdojo_api_generated.models.meta_main_request import MetaMainRequest
-from defectdojo_api_generated.models.meta_request import MetaRequest
-from defectdojo_api_generated.models.metadata import Metadata
-from defectdojo_api_generated.models.metadata_request import MetadataRequest
-from defectdojo_api_generated.models.network_locations import NetworkLocations
-from defectdojo_api_generated.models.network_locations_request import NetworkLocationsRequest
-from defectdojo_api_generated.models.note import Note
-from defectdojo_api_generated.models.note_history import NoteHistory
-from defectdojo_api_generated.models.note_history_request import NoteHistoryRequest
-from defectdojo_api_generated.models.note_request import NoteRequest
-from defectdojo_api_generated.models.note_type import NoteType
-from defectdojo_api_generated.models.note_type_request import NoteTypeRequest
-from defectdojo_api_generated.models.notification_webhooks import NotificationWebhooks
-from defectdojo_api_generated.models.notification_webhooks_request import NotificationWebhooksRequest
-from defectdojo_api_generated.models.notifications import Notifications
-from defectdojo_api_generated.models.notifications_request import NotificationsRequest
-from defectdojo_api_generated.models.paginated_announcement_list import PaginatedAnnouncementList
-from defectdojo_api_generated.models.paginated_app_analysis_list import PaginatedAppAnalysisList
-from defectdojo_api_generated.models.paginated_burp_raw_request_response_multi_list import (
-    PaginatedBurpRawRequestResponseMultiList,
+from defectdojo_api_generated.models.accepted_risk_request import AcceptedRiskRequest as AcceptedRiskRequest
+from defectdojo_api_generated.models.add_new_note_option_request import (
+    AddNewNoteOptionRequest as AddNewNoteOptionRequest,
 )
-from defectdojo_api_generated.models.paginated_configuration_permission_list import PaginatedConfigurationPermissionList
-from defectdojo_api_generated.models.paginated_credential_list import PaginatedCredentialList
-from defectdojo_api_generated.models.paginated_credential_mapping_list import PaginatedCredentialMappingList
-from defectdojo_api_generated.models.paginated_delete_preview_list import PaginatedDeletePreviewList
-from defectdojo_api_generated.models.paginated_development_environment_list import PaginatedDevelopmentEnvironmentList
-from defectdojo_api_generated.models.paginated_dojo_group_list import PaginatedDojoGroupList
-from defectdojo_api_generated.models.paginated_dojo_group_member_list import PaginatedDojoGroupMemberList
-from defectdojo_api_generated.models.paginated_endpoint_list import PaginatedEndpointList
-from defectdojo_api_generated.models.paginated_endpoint_status_list import PaginatedEndpointStatusList
-from defectdojo_api_generated.models.paginated_engagement_list import PaginatedEngagementList
-from defectdojo_api_generated.models.paginated_engagement_presets_list import PaginatedEngagementPresetsList
-from defectdojo_api_generated.models.paginated_finding_list import PaginatedFindingList
-from defectdojo_api_generated.models.paginated_finding_template_list import PaginatedFindingTemplateList
-from defectdojo_api_generated.models.paginated_global_role_list import PaginatedGlobalRoleList
-from defectdojo_api_generated.models.paginated_jira_instance_list import PaginatedJIRAInstanceList
-from defectdojo_api_generated.models.paginated_jira_issue_list import PaginatedJIRAIssueList
-from defectdojo_api_generated.models.paginated_jira_project_list import PaginatedJIRAProjectList
-from defectdojo_api_generated.models.paginated_language_list import PaginatedLanguageList
-from defectdojo_api_generated.models.paginated_language_type_list import PaginatedLanguageTypeList
-from defectdojo_api_generated.models.paginated_meta_list import PaginatedMetaList
-from defectdojo_api_generated.models.paginated_network_locations_list import PaginatedNetworkLocationsList
-from defectdojo_api_generated.models.paginated_note_list import PaginatedNoteList
-from defectdojo_api_generated.models.paginated_note_type_list import PaginatedNoteTypeList
-from defectdojo_api_generated.models.paginated_notification_webhooks_list import PaginatedNotificationWebhooksList
-from defectdojo_api_generated.models.paginated_notifications_list import PaginatedNotificationsList
+from defectdojo_api_generated.models.announcement import Announcement as Announcement
+from defectdojo_api_generated.models.announcement_request import AnnouncementRequest as AnnouncementRequest
+from defectdojo_api_generated.models.app_analysis import AppAnalysis as AppAnalysis
+from defectdojo_api_generated.models.app_analysis_prefetch import AppAnalysisPrefetch as AppAnalysisPrefetch
+from defectdojo_api_generated.models.app_analysis_request import AppAnalysisRequest as AppAnalysisRequest
+from defectdojo_api_generated.models.auth_token import AuthToken as AuthToken
+from defectdojo_api_generated.models.auth_token_request import AuthTokenRequest as AuthTokenRequest
+from defectdojo_api_generated.models.burp_raw_request_response import BurpRawRequestResponse as BurpRawRequestResponse
+from defectdojo_api_generated.models.burp_raw_request_response_multi import (
+    BurpRawRequestResponseMulti as BurpRawRequestResponseMulti,
+)
+from defectdojo_api_generated.models.burp_raw_request_response_multi_request import (
+    BurpRawRequestResponseMultiRequest as BurpRawRequestResponseMultiRequest,
+)
+from defectdojo_api_generated.models.burp_raw_request_response_request import (
+    BurpRawRequestResponseRequest as BurpRawRequestResponseRequest,
+)
+from defectdojo_api_generated.models.configuration_permission import ConfigurationPermission as ConfigurationPermission
+from defectdojo_api_generated.models.credential import Credential as Credential
+from defectdojo_api_generated.models.credential_mapping import CredentialMapping as CredentialMapping
+from defectdojo_api_generated.models.credential_mapping_request import (
+    CredentialMappingRequest as CredentialMappingRequest,
+)
+from defectdojo_api_generated.models.credential_prefetch import CredentialPrefetch as CredentialPrefetch
+from defectdojo_api_generated.models.credential_request import CredentialRequest as CredentialRequest
+from defectdojo_api_generated.models.delete_preview import DeletePreview as DeletePreview
+from defectdojo_api_generated.models.delta_statistics import DeltaStatistics as DeltaStatistics
+from defectdojo_api_generated.models.delta_statistics_request import DeltaStatisticsRequest as DeltaStatisticsRequest
+from defectdojo_api_generated.models.development_environment import DevelopmentEnvironment as DevelopmentEnvironment
+from defectdojo_api_generated.models.development_environment_request import (
+    DevelopmentEnvironmentRequest as DevelopmentEnvironmentRequest,
+)
+from defectdojo_api_generated.models.dojo_group import DojoGroup as DojoGroup
+from defectdojo_api_generated.models.dojo_group_member import DojoGroupMember as DojoGroupMember
+from defectdojo_api_generated.models.dojo_group_member_prefetch import (
+    DojoGroupMemberPrefetch as DojoGroupMemberPrefetch,
+)
+from defectdojo_api_generated.models.dojo_group_member_request import DojoGroupMemberRequest as DojoGroupMemberRequest
+from defectdojo_api_generated.models.dojo_group_prefetch import DojoGroupPrefetch as DojoGroupPrefetch
+from defectdojo_api_generated.models.dojo_group_request import DojoGroupRequest as DojoGroupRequest
+from defectdojo_api_generated.models.endpoint import Endpoint as Endpoint
+from defectdojo_api_generated.models.endpoint_meta_importer import EndpointMetaImporter as EndpointMetaImporter
+from defectdojo_api_generated.models.endpoint_request import EndpointRequest as EndpointRequest
+from defectdojo_api_generated.models.endpoint_status import EndpointStatus as EndpointStatus
+from defectdojo_api_generated.models.endpoint_status_request import EndpointStatusRequest as EndpointStatusRequest
+from defectdojo_api_generated.models.engagement import Engagement as Engagement
+from defectdojo_api_generated.models.engagement_check_list import EngagementCheckList as EngagementCheckList
+from defectdojo_api_generated.models.engagement_check_list_request import (
+    EngagementCheckListRequest as EngagementCheckListRequest,
+)
+from defectdojo_api_generated.models.engagement_presets import EngagementPresets as EngagementPresets
+from defectdojo_api_generated.models.engagement_presets_prefetch import (
+    EngagementPresetsPrefetch as EngagementPresetsPrefetch,
+)
+from defectdojo_api_generated.models.engagement_presets_request import (
+    EngagementPresetsRequest as EngagementPresetsRequest,
+)
+from defectdojo_api_generated.models.engagement_request import EngagementRequest as EngagementRequest
+from defectdojo_api_generated.models.engagement_to_files import EngagementToFiles as EngagementToFiles
+from defectdojo_api_generated.models.engagement_to_notes import EngagementToNotes as EngagementToNotes
+from defectdojo_api_generated.models.engagement_update_jira_epic import (
+    EngagementUpdateJiraEpic as EngagementUpdateJiraEpic,
+)
+from defectdojo_api_generated.models.engagement_update_jira_epic_request import (
+    EngagementUpdateJiraEpicRequest as EngagementUpdateJiraEpicRequest,
+)
+from defectdojo_api_generated.models.executive_summary import ExecutiveSummary as ExecutiveSummary
+from defectdojo_api_generated.models.file import File as File
+from defectdojo_api_generated.models.file_request import FileRequest as FileRequest
+from defectdojo_api_generated.models.finding import Finding as Finding
+from defectdojo_api_generated.models.finding_close import FindingClose as FindingClose
+from defectdojo_api_generated.models.finding_close_request import FindingCloseRequest as FindingCloseRequest
+from defectdojo_api_generated.models.finding_create import FindingCreate as FindingCreate
+from defectdojo_api_generated.models.finding_create_request import FindingCreateRequest as FindingCreateRequest
+from defectdojo_api_generated.models.finding_engagement import FindingEngagement as FindingEngagement
+from defectdojo_api_generated.models.finding_environment import FindingEnvironment as FindingEnvironment
+from defectdojo_api_generated.models.finding_group import FindingGroup as FindingGroup
+from defectdojo_api_generated.models.finding_group_request import FindingGroupRequest as FindingGroupRequest
+from defectdojo_api_generated.models.finding_meta import FindingMeta as FindingMeta
+from defectdojo_api_generated.models.finding_meta_request import FindingMetaRequest as FindingMetaRequest
+from defectdojo_api_generated.models.finding_prefetch import FindingPrefetch as FindingPrefetch
+from defectdojo_api_generated.models.finding_prod_type import FindingProdType as FindingProdType
+from defectdojo_api_generated.models.finding_product import FindingProduct as FindingProduct
+from defectdojo_api_generated.models.finding_related_fields import FindingRelatedFields as FindingRelatedFields
+from defectdojo_api_generated.models.finding_request import FindingRequest as FindingRequest
+from defectdojo_api_generated.models.finding_template import FindingTemplate as FindingTemplate
+from defectdojo_api_generated.models.finding_template_request import FindingTemplateRequest as FindingTemplateRequest
+from defectdojo_api_generated.models.finding_test import FindingTest as FindingTest
+from defectdojo_api_generated.models.finding_test_type import FindingTestType as FindingTestType
+from defectdojo_api_generated.models.finding_to_files import FindingToFiles as FindingToFiles
+from defectdojo_api_generated.models.finding_to_notes import FindingToNotes as FindingToNotes
+from defectdojo_api_generated.models.global_role import GlobalRole as GlobalRole
+from defectdojo_api_generated.models.global_role_request import GlobalRoleRequest as GlobalRoleRequest
+from defectdojo_api_generated.models.import_languages import ImportLanguages as ImportLanguages
+from defectdojo_api_generated.models.import_scan import ImportScan as ImportScan
+from defectdojo_api_generated.models.import_statistics import ImportStatistics as ImportStatistics
+from defectdojo_api_generated.models.import_statistics_request import ImportStatisticsRequest as ImportStatisticsRequest
+from defectdojo_api_generated.models.jira_instance import JIRAInstance as JIRAInstance
+from defectdojo_api_generated.models.jira_instance_request import JIRAInstanceRequest as JIRAInstanceRequest
+from defectdojo_api_generated.models.jira_issue import JIRAIssue as JIRAIssue
+from defectdojo_api_generated.models.jira_issue_request import JIRAIssueRequest as JIRAIssueRequest
+from defectdojo_api_generated.models.jira_project import JIRAProject as JIRAProject
+from defectdojo_api_generated.models.jira_project_prefetch import JIRAProjectPrefetch as JIRAProjectPrefetch
+from defectdojo_api_generated.models.jira_project_request import JIRAProjectRequest as JIRAProjectRequest
+from defectdojo_api_generated.models.language import Language as Language
+from defectdojo_api_generated.models.language_prefetch import LanguagePrefetch as LanguagePrefetch
+from defectdojo_api_generated.models.language_request import LanguageRequest as LanguageRequest
+from defectdojo_api_generated.models.language_type import LanguageType as LanguageType
+from defectdojo_api_generated.models.language_type_request import LanguageTypeRequest as LanguageTypeRequest
+from defectdojo_api_generated.models.meta import Meta as Meta
+from defectdojo_api_generated.models.meta_main import MetaMain as MetaMain
+from defectdojo_api_generated.models.meta_main_request import MetaMainRequest as MetaMainRequest
+from defectdojo_api_generated.models.meta_request import MetaRequest as MetaRequest
+from defectdojo_api_generated.models.metadata import Metadata as Metadata
+from defectdojo_api_generated.models.metadata_request import MetadataRequest as MetadataRequest
+from defectdojo_api_generated.models.network_locations import NetworkLocations as NetworkLocations
+from defectdojo_api_generated.models.network_locations_request import NetworkLocationsRequest as NetworkLocationsRequest
+from defectdojo_api_generated.models.note import Note as Note
+from defectdojo_api_generated.models.note_history import NoteHistory as NoteHistory
+from defectdojo_api_generated.models.note_history_request import NoteHistoryRequest as NoteHistoryRequest
+from defectdojo_api_generated.models.note_request import NoteRequest as NoteRequest
+from defectdojo_api_generated.models.note_type import NoteType as NoteType
+from defectdojo_api_generated.models.note_type_request import NoteTypeRequest as NoteTypeRequest
+from defectdojo_api_generated.models.notification_webhooks import NotificationWebhooks as NotificationWebhooks
+from defectdojo_api_generated.models.notification_webhooks_request import (
+    NotificationWebhooksRequest as NotificationWebhooksRequest,
+)
+from defectdojo_api_generated.models.notifications import Notifications as Notifications
+from defectdojo_api_generated.models.notifications_request import NotificationsRequest as NotificationsRequest
+from defectdojo_api_generated.models.paginated_announcement_list import (
+    PaginatedAnnouncementList as PaginatedAnnouncementList,
+)
+from defectdojo_api_generated.models.paginated_app_analysis_list import (
+    PaginatedAppAnalysisList as PaginatedAppAnalysisList,
+)
+from defectdojo_api_generated.models.paginated_burp_raw_request_response_multi_list import (
+    PaginatedBurpRawRequestResponseMultiList as PaginatedBurpRawRequestResponseMultiList,
+)
+from defectdojo_api_generated.models.paginated_configuration_permission_list import (
+    PaginatedConfigurationPermissionList as PaginatedConfigurationPermissionList,
+)
+from defectdojo_api_generated.models.paginated_credential_list import PaginatedCredentialList as PaginatedCredentialList
+from defectdojo_api_generated.models.paginated_credential_mapping_list import (
+    PaginatedCredentialMappingList as PaginatedCredentialMappingList,
+)
+from defectdojo_api_generated.models.paginated_delete_preview_list import (
+    PaginatedDeletePreviewList as PaginatedDeletePreviewList,
+)
+from defectdojo_api_generated.models.paginated_development_environment_list import (
+    PaginatedDevelopmentEnvironmentList as PaginatedDevelopmentEnvironmentList,
+)
+from defectdojo_api_generated.models.paginated_dojo_group_list import PaginatedDojoGroupList as PaginatedDojoGroupList
+from defectdojo_api_generated.models.paginated_dojo_group_member_list import (
+    PaginatedDojoGroupMemberList as PaginatedDojoGroupMemberList,
+)
+from defectdojo_api_generated.models.paginated_endpoint_list import PaginatedEndpointList as PaginatedEndpointList
+from defectdojo_api_generated.models.paginated_endpoint_status_list import (
+    PaginatedEndpointStatusList as PaginatedEndpointStatusList,
+)
+from defectdojo_api_generated.models.paginated_engagement_list import PaginatedEngagementList as PaginatedEngagementList
+from defectdojo_api_generated.models.paginated_engagement_presets_list import (
+    PaginatedEngagementPresetsList as PaginatedEngagementPresetsList,
+)
+from defectdojo_api_generated.models.paginated_finding_list import PaginatedFindingList as PaginatedFindingList
+from defectdojo_api_generated.models.paginated_finding_template_list import (
+    PaginatedFindingTemplateList as PaginatedFindingTemplateList,
+)
+from defectdojo_api_generated.models.paginated_global_role_list import (
+    PaginatedGlobalRoleList as PaginatedGlobalRoleList,
+)
+from defectdojo_api_generated.models.paginated_jira_instance_list import (
+    PaginatedJIRAInstanceList as PaginatedJIRAInstanceList,
+)
+from defectdojo_api_generated.models.paginated_jira_issue_list import PaginatedJIRAIssueList as PaginatedJIRAIssueList
+from defectdojo_api_generated.models.paginated_jira_project_list import (
+    PaginatedJIRAProjectList as PaginatedJIRAProjectList,
+)
+from defectdojo_api_generated.models.paginated_language_list import PaginatedLanguageList as PaginatedLanguageList
+from defectdojo_api_generated.models.paginated_language_type_list import (
+    PaginatedLanguageTypeList as PaginatedLanguageTypeList,
+)
+from defectdojo_api_generated.models.paginated_meta_list import PaginatedMetaList as PaginatedMetaList
+from defectdojo_api_generated.models.paginated_network_locations_list import (
+    PaginatedNetworkLocationsList as PaginatedNetworkLocationsList,
+)
+from defectdojo_api_generated.models.paginated_note_list import PaginatedNoteList as PaginatedNoteList
+from defectdojo_api_generated.models.paginated_note_type_list import PaginatedNoteTypeList as PaginatedNoteTypeList
+from defectdojo_api_generated.models.paginated_notification_webhooks_list import (
+    PaginatedNotificationWebhooksList as PaginatedNotificationWebhooksList,
+)
+from defectdojo_api_generated.models.paginated_notifications_list import (
+    PaginatedNotificationsList as PaginatedNotificationsList,
+)
 from defectdojo_api_generated.models.paginated_product_api_scan_configuration_list import (
-    PaginatedProductAPIScanConfigurationList,
+    PaginatedProductAPIScanConfigurationList as PaginatedProductAPIScanConfigurationList,
 )
 from defectdojo_api_generated.models.paginated_product_api_scan_configuration_list_prefetch import (
-    PaginatedProductAPIScanConfigurationListPrefetch,
+    PaginatedProductAPIScanConfigurationListPrefetch as PaginatedProductAPIScanConfigurationListPrefetch,
 )
-from defectdojo_api_generated.models.paginated_product_group_list import PaginatedProductGroupList
-from defectdojo_api_generated.models.paginated_product_group_list_prefetch import PaginatedProductGroupListPrefetch
-from defectdojo_api_generated.models.paginated_product_list import PaginatedProductList
-from defectdojo_api_generated.models.paginated_product_list_prefetch import PaginatedProductListPrefetch
-from defectdojo_api_generated.models.paginated_product_member_list import PaginatedProductMemberList
-from defectdojo_api_generated.models.paginated_product_member_list_prefetch import PaginatedProductMemberListPrefetch
-from defectdojo_api_generated.models.paginated_product_type_group_list import PaginatedProductTypeGroupList
+from defectdojo_api_generated.models.paginated_product_group_list import (
+    PaginatedProductGroupList as PaginatedProductGroupList,
+)
+from defectdojo_api_generated.models.paginated_product_group_list_prefetch import (
+    PaginatedProductGroupListPrefetch as PaginatedProductGroupListPrefetch,
+)
+from defectdojo_api_generated.models.paginated_product_list import PaginatedProductList as PaginatedProductList
+from defectdojo_api_generated.models.paginated_product_list_prefetch import (
+    PaginatedProductListPrefetch as PaginatedProductListPrefetch,
+)
+from defectdojo_api_generated.models.paginated_product_member_list import (
+    PaginatedProductMemberList as PaginatedProductMemberList,
+)
+from defectdojo_api_generated.models.paginated_product_member_list_prefetch import (
+    PaginatedProductMemberListPrefetch as PaginatedProductMemberListPrefetch,
+)
+from defectdojo_api_generated.models.paginated_product_type_group_list import (
+    PaginatedProductTypeGroupList as PaginatedProductTypeGroupList,
+)
 from defectdojo_api_generated.models.paginated_product_type_group_list_prefetch import (
-    PaginatedProductTypeGroupListPrefetch,
+    PaginatedProductTypeGroupListPrefetch as PaginatedProductTypeGroupListPrefetch,
 )
-from defectdojo_api_generated.models.paginated_product_type_list import PaginatedProductTypeList
-from defectdojo_api_generated.models.paginated_product_type_list_prefetch import PaginatedProductTypeListPrefetch
-from defectdojo_api_generated.models.paginated_product_type_member_list import PaginatedProductTypeMemberList
+from defectdojo_api_generated.models.paginated_product_type_list import (
+    PaginatedProductTypeList as PaginatedProductTypeList,
+)
+from defectdojo_api_generated.models.paginated_product_type_list_prefetch import (
+    PaginatedProductTypeListPrefetch as PaginatedProductTypeListPrefetch,
+)
+from defectdojo_api_generated.models.paginated_product_type_member_list import (
+    PaginatedProductTypeMemberList as PaginatedProductTypeMemberList,
+)
 from defectdojo_api_generated.models.paginated_product_type_member_list_prefetch import (
-    PaginatedProductTypeMemberListPrefetch,
+    PaginatedProductTypeMemberListPrefetch as PaginatedProductTypeMemberListPrefetch,
 )
-from defectdojo_api_generated.models.paginated_questionnaire_answer_list import PaginatedQuestionnaireAnswerList
+from defectdojo_api_generated.models.paginated_questionnaire_answer_list import (
+    PaginatedQuestionnaireAnswerList as PaginatedQuestionnaireAnswerList,
+)
 from defectdojo_api_generated.models.paginated_questionnaire_answered_survey_list import (
-    PaginatedQuestionnaireAnsweredSurveyList,
+    PaginatedQuestionnaireAnsweredSurveyList as PaginatedQuestionnaireAnsweredSurveyList,
 )
 from defectdojo_api_generated.models.paginated_questionnaire_answered_survey_list_prefetch import (
-    PaginatedQuestionnaireAnsweredSurveyListPrefetch,
+    PaginatedQuestionnaireAnsweredSurveyListPrefetch as PaginatedQuestionnaireAnsweredSurveyListPrefetch,
 )
 from defectdojo_api_generated.models.paginated_questionnaire_engagement_survey_list import (
-    PaginatedQuestionnaireEngagementSurveyList,
+    PaginatedQuestionnaireEngagementSurveyList as PaginatedQuestionnaireEngagementSurveyList,
 )
 from defectdojo_api_generated.models.paginated_questionnaire_general_survey_list import (
-    PaginatedQuestionnaireGeneralSurveyList,
+    PaginatedQuestionnaireGeneralSurveyList as PaginatedQuestionnaireGeneralSurveyList,
 )
-from defectdojo_api_generated.models.paginated_questionnaire_question_list import PaginatedQuestionnaireQuestionList
-from defectdojo_api_generated.models.paginated_regulation_list import PaginatedRegulationList
-from defectdojo_api_generated.models.paginated_risk_acceptance_list import PaginatedRiskAcceptanceList
-from defectdojo_api_generated.models.paginated_role_list import PaginatedRoleList
-from defectdojo_api_generated.models.paginated_sla_configuration_list import PaginatedSLAConfigurationList
-from defectdojo_api_generated.models.paginated_sonarqube_issue_list import PaginatedSonarqubeIssueList
+from defectdojo_api_generated.models.paginated_questionnaire_question_list import (
+    PaginatedQuestionnaireQuestionList as PaginatedQuestionnaireQuestionList,
+)
+from defectdojo_api_generated.models.paginated_regulation_list import PaginatedRegulationList as PaginatedRegulationList
+from defectdojo_api_generated.models.paginated_risk_acceptance_list import (
+    PaginatedRiskAcceptanceList as PaginatedRiskAcceptanceList,
+)
+from defectdojo_api_generated.models.paginated_role_list import PaginatedRoleList as PaginatedRoleList
+from defectdojo_api_generated.models.paginated_sla_configuration_list import (
+    PaginatedSLAConfigurationList as PaginatedSLAConfigurationList,
+)
+from defectdojo_api_generated.models.paginated_sonarqube_issue_list import (
+    PaginatedSonarqubeIssueList as PaginatedSonarqubeIssueList,
+)
 from defectdojo_api_generated.models.paginated_sonarqube_issue_transition_list import (
-    PaginatedSonarqubeIssueTransitionList,
+    PaginatedSonarqubeIssueTransitionList as PaginatedSonarqubeIssueTransitionList,
 )
-from defectdojo_api_generated.models.paginated_stub_finding_list import PaginatedStubFindingList
-from defectdojo_api_generated.models.paginated_system_settings_list import PaginatedSystemSettingsList
-from defectdojo_api_generated.models.paginated_test_import_list import PaginatedTestImportList
-from defectdojo_api_generated.models.paginated_test_list import PaginatedTestList
-from defectdojo_api_generated.models.paginated_test_type_list import PaginatedTestTypeList
-from defectdojo_api_generated.models.paginated_tool_configuration_list import PaginatedToolConfigurationList
+from defectdojo_api_generated.models.paginated_stub_finding_list import (
+    PaginatedStubFindingList as PaginatedStubFindingList,
+)
+from defectdojo_api_generated.models.paginated_system_settings_list import (
+    PaginatedSystemSettingsList as PaginatedSystemSettingsList,
+)
+from defectdojo_api_generated.models.paginated_test_import_list import (
+    PaginatedTestImportList as PaginatedTestImportList,
+)
+from defectdojo_api_generated.models.paginated_test_list import PaginatedTestList as PaginatedTestList
+from defectdojo_api_generated.models.paginated_test_type_list import PaginatedTestTypeList as PaginatedTestTypeList
+from defectdojo_api_generated.models.paginated_tool_configuration_list import (
+    PaginatedToolConfigurationList as PaginatedToolConfigurationList,
+)
 from defectdojo_api_generated.models.paginated_tool_configuration_list_prefetch import (
-    PaginatedToolConfigurationListPrefetch,
+    PaginatedToolConfigurationListPrefetch as PaginatedToolConfigurationListPrefetch,
 )
-from defectdojo_api_generated.models.paginated_tool_product_settings_list import PaginatedToolProductSettingsList
+from defectdojo_api_generated.models.paginated_tool_product_settings_list import (
+    PaginatedToolProductSettingsList as PaginatedToolProductSettingsList,
+)
 from defectdojo_api_generated.models.paginated_tool_product_settings_list_prefetch import (
-    PaginatedToolProductSettingsListPrefetch,
+    PaginatedToolProductSettingsListPrefetch as PaginatedToolProductSettingsListPrefetch,
 )
-from defectdojo_api_generated.models.paginated_tool_type_list import PaginatedToolTypeList
-from defectdojo_api_generated.models.paginated_user_contact_info_list import PaginatedUserContactInfoList
+from defectdojo_api_generated.models.paginated_tool_type_list import PaginatedToolTypeList as PaginatedToolTypeList
+from defectdojo_api_generated.models.paginated_user_contact_info_list import (
+    PaginatedUserContactInfoList as PaginatedUserContactInfoList,
+)
 from defectdojo_api_generated.models.paginated_user_contact_info_list_prefetch import (
-    PaginatedUserContactInfoListPrefetch,
+    PaginatedUserContactInfoListPrefetch as PaginatedUserContactInfoListPrefetch,
 )
-from defectdojo_api_generated.models.paginated_user_list import PaginatedUserList
-from defectdojo_api_generated.models.patched_announcement_request import PatchedAnnouncementRequest
-from defectdojo_api_generated.models.patched_app_analysis_request import PatchedAppAnalysisRequest
+from defectdojo_api_generated.models.paginated_user_list import PaginatedUserList as PaginatedUserList
+from defectdojo_api_generated.models.patched_announcement_request import (
+    PatchedAnnouncementRequest as PatchedAnnouncementRequest,
+)
+from defectdojo_api_generated.models.patched_app_analysis_request import (
+    PatchedAppAnalysisRequest as PatchedAppAnalysisRequest,
+)
 from defectdojo_api_generated.models.patched_burp_raw_request_response_multi_request import (
-    PatchedBurpRawRequestResponseMultiRequest,
+    PatchedBurpRawRequestResponseMultiRequest as PatchedBurpRawRequestResponseMultiRequest,
 )
-from defectdojo_api_generated.models.patched_credential_mapping_request import PatchedCredentialMappingRequest
-from defectdojo_api_generated.models.patched_credential_request import PatchedCredentialRequest
-from defectdojo_api_generated.models.patched_development_environment_request import PatchedDevelopmentEnvironmentRequest
-from defectdojo_api_generated.models.patched_dojo_group_request import PatchedDojoGroupRequest
-from defectdojo_api_generated.models.patched_endpoint_request import PatchedEndpointRequest
-from defectdojo_api_generated.models.patched_endpoint_status_request import PatchedEndpointStatusRequest
-from defectdojo_api_generated.models.patched_engagement_presets_request import PatchedEngagementPresetsRequest
-from defectdojo_api_generated.models.patched_engagement_request import PatchedEngagementRequest
-from defectdojo_api_generated.models.patched_finding_note_request import PatchedFindingNoteRequest
-from defectdojo_api_generated.models.patched_finding_request import PatchedFindingRequest
-from defectdojo_api_generated.models.patched_finding_template_request import PatchedFindingTemplateRequest
-from defectdojo_api_generated.models.patched_global_role_request import PatchedGlobalRoleRequest
-from defectdojo_api_generated.models.patched_jira_instance_request import PatchedJIRAInstanceRequest
-from defectdojo_api_generated.models.patched_jira_issue_request import PatchedJIRAIssueRequest
-from defectdojo_api_generated.models.patched_jira_project_request import PatchedJIRAProjectRequest
-from defectdojo_api_generated.models.patched_language_request import PatchedLanguageRequest
-from defectdojo_api_generated.models.patched_language_type_request import PatchedLanguageTypeRequest
-from defectdojo_api_generated.models.patched_meta_main_request import PatchedMetaMainRequest
-from defectdojo_api_generated.models.patched_meta_request import PatchedMetaRequest
-from defectdojo_api_generated.models.patched_network_locations_request import PatchedNetworkLocationsRequest
-from defectdojo_api_generated.models.patched_note_request import PatchedNoteRequest
-from defectdojo_api_generated.models.patched_note_type_request import PatchedNoteTypeRequest
-from defectdojo_api_generated.models.patched_notification_webhooks_request import PatchedNotificationWebhooksRequest
-from defectdojo_api_generated.models.patched_notifications_request import PatchedNotificationsRequest
+from defectdojo_api_generated.models.patched_credential_mapping_request import (
+    PatchedCredentialMappingRequest as PatchedCredentialMappingRequest,
+)
+from defectdojo_api_generated.models.patched_credential_request import (
+    PatchedCredentialRequest as PatchedCredentialRequest,
+)
+from defectdojo_api_generated.models.patched_development_environment_request import (
+    PatchedDevelopmentEnvironmentRequest as PatchedDevelopmentEnvironmentRequest,
+)
+from defectdojo_api_generated.models.patched_dojo_group_request import (
+    PatchedDojoGroupRequest as PatchedDojoGroupRequest,
+)
+from defectdojo_api_generated.models.patched_endpoint_request import PatchedEndpointRequest as PatchedEndpointRequest
+from defectdojo_api_generated.models.patched_endpoint_status_request import (
+    PatchedEndpointStatusRequest as PatchedEndpointStatusRequest,
+)
+from defectdojo_api_generated.models.patched_engagement_presets_request import (
+    PatchedEngagementPresetsRequest as PatchedEngagementPresetsRequest,
+)
+from defectdojo_api_generated.models.patched_engagement_request import (
+    PatchedEngagementRequest as PatchedEngagementRequest,
+)
+from defectdojo_api_generated.models.patched_finding_note_request import (
+    PatchedFindingNoteRequest as PatchedFindingNoteRequest,
+)
+from defectdojo_api_generated.models.patched_finding_request import PatchedFindingRequest as PatchedFindingRequest
+from defectdojo_api_generated.models.patched_finding_template_request import (
+    PatchedFindingTemplateRequest as PatchedFindingTemplateRequest,
+)
+from defectdojo_api_generated.models.patched_global_role_request import (
+    PatchedGlobalRoleRequest as PatchedGlobalRoleRequest,
+)
+from defectdojo_api_generated.models.patched_jira_instance_request import (
+    PatchedJIRAInstanceRequest as PatchedJIRAInstanceRequest,
+)
+from defectdojo_api_generated.models.patched_jira_issue_request import (
+    PatchedJIRAIssueRequest as PatchedJIRAIssueRequest,
+)
+from defectdojo_api_generated.models.patched_jira_project_request import (
+    PatchedJIRAProjectRequest as PatchedJIRAProjectRequest,
+)
+from defectdojo_api_generated.models.patched_language_request import PatchedLanguageRequest as PatchedLanguageRequest
+from defectdojo_api_generated.models.patched_language_type_request import (
+    PatchedLanguageTypeRequest as PatchedLanguageTypeRequest,
+)
+from defectdojo_api_generated.models.patched_meta_main_request import PatchedMetaMainRequest as PatchedMetaMainRequest
+from defectdojo_api_generated.models.patched_meta_request import PatchedMetaRequest as PatchedMetaRequest
+from defectdojo_api_generated.models.patched_network_locations_request import (
+    PatchedNetworkLocationsRequest as PatchedNetworkLocationsRequest,
+)
+from defectdojo_api_generated.models.patched_note_request import PatchedNoteRequest as PatchedNoteRequest
+from defectdojo_api_generated.models.patched_note_type_request import PatchedNoteTypeRequest as PatchedNoteTypeRequest
+from defectdojo_api_generated.models.patched_notification_webhooks_request import (
+    PatchedNotificationWebhooksRequest as PatchedNotificationWebhooksRequest,
+)
+from defectdojo_api_generated.models.patched_notifications_request import (
+    PatchedNotificationsRequest as PatchedNotificationsRequest,
+)
 from defectdojo_api_generated.models.patched_product_api_scan_configuration_request import (
-    PatchedProductAPIScanConfigurationRequest,
+    PatchedProductAPIScanConfigurationRequest as PatchedProductAPIScanConfigurationRequest,
 )
-from defectdojo_api_generated.models.patched_product_request import PatchedProductRequest
-from defectdojo_api_generated.models.patched_product_type_request import PatchedProductTypeRequest
-from defectdojo_api_generated.models.patched_regulation_request import PatchedRegulationRequest
-from defectdojo_api_generated.models.patched_risk_acceptance_request import PatchedRiskAcceptanceRequest
-from defectdojo_api_generated.models.patched_sla_configuration_request import PatchedSLAConfigurationRequest
-from defectdojo_api_generated.models.patched_sonarqube_issue_request import PatchedSonarqubeIssueRequest
+from defectdojo_api_generated.models.patched_product_request import PatchedProductRequest as PatchedProductRequest
+from defectdojo_api_generated.models.patched_product_type_request import (
+    PatchedProductTypeRequest as PatchedProductTypeRequest,
+)
+from defectdojo_api_generated.models.patched_regulation_request import (
+    PatchedRegulationRequest as PatchedRegulationRequest,
+)
+from defectdojo_api_generated.models.patched_risk_acceptance_request import (
+    PatchedRiskAcceptanceRequest as PatchedRiskAcceptanceRequest,
+)
+from defectdojo_api_generated.models.patched_sla_configuration_request import (
+    PatchedSLAConfigurationRequest as PatchedSLAConfigurationRequest,
+)
+from defectdojo_api_generated.models.patched_sonarqube_issue_request import (
+    PatchedSonarqubeIssueRequest as PatchedSonarqubeIssueRequest,
+)
 from defectdojo_api_generated.models.patched_sonarqube_issue_transition_request import (
-    PatchedSonarqubeIssueTransitionRequest,
+    PatchedSonarqubeIssueTransitionRequest as PatchedSonarqubeIssueTransitionRequest,
 )
-from defectdojo_api_generated.models.patched_stub_finding_request import PatchedStubFindingRequest
-from defectdojo_api_generated.models.patched_system_settings_request import PatchedSystemSettingsRequest
-from defectdojo_api_generated.models.patched_tag_request import PatchedTagRequest
-from defectdojo_api_generated.models.patched_test_import_request import PatchedTestImportRequest
-from defectdojo_api_generated.models.patched_test_request import PatchedTestRequest
-from defectdojo_api_generated.models.patched_test_type_request import PatchedTestTypeRequest
-from defectdojo_api_generated.models.patched_tool_configuration_request import PatchedToolConfigurationRequest
-from defectdojo_api_generated.models.patched_tool_product_settings_request import PatchedToolProductSettingsRequest
-from defectdojo_api_generated.models.patched_tool_type_request import PatchedToolTypeRequest
-from defectdojo_api_generated.models.patched_user_contact_info_request import PatchedUserContactInfoRequest
-from defectdojo_api_generated.models.patched_user_request import PatchedUserRequest
-from defectdojo_api_generated.models.product import Product
-from defectdojo_api_generated.models.product_api_scan_configuration import ProductAPIScanConfiguration
-from defectdojo_api_generated.models.product_api_scan_configuration_request import ProductAPIScanConfigurationRequest
-from defectdojo_api_generated.models.product_group import ProductGroup
-from defectdojo_api_generated.models.product_group_request import ProductGroupRequest
-from defectdojo_api_generated.models.product_member import ProductMember
-from defectdojo_api_generated.models.product_member_request import ProductMemberRequest
-from defectdojo_api_generated.models.product_meta import ProductMeta
-from defectdojo_api_generated.models.product_meta_request import ProductMetaRequest
-from defectdojo_api_generated.models.product_request import ProductRequest
-from defectdojo_api_generated.models.product_type import ProductType
-from defectdojo_api_generated.models.product_type_group import ProductTypeGroup
-from defectdojo_api_generated.models.product_type_group_request import ProductTypeGroupRequest
-from defectdojo_api_generated.models.product_type_member import ProductTypeMember
-from defectdojo_api_generated.models.product_type_member_request import ProductTypeMemberRequest
-from defectdojo_api_generated.models.product_type_request import ProductTypeRequest
-from defectdojo_api_generated.models.questionnaire_answer import QuestionnaireAnswer
-from defectdojo_api_generated.models.questionnaire_answered_survey import QuestionnaireAnsweredSurvey
-from defectdojo_api_generated.models.questionnaire_engagement_survey import QuestionnaireEngagementSurvey
-from defectdojo_api_generated.models.questionnaire_general_survey import QuestionnaireGeneralSurvey
-from defectdojo_api_generated.models.questionnaire_question import QuestionnaireQuestion
-from defectdojo_api_generated.models.raw_file import RawFile
-from defectdojo_api_generated.models.re_import_scan import ReImportScan
-from defectdojo_api_generated.models.regulation import Regulation
-from defectdojo_api_generated.models.regulation_request import RegulationRequest
-from defectdojo_api_generated.models.report_generate import ReportGenerate
-from defectdojo_api_generated.models.report_generate_option_request import ReportGenerateOptionRequest
-from defectdojo_api_generated.models.risk_acceptance import RiskAcceptance
-from defectdojo_api_generated.models.risk_acceptance_proof import RiskAcceptanceProof
-from defectdojo_api_generated.models.risk_acceptance_request import RiskAcceptanceRequest
-from defectdojo_api_generated.models.role import Role
-from defectdojo_api_generated.models.sla_configuration import SLAConfiguration
-from defectdojo_api_generated.models.sla_configuration_request import SLAConfigurationRequest
-from defectdojo_api_generated.models.severity_status_statistics import SeverityStatusStatistics
-from defectdojo_api_generated.models.severity_status_statistics_request import SeverityStatusStatisticsRequest
-from defectdojo_api_generated.models.sonarqube_issue import SonarqubeIssue
-from defectdojo_api_generated.models.sonarqube_issue_request import SonarqubeIssueRequest
-from defectdojo_api_generated.models.sonarqube_issue_transition import SonarqubeIssueTransition
-from defectdojo_api_generated.models.sonarqube_issue_transition_request import SonarqubeIssueTransitionRequest
-from defectdojo_api_generated.models.status_statistics import StatusStatistics
-from defectdojo_api_generated.models.status_statistics_request import StatusStatisticsRequest
-from defectdojo_api_generated.models.stub_finding import StubFinding
-from defectdojo_api_generated.models.stub_finding_create import StubFindingCreate
-from defectdojo_api_generated.models.stub_finding_create_request import StubFindingCreateRequest
-from defectdojo_api_generated.models.stub_finding_request import StubFindingRequest
-from defectdojo_api_generated.models.system_settings import SystemSettings
-from defectdojo_api_generated.models.system_settings_request import SystemSettingsRequest
-from defectdojo_api_generated.models.tag import Tag
-from defectdojo_api_generated.models.tag_request import TagRequest
-from defectdojo_api_generated.models.test import Test
-from defectdojo_api_generated.models.test_create import TestCreate
-from defectdojo_api_generated.models.test_create_request import TestCreateRequest
-from defectdojo_api_generated.models.test_import import TestImport
-from defectdojo_api_generated.models.test_import_finding_action import TestImportFindingAction
-from defectdojo_api_generated.models.test_import_finding_action_request import TestImportFindingActionRequest
-from defectdojo_api_generated.models.test_import_request import TestImportRequest
-from defectdojo_api_generated.models.test_request import TestRequest
-from defectdojo_api_generated.models.test_to_files import TestToFiles
-from defectdojo_api_generated.models.test_to_notes import TestToNotes
-from defectdojo_api_generated.models.test_type import TestType
-from defectdojo_api_generated.models.test_type_request import TestTypeRequest
-from defectdojo_api_generated.models.tool_configuration import ToolConfiguration
-from defectdojo_api_generated.models.tool_configuration_request import ToolConfigurationRequest
-from defectdojo_api_generated.models.tool_product_settings import ToolProductSettings
-from defectdojo_api_generated.models.tool_product_settings_request import ToolProductSettingsRequest
-from defectdojo_api_generated.models.tool_type import ToolType
-from defectdojo_api_generated.models.tool_type_request import ToolTypeRequest
-from defectdojo_api_generated.models.user import User
-from defectdojo_api_generated.models.user_contact_info import UserContactInfo
-from defectdojo_api_generated.models.user_contact_info_request import UserContactInfoRequest
-from defectdojo_api_generated.models.user_profile import UserProfile
-from defectdojo_api_generated.models.user_request import UserRequest
-from defectdojo_api_generated.models.user_stub import UserStub
-from defectdojo_api_generated.models.user_stub_request import UserStubRequest
-from defectdojo_api_generated.models.vulnerability_id import VulnerabilityId
-from defectdojo_api_generated.models.vulnerability_id_request import VulnerabilityIdRequest
-from defectdojo_api_generated.models.vulnerability_id_template import VulnerabilityIdTemplate
-from defectdojo_api_generated.models.vulnerability_id_template_request import VulnerabilityIdTemplateRequest
+from defectdojo_api_generated.models.patched_stub_finding_request import (
+    PatchedStubFindingRequest as PatchedStubFindingRequest,
+)
+from defectdojo_api_generated.models.patched_system_settings_request import (
+    PatchedSystemSettingsRequest as PatchedSystemSettingsRequest,
+)
+from defectdojo_api_generated.models.patched_tag_request import PatchedTagRequest as PatchedTagRequest
+from defectdojo_api_generated.models.patched_test_import_request import (
+    PatchedTestImportRequest as PatchedTestImportRequest,
+)
+from defectdojo_api_generated.models.patched_test_request import PatchedTestRequest as PatchedTestRequest
+from defectdojo_api_generated.models.patched_test_type_request import PatchedTestTypeRequest as PatchedTestTypeRequest
+from defectdojo_api_generated.models.patched_tool_configuration_request import (
+    PatchedToolConfigurationRequest as PatchedToolConfigurationRequest,
+)
+from defectdojo_api_generated.models.patched_tool_product_settings_request import (
+    PatchedToolProductSettingsRequest as PatchedToolProductSettingsRequest,
+)
+from defectdojo_api_generated.models.patched_tool_type_request import PatchedToolTypeRequest as PatchedToolTypeRequest
+from defectdojo_api_generated.models.patched_user_contact_info_request import (
+    PatchedUserContactInfoRequest as PatchedUserContactInfoRequest,
+)
+from defectdojo_api_generated.models.patched_user_request import PatchedUserRequest as PatchedUserRequest
+from defectdojo_api_generated.models.product import Product as Product
+from defectdojo_api_generated.models.product_api_scan_configuration import (
+    ProductAPIScanConfiguration as ProductAPIScanConfiguration,
+)
+from defectdojo_api_generated.models.product_api_scan_configuration_request import (
+    ProductAPIScanConfigurationRequest as ProductAPIScanConfigurationRequest,
+)
+from defectdojo_api_generated.models.product_group import ProductGroup as ProductGroup
+from defectdojo_api_generated.models.product_group_request import ProductGroupRequest as ProductGroupRequest
+from defectdojo_api_generated.models.product_member import ProductMember as ProductMember
+from defectdojo_api_generated.models.product_member_request import ProductMemberRequest as ProductMemberRequest
+from defectdojo_api_generated.models.product_meta import ProductMeta as ProductMeta
+from defectdojo_api_generated.models.product_meta_request import ProductMetaRequest as ProductMetaRequest
+from defectdojo_api_generated.models.product_request import ProductRequest as ProductRequest
+from defectdojo_api_generated.models.product_type import ProductType as ProductType
+from defectdojo_api_generated.models.product_type_group import ProductTypeGroup as ProductTypeGroup
+from defectdojo_api_generated.models.product_type_group_request import (
+    ProductTypeGroupRequest as ProductTypeGroupRequest,
+)
+from defectdojo_api_generated.models.product_type_member import ProductTypeMember as ProductTypeMember
+from defectdojo_api_generated.models.product_type_member_request import (
+    ProductTypeMemberRequest as ProductTypeMemberRequest,
+)
+from defectdojo_api_generated.models.product_type_request import ProductTypeRequest as ProductTypeRequest
+from defectdojo_api_generated.models.questionnaire_answer import QuestionnaireAnswer as QuestionnaireAnswer
+from defectdojo_api_generated.models.questionnaire_answered_survey import (
+    QuestionnaireAnsweredSurvey as QuestionnaireAnsweredSurvey,
+)
+from defectdojo_api_generated.models.questionnaire_engagement_survey import (
+    QuestionnaireEngagementSurvey as QuestionnaireEngagementSurvey,
+)
+from defectdojo_api_generated.models.questionnaire_general_survey import (
+    QuestionnaireGeneralSurvey as QuestionnaireGeneralSurvey,
+)
+from defectdojo_api_generated.models.questionnaire_question import QuestionnaireQuestion as QuestionnaireQuestion
+from defectdojo_api_generated.models.raw_file import RawFile as RawFile
+from defectdojo_api_generated.models.re_import_scan import ReImportScan as ReImportScan
+from defectdojo_api_generated.models.regulation import Regulation as Regulation
+from defectdojo_api_generated.models.regulation_request import RegulationRequest as RegulationRequest
+from defectdojo_api_generated.models.report_generate import ReportGenerate as ReportGenerate
+from defectdojo_api_generated.models.report_generate_option_request import (
+    ReportGenerateOptionRequest as ReportGenerateOptionRequest,
+)
+from defectdojo_api_generated.models.risk_acceptance import RiskAcceptance as RiskAcceptance
+from defectdojo_api_generated.models.risk_acceptance_proof import RiskAcceptanceProof as RiskAcceptanceProof
+from defectdojo_api_generated.models.risk_acceptance_request import RiskAcceptanceRequest as RiskAcceptanceRequest
+from defectdojo_api_generated.models.role import Role as Role
+from defectdojo_api_generated.models.sla_configuration import SLAConfiguration as SLAConfiguration
+from defectdojo_api_generated.models.sla_configuration_request import SLAConfigurationRequest as SLAConfigurationRequest
+from defectdojo_api_generated.models.severity_status_statistics import (
+    SeverityStatusStatistics as SeverityStatusStatistics,
+)
+from defectdojo_api_generated.models.severity_status_statistics_request import (
+    SeverityStatusStatisticsRequest as SeverityStatusStatisticsRequest,
+)
+from defectdojo_api_generated.models.sonarqube_issue import SonarqubeIssue as SonarqubeIssue
+from defectdojo_api_generated.models.sonarqube_issue_request import SonarqubeIssueRequest as SonarqubeIssueRequest
+from defectdojo_api_generated.models.sonarqube_issue_transition import (
+    SonarqubeIssueTransition as SonarqubeIssueTransition,
+)
+from defectdojo_api_generated.models.sonarqube_issue_transition_request import (
+    SonarqubeIssueTransitionRequest as SonarqubeIssueTransitionRequest,
+)
+from defectdojo_api_generated.models.status_statistics import StatusStatistics as StatusStatistics
+from defectdojo_api_generated.models.status_statistics_request import StatusStatisticsRequest as StatusStatisticsRequest
+from defectdojo_api_generated.models.stub_finding import StubFinding as StubFinding
+from defectdojo_api_generated.models.stub_finding_create import StubFindingCreate as StubFindingCreate
+from defectdojo_api_generated.models.stub_finding_create_request import (
+    StubFindingCreateRequest as StubFindingCreateRequest,
+)
+from defectdojo_api_generated.models.stub_finding_request import StubFindingRequest as StubFindingRequest
+from defectdojo_api_generated.models.system_settings import SystemSettings as SystemSettings
+from defectdojo_api_generated.models.system_settings_request import SystemSettingsRequest as SystemSettingsRequest
+from defectdojo_api_generated.models.tag import Tag as Tag
+from defectdojo_api_generated.models.tag_request import TagRequest as TagRequest
+from defectdojo_api_generated.models.test import Test as Test
+from defectdojo_api_generated.models.test_create import TestCreate as TestCreate
+from defectdojo_api_generated.models.test_create_request import TestCreateRequest as TestCreateRequest
+from defectdojo_api_generated.models.test_import import TestImport as TestImport
+from defectdojo_api_generated.models.test_import_finding_action import (
+    TestImportFindingAction as TestImportFindingAction,
+)
+from defectdojo_api_generated.models.test_import_finding_action_request import (
+    TestImportFindingActionRequest as TestImportFindingActionRequest,
+)
+from defectdojo_api_generated.models.test_import_request import TestImportRequest as TestImportRequest
+from defectdojo_api_generated.models.test_request import TestRequest as TestRequest
+from defectdojo_api_generated.models.test_to_files import TestToFiles as TestToFiles
+from defectdojo_api_generated.models.test_to_notes import TestToNotes as TestToNotes
+from defectdojo_api_generated.models.test_type import TestType as TestType
+from defectdojo_api_generated.models.test_type_request import TestTypeRequest as TestTypeRequest
+from defectdojo_api_generated.models.tool_configuration import ToolConfiguration as ToolConfiguration
+from defectdojo_api_generated.models.tool_configuration_request import (
+    ToolConfigurationRequest as ToolConfigurationRequest,
+)
+from defectdojo_api_generated.models.tool_product_settings import ToolProductSettings as ToolProductSettings
+from defectdojo_api_generated.models.tool_product_settings_request import (
+    ToolProductSettingsRequest as ToolProductSettingsRequest,
+)
+from defectdojo_api_generated.models.tool_type import ToolType as ToolType
+from defectdojo_api_generated.models.tool_type_request import ToolTypeRequest as ToolTypeRequest
+from defectdojo_api_generated.models.user import User as User
+from defectdojo_api_generated.models.user_contact_info import UserContactInfo as UserContactInfo
+from defectdojo_api_generated.models.user_contact_info_request import UserContactInfoRequest as UserContactInfoRequest
+from defectdojo_api_generated.models.user_profile import UserProfile as UserProfile
+from defectdojo_api_generated.models.user_request import UserRequest as UserRequest
+from defectdojo_api_generated.models.user_stub import UserStub as UserStub
+from defectdojo_api_generated.models.user_stub_request import UserStubRequest as UserStubRequest
+from defectdojo_api_generated.models.vulnerability_id import VulnerabilityId as VulnerabilityId
+from defectdojo_api_generated.models.vulnerability_id_request import VulnerabilityIdRequest as VulnerabilityIdRequest
+from defectdojo_api_generated.models.vulnerability_id_template import VulnerabilityIdTemplate as VulnerabilityIdTemplate
+from defectdojo_api_generated.models.vulnerability_id_template_request import (
+    VulnerabilityIdTemplateRequest as VulnerabilityIdTemplateRequest,
+)

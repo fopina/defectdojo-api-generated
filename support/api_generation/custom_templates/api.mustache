@@ -1,9 +1,8 @@
-# coding: utf-8
-
 {{>partial_header}}
+
 import warnings
-from pydantic import Field, StrictFloat, StrictStr, StrictInt, BaseModel
-from typing import Any, Dict, List, Optional, Tuple, Union, TypeVar, Generic, TYPE_CHECKING, Generator
+from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
+from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 {{#imports}}
@@ -13,17 +12,7 @@ from typing_extensions import Annotated
 from {{packageName}}.api_client import ApiClient, RequestSerialized
 from {{packageName}}.api_response import ApiResponse
 from {{packageName}}.rest import RESTResponseType
-from {{packageName}}.helpers import IteratorResult, get_all_pages
 
-{{#operations}}
-if TYPE_CHECKING:
-    """placeholder for IteratorResult types if any"""
-{{#operation}}
-{{#vendorExtensions.x-has-iterator}}
-    from {{packageName}}.models import {{vendorExtensions.x-iterator-item}}
-{{/vendorExtensions.x-has-iterator}}
-{{/operation}}
-{{/operations}}
 
 {{#operations}}
 class {{classname}}:
@@ -40,35 +29,41 @@ class {{classname}}:
 {{#operation}}
 
 
-    {{#asyncio}}async {{/asyncio}}def {{operationId}}{{>partial_api_args}} -> {{{returnType}}}{{^returnType}}None{{/returnType}}:
+    @validate_call
+    {{#async}}async {{/async}}def {{operationId}}{{>partial_api_args}} -> {{{returnType}}}{{^returnType}}None{{/returnType}}:
 {{>partial_api}}
-        response_data = {{#asyncio}}await {{/asyncio}}self.api_client.call_api(
+
+        response_data = {{#async}}await {{/async}}self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        {{#asyncio}}await {{/asyncio}}response_data.read()
+        {{#async}}await {{/async}}response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         ).data
 
 
-    {{#asyncio}}async {{/asyncio}}def {{operationId}}_with_http_info{{>partial_api_args}} -> ApiResponse[{{{returnType}}}{{^returnType}}None{{/returnType}}]:
+    @validate_call
+    {{#async}}async {{/async}}def {{operationId}}_with_http_info{{>partial_api_args}} -> ApiResponse[{{{returnType}}}{{^returnType}}None{{/returnType}}]:
 {{>partial_api}}
-        response_data = {{#asyncio}}await {{/asyncio}}self.api_client.call_api(
+
+        response_data = {{#async}}await {{/async}}self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        {{#asyncio}}await {{/asyncio}}response_data.read()
+        {{#async}}await {{/async}}response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         )
 
 
-    {{#asyncio}}async {{/asyncio}}def {{operationId}}_without_preload_content{{>partial_api_args}} -> RESTResponseType:
+    @validate_call
+    {{#async}}async {{/async}}def {{operationId}}_without_preload_content{{>partial_api_args}} -> RESTResponseType:
 {{>partial_api}}
-        response_data = {{#asyncio}}await {{/asyncio}}self.api_client.call_api(
+
+        response_data = {{#async}}await {{/async}}self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -242,12 +237,6 @@ class {{classname}}:
             _request_auth=_request_auth
         )
 
-    {{#vendorExtensions.x-has-iterator}}
-    def {{operationId}}_iterator{{>partial_api_args}} -> 'Generator[IteratorResult[{{vendorExtensions.x-iterator-item}}, {{returnType}}], None, None]':
-        _params = locals()
-        for page in get_all_pages(self.api_client, {{classname}}.{{operationId}}, **_params):
-            for result in page.results:
-                yield IteratorResult(result=result, page=page)
-    {{/vendorExtensions.x-has-iterator}}
+
 {{/operation}}
 {{/operations}}

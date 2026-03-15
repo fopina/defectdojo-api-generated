@@ -19,11 +19,13 @@ __all__ = [
     "ApiKeyError",
     "ApiAttributeError",
     "ApiException",
+    "DefectDojo",
     {{#hasHttpSignatureMethods}}"HttpSigningConfiguration",
     {{/hasHttpSignatureMethods}}{{#models}}{{#model}}"{{classname}}"{{^-last}},
     {{/-last}}{{#-last}},{{/-last}}{{/model}}{{/models}}
 ]
 
+from {{packageName}}.client import DefectDojo
 {{^lazyImports}}
 {{>exports_package}}
 {{/lazyImports}}

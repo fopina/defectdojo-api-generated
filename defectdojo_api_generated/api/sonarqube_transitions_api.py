@@ -1,5 +1,3 @@
-# coding: utf-8
-
 """
 Defect Dojo API v2
 

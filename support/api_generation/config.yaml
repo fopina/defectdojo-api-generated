@@ -5,6 +5,8 @@ additionalProperties:
   packageName: defectdojo_api_generated
   packageUrl: https://github.com/fopina/defectdojo-api-generated
   projectName: defectdojo-api-generated
+  # cannot use this and include packageVersion dynamically... customize template instead...
+  # httpUserAgent: defectdojo-api-generated/{{ packageVersion }}
 globalProperties:
   modelDocs: false
   apiDocs: false

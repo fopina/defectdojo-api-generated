@@ -31,16 +31,16 @@ class FindingCreateRequest(BaseModel):
 
     mitigated: Optional[datetime] = None
     mitigated_by: Optional[StrictInt] = None
-    test: StrictInt
+    test: Optional[StrictInt] = None
     thread_id: Optional[StrictInt] = 0
-    found_by: List[StrictInt]
+    found_by: Optional[List[StrictInt]] = None
     url: Optional[Annotated[str, Field(min_length=1, strict=True)]] = None
     tags: Optional[List[Annotated[str, Field(min_length=1, strict=True)]]] = None
     push_to_jira: Optional[StrictBool] = False
     vulnerability_ids: Optional[List[VulnerabilityIdRequest]] = None
     reporter: Optional[StrictInt] = None
-    title: Annotated[str, Field(min_length=1, strict=True, max_length=511)] = Field(
-        description='A short description of the flaw.'
+    title: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=511)]] = Field(
+        default=None, description='A short description of the flaw.'
     )
     var_date: Optional[date] = Field(default=None, description='The date the flaw was discovered.', alias='date')
     sla_start_date: Optional[date] = Field(
@@ -96,11 +96,11 @@ class FindingCreateRequest(BaseModel):
         default=None,
         description='Numerical CVSSv4 score for the vulnerability. If the vector is given, the score is updated while saving the finding. The value must be between 0-10.',
     )
-    severity: Annotated[str, Field(min_length=1, strict=True, max_length=200)] = Field(
-        description='The severity level of this flaw (Critical, High, Medium, Low, Info).'
+    severity: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=200)]] = Field(
+        default=None, description='The severity level of this flaw (Critical, High, Medium, Low, Info).'
     )
-    description: Annotated[str, Field(min_length=1, strict=True)] = Field(
-        description='Longer more descriptive information about the flaw.'
+    description: Optional[Annotated[str, Field(min_length=1, strict=True)]] = Field(
+        default=None, description='Longer more descriptive information about the flaw.'
     )
     mitigation: Optional[StrictStr] = Field(default=None, description='Text describing how to best fix the flaw.')
     fix_available: Optional[StrictBool] = Field(
@@ -122,8 +122,10 @@ class FindingCreateRequest(BaseModel):
     references: Optional[StrictStr] = Field(
         default=None, description='The external documentation available for this flaw.'
     )
-    active: StrictBool = Field(description='Denotes if this flaw is active or not.')
-    verified: StrictBool = Field(description='Denotes if this flaw has been manually verified by the tester.')
+    active: Optional[StrictBool] = Field(default=None, description='Denotes if this flaw is active or not.')
+    verified: Optional[StrictBool] = Field(
+        default=None, description='Denotes if this flaw has been manually verified by the tester.'
+    )
     false_p: Optional[StrictBool] = Field(
         default=None, description='Denotes if this flaw has been deemed a false positive by the tester.'
     )
@@ -143,8 +145,8 @@ class FindingCreateRequest(BaseModel):
         default=None, description='Denotes if this finding is under defect review.'
     )
     is_mitigated: Optional[StrictBool] = Field(default=None, description='Denotes if this flaw has been fixed.')
-    numerical_severity: Annotated[str, Field(min_length=1, strict=True, max_length=4)] = Field(
-        description='The numerical representation of the severity (S0, S1, S2, S3, S4).'
+    numerical_severity: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=4)]] = Field(
+        default=None, description='The numerical representation of the severity (S0, S1, S2, S3, S4).'
     )
     line: Optional[Annotated[int, Field(le=2147483647, strict=True, ge=-2147483648)]] = Field(
         default=None, description='Source line number of the attack vector.'

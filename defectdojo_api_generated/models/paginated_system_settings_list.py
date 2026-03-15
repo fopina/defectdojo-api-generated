@@ -28,10 +28,10 @@ class PaginatedSystemSettingsList(BaseModel):
     PaginatedSystemSettingsList
     """  # noqa: E501
 
-    count: StrictInt
+    count: Optional[StrictInt] = None
     next: Optional[StrictStr] = None
     previous: Optional[StrictStr] = None
-    results: List[SystemSettings]
+    results: Optional[List[SystemSettings]] = None
     __properties: ClassVar[List[str]] = ['count', 'next', 'previous', 'results']
 
     model_config = ConfigDict(

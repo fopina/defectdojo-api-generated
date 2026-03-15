@@ -29,10 +29,10 @@ class PaginatedCredentialList(BaseModel):
     PaginatedCredentialList
     """  # noqa: E501
 
-    count: StrictInt
+    count: Optional[StrictInt] = None
     next: Optional[StrictStr] = None
     previous: Optional[StrictStr] = None
-    results: List[Credential]
+    results: Optional[List[Credential]] = None
     prefetch: Optional[CredentialPrefetch] = None
     __properties: ClassVar[List[str]] = ['count', 'next', 'previous', 'results', 'prefetch']
 

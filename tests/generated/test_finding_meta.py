@@ -39,8 +39,6 @@ class TestFindingMeta(unittest.TestCase):
             )
         else:
             return FindingMeta(
-                name = '',
-                value = '',
         )
         """
 

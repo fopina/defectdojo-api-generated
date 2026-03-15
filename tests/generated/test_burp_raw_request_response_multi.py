@@ -41,9 +41,6 @@ class TestBurpRawRequestResponseMulti(unittest.TestCase):
             )
         else:
             return BurpRawRequestResponseMulti(
-                id = 56,
-                burp_request_base64 = '',
-                burp_response_base64 = '',
         )
         """
 

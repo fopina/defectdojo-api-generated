@@ -26,9 +26,9 @@ class ConfigurationPermission(BaseModel):
     ConfigurationPermission
     """  # noqa: E501
 
-    id: StrictInt
-    name: Annotated[str, Field(strict=True, max_length=255)]
-    codename: Annotated[str, Field(strict=True, max_length=100)]
+    id: Optional[StrictInt] = None
+    name: Optional[Annotated[str, Field(strict=True, max_length=255)]] = None
+    codename: Optional[Annotated[str, Field(strict=True, max_length=100)]] = None
     __properties: ClassVar[List[str]] = ['id', 'name', 'codename']
 
     model_config = ConfigDict(

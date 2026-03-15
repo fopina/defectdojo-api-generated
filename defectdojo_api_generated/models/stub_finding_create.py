@@ -27,13 +27,13 @@ class StubFindingCreate(BaseModel):
     StubFindingCreate
     """  # noqa: E501
 
-    id: StrictInt
-    test: StrictInt
-    title: Annotated[str, Field(strict=True, max_length=1000)]
+    id: Optional[StrictInt] = None
+    test: Optional[StrictInt] = None
+    title: Optional[Annotated[str, Field(strict=True, max_length=1000)]] = None
     var_date: Optional[date] = Field(default=None, alias='date')
     severity: Optional[Annotated[str, Field(strict=True, max_length=200)]] = None
     description: Optional[StrictStr] = None
-    reporter: StrictInt
+    reporter: Optional[StrictInt] = None
     __properties: ClassVar[List[str]] = ['id', 'test', 'title', 'date', 'severity', 'description', 'reporter']
 
     model_config = ConfigDict(

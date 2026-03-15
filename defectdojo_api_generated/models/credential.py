@@ -28,21 +28,21 @@ class Credential(BaseModel):
     Credential
     """  # noqa: E501
 
-    id: StrictInt
-    name: Annotated[str, Field(strict=True, max_length=200)]
-    username: Annotated[str, Field(strict=True, max_length=200)]
-    role: Annotated[str, Field(strict=True, max_length=200)]
+    id: Optional[StrictInt] = None
+    name: Optional[Annotated[str, Field(strict=True, max_length=200)]] = None
+    username: Optional[Annotated[str, Field(strict=True, max_length=200)]] = None
+    role: Optional[Annotated[str, Field(strict=True, max_length=200)]] = None
     authentication: Optional[StrictStr] = Field(
         default=None, description='* `Form` - Form Authentication * `SSO` - SSO Redirect'
     )
     http_authentication: Optional[StrictStr] = Field(default=None, description='* `Basic` - Basic * `NTLM` - NTLM')
     description: Optional[Annotated[str, Field(strict=True, max_length=2000)]] = None
-    url: Annotated[str, Field(strict=True, max_length=2000)]
+    url: Optional[Annotated[str, Field(strict=True, max_length=2000)]] = None
     login_regex: Optional[Annotated[str, Field(strict=True, max_length=200)]] = None
     logout_regex: Optional[Annotated[str, Field(strict=True, max_length=200)]] = None
     is_valid: Optional[StrictBool] = None
-    environment: StrictInt
-    notes: List[StrictInt]
+    environment: Optional[StrictInt] = None
+    notes: Optional[List[StrictInt]] = None
     prefetch: Optional[CredentialPrefetch] = None
     __properties: ClassVar[List[str]] = [
         'id',

@@ -55,13 +55,6 @@ class TestEndpoint(unittest.TestCase):
             )
         else:
             return Endpoint(
-                id = 56,
-                endpoint_params = [
-                    56
-                    ],
-                findings = [
-                    56
-                    ],
         )
         """
 

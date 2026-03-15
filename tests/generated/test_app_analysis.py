@@ -102,13 +102,7 @@ class TestAppAnalysis(unittest.TestCase):
                                         name = '', 
                                         description = '', 
                                         critical_product = True, 
-                                        key_product = True, 
-                                        members = [
-                                            56
-                                            ], 
-                                        authorization_groups = [
-                                            56
-                                            ], )
+                                        key_product = True, )
                                     }, 
                                 product_manager = {
                                     'key' : defectdojo_api_generated.models.user_stub.UserStub(
@@ -149,11 +143,6 @@ class TestAppAnalysis(unittest.TestCase):
             )
         else:
             return AppAnalysis(
-                id = 56,
-                name = '',
-                created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                product = 56,
-                user = 56,
         )
         """
 

@@ -65,32 +65,6 @@ class TestPaginatedTestImportList(unittest.TestCase):
             )
         else:
             return PaginatedTestImportList(
-                count = 123,
-                results = [
-                    defectdojo_api_generated.models.test_import.TestImport(
-                        id = 56, 
-                        test_import_finding_action_set = [
-                            defectdojo_api_generated.models.test_import_finding_action.TestImportFindingAction(
-                                id = 56, 
-                                created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                modified = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                action = 'N', 
-                                test_import = 56, 
-                                finding = 56, )
-                            ], 
-                        created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        modified = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        import_settings = null, 
-                        type = '', 
-                        version = '', 
-                        build_id = '', 
-                        commit_hash = '', 
-                        branch_tag = '', 
-                        test = 56, 
-                        findings_affected = [
-                            56
-                            ], )
-                    ],
         )
         """
 

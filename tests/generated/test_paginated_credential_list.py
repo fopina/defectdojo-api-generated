@@ -90,31 +90,6 @@ class TestPaginatedCredentialList(unittest.TestCase):
             )
         else:
             return PaginatedCredentialList(
-                count = 123,
-                results = [
-                    defectdojo_api_generated.models.credential.Credential(
-                        id = 56, 
-                        name = '', 
-                        username = '', 
-                        role = '', 
-                        authentication = 'Form', 
-                        http_authentication = 'Basic', 
-                        description = '', 
-                        url = '', 
-                        login_regex = '', 
-                        logout_regex = '', 
-                        is_valid = True, 
-                        environment = 56, 
-                        notes = [
-                            56
-                            ], 
-                        prefetch = defectdojo_api_generated.models.credential_prefetch.Credential_prefetch(
-                            environment = {
-                                'key' : defectdojo_api_generated.models.finding_environment.FindingEnvironment(
-                                    id = 56, 
-                                    name = '', )
-                                }, ), )
-                    ],
         )
         """
 

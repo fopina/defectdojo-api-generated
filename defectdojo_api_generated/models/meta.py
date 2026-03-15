@@ -26,13 +26,13 @@ class Meta(BaseModel):
     Meta
     """  # noqa: E501
 
-    id: StrictInt
+    id: Optional[StrictInt] = None
     product: Optional[StrictInt] = None
     endpoint: Optional[StrictInt] = None
     location: Optional[StrictInt] = None
     finding: Optional[StrictInt] = None
-    name: Annotated[str, Field(strict=True, max_length=120)]
-    value: Annotated[str, Field(strict=True, max_length=300)]
+    name: Optional[Annotated[str, Field(strict=True, max_length=120)]] = None
+    value: Optional[Annotated[str, Field(strict=True, max_length=300)]] = None
     __properties: ClassVar[List[str]] = ['id', 'product', 'endpoint', 'location', 'finding', 'name', 'value']
 
     model_config = ConfigDict(

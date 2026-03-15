@@ -53,20 +53,6 @@ class TestPaginatedJIRAIssueList(unittest.TestCase):
             )
         else:
             return PaginatedJIRAIssueList(
-                count = 123,
-                results = [
-                    defectdojo_api_generated.models.jira_issue.JIRAIssue(
-                        id = 56, 
-                        url = '', 
-                        jira_id = '', 
-                        jira_key = '', 
-                        jira_creation = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        jira_change = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        jira_project = 56, 
-                        finding = 56, 
-                        engagement = 56, 
-                        finding_group = 56, )
-                    ],
         )
         """
 

@@ -29,9 +29,9 @@ class Product(BaseModel):
     Product
     """  # noqa: E501
 
-    id: StrictInt
-    findings_count: StrictInt
-    findings_list: List[StrictInt]
+    id: Optional[StrictInt] = None
+    findings_count: Optional[StrictInt] = None
+    findings_list: Optional[List[StrictInt]] = None
     business_criticality: Optional[StrictStr] = Field(
         default=None,
         description='* `very high` - Very High * `high` - High * `medium` - Medium * `low` - Low * `very low` - Very Low * `none` - None',
@@ -49,12 +49,12 @@ class Product(BaseModel):
         description='* `third party library` - Third Party Library * `purchased` - Purchased * `contractor` - Contractor Developed * `internal` - Internally Developed * `open source` - Open Source * `outsourced` - Outsourced',
     )
     tags: Optional[List[StrictStr]] = None
-    product_meta: List[ProductMeta]
+    product_meta: Optional[List[ProductMeta]] = None
     created: Optional[datetime] = Field(
-        description='Time that the object was initially created, and saved to the database'
+        default=None, description='Time that the object was initially created, and saved to the database'
     )
-    name: Annotated[str, Field(strict=True, max_length=255)]
-    description: Annotated[str, Field(strict=True, max_length=4000)]
+    name: Optional[Annotated[str, Field(strict=True, max_length=255)]] = None
+    description: Optional[Annotated[str, Field(strict=True, max_length=4000)]] = None
     prod_numeric_grade: Optional[Annotated[int, Field(le=2147483647, strict=True, ge=-2147483648)]] = None
     user_records: Optional[Annotated[int, Field(le=2147483647, strict=True, ge=0)]] = Field(
         default=None, description='Estimate the number of user records within the application.'
@@ -85,10 +85,10 @@ class Product(BaseModel):
     product_manager: Optional[StrictInt] = None
     technical_contact: Optional[StrictInt] = None
     team_manager: Optional[StrictInt] = None
-    prod_type: StrictInt
+    prod_type: Optional[StrictInt] = None
     sla_configuration: Optional[StrictInt] = None
-    members: List[StrictInt]
-    authorization_groups: List[StrictInt]
+    members: Optional[List[StrictInt]] = None
+    authorization_groups: Optional[List[StrictInt]] = None
     regulations: Optional[List[StrictInt]] = None
     prefetch: Optional[AssetPrefetch] = None
     __properties: ClassVar[List[str]] = [

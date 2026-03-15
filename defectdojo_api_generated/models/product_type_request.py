@@ -26,7 +26,7 @@ class ProductTypeRequest(BaseModel):
     ProductTypeRequest
     """  # noqa: E501
 
-    name: Annotated[str, Field(min_length=1, strict=True, max_length=255)]
+    name: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=255)]] = None
     description: Optional[Annotated[str, Field(strict=True, max_length=4000)]] = None
     critical_product: Optional[StrictBool] = None
     key_product: Optional[StrictBool] = None

@@ -30,11 +30,11 @@ class NoteHistory(BaseModel):
     NoteHistory
     """  # noqa: E501
 
-    id: StrictInt
-    current_editor: UserStub
-    note_type: NoteType
-    data: StrictStr
-    time: Optional[datetime]
+    id: Optional[StrictInt] = None
+    current_editor: Optional[UserStub] = None
+    note_type: Optional[NoteType] = None
+    data: Optional[StrictStr] = None
+    time: Optional[datetime] = None
     __properties: ClassVar[List[str]] = ['id', 'current_editor', 'note_type', 'data', 'time']
 
     model_config = ConfigDict(

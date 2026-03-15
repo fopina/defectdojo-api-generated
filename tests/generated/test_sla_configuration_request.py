@@ -48,7 +48,6 @@ class TestSLAConfigurationRequest(unittest.TestCase):
             )
         else:
             return SLAConfigurationRequest(
-                name = '0',
         )
         """
 

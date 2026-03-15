@@ -38,7 +38,6 @@ class TestNetworkLocationsRequest(unittest.TestCase):
             )
         else:
             return NetworkLocationsRequest(
-                location = '0',
         )
         """
 

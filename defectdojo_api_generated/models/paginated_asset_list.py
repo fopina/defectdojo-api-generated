@@ -29,10 +29,10 @@ class PaginatedAssetList(BaseModel):
     PaginatedAssetList
     """  # noqa: E501
 
-    count: StrictInt
+    count: Optional[StrictInt] = None
     next: Optional[StrictStr] = None
     previous: Optional[StrictStr] = None
-    results: List[Asset]
+    results: Optional[List[Asset]] = None
     prefetch: Optional[AssetPrefetch] = None
     __properties: ClassVar[List[str]] = ['count', 'next', 'previous', 'results', 'prefetch']
 

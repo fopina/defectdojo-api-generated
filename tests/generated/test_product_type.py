@@ -71,16 +71,6 @@ class TestProductType(unittest.TestCase):
             )
         else:
             return ProductType(
-                id = 56,
-                created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                updated = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                name = '',
-                members = [
-                    56
-                    ],
-                authorization_groups = [
-                    56
-                    ],
         )
         """
 

@@ -50,17 +50,6 @@ class TestPaginatedRegulationList(unittest.TestCase):
             )
         else:
             return PaginatedRegulationList(
-                count = 123,
-                results = [
-                    defectdojo_api_generated.models.regulation.Regulation(
-                        id = 56, 
-                        name = '', 
-                        acronym = '', 
-                        category = 'privacy', 
-                        jurisdiction = '', 
-                        description = '', 
-                        reference = '', )
-                    ],
         )
         """
 

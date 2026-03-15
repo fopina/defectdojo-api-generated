@@ -46,12 +46,6 @@ class TestMetaMain(unittest.TestCase):
             )
         else:
             return MetaMain(
-                id = 56,
-                metadata = [
-                    defectdojo_api_generated.models.metadata.Metadata(
-                        name = '', 
-                        value = '', )
-                    ],
         )
         """
 

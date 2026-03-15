@@ -38,7 +38,6 @@ class TestRiskAcceptanceProof(unittest.TestCase):
             )
         else:
             return RiskAcceptanceProof(
-                path = '',
         )
         """
 

@@ -41,7 +41,6 @@ class TestStubFindingRequest(unittest.TestCase):
             )
         else:
             return StubFindingRequest(
-                title = '0',
         )
         """
 

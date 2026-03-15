@@ -40,8 +40,6 @@ class TestToolType(unittest.TestCase):
             )
         else:
             return ToolType(
-                id = 56,
-                name = '',
         )
         """
 

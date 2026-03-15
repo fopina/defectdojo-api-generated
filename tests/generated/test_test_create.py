@@ -64,16 +64,6 @@ class TestTestCreate(unittest.TestCase):
             )
         else:
             return TestCreate(
-                id = 56,
-                engagement = 56,
-                target_start = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                target_end = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                updated = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                test_type = 56,
-                files = [
-                    56
-                    ],
         )
         """
 

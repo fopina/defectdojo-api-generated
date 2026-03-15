@@ -63,9 +63,6 @@ class TestAssetRequest(unittest.TestCase):
             )
         else:
             return AssetRequest(
-                organization = 56,
-                name = '0',
-                description = '0',
         )
         """
 

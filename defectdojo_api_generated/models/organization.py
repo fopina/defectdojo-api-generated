@@ -29,17 +29,19 @@ class Organization(BaseModel):
     Organization
     """  # noqa: E501
 
-    id: StrictInt
+    id: Optional[StrictInt] = None
     critical_asset: Optional[StrictBool] = False
     key_asset: Optional[StrictBool] = False
     created: Optional[datetime] = Field(
-        description='Time that the object was initially created, and saved to the database'
+        default=None, description='Time that the object was initially created, and saved to the database'
     )
-    updated: Optional[datetime] = Field(description='Time that the object was most recently saved to the database')
-    name: Annotated[str, Field(strict=True, max_length=255)]
+    updated: Optional[datetime] = Field(
+        default=None, description='Time that the object was most recently saved to the database'
+    )
+    name: Optional[Annotated[str, Field(strict=True, max_length=255)]] = None
     description: Optional[Annotated[str, Field(strict=True, max_length=4000)]] = None
-    members: List[StrictInt]
-    authorization_groups: List[StrictInt]
+    members: Optional[List[StrictInt]] = None
+    authorization_groups: Optional[List[StrictInt]] = None
     prefetch: Optional[OrganizationPrefetch] = None
     __properties: ClassVar[List[str]] = [
         'id',

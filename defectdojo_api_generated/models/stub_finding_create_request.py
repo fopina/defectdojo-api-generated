@@ -27,8 +27,8 @@ class StubFindingCreateRequest(BaseModel):
     StubFindingCreateRequest
     """  # noqa: E501
 
-    test: StrictInt
-    title: Annotated[str, Field(min_length=1, strict=True, max_length=1000)]
+    test: Optional[StrictInt] = None
+    title: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=1000)]] = None
     var_date: Optional[date] = Field(default=None, alias='date')
     severity: Optional[Annotated[str, Field(strict=True, max_length=200)]] = None
     description: Optional[StrictStr] = None

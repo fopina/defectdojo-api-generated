@@ -48,11 +48,6 @@ class TestCredentialRequest(unittest.TestCase):
             )
         else:
             return CredentialRequest(
-                name = '0',
-                username = '0',
-                role = '0',
-                url = '0',
-                environment = 56,
         )
         """
 

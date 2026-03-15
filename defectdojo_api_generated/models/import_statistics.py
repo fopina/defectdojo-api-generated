@@ -36,7 +36,9 @@ class ImportStatistics(BaseModel):
         default=None,
         description='Finding statistics of modifications made by the reimport. Only available when TRACK_IMPORT_HISTORY has not been disabled.',
     )
-    after: SeverityStatusStatistics = Field(description='Finding statistics as stored in Defect Dojo after the import')
+    after: Optional[SeverityStatusStatistics] = Field(
+        default=None, description='Finding statistics as stored in Defect Dojo after the import'
+    )
     __properties: ClassVar[List[str]] = ['before', 'delta', 'after']
 
     model_config = ConfigDict(

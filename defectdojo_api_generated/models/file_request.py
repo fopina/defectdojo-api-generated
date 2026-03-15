@@ -26,8 +26,8 @@ class FileRequest(BaseModel):
     FileRequest
     """  # noqa: E501
 
-    file: Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]]
-    title: Annotated[str, Field(min_length=1, strict=True, max_length=100)]
+    file: Optional[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]]] = None
+    title: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=100)]] = None
     __properties: ClassVar[List[str]] = ['file', 'title']
 
     model_config = ConfigDict(

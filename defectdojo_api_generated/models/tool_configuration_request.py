@@ -26,7 +26,7 @@ class ToolConfigurationRequest(BaseModel):
     ToolConfigurationRequest
     """  # noqa: E501
 
-    name: Annotated[str, Field(min_length=1, strict=True, max_length=200)]
+    name: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=200)]] = None
     description: Optional[Annotated[str, Field(strict=True, max_length=2000)]] = None
     url: Optional[Annotated[str, Field(strict=True, max_length=2000)]] = None
     authentication_type: Optional[StrictStr] = Field(
@@ -40,7 +40,7 @@ class ToolConfigurationRequest(BaseModel):
     auth_title: Optional[Annotated[str, Field(strict=True, max_length=200)]] = None
     ssh: Optional[Annotated[str, Field(strict=True, max_length=6000)]] = None
     api_key: Optional[Annotated[str, Field(strict=True, max_length=600)]] = None
-    tool_type: StrictInt
+    tool_type: Optional[StrictInt] = None
     __properties: ClassVar[List[str]] = [
         'name',
         'description',

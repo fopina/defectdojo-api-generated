@@ -45,14 +45,6 @@ class TestStatusStatisticsRequest(unittest.TestCase):
             )
         else:
             return StatusStatisticsRequest(
-                active = 56,
-                verified = 56,
-                duplicate = 56,
-                false_p = 56,
-                out_of_scope = 56,
-                is_mitigated = 56,
-                risk_accepted = 56,
-                total = 56,
         )
         """
 

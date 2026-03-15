@@ -100,9 +100,6 @@ class TestOrganization(unittest.TestCase):
                                         members = [
                                             56
                                             ], 
-                                        authorization_groups = [
-                                            56
-                                            ], 
                                         regulations = [
                                             56
                                             ], )
@@ -115,13 +112,7 @@ class TestOrganization(unittest.TestCase):
                                         name = '', 
                                         description = '', 
                                         critical_product = True, 
-                                        key_product = True, 
-                                        members = [
-                                            56
-                                            ], 
-                                        authorization_groups = [
-                                            56
-                                            ], )
+                                        key_product = True, )
                                     }, ), )
                         }, 
                     members = {
@@ -134,16 +125,6 @@ class TestOrganization(unittest.TestCase):
             )
         else:
             return Organization(
-                id = 56,
-                created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                updated = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                name = '',
-                members = [
-                    56
-                    ],
-                authorization_groups = [
-                    56
-                    ],
         )
         """
 

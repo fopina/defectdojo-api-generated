@@ -76,43 +76,6 @@ class TestPaginatedFindingTemplateList(unittest.TestCase):
             )
         else:
             return PaginatedFindingTemplateList(
-                count = 123,
-                results = [
-                    defectdojo_api_generated.models.finding_template.FindingTemplate(
-                        id = 56, 
-                        tags = [
-                            ''
-                            ], 
-                        vulnerability_ids = [
-                            ''
-                            ], 
-                        endpoints = [
-                            ''
-                            ], 
-                        title = '', 
-                        cwe = -2147483648, 
-                        cvssv3 = '', 
-                        cvssv3_score = 1.337, 
-                        cvssv4 = '', 
-                        cvssv4_score = 1.337, 
-                        severity = '', 
-                        description = '', 
-                        mitigation = '', 
-                        impact = '', 
-                        references = '', 
-                        last_used = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        numerical_severity = '', 
-                        fix_available = True, 
-                        fix_version = '', 
-                        planned_remediation_version = '', 
-                        effort_for_fixing = '', 
-                        steps_to_reproduce = '', 
-                        severity_justification = '', 
-                        component_name = '', 
-                        component_version = '', 
-                        notes = '', 
-                        endpoints_text = '', )
-                    ],
         )
         """
 

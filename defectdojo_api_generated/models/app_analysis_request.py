@@ -27,14 +27,14 @@ class AppAnalysisRequest(BaseModel):
     """  # noqa: E501
 
     tags: Optional[List[Annotated[str, Field(min_length=1, strict=True)]]] = None
-    name: Annotated[str, Field(min_length=1, strict=True, max_length=200)]
+    name: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=200)]] = None
     confidence: Optional[Annotated[int, Field(le=2147483647, strict=True, ge=-2147483648)]] = None
     version: Optional[Annotated[str, Field(strict=True, max_length=200)]] = None
     icon: Optional[Annotated[str, Field(strict=True, max_length=200)]] = None
     website: Optional[Annotated[str, Field(strict=True, max_length=400)]] = None
     website_found: Optional[Annotated[str, Field(strict=True, max_length=400)]] = None
-    product: StrictInt
-    user: StrictInt
+    product: Optional[StrictInt] = None
+    user: Optional[StrictInt] = None
     __properties: ClassVar[List[str]] = [
         'tags',
         'name',

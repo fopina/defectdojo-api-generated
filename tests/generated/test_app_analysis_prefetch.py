@@ -88,13 +88,7 @@ class TestAppAnalysisPrefetch(unittest.TestCase):
                                     name = '', 
                                     description = '', 
                                     critical_product = True, 
-                                    key_product = True, 
-                                    members = [
-                                        56
-                                        ], 
-                                    authorization_groups = [
-                                        56
-                                        ], )
+                                    key_product = True, )
                                 }, 
                             product_manager = {
                                 'key' : defectdojo_api_generated.models.user_stub.UserStub(

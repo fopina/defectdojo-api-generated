@@ -33,12 +33,12 @@ class UserProfile(BaseModel):
     UserProfile
     """  # noqa: E501
 
-    user: User
+    user: Optional[User] = None
     user_contact_info: Optional[UserContactInfo] = None
     global_role: Optional[GlobalRole] = None
-    dojo_group_member: List[DojoGroupMember]
-    product_type_member: List[ProductTypeMember]
-    product_member: List[ProductMember]
+    dojo_group_member: Optional[List[DojoGroupMember]] = None
+    product_type_member: Optional[List[ProductTypeMember]] = None
+    product_member: Optional[List[ProductMember]] = None
     __properties: ClassVar[List[str]] = [
         'user',
         'user_contact_info',

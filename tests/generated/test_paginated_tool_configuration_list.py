@@ -66,26 +66,6 @@ class TestPaginatedToolConfigurationList(unittest.TestCase):
             )
         else:
             return PaginatedToolConfigurationList(
-                count = 123,
-                results = [
-                    defectdojo_api_generated.models.tool_configuration.ToolConfiguration(
-                        id = 56, 
-                        name = '', 
-                        description = '', 
-                        url = '', 
-                        authentication_type = 'API', 
-                        extras = '', 
-                        username = '', 
-                        auth_title = '', 
-                        tool_type = 56, 
-                        prefetch = defectdojo_api_generated.models.paginated_tool_configuration_list_prefetch.PaginatedToolConfigurationList_prefetch(
-                            tool_type = {
-                                'key' : defectdojo_api_generated.models.tool_type.ToolType(
-                                    id = 56, 
-                                    name = '', 
-                                    description = '', )
-                                }, ), )
-                    ],
         )
         """
 

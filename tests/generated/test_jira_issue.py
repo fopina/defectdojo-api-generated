@@ -47,10 +47,6 @@ class TestJIRAIssue(unittest.TestCase):
             )
         else:
             return JIRAIssue(
-                id = 56,
-                url = '',
-                jira_id = '',
-                jira_key = '',
         )
         """
 

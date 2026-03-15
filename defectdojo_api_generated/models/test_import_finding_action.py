@@ -27,14 +27,14 @@ class TestImportFindingAction(BaseModel):
     TestImportFindingAction
     """  # noqa: E501
 
-    id: StrictInt
-    created: datetime
-    modified: datetime
+    id: Optional[StrictInt] = None
+    created: Optional[datetime] = None
+    modified: Optional[datetime] = None
     action: Optional[StrictStr] = Field(
         default=None, description='* `N` - created * `C` - closed * `R` - reactivated * `U` - untouched'
     )
-    test_import: StrictInt
-    finding: StrictInt
+    test_import: Optional[StrictInt] = None
+    finding: Optional[StrictInt] = None
     __properties: ClassVar[List[str]] = ['id', 'created', 'modified', 'action', 'test_import', 'finding']
 
     @field_validator('action')

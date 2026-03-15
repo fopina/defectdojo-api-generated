@@ -30,15 +30,15 @@ class ToolProductSettings(BaseModel):
     ToolProductSettings
     """  # noqa: E501
 
-    id: StrictInt
-    setting_url: StrictStr
-    product: StrictInt
-    name: Annotated[str, Field(strict=True, max_length=200)]
+    id: Optional[StrictInt] = None
+    setting_url: Optional[StrictStr] = None
+    product: Optional[StrictInt] = None
+    name: Optional[Annotated[str, Field(strict=True, max_length=200)]] = None
     description: Optional[Annotated[str, Field(strict=True, max_length=2000)]] = None
     url: Optional[Annotated[str, Field(strict=True, max_length=2000)]] = None
     tool_project_id: Optional[Annotated[str, Field(strict=True, max_length=200)]] = None
-    tool_configuration: StrictInt
-    notes: List[StrictInt]
+    tool_configuration: Optional[StrictInt] = None
+    notes: Optional[List[StrictInt]] = None
     prefetch: Optional[PaginatedToolProductSettingsListPrefetch] = None
     __properties: ClassVar[List[str]] = [
         'id',

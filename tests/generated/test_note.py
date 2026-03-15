@@ -68,35 +68,6 @@ class TestNote(unittest.TestCase):
             )
         else:
             return Note(
-                id = 56,
-                author = defectdojo_api_generated.models.user_stub.UserStub(
-                    id = 56, 
-                    username = 'A', 
-                    first_name = '', 
-                    last_name = '', ),
-                editor = defectdojo_api_generated.models.user_stub.UserStub(
-                    id = 56, 
-                    username = 'A', 
-                    first_name = '', 
-                    last_name = '', ),
-                history = [
-                    defectdojo_api_generated.models.note_history.NoteHistory(
-                        id = 56, 
-                        current_editor = null, 
-                        note_type = null, 
-                        data = '', 
-                        time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
-                    ],
-                note_type = defectdojo_api_generated.models.note_type.NoteType(
-                    id = 56, 
-                    name = '', 
-                    description = '', 
-                    is_single = True, 
-                    is_active = True, 
-                    is_mandatory = True, ),
-                entry = '',
-                var_date = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                edit_time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
         )
         """
 

@@ -27,15 +27,15 @@ class ExecutiveSummary(BaseModel):
     ExecutiveSummary
     """  # noqa: E501
 
-    engagement_name: Annotated[str, Field(strict=True, max_length=200)]
-    engagement_target_start: date
-    engagement_target_end: date
-    test_type_name: Annotated[str, Field(strict=True, max_length=200)]
-    test_target_start: datetime
-    test_target_end: datetime
-    test_environment_name: Annotated[str, Field(strict=True, max_length=200)]
-    test_strategy_ref: Annotated[str, Field(strict=True, max_length=200)]
-    total_findings: StrictInt
+    engagement_name: Optional[Annotated[str, Field(strict=True, max_length=200)]] = None
+    engagement_target_start: Optional[date] = None
+    engagement_target_end: Optional[date] = None
+    test_type_name: Optional[Annotated[str, Field(strict=True, max_length=200)]] = None
+    test_target_start: Optional[datetime] = None
+    test_target_end: Optional[datetime] = None
+    test_environment_name: Optional[Annotated[str, Field(strict=True, max_length=200)]] = None
+    test_strategy_ref: Optional[Annotated[str, Field(strict=True, max_length=200)]] = None
+    total_findings: Optional[StrictInt] = None
     __properties: ClassVar[List[str]] = [
         'engagement_name',
         'engagement_target_start',

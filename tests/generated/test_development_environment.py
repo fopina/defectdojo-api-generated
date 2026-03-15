@@ -39,8 +39,6 @@ class TestDevelopmentEnvironment(unittest.TestCase):
             )
         else:
             return DevelopmentEnvironment(
-                id = 56,
-                name = '',
         )
         """
 

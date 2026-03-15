@@ -28,10 +28,10 @@ class OrganizationMember(BaseModel):
     OrganizationMember
     """  # noqa: E501
 
-    id: StrictInt
-    organization: StrictInt
-    user: StrictInt
-    role: StrictInt
+    id: Optional[StrictInt] = None
+    organization: Optional[StrictInt] = None
+    user: Optional[StrictInt] = None
+    role: Optional[StrictInt] = None
     prefetch: Optional[OrganizationMemberPrefetch] = None
     __properties: ClassVar[List[str]] = ['id', 'organization', 'user', 'role', 'prefetch']
 

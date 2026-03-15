@@ -42,11 +42,6 @@ class TestBurpRawRequestResponseRequest(unittest.TestCase):
             )
         else:
             return BurpRawRequestResponseRequest(
-                req_resp = [
-                    {
-                        'key' : '0'
-                        }
-                    ],
         )
         """
 

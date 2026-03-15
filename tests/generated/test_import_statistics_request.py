@@ -81,13 +81,7 @@ class TestImportStatisticsRequest(unittest.TestCase):
                         high = , 
                         critical = , 
                         total = , ), 
-                    closed = defectdojo_api_generated.models.severity_status_statistics_request.SeverityStatusStatisticsRequest(
-                        info = , 
-                        low = , 
-                        medium = , 
-                        high = , 
-                        critical = , 
-                        total = , ), 
+                    closed = defectdojo_api_generated.models.severity_status_statistics_request.SeverityStatusStatisticsRequest(), 
                     reactivated = , 
                     untouched = , ),
                 after = defectdojo_api_generated.models.severity_status_statistics_request.SeverityStatusStatisticsRequest(
@@ -116,29 +110,6 @@ class TestImportStatisticsRequest(unittest.TestCase):
             )
         else:
             return ImportStatisticsRequest(
-                after = defectdojo_api_generated.models.severity_status_statistics_request.SeverityStatusStatisticsRequest(
-                    info = defectdojo_api_generated.models.status_statistics_request.StatusStatisticsRequest(
-                        active = 56, 
-                        verified = 56, 
-                        duplicate = 56, 
-                        false_p = 56, 
-                        out_of_scope = 56, 
-                        is_mitigated = 56, 
-                        risk_accepted = 56, 
-                        total = 56, ), 
-                    low = defectdojo_api_generated.models.status_statistics_request.StatusStatisticsRequest(
-                        active = 56, 
-                        verified = 56, 
-                        duplicate = 56, 
-                        false_p = 56, 
-                        out_of_scope = 56, 
-                        is_mitigated = 56, 
-                        risk_accepted = 56, 
-                        total = 56, ), 
-                    medium = , 
-                    high = , 
-                    critical = , 
-                    total = , ),
         )
         """
 

@@ -26,8 +26,8 @@ class TestTypeCreate(BaseModel):
     TestTypeCreate
     """  # noqa: E501
 
-    id: StrictInt
-    name: Annotated[str, Field(strict=True, max_length=200)]
+    id: Optional[StrictInt] = None
+    name: Optional[Annotated[str, Field(strict=True, max_length=200)]] = None
     static_tool: Optional[StrictBool] = None
     dynamic_tool: Optional[StrictBool] = None
     active: Optional[StrictBool] = None

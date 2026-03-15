@@ -26,9 +26,11 @@ class DojoGroupMemberRequest(BaseModel):
     DojoGroupMemberRequest
     """  # noqa: E501
 
-    group: StrictInt
-    user: StrictInt
-    role: StrictInt = Field(description='This role determines the permissions of the user to manage the group.')
+    group: Optional[StrictInt] = None
+    user: Optional[StrictInt] = None
+    role: Optional[StrictInt] = Field(
+        default=None, description='This role determines the permissions of the user to manage the group.'
+    )
     __properties: ClassVar[List[str]] = ['group', 'user', 'role']
 
     model_config = ConfigDict(

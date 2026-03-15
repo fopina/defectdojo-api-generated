@@ -28,10 +28,10 @@ class PaginatedSonarqubeIssueTransitionList(BaseModel):
     PaginatedSonarqubeIssueTransitionList
     """  # noqa: E501
 
-    count: StrictInt
+    count: Optional[StrictInt] = None
     next: Optional[StrictStr] = None
     previous: Optional[StrictStr] = None
-    results: List[SonarqubeIssueTransition]
+    results: Optional[List[SonarqubeIssueTransition]] = None
     __properties: ClassVar[List[str]] = ['count', 'next', 'previous', 'results']
 
     model_config = ConfigDict(

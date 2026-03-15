@@ -26,7 +26,7 @@ class AddNewNoteOptionRequest(BaseModel):
     AddNewNoteOptionRequest
     """  # noqa: E501
 
-    entry: Annotated[str, Field(min_length=1, strict=True)]
+    entry: Optional[Annotated[str, Field(min_length=1, strict=True)]] = None
     private: Optional[StrictBool] = None
     note_type: Optional[StrictInt] = None
     __properties: ClassVar[List[str]] = ['entry', 'private', 'note_type']

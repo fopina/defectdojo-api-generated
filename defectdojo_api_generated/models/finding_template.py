@@ -27,11 +27,11 @@ class FindingTemplate(BaseModel):
     FindingTemplate
     """  # noqa: E501
 
-    id: StrictInt
+    id: Optional[StrictInt] = None
     tags: Optional[List[StrictStr]] = None
-    vulnerability_ids: List[StrictStr]
-    endpoints: List[StrictStr]
-    title: Annotated[str, Field(strict=True, max_length=1000)]
+    vulnerability_ids: Optional[List[StrictStr]] = None
+    endpoints: Optional[List[StrictStr]] = None
+    title: Optional[Annotated[str, Field(strict=True, max_length=1000)]] = None
     cwe: Optional[Annotated[int, Field(le=2147483647, strict=True, ge=-2147483648)]] = None
     cvssv3: Optional[Annotated[str, Field(strict=True, max_length=117)]] = Field(
         default=None,
@@ -48,8 +48,8 @@ class FindingTemplate(BaseModel):
     mitigation: Optional[StrictStr] = None
     impact: Optional[StrictStr] = None
     references: Optional[StrictStr] = None
-    last_used: Optional[datetime]
-    numerical_severity: Optional[StrictStr]
+    last_used: Optional[datetime] = None
+    numerical_severity: Optional[StrictStr] = None
     fix_available: Optional[StrictBool] = Field(
         default=None, description='Indicates if a fix is available for this vulnerability type'
     )

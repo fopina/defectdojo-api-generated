@@ -39,7 +39,6 @@ class TestToolTypeRequest(unittest.TestCase):
             )
         else:
             return ToolTypeRequest(
-                name = '0',
         )
         """
 

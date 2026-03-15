@@ -43,10 +43,6 @@ class TestRegulationRequest(unittest.TestCase):
             )
         else:
             return RegulationRequest(
-                name = '0',
-                acronym = '0',
-                category = 'privacy',
-                jurisdiction = '0',
         )
         """
 

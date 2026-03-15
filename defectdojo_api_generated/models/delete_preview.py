@@ -26,9 +26,9 @@ class DeletePreview(BaseModel):
     DeletePreview
     """  # noqa: E501
 
-    model: StrictStr
-    id: Optional[StrictInt]
-    name: StrictStr
+    model: Optional[StrictStr] = None
+    id: Optional[StrictInt] = None
+    name: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ['model', 'id', 'name']
 
     model_config = ConfigDict(

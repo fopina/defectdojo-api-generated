@@ -30,8 +30,8 @@ class LanguageRequest(BaseModel):
     blank: Optional[Annotated[int, Field(le=2147483647, strict=True, ge=-2147483648)]] = None
     comment: Optional[Annotated[int, Field(le=2147483647, strict=True, ge=-2147483648)]] = None
     code: Optional[Annotated[int, Field(le=2147483647, strict=True, ge=-2147483648)]] = None
-    language: StrictInt
-    product: StrictInt
+    language: Optional[StrictInt] = None
+    product: Optional[StrictInt] = None
     user: Optional[StrictInt] = None
     __properties: ClassVar[List[str]] = ['files', 'blank', 'comment', 'code', 'language', 'product', 'user']
 

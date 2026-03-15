@@ -26,10 +26,10 @@ class SonarqubeIssueTransitionRequest(BaseModel):
     SonarqubeIssueTransitionRequest
     """  # noqa: E501
 
-    finding_status: Annotated[str, Field(min_length=1, strict=True, max_length=100)]
-    sonarqube_status: Annotated[str, Field(min_length=1, strict=True, max_length=50)]
-    transitions: Annotated[str, Field(min_length=1, strict=True, max_length=100)]
-    sonarqube_issue: StrictInt
+    finding_status: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=100)]] = None
+    sonarqube_status: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=50)]] = None
+    transitions: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=100)]] = None
+    sonarqube_issue: Optional[StrictInt] = None
     __properties: ClassVar[List[str]] = ['finding_status', 'sonarqube_status', 'transitions', 'sonarqube_issue']
 
     model_config = ConfigDict(

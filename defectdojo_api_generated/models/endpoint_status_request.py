@@ -33,8 +33,8 @@ class EndpointStatusRequest(BaseModel):
     out_of_scope: Optional[StrictBool] = None
     risk_accepted: Optional[StrictBool] = None
     mitigated_by: Optional[StrictInt] = None
-    endpoint: StrictInt
-    finding: StrictInt
+    endpoint: Optional[StrictInt] = None
+    finding: Optional[StrictInt] = None
     __properties: ClassVar[List[str]] = [
         'date',
         'mitigated',

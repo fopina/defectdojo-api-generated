@@ -104,13 +104,7 @@ class TestPaginatedDojoGroupList(unittest.TestCase):
                                     name = '', 
                                     description = '', 
                                     critical_product = True, 
-                                    key_product = True, 
-                                    members = [
-                                        56
-                                        ], 
-                                    authorization_groups = [
-                                        56
-                                        ], )
+                                    key_product = True, )
                                 }, ), )
                     ],
                 prefetch = defectdojo_api_generated.models.dojo_group_prefetch.DojoGroup_prefetch(
@@ -168,13 +162,7 @@ class TestPaginatedDojoGroupList(unittest.TestCase):
                                         name = '', 
                                         description = '', 
                                         critical_product = True, 
-                                        key_product = True, 
-                                        members = [
-                                            56
-                                            ], 
-                                        authorization_groups = [
-                                            56
-                                            ], )
+                                        key_product = True, )
                                     }, 
                                 product_manager = {
                                     'key' : defectdojo_api_generated.models.user_stub.UserStub(
@@ -217,9 +205,7 @@ class TestPaginatedDojoGroupList(unittest.TestCase):
                             name = '', 
                             description = '', 
                             critical_product = True, 
-                            key_product = True, 
-                            members = , 
-                            authorization_groups = , )
+                            key_product = True, )
                         }, 
                     users = {
                         'key' : 
@@ -227,83 +213,6 @@ class TestPaginatedDojoGroupList(unittest.TestCase):
             )
         else:
             return PaginatedDojoGroupList(
-                count = 123,
-                results = [
-                    defectdojo_api_generated.models.dojo_group.DojoGroup(
-                        id = 56, 
-                        configuration_permissions = [
-                            56
-                            ], 
-                        name = '', 
-                        description = '', 
-                        social_provider = 'AzureAD', 
-                        users = [
-                            56
-                            ], 
-                        prefetch = defectdojo_api_generated.models.dojo_group_prefetch.DojoGroup_prefetch(
-                            product_groups = {
-                                'key' : defectdojo_api_generated.models.product.Product(
-                                    id = 56, 
-                                    findings_count = 56, 
-                                    findings_list = [
-                                        56
-                                        ], 
-                                    business_criticality = 'very high', 
-                                    platform = 'web service', 
-                                    lifecycle = 'construction', 
-                                    origin = 'third party library', 
-                                    tags = [
-                                        ''
-                                        ], 
-                                    product_meta = [
-                                        defectdojo_api_generated.models.product_meta.ProductMeta(
-                                            name = '', 
-                                            value = '', )
-                                        ], 
-                                    created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                    name = '', 
-                                    description = '', 
-                                    prod_numeric_grade = -2147483648, 
-                                    user_records = 0, 
-                                    revenue = '-8072888001.', 
-                                    external_audience = True, 
-                                    internet_accessible = True, 
-                                    enable_product_tag_inheritance = True, 
-                                    enable_simple_risk_acceptance = True, 
-                                    enable_full_risk_acceptance = True, 
-                                    disable_sla_breach_notifications = True, 
-                                    product_manager = 56, 
-                                    technical_contact = 56, 
-                                    team_manager = 56, 
-                                    prod_type = 56, 
-                                    sla_configuration = 56, 
-                                    members = [
-                                        56
-                                        ], 
-                                    authorization_groups = [
-                                        56
-                                        ], 
-                                    regulations = [
-                                        56
-                                        ], )
-                                }, 
-                            product_type_groups = {
-                                'key' : defectdojo_api_generated.models.product_type.ProductType(
-                                    id = 56, 
-                                    created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                    updated = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                                    name = '', 
-                                    description = '', 
-                                    critical_product = True, 
-                                    key_product = True, 
-                                    members = [
-                                        56
-                                        ], 
-                                    authorization_groups = [
-                                        56
-                                        ], )
-                                }, ), )
-                    ],
         )
         """
 

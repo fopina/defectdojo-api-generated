@@ -81,13 +81,7 @@ class TestImportStatistics(unittest.TestCase):
                         high = , 
                         critical = , 
                         total = , ), 
-                    closed = defectdojo_api_generated.models.severity_status_statistics.SeverityStatusStatistics(
-                        info = , 
-                        low = , 
-                        medium = , 
-                        high = , 
-                        critical = , 
-                        total = , ), 
+                    closed = defectdojo_api_generated.models.severity_status_statistics.SeverityStatusStatistics(), 
                     reactivated = , 
                     untouched = , ),
                 after = defectdojo_api_generated.models.severity_status_statistics.SeverityStatusStatistics(
@@ -116,29 +110,6 @@ class TestImportStatistics(unittest.TestCase):
             )
         else:
             return ImportStatistics(
-                after = defectdojo_api_generated.models.severity_status_statistics.SeverityStatusStatistics(
-                    info = defectdojo_api_generated.models.status_statistics.StatusStatistics(
-                        active = 56, 
-                        verified = 56, 
-                        duplicate = 56, 
-                        false_p = 56, 
-                        out_of_scope = 56, 
-                        is_mitigated = 56, 
-                        risk_accepted = 56, 
-                        total = 56, ), 
-                    low = defectdojo_api_generated.models.status_statistics.StatusStatistics(
-                        active = 56, 
-                        verified = 56, 
-                        duplicate = 56, 
-                        false_p = 56, 
-                        out_of_scope = 56, 
-                        is_mitigated = 56, 
-                        risk_accepted = 56, 
-                        total = 56, ), 
-                    medium = , 
-                    high = , 
-                    critical = , 
-                    total = , ),
         )
         """
 

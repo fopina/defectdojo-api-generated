@@ -53,7 +53,7 @@ class UserContactInfoRequest(BaseModel):
     password_last_reset: Optional[datetime] = Field(
         default=None, description='Timestamp of the most recent password reset for this user.'
     )
-    user: StrictInt
+    user: Optional[StrictInt] = None
     __properties: ClassVar[List[str]] = [
         'title',
         'phone_number',

@@ -31,10 +31,10 @@ class PaginatedUserContactInfoList(BaseModel):
     PaginatedUserContactInfoList
     """  # noqa: E501
 
-    count: StrictInt
+    count: Optional[StrictInt] = None
     next: Optional[StrictStr] = None
     previous: Optional[StrictStr] = None
-    results: List[UserContactInfo]
+    results: Optional[List[UserContactInfo]] = None
     prefetch: Optional[PaginatedUserContactInfoListPrefetch] = None
     __properties: ClassVar[List[str]] = ['count', 'next', 'previous', 'results', 'prefetch']
 

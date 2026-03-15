@@ -49,14 +49,6 @@ class TestPaginatedBurpRawRequestResponseMultiList(unittest.TestCase):
             )
         else:
             return PaginatedBurpRawRequestResponseMultiList(
-                count = 123,
-                results = [
-                    defectdojo_api_generated.models.burp_raw_request_response_multi.BurpRawRequestResponseMulti(
-                        id = 56, 
-                        burp_request_base64 = '', 
-                        burp_response_base64 = '', 
-                        finding = 56, )
-                    ],
         )
         """
 

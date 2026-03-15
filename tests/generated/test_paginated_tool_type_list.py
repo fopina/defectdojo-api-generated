@@ -46,13 +46,6 @@ class TestPaginatedToolTypeList(unittest.TestCase):
             )
         else:
             return PaginatedToolTypeList(
-                count = 123,
-                results = [
-                    defectdojo_api_generated.models.tool_type.ToolType(
-                        id = 56, 
-                        name = '', 
-                        description = '', )
-                    ],
         )
         """
 

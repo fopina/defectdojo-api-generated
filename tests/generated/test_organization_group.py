@@ -106,13 +106,7 @@ class TestOrganizationGroup(unittest.TestCase):
                                         name = '', 
                                         description = '', 
                                         critical_product = True, 
-                                        key_product = True, 
-                                        members = [
-                                            56
-                                            ], 
-                                        authorization_groups = [
-                                            56
-                                            ], )
+                                        key_product = True, )
                                     }, ), )
                         }, 
                     product_type = {
@@ -123,9 +117,7 @@ class TestOrganizationGroup(unittest.TestCase):
                             name = '', 
                             description = '', 
                             critical_product = True, 
-                            key_product = True, 
-                            members = , 
-                            authorization_groups = , )
+                            key_product = True, )
                         }, 
                     role = {
                         'key' : defectdojo_api_generated.models.role.Role(
@@ -136,10 +128,6 @@ class TestOrganizationGroup(unittest.TestCase):
             )
         else:
             return OrganizationGroup(
-                id = 56,
-                organization = 56,
-                group = 56,
-                role = 56,
         )
         """
 

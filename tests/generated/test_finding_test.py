@@ -68,7 +68,6 @@ class TestFindingTest(unittest.TestCase):
             )
         else:
             return FindingTest(
-                id = 56,
         )
         """
 

@@ -41,7 +41,6 @@ class TestAnnouncement(unittest.TestCase):
             )
         else:
             return Announcement(
-                id = 56,
         )
         """
 

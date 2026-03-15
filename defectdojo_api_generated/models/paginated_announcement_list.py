@@ -28,10 +28,10 @@ class PaginatedAnnouncementList(BaseModel):
     PaginatedAnnouncementList
     """  # noqa: E501
 
-    count: StrictInt
+    count: Optional[StrictInt] = None
     next: Optional[StrictStr] = None
     previous: Optional[StrictStr] = None
-    results: List[Announcement]
+    results: Optional[List[Announcement]] = None
     __properties: ClassVar[List[str]] = ['count', 'next', 'previous', 'results']
 
     model_config = ConfigDict(

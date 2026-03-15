@@ -28,10 +28,10 @@ class OrganizationGroup(BaseModel):
     OrganizationGroup
     """  # noqa: E501
 
-    id: StrictInt
-    organization: StrictInt
-    group: StrictInt
-    role: StrictInt
+    id: Optional[StrictInt] = None
+    organization: Optional[StrictInt] = None
+    group: Optional[StrictInt] = None
+    role: Optional[StrictInt] = None
     prefetch: Optional[OrganizationGroupPrefetch] = None
     __properties: ClassVar[List[str]] = ['id', 'organization', 'group', 'role', 'prefetch']
 

@@ -26,14 +26,14 @@ class DojoGroup(BaseModel):
     DojoGroup
     """  # noqa: E501
 
-    id: StrictInt
+    id: Optional[StrictInt] = None
     configuration_permissions: Optional[List[Optional[StrictInt]]] = None
-    name: Annotated[str, Field(strict=True, max_length=255)]
+    name: Optional[Annotated[str, Field(strict=True, max_length=255)]] = None
     description: Optional[Annotated[str, Field(strict=True, max_length=4000)]] = None
     social_provider: Optional[StrictStr] = Field(
         default=None, description='Group imported from a social provider.  * `AzureAD` - AzureAD * `Remote` - Remote'
     )
-    users: List[StrictInt]
+    users: Optional[List[StrictInt]] = None
     prefetch: Optional[DojoGroupPrefetch] = None
     __properties: ClassVar[List[str]] = [
         'id',

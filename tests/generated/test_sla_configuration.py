@@ -49,8 +49,6 @@ class TestSLAConfiguration(unittest.TestCase):
             )
         else:
             return SLAConfiguration(
-                id = 56,
-                name = '',
         )
         """
 

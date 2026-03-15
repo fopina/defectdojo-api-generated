@@ -29,23 +29,27 @@ class FindingCreate(BaseModel):
     FindingCreate
     """  # noqa: E501
 
-    id: StrictInt
+    id: Optional[StrictInt] = None
     mitigated: Optional[datetime] = None
     mitigated_by: Optional[StrictInt] = None
-    notes: List[Optional[StrictInt]]
-    test: StrictInt
+    notes: Optional[List[Optional[StrictInt]]] = None
+    test: Optional[StrictInt] = None
     thread_id: Optional[StrictInt] = 0
-    found_by: List[StrictInt]
+    found_by: Optional[List[StrictInt]] = None
     url: Optional[StrictStr] = None
     tags: Optional[List[StrictStr]] = None
     push_to_jira: Optional[StrictBool] = False
     vulnerability_ids: Optional[List[VulnerabilityId]] = None
     reporter: Optional[StrictInt] = None
     created: Optional[datetime] = Field(
-        description='Time that the object was initially created, and saved to the database'
+        default=None, description='Time that the object was initially created, and saved to the database'
     )
-    updated: Optional[datetime] = Field(description='Time that the object was most recently saved to the database')
-    title: Annotated[str, Field(strict=True, max_length=511)] = Field(description='A short description of the flaw.')
+    updated: Optional[datetime] = Field(
+        default=None, description='Time that the object was most recently saved to the database'
+    )
+    title: Optional[Annotated[str, Field(strict=True, max_length=511)]] = Field(
+        default=None, description='A short description of the flaw.'
+    )
     var_date: Optional[date] = Field(default=None, description='The date the flaw was discovered.', alias='date')
     sla_start_date: Optional[date] = Field(
         default=None,
@@ -100,10 +104,12 @@ class FindingCreate(BaseModel):
         default=None,
         description='Numerical CVSSv4 score for the vulnerability. If the vector is given, the score is updated while saving the finding. The value must be between 0-10.',
     )
-    severity: Annotated[str, Field(strict=True, max_length=200)] = Field(
-        description='The severity level of this flaw (Critical, High, Medium, Low, Info).'
+    severity: Optional[Annotated[str, Field(strict=True, max_length=200)]] = Field(
+        default=None, description='The severity level of this flaw (Critical, High, Medium, Low, Info).'
     )
-    description: StrictStr = Field(description='Longer more descriptive information about the flaw.')
+    description: Optional[StrictStr] = Field(
+        default=None, description='Longer more descriptive information about the flaw.'
+    )
     mitigation: Optional[StrictStr] = Field(default=None, description='Text describing how to best fix the flaw.')
     fix_available: Optional[StrictBool] = Field(
         default=None, description='Denotes if there is a fix available for this flaw.'
@@ -124,8 +130,10 @@ class FindingCreate(BaseModel):
     references: Optional[StrictStr] = Field(
         default=None, description='The external documentation available for this flaw.'
     )
-    active: StrictBool = Field(description='Denotes if this flaw is active or not.')
-    verified: StrictBool = Field(description='Denotes if this flaw has been manually verified by the tester.')
+    active: Optional[StrictBool] = Field(default=None, description='Denotes if this flaw is active or not.')
+    verified: Optional[StrictBool] = Field(
+        default=None, description='Denotes if this flaw has been manually verified by the tester.'
+    )
     false_p: Optional[StrictBool] = Field(
         default=None, description='Denotes if this flaw has been deemed a false positive by the tester.'
     )
@@ -142,22 +150,24 @@ class FindingCreate(BaseModel):
         default=None, description='Denotes is this flaw is currently being reviewed.'
     )
     last_status_update: Optional[datetime] = Field(
-        description='Timestamp of latest status update (change in status related fields).'
+        default=None, description='Timestamp of latest status update (change in status related fields).'
     )
     under_defect_review: Optional[StrictBool] = Field(
         default=None, description='Denotes if this finding is under defect review.'
     )
     is_mitigated: Optional[StrictBool] = Field(default=None, description='Denotes if this flaw has been fixed.')
-    numerical_severity: Annotated[str, Field(strict=True, max_length=4)] = Field(
-        description='The numerical representation of the severity (S0, S1, S2, S3, S4).'
+    numerical_severity: Optional[Annotated[str, Field(strict=True, max_length=4)]] = Field(
+        default=None, description='The numerical representation of the severity (S0, S1, S2, S3, S4).'
     )
-    last_reviewed: Optional[datetime] = Field(description="Provides the date the flaw was last 'touched' by a tester.")
-    param: Optional[StrictStr] = Field(description='Parameter used to trigger the issue (DAST).')
+    last_reviewed: Optional[datetime] = Field(
+        default=None, description="Provides the date the flaw was last 'touched' by a tester."
+    )
+    param: Optional[StrictStr] = Field(default=None, description='Parameter used to trigger the issue (DAST).')
     payload: Optional[StrictStr] = Field(
-        description='Payload used to attack the service / application and trigger the bug / problem.'
+        default=None, description='Payload used to attack the service / application and trigger the bug / problem.'
     )
     hash_code: Optional[StrictStr] = Field(
-        description='A hash over a configurable set of fields that is used for findings deduplication.'
+        default=None, description='A hash over a configurable set of fields that is used for findings deduplication.'
     )
     line: Optional[Annotated[int, Field(le=2147483647, strict=True, ge=-2147483648)]] = Field(
         default=None, description='Source line number of the attack vector.'
@@ -178,7 +188,7 @@ class FindingCreate(BaseModel):
         default=None, description='Flaw has been detected from a Dynamic Application Security Testing tool (DAST).'
     )
     scanner_confidence: Optional[StrictInt] = Field(
-        description='Confidence level of vulnerability which is supplied by the scanner.'
+        default=None, description='Confidence level of vulnerability which is supplied by the scanner.'
     )
     unique_id_from_tool: Optional[Annotated[str, Field(strict=True, max_length=500)]] = Field(
         default=None,
@@ -220,7 +230,7 @@ class FindingCreate(BaseModel):
         default=None, description='Effort for fixing / remediating the vulnerability (Low, Medium, High)'
     )
     duplicate_finding: Optional[StrictInt] = Field(
-        description='Link to the original finding if this finding is a duplicate.'
+        default=None, description='Link to the original finding if this finding is a duplicate.'
     )
     review_requested_by: Optional[StrictInt] = Field(
         default=None, description='Documents who requested a review for this finding.'
@@ -228,15 +238,18 @@ class FindingCreate(BaseModel):
     defect_review_requested_by: Optional[StrictInt] = Field(
         default=None, description='Documents who requested a defect review for this flaw.'
     )
-    last_reviewed_by: Optional[StrictInt] = Field(description='Provides the person who last reviewed the flaw.')
+    last_reviewed_by: Optional[StrictInt] = Field(
+        default=None, description='Provides the person who last reviewed the flaw.'
+    )
     sonarqube_issue: Optional[StrictInt] = Field(
         default=None, description='The SonarQube issue associated with this finding.'
     )
-    endpoints: List[StrictInt] = Field(
-        description='The hosts within the product that are susceptible to this flaw. + The status of the endpoint associated with this flaw (Vulnerable, Mitigated, ...).'
+    endpoints: Optional[List[StrictInt]] = Field(
+        default=None,
+        description='The hosts within the product that are susceptible to this flaw. + The status of the endpoint associated with this flaw (Vulnerable, Mitigated, ...).',
     )
     reviewers: Optional[List[StrictInt]] = Field(default=None, description='Documents who reviewed the flaw.')
-    files: List[StrictInt] = Field(description='Files(s) related to the flaw.')
+    files: Optional[List[StrictInt]] = Field(default=None, description='Files(s) related to the flaw.')
     __properties: ClassVar[List[str]] = [
         'id',
         'mitigated',

@@ -26,9 +26,9 @@ class NoteType(BaseModel):
     NoteType
     """  # noqa: E501
 
-    id: StrictInt
-    name: Annotated[str, Field(strict=True, max_length=100)]
-    description: Annotated[str, Field(strict=True, max_length=200)]
+    id: Optional[StrictInt] = None
+    name: Optional[Annotated[str, Field(strict=True, max_length=100)]] = None
+    description: Optional[Annotated[str, Field(strict=True, max_length=200)]] = None
     is_single: Optional[StrictBool] = None
     is_active: Optional[StrictBool] = None
     is_mandatory: Optional[StrictBool] = None

@@ -52,11 +52,6 @@ class TestRiskAcceptanceRequest(unittest.TestCase):
             )
         else:
             return RiskAcceptanceRequest(
-                name = '0',
-                owner = 56,
-                accepted_findings = [
-                    56
-                    ],
         )
         """
 

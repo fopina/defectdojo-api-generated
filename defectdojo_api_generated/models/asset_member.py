@@ -28,10 +28,10 @@ class AssetMember(BaseModel):
     AssetMember
     """  # noqa: E501
 
-    id: StrictInt
-    asset: StrictInt
-    user: StrictInt
-    role: StrictInt
+    id: Optional[StrictInt] = None
+    asset: Optional[StrictInt] = None
+    user: Optional[StrictInt] = None
+    role: Optional[StrictInt] = None
     prefetch: Optional[AssetMemberPrefetch] = None
     __properties: ClassVar[List[str]] = ['id', 'asset', 'user', 'role', 'prefetch']
 

@@ -49,7 +49,6 @@ class TestUserContactInfoRequest(unittest.TestCase):
             )
         else:
             return UserContactInfoRequest(
-                user = 56,
         )
         """
 

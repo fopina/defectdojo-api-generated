@@ -39,8 +39,6 @@ class TestMetadataRequest(unittest.TestCase):
             )
         else:
             return MetadataRequest(
-                name = '0',
-                value = '0',
         )
         """
 

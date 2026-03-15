@@ -90,8 +90,6 @@ class TestQuestionnaireAnsweredSurvey(unittest.TestCase):
             )
         else:
             return QuestionnaireAnsweredSurvey(
-                id = 56,
-                survey = 56,
         )
         """
 

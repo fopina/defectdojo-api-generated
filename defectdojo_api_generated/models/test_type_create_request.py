@@ -26,7 +26,7 @@ class TestTypeCreateRequest(BaseModel):
     TestTypeCreateRequest
     """  # noqa: E501
 
-    name: Annotated[str, Field(min_length=1, strict=True, max_length=200)]
+    name: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=200)]] = None
     static_tool: Optional[StrictBool] = None
     dynamic_tool: Optional[StrictBool] = None
     active: Optional[StrictBool] = None

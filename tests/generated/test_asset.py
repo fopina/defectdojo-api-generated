@@ -130,9 +130,6 @@ class TestAsset(unittest.TestCase):
                                         members = [
                                             56
                                             ], 
-                                        authorization_groups = [
-                                            56
-                                            ], 
                                         regulations = [
                                             56
                                             ], )
@@ -145,13 +142,7 @@ class TestAsset(unittest.TestCase):
                                         name = '', 
                                         description = '', 
                                         critical_product = True, 
-                                        key_product = True, 
-                                        members = [
-                                            56
-                                            ], 
-                                        authorization_groups = [
-                                            56
-                                            ], )
+                                        key_product = True, )
                                     }, ), )
                         }, 
                     members = {
@@ -169,9 +160,7 @@ class TestAsset(unittest.TestCase):
                             name = '', 
                             description = '', 
                             critical_product = True, 
-                            key_product = True, 
-                            members = , 
-                            authorization_groups = , )
+                            key_product = True, )
                         }, 
                     product_manager = {
                         'key' : defectdojo_api_generated.models.user_stub.UserStub(
@@ -214,26 +203,6 @@ class TestAsset(unittest.TestCase):
             )
         else:
             return Asset(
-                id = 56,
-                findings_count = 56,
-                findings_list = [
-                    56
-                    ],
-                asset_meta = [
-                    defectdojo_api_generated.models.product_meta.ProductMeta(
-                        name = '', 
-                        value = '', )
-                    ],
-                organization = 56,
-                created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                name = '',
-                description = '',
-                members = [
-                    56
-                    ],
-                authorization_groups = [
-                    56
-                    ],
         )
         """
 

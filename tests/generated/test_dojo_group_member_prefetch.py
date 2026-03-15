@@ -101,13 +101,7 @@ class TestDojoGroupMemberPrefetch(unittest.TestCase):
                                     name = '', 
                                     description = '', 
                                     critical_product = True, 
-                                    key_product = True, 
-                                    members = [
-                                        56
-                                        ], 
-                                    authorization_groups = [
-                                        56
-                                        ], )
+                                    key_product = True, )
                                 }, ), )
                     },
                 role = {

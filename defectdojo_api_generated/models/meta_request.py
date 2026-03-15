@@ -30,8 +30,8 @@ class MetaRequest(BaseModel):
     endpoint: Optional[StrictInt] = None
     location: Optional[StrictInt] = None
     finding: Optional[StrictInt] = None
-    name: Annotated[str, Field(min_length=1, strict=True, max_length=120)]
-    value: Annotated[str, Field(min_length=1, strict=True, max_length=300)]
+    name: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=120)]] = None
+    value: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=300)]] = None
     __properties: ClassVar[List[str]] = ['product', 'endpoint', 'location', 'finding', 'name', 'value']
 
     model_config = ConfigDict(

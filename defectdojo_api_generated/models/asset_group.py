@@ -28,10 +28,10 @@ class AssetGroup(BaseModel):
     AssetGroup
     """  # noqa: E501
 
-    id: StrictInt
-    asset: StrictInt
-    group: StrictInt
-    role: StrictInt
+    id: Optional[StrictInt] = None
+    asset: Optional[StrictInt] = None
+    group: Optional[StrictInt] = None
+    role: Optional[StrictInt] = None
     prefetch: Optional[AssetGroupPrefetch] = None
     __properties: ClassVar[List[str]] = ['id', 'asset', 'group', 'role', 'prefetch']
 

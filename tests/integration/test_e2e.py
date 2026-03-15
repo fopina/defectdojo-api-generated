@@ -16,6 +16,7 @@ DATA_DIR = Path(__file__).parent.parent / 'data'
 # Run `run_dojo.sh` manually (and stop after), set this one to True and then you can run individual tests here quickly
 _PARTIAL_RUN = False
 
+
 @unittest.skipUnless(_PARTIAL_RUN or os.getenv('DD_INTEGRATION_TESTS'), 'Integration tests not enabled')
 class Test(unittest.TestCase):
     @classmethod

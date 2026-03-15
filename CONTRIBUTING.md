@@ -28,4 +28,5 @@ Use `make lint` to make sure lint check passes before pushing.
 
 ### Update Dojo OpenAPI schema
 
-...
+* Run `support/openapi/fetch_openapi.py` to refresh local copy
+* `make generate`

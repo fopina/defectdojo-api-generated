@@ -87,6 +87,30 @@ class DefectDojo:
         return ApiTokenAuthApi(self.api_client)
 
     @property
+    def asset_api_scan_configurations_api(self):
+        from defectdojo_api_generated.api.asset_api_scan_configurations_api import AssetApiScanConfigurationsApi
+
+        return AssetApiScanConfigurationsApi(self.api_client)
+
+    @property
+    def asset_groups_api(self):
+        from defectdojo_api_generated.api.asset_groups_api import AssetGroupsApi
+
+        return AssetGroupsApi(self.api_client)
+
+    @property
+    def asset_members_api(self):
+        from defectdojo_api_generated.api.asset_members_api import AssetMembersApi
+
+        return AssetMembersApi(self.api_client)
+
+    @property
+    def assets_api(self):
+        from defectdojo_api_generated.api.assets_api import AssetsApi
+
+        return AssetsApi(self.api_client)
+
+    @property
     def configuration_permissions_api(self):
         from defectdojo_api_generated.api.configuration_permissions_api import ConfigurationPermissionsApi
 
@@ -265,6 +289,24 @@ class DefectDojo:
         from defectdojo_api_generated.api.oa3_api import Oa3Api
 
         return Oa3Api(self.api_client)
+
+    @property
+    def organization_groups_api(self):
+        from defectdojo_api_generated.api.organization_groups_api import OrganizationGroupsApi
+
+        return OrganizationGroupsApi(self.api_client)
+
+    @property
+    def organization_members_api(self):
+        from defectdojo_api_generated.api.organization_members_api import OrganizationMembersApi
+
+        return OrganizationMembersApi(self.api_client)
+
+    @property
+    def organizations_api(self):
+        from defectdojo_api_generated.api.organizations_api import OrganizationsApi
+
+        return OrganizationsApi(self.api_client)
 
     @property
     def product_api_scan_configurations_api(self):

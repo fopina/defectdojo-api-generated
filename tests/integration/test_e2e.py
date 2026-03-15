@@ -14,7 +14,7 @@ DOJO_SCRIPTS = Path(__file__).parent.parent.parent / 'support' / 'integration'
 DATA_DIR = Path(__file__).parent.parent / 'data'
 
 # Run `run_dojo.sh` manually (and stop after), set this one to True and then you can run individual tests here quickly
-_PARTIAL_RUN = False
+_PARTIAL_RUN = True
 
 
 @unittest.skipUnless(_PARTIAL_RUN or os.getenv('DD_INTEGRATION_TESTS'), 'Integration tests not enabled')
@@ -108,6 +108,12 @@ class Test(unittest.TestCase):
         self.assertEqual(page.results[0].notes, [])
         note = self.client.findings_api.findings_notes_create(page.results[0].id, AddNewNoteOptionRequest(entry='ehlo'))
         self.assertEqual(note.note_type, None)
+
+    def test_iterator(self):
+        report = _skip_if_fail(self._reimport_scan)
+        result = next(self.client.findings_api.findings_list_iterator(test=report.test))
+        self.assertEqual(result.page.count, 3)
+        self.assertEqual(result.result.title, 'java.lang.security.audit.cbc-padding-oracle.cbc-padding-oracle')
 
 
 def _skip_if_fail(test_dependency):

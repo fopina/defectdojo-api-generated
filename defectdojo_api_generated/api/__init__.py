@@ -3,6 +3,10 @@
 # import apis into api package
 from defectdojo_api_generated.api.announcements_api import AnnouncementsApi
 from defectdojo_api_generated.api.api_token_auth_api import ApiTokenAuthApi
+from defectdojo_api_generated.api.asset_api_scan_configurations_api import AssetApiScanConfigurationsApi
+from defectdojo_api_generated.api.asset_groups_api import AssetGroupsApi
+from defectdojo_api_generated.api.asset_members_api import AssetMembersApi
+from defectdojo_api_generated.api.assets_api import AssetsApi
 from defectdojo_api_generated.api.configuration_permissions_api import ConfigurationPermissionsApi
 from defectdojo_api_generated.api.credential_mappings_api import CredentialMappingsApi
 from defectdojo_api_generated.api.credentials_api import CredentialsApi
@@ -33,6 +37,9 @@ from defectdojo_api_generated.api.notes_api import NotesApi
 from defectdojo_api_generated.api.notification_webhooks_api import NotificationWebhooksApi
 from defectdojo_api_generated.api.notifications_api import NotificationsApi
 from defectdojo_api_generated.api.oa3_api import Oa3Api
+from defectdojo_api_generated.api.organization_groups_api import OrganizationGroupsApi
+from defectdojo_api_generated.api.organization_members_api import OrganizationMembersApi
+from defectdojo_api_generated.api.organizations_api import OrganizationsApi
 from defectdojo_api_generated.api.product_api_scan_configurations_api import ProductApiScanConfigurationsApi
 from defectdojo_api_generated.api.product_groups_api import ProductGroupsApi
 from defectdojo_api_generated.api.product_members_api import ProductMembersApi

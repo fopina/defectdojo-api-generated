@@ -48,7 +48,7 @@ class CLI(classyclick.Group):
         show_envvar=True,
         help='DefectDojo API username',
     )
-    user: str = classyclick.Option(
+    password: str = classyclick.Option(
         '-p',
         envvar='DEFECTDOJO_PASSWORD',
         show_envvar=True,
@@ -59,43 +59,43 @@ class CLI(classyclick.Group):
     ctx: classyclick.Context = classyclick.Context()
 
     def __call__(self):
-        config = self.config
-        if config is None:
-            config = DEFAULT_PATH
-            if not config.exists():
-                config.parent.mkdir(parents=True, exist_ok=True)
-                config.write_text((Path(__file__).parent.parent / 'config.example.toml').read_text())
-                print(f'Info: No configuration file found at {config}, a sample config has been placed there.')
+        if self.config is None:
+            self.config = DEFAULT_PATH
+            if not self.config.exists():
+                self.config.parent.mkdir(parents=True, exist_ok=True)
+                self.config.write_text((Path(__file__).parent.parent / 'config.example.toml').read_text())
+                print(f'Info: No configuration file found at {self.config}, a sample config has been placed there.')
 
-        with config.open('rb') as f:
+        with self.config.open('rb') as f:
             config_data = tomllib.load(f)
 
-        env = self.env
-        if env is None:
-            env = config_data.get('default_env')
+        if self.env is None:
+            self.env = config_data.get('default_env')
 
         # allow empty string to choose root environment when "default_env" is set to something else
-        if env:
-            if env not in config_data.get('env', {}):
-                raise click.ClickException(f'Environment "{env}" not found in {config}')
-            env_config = config_data['env'][env]
+        if self.env:
+            if self.env not in config_data.get('env', {}):
+                raise click.ClickException(f'Environment "{self.env}" not found in {self.config}')
+            env_config = config_data['env'][self.env]
             config_data = merge_dicts(config_data, env_config)
 
         # to late to have these options from default_map, so process them manually
-        host = self.host
-        if host is None:
-            host = config_data.get('host')
+        if self.host is None:
+            self.host = config_data.get('host')
 
-        token = self.token
-        if token is None:
-            token = config_data.get('token')
+        if self.token is None:
+            self.token = config_data.get('token')
 
-        disable_tls = self.disable_tls
-        if disable_tls is None:
-            disable_tls = config_data.get('disable_tls', False)
+        if self.user is None:
+            self.user = config_data.get('user')
 
-        debug_http = self.debug_http
-        if debug_http:
+        if self.password is None:
+            self.password = config_data.get('password')
+
+        if self.disable_tls is None:
+            self.disable_tls = config_data.get('disable_tls', False)
+
+        if self.debug_http:
             import http.client
 
             http.client.HTTPConnection.debuglevel = 1
@@ -105,9 +105,10 @@ class CLI(classyclick.Group):
             http_client_logger.setLevel(logging.DEBUG)
 
         self.ctx.meta['client'] = DefectDojo(
-            base_url=host,
-            token=token,
-            verify_ssl=not disable_tls,
+            base_url=self.host,
+            token=self.token,
+            auth=None if self.token else (self.user, self.password),
+            verify_ssl=not self.disable_tls,
         )
 
         self.ctx.default_map = config_data

@@ -8,8 +8,7 @@ from .commands.cli import CLI
 
 
 def discover_commands():
-    for loader, module_name, is_pkg in pkgutil.iter_modules([Path(__file__).parent / 'commands']):
-        print(module_name)
+    for _, module_name, _ in pkgutil.iter_modules([Path(__file__).parent / 'commands']):
         importlib.import_module(f'{__package__}.commands.{module_name}')
 
 

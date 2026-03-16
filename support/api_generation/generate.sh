@@ -12,6 +12,7 @@ cd ..
 ./support/api_generation/openapi-generator-cli.sh \
                            generate \
                            -i support/openapi/build/openapi.json \
+                           --remove-operation-id-prefix \
                            -c support/api_generation/config.yaml \
                            -o .
 

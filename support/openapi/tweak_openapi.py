@@ -36,11 +36,48 @@ def tweak_required(data):
             """nothing to do"""
 
 
+def tweak_operation_ids(data):
+    """Encode full operationId prefixes so the generator strips them reliably.
+
+    OpenAPI Generator's ``--remove-operation-id-prefix`` handling does not fully
+    remove prefixes when they contain underscores (such `system_settings`).
+    We infer the complete prefix from ``tags[0]`` for each operation,
+    validate that it still matches the current ``operationId``,
+    and replace underscores in just that prefix with ``S`` so the generator
+    treats it as a single removable token.
+    """
+    for path, path_item in data['paths'].items():
+        for method, operation in path_item.items():
+            if not isinstance(operation, dict):
+                continue
+
+            operation_id = operation.get('operationId')
+            if operation_id is None:
+                continue
+
+            try:
+                tag = operation['tags'][0]
+            except (KeyError, IndexError) as exc:
+                raise ValueError(
+                    f'Missing tags[0] for {method.upper()} {path} with operationId {operation_id!r}'
+                ) from exc
+
+            prefix = tag.replace('-', '_')
+            if not operation_id.startswith(prefix):
+                raise ValueError(
+                    f'Expected tags[0]={tag!r} to be an operationId prefix for '
+                    f'{method.upper()} {path}, got {operation_id!r}'
+                )
+
+            operation['operationId'] = operation_id.replace(prefix, prefix.replace('_', 'S'), 1)
+
+
 def main():
     BUILD.parent.mkdir(exist_ok=True)
     with FILE.open('r') as inp:
         data = json.load(inp)
 
+    tweak_operation_ids(data)
     tweak_paginated(data)
     tweak_required(data)
 

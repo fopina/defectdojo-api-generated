@@ -35810,6 +35810,7 @@
                 },
                 "required": [
                     "engagement_id",
+                    "pro",
                     "product_id",
                     "product_type_id",
                     "scan_type",
@@ -46147,6 +46148,7 @@
                 },
                 "required": [
                     "engagement_id",
+                    "pro",
                     "product_id",
                     "product_type_id",
                     "scan_type",

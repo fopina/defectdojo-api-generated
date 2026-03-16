@@ -14,19 +14,23 @@ FILE = Path(__file__).parent / 'openapi.json'
 SCRIPTS = Path(__file__).parent.parent / 'integration'
 
 
-def fetch_instance(host):
+def write_schema(data: dict, output: Path) -> None:
+    output.parent.mkdir(parents=True, exist_ok=True)
+    with output.open('w') as f:
+        json.dump(data, f, indent=4)
+
+
+def fetch_instance(host, output: Path):
     r = requests.get(f'{host}/api/v2/oa3/schema/', params={'format': 'json'})
     r.raise_for_status()
-    with FILE.open('w') as f:
-        json.dump(r.json(), f, indent=4)
+    write_schema(r.json(), output)
 
 
-def fetch_github(version: str | None):
+def fetch_github(version: str | None, output: Path):
     url = OAS_URL % version if version else LATEST_OAS_URL
     r = requests.get(url)
     r.raise_for_status()
-    with FILE.open('w') as f:
-        json.dump(r.json(), f, indent=4)
+    write_schema(r.json(), output)
 
 
 def main():
@@ -44,6 +48,13 @@ def main():
         type=str,
         help='Fetch this specific version instead of latest (it can only used for github releases)',
     )
+    p.add_argument(
+        '-o',
+        '--output',
+        type=Path,
+        default=FILE,
+        help=f'Write the fetched schema to this file (default: {FILE})',
+    )
     args = p.parse_args()
 
     if args.demo:
@@ -52,13 +63,13 @@ def main():
         subprocess.check_call([SCRIPTS / 'run_dojo.sh'])
         host = 'http://localhost:8080'
     else:
-        return fetch_github(args.version)
+        return fetch_github(args.version, args.output)
 
     if args.version:
         raise argparse.ArgumentError('--version can only be used with github releases')
 
     try:
-        fetch_instance(host)
+        fetch_instance(host, args.output)
     finally:
         if not args.demo:
             subprocess.check_call([SCRIPTS / 'stop_dojo.sh'])

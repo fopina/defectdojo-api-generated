@@ -12,7 +12,7 @@ requires-python = ">=3.9,<4"
 dependencies = ["pydantic>= 2", "python-dateutil>= 2.8.2", "urllib3>= 2.1.0, < 3.0.0", "typing-extensions>= 4.7.1"]
 
 [project.optional-dependencies]
-cli = ["rich>=13,<15"]
+cli = ["classyclick==0.8.0", "rich>=13,<15"]
 
 [project.scripts]
 dojo = "defectdojo_api_generated.cli:main"

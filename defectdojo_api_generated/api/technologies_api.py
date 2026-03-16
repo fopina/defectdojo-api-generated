@@ -40,7 +40,7 @@ class TechnologiesApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    def technologies_create(
+    def create(
         self,
         app_analysis_request: AppAnalysisRequest,
         _request_timeout: Union[
@@ -53,7 +53,7 @@ class TechnologiesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AppAnalysis:
-        """technologies_create
+        """create
 
 
         :param app_analysis_request: (required)
@@ -80,7 +80,7 @@ class TechnologiesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._technologies_create_serialize(
+        _param = self._create_serialize(
             app_analysis_request=app_analysis_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -98,7 +98,7 @@ class TechnologiesApi:
             response_types_map=_response_types_map,
         ).data
 
-    def technologies_create_with_http_info(
+    def create_with_http_info(
         self,
         app_analysis_request: AppAnalysisRequest,
         _request_timeout: Union[
@@ -111,7 +111,7 @@ class TechnologiesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AppAnalysis]:
-        """technologies_create
+        """create
 
 
         :param app_analysis_request: (required)
@@ -138,7 +138,7 @@ class TechnologiesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._technologies_create_serialize(
+        _param = self._create_serialize(
             app_analysis_request=app_analysis_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -156,7 +156,7 @@ class TechnologiesApi:
             response_types_map=_response_types_map,
         )
 
-    def technologies_create_without_preload_content(
+    def create_without_preload_content(
         self,
         app_analysis_request: AppAnalysisRequest,
         _request_timeout: Union[
@@ -169,7 +169,7 @@ class TechnologiesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """technologies_create
+        """create
 
 
         :param app_analysis_request: (required)
@@ -196,7 +196,7 @@ class TechnologiesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._technologies_create_serialize(
+        _param = self._create_serialize(
             app_analysis_request=app_analysis_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -210,7 +210,7 @@ class TechnologiesApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _technologies_create_serialize(
+    def _create_serialize(
         self,
         app_analysis_request,
         _request_auth,
@@ -269,7 +269,7 @@ class TechnologiesApi:
             _request_auth=_request_auth,
         )
 
-    def technologies_delete_preview_list(
+    def delete_preview_list(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this app_ analysis.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -286,7 +286,7 @@ class TechnologiesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedDeletePreviewList:
-        """technologies_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this app_ analysis. (required)
@@ -317,7 +317,7 @@ class TechnologiesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._technologies_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -337,7 +337,7 @@ class TechnologiesApi:
             response_types_map=_response_types_map,
         ).data
 
-    def technologies_delete_preview_list_with_http_info(
+    def delete_preview_list_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this app_ analysis.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -354,7 +354,7 @@ class TechnologiesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedDeletePreviewList]:
-        """technologies_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this app_ analysis. (required)
@@ -385,7 +385,7 @@ class TechnologiesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._technologies_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -405,7 +405,7 @@ class TechnologiesApi:
             response_types_map=_response_types_map,
         )
 
-    def technologies_delete_preview_list_without_preload_content(
+    def delete_preview_list_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this app_ analysis.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -422,7 +422,7 @@ class TechnologiesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """technologies_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this app_ analysis. (required)
@@ -453,7 +453,7 @@ class TechnologiesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._technologies_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -469,7 +469,7 @@ class TechnologiesApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _technologies_delete_preview_list_serialize(
+    def _delete_preview_list_serialize(
         self,
         id,
         limit,
@@ -526,7 +526,7 @@ class TechnologiesApi:
             _request_auth=_request_auth,
         )
 
-    def technologies_delete_preview_list_iterator(
+    def delete_preview_list_iterator(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this app_ analysis.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -544,11 +544,11 @@ class TechnologiesApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[DeletePreview, PaginatedDeletePreviewList], None, None]':
         _params = locals()
-        for page in get_all_pages(self.api_client, TechnologiesApi.technologies_delete_preview_list, **_params):
+        for page in get_all_pages(self.api_client, TechnologiesApi.delete_preview_list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def technologies_destroy(
+    def destroy(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this app_ analysis.')],
         _request_timeout: Union[
@@ -561,7 +561,7 @@ class TechnologiesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> None:
-        """technologies_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this app_ analysis. (required)
@@ -588,7 +588,7 @@ class TechnologiesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._technologies_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -602,7 +602,7 @@ class TechnologiesApi:
             response_types_map=_response_types_map,
         ).data
 
-    def technologies_destroy_with_http_info(
+    def destroy_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this app_ analysis.')],
         _request_timeout: Union[
@@ -615,7 +615,7 @@ class TechnologiesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[None]:
-        """technologies_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this app_ analysis. (required)
@@ -642,7 +642,7 @@ class TechnologiesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._technologies_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -656,7 +656,7 @@ class TechnologiesApi:
             response_types_map=_response_types_map,
         )
 
-    def technologies_destroy_without_preload_content(
+    def destroy_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this app_ analysis.')],
         _request_timeout: Union[
@@ -669,7 +669,7 @@ class TechnologiesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """technologies_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this app_ analysis. (required)
@@ -696,7 +696,7 @@ class TechnologiesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._technologies_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -706,7 +706,7 @@ class TechnologiesApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _technologies_destroy_serialize(
+    def _destroy_serialize(
         self,
         id,
         _request_auth,
@@ -751,7 +751,7 @@ class TechnologiesApi:
             _request_auth=_request_auth,
         )
 
-    def technologies_list(
+    def list(
         self,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
         name: Optional[StrictStr] = None,
@@ -788,7 +788,7 @@ class TechnologiesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedAppAnalysisList:
-        """technologies_list
+        """list
 
 
         :param limit: Number of results to return per page.
@@ -837,7 +837,7 @@ class TechnologiesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._technologies_list_serialize(
+        _param = self._list_serialize(
             limit=limit,
             name=name,
             not_tag=not_tag,
@@ -866,7 +866,7 @@ class TechnologiesApi:
             response_types_map=_response_types_map,
         ).data
 
-    def technologies_list_with_http_info(
+    def list_with_http_info(
         self,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
         name: Optional[StrictStr] = None,
@@ -903,7 +903,7 @@ class TechnologiesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedAppAnalysisList]:
-        """technologies_list
+        """list
 
 
         :param limit: Number of results to return per page.
@@ -952,7 +952,7 @@ class TechnologiesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._technologies_list_serialize(
+        _param = self._list_serialize(
             limit=limit,
             name=name,
             not_tag=not_tag,
@@ -981,7 +981,7 @@ class TechnologiesApi:
             response_types_map=_response_types_map,
         )
 
-    def technologies_list_without_preload_content(
+    def list_without_preload_content(
         self,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
         name: Optional[StrictStr] = None,
@@ -1018,7 +1018,7 @@ class TechnologiesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """technologies_list
+        """list
 
 
         :param limit: Number of results to return per page.
@@ -1067,7 +1067,7 @@ class TechnologiesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._technologies_list_serialize(
+        _param = self._list_serialize(
             limit=limit,
             name=name,
             not_tag=not_tag,
@@ -1092,7 +1092,7 @@ class TechnologiesApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _technologies_list_serialize(
+    def _list_serialize(
         self,
         limit,
         name,
@@ -1191,7 +1191,7 @@ class TechnologiesApi:
             _request_auth=_request_auth,
         )
 
-    def technologies_list_iterator(
+    def list_iterator(
         self,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
         name: Optional[StrictStr] = None,
@@ -1229,11 +1229,11 @@ class TechnologiesApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[AppAnalysis, PaginatedAppAnalysisList], None, None]':
         _params = locals()
-        for page in get_all_pages(self.api_client, TechnologiesApi.technologies_list, **_params):
+        for page in get_all_pages(self.api_client, TechnologiesApi.list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def technologies_partial_update(
+    def partial_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this app_ analysis.')],
         patched_app_analysis_request: Optional[PatchedAppAnalysisRequest] = None,
@@ -1247,7 +1247,7 @@ class TechnologiesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AppAnalysis:
-        """technologies_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this app_ analysis. (required)
@@ -1276,7 +1276,7 @@ class TechnologiesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._technologies_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_app_analysis_request=patched_app_analysis_request,
             _request_auth=_request_auth,
@@ -1295,7 +1295,7 @@ class TechnologiesApi:
             response_types_map=_response_types_map,
         ).data
 
-    def technologies_partial_update_with_http_info(
+    def partial_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this app_ analysis.')],
         patched_app_analysis_request: Optional[PatchedAppAnalysisRequest] = None,
@@ -1309,7 +1309,7 @@ class TechnologiesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AppAnalysis]:
-        """technologies_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this app_ analysis. (required)
@@ -1338,7 +1338,7 @@ class TechnologiesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._technologies_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_app_analysis_request=patched_app_analysis_request,
             _request_auth=_request_auth,
@@ -1357,7 +1357,7 @@ class TechnologiesApi:
             response_types_map=_response_types_map,
         )
 
-    def technologies_partial_update_without_preload_content(
+    def partial_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this app_ analysis.')],
         patched_app_analysis_request: Optional[PatchedAppAnalysisRequest] = None,
@@ -1371,7 +1371,7 @@ class TechnologiesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """technologies_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this app_ analysis. (required)
@@ -1400,7 +1400,7 @@ class TechnologiesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._technologies_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_app_analysis_request=patched_app_analysis_request,
             _request_auth=_request_auth,
@@ -1415,7 +1415,7 @@ class TechnologiesApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _technologies_partial_update_serialize(
+    def _partial_update_serialize(
         self,
         id,
         patched_app_analysis_request,
@@ -1477,7 +1477,7 @@ class TechnologiesApi:
             _request_auth=_request_auth,
         )
 
-    def technologies_retrieve(
+    def retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this app_ analysis.')],
         prefetch: Annotated[
@@ -1494,7 +1494,7 @@ class TechnologiesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AppAnalysis:
-        """technologies_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this app_ analysis. (required)
@@ -1523,7 +1523,7 @@ class TechnologiesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._technologies_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id,
             prefetch=prefetch,
             _request_auth=_request_auth,
@@ -1542,7 +1542,7 @@ class TechnologiesApi:
             response_types_map=_response_types_map,
         ).data
 
-    def technologies_retrieve_with_http_info(
+    def retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this app_ analysis.')],
         prefetch: Annotated[
@@ -1559,7 +1559,7 @@ class TechnologiesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AppAnalysis]:
-        """technologies_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this app_ analysis. (required)
@@ -1588,7 +1588,7 @@ class TechnologiesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._technologies_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id,
             prefetch=prefetch,
             _request_auth=_request_auth,
@@ -1607,7 +1607,7 @@ class TechnologiesApi:
             response_types_map=_response_types_map,
         )
 
-    def technologies_retrieve_without_preload_content(
+    def retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this app_ analysis.')],
         prefetch: Annotated[
@@ -1624,7 +1624,7 @@ class TechnologiesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """technologies_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this app_ analysis. (required)
@@ -1653,7 +1653,7 @@ class TechnologiesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._technologies_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id,
             prefetch=prefetch,
             _request_auth=_request_auth,
@@ -1668,7 +1668,7 @@ class TechnologiesApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _technologies_retrieve_serialize(
+    def _retrieve_serialize(
         self,
         id,
         prefetch,
@@ -1723,7 +1723,7 @@ class TechnologiesApi:
             _request_auth=_request_auth,
         )
 
-    def technologies_update(
+    def update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this app_ analysis.')],
         app_analysis_request: AppAnalysisRequest,
@@ -1737,7 +1737,7 @@ class TechnologiesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AppAnalysis:
-        """technologies_update
+        """update
 
 
         :param id: A unique integer value identifying this app_ analysis. (required)
@@ -1766,7 +1766,7 @@ class TechnologiesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._technologies_update_serialize(
+        _param = self._update_serialize(
             id=id,
             app_analysis_request=app_analysis_request,
             _request_auth=_request_auth,
@@ -1785,7 +1785,7 @@ class TechnologiesApi:
             response_types_map=_response_types_map,
         ).data
 
-    def technologies_update_with_http_info(
+    def update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this app_ analysis.')],
         app_analysis_request: AppAnalysisRequest,
@@ -1799,7 +1799,7 @@ class TechnologiesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AppAnalysis]:
-        """technologies_update
+        """update
 
 
         :param id: A unique integer value identifying this app_ analysis. (required)
@@ -1828,7 +1828,7 @@ class TechnologiesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._technologies_update_serialize(
+        _param = self._update_serialize(
             id=id,
             app_analysis_request=app_analysis_request,
             _request_auth=_request_auth,
@@ -1847,7 +1847,7 @@ class TechnologiesApi:
             response_types_map=_response_types_map,
         )
 
-    def technologies_update_without_preload_content(
+    def update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this app_ analysis.')],
         app_analysis_request: AppAnalysisRequest,
@@ -1861,7 +1861,7 @@ class TechnologiesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """technologies_update
+        """update
 
 
         :param id: A unique integer value identifying this app_ analysis. (required)
@@ -1890,7 +1890,7 @@ class TechnologiesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._technologies_update_serialize(
+        _param = self._update_serialize(
             id=id,
             app_analysis_request=app_analysis_request,
             _request_auth=_request_auth,
@@ -1905,7 +1905,7 @@ class TechnologiesApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _technologies_update_serialize(
+    def _update_serialize(
         self,
         id,
         app_analysis_request,

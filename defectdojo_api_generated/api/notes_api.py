@@ -40,7 +40,7 @@ class NotesApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    def notes_list(
+    def list(
         self,
         author: Optional[StrictInt] = None,
         var_date: Optional[datetime] = None,
@@ -64,7 +64,7 @@ class NotesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedNoteList:
-        """notes_list
+        """list
 
 
         :param author:
@@ -109,7 +109,7 @@ class NotesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notes_list_serialize(
+        _param = self._list_serialize(
             author=author,
             var_date=var_date,
             edit_time=edit_time,
@@ -136,7 +136,7 @@ class NotesApi:
             response_types_map=_response_types_map,
         ).data
 
-    def notes_list_with_http_info(
+    def list_with_http_info(
         self,
         author: Optional[StrictInt] = None,
         var_date: Optional[datetime] = None,
@@ -160,7 +160,7 @@ class NotesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedNoteList]:
-        """notes_list
+        """list
 
 
         :param author:
@@ -205,7 +205,7 @@ class NotesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notes_list_serialize(
+        _param = self._list_serialize(
             author=author,
             var_date=var_date,
             edit_time=edit_time,
@@ -232,7 +232,7 @@ class NotesApi:
             response_types_map=_response_types_map,
         )
 
-    def notes_list_without_preload_content(
+    def list_without_preload_content(
         self,
         author: Optional[StrictInt] = None,
         var_date: Optional[datetime] = None,
@@ -256,7 +256,7 @@ class NotesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """notes_list
+        """list
 
 
         :param author:
@@ -301,7 +301,7 @@ class NotesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notes_list_serialize(
+        _param = self._list_serialize(
             author=author,
             var_date=var_date,
             edit_time=edit_time,
@@ -324,7 +324,7 @@ class NotesApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _notes_list_serialize(
+    def _list_serialize(
         self,
         author,
         var_date,
@@ -416,7 +416,7 @@ class NotesApi:
             _request_auth=_request_auth,
         )
 
-    def notes_list_iterator(
+    def list_iterator(
         self,
         author: Optional[StrictInt] = None,
         var_date: Optional[datetime] = None,
@@ -441,11 +441,11 @@ class NotesApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[Note, PaginatedNoteList], None, None]':
         _params = locals()
-        for page in get_all_pages(self.api_client, NotesApi.notes_list, **_params):
+        for page in get_all_pages(self.api_client, NotesApi.list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def notes_partial_update(
+    def partial_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notes.')],
         patched_note_request: Optional[PatchedNoteRequest] = None,
@@ -459,7 +459,7 @@ class NotesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Note:
-        """notes_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this notes. (required)
@@ -488,7 +488,7 @@ class NotesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notes_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_note_request=patched_note_request,
             _request_auth=_request_auth,
@@ -507,7 +507,7 @@ class NotesApi:
             response_types_map=_response_types_map,
         ).data
 
-    def notes_partial_update_with_http_info(
+    def partial_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notes.')],
         patched_note_request: Optional[PatchedNoteRequest] = None,
@@ -521,7 +521,7 @@ class NotesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Note]:
-        """notes_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this notes. (required)
@@ -550,7 +550,7 @@ class NotesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notes_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_note_request=patched_note_request,
             _request_auth=_request_auth,
@@ -569,7 +569,7 @@ class NotesApi:
             response_types_map=_response_types_map,
         )
 
-    def notes_partial_update_without_preload_content(
+    def partial_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notes.')],
         patched_note_request: Optional[PatchedNoteRequest] = None,
@@ -583,7 +583,7 @@ class NotesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """notes_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this notes. (required)
@@ -612,7 +612,7 @@ class NotesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notes_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_note_request=patched_note_request,
             _request_auth=_request_auth,
@@ -627,7 +627,7 @@ class NotesApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _notes_partial_update_serialize(
+    def _partial_update_serialize(
         self,
         id,
         patched_note_request,
@@ -689,7 +689,7 @@ class NotesApi:
             _request_auth=_request_auth,
         )
 
-    def notes_retrieve(
+    def retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notes.')],
         _request_timeout: Union[
@@ -702,7 +702,7 @@ class NotesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Note:
-        """notes_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this notes. (required)
@@ -729,7 +729,7 @@ class NotesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notes_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -743,7 +743,7 @@ class NotesApi:
             response_types_map=_response_types_map,
         ).data
 
-    def notes_retrieve_with_http_info(
+    def retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notes.')],
         _request_timeout: Union[
@@ -756,7 +756,7 @@ class NotesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Note]:
-        """notes_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this notes. (required)
@@ -783,7 +783,7 @@ class NotesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notes_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -797,7 +797,7 @@ class NotesApi:
             response_types_map=_response_types_map,
         )
 
-    def notes_retrieve_without_preload_content(
+    def retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notes.')],
         _request_timeout: Union[
@@ -810,7 +810,7 @@ class NotesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """notes_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this notes. (required)
@@ -837,7 +837,7 @@ class NotesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notes_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -847,7 +847,7 @@ class NotesApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _notes_retrieve_serialize(
+    def _retrieve_serialize(
         self,
         id,
         _request_auth,
@@ -896,7 +896,7 @@ class NotesApi:
             _request_auth=_request_auth,
         )
 
-    def notes_update(
+    def update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notes.')],
         note_request: NoteRequest,
@@ -910,7 +910,7 @@ class NotesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Note:
-        """notes_update
+        """update
 
 
         :param id: A unique integer value identifying this notes. (required)
@@ -939,7 +939,7 @@ class NotesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notes_update_serialize(
+        _param = self._update_serialize(
             id=id,
             note_request=note_request,
             _request_auth=_request_auth,
@@ -958,7 +958,7 @@ class NotesApi:
             response_types_map=_response_types_map,
         ).data
 
-    def notes_update_with_http_info(
+    def update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notes.')],
         note_request: NoteRequest,
@@ -972,7 +972,7 @@ class NotesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Note]:
-        """notes_update
+        """update
 
 
         :param id: A unique integer value identifying this notes. (required)
@@ -1001,7 +1001,7 @@ class NotesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notes_update_serialize(
+        _param = self._update_serialize(
             id=id,
             note_request=note_request,
             _request_auth=_request_auth,
@@ -1020,7 +1020,7 @@ class NotesApi:
             response_types_map=_response_types_map,
         )
 
-    def notes_update_without_preload_content(
+    def update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notes.')],
         note_request: NoteRequest,
@@ -1034,7 +1034,7 @@ class NotesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """notes_update
+        """update
 
 
         :param id: A unique integer value identifying this notes. (required)
@@ -1063,7 +1063,7 @@ class NotesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notes_update_serialize(
+        _param = self._update_serialize(
             id=id,
             note_request=note_request,
             _request_auth=_request_auth,
@@ -1078,7 +1078,7 @@ class NotesApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _notes_update_serialize(
+    def _update_serialize(
         self,
         id,
         note_request,

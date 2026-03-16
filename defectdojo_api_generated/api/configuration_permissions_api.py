@@ -37,7 +37,7 @@ class ConfigurationPermissionsApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    def configuration_permissions_list(
+    def list(
         self,
         codename: Optional[StrictStr] = None,
         id: Optional[StrictInt] = None,
@@ -56,7 +56,7 @@ class ConfigurationPermissionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedConfigurationPermissionList:
-        """configuration_permissions_list
+        """list
 
 
         :param codename:
@@ -91,7 +91,7 @@ class ConfigurationPermissionsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._configuration_permissions_list_serialize(
+        _param = self._list_serialize(
             codename=codename,
             id=id,
             limit=limit,
@@ -113,7 +113,7 @@ class ConfigurationPermissionsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def configuration_permissions_list_with_http_info(
+    def list_with_http_info(
         self,
         codename: Optional[StrictStr] = None,
         id: Optional[StrictInt] = None,
@@ -132,7 +132,7 @@ class ConfigurationPermissionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedConfigurationPermissionList]:
-        """configuration_permissions_list
+        """list
 
 
         :param codename:
@@ -167,7 +167,7 @@ class ConfigurationPermissionsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._configuration_permissions_list_serialize(
+        _param = self._list_serialize(
             codename=codename,
             id=id,
             limit=limit,
@@ -189,7 +189,7 @@ class ConfigurationPermissionsApi:
             response_types_map=_response_types_map,
         )
 
-    def configuration_permissions_list_without_preload_content(
+    def list_without_preload_content(
         self,
         codename: Optional[StrictStr] = None,
         id: Optional[StrictInt] = None,
@@ -208,7 +208,7 @@ class ConfigurationPermissionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """configuration_permissions_list
+        """list
 
 
         :param codename:
@@ -243,7 +243,7 @@ class ConfigurationPermissionsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._configuration_permissions_list_serialize(
+        _param = self._list_serialize(
             codename=codename,
             id=id,
             limit=limit,
@@ -261,7 +261,7 @@ class ConfigurationPermissionsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _configuration_permissions_list_serialize(
+    def _list_serialize(
         self,
         codename,
         id,
@@ -327,7 +327,7 @@ class ConfigurationPermissionsApi:
             _request_auth=_request_auth,
         )
 
-    def configuration_permissions_list_iterator(
+    def list_iterator(
         self,
         codename: Optional[StrictStr] = None,
         id: Optional[StrictInt] = None,
@@ -347,13 +347,11 @@ class ConfigurationPermissionsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[ConfigurationPermission, PaginatedConfigurationPermissionList], None, None]':
         _params = locals()
-        for page in get_all_pages(
-            self.api_client, ConfigurationPermissionsApi.configuration_permissions_list, **_params
-        ):
+        for page in get_all_pages(self.api_client, ConfigurationPermissionsApi.list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def configuration_permissions_retrieve(
+    def retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this permission.')],
         _request_timeout: Union[
@@ -366,7 +364,7 @@ class ConfigurationPermissionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ConfigurationPermission:
-        """configuration_permissions_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this permission. (required)
@@ -393,7 +391,7 @@ class ConfigurationPermissionsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._configuration_permissions_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -407,7 +405,7 @@ class ConfigurationPermissionsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def configuration_permissions_retrieve_with_http_info(
+    def retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this permission.')],
         _request_timeout: Union[
@@ -420,7 +418,7 @@ class ConfigurationPermissionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[ConfigurationPermission]:
-        """configuration_permissions_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this permission. (required)
@@ -447,7 +445,7 @@ class ConfigurationPermissionsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._configuration_permissions_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -461,7 +459,7 @@ class ConfigurationPermissionsApi:
             response_types_map=_response_types_map,
         )
 
-    def configuration_permissions_retrieve_without_preload_content(
+    def retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this permission.')],
         _request_timeout: Union[
@@ -474,7 +472,7 @@ class ConfigurationPermissionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """configuration_permissions_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this permission. (required)
@@ -501,7 +499,7 @@ class ConfigurationPermissionsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._configuration_permissions_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -511,7 +509,7 @@ class ConfigurationPermissionsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _configuration_permissions_retrieve_serialize(
+    def _retrieve_serialize(
         self,
         id,
         _request_auth,

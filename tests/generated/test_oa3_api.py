@@ -24,8 +24,8 @@ class TestOa3Api(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_oa3_schema_retrieve(self) -> None:
-        """Test case for oa3_schema_retrieve"""
+    def test_schema_retrieve(self) -> None:
+        """Test case for schema_retrieve"""
         pass
 
 

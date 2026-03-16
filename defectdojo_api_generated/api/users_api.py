@@ -41,7 +41,7 @@ class UsersApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    def users_create(
+    def create(
         self,
         user_request: UserRequest,
         _request_timeout: Union[
@@ -54,7 +54,7 @@ class UsersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> User:
-        """users_create
+        """create
 
 
         :param user_request: (required)
@@ -81,7 +81,7 @@ class UsersApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._users_create_serialize(
+        _param = self._create_serialize(
             user_request=user_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -99,7 +99,7 @@ class UsersApi:
             response_types_map=_response_types_map,
         ).data
 
-    def users_create_with_http_info(
+    def create_with_http_info(
         self,
         user_request: UserRequest,
         _request_timeout: Union[
@@ -112,7 +112,7 @@ class UsersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[User]:
-        """users_create
+        """create
 
 
         :param user_request: (required)
@@ -139,7 +139,7 @@ class UsersApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._users_create_serialize(
+        _param = self._create_serialize(
             user_request=user_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -157,7 +157,7 @@ class UsersApi:
             response_types_map=_response_types_map,
         )
 
-    def users_create_without_preload_content(
+    def create_without_preload_content(
         self,
         user_request: UserRequest,
         _request_timeout: Union[
@@ -170,7 +170,7 @@ class UsersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """users_create
+        """create
 
 
         :param user_request: (required)
@@ -197,7 +197,7 @@ class UsersApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._users_create_serialize(
+        _param = self._create_serialize(
             user_request=user_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -211,7 +211,7 @@ class UsersApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _users_create_serialize(
+    def _create_serialize(
         self,
         user_request,
         _request_auth,
@@ -270,7 +270,7 @@ class UsersApi:
             _request_auth=_request_auth,
         )
 
-    def users_delete_preview_list(
+    def delete_preview_list(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this user.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -287,7 +287,7 @@ class UsersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedDeletePreviewList:
-        """users_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this user. (required)
@@ -318,7 +318,7 @@ class UsersApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._users_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -338,7 +338,7 @@ class UsersApi:
             response_types_map=_response_types_map,
         ).data
 
-    def users_delete_preview_list_with_http_info(
+    def delete_preview_list_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this user.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -355,7 +355,7 @@ class UsersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedDeletePreviewList]:
-        """users_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this user. (required)
@@ -386,7 +386,7 @@ class UsersApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._users_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -406,7 +406,7 @@ class UsersApi:
             response_types_map=_response_types_map,
         )
 
-    def users_delete_preview_list_without_preload_content(
+    def delete_preview_list_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this user.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -423,7 +423,7 @@ class UsersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """users_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this user. (required)
@@ -454,7 +454,7 @@ class UsersApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._users_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -470,7 +470,7 @@ class UsersApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _users_delete_preview_list_serialize(
+    def _delete_preview_list_serialize(
         self,
         id,
         limit,
@@ -527,7 +527,7 @@ class UsersApi:
             _request_auth=_request_auth,
         )
 
-    def users_delete_preview_list_iterator(
+    def delete_preview_list_iterator(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this user.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -545,11 +545,11 @@ class UsersApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[DeletePreview, PaginatedDeletePreviewList], None, None]':
         _params = locals()
-        for page in get_all_pages(self.api_client, UsersApi.users_delete_preview_list, **_params):
+        for page in get_all_pages(self.api_client, UsersApi.delete_preview_list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def users_destroy(
+    def destroy(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this user.')],
         _request_timeout: Union[
@@ -562,7 +562,7 @@ class UsersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> None:
-        """users_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this user. (required)
@@ -589,7 +589,7 @@ class UsersApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._users_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -603,7 +603,7 @@ class UsersApi:
             response_types_map=_response_types_map,
         ).data
 
-    def users_destroy_with_http_info(
+    def destroy_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this user.')],
         _request_timeout: Union[
@@ -616,7 +616,7 @@ class UsersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[None]:
-        """users_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this user. (required)
@@ -643,7 +643,7 @@ class UsersApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._users_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -657,7 +657,7 @@ class UsersApi:
             response_types_map=_response_types_map,
         )
 
-    def users_destroy_without_preload_content(
+    def destroy_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this user.')],
         _request_timeout: Union[
@@ -670,7 +670,7 @@ class UsersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """users_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this user. (required)
@@ -697,7 +697,7 @@ class UsersApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._users_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -707,7 +707,7 @@ class UsersApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _users_destroy_serialize(
+    def _destroy_serialize(
         self,
         id,
         _request_auth,
@@ -752,7 +752,7 @@ class UsersApi:
             _request_auth=_request_auth,
         )
 
-    def users_list(
+    def list(
         self,
         date_joined_after: Optional[date] = None,
         date_joined_before: Optional[date] = None,
@@ -785,7 +785,7 @@ class UsersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedUserList:
-        """users_list
+        """list
 
 
         :param date_joined_after:
@@ -838,7 +838,7 @@ class UsersApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._users_list_serialize(
+        _param = self._list_serialize(
             date_joined_after=date_joined_after,
             date_joined_before=date_joined_before,
             email=email,
@@ -869,7 +869,7 @@ class UsersApi:
             response_types_map=_response_types_map,
         ).data
 
-    def users_list_with_http_info(
+    def list_with_http_info(
         self,
         date_joined_after: Optional[date] = None,
         date_joined_before: Optional[date] = None,
@@ -902,7 +902,7 @@ class UsersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedUserList]:
-        """users_list
+        """list
 
 
         :param date_joined_after:
@@ -955,7 +955,7 @@ class UsersApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._users_list_serialize(
+        _param = self._list_serialize(
             date_joined_after=date_joined_after,
             date_joined_before=date_joined_before,
             email=email,
@@ -986,7 +986,7 @@ class UsersApi:
             response_types_map=_response_types_map,
         )
 
-    def users_list_without_preload_content(
+    def list_without_preload_content(
         self,
         date_joined_after: Optional[date] = None,
         date_joined_before: Optional[date] = None,
@@ -1019,7 +1019,7 @@ class UsersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """users_list
+        """list
 
 
         :param date_joined_after:
@@ -1072,7 +1072,7 @@ class UsersApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._users_list_serialize(
+        _param = self._list_serialize(
             date_joined_after=date_joined_after,
             date_joined_before=date_joined_before,
             email=email,
@@ -1099,7 +1099,7 @@ class UsersApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _users_list_serialize(
+    def _list_serialize(
         self,
         date_joined_after,
         date_joined_before,
@@ -1223,7 +1223,7 @@ class UsersApi:
             _request_auth=_request_auth,
         )
 
-    def users_list_iterator(
+    def list_iterator(
         self,
         date_joined_after: Optional[date] = None,
         date_joined_before: Optional[date] = None,
@@ -1257,11 +1257,11 @@ class UsersApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[User, PaginatedUserList], None, None]':
         _params = locals()
-        for page in get_all_pages(self.api_client, UsersApi.users_list, **_params):
+        for page in get_all_pages(self.api_client, UsersApi.list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def users_partial_update(
+    def partial_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this user.')],
         patched_user_request: Optional[PatchedUserRequest] = None,
@@ -1275,7 +1275,7 @@ class UsersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> User:
-        """users_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this user. (required)
@@ -1304,7 +1304,7 @@ class UsersApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._users_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_user_request=patched_user_request,
             _request_auth=_request_auth,
@@ -1323,7 +1323,7 @@ class UsersApi:
             response_types_map=_response_types_map,
         ).data
 
-    def users_partial_update_with_http_info(
+    def partial_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this user.')],
         patched_user_request: Optional[PatchedUserRequest] = None,
@@ -1337,7 +1337,7 @@ class UsersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[User]:
-        """users_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this user. (required)
@@ -1366,7 +1366,7 @@ class UsersApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._users_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_user_request=patched_user_request,
             _request_auth=_request_auth,
@@ -1385,7 +1385,7 @@ class UsersApi:
             response_types_map=_response_types_map,
         )
 
-    def users_partial_update_without_preload_content(
+    def partial_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this user.')],
         patched_user_request: Optional[PatchedUserRequest] = None,
@@ -1399,7 +1399,7 @@ class UsersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """users_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this user. (required)
@@ -1428,7 +1428,7 @@ class UsersApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._users_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_user_request=patched_user_request,
             _request_auth=_request_auth,
@@ -1443,7 +1443,7 @@ class UsersApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _users_partial_update_serialize(
+    def _partial_update_serialize(
         self,
         id,
         patched_user_request,
@@ -1505,7 +1505,7 @@ class UsersApi:
             _request_auth=_request_auth,
         )
 
-    def users_reset_api_token_create(
+    def reset_api_token_create(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this user.')],
         user_request: UserRequest,
@@ -1519,7 +1519,7 @@ class UsersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> User:
-        """users_reset_api_token_create
+        """reset_api_token_create
 
 
         :param id: A unique integer value identifying this user. (required)
@@ -1548,7 +1548,7 @@ class UsersApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._users_reset_api_token_create_serialize(
+        _param = self._reset_api_token_create_serialize(
             id=id,
             user_request=user_request,
             _request_auth=_request_auth,
@@ -1567,7 +1567,7 @@ class UsersApi:
             response_types_map=_response_types_map,
         ).data
 
-    def users_reset_api_token_create_with_http_info(
+    def reset_api_token_create_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this user.')],
         user_request: UserRequest,
@@ -1581,7 +1581,7 @@ class UsersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[User]:
-        """users_reset_api_token_create
+        """reset_api_token_create
 
 
         :param id: A unique integer value identifying this user. (required)
@@ -1610,7 +1610,7 @@ class UsersApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._users_reset_api_token_create_serialize(
+        _param = self._reset_api_token_create_serialize(
             id=id,
             user_request=user_request,
             _request_auth=_request_auth,
@@ -1629,7 +1629,7 @@ class UsersApi:
             response_types_map=_response_types_map,
         )
 
-    def users_reset_api_token_create_without_preload_content(
+    def reset_api_token_create_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this user.')],
         user_request: UserRequest,
@@ -1643,7 +1643,7 @@ class UsersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """users_reset_api_token_create
+        """reset_api_token_create
 
 
         :param id: A unique integer value identifying this user. (required)
@@ -1672,7 +1672,7 @@ class UsersApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._users_reset_api_token_create_serialize(
+        _param = self._reset_api_token_create_serialize(
             id=id,
             user_request=user_request,
             _request_auth=_request_auth,
@@ -1687,7 +1687,7 @@ class UsersApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _users_reset_api_token_create_serialize(
+    def _reset_api_token_create_serialize(
         self,
         id,
         user_request,
@@ -1749,7 +1749,7 @@ class UsersApi:
             _request_auth=_request_auth,
         )
 
-    def users_retrieve(
+    def retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this user.')],
         _request_timeout: Union[
@@ -1762,7 +1762,7 @@ class UsersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> User:
-        """users_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this user. (required)
@@ -1789,7 +1789,7 @@ class UsersApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._users_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1803,7 +1803,7 @@ class UsersApi:
             response_types_map=_response_types_map,
         ).data
 
-    def users_retrieve_with_http_info(
+    def retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this user.')],
         _request_timeout: Union[
@@ -1816,7 +1816,7 @@ class UsersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[User]:
-        """users_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this user. (required)
@@ -1843,7 +1843,7 @@ class UsersApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._users_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1857,7 +1857,7 @@ class UsersApi:
             response_types_map=_response_types_map,
         )
 
-    def users_retrieve_without_preload_content(
+    def retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this user.')],
         _request_timeout: Union[
@@ -1870,7 +1870,7 @@ class UsersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """users_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this user. (required)
@@ -1897,7 +1897,7 @@ class UsersApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._users_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1907,7 +1907,7 @@ class UsersApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _users_retrieve_serialize(
+    def _retrieve_serialize(
         self,
         id,
         _request_auth,
@@ -1956,7 +1956,7 @@ class UsersApi:
             _request_auth=_request_auth,
         )
 
-    def users_update(
+    def update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this user.')],
         user_request: UserRequest,
@@ -1970,7 +1970,7 @@ class UsersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> User:
-        """users_update
+        """update
 
 
         :param id: A unique integer value identifying this user. (required)
@@ -1999,7 +1999,7 @@ class UsersApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._users_update_serialize(
+        _param = self._update_serialize(
             id=id,
             user_request=user_request,
             _request_auth=_request_auth,
@@ -2018,7 +2018,7 @@ class UsersApi:
             response_types_map=_response_types_map,
         ).data
 
-    def users_update_with_http_info(
+    def update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this user.')],
         user_request: UserRequest,
@@ -2032,7 +2032,7 @@ class UsersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[User]:
-        """users_update
+        """update
 
 
         :param id: A unique integer value identifying this user. (required)
@@ -2061,7 +2061,7 @@ class UsersApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._users_update_serialize(
+        _param = self._update_serialize(
             id=id,
             user_request=user_request,
             _request_auth=_request_auth,
@@ -2080,7 +2080,7 @@ class UsersApi:
             response_types_map=_response_types_map,
         )
 
-    def users_update_without_preload_content(
+    def update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this user.')],
         user_request: UserRequest,
@@ -2094,7 +2094,7 @@ class UsersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """users_update
+        """update
 
 
         :param id: A unique integer value identifying this user. (required)
@@ -2123,7 +2123,7 @@ class UsersApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._users_update_serialize(
+        _param = self._update_serialize(
             id=id,
             user_request=user_request,
             _request_auth=_request_auth,
@@ -2138,7 +2138,7 @@ class UsersApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _users_update_serialize(
+    def _update_serialize(
         self,
         id,
         user_request,

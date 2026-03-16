@@ -34,7 +34,7 @@ class UserProfileApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    def user_profile_retrieve(
+    def retrieve(
         self,
         _request_timeout: Union[
             None,
@@ -46,7 +46,7 @@ class UserProfileApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> UserProfile:
-        """user_profile_retrieve
+        """retrieve
 
 
         :param _request_timeout: timeout setting for this request. If one
@@ -71,7 +71,7 @@ class UserProfileApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._user_profile_retrieve_serialize(
+        _param = self._retrieve_serialize(
             _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -85,7 +85,7 @@ class UserProfileApi:
             response_types_map=_response_types_map,
         ).data
 
-    def user_profile_retrieve_with_http_info(
+    def retrieve_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -97,7 +97,7 @@ class UserProfileApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[UserProfile]:
-        """user_profile_retrieve
+        """retrieve
 
 
         :param _request_timeout: timeout setting for this request. If one
@@ -122,7 +122,7 @@ class UserProfileApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._user_profile_retrieve_serialize(
+        _param = self._retrieve_serialize(
             _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -136,7 +136,7 @@ class UserProfileApi:
             response_types_map=_response_types_map,
         )
 
-    def user_profile_retrieve_without_preload_content(
+    def retrieve_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -148,7 +148,7 @@ class UserProfileApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """user_profile_retrieve
+        """retrieve
 
 
         :param _request_timeout: timeout setting for this request. If one
@@ -173,7 +173,7 @@ class UserProfileApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._user_profile_retrieve_serialize(
+        _param = self._retrieve_serialize(
             _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -183,7 +183,7 @@ class UserProfileApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _user_profile_retrieve_serialize(
+    def _retrieve_serialize(
         self,
         _request_auth,
         _content_type,

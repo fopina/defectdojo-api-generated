@@ -41,7 +41,7 @@ class UserContactInfosApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    def user_contact_infos_create(
+    def create(
         self,
         user_contact_info_request: UserContactInfoRequest,
         _request_timeout: Union[
@@ -54,7 +54,7 @@ class UserContactInfosApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> UserContactInfo:
-        """user_contact_infos_create
+        """create
 
 
         :param user_contact_info_request: (required)
@@ -81,7 +81,7 @@ class UserContactInfosApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._user_contact_infos_create_serialize(
+        _param = self._create_serialize(
             user_contact_info_request=user_contact_info_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -99,7 +99,7 @@ class UserContactInfosApi:
             response_types_map=_response_types_map,
         ).data
 
-    def user_contact_infos_create_with_http_info(
+    def create_with_http_info(
         self,
         user_contact_info_request: UserContactInfoRequest,
         _request_timeout: Union[
@@ -112,7 +112,7 @@ class UserContactInfosApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[UserContactInfo]:
-        """user_contact_infos_create
+        """create
 
 
         :param user_contact_info_request: (required)
@@ -139,7 +139,7 @@ class UserContactInfosApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._user_contact_infos_create_serialize(
+        _param = self._create_serialize(
             user_contact_info_request=user_contact_info_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -157,7 +157,7 @@ class UserContactInfosApi:
             response_types_map=_response_types_map,
         )
 
-    def user_contact_infos_create_without_preload_content(
+    def create_without_preload_content(
         self,
         user_contact_info_request: UserContactInfoRequest,
         _request_timeout: Union[
@@ -170,7 +170,7 @@ class UserContactInfosApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """user_contact_infos_create
+        """create
 
 
         :param user_contact_info_request: (required)
@@ -197,7 +197,7 @@ class UserContactInfosApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._user_contact_infos_create_serialize(
+        _param = self._create_serialize(
             user_contact_info_request=user_contact_info_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -211,7 +211,7 @@ class UserContactInfosApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _user_contact_infos_create_serialize(
+    def _create_serialize(
         self,
         user_contact_info_request,
         _request_auth,
@@ -270,7 +270,7 @@ class UserContactInfosApi:
             _request_auth=_request_auth,
         )
 
-    def user_contact_infos_delete_preview_list(
+    def delete_preview_list(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this user contact info.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -287,7 +287,7 @@ class UserContactInfosApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedDeletePreviewList:
-        """user_contact_infos_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this user contact info. (required)
@@ -318,7 +318,7 @@ class UserContactInfosApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._user_contact_infos_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -338,7 +338,7 @@ class UserContactInfosApi:
             response_types_map=_response_types_map,
         ).data
 
-    def user_contact_infos_delete_preview_list_with_http_info(
+    def delete_preview_list_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this user contact info.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -355,7 +355,7 @@ class UserContactInfosApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedDeletePreviewList]:
-        """user_contact_infos_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this user contact info. (required)
@@ -386,7 +386,7 @@ class UserContactInfosApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._user_contact_infos_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -406,7 +406,7 @@ class UserContactInfosApi:
             response_types_map=_response_types_map,
         )
 
-    def user_contact_infos_delete_preview_list_without_preload_content(
+    def delete_preview_list_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this user contact info.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -423,7 +423,7 @@ class UserContactInfosApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """user_contact_infos_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this user contact info. (required)
@@ -454,7 +454,7 @@ class UserContactInfosApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._user_contact_infos_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -470,7 +470,7 @@ class UserContactInfosApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _user_contact_infos_delete_preview_list_serialize(
+    def _delete_preview_list_serialize(
         self,
         id,
         limit,
@@ -527,7 +527,7 @@ class UserContactInfosApi:
             _request_auth=_request_auth,
         )
 
-    def user_contact_infos_delete_preview_list_iterator(
+    def delete_preview_list_iterator(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this user contact info.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -545,13 +545,11 @@ class UserContactInfosApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[DeletePreview, PaginatedDeletePreviewList], None, None]':
         _params = locals()
-        for page in get_all_pages(
-            self.api_client, UserContactInfosApi.user_contact_infos_delete_preview_list, **_params
-        ):
+        for page in get_all_pages(self.api_client, UserContactInfosApi.delete_preview_list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def user_contact_infos_destroy(
+    def destroy(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this user contact info.')],
         _request_timeout: Union[
@@ -564,7 +562,7 @@ class UserContactInfosApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> None:
-        """user_contact_infos_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this user contact info. (required)
@@ -591,7 +589,7 @@ class UserContactInfosApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._user_contact_infos_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -605,7 +603,7 @@ class UserContactInfosApi:
             response_types_map=_response_types_map,
         ).data
 
-    def user_contact_infos_destroy_with_http_info(
+    def destroy_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this user contact info.')],
         _request_timeout: Union[
@@ -618,7 +616,7 @@ class UserContactInfosApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[None]:
-        """user_contact_infos_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this user contact info. (required)
@@ -645,7 +643,7 @@ class UserContactInfosApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._user_contact_infos_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -659,7 +657,7 @@ class UserContactInfosApi:
             response_types_map=_response_types_map,
         )
 
-    def user_contact_infos_destroy_without_preload_content(
+    def destroy_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this user contact info.')],
         _request_timeout: Union[
@@ -672,7 +670,7 @@ class UserContactInfosApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """user_contact_infos_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this user contact info. (required)
@@ -699,7 +697,7 @@ class UserContactInfosApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._user_contact_infos_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -709,7 +707,7 @@ class UserContactInfosApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _user_contact_infos_destroy_serialize(
+    def _destroy_serialize(
         self,
         id,
         _request_auth,
@@ -754,7 +752,7 @@ class UserContactInfosApi:
             _request_auth=_request_auth,
         )
 
-    def user_contact_infos_list(
+    def list(
         self,
         block_execution: Optional[StrictBool] = None,
         cell_number: Optional[StrictStr] = None,
@@ -786,7 +784,7 @@ class UserContactInfosApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedUserContactInfoList:
-        """user_contact_infos_list
+        """list
 
 
         :param block_execution:
@@ -841,7 +839,7 @@ class UserContactInfosApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._user_contact_infos_list_serialize(
+        _param = self._list_serialize(
             block_execution=block_execution,
             cell_number=cell_number,
             force_password_reset=force_password_reset,
@@ -873,7 +871,7 @@ class UserContactInfosApi:
             response_types_map=_response_types_map,
         ).data
 
-    def user_contact_infos_list_with_http_info(
+    def list_with_http_info(
         self,
         block_execution: Optional[StrictBool] = None,
         cell_number: Optional[StrictStr] = None,
@@ -905,7 +903,7 @@ class UserContactInfosApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedUserContactInfoList]:
-        """user_contact_infos_list
+        """list
 
 
         :param block_execution:
@@ -960,7 +958,7 @@ class UserContactInfosApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._user_contact_infos_list_serialize(
+        _param = self._list_serialize(
             block_execution=block_execution,
             cell_number=cell_number,
             force_password_reset=force_password_reset,
@@ -992,7 +990,7 @@ class UserContactInfosApi:
             response_types_map=_response_types_map,
         )
 
-    def user_contact_infos_list_without_preload_content(
+    def list_without_preload_content(
         self,
         block_execution: Optional[StrictBool] = None,
         cell_number: Optional[StrictStr] = None,
@@ -1024,7 +1022,7 @@ class UserContactInfosApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """user_contact_infos_list
+        """list
 
 
         :param block_execution:
@@ -1079,7 +1077,7 @@ class UserContactInfosApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._user_contact_infos_list_serialize(
+        _param = self._list_serialize(
             block_execution=block_execution,
             cell_number=cell_number,
             force_password_reset=force_password_reset,
@@ -1107,7 +1105,7 @@ class UserContactInfosApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _user_contact_infos_list_serialize(
+    def _list_serialize(
         self,
         block_execution,
         cell_number,
@@ -1225,7 +1223,7 @@ class UserContactInfosApi:
             _request_auth=_request_auth,
         )
 
-    def user_contact_infos_list_iterator(
+    def list_iterator(
         self,
         block_execution: Optional[StrictBool] = None,
         cell_number: Optional[StrictStr] = None,
@@ -1258,11 +1256,11 @@ class UserContactInfosApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[UserContactInfo, PaginatedUserContactInfoList], None, None]':
         _params = locals()
-        for page in get_all_pages(self.api_client, UserContactInfosApi.user_contact_infos_list, **_params):
+        for page in get_all_pages(self.api_client, UserContactInfosApi.list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def user_contact_infos_partial_update(
+    def partial_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this user contact info.')],
         patched_user_contact_info_request: Optional[PatchedUserContactInfoRequest] = None,
@@ -1276,7 +1274,7 @@ class UserContactInfosApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> UserContactInfo:
-        """user_contact_infos_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this user contact info. (required)
@@ -1305,7 +1303,7 @@ class UserContactInfosApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._user_contact_infos_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_user_contact_info_request=patched_user_contact_info_request,
             _request_auth=_request_auth,
@@ -1324,7 +1322,7 @@ class UserContactInfosApi:
             response_types_map=_response_types_map,
         ).data
 
-    def user_contact_infos_partial_update_with_http_info(
+    def partial_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this user contact info.')],
         patched_user_contact_info_request: Optional[PatchedUserContactInfoRequest] = None,
@@ -1338,7 +1336,7 @@ class UserContactInfosApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[UserContactInfo]:
-        """user_contact_infos_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this user contact info. (required)
@@ -1367,7 +1365,7 @@ class UserContactInfosApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._user_contact_infos_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_user_contact_info_request=patched_user_contact_info_request,
             _request_auth=_request_auth,
@@ -1386,7 +1384,7 @@ class UserContactInfosApi:
             response_types_map=_response_types_map,
         )
 
-    def user_contact_infos_partial_update_without_preload_content(
+    def partial_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this user contact info.')],
         patched_user_contact_info_request: Optional[PatchedUserContactInfoRequest] = None,
@@ -1400,7 +1398,7 @@ class UserContactInfosApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """user_contact_infos_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this user contact info. (required)
@@ -1429,7 +1427,7 @@ class UserContactInfosApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._user_contact_infos_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_user_contact_info_request=patched_user_contact_info_request,
             _request_auth=_request_auth,
@@ -1444,7 +1442,7 @@ class UserContactInfosApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _user_contact_infos_partial_update_serialize(
+    def _partial_update_serialize(
         self,
         id,
         patched_user_contact_info_request,
@@ -1506,7 +1504,7 @@ class UserContactInfosApi:
             _request_auth=_request_auth,
         )
 
-    def user_contact_infos_retrieve(
+    def retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this user contact info.')],
         prefetch: Annotated[
@@ -1523,7 +1521,7 @@ class UserContactInfosApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> UserContactInfo:
-        """user_contact_infos_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this user contact info. (required)
@@ -1552,7 +1550,7 @@ class UserContactInfosApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._user_contact_infos_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id,
             prefetch=prefetch,
             _request_auth=_request_auth,
@@ -1571,7 +1569,7 @@ class UserContactInfosApi:
             response_types_map=_response_types_map,
         ).data
 
-    def user_contact_infos_retrieve_with_http_info(
+    def retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this user contact info.')],
         prefetch: Annotated[
@@ -1588,7 +1586,7 @@ class UserContactInfosApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[UserContactInfo]:
-        """user_contact_infos_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this user contact info. (required)
@@ -1617,7 +1615,7 @@ class UserContactInfosApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._user_contact_infos_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id,
             prefetch=prefetch,
             _request_auth=_request_auth,
@@ -1636,7 +1634,7 @@ class UserContactInfosApi:
             response_types_map=_response_types_map,
         )
 
-    def user_contact_infos_retrieve_without_preload_content(
+    def retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this user contact info.')],
         prefetch: Annotated[
@@ -1653,7 +1651,7 @@ class UserContactInfosApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """user_contact_infos_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this user contact info. (required)
@@ -1682,7 +1680,7 @@ class UserContactInfosApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._user_contact_infos_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id,
             prefetch=prefetch,
             _request_auth=_request_auth,
@@ -1697,7 +1695,7 @@ class UserContactInfosApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _user_contact_infos_retrieve_serialize(
+    def _retrieve_serialize(
         self,
         id,
         prefetch,
@@ -1752,7 +1750,7 @@ class UserContactInfosApi:
             _request_auth=_request_auth,
         )
 
-    def user_contact_infos_update(
+    def update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this user contact info.')],
         user_contact_info_request: UserContactInfoRequest,
@@ -1766,7 +1764,7 @@ class UserContactInfosApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> UserContactInfo:
-        """user_contact_infos_update
+        """update
 
 
         :param id: A unique integer value identifying this user contact info. (required)
@@ -1795,7 +1793,7 @@ class UserContactInfosApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._user_contact_infos_update_serialize(
+        _param = self._update_serialize(
             id=id,
             user_contact_info_request=user_contact_info_request,
             _request_auth=_request_auth,
@@ -1814,7 +1812,7 @@ class UserContactInfosApi:
             response_types_map=_response_types_map,
         ).data
 
-    def user_contact_infos_update_with_http_info(
+    def update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this user contact info.')],
         user_contact_info_request: UserContactInfoRequest,
@@ -1828,7 +1826,7 @@ class UserContactInfosApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[UserContactInfo]:
-        """user_contact_infos_update
+        """update
 
 
         :param id: A unique integer value identifying this user contact info. (required)
@@ -1857,7 +1855,7 @@ class UserContactInfosApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._user_contact_infos_update_serialize(
+        _param = self._update_serialize(
             id=id,
             user_contact_info_request=user_contact_info_request,
             _request_auth=_request_auth,
@@ -1876,7 +1874,7 @@ class UserContactInfosApi:
             response_types_map=_response_types_map,
         )
 
-    def user_contact_infos_update_without_preload_content(
+    def update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this user contact info.')],
         user_contact_info_request: UserContactInfoRequest,
@@ -1890,7 +1888,7 @@ class UserContactInfosApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """user_contact_infos_update
+        """update
 
 
         :param id: A unique integer value identifying this user contact info. (required)
@@ -1919,7 +1917,7 @@ class UserContactInfosApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._user_contact_infos_update_serialize(
+        _param = self._update_serialize(
             id=id,
             user_contact_info_request=user_contact_info_request,
             _request_auth=_request_auth,
@@ -1934,7 +1932,7 @@ class UserContactInfosApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _user_contact_infos_update_serialize(
+    def _update_serialize(
         self,
         id,
         user_contact_info_request,

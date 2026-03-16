@@ -26,16 +26,16 @@ class TestQuestionnaireEngagementQuestionnairesApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_questionnaire_engagement_questionnaires_link_engagement_create(self) -> None:
-        """Test case for questionnaire_engagement_questionnaires_link_engagement_create"""
+    def test_link_engagement_create(self) -> None:
+        """Test case for link_engagement_create"""
         pass
 
-    def test_questionnaire_engagement_questionnaires_list(self) -> None:
-        """Test case for questionnaire_engagement_questionnaires_list"""
+    def test_list(self) -> None:
+        """Test case for list"""
         pass
 
-    def test_questionnaire_engagement_questionnaires_retrieve(self) -> None:
-        """Test case for questionnaire_engagement_questionnaires_retrieve"""
+    def test_retrieve(self) -> None:
+        """Test case for retrieve"""
         pass
 
 

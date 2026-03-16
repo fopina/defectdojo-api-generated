@@ -42,7 +42,7 @@ class RiskAcceptanceApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    def risk_acceptance_create(
+    def create(
         self,
         risk_acceptance_request: RiskAcceptanceRequest,
         _request_timeout: Union[
@@ -55,7 +55,7 @@ class RiskAcceptanceApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RiskAcceptance:
-        """risk_acceptance_create
+        """create
 
 
         :param risk_acceptance_request: (required)
@@ -82,7 +82,7 @@ class RiskAcceptanceApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._risk_acceptance_create_serialize(
+        _param = self._create_serialize(
             risk_acceptance_request=risk_acceptance_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -100,7 +100,7 @@ class RiskAcceptanceApi:
             response_types_map=_response_types_map,
         ).data
 
-    def risk_acceptance_create_with_http_info(
+    def create_with_http_info(
         self,
         risk_acceptance_request: RiskAcceptanceRequest,
         _request_timeout: Union[
@@ -113,7 +113,7 @@ class RiskAcceptanceApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[RiskAcceptance]:
-        """risk_acceptance_create
+        """create
 
 
         :param risk_acceptance_request: (required)
@@ -140,7 +140,7 @@ class RiskAcceptanceApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._risk_acceptance_create_serialize(
+        _param = self._create_serialize(
             risk_acceptance_request=risk_acceptance_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -158,7 +158,7 @@ class RiskAcceptanceApi:
             response_types_map=_response_types_map,
         )
 
-    def risk_acceptance_create_without_preload_content(
+    def create_without_preload_content(
         self,
         risk_acceptance_request: RiskAcceptanceRequest,
         _request_timeout: Union[
@@ -171,7 +171,7 @@ class RiskAcceptanceApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """risk_acceptance_create
+        """create
 
 
         :param risk_acceptance_request: (required)
@@ -198,7 +198,7 @@ class RiskAcceptanceApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._risk_acceptance_create_serialize(
+        _param = self._create_serialize(
             risk_acceptance_request=risk_acceptance_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -212,7 +212,7 @@ class RiskAcceptanceApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _risk_acceptance_create_serialize(
+    def _create_serialize(
         self,
         risk_acceptance_request,
         _request_auth,
@@ -271,7 +271,7 @@ class RiskAcceptanceApi:
             _request_auth=_request_auth,
         )
 
-    def risk_acceptance_delete_preview_list(
+    def delete_preview_list(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this risk_ acceptance.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -288,7 +288,7 @@ class RiskAcceptanceApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedDeletePreviewList:
-        """risk_acceptance_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this risk_ acceptance. (required)
@@ -319,7 +319,7 @@ class RiskAcceptanceApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._risk_acceptance_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -339,7 +339,7 @@ class RiskAcceptanceApi:
             response_types_map=_response_types_map,
         ).data
 
-    def risk_acceptance_delete_preview_list_with_http_info(
+    def delete_preview_list_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this risk_ acceptance.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -356,7 +356,7 @@ class RiskAcceptanceApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedDeletePreviewList]:
-        """risk_acceptance_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this risk_ acceptance. (required)
@@ -387,7 +387,7 @@ class RiskAcceptanceApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._risk_acceptance_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -407,7 +407,7 @@ class RiskAcceptanceApi:
             response_types_map=_response_types_map,
         )
 
-    def risk_acceptance_delete_preview_list_without_preload_content(
+    def delete_preview_list_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this risk_ acceptance.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -424,7 +424,7 @@ class RiskAcceptanceApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """risk_acceptance_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this risk_ acceptance. (required)
@@ -455,7 +455,7 @@ class RiskAcceptanceApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._risk_acceptance_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -471,7 +471,7 @@ class RiskAcceptanceApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _risk_acceptance_delete_preview_list_serialize(
+    def _delete_preview_list_serialize(
         self,
         id,
         limit,
@@ -528,7 +528,7 @@ class RiskAcceptanceApi:
             _request_auth=_request_auth,
         )
 
-    def risk_acceptance_delete_preview_list_iterator(
+    def delete_preview_list_iterator(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this risk_ acceptance.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -546,11 +546,11 @@ class RiskAcceptanceApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[DeletePreview, PaginatedDeletePreviewList], None, None]':
         _params = locals()
-        for page in get_all_pages(self.api_client, RiskAcceptanceApi.risk_acceptance_delete_preview_list, **_params):
+        for page in get_all_pages(self.api_client, RiskAcceptanceApi.delete_preview_list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def risk_acceptance_destroy(
+    def destroy(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this risk_ acceptance.')],
         _request_timeout: Union[
@@ -563,7 +563,7 @@ class RiskAcceptanceApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> None:
-        """risk_acceptance_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this risk_ acceptance. (required)
@@ -590,7 +590,7 @@ class RiskAcceptanceApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._risk_acceptance_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -604,7 +604,7 @@ class RiskAcceptanceApi:
             response_types_map=_response_types_map,
         ).data
 
-    def risk_acceptance_destroy_with_http_info(
+    def destroy_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this risk_ acceptance.')],
         _request_timeout: Union[
@@ -617,7 +617,7 @@ class RiskAcceptanceApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[None]:
-        """risk_acceptance_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this risk_ acceptance. (required)
@@ -644,7 +644,7 @@ class RiskAcceptanceApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._risk_acceptance_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -658,7 +658,7 @@ class RiskAcceptanceApi:
             response_types_map=_response_types_map,
         )
 
-    def risk_acceptance_destroy_without_preload_content(
+    def destroy_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this risk_ acceptance.')],
         _request_timeout: Union[
@@ -671,7 +671,7 @@ class RiskAcceptanceApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """risk_acceptance_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this risk_ acceptance. (required)
@@ -698,7 +698,7 @@ class RiskAcceptanceApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._risk_acceptance_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -708,7 +708,7 @@ class RiskAcceptanceApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _risk_acceptance_destroy_serialize(
+    def _destroy_serialize(
         self,
         id,
         _request_auth,
@@ -753,7 +753,7 @@ class RiskAcceptanceApi:
             _request_auth=_request_auth,
         )
 
-    def risk_acceptance_download_proof_retrieve(
+    def download_proof_retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this risk_ acceptance.')],
         _request_timeout: Union[
@@ -766,7 +766,7 @@ class RiskAcceptanceApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RiskAcceptanceProof:
-        """risk_acceptance_download_proof_retrieve
+        """download_proof_retrieve
 
 
         :param id: A unique integer value identifying this risk_ acceptance. (required)
@@ -793,7 +793,7 @@ class RiskAcceptanceApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._risk_acceptance_download_proof_retrieve_serialize(
+        _param = self._download_proof_retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -807,7 +807,7 @@ class RiskAcceptanceApi:
             response_types_map=_response_types_map,
         ).data
 
-    def risk_acceptance_download_proof_retrieve_with_http_info(
+    def download_proof_retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this risk_ acceptance.')],
         _request_timeout: Union[
@@ -820,7 +820,7 @@ class RiskAcceptanceApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[RiskAcceptanceProof]:
-        """risk_acceptance_download_proof_retrieve
+        """download_proof_retrieve
 
 
         :param id: A unique integer value identifying this risk_ acceptance. (required)
@@ -847,7 +847,7 @@ class RiskAcceptanceApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._risk_acceptance_download_proof_retrieve_serialize(
+        _param = self._download_proof_retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -861,7 +861,7 @@ class RiskAcceptanceApi:
             response_types_map=_response_types_map,
         )
 
-    def risk_acceptance_download_proof_retrieve_without_preload_content(
+    def download_proof_retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this risk_ acceptance.')],
         _request_timeout: Union[
@@ -874,7 +874,7 @@ class RiskAcceptanceApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """risk_acceptance_download_proof_retrieve
+        """download_proof_retrieve
 
 
         :param id: A unique integer value identifying this risk_ acceptance. (required)
@@ -901,7 +901,7 @@ class RiskAcceptanceApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._risk_acceptance_download_proof_retrieve_serialize(
+        _param = self._download_proof_retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -911,7 +911,7 @@ class RiskAcceptanceApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _risk_acceptance_download_proof_retrieve_serialize(
+    def _download_proof_retrieve_serialize(
         self,
         id,
         _request_auth,
@@ -960,7 +960,7 @@ class RiskAcceptanceApi:
             _request_auth=_request_auth,
         )
 
-    def risk_acceptance_list(
+    def list(
         self,
         accepted_by: Optional[StrictStr] = None,
         accepted_findings: Optional[List[StrictInt]] = None,
@@ -1003,7 +1003,7 @@ class RiskAcceptanceApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedRiskAcceptanceList:
-        """risk_acceptance_list
+        """list
 
 
         :param accepted_by:
@@ -1062,7 +1062,7 @@ class RiskAcceptanceApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._risk_acceptance_list_serialize(
+        _param = self._list_serialize(
             accepted_by=accepted_by,
             accepted_findings=accepted_findings,
             decision=decision,
@@ -1096,7 +1096,7 @@ class RiskAcceptanceApi:
             response_types_map=_response_types_map,
         ).data
 
-    def risk_acceptance_list_with_http_info(
+    def list_with_http_info(
         self,
         accepted_by: Optional[StrictStr] = None,
         accepted_findings: Optional[List[StrictInt]] = None,
@@ -1139,7 +1139,7 @@ class RiskAcceptanceApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedRiskAcceptanceList]:
-        """risk_acceptance_list
+        """list
 
 
         :param accepted_by:
@@ -1198,7 +1198,7 @@ class RiskAcceptanceApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._risk_acceptance_list_serialize(
+        _param = self._list_serialize(
             accepted_by=accepted_by,
             accepted_findings=accepted_findings,
             decision=decision,
@@ -1232,7 +1232,7 @@ class RiskAcceptanceApi:
             response_types_map=_response_types_map,
         )
 
-    def risk_acceptance_list_without_preload_content(
+    def list_without_preload_content(
         self,
         accepted_by: Optional[StrictStr] = None,
         accepted_findings: Optional[List[StrictInt]] = None,
@@ -1275,7 +1275,7 @@ class RiskAcceptanceApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """risk_acceptance_list
+        """list
 
 
         :param accepted_by:
@@ -1334,7 +1334,7 @@ class RiskAcceptanceApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._risk_acceptance_list_serialize(
+        _param = self._list_serialize(
             accepted_by=accepted_by,
             accepted_findings=accepted_findings,
             decision=decision,
@@ -1364,7 +1364,7 @@ class RiskAcceptanceApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _risk_acceptance_list_serialize(
+    def _list_serialize(
         self,
         accepted_by,
         accepted_findings,
@@ -1503,7 +1503,7 @@ class RiskAcceptanceApi:
             _request_auth=_request_auth,
         )
 
-    def risk_acceptance_list_iterator(
+    def list_iterator(
         self,
         accepted_by: Optional[StrictStr] = None,
         accepted_findings: Optional[List[StrictInt]] = None,
@@ -1547,11 +1547,11 @@ class RiskAcceptanceApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[RiskAcceptance, PaginatedRiskAcceptanceList], None, None]':
         _params = locals()
-        for page in get_all_pages(self.api_client, RiskAcceptanceApi.risk_acceptance_list, **_params):
+        for page in get_all_pages(self.api_client, RiskAcceptanceApi.list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def risk_acceptance_partial_update(
+    def partial_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this risk_ acceptance.')],
         patched_risk_acceptance_request: Optional[PatchedRiskAcceptanceRequest] = None,
@@ -1565,7 +1565,7 @@ class RiskAcceptanceApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RiskAcceptance:
-        """risk_acceptance_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this risk_ acceptance. (required)
@@ -1594,7 +1594,7 @@ class RiskAcceptanceApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._risk_acceptance_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_risk_acceptance_request=patched_risk_acceptance_request,
             _request_auth=_request_auth,
@@ -1613,7 +1613,7 @@ class RiskAcceptanceApi:
             response_types_map=_response_types_map,
         ).data
 
-    def risk_acceptance_partial_update_with_http_info(
+    def partial_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this risk_ acceptance.')],
         patched_risk_acceptance_request: Optional[PatchedRiskAcceptanceRequest] = None,
@@ -1627,7 +1627,7 @@ class RiskAcceptanceApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[RiskAcceptance]:
-        """risk_acceptance_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this risk_ acceptance. (required)
@@ -1656,7 +1656,7 @@ class RiskAcceptanceApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._risk_acceptance_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_risk_acceptance_request=patched_risk_acceptance_request,
             _request_auth=_request_auth,
@@ -1675,7 +1675,7 @@ class RiskAcceptanceApi:
             response_types_map=_response_types_map,
         )
 
-    def risk_acceptance_partial_update_without_preload_content(
+    def partial_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this risk_ acceptance.')],
         patched_risk_acceptance_request: Optional[PatchedRiskAcceptanceRequest] = None,
@@ -1689,7 +1689,7 @@ class RiskAcceptanceApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """risk_acceptance_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this risk_ acceptance. (required)
@@ -1718,7 +1718,7 @@ class RiskAcceptanceApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._risk_acceptance_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_risk_acceptance_request=patched_risk_acceptance_request,
             _request_auth=_request_auth,
@@ -1733,7 +1733,7 @@ class RiskAcceptanceApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _risk_acceptance_partial_update_serialize(
+    def _partial_update_serialize(
         self,
         id,
         patched_risk_acceptance_request,
@@ -1795,7 +1795,7 @@ class RiskAcceptanceApi:
             _request_auth=_request_auth,
         )
 
-    def risk_acceptance_retrieve(
+    def retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this risk_ acceptance.')],
         _request_timeout: Union[
@@ -1808,7 +1808,7 @@ class RiskAcceptanceApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RiskAcceptance:
-        """risk_acceptance_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this risk_ acceptance. (required)
@@ -1835,7 +1835,7 @@ class RiskAcceptanceApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._risk_acceptance_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1849,7 +1849,7 @@ class RiskAcceptanceApi:
             response_types_map=_response_types_map,
         ).data
 
-    def risk_acceptance_retrieve_with_http_info(
+    def retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this risk_ acceptance.')],
         _request_timeout: Union[
@@ -1862,7 +1862,7 @@ class RiskAcceptanceApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[RiskAcceptance]:
-        """risk_acceptance_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this risk_ acceptance. (required)
@@ -1889,7 +1889,7 @@ class RiskAcceptanceApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._risk_acceptance_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1903,7 +1903,7 @@ class RiskAcceptanceApi:
             response_types_map=_response_types_map,
         )
 
-    def risk_acceptance_retrieve_without_preload_content(
+    def retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this risk_ acceptance.')],
         _request_timeout: Union[
@@ -1916,7 +1916,7 @@ class RiskAcceptanceApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """risk_acceptance_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this risk_ acceptance. (required)
@@ -1943,7 +1943,7 @@ class RiskAcceptanceApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._risk_acceptance_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1953,7 +1953,7 @@ class RiskAcceptanceApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _risk_acceptance_retrieve_serialize(
+    def _retrieve_serialize(
         self,
         id,
         _request_auth,
@@ -2002,7 +2002,7 @@ class RiskAcceptanceApi:
             _request_auth=_request_auth,
         )
 
-    def risk_acceptance_update(
+    def update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this risk_ acceptance.')],
         risk_acceptance_request: RiskAcceptanceRequest,
@@ -2016,7 +2016,7 @@ class RiskAcceptanceApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RiskAcceptance:
-        """risk_acceptance_update
+        """update
 
 
         :param id: A unique integer value identifying this risk_ acceptance. (required)
@@ -2045,7 +2045,7 @@ class RiskAcceptanceApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._risk_acceptance_update_serialize(
+        _param = self._update_serialize(
             id=id,
             risk_acceptance_request=risk_acceptance_request,
             _request_auth=_request_auth,
@@ -2064,7 +2064,7 @@ class RiskAcceptanceApi:
             response_types_map=_response_types_map,
         ).data
 
-    def risk_acceptance_update_with_http_info(
+    def update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this risk_ acceptance.')],
         risk_acceptance_request: RiskAcceptanceRequest,
@@ -2078,7 +2078,7 @@ class RiskAcceptanceApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[RiskAcceptance]:
-        """risk_acceptance_update
+        """update
 
 
         :param id: A unique integer value identifying this risk_ acceptance. (required)
@@ -2107,7 +2107,7 @@ class RiskAcceptanceApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._risk_acceptance_update_serialize(
+        _param = self._update_serialize(
             id=id,
             risk_acceptance_request=risk_acceptance_request,
             _request_auth=_request_auth,
@@ -2126,7 +2126,7 @@ class RiskAcceptanceApi:
             response_types_map=_response_types_map,
         )
 
-    def risk_acceptance_update_without_preload_content(
+    def update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this risk_ acceptance.')],
         risk_acceptance_request: RiskAcceptanceRequest,
@@ -2140,7 +2140,7 @@ class RiskAcceptanceApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """risk_acceptance_update
+        """update
 
 
         :param id: A unique integer value identifying this risk_ acceptance. (required)
@@ -2169,7 +2169,7 @@ class RiskAcceptanceApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._risk_acceptance_update_serialize(
+        _param = self._update_serialize(
             id=id,
             risk_acceptance_request=risk_acceptance_request,
             _request_auth=_request_auth,
@@ -2184,7 +2184,7 @@ class RiskAcceptanceApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _risk_acceptance_update_serialize(
+    def _update_serialize(
         self,
         id,
         risk_acceptance_request,

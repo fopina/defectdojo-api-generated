@@ -43,7 +43,7 @@ class MetadataApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    def metadata_batch_create(
+    def batch_create(
         self,
         meta_main_request: MetaMainRequest,
         _request_timeout: Union[
@@ -56,7 +56,7 @@ class MetadataApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> MetaMain:
-        """metadata_batch_create
+        """batch_create
 
 
         :param meta_main_request: (required)
@@ -83,7 +83,7 @@ class MetadataApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._metadata_batch_create_serialize(
+        _param = self._batch_create_serialize(
             meta_main_request=meta_main_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -101,7 +101,7 @@ class MetadataApi:
             response_types_map=_response_types_map,
         ).data
 
-    def metadata_batch_create_with_http_info(
+    def batch_create_with_http_info(
         self,
         meta_main_request: MetaMainRequest,
         _request_timeout: Union[
@@ -114,7 +114,7 @@ class MetadataApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[MetaMain]:
-        """metadata_batch_create
+        """batch_create
 
 
         :param meta_main_request: (required)
@@ -141,7 +141,7 @@ class MetadataApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._metadata_batch_create_serialize(
+        _param = self._batch_create_serialize(
             meta_main_request=meta_main_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -159,7 +159,7 @@ class MetadataApi:
             response_types_map=_response_types_map,
         )
 
-    def metadata_batch_create_without_preload_content(
+    def batch_create_without_preload_content(
         self,
         meta_main_request: MetaMainRequest,
         _request_timeout: Union[
@@ -172,7 +172,7 @@ class MetadataApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """metadata_batch_create
+        """batch_create
 
 
         :param meta_main_request: (required)
@@ -199,7 +199,7 @@ class MetadataApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._metadata_batch_create_serialize(
+        _param = self._batch_create_serialize(
             meta_main_request=meta_main_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -213,7 +213,7 @@ class MetadataApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _metadata_batch_create_serialize(
+    def _batch_create_serialize(
         self,
         meta_main_request,
         _request_auth,
@@ -272,7 +272,7 @@ class MetadataApi:
             _request_auth=_request_auth,
         )
 
-    def metadata_batch_partial_update(
+    def batch_partial_update(
         self,
         patched_meta_main_request: Optional[PatchedMetaMainRequest] = None,
         _request_timeout: Union[
@@ -285,7 +285,7 @@ class MetadataApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> MetaMain:
-        """metadata_batch_partial_update
+        """batch_partial_update
 
 
         :param patched_meta_main_request:
@@ -312,7 +312,7 @@ class MetadataApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._metadata_batch_partial_update_serialize(
+        _param = self._batch_partial_update_serialize(
             patched_meta_main_request=patched_meta_main_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -330,7 +330,7 @@ class MetadataApi:
             response_types_map=_response_types_map,
         ).data
 
-    def metadata_batch_partial_update_with_http_info(
+    def batch_partial_update_with_http_info(
         self,
         patched_meta_main_request: Optional[PatchedMetaMainRequest] = None,
         _request_timeout: Union[
@@ -343,7 +343,7 @@ class MetadataApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[MetaMain]:
-        """metadata_batch_partial_update
+        """batch_partial_update
 
 
         :param patched_meta_main_request:
@@ -370,7 +370,7 @@ class MetadataApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._metadata_batch_partial_update_serialize(
+        _param = self._batch_partial_update_serialize(
             patched_meta_main_request=patched_meta_main_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -388,7 +388,7 @@ class MetadataApi:
             response_types_map=_response_types_map,
         )
 
-    def metadata_batch_partial_update_without_preload_content(
+    def batch_partial_update_without_preload_content(
         self,
         patched_meta_main_request: Optional[PatchedMetaMainRequest] = None,
         _request_timeout: Union[
@@ -401,7 +401,7 @@ class MetadataApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """metadata_batch_partial_update
+        """batch_partial_update
 
 
         :param patched_meta_main_request:
@@ -428,7 +428,7 @@ class MetadataApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._metadata_batch_partial_update_serialize(
+        _param = self._batch_partial_update_serialize(
             patched_meta_main_request=patched_meta_main_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -442,7 +442,7 @@ class MetadataApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _metadata_batch_partial_update_serialize(
+    def _batch_partial_update_serialize(
         self,
         patched_meta_main_request,
         _request_auth,
@@ -501,7 +501,7 @@ class MetadataApi:
             _request_auth=_request_auth,
         )
 
-    def metadata_create(
+    def create(
         self,
         meta_request: MetaRequest,
         _request_timeout: Union[
@@ -514,7 +514,7 @@ class MetadataApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Meta:
-        """metadata_create
+        """create
 
 
         :param meta_request: (required)
@@ -541,7 +541,7 @@ class MetadataApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._metadata_create_serialize(
+        _param = self._create_serialize(
             meta_request=meta_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -559,7 +559,7 @@ class MetadataApi:
             response_types_map=_response_types_map,
         ).data
 
-    def metadata_create_with_http_info(
+    def create_with_http_info(
         self,
         meta_request: MetaRequest,
         _request_timeout: Union[
@@ -572,7 +572,7 @@ class MetadataApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Meta]:
-        """metadata_create
+        """create
 
 
         :param meta_request: (required)
@@ -599,7 +599,7 @@ class MetadataApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._metadata_create_serialize(
+        _param = self._create_serialize(
             meta_request=meta_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -617,7 +617,7 @@ class MetadataApi:
             response_types_map=_response_types_map,
         )
 
-    def metadata_create_without_preload_content(
+    def create_without_preload_content(
         self,
         meta_request: MetaRequest,
         _request_timeout: Union[
@@ -630,7 +630,7 @@ class MetadataApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """metadata_create
+        """create
 
 
         :param meta_request: (required)
@@ -657,7 +657,7 @@ class MetadataApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._metadata_create_serialize(
+        _param = self._create_serialize(
             meta_request=meta_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -671,7 +671,7 @@ class MetadataApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _metadata_create_serialize(
+    def _create_serialize(
         self,
         meta_request,
         _request_auth,
@@ -730,7 +730,7 @@ class MetadataApi:
             _request_auth=_request_auth,
         )
 
-    def metadata_delete_preview_list(
+    def delete_preview_list(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this dojo meta.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -747,7 +747,7 @@ class MetadataApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedDeletePreviewList:
-        """metadata_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this dojo meta. (required)
@@ -778,7 +778,7 @@ class MetadataApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._metadata_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -798,7 +798,7 @@ class MetadataApi:
             response_types_map=_response_types_map,
         ).data
 
-    def metadata_delete_preview_list_with_http_info(
+    def delete_preview_list_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this dojo meta.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -815,7 +815,7 @@ class MetadataApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedDeletePreviewList]:
-        """metadata_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this dojo meta. (required)
@@ -846,7 +846,7 @@ class MetadataApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._metadata_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -866,7 +866,7 @@ class MetadataApi:
             response_types_map=_response_types_map,
         )
 
-    def metadata_delete_preview_list_without_preload_content(
+    def delete_preview_list_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this dojo meta.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -883,7 +883,7 @@ class MetadataApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """metadata_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this dojo meta. (required)
@@ -914,7 +914,7 @@ class MetadataApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._metadata_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -930,7 +930,7 @@ class MetadataApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _metadata_delete_preview_list_serialize(
+    def _delete_preview_list_serialize(
         self,
         id,
         limit,
@@ -987,7 +987,7 @@ class MetadataApi:
             _request_auth=_request_auth,
         )
 
-    def metadata_delete_preview_list_iterator(
+    def delete_preview_list_iterator(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this dojo meta.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -1005,11 +1005,11 @@ class MetadataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[DeletePreview, PaginatedDeletePreviewList], None, None]':
         _params = locals()
-        for page in get_all_pages(self.api_client, MetadataApi.metadata_delete_preview_list, **_params):
+        for page in get_all_pages(self.api_client, MetadataApi.delete_preview_list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def metadata_destroy(
+    def destroy(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this dojo meta.')],
         _request_timeout: Union[
@@ -1022,7 +1022,7 @@ class MetadataApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> None:
-        """metadata_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this dojo meta. (required)
@@ -1049,7 +1049,7 @@ class MetadataApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._metadata_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1063,7 +1063,7 @@ class MetadataApi:
             response_types_map=_response_types_map,
         ).data
 
-    def metadata_destroy_with_http_info(
+    def destroy_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this dojo meta.')],
         _request_timeout: Union[
@@ -1076,7 +1076,7 @@ class MetadataApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[None]:
-        """metadata_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this dojo meta. (required)
@@ -1103,7 +1103,7 @@ class MetadataApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._metadata_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1117,7 +1117,7 @@ class MetadataApi:
             response_types_map=_response_types_map,
         )
 
-    def metadata_destroy_without_preload_content(
+    def destroy_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this dojo meta.')],
         _request_timeout: Union[
@@ -1130,7 +1130,7 @@ class MetadataApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """metadata_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this dojo meta. (required)
@@ -1157,7 +1157,7 @@ class MetadataApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._metadata_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1167,7 +1167,7 @@ class MetadataApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _metadata_destroy_serialize(
+    def _destroy_serialize(
         self,
         id,
         _request_auth,
@@ -1212,7 +1212,7 @@ class MetadataApi:
             _request_auth=_request_auth,
         )
 
-    def metadata_list(
+    def list(
         self,
         endpoint: Optional[StrictInt] = None,
         finding: Optional[StrictInt] = None,
@@ -1237,7 +1237,7 @@ class MetadataApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedMetaList:
-        """metadata_list
+        """list
 
 
         :param endpoint:
@@ -1284,7 +1284,7 @@ class MetadataApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._metadata_list_serialize(
+        _param = self._list_serialize(
             endpoint=endpoint,
             finding=finding,
             id=id,
@@ -1312,7 +1312,7 @@ class MetadataApi:
             response_types_map=_response_types_map,
         ).data
 
-    def metadata_list_with_http_info(
+    def list_with_http_info(
         self,
         endpoint: Optional[StrictInt] = None,
         finding: Optional[StrictInt] = None,
@@ -1337,7 +1337,7 @@ class MetadataApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedMetaList]:
-        """metadata_list
+        """list
 
 
         :param endpoint:
@@ -1384,7 +1384,7 @@ class MetadataApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._metadata_list_serialize(
+        _param = self._list_serialize(
             endpoint=endpoint,
             finding=finding,
             id=id,
@@ -1412,7 +1412,7 @@ class MetadataApi:
             response_types_map=_response_types_map,
         )
 
-    def metadata_list_without_preload_content(
+    def list_without_preload_content(
         self,
         endpoint: Optional[StrictInt] = None,
         finding: Optional[StrictInt] = None,
@@ -1437,7 +1437,7 @@ class MetadataApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """metadata_list
+        """list
 
 
         :param endpoint:
@@ -1484,7 +1484,7 @@ class MetadataApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._metadata_list_serialize(
+        _param = self._list_serialize(
             endpoint=endpoint,
             finding=finding,
             id=id,
@@ -1508,7 +1508,7 @@ class MetadataApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _metadata_list_serialize(
+    def _list_serialize(
         self,
         endpoint,
         finding,
@@ -1598,7 +1598,7 @@ class MetadataApi:
             _request_auth=_request_auth,
         )
 
-    def metadata_list_iterator(
+    def list_iterator(
         self,
         endpoint: Optional[StrictInt] = None,
         finding: Optional[StrictInt] = None,
@@ -1624,11 +1624,11 @@ class MetadataApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[Meta, PaginatedMetaList], None, None]':
         _params = locals()
-        for page in get_all_pages(self.api_client, MetadataApi.metadata_list, **_params):
+        for page in get_all_pages(self.api_client, MetadataApi.list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def metadata_partial_update(
+    def partial_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this dojo meta.')],
         patched_meta_request: Optional[PatchedMetaRequest] = None,
@@ -1642,7 +1642,7 @@ class MetadataApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Meta:
-        """metadata_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this dojo meta. (required)
@@ -1671,7 +1671,7 @@ class MetadataApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._metadata_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_meta_request=patched_meta_request,
             _request_auth=_request_auth,
@@ -1690,7 +1690,7 @@ class MetadataApi:
             response_types_map=_response_types_map,
         ).data
 
-    def metadata_partial_update_with_http_info(
+    def partial_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this dojo meta.')],
         patched_meta_request: Optional[PatchedMetaRequest] = None,
@@ -1704,7 +1704,7 @@ class MetadataApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Meta]:
-        """metadata_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this dojo meta. (required)
@@ -1733,7 +1733,7 @@ class MetadataApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._metadata_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_meta_request=patched_meta_request,
             _request_auth=_request_auth,
@@ -1752,7 +1752,7 @@ class MetadataApi:
             response_types_map=_response_types_map,
         )
 
-    def metadata_partial_update_without_preload_content(
+    def partial_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this dojo meta.')],
         patched_meta_request: Optional[PatchedMetaRequest] = None,
@@ -1766,7 +1766,7 @@ class MetadataApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """metadata_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this dojo meta. (required)
@@ -1795,7 +1795,7 @@ class MetadataApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._metadata_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_meta_request=patched_meta_request,
             _request_auth=_request_auth,
@@ -1810,7 +1810,7 @@ class MetadataApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _metadata_partial_update_serialize(
+    def _partial_update_serialize(
         self,
         id,
         patched_meta_request,
@@ -1872,7 +1872,7 @@ class MetadataApi:
             _request_auth=_request_auth,
         )
 
-    def metadata_retrieve(
+    def retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this dojo meta.')],
         _request_timeout: Union[
@@ -1885,7 +1885,7 @@ class MetadataApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Meta:
-        """metadata_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this dojo meta. (required)
@@ -1912,7 +1912,7 @@ class MetadataApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._metadata_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1926,7 +1926,7 @@ class MetadataApi:
             response_types_map=_response_types_map,
         ).data
 
-    def metadata_retrieve_with_http_info(
+    def retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this dojo meta.')],
         _request_timeout: Union[
@@ -1939,7 +1939,7 @@ class MetadataApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Meta]:
-        """metadata_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this dojo meta. (required)
@@ -1966,7 +1966,7 @@ class MetadataApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._metadata_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1980,7 +1980,7 @@ class MetadataApi:
             response_types_map=_response_types_map,
         )
 
-    def metadata_retrieve_without_preload_content(
+    def retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this dojo meta.')],
         _request_timeout: Union[
@@ -1993,7 +1993,7 @@ class MetadataApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """metadata_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this dojo meta. (required)
@@ -2020,7 +2020,7 @@ class MetadataApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._metadata_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -2030,7 +2030,7 @@ class MetadataApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _metadata_retrieve_serialize(
+    def _retrieve_serialize(
         self,
         id,
         _request_auth,
@@ -2079,7 +2079,7 @@ class MetadataApi:
             _request_auth=_request_auth,
         )
 
-    def metadata_update(
+    def update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this dojo meta.')],
         meta_request: MetaRequest,
@@ -2093,7 +2093,7 @@ class MetadataApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Meta:
-        """metadata_update
+        """update
 
 
         :param id: A unique integer value identifying this dojo meta. (required)
@@ -2122,7 +2122,7 @@ class MetadataApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._metadata_update_serialize(
+        _param = self._update_serialize(
             id=id,
             meta_request=meta_request,
             _request_auth=_request_auth,
@@ -2141,7 +2141,7 @@ class MetadataApi:
             response_types_map=_response_types_map,
         ).data
 
-    def metadata_update_with_http_info(
+    def update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this dojo meta.')],
         meta_request: MetaRequest,
@@ -2155,7 +2155,7 @@ class MetadataApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Meta]:
-        """metadata_update
+        """update
 
 
         :param id: A unique integer value identifying this dojo meta. (required)
@@ -2184,7 +2184,7 @@ class MetadataApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._metadata_update_serialize(
+        _param = self._update_serialize(
             id=id,
             meta_request=meta_request,
             _request_auth=_request_auth,
@@ -2203,7 +2203,7 @@ class MetadataApi:
             response_types_map=_response_types_map,
         )
 
-    def metadata_update_without_preload_content(
+    def update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this dojo meta.')],
         meta_request: MetaRequest,
@@ -2217,7 +2217,7 @@ class MetadataApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """metadata_update
+        """update
 
 
         :param id: A unique integer value identifying this dojo meta. (required)
@@ -2246,7 +2246,7 @@ class MetadataApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._metadata_update_serialize(
+        _param = self._update_serialize(
             id=id,
             meta_request=meta_request,
             _request_auth=_request_auth,
@@ -2261,7 +2261,7 @@ class MetadataApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _metadata_update_serialize(
+    def _update_serialize(
         self,
         id,
         meta_request,

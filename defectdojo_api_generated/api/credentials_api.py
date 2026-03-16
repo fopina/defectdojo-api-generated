@@ -40,7 +40,7 @@ class CredentialsApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    def credentials_create(
+    def create(
         self,
         credential_request: CredentialRequest,
         _request_timeout: Union[
@@ -53,7 +53,7 @@ class CredentialsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Credential:
-        """credentials_create
+        """create
 
 
         :param credential_request: (required)
@@ -80,7 +80,7 @@ class CredentialsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._credentials_create_serialize(
+        _param = self._create_serialize(
             credential_request=credential_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -98,7 +98,7 @@ class CredentialsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def credentials_create_with_http_info(
+    def create_with_http_info(
         self,
         credential_request: CredentialRequest,
         _request_timeout: Union[
@@ -111,7 +111,7 @@ class CredentialsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Credential]:
-        """credentials_create
+        """create
 
 
         :param credential_request: (required)
@@ -138,7 +138,7 @@ class CredentialsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._credentials_create_serialize(
+        _param = self._create_serialize(
             credential_request=credential_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -156,7 +156,7 @@ class CredentialsApi:
             response_types_map=_response_types_map,
         )
 
-    def credentials_create_without_preload_content(
+    def create_without_preload_content(
         self,
         credential_request: CredentialRequest,
         _request_timeout: Union[
@@ -169,7 +169,7 @@ class CredentialsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """credentials_create
+        """create
 
 
         :param credential_request: (required)
@@ -196,7 +196,7 @@ class CredentialsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._credentials_create_serialize(
+        _param = self._create_serialize(
             credential_request=credential_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -210,7 +210,7 @@ class CredentialsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _credentials_create_serialize(
+    def _create_serialize(
         self,
         credential_request,
         _request_auth,
@@ -269,7 +269,7 @@ class CredentialsApi:
             _request_auth=_request_auth,
         )
 
-    def credentials_delete_preview_list(
+    def delete_preview_list(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this cred_ user.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -286,7 +286,7 @@ class CredentialsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedDeletePreviewList:
-        """credentials_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this cred_ user. (required)
@@ -317,7 +317,7 @@ class CredentialsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._credentials_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -337,7 +337,7 @@ class CredentialsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def credentials_delete_preview_list_with_http_info(
+    def delete_preview_list_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this cred_ user.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -354,7 +354,7 @@ class CredentialsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedDeletePreviewList]:
-        """credentials_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this cred_ user. (required)
@@ -385,7 +385,7 @@ class CredentialsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._credentials_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -405,7 +405,7 @@ class CredentialsApi:
             response_types_map=_response_types_map,
         )
 
-    def credentials_delete_preview_list_without_preload_content(
+    def delete_preview_list_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this cred_ user.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -422,7 +422,7 @@ class CredentialsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """credentials_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this cred_ user. (required)
@@ -453,7 +453,7 @@ class CredentialsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._credentials_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -469,7 +469,7 @@ class CredentialsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _credentials_delete_preview_list_serialize(
+    def _delete_preview_list_serialize(
         self,
         id,
         limit,
@@ -526,7 +526,7 @@ class CredentialsApi:
             _request_auth=_request_auth,
         )
 
-    def credentials_delete_preview_list_iterator(
+    def delete_preview_list_iterator(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this cred_ user.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -544,11 +544,11 @@ class CredentialsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[DeletePreview, PaginatedDeletePreviewList], None, None]':
         _params = locals()
-        for page in get_all_pages(self.api_client, CredentialsApi.credentials_delete_preview_list, **_params):
+        for page in get_all_pages(self.api_client, CredentialsApi.delete_preview_list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def credentials_destroy(
+    def destroy(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this cred_ user.')],
         _request_timeout: Union[
@@ -561,7 +561,7 @@ class CredentialsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> None:
-        """credentials_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this cred_ user. (required)
@@ -588,7 +588,7 @@ class CredentialsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._credentials_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -602,7 +602,7 @@ class CredentialsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def credentials_destroy_with_http_info(
+    def destroy_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this cred_ user.')],
         _request_timeout: Union[
@@ -615,7 +615,7 @@ class CredentialsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[None]:
-        """credentials_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this cred_ user. (required)
@@ -642,7 +642,7 @@ class CredentialsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._credentials_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -656,7 +656,7 @@ class CredentialsApi:
             response_types_map=_response_types_map,
         )
 
-    def credentials_destroy_without_preload_content(
+    def destroy_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this cred_ user.')],
         _request_timeout: Union[
@@ -669,7 +669,7 @@ class CredentialsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """credentials_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this cred_ user. (required)
@@ -696,7 +696,7 @@ class CredentialsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._credentials_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -706,7 +706,7 @@ class CredentialsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _credentials_destroy_serialize(
+    def _destroy_serialize(
         self,
         id,
         _request_auth,
@@ -751,7 +751,7 @@ class CredentialsApi:
             _request_auth=_request_auth,
         )
 
-    def credentials_list(
+    def list(
         self,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
         offset: Annotated[
@@ -771,7 +771,7 @@ class CredentialsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedCredentialList:
-        """credentials_list
+        """list
 
 
         :param limit: Number of results to return per page.
@@ -802,7 +802,7 @@ class CredentialsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._credentials_list_serialize(
+        _param = self._list_serialize(
             limit=limit,
             offset=offset,
             prefetch=prefetch,
@@ -822,7 +822,7 @@ class CredentialsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def credentials_list_with_http_info(
+    def list_with_http_info(
         self,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
         offset: Annotated[
@@ -842,7 +842,7 @@ class CredentialsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedCredentialList]:
-        """credentials_list
+        """list
 
 
         :param limit: Number of results to return per page.
@@ -873,7 +873,7 @@ class CredentialsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._credentials_list_serialize(
+        _param = self._list_serialize(
             limit=limit,
             offset=offset,
             prefetch=prefetch,
@@ -893,7 +893,7 @@ class CredentialsApi:
             response_types_map=_response_types_map,
         )
 
-    def credentials_list_without_preload_content(
+    def list_without_preload_content(
         self,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
         offset: Annotated[
@@ -913,7 +913,7 @@ class CredentialsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """credentials_list
+        """list
 
 
         :param limit: Number of results to return per page.
@@ -944,7 +944,7 @@ class CredentialsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._credentials_list_serialize(
+        _param = self._list_serialize(
             limit=limit,
             offset=offset,
             prefetch=prefetch,
@@ -960,7 +960,7 @@ class CredentialsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _credentials_list_serialize(
+    def _list_serialize(
         self,
         limit,
         offset,
@@ -1020,7 +1020,7 @@ class CredentialsApi:
             _request_auth=_request_auth,
         )
 
-    def credentials_list_iterator(
+    def list_iterator(
         self,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
         offset: Annotated[
@@ -1041,11 +1041,11 @@ class CredentialsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[Credential, PaginatedCredentialList], None, None]':
         _params = locals()
-        for page in get_all_pages(self.api_client, CredentialsApi.credentials_list, **_params):
+        for page in get_all_pages(self.api_client, CredentialsApi.list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def credentials_partial_update(
+    def partial_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this cred_ user.')],
         patched_credential_request: Optional[PatchedCredentialRequest] = None,
@@ -1059,7 +1059,7 @@ class CredentialsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Credential:
-        """credentials_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this cred_ user. (required)
@@ -1088,7 +1088,7 @@ class CredentialsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._credentials_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_credential_request=patched_credential_request,
             _request_auth=_request_auth,
@@ -1107,7 +1107,7 @@ class CredentialsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def credentials_partial_update_with_http_info(
+    def partial_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this cred_ user.')],
         patched_credential_request: Optional[PatchedCredentialRequest] = None,
@@ -1121,7 +1121,7 @@ class CredentialsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Credential]:
-        """credentials_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this cred_ user. (required)
@@ -1150,7 +1150,7 @@ class CredentialsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._credentials_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_credential_request=patched_credential_request,
             _request_auth=_request_auth,
@@ -1169,7 +1169,7 @@ class CredentialsApi:
             response_types_map=_response_types_map,
         )
 
-    def credentials_partial_update_without_preload_content(
+    def partial_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this cred_ user.')],
         patched_credential_request: Optional[PatchedCredentialRequest] = None,
@@ -1183,7 +1183,7 @@ class CredentialsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """credentials_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this cred_ user. (required)
@@ -1212,7 +1212,7 @@ class CredentialsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._credentials_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_credential_request=patched_credential_request,
             _request_auth=_request_auth,
@@ -1227,7 +1227,7 @@ class CredentialsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _credentials_partial_update_serialize(
+    def _partial_update_serialize(
         self,
         id,
         patched_credential_request,
@@ -1289,7 +1289,7 @@ class CredentialsApi:
             _request_auth=_request_auth,
         )
 
-    def credentials_retrieve(
+    def retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this cred_ user.')],
         prefetch: Annotated[
@@ -1306,7 +1306,7 @@ class CredentialsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Credential:
-        """credentials_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this cred_ user. (required)
@@ -1335,7 +1335,7 @@ class CredentialsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._credentials_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id,
             prefetch=prefetch,
             _request_auth=_request_auth,
@@ -1354,7 +1354,7 @@ class CredentialsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def credentials_retrieve_with_http_info(
+    def retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this cred_ user.')],
         prefetch: Annotated[
@@ -1371,7 +1371,7 @@ class CredentialsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Credential]:
-        """credentials_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this cred_ user. (required)
@@ -1400,7 +1400,7 @@ class CredentialsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._credentials_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id,
             prefetch=prefetch,
             _request_auth=_request_auth,
@@ -1419,7 +1419,7 @@ class CredentialsApi:
             response_types_map=_response_types_map,
         )
 
-    def credentials_retrieve_without_preload_content(
+    def retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this cred_ user.')],
         prefetch: Annotated[
@@ -1436,7 +1436,7 @@ class CredentialsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """credentials_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this cred_ user. (required)
@@ -1465,7 +1465,7 @@ class CredentialsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._credentials_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id,
             prefetch=prefetch,
             _request_auth=_request_auth,
@@ -1480,7 +1480,7 @@ class CredentialsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _credentials_retrieve_serialize(
+    def _retrieve_serialize(
         self,
         id,
         prefetch,
@@ -1535,7 +1535,7 @@ class CredentialsApi:
             _request_auth=_request_auth,
         )
 
-    def credentials_update(
+    def update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this cred_ user.')],
         credential_request: CredentialRequest,
@@ -1549,7 +1549,7 @@ class CredentialsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Credential:
-        """credentials_update
+        """update
 
 
         :param id: A unique integer value identifying this cred_ user. (required)
@@ -1578,7 +1578,7 @@ class CredentialsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._credentials_update_serialize(
+        _param = self._update_serialize(
             id=id,
             credential_request=credential_request,
             _request_auth=_request_auth,
@@ -1597,7 +1597,7 @@ class CredentialsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def credentials_update_with_http_info(
+    def update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this cred_ user.')],
         credential_request: CredentialRequest,
@@ -1611,7 +1611,7 @@ class CredentialsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Credential]:
-        """credentials_update
+        """update
 
 
         :param id: A unique integer value identifying this cred_ user. (required)
@@ -1640,7 +1640,7 @@ class CredentialsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._credentials_update_serialize(
+        _param = self._update_serialize(
             id=id,
             credential_request=credential_request,
             _request_auth=_request_auth,
@@ -1659,7 +1659,7 @@ class CredentialsApi:
             response_types_map=_response_types_map,
         )
 
-    def credentials_update_without_preload_content(
+    def update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this cred_ user.')],
         credential_request: CredentialRequest,
@@ -1673,7 +1673,7 @@ class CredentialsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """credentials_update
+        """update
 
 
         :param id: A unique integer value identifying this cred_ user. (required)
@@ -1702,7 +1702,7 @@ class CredentialsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._credentials_update_serialize(
+        _param = self._update_serialize(
             id=id,
             credential_request=credential_request,
             _request_auth=_request_auth,
@@ -1717,7 +1717,7 @@ class CredentialsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _credentials_update_serialize(
+    def _update_serialize(
         self,
         id,
         credential_request,

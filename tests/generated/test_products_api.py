@@ -24,36 +24,36 @@ class TestProductsApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_products_create(self) -> None:
-        """Test case for products_create"""
+    def test_create(self) -> None:
+        """Test case for create"""
         pass
 
-    def test_products_delete_preview_list(self) -> None:
-        """Test case for products_delete_preview_list"""
+    def test_delete_preview_list(self) -> None:
+        """Test case for delete_preview_list"""
         pass
 
-    def test_products_destroy(self) -> None:
-        """Test case for products_destroy"""
+    def test_destroy(self) -> None:
+        """Test case for destroy"""
         pass
 
-    def test_products_generate_report_create(self) -> None:
-        """Test case for products_generate_report_create"""
+    def test_generate_report_create(self) -> None:
+        """Test case for generate_report_create"""
         pass
 
-    def test_products_list(self) -> None:
-        """Test case for products_list"""
+    def test_list(self) -> None:
+        """Test case for list"""
         pass
 
-    def test_products_partial_update(self) -> None:
-        """Test case for products_partial_update"""
+    def test_partial_update(self) -> None:
+        """Test case for partial_update"""
         pass
 
-    def test_products_retrieve(self) -> None:
-        """Test case for products_retrieve"""
+    def test_retrieve(self) -> None:
+        """Test case for retrieve"""
         pass
 
-    def test_products_update(self) -> None:
-        """Test case for products_update"""
+    def test_update(self) -> None:
+        """Test case for update"""
         pass
 
 

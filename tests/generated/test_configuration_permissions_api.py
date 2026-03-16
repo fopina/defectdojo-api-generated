@@ -24,12 +24,12 @@ class TestConfigurationPermissionsApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_configuration_permissions_list(self) -> None:
-        """Test case for configuration_permissions_list"""
+    def test_list(self) -> None:
+        """Test case for list"""
         pass
 
-    def test_configuration_permissions_retrieve(self) -> None:
-        """Test case for configuration_permissions_retrieve"""
+    def test_retrieve(self) -> None:
+        """Test case for retrieve"""
         pass
 
 

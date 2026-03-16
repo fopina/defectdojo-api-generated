@@ -44,7 +44,7 @@ class SonarqubeTransitionsApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    def sonarqube_transitions_create(
+    def create(
         self,
         sonarqube_issue_transition_request: SonarqubeIssueTransitionRequest,
         _request_timeout: Union[
@@ -57,7 +57,7 @@ class SonarqubeTransitionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> SonarqubeIssueTransition:
-        """sonarqube_transitions_create
+        """create
 
 
         :param sonarqube_issue_transition_request: (required)
@@ -84,7 +84,7 @@ class SonarqubeTransitionsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._sonarqube_transitions_create_serialize(
+        _param = self._create_serialize(
             sonarqube_issue_transition_request=sonarqube_issue_transition_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -102,7 +102,7 @@ class SonarqubeTransitionsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def sonarqube_transitions_create_with_http_info(
+    def create_with_http_info(
         self,
         sonarqube_issue_transition_request: SonarqubeIssueTransitionRequest,
         _request_timeout: Union[
@@ -115,7 +115,7 @@ class SonarqubeTransitionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[SonarqubeIssueTransition]:
-        """sonarqube_transitions_create
+        """create
 
 
         :param sonarqube_issue_transition_request: (required)
@@ -142,7 +142,7 @@ class SonarqubeTransitionsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._sonarqube_transitions_create_serialize(
+        _param = self._create_serialize(
             sonarqube_issue_transition_request=sonarqube_issue_transition_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -160,7 +160,7 @@ class SonarqubeTransitionsApi:
             response_types_map=_response_types_map,
         )
 
-    def sonarqube_transitions_create_without_preload_content(
+    def create_without_preload_content(
         self,
         sonarqube_issue_transition_request: SonarqubeIssueTransitionRequest,
         _request_timeout: Union[
@@ -173,7 +173,7 @@ class SonarqubeTransitionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """sonarqube_transitions_create
+        """create
 
 
         :param sonarqube_issue_transition_request: (required)
@@ -200,7 +200,7 @@ class SonarqubeTransitionsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._sonarqube_transitions_create_serialize(
+        _param = self._create_serialize(
             sonarqube_issue_transition_request=sonarqube_issue_transition_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -214,7 +214,7 @@ class SonarqubeTransitionsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _sonarqube_transitions_create_serialize(
+    def _create_serialize(
         self,
         sonarqube_issue_transition_request,
         _request_auth,
@@ -273,7 +273,7 @@ class SonarqubeTransitionsApi:
             _request_auth=_request_auth,
         )
 
-    def sonarqube_transitions_delete_preview_list(
+    def delete_preview_list(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this sonarqube_ issue_ transition.')
@@ -292,7 +292,7 @@ class SonarqubeTransitionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedDeletePreviewList:
-        """sonarqube_transitions_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this sonarqube_ issue_ transition. (required)
@@ -323,7 +323,7 @@ class SonarqubeTransitionsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._sonarqube_transitions_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -343,7 +343,7 @@ class SonarqubeTransitionsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def sonarqube_transitions_delete_preview_list_with_http_info(
+    def delete_preview_list_with_http_info(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this sonarqube_ issue_ transition.')
@@ -362,7 +362,7 @@ class SonarqubeTransitionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedDeletePreviewList]:
-        """sonarqube_transitions_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this sonarqube_ issue_ transition. (required)
@@ -393,7 +393,7 @@ class SonarqubeTransitionsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._sonarqube_transitions_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -413,7 +413,7 @@ class SonarqubeTransitionsApi:
             response_types_map=_response_types_map,
         )
 
-    def sonarqube_transitions_delete_preview_list_without_preload_content(
+    def delete_preview_list_without_preload_content(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this sonarqube_ issue_ transition.')
@@ -432,7 +432,7 @@ class SonarqubeTransitionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """sonarqube_transitions_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this sonarqube_ issue_ transition. (required)
@@ -463,7 +463,7 @@ class SonarqubeTransitionsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._sonarqube_transitions_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -479,7 +479,7 @@ class SonarqubeTransitionsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _sonarqube_transitions_delete_preview_list_serialize(
+    def _delete_preview_list_serialize(
         self,
         id,
         limit,
@@ -536,7 +536,7 @@ class SonarqubeTransitionsApi:
             _request_auth=_request_auth,
         )
 
-    def sonarqube_transitions_delete_preview_list_iterator(
+    def delete_preview_list_iterator(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this sonarqube_ issue_ transition.')
@@ -556,13 +556,11 @@ class SonarqubeTransitionsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[DeletePreview, PaginatedDeletePreviewList], None, None]':
         _params = locals()
-        for page in get_all_pages(
-            self.api_client, SonarqubeTransitionsApi.sonarqube_transitions_delete_preview_list, **_params
-        ):
+        for page in get_all_pages(self.api_client, SonarqubeTransitionsApi.delete_preview_list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def sonarqube_transitions_destroy(
+    def destroy(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this sonarqube_ issue_ transition.')
@@ -577,7 +575,7 @@ class SonarqubeTransitionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> None:
-        """sonarqube_transitions_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this sonarqube_ issue_ transition. (required)
@@ -604,7 +602,7 @@ class SonarqubeTransitionsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._sonarqube_transitions_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -618,7 +616,7 @@ class SonarqubeTransitionsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def sonarqube_transitions_destroy_with_http_info(
+    def destroy_with_http_info(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this sonarqube_ issue_ transition.')
@@ -633,7 +631,7 @@ class SonarqubeTransitionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[None]:
-        """sonarqube_transitions_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this sonarqube_ issue_ transition. (required)
@@ -660,7 +658,7 @@ class SonarqubeTransitionsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._sonarqube_transitions_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -674,7 +672,7 @@ class SonarqubeTransitionsApi:
             response_types_map=_response_types_map,
         )
 
-    def sonarqube_transitions_destroy_without_preload_content(
+    def destroy_without_preload_content(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this sonarqube_ issue_ transition.')
@@ -689,7 +687,7 @@ class SonarqubeTransitionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """sonarqube_transitions_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this sonarqube_ issue_ transition. (required)
@@ -716,7 +714,7 @@ class SonarqubeTransitionsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._sonarqube_transitions_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -726,7 +724,7 @@ class SonarqubeTransitionsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _sonarqube_transitions_destroy_serialize(
+    def _destroy_serialize(
         self,
         id,
         _request_auth,
@@ -771,7 +769,7 @@ class SonarqubeTransitionsApi:
             _request_auth=_request_auth,
         )
 
-    def sonarqube_transitions_list(
+    def list(
         self,
         finding_status: Optional[StrictStr] = None,
         id: Optional[StrictInt] = None,
@@ -792,7 +790,7 @@ class SonarqubeTransitionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedSonarqubeIssueTransitionList:
-        """sonarqube_transitions_list
+        """list
 
 
         :param finding_status:
@@ -831,7 +829,7 @@ class SonarqubeTransitionsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._sonarqube_transitions_list_serialize(
+        _param = self._list_serialize(
             finding_status=finding_status,
             id=id,
             limit=limit,
@@ -855,7 +853,7 @@ class SonarqubeTransitionsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def sonarqube_transitions_list_with_http_info(
+    def list_with_http_info(
         self,
         finding_status: Optional[StrictStr] = None,
         id: Optional[StrictInt] = None,
@@ -876,7 +874,7 @@ class SonarqubeTransitionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedSonarqubeIssueTransitionList]:
-        """sonarqube_transitions_list
+        """list
 
 
         :param finding_status:
@@ -915,7 +913,7 @@ class SonarqubeTransitionsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._sonarqube_transitions_list_serialize(
+        _param = self._list_serialize(
             finding_status=finding_status,
             id=id,
             limit=limit,
@@ -939,7 +937,7 @@ class SonarqubeTransitionsApi:
             response_types_map=_response_types_map,
         )
 
-    def sonarqube_transitions_list_without_preload_content(
+    def list_without_preload_content(
         self,
         finding_status: Optional[StrictStr] = None,
         id: Optional[StrictInt] = None,
@@ -960,7 +958,7 @@ class SonarqubeTransitionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """sonarqube_transitions_list
+        """list
 
 
         :param finding_status:
@@ -999,7 +997,7 @@ class SonarqubeTransitionsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._sonarqube_transitions_list_serialize(
+        _param = self._list_serialize(
             finding_status=finding_status,
             id=id,
             limit=limit,
@@ -1019,7 +1017,7 @@ class SonarqubeTransitionsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _sonarqube_transitions_list_serialize(
+    def _list_serialize(
         self,
         finding_status,
         id,
@@ -1093,7 +1091,7 @@ class SonarqubeTransitionsApi:
             _request_auth=_request_auth,
         )
 
-    def sonarqube_transitions_list_iterator(
+    def list_iterator(
         self,
         finding_status: Optional[StrictStr] = None,
         id: Optional[StrictInt] = None,
@@ -1115,11 +1113,11 @@ class SonarqubeTransitionsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[SonarqubeIssueTransition, PaginatedSonarqubeIssueTransitionList], None, None]':
         _params = locals()
-        for page in get_all_pages(self.api_client, SonarqubeTransitionsApi.sonarqube_transitions_list, **_params):
+        for page in get_all_pages(self.api_client, SonarqubeTransitionsApi.list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def sonarqube_transitions_partial_update(
+    def partial_update(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this sonarqube_ issue_ transition.')
@@ -1135,7 +1133,7 @@ class SonarqubeTransitionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> SonarqubeIssueTransition:
-        """sonarqube_transitions_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this sonarqube_ issue_ transition. (required)
@@ -1164,7 +1162,7 @@ class SonarqubeTransitionsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._sonarqube_transitions_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_sonarqube_issue_transition_request=patched_sonarqube_issue_transition_request,
             _request_auth=_request_auth,
@@ -1183,7 +1181,7 @@ class SonarqubeTransitionsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def sonarqube_transitions_partial_update_with_http_info(
+    def partial_update_with_http_info(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this sonarqube_ issue_ transition.')
@@ -1199,7 +1197,7 @@ class SonarqubeTransitionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[SonarqubeIssueTransition]:
-        """sonarqube_transitions_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this sonarqube_ issue_ transition. (required)
@@ -1228,7 +1226,7 @@ class SonarqubeTransitionsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._sonarqube_transitions_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_sonarqube_issue_transition_request=patched_sonarqube_issue_transition_request,
             _request_auth=_request_auth,
@@ -1247,7 +1245,7 @@ class SonarqubeTransitionsApi:
             response_types_map=_response_types_map,
         )
 
-    def sonarqube_transitions_partial_update_without_preload_content(
+    def partial_update_without_preload_content(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this sonarqube_ issue_ transition.')
@@ -1263,7 +1261,7 @@ class SonarqubeTransitionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """sonarqube_transitions_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this sonarqube_ issue_ transition. (required)
@@ -1292,7 +1290,7 @@ class SonarqubeTransitionsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._sonarqube_transitions_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_sonarqube_issue_transition_request=patched_sonarqube_issue_transition_request,
             _request_auth=_request_auth,
@@ -1307,7 +1305,7 @@ class SonarqubeTransitionsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _sonarqube_transitions_partial_update_serialize(
+    def _partial_update_serialize(
         self,
         id,
         patched_sonarqube_issue_transition_request,
@@ -1369,7 +1367,7 @@ class SonarqubeTransitionsApi:
             _request_auth=_request_auth,
         )
 
-    def sonarqube_transitions_retrieve(
+    def retrieve(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this sonarqube_ issue_ transition.')
@@ -1384,7 +1382,7 @@ class SonarqubeTransitionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> SonarqubeIssueTransition:
-        """sonarqube_transitions_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this sonarqube_ issue_ transition. (required)
@@ -1411,7 +1409,7 @@ class SonarqubeTransitionsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._sonarqube_transitions_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1425,7 +1423,7 @@ class SonarqubeTransitionsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def sonarqube_transitions_retrieve_with_http_info(
+    def retrieve_with_http_info(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this sonarqube_ issue_ transition.')
@@ -1440,7 +1438,7 @@ class SonarqubeTransitionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[SonarqubeIssueTransition]:
-        """sonarqube_transitions_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this sonarqube_ issue_ transition. (required)
@@ -1467,7 +1465,7 @@ class SonarqubeTransitionsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._sonarqube_transitions_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1481,7 +1479,7 @@ class SonarqubeTransitionsApi:
             response_types_map=_response_types_map,
         )
 
-    def sonarqube_transitions_retrieve_without_preload_content(
+    def retrieve_without_preload_content(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this sonarqube_ issue_ transition.')
@@ -1496,7 +1494,7 @@ class SonarqubeTransitionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """sonarqube_transitions_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this sonarqube_ issue_ transition. (required)
@@ -1523,7 +1521,7 @@ class SonarqubeTransitionsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._sonarqube_transitions_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1533,7 +1531,7 @@ class SonarqubeTransitionsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _sonarqube_transitions_retrieve_serialize(
+    def _retrieve_serialize(
         self,
         id,
         _request_auth,
@@ -1582,7 +1580,7 @@ class SonarqubeTransitionsApi:
             _request_auth=_request_auth,
         )
 
-    def sonarqube_transitions_update(
+    def update(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this sonarqube_ issue_ transition.')
@@ -1598,7 +1596,7 @@ class SonarqubeTransitionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> SonarqubeIssueTransition:
-        """sonarqube_transitions_update
+        """update
 
 
         :param id: A unique integer value identifying this sonarqube_ issue_ transition. (required)
@@ -1627,7 +1625,7 @@ class SonarqubeTransitionsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._sonarqube_transitions_update_serialize(
+        _param = self._update_serialize(
             id=id,
             sonarqube_issue_transition_request=sonarqube_issue_transition_request,
             _request_auth=_request_auth,
@@ -1646,7 +1644,7 @@ class SonarqubeTransitionsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def sonarqube_transitions_update_with_http_info(
+    def update_with_http_info(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this sonarqube_ issue_ transition.')
@@ -1662,7 +1660,7 @@ class SonarqubeTransitionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[SonarqubeIssueTransition]:
-        """sonarqube_transitions_update
+        """update
 
 
         :param id: A unique integer value identifying this sonarqube_ issue_ transition. (required)
@@ -1691,7 +1689,7 @@ class SonarqubeTransitionsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._sonarqube_transitions_update_serialize(
+        _param = self._update_serialize(
             id=id,
             sonarqube_issue_transition_request=sonarqube_issue_transition_request,
             _request_auth=_request_auth,
@@ -1710,7 +1708,7 @@ class SonarqubeTransitionsApi:
             response_types_map=_response_types_map,
         )
 
-    def sonarqube_transitions_update_without_preload_content(
+    def update_without_preload_content(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this sonarqube_ issue_ transition.')
@@ -1726,7 +1724,7 @@ class SonarqubeTransitionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """sonarqube_transitions_update
+        """update
 
 
         :param id: A unique integer value identifying this sonarqube_ issue_ transition. (required)
@@ -1755,7 +1753,7 @@ class SonarqubeTransitionsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._sonarqube_transitions_update_serialize(
+        _param = self._update_serialize(
             id=id,
             sonarqube_issue_transition_request=sonarqube_issue_transition_request,
             _request_auth=_request_auth,
@@ -1770,7 +1768,7 @@ class SonarqubeTransitionsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _sonarqube_transitions_update_serialize(
+    def _update_serialize(
         self,
         id,
         sonarqube_issue_transition_request,

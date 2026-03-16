@@ -24,60 +24,60 @@ class TestTestsApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_tests_accept_risks_create(self) -> None:
-        """Test case for tests_accept_risks_create"""
+    def test_accept_risks_create(self) -> None:
+        """Test case for accept_risks_create"""
         pass
 
-    def test_tests_create(self) -> None:
-        """Test case for tests_create"""
+    def test_create(self) -> None:
+        """Test case for create"""
         pass
 
-    def test_tests_delete_preview_list(self) -> None:
-        """Test case for tests_delete_preview_list"""
+    def test_delete_preview_list(self) -> None:
+        """Test case for delete_preview_list"""
         pass
 
-    def test_tests_destroy(self) -> None:
-        """Test case for tests_destroy"""
+    def test_destroy(self) -> None:
+        """Test case for destroy"""
         pass
 
-    def test_tests_files_create(self) -> None:
-        """Test case for tests_files_create"""
+    def test_files_create(self) -> None:
+        """Test case for files_create"""
         pass
 
-    def test_tests_files_download_retrieve(self) -> None:
-        """Test case for tests_files_download_retrieve"""
+    def test_files_download_retrieve(self) -> None:
+        """Test case for files_download_retrieve"""
         pass
 
-    def test_tests_files_retrieve(self) -> None:
-        """Test case for tests_files_retrieve"""
+    def test_files_retrieve(self) -> None:
+        """Test case for files_retrieve"""
         pass
 
-    def test_tests_generate_report_create(self) -> None:
-        """Test case for tests_generate_report_create"""
+    def test_generate_report_create(self) -> None:
+        """Test case for generate_report_create"""
         pass
 
-    def test_tests_list(self) -> None:
-        """Test case for tests_list"""
+    def test_list(self) -> None:
+        """Test case for list"""
         pass
 
-    def test_tests_notes_create(self) -> None:
-        """Test case for tests_notes_create"""
+    def test_notes_create(self) -> None:
+        """Test case for notes_create"""
         pass
 
-    def test_tests_notes_retrieve(self) -> None:
-        """Test case for tests_notes_retrieve"""
+    def test_notes_retrieve(self) -> None:
+        """Test case for notes_retrieve"""
         pass
 
-    def test_tests_partial_update(self) -> None:
-        """Test case for tests_partial_update"""
+    def test_partial_update(self) -> None:
+        """Test case for partial_update"""
         pass
 
-    def test_tests_retrieve(self) -> None:
-        """Test case for tests_retrieve"""
+    def test_retrieve(self) -> None:
+        """Test case for retrieve"""
         pass
 
-    def test_tests_update(self) -> None:
-        """Test case for tests_update"""
+    def test_update(self) -> None:
+        """Test case for update"""
         pass
 
 

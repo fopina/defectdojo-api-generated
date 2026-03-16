@@ -40,7 +40,7 @@ class DevelopmentEnvironmentsApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    def development_environments_create(
+    def create(
         self,
         development_environment_request: DevelopmentEnvironmentRequest,
         _request_timeout: Union[
@@ -53,7 +53,7 @@ class DevelopmentEnvironmentsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> DevelopmentEnvironment:
-        """development_environments_create
+        """create
 
 
         :param development_environment_request: (required)
@@ -80,7 +80,7 @@ class DevelopmentEnvironmentsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._development_environments_create_serialize(
+        _param = self._create_serialize(
             development_environment_request=development_environment_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -98,7 +98,7 @@ class DevelopmentEnvironmentsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def development_environments_create_with_http_info(
+    def create_with_http_info(
         self,
         development_environment_request: DevelopmentEnvironmentRequest,
         _request_timeout: Union[
@@ -111,7 +111,7 @@ class DevelopmentEnvironmentsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[DevelopmentEnvironment]:
-        """development_environments_create
+        """create
 
 
         :param development_environment_request: (required)
@@ -138,7 +138,7 @@ class DevelopmentEnvironmentsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._development_environments_create_serialize(
+        _param = self._create_serialize(
             development_environment_request=development_environment_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -156,7 +156,7 @@ class DevelopmentEnvironmentsApi:
             response_types_map=_response_types_map,
         )
 
-    def development_environments_create_without_preload_content(
+    def create_without_preload_content(
         self,
         development_environment_request: DevelopmentEnvironmentRequest,
         _request_timeout: Union[
@@ -169,7 +169,7 @@ class DevelopmentEnvironmentsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """development_environments_create
+        """create
 
 
         :param development_environment_request: (required)
@@ -196,7 +196,7 @@ class DevelopmentEnvironmentsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._development_environments_create_serialize(
+        _param = self._create_serialize(
             development_environment_request=development_environment_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -210,7 +210,7 @@ class DevelopmentEnvironmentsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _development_environments_create_serialize(
+    def _create_serialize(
         self,
         development_environment_request,
         _request_auth,
@@ -269,7 +269,7 @@ class DevelopmentEnvironmentsApi:
             _request_auth=_request_auth,
         )
 
-    def development_environments_delete_preview_list(
+    def delete_preview_list(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this development_ environment.')
@@ -288,7 +288,7 @@ class DevelopmentEnvironmentsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedDeletePreviewList:
-        """development_environments_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this development_ environment. (required)
@@ -319,7 +319,7 @@ class DevelopmentEnvironmentsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._development_environments_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -339,7 +339,7 @@ class DevelopmentEnvironmentsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def development_environments_delete_preview_list_with_http_info(
+    def delete_preview_list_with_http_info(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this development_ environment.')
@@ -358,7 +358,7 @@ class DevelopmentEnvironmentsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedDeletePreviewList]:
-        """development_environments_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this development_ environment. (required)
@@ -389,7 +389,7 @@ class DevelopmentEnvironmentsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._development_environments_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -409,7 +409,7 @@ class DevelopmentEnvironmentsApi:
             response_types_map=_response_types_map,
         )
 
-    def development_environments_delete_preview_list_without_preload_content(
+    def delete_preview_list_without_preload_content(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this development_ environment.')
@@ -428,7 +428,7 @@ class DevelopmentEnvironmentsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """development_environments_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this development_ environment. (required)
@@ -459,7 +459,7 @@ class DevelopmentEnvironmentsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._development_environments_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -475,7 +475,7 @@ class DevelopmentEnvironmentsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _development_environments_delete_preview_list_serialize(
+    def _delete_preview_list_serialize(
         self,
         id,
         limit,
@@ -532,7 +532,7 @@ class DevelopmentEnvironmentsApi:
             _request_auth=_request_auth,
         )
 
-    def development_environments_delete_preview_list_iterator(
+    def delete_preview_list_iterator(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this development_ environment.')
@@ -552,13 +552,11 @@ class DevelopmentEnvironmentsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[DeletePreview, PaginatedDeletePreviewList], None, None]':
         _params = locals()
-        for page in get_all_pages(
-            self.api_client, DevelopmentEnvironmentsApi.development_environments_delete_preview_list, **_params
-        ):
+        for page in get_all_pages(self.api_client, DevelopmentEnvironmentsApi.delete_preview_list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def development_environments_destroy(
+    def destroy(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this development_ environment.')
@@ -573,7 +571,7 @@ class DevelopmentEnvironmentsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> None:
-        """development_environments_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this development_ environment. (required)
@@ -600,7 +598,7 @@ class DevelopmentEnvironmentsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._development_environments_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -614,7 +612,7 @@ class DevelopmentEnvironmentsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def development_environments_destroy_with_http_info(
+    def destroy_with_http_info(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this development_ environment.')
@@ -629,7 +627,7 @@ class DevelopmentEnvironmentsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[None]:
-        """development_environments_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this development_ environment. (required)
@@ -656,7 +654,7 @@ class DevelopmentEnvironmentsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._development_environments_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -670,7 +668,7 @@ class DevelopmentEnvironmentsApi:
             response_types_map=_response_types_map,
         )
 
-    def development_environments_destroy_without_preload_content(
+    def destroy_without_preload_content(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this development_ environment.')
@@ -685,7 +683,7 @@ class DevelopmentEnvironmentsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """development_environments_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this development_ environment. (required)
@@ -712,7 +710,7 @@ class DevelopmentEnvironmentsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._development_environments_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -722,7 +720,7 @@ class DevelopmentEnvironmentsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _development_environments_destroy_serialize(
+    def _destroy_serialize(
         self,
         id,
         _request_auth,
@@ -767,7 +765,7 @@ class DevelopmentEnvironmentsApi:
             _request_auth=_request_auth,
         )
 
-    def development_environments_list(
+    def list(
         self,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
         offset: Annotated[
@@ -783,7 +781,7 @@ class DevelopmentEnvironmentsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedDevelopmentEnvironmentList:
-        """development_environments_list
+        """list
 
 
         :param limit: Number of results to return per page.
@@ -812,7 +810,7 @@ class DevelopmentEnvironmentsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._development_environments_list_serialize(
+        _param = self._list_serialize(
             limit=limit,
             offset=offset,
             _request_auth=_request_auth,
@@ -831,7 +829,7 @@ class DevelopmentEnvironmentsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def development_environments_list_with_http_info(
+    def list_with_http_info(
         self,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
         offset: Annotated[
@@ -847,7 +845,7 @@ class DevelopmentEnvironmentsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedDevelopmentEnvironmentList]:
-        """development_environments_list
+        """list
 
 
         :param limit: Number of results to return per page.
@@ -876,7 +874,7 @@ class DevelopmentEnvironmentsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._development_environments_list_serialize(
+        _param = self._list_serialize(
             limit=limit,
             offset=offset,
             _request_auth=_request_auth,
@@ -895,7 +893,7 @@ class DevelopmentEnvironmentsApi:
             response_types_map=_response_types_map,
         )
 
-    def development_environments_list_without_preload_content(
+    def list_without_preload_content(
         self,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
         offset: Annotated[
@@ -911,7 +909,7 @@ class DevelopmentEnvironmentsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """development_environments_list
+        """list
 
 
         :param limit: Number of results to return per page.
@@ -940,7 +938,7 @@ class DevelopmentEnvironmentsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._development_environments_list_serialize(
+        _param = self._list_serialize(
             limit=limit,
             offset=offset,
             _request_auth=_request_auth,
@@ -955,7 +953,7 @@ class DevelopmentEnvironmentsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _development_environments_list_serialize(
+    def _list_serialize(
         self,
         limit,
         offset,
@@ -1009,7 +1007,7 @@ class DevelopmentEnvironmentsApi:
             _request_auth=_request_auth,
         )
 
-    def development_environments_list_iterator(
+    def list_iterator(
         self,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
         offset: Annotated[
@@ -1026,11 +1024,11 @@ class DevelopmentEnvironmentsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[DevelopmentEnvironment, PaginatedDevelopmentEnvironmentList], None, None]':
         _params = locals()
-        for page in get_all_pages(self.api_client, DevelopmentEnvironmentsApi.development_environments_list, **_params):
+        for page in get_all_pages(self.api_client, DevelopmentEnvironmentsApi.list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def development_environments_partial_update(
+    def partial_update(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this development_ environment.')
@@ -1046,7 +1044,7 @@ class DevelopmentEnvironmentsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> DevelopmentEnvironment:
-        """development_environments_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this development_ environment. (required)
@@ -1075,7 +1073,7 @@ class DevelopmentEnvironmentsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._development_environments_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_development_environment_request=patched_development_environment_request,
             _request_auth=_request_auth,
@@ -1094,7 +1092,7 @@ class DevelopmentEnvironmentsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def development_environments_partial_update_with_http_info(
+    def partial_update_with_http_info(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this development_ environment.')
@@ -1110,7 +1108,7 @@ class DevelopmentEnvironmentsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[DevelopmentEnvironment]:
-        """development_environments_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this development_ environment. (required)
@@ -1139,7 +1137,7 @@ class DevelopmentEnvironmentsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._development_environments_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_development_environment_request=patched_development_environment_request,
             _request_auth=_request_auth,
@@ -1158,7 +1156,7 @@ class DevelopmentEnvironmentsApi:
             response_types_map=_response_types_map,
         )
 
-    def development_environments_partial_update_without_preload_content(
+    def partial_update_without_preload_content(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this development_ environment.')
@@ -1174,7 +1172,7 @@ class DevelopmentEnvironmentsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """development_environments_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this development_ environment. (required)
@@ -1203,7 +1201,7 @@ class DevelopmentEnvironmentsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._development_environments_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_development_environment_request=patched_development_environment_request,
             _request_auth=_request_auth,
@@ -1218,7 +1216,7 @@ class DevelopmentEnvironmentsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _development_environments_partial_update_serialize(
+    def _partial_update_serialize(
         self,
         id,
         patched_development_environment_request,
@@ -1280,7 +1278,7 @@ class DevelopmentEnvironmentsApi:
             _request_auth=_request_auth,
         )
 
-    def development_environments_retrieve(
+    def retrieve(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this development_ environment.')
@@ -1295,7 +1293,7 @@ class DevelopmentEnvironmentsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> DevelopmentEnvironment:
-        """development_environments_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this development_ environment. (required)
@@ -1322,7 +1320,7 @@ class DevelopmentEnvironmentsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._development_environments_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1336,7 +1334,7 @@ class DevelopmentEnvironmentsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def development_environments_retrieve_with_http_info(
+    def retrieve_with_http_info(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this development_ environment.')
@@ -1351,7 +1349,7 @@ class DevelopmentEnvironmentsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[DevelopmentEnvironment]:
-        """development_environments_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this development_ environment. (required)
@@ -1378,7 +1376,7 @@ class DevelopmentEnvironmentsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._development_environments_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1392,7 +1390,7 @@ class DevelopmentEnvironmentsApi:
             response_types_map=_response_types_map,
         )
 
-    def development_environments_retrieve_without_preload_content(
+    def retrieve_without_preload_content(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this development_ environment.')
@@ -1407,7 +1405,7 @@ class DevelopmentEnvironmentsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """development_environments_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this development_ environment. (required)
@@ -1434,7 +1432,7 @@ class DevelopmentEnvironmentsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._development_environments_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1444,7 +1442,7 @@ class DevelopmentEnvironmentsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _development_environments_retrieve_serialize(
+    def _retrieve_serialize(
         self,
         id,
         _request_auth,
@@ -1493,7 +1491,7 @@ class DevelopmentEnvironmentsApi:
             _request_auth=_request_auth,
         )
 
-    def development_environments_update(
+    def update(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this development_ environment.')
@@ -1509,7 +1507,7 @@ class DevelopmentEnvironmentsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> DevelopmentEnvironment:
-        """development_environments_update
+        """update
 
 
         :param id: A unique integer value identifying this development_ environment. (required)
@@ -1538,7 +1536,7 @@ class DevelopmentEnvironmentsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._development_environments_update_serialize(
+        _param = self._update_serialize(
             id=id,
             development_environment_request=development_environment_request,
             _request_auth=_request_auth,
@@ -1557,7 +1555,7 @@ class DevelopmentEnvironmentsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def development_environments_update_with_http_info(
+    def update_with_http_info(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this development_ environment.')
@@ -1573,7 +1571,7 @@ class DevelopmentEnvironmentsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[DevelopmentEnvironment]:
-        """development_environments_update
+        """update
 
 
         :param id: A unique integer value identifying this development_ environment. (required)
@@ -1602,7 +1600,7 @@ class DevelopmentEnvironmentsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._development_environments_update_serialize(
+        _param = self._update_serialize(
             id=id,
             development_environment_request=development_environment_request,
             _request_auth=_request_auth,
@@ -1621,7 +1619,7 @@ class DevelopmentEnvironmentsApi:
             response_types_map=_response_types_map,
         )
 
-    def development_environments_update_without_preload_content(
+    def update_without_preload_content(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this development_ environment.')
@@ -1637,7 +1635,7 @@ class DevelopmentEnvironmentsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """development_environments_update
+        """update
 
 
         :param id: A unique integer value identifying this development_ environment. (required)
@@ -1666,7 +1664,7 @@ class DevelopmentEnvironmentsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._development_environments_update_serialize(
+        _param = self._update_serialize(
             id=id,
             development_environment_request=development_environment_request,
             _request_auth=_request_auth,
@@ -1681,7 +1679,7 @@ class DevelopmentEnvironmentsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _development_environments_update_serialize(
+    def _update_serialize(
         self,
         id,
         development_environment_request,

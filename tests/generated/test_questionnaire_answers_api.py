@@ -24,12 +24,12 @@ class TestQuestionnaireAnswersApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_questionnaire_answers_list(self) -> None:
-        """Test case for questionnaire_answers_list"""
+    def test_list(self) -> None:
+        """Test case for list"""
         pass
 
-    def test_questionnaire_answers_retrieve(self) -> None:
-        """Test case for questionnaire_answers_retrieve"""
+    def test_retrieve(self) -> None:
+        """Test case for retrieve"""
         pass
 
 

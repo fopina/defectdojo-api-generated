@@ -39,7 +39,7 @@ class ProductTypeMembersApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    def product_type_members_create(
+    def create(
         self,
         product_type_member_request: ProductTypeMemberRequest,
         _request_timeout: Union[
@@ -52,7 +52,7 @@ class ProductTypeMembersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ProductTypeMember:
-        """product_type_members_create
+        """create
 
 
         :param product_type_member_request: (required)
@@ -79,7 +79,7 @@ class ProductTypeMembersApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_type_members_create_serialize(
+        _param = self._create_serialize(
             product_type_member_request=product_type_member_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -97,7 +97,7 @@ class ProductTypeMembersApi:
             response_types_map=_response_types_map,
         ).data
 
-    def product_type_members_create_with_http_info(
+    def create_with_http_info(
         self,
         product_type_member_request: ProductTypeMemberRequest,
         _request_timeout: Union[
@@ -110,7 +110,7 @@ class ProductTypeMembersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[ProductTypeMember]:
-        """product_type_members_create
+        """create
 
 
         :param product_type_member_request: (required)
@@ -137,7 +137,7 @@ class ProductTypeMembersApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_type_members_create_serialize(
+        _param = self._create_serialize(
             product_type_member_request=product_type_member_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -155,7 +155,7 @@ class ProductTypeMembersApi:
             response_types_map=_response_types_map,
         )
 
-    def product_type_members_create_without_preload_content(
+    def create_without_preload_content(
         self,
         product_type_member_request: ProductTypeMemberRequest,
         _request_timeout: Union[
@@ -168,7 +168,7 @@ class ProductTypeMembersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """product_type_members_create
+        """create
 
 
         :param product_type_member_request: (required)
@@ -195,7 +195,7 @@ class ProductTypeMembersApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_type_members_create_serialize(
+        _param = self._create_serialize(
             product_type_member_request=product_type_member_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -209,7 +209,7 @@ class ProductTypeMembersApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _product_type_members_create_serialize(
+    def _create_serialize(
         self,
         product_type_member_request,
         _request_auth,
@@ -268,7 +268,7 @@ class ProductTypeMembersApi:
             _request_auth=_request_auth,
         )
 
-    def product_type_members_delete_preview_list(
+    def delete_preview_list(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ type_ member.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -285,7 +285,7 @@ class ProductTypeMembersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedDeletePreviewList:
-        """product_type_members_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this product_ type_ member. (required)
@@ -316,7 +316,7 @@ class ProductTypeMembersApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_type_members_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -336,7 +336,7 @@ class ProductTypeMembersApi:
             response_types_map=_response_types_map,
         ).data
 
-    def product_type_members_delete_preview_list_with_http_info(
+    def delete_preview_list_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ type_ member.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -353,7 +353,7 @@ class ProductTypeMembersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedDeletePreviewList]:
-        """product_type_members_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this product_ type_ member. (required)
@@ -384,7 +384,7 @@ class ProductTypeMembersApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_type_members_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -404,7 +404,7 @@ class ProductTypeMembersApi:
             response_types_map=_response_types_map,
         )
 
-    def product_type_members_delete_preview_list_without_preload_content(
+    def delete_preview_list_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ type_ member.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -421,7 +421,7 @@ class ProductTypeMembersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """product_type_members_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this product_ type_ member. (required)
@@ -452,7 +452,7 @@ class ProductTypeMembersApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_type_members_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -468,7 +468,7 @@ class ProductTypeMembersApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _product_type_members_delete_preview_list_serialize(
+    def _delete_preview_list_serialize(
         self,
         id,
         limit,
@@ -525,7 +525,7 @@ class ProductTypeMembersApi:
             _request_auth=_request_auth,
         )
 
-    def product_type_members_delete_preview_list_iterator(
+    def delete_preview_list_iterator(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ type_ member.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -543,13 +543,11 @@ class ProductTypeMembersApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[DeletePreview, PaginatedDeletePreviewList], None, None]':
         _params = locals()
-        for page in get_all_pages(
-            self.api_client, ProductTypeMembersApi.product_type_members_delete_preview_list, **_params
-        ):
+        for page in get_all_pages(self.api_client, ProductTypeMembersApi.delete_preview_list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def product_type_members_destroy(
+    def destroy(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ type_ member.')],
         _request_timeout: Union[
@@ -562,7 +560,7 @@ class ProductTypeMembersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> None:
-        """product_type_members_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this product_ type_ member. (required)
@@ -589,7 +587,7 @@ class ProductTypeMembersApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_type_members_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -603,7 +601,7 @@ class ProductTypeMembersApi:
             response_types_map=_response_types_map,
         ).data
 
-    def product_type_members_destroy_with_http_info(
+    def destroy_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ type_ member.')],
         _request_timeout: Union[
@@ -616,7 +614,7 @@ class ProductTypeMembersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[None]:
-        """product_type_members_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this product_ type_ member. (required)
@@ -643,7 +641,7 @@ class ProductTypeMembersApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_type_members_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -657,7 +655,7 @@ class ProductTypeMembersApi:
             response_types_map=_response_types_map,
         )
 
-    def product_type_members_destroy_without_preload_content(
+    def destroy_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ type_ member.')],
         _request_timeout: Union[
@@ -670,7 +668,7 @@ class ProductTypeMembersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """product_type_members_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this product_ type_ member. (required)
@@ -697,7 +695,7 @@ class ProductTypeMembersApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_type_members_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -707,7 +705,7 @@ class ProductTypeMembersApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _product_type_members_destroy_serialize(
+    def _destroy_serialize(
         self,
         id,
         _request_auth,
@@ -752,7 +750,7 @@ class ProductTypeMembersApi:
             _request_auth=_request_auth,
         )
 
-    def product_type_members_list(
+    def list(
         self,
         id: Optional[StrictInt] = None,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -775,7 +773,7 @@ class ProductTypeMembersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedProductTypeMemberList:
-        """product_type_members_list
+        """list
 
 
         :param id:
@@ -812,7 +810,7 @@ class ProductTypeMembersApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_type_members_list_serialize(
+        _param = self._list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -835,7 +833,7 @@ class ProductTypeMembersApi:
             response_types_map=_response_types_map,
         ).data
 
-    def product_type_members_list_with_http_info(
+    def list_with_http_info(
         self,
         id: Optional[StrictInt] = None,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -858,7 +856,7 @@ class ProductTypeMembersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedProductTypeMemberList]:
-        """product_type_members_list
+        """list
 
 
         :param id:
@@ -895,7 +893,7 @@ class ProductTypeMembersApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_type_members_list_serialize(
+        _param = self._list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -918,7 +916,7 @@ class ProductTypeMembersApi:
             response_types_map=_response_types_map,
         )
 
-    def product_type_members_list_without_preload_content(
+    def list_without_preload_content(
         self,
         id: Optional[StrictInt] = None,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -941,7 +939,7 @@ class ProductTypeMembersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """product_type_members_list
+        """list
 
 
         :param id:
@@ -978,7 +976,7 @@ class ProductTypeMembersApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_type_members_list_serialize(
+        _param = self._list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -997,7 +995,7 @@ class ProductTypeMembersApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _product_type_members_list_serialize(
+    def _list_serialize(
         self,
         id,
         limit,
@@ -1069,7 +1067,7 @@ class ProductTypeMembersApi:
             _request_auth=_request_auth,
         )
 
-    def product_type_members_list_iterator(
+    def list_iterator(
         self,
         id: Optional[StrictInt] = None,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -1093,11 +1091,11 @@ class ProductTypeMembersApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[ProductTypeMember, PaginatedProductTypeMemberList], None, None]':
         _params = locals()
-        for page in get_all_pages(self.api_client, ProductTypeMembersApi.product_type_members_list, **_params):
+        for page in get_all_pages(self.api_client, ProductTypeMembersApi.list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def product_type_members_retrieve(
+    def retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ type_ member.')],
         prefetch: Annotated[
@@ -1114,7 +1112,7 @@ class ProductTypeMembersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ProductTypeMember:
-        """product_type_members_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this product_ type_ member. (required)
@@ -1143,7 +1141,7 @@ class ProductTypeMembersApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_type_members_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id,
             prefetch=prefetch,
             _request_auth=_request_auth,
@@ -1162,7 +1160,7 @@ class ProductTypeMembersApi:
             response_types_map=_response_types_map,
         ).data
 
-    def product_type_members_retrieve_with_http_info(
+    def retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ type_ member.')],
         prefetch: Annotated[
@@ -1179,7 +1177,7 @@ class ProductTypeMembersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[ProductTypeMember]:
-        """product_type_members_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this product_ type_ member. (required)
@@ -1208,7 +1206,7 @@ class ProductTypeMembersApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_type_members_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id,
             prefetch=prefetch,
             _request_auth=_request_auth,
@@ -1227,7 +1225,7 @@ class ProductTypeMembersApi:
             response_types_map=_response_types_map,
         )
 
-    def product_type_members_retrieve_without_preload_content(
+    def retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ type_ member.')],
         prefetch: Annotated[
@@ -1244,7 +1242,7 @@ class ProductTypeMembersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """product_type_members_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this product_ type_ member. (required)
@@ -1273,7 +1271,7 @@ class ProductTypeMembersApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_type_members_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id,
             prefetch=prefetch,
             _request_auth=_request_auth,
@@ -1288,7 +1286,7 @@ class ProductTypeMembersApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _product_type_members_retrieve_serialize(
+    def _retrieve_serialize(
         self,
         id,
         prefetch,
@@ -1343,7 +1341,7 @@ class ProductTypeMembersApi:
             _request_auth=_request_auth,
         )
 
-    def product_type_members_update(
+    def update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ type_ member.')],
         product_type_member_request: ProductTypeMemberRequest,
@@ -1357,7 +1355,7 @@ class ProductTypeMembersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ProductTypeMember:
-        """product_type_members_update
+        """update
 
 
         :param id: A unique integer value identifying this product_ type_ member. (required)
@@ -1386,7 +1384,7 @@ class ProductTypeMembersApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_type_members_update_serialize(
+        _param = self._update_serialize(
             id=id,
             product_type_member_request=product_type_member_request,
             _request_auth=_request_auth,
@@ -1405,7 +1403,7 @@ class ProductTypeMembersApi:
             response_types_map=_response_types_map,
         ).data
 
-    def product_type_members_update_with_http_info(
+    def update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ type_ member.')],
         product_type_member_request: ProductTypeMemberRequest,
@@ -1419,7 +1417,7 @@ class ProductTypeMembersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[ProductTypeMember]:
-        """product_type_members_update
+        """update
 
 
         :param id: A unique integer value identifying this product_ type_ member. (required)
@@ -1448,7 +1446,7 @@ class ProductTypeMembersApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_type_members_update_serialize(
+        _param = self._update_serialize(
             id=id,
             product_type_member_request=product_type_member_request,
             _request_auth=_request_auth,
@@ -1467,7 +1465,7 @@ class ProductTypeMembersApi:
             response_types_map=_response_types_map,
         )
 
-    def product_type_members_update_without_preload_content(
+    def update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ type_ member.')],
         product_type_member_request: ProductTypeMemberRequest,
@@ -1481,7 +1479,7 @@ class ProductTypeMembersApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """product_type_members_update
+        """update
 
 
         :param id: A unique integer value identifying this product_ type_ member. (required)
@@ -1510,7 +1508,7 @@ class ProductTypeMembersApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_type_members_update_serialize(
+        _param = self._update_serialize(
             id=id,
             product_type_member_request=product_type_member_request,
             _request_auth=_request_auth,
@@ -1525,7 +1523,7 @@ class ProductTypeMembersApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _product_type_members_update_serialize(
+    def _update_serialize(
         self,
         id,
         product_type_member_request,

@@ -34,7 +34,7 @@ class ApiTokenAuthApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    def api_token_auth_create(
+    def create(
         self,
         username: Optional[Annotated[str, Field(min_length=1, strict=True)]] = None,
         password: Optional[Annotated[str, Field(min_length=1, strict=True)]] = None,
@@ -48,7 +48,7 @@ class ApiTokenAuthApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AuthToken:
-        """api_token_auth_create
+        """create
 
 
         :param username:
@@ -77,7 +77,7 @@ class ApiTokenAuthApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._api_token_auth_create_serialize(
+        _param = self._create_serialize(
             username=username,
             password=password,
             _request_auth=_request_auth,
@@ -96,7 +96,7 @@ class ApiTokenAuthApi:
             response_types_map=_response_types_map,
         ).data
 
-    def api_token_auth_create_with_http_info(
+    def create_with_http_info(
         self,
         username: Optional[Annotated[str, Field(min_length=1, strict=True)]] = None,
         password: Optional[Annotated[str, Field(min_length=1, strict=True)]] = None,
@@ -110,7 +110,7 @@ class ApiTokenAuthApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AuthToken]:
-        """api_token_auth_create
+        """create
 
 
         :param username:
@@ -139,7 +139,7 @@ class ApiTokenAuthApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._api_token_auth_create_serialize(
+        _param = self._create_serialize(
             username=username,
             password=password,
             _request_auth=_request_auth,
@@ -158,7 +158,7 @@ class ApiTokenAuthApi:
             response_types_map=_response_types_map,
         )
 
-    def api_token_auth_create_without_preload_content(
+    def create_without_preload_content(
         self,
         username: Optional[Annotated[str, Field(min_length=1, strict=True)]] = None,
         password: Optional[Annotated[str, Field(min_length=1, strict=True)]] = None,
@@ -172,7 +172,7 @@ class ApiTokenAuthApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """api_token_auth_create
+        """create
 
 
         :param username:
@@ -201,7 +201,7 @@ class ApiTokenAuthApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._api_token_auth_create_serialize(
+        _param = self._create_serialize(
             username=username,
             password=password,
             _request_auth=_request_auth,
@@ -216,7 +216,7 @@ class ApiTokenAuthApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _api_token_auth_create_serialize(
+    def _create_serialize(
         self,
         username,
         password,

@@ -24,36 +24,36 @@ class TestRiskAcceptanceApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_risk_acceptance_create(self) -> None:
-        """Test case for risk_acceptance_create"""
+    def test_create(self) -> None:
+        """Test case for create"""
         pass
 
-    def test_risk_acceptance_delete_preview_list(self) -> None:
-        """Test case for risk_acceptance_delete_preview_list"""
+    def test_delete_preview_list(self) -> None:
+        """Test case for delete_preview_list"""
         pass
 
-    def test_risk_acceptance_destroy(self) -> None:
-        """Test case for risk_acceptance_destroy"""
+    def test_destroy(self) -> None:
+        """Test case for destroy"""
         pass
 
-    def test_risk_acceptance_download_proof_retrieve(self) -> None:
-        """Test case for risk_acceptance_download_proof_retrieve"""
+    def test_download_proof_retrieve(self) -> None:
+        """Test case for download_proof_retrieve"""
         pass
 
-    def test_risk_acceptance_list(self) -> None:
-        """Test case for risk_acceptance_list"""
+    def test_list(self) -> None:
+        """Test case for list"""
         pass
 
-    def test_risk_acceptance_partial_update(self) -> None:
-        """Test case for risk_acceptance_partial_update"""
+    def test_partial_update(self) -> None:
+        """Test case for partial_update"""
         pass
 
-    def test_risk_acceptance_retrieve(self) -> None:
-        """Test case for risk_acceptance_retrieve"""
+    def test_retrieve(self) -> None:
+        """Test case for retrieve"""
         pass
 
-    def test_risk_acceptance_update(self) -> None:
-        """Test case for risk_acceptance_update"""
+    def test_update(self) -> None:
+        """Test case for update"""
         pass
 
 

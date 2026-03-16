@@ -63,7 +63,7 @@ class FindingsApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    def findings_accept_risks_create(
+    def accept_risks_create(
         self,
         accepted_risk_request: List[AcceptedRiskRequest],
         active: Optional[StrictBool] = None,
@@ -341,7 +341,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedRiskAcceptanceList:
-        """findings_accept_risks_create
+        """accept_risks_create
 
 
         :param accepted_risk_request: (required)
@@ -592,7 +592,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_accept_risks_create_serialize(
+        _param = self._accept_risks_create_serialize(
             accepted_risk_request=accepted_risk_request,
             active=active,
             component_name=component_name,
@@ -722,7 +722,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def findings_accept_risks_create_with_http_info(
+    def accept_risks_create_with_http_info(
         self,
         accepted_risk_request: List[AcceptedRiskRequest],
         active: Optional[StrictBool] = None,
@@ -1000,7 +1000,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedRiskAcceptanceList]:
-        """findings_accept_risks_create
+        """accept_risks_create
 
 
         :param accepted_risk_request: (required)
@@ -1251,7 +1251,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_accept_risks_create_serialize(
+        _param = self._accept_risks_create_serialize(
             accepted_risk_request=accepted_risk_request,
             active=active,
             component_name=component_name,
@@ -1381,7 +1381,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    def findings_accept_risks_create_without_preload_content(
+    def accept_risks_create_without_preload_content(
         self,
         accepted_risk_request: List[AcceptedRiskRequest],
         active: Optional[StrictBool] = None,
@@ -1659,7 +1659,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """findings_accept_risks_create
+        """accept_risks_create
 
 
         :param accepted_risk_request: (required)
@@ -1910,7 +1910,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_accept_risks_create_serialize(
+        _param = self._accept_risks_create_serialize(
             accepted_risk_request=accepted_risk_request,
             active=active,
             component_name=component_name,
@@ -2036,7 +2036,7 @@ class FindingsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _findings_accept_risks_create_serialize(
+    def _accept_risks_create_serialize(
         self,
         accepted_risk_request,
         active,
@@ -2664,7 +2664,7 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    def findings_close_create(
+    def close_create(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         finding_close_request: Optional[FindingCloseRequest] = None,
@@ -2678,7 +2678,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> FindingClose:
-        """findings_close_create
+        """close_create
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -2707,7 +2707,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_close_create_serialize(
+        _param = self._close_create_serialize(
             id=id,
             finding_close_request=finding_close_request,
             _request_auth=_request_auth,
@@ -2726,7 +2726,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def findings_close_create_with_http_info(
+    def close_create_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         finding_close_request: Optional[FindingCloseRequest] = None,
@@ -2740,7 +2740,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[FindingClose]:
-        """findings_close_create
+        """close_create
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -2769,7 +2769,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_close_create_serialize(
+        _param = self._close_create_serialize(
             id=id,
             finding_close_request=finding_close_request,
             _request_auth=_request_auth,
@@ -2788,7 +2788,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    def findings_close_create_without_preload_content(
+    def close_create_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         finding_close_request: Optional[FindingCloseRequest] = None,
@@ -2802,7 +2802,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """findings_close_create
+        """close_create
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -2831,7 +2831,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_close_create_serialize(
+        _param = self._close_create_serialize(
             id=id,
             finding_close_request=finding_close_request,
             _request_auth=_request_auth,
@@ -2846,7 +2846,7 @@ class FindingsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _findings_close_create_serialize(
+    def _close_create_serialize(
         self,
         id,
         finding_close_request,
@@ -2908,7 +2908,7 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    def findings_create(
+    def create(
         self,
         finding_create_request: FindingCreateRequest,
         _request_timeout: Union[
@@ -2921,7 +2921,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> FindingCreate:
-        """findings_create
+        """create
 
 
         :param finding_create_request: (required)
@@ -2948,7 +2948,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_create_serialize(
+        _param = self._create_serialize(
             finding_create_request=finding_create_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2966,7 +2966,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def findings_create_with_http_info(
+    def create_with_http_info(
         self,
         finding_create_request: FindingCreateRequest,
         _request_timeout: Union[
@@ -2979,7 +2979,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[FindingCreate]:
-        """findings_create
+        """create
 
 
         :param finding_create_request: (required)
@@ -3006,7 +3006,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_create_serialize(
+        _param = self._create_serialize(
             finding_create_request=finding_create_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -3024,7 +3024,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    def findings_create_without_preload_content(
+    def create_without_preload_content(
         self,
         finding_create_request: FindingCreateRequest,
         _request_timeout: Union[
@@ -3037,7 +3037,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """findings_create
+        """create
 
 
         :param finding_create_request: (required)
@@ -3064,7 +3064,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_create_serialize(
+        _param = self._create_serialize(
             finding_create_request=finding_create_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -3078,7 +3078,7 @@ class FindingsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _findings_create_serialize(
+    def _create_serialize(
         self,
         finding_create_request,
         _request_auth,
@@ -3137,7 +3137,7 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    def findings_delete_preview_list(
+    def delete_preview_list(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -3154,7 +3154,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedDeletePreviewList:
-        """findings_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -3185,7 +3185,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -3205,7 +3205,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def findings_delete_preview_list_with_http_info(
+    def delete_preview_list_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -3222,7 +3222,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedDeletePreviewList]:
-        """findings_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -3253,7 +3253,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -3273,7 +3273,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    def findings_delete_preview_list_without_preload_content(
+    def delete_preview_list_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -3290,7 +3290,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """findings_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -3321,7 +3321,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -3337,7 +3337,7 @@ class FindingsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _findings_delete_preview_list_serialize(
+    def _delete_preview_list_serialize(
         self,
         id,
         limit,
@@ -3394,7 +3394,7 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    def findings_delete_preview_list_iterator(
+    def delete_preview_list_iterator(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -3412,11 +3412,11 @@ class FindingsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[DeletePreview, PaginatedDeletePreviewList], None, None]':
         _params = locals()
-        for page in get_all_pages(self.api_client, FindingsApi.findings_delete_preview_list, **_params):
+        for page in get_all_pages(self.api_client, FindingsApi.delete_preview_list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def findings_destroy(
+    def destroy(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         _request_timeout: Union[
@@ -3429,7 +3429,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> None:
-        """findings_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -3456,7 +3456,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -3470,7 +3470,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def findings_destroy_with_http_info(
+    def destroy_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         _request_timeout: Union[
@@ -3483,7 +3483,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[None]:
-        """findings_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -3510,7 +3510,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -3524,7 +3524,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    def findings_destroy_without_preload_content(
+    def destroy_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         _request_timeout: Union[
@@ -3537,7 +3537,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """findings_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -3564,7 +3564,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -3574,7 +3574,7 @@ class FindingsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _findings_destroy_serialize(
+    def _destroy_serialize(
         self,
         id,
         _request_auth,
@@ -3619,7 +3619,7 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    def findings_duplicate_list(
+    def duplicate_list(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         _request_timeout: Union[
@@ -3632,7 +3632,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> List[Finding]:
-        """findings_duplicate_list
+        """duplicate_list
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -3659,7 +3659,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_duplicate_list_serialize(
+        _param = self._duplicate_list_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -3673,7 +3673,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def findings_duplicate_list_with_http_info(
+    def duplicate_list_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         _request_timeout: Union[
@@ -3686,7 +3686,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[List[Finding]]:
-        """findings_duplicate_list
+        """duplicate_list
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -3713,7 +3713,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_duplicate_list_serialize(
+        _param = self._duplicate_list_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -3727,7 +3727,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    def findings_duplicate_list_without_preload_content(
+    def duplicate_list_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         _request_timeout: Union[
@@ -3740,7 +3740,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """findings_duplicate_list
+        """duplicate_list
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -3767,7 +3767,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_duplicate_list_serialize(
+        _param = self._duplicate_list_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -3777,7 +3777,7 @@ class FindingsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _findings_duplicate_list_serialize(
+    def _duplicate_list_serialize(
         self,
         id,
         _request_auth,
@@ -3826,7 +3826,7 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    def findings_duplicate_reset_create(
+    def duplicate_reset_create(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         _request_timeout: Union[
@@ -3839,7 +3839,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> None:
-        """findings_duplicate_reset_create
+        """duplicate_reset_create
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -3866,7 +3866,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_duplicate_reset_create_serialize(
+        _param = self._duplicate_reset_create_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -3880,7 +3880,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def findings_duplicate_reset_create_with_http_info(
+    def duplicate_reset_create_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         _request_timeout: Union[
@@ -3893,7 +3893,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[None]:
-        """findings_duplicate_reset_create
+        """duplicate_reset_create
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -3920,7 +3920,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_duplicate_reset_create_serialize(
+        _param = self._duplicate_reset_create_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -3934,7 +3934,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    def findings_duplicate_reset_create_without_preload_content(
+    def duplicate_reset_create_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         _request_timeout: Union[
@@ -3947,7 +3947,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """findings_duplicate_reset_create
+        """duplicate_reset_create
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -3974,7 +3974,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_duplicate_reset_create_serialize(
+        _param = self._duplicate_reset_create_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -3984,7 +3984,7 @@ class FindingsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _findings_duplicate_reset_create_serialize(
+    def _duplicate_reset_create_serialize(
         self,
         id,
         _request_auth,
@@ -4029,7 +4029,7 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    def findings_files_create(
+    def files_create(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         title: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=100)]] = None,
@@ -4044,7 +4044,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> File:
-        """findings_files_create
+        """files_create
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -4075,7 +4075,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_files_create_serialize(
+        _param = self._files_create_serialize(
             id=id,
             title=title,
             file=file,
@@ -4095,7 +4095,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def findings_files_create_with_http_info(
+    def files_create_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         title: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=100)]] = None,
@@ -4110,7 +4110,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[File]:
-        """findings_files_create
+        """files_create
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -4141,7 +4141,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_files_create_serialize(
+        _param = self._files_create_serialize(
             id=id,
             title=title,
             file=file,
@@ -4161,7 +4161,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    def findings_files_create_without_preload_content(
+    def files_create_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         title: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=100)]] = None,
@@ -4176,7 +4176,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """findings_files_create
+        """files_create
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -4207,7 +4207,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_files_create_serialize(
+        _param = self._files_create_serialize(
             id=id,
             title=title,
             file=file,
@@ -4223,7 +4223,7 @@ class FindingsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _findings_files_create_serialize(
+    def _files_create_serialize(
         self,
         id,
         title,
@@ -4286,7 +4286,7 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    def findings_files_download_retrieve(
+    def files_download_retrieve(
         self,
         file_id: Annotated[str, Field(strict=True)],
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -4300,7 +4300,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RawFile:
-        """findings_files_download_retrieve
+        """files_download_retrieve
 
 
         :param file_id: (required)
@@ -4329,7 +4329,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_files_download_retrieve_serialize(
+        _param = self._files_download_retrieve_serialize(
             file_id=file_id,
             id=id,
             _request_auth=_request_auth,
@@ -4348,7 +4348,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def findings_files_download_retrieve_with_http_info(
+    def files_download_retrieve_with_http_info(
         self,
         file_id: Annotated[str, Field(strict=True)],
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -4362,7 +4362,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[RawFile]:
-        """findings_files_download_retrieve
+        """files_download_retrieve
 
 
         :param file_id: (required)
@@ -4391,7 +4391,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_files_download_retrieve_serialize(
+        _param = self._files_download_retrieve_serialize(
             file_id=file_id,
             id=id,
             _request_auth=_request_auth,
@@ -4410,7 +4410,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    def findings_files_download_retrieve_without_preload_content(
+    def files_download_retrieve_without_preload_content(
         self,
         file_id: Annotated[str, Field(strict=True)],
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
@@ -4424,7 +4424,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """findings_files_download_retrieve
+        """files_download_retrieve
 
 
         :param file_id: (required)
@@ -4453,7 +4453,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_files_download_retrieve_serialize(
+        _param = self._files_download_retrieve_serialize(
             file_id=file_id,
             id=id,
             _request_auth=_request_auth,
@@ -4468,7 +4468,7 @@ class FindingsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _findings_files_download_retrieve_serialize(
+    def _files_download_retrieve_serialize(
         self,
         file_id,
         id,
@@ -4520,7 +4520,7 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    def findings_files_retrieve(
+    def files_retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         _request_timeout: Union[
@@ -4533,7 +4533,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> FindingToFiles:
-        """findings_files_retrieve
+        """files_retrieve
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -4560,7 +4560,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_files_retrieve_serialize(
+        _param = self._files_retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -4574,7 +4574,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def findings_files_retrieve_with_http_info(
+    def files_retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         _request_timeout: Union[
@@ -4587,7 +4587,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[FindingToFiles]:
-        """findings_files_retrieve
+        """files_retrieve
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -4614,7 +4614,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_files_retrieve_serialize(
+        _param = self._files_retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -4628,7 +4628,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    def findings_files_retrieve_without_preload_content(
+    def files_retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         _request_timeout: Union[
@@ -4641,7 +4641,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """findings_files_retrieve
+        """files_retrieve
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -4668,7 +4668,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_files_retrieve_serialize(
+        _param = self._files_retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -4678,7 +4678,7 @@ class FindingsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _findings_files_retrieve_serialize(
+    def _files_retrieve_serialize(
         self,
         id,
         _request_auth,
@@ -4727,7 +4727,7 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    def findings_generate_report_create(
+    def generate_report_create(
         self,
         report_generate_option_request: Optional[ReportGenerateOptionRequest] = None,
         _request_timeout: Union[
@@ -4740,7 +4740,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ReportGenerate:
-        """findings_generate_report_create
+        """generate_report_create
 
 
         :param report_generate_option_request:
@@ -4767,7 +4767,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_generate_report_create_serialize(
+        _param = self._generate_report_create_serialize(
             report_generate_option_request=report_generate_option_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -4785,7 +4785,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def findings_generate_report_create_with_http_info(
+    def generate_report_create_with_http_info(
         self,
         report_generate_option_request: Optional[ReportGenerateOptionRequest] = None,
         _request_timeout: Union[
@@ -4798,7 +4798,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[ReportGenerate]:
-        """findings_generate_report_create
+        """generate_report_create
 
 
         :param report_generate_option_request:
@@ -4825,7 +4825,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_generate_report_create_serialize(
+        _param = self._generate_report_create_serialize(
             report_generate_option_request=report_generate_option_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -4843,7 +4843,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    def findings_generate_report_create_without_preload_content(
+    def generate_report_create_without_preload_content(
         self,
         report_generate_option_request: Optional[ReportGenerateOptionRequest] = None,
         _request_timeout: Union[
@@ -4856,7 +4856,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """findings_generate_report_create
+        """generate_report_create
 
 
         :param report_generate_option_request:
@@ -4883,7 +4883,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_generate_report_create_serialize(
+        _param = self._generate_report_create_serialize(
             report_generate_option_request=report_generate_option_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -4897,7 +4897,7 @@ class FindingsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _findings_generate_report_create_serialize(
+    def _generate_report_create_serialize(
         self,
         report_generate_option_request,
         _request_auth,
@@ -4956,7 +4956,7 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    def findings_list(
+    def list(
         self,
         active: Optional[StrictBool] = None,
         component_name: Optional[StrictStr] = None,
@@ -5243,7 +5243,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedFindingList:
-        """findings_list
+        """list
 
 
         :param active:
@@ -5496,7 +5496,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_list_serialize(
+        _param = self._list_serialize(
             active=active,
             component_name=component_name,
             component_version=component_version,
@@ -5627,7 +5627,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def findings_list_with_http_info(
+    def list_with_http_info(
         self,
         active: Optional[StrictBool] = None,
         component_name: Optional[StrictStr] = None,
@@ -5914,7 +5914,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedFindingList]:
-        """findings_list
+        """list
 
 
         :param active:
@@ -6167,7 +6167,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_list_serialize(
+        _param = self._list_serialize(
             active=active,
             component_name=component_name,
             component_version=component_version,
@@ -6298,7 +6298,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    def findings_list_without_preload_content(
+    def list_without_preload_content(
         self,
         active: Optional[StrictBool] = None,
         component_name: Optional[StrictStr] = None,
@@ -6585,7 +6585,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """findings_list
+        """list
 
 
         :param active:
@@ -6838,7 +6838,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_list_serialize(
+        _param = self._list_serialize(
             active=active,
             component_name=component_name,
             component_version=component_version,
@@ -6965,7 +6965,7 @@ class FindingsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _findings_list_serialize(
+    def _list_serialize(
         self,
         active,
         component_name,
@@ -7588,7 +7588,7 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    def findings_list_iterator(
+    def list_iterator(
         self,
         active: Optional[StrictBool] = None,
         component_name: Optional[StrictStr] = None,
@@ -7876,11 +7876,11 @@ class FindingsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[Finding, PaginatedFindingList], None, None]':
         _params = locals()
-        for page in get_all_pages(self.api_client, FindingsApi.findings_list, **_params):
+        for page in get_all_pages(self.api_client, FindingsApi.list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def findings_metadata_create(
+    def metadata_create(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         finding_meta_request: FindingMetaRequest,
@@ -7894,7 +7894,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> FindingMeta:
-        """findings_metadata_create
+        """metadata_create
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -7923,7 +7923,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_metadata_create_serialize(
+        _param = self._metadata_create_serialize(
             id=id,
             finding_meta_request=finding_meta_request,
             _request_auth=_request_auth,
@@ -7944,7 +7944,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def findings_metadata_create_with_http_info(
+    def metadata_create_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         finding_meta_request: FindingMetaRequest,
@@ -7958,7 +7958,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[FindingMeta]:
-        """findings_metadata_create
+        """metadata_create
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -7987,7 +7987,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_metadata_create_serialize(
+        _param = self._metadata_create_serialize(
             id=id,
             finding_meta_request=finding_meta_request,
             _request_auth=_request_auth,
@@ -8008,7 +8008,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    def findings_metadata_create_without_preload_content(
+    def metadata_create_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         finding_meta_request: FindingMetaRequest,
@@ -8022,7 +8022,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """findings_metadata_create
+        """metadata_create
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -8051,7 +8051,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_metadata_create_serialize(
+        _param = self._metadata_create_serialize(
             id=id,
             finding_meta_request=finding_meta_request,
             _request_auth=_request_auth,
@@ -8068,7 +8068,7 @@ class FindingsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _findings_metadata_create_serialize(
+    def _metadata_create_serialize(
         self,
         id,
         finding_meta_request,
@@ -8130,7 +8130,7 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    def findings_metadata_destroy(
+    def metadata_destroy(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         name: Annotated[
@@ -8149,7 +8149,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> None:
-        """findings_metadata_destroy
+        """metadata_destroy
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -8178,7 +8178,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_metadata_destroy_serialize(
+        _param = self._metadata_destroy_serialize(
             id=id,
             name=name,
             _request_auth=_request_auth,
@@ -8199,7 +8199,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def findings_metadata_destroy_with_http_info(
+    def metadata_destroy_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         name: Annotated[
@@ -8218,7 +8218,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[None]:
-        """findings_metadata_destroy
+        """metadata_destroy
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -8247,7 +8247,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_metadata_destroy_serialize(
+        _param = self._metadata_destroy_serialize(
             id=id,
             name=name,
             _request_auth=_request_auth,
@@ -8268,7 +8268,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    def findings_metadata_destroy_without_preload_content(
+    def metadata_destroy_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         name: Annotated[
@@ -8287,7 +8287,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """findings_metadata_destroy
+        """metadata_destroy
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -8316,7 +8316,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_metadata_destroy_serialize(
+        _param = self._metadata_destroy_serialize(
             id=id,
             name=name,
             _request_auth=_request_auth,
@@ -8333,7 +8333,7 @@ class FindingsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _findings_metadata_destroy_serialize(
+    def _metadata_destroy_serialize(
         self,
         id,
         name,
@@ -8382,7 +8382,7 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    def findings_metadata_list(
+    def metadata_list(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         _request_timeout: Union[
@@ -8395,7 +8395,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> List[FindingMeta]:
-        """findings_metadata_list
+        """metadata_list
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -8422,7 +8422,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_metadata_list_serialize(
+        _param = self._metadata_list_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -8437,7 +8437,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def findings_metadata_list_with_http_info(
+    def metadata_list_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         _request_timeout: Union[
@@ -8450,7 +8450,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[List[FindingMeta]]:
-        """findings_metadata_list
+        """metadata_list
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -8477,7 +8477,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_metadata_list_serialize(
+        _param = self._metadata_list_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -8492,7 +8492,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    def findings_metadata_list_without_preload_content(
+    def metadata_list_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         _request_timeout: Union[
@@ -8505,7 +8505,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """findings_metadata_list
+        """metadata_list
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -8532,7 +8532,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_metadata_list_serialize(
+        _param = self._metadata_list_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -8543,7 +8543,7 @@ class FindingsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _findings_metadata_list_serialize(
+    def _metadata_list_serialize(
         self,
         id,
         _request_auth,
@@ -8592,7 +8592,7 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    def findings_metadata_update(
+    def metadata_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         finding_meta_request: FindingMetaRequest,
@@ -8606,7 +8606,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> FindingMeta:
-        """findings_metadata_update
+        """metadata_update
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -8635,7 +8635,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_metadata_update_serialize(
+        _param = self._metadata_update_serialize(
             id=id,
             finding_meta_request=finding_meta_request,
             _request_auth=_request_auth,
@@ -8656,7 +8656,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def findings_metadata_update_with_http_info(
+    def metadata_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         finding_meta_request: FindingMetaRequest,
@@ -8670,7 +8670,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[FindingMeta]:
-        """findings_metadata_update
+        """metadata_update
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -8699,7 +8699,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_metadata_update_serialize(
+        _param = self._metadata_update_serialize(
             id=id,
             finding_meta_request=finding_meta_request,
             _request_auth=_request_auth,
@@ -8720,7 +8720,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    def findings_metadata_update_without_preload_content(
+    def metadata_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         finding_meta_request: FindingMetaRequest,
@@ -8734,7 +8734,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """findings_metadata_update
+        """metadata_update
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -8763,7 +8763,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_metadata_update_serialize(
+        _param = self._metadata_update_serialize(
             id=id,
             finding_meta_request=finding_meta_request,
             _request_auth=_request_auth,
@@ -8780,7 +8780,7 @@ class FindingsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _findings_metadata_update_serialize(
+    def _metadata_update_serialize(
         self,
         id,
         finding_meta_request,
@@ -8842,7 +8842,7 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    def findings_notes_create(
+    def notes_create(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         add_new_note_option_request: AddNewNoteOptionRequest,
@@ -8856,7 +8856,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Note:
-        """findings_notes_create
+        """notes_create
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -8885,7 +8885,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_notes_create_serialize(
+        _param = self._notes_create_serialize(
             id=id,
             add_new_note_option_request=add_new_note_option_request,
             _request_auth=_request_auth,
@@ -8904,7 +8904,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def findings_notes_create_with_http_info(
+    def notes_create_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         add_new_note_option_request: AddNewNoteOptionRequest,
@@ -8918,7 +8918,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Note]:
-        """findings_notes_create
+        """notes_create
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -8947,7 +8947,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_notes_create_serialize(
+        _param = self._notes_create_serialize(
             id=id,
             add_new_note_option_request=add_new_note_option_request,
             _request_auth=_request_auth,
@@ -8966,7 +8966,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    def findings_notes_create_without_preload_content(
+    def notes_create_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         add_new_note_option_request: AddNewNoteOptionRequest,
@@ -8980,7 +8980,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """findings_notes_create
+        """notes_create
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -9009,7 +9009,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_notes_create_serialize(
+        _param = self._notes_create_serialize(
             id=id,
             add_new_note_option_request=add_new_note_option_request,
             _request_auth=_request_auth,
@@ -9024,7 +9024,7 @@ class FindingsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _findings_notes_create_serialize(
+    def _notes_create_serialize(
         self,
         id,
         add_new_note_option_request,
@@ -9086,7 +9086,7 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    def findings_notes_retrieve(
+    def notes_retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         _request_timeout: Union[
@@ -9099,7 +9099,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> FindingToNotes:
-        """findings_notes_retrieve
+        """notes_retrieve
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -9126,7 +9126,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_notes_retrieve_serialize(
+        _param = self._notes_retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -9140,7 +9140,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def findings_notes_retrieve_with_http_info(
+    def notes_retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         _request_timeout: Union[
@@ -9153,7 +9153,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[FindingToNotes]:
-        """findings_notes_retrieve
+        """notes_retrieve
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -9180,7 +9180,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_notes_retrieve_serialize(
+        _param = self._notes_retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -9194,7 +9194,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    def findings_notes_retrieve_without_preload_content(
+    def notes_retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         _request_timeout: Union[
@@ -9207,7 +9207,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """findings_notes_retrieve
+        """notes_retrieve
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -9234,7 +9234,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_notes_retrieve_serialize(
+        _param = self._notes_retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -9244,7 +9244,7 @@ class FindingsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _findings_notes_retrieve_serialize(
+    def _notes_retrieve_serialize(
         self,
         id,
         _request_auth,
@@ -9293,7 +9293,7 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    def findings_original_create(
+    def original_create(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         new_fid: StrictInt,
@@ -9307,7 +9307,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> None:
-        """findings_original_create
+        """original_create
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -9336,7 +9336,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_original_create_serialize(
+        _param = self._original_create_serialize(
             id=id,
             new_fid=new_fid,
             _request_auth=_request_auth,
@@ -9355,7 +9355,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def findings_original_create_with_http_info(
+    def original_create_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         new_fid: StrictInt,
@@ -9369,7 +9369,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[None]:
-        """findings_original_create
+        """original_create
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -9398,7 +9398,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_original_create_serialize(
+        _param = self._original_create_serialize(
             id=id,
             new_fid=new_fid,
             _request_auth=_request_auth,
@@ -9417,7 +9417,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    def findings_original_create_without_preload_content(
+    def original_create_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         new_fid: StrictInt,
@@ -9431,7 +9431,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """findings_original_create
+        """original_create
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -9460,7 +9460,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_original_create_serialize(
+        _param = self._original_create_serialize(
             id=id,
             new_fid=new_fid,
             _request_auth=_request_auth,
@@ -9475,7 +9475,7 @@ class FindingsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _findings_original_create_serialize(
+    def _original_create_serialize(
         self,
         id,
         new_fid,
@@ -9523,7 +9523,7 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    def findings_partial_update(
+    def partial_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         patched_finding_request: Optional[PatchedFindingRequest] = None,
@@ -9537,7 +9537,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Finding:
-        """findings_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -9566,7 +9566,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_finding_request=patched_finding_request,
             _request_auth=_request_auth,
@@ -9585,7 +9585,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def findings_partial_update_with_http_info(
+    def partial_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         patched_finding_request: Optional[PatchedFindingRequest] = None,
@@ -9599,7 +9599,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Finding]:
-        """findings_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -9628,7 +9628,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_finding_request=patched_finding_request,
             _request_auth=_request_auth,
@@ -9647,7 +9647,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    def findings_partial_update_without_preload_content(
+    def partial_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         patched_finding_request: Optional[PatchedFindingRequest] = None,
@@ -9661,7 +9661,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """findings_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -9690,7 +9690,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_finding_request=patched_finding_request,
             _request_auth=_request_auth,
@@ -9705,7 +9705,7 @@ class FindingsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _findings_partial_update_serialize(
+    def _partial_update_serialize(
         self,
         id,
         patched_finding_request,
@@ -9767,7 +9767,7 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    def findings_remove_note_partial_update(
+    def remove_note_partial_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         patched_finding_note_request: Optional[PatchedFindingNoteRequest] = None,
@@ -9781,7 +9781,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> None:
-        """findings_remove_note_partial_update
+        """remove_note_partial_update
 
         Remove Note From Finding Note
 
@@ -9811,7 +9811,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_remove_note_partial_update_serialize(
+        _param = self._remove_note_partial_update_serialize(
             id=id,
             patched_finding_note_request=patched_finding_note_request,
             _request_auth=_request_auth,
@@ -9830,7 +9830,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def findings_remove_note_partial_update_with_http_info(
+    def remove_note_partial_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         patched_finding_note_request: Optional[PatchedFindingNoteRequest] = None,
@@ -9844,7 +9844,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[None]:
-        """findings_remove_note_partial_update
+        """remove_note_partial_update
 
         Remove Note From Finding Note
 
@@ -9874,7 +9874,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_remove_note_partial_update_serialize(
+        _param = self._remove_note_partial_update_serialize(
             id=id,
             patched_finding_note_request=patched_finding_note_request,
             _request_auth=_request_auth,
@@ -9893,7 +9893,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    def findings_remove_note_partial_update_without_preload_content(
+    def remove_note_partial_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         patched_finding_note_request: Optional[PatchedFindingNoteRequest] = None,
@@ -9907,7 +9907,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """findings_remove_note_partial_update
+        """remove_note_partial_update
 
         Remove Note From Finding Note
 
@@ -9937,7 +9937,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_remove_note_partial_update_serialize(
+        _param = self._remove_note_partial_update_serialize(
             id=id,
             patched_finding_note_request=patched_finding_note_request,
             _request_auth=_request_auth,
@@ -9952,7 +9952,7 @@ class FindingsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _findings_remove_note_partial_update_serialize(
+    def _remove_note_partial_update_serialize(
         self,
         id,
         patched_finding_note_request,
@@ -10010,7 +10010,7 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    def findings_remove_tags_partial_update(
+    def remove_tags_partial_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         patched_tag_request: Optional[PatchedTagRequest] = None,
@@ -10024,7 +10024,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> None:
-        """findings_remove_tags_partial_update
+        """remove_tags_partial_update
 
         Remove Tag(s) from finding list of tags
 
@@ -10054,7 +10054,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_remove_tags_partial_update_serialize(
+        _param = self._remove_tags_partial_update_serialize(
             id=id,
             patched_tag_request=patched_tag_request,
             _request_auth=_request_auth,
@@ -10073,7 +10073,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def findings_remove_tags_partial_update_with_http_info(
+    def remove_tags_partial_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         patched_tag_request: Optional[PatchedTagRequest] = None,
@@ -10087,7 +10087,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[None]:
-        """findings_remove_tags_partial_update
+        """remove_tags_partial_update
 
         Remove Tag(s) from finding list of tags
 
@@ -10117,7 +10117,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_remove_tags_partial_update_serialize(
+        _param = self._remove_tags_partial_update_serialize(
             id=id,
             patched_tag_request=patched_tag_request,
             _request_auth=_request_auth,
@@ -10136,7 +10136,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    def findings_remove_tags_partial_update_without_preload_content(
+    def remove_tags_partial_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         patched_tag_request: Optional[PatchedTagRequest] = None,
@@ -10150,7 +10150,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """findings_remove_tags_partial_update
+        """remove_tags_partial_update
 
         Remove Tag(s) from finding list of tags
 
@@ -10180,7 +10180,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_remove_tags_partial_update_serialize(
+        _param = self._remove_tags_partial_update_serialize(
             id=id,
             patched_tag_request=patched_tag_request,
             _request_auth=_request_auth,
@@ -10195,7 +10195,7 @@ class FindingsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _findings_remove_tags_partial_update_serialize(
+    def _remove_tags_partial_update_serialize(
         self,
         id,
         patched_tag_request,
@@ -10253,7 +10253,7 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    def findings_remove_tags_update(
+    def remove_tags_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         tag_request: TagRequest,
@@ -10267,7 +10267,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> None:
-        """findings_remove_tags_update
+        """remove_tags_update
 
         Remove Tag(s) from finding list of tags
 
@@ -10297,7 +10297,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_remove_tags_update_serialize(
+        _param = self._remove_tags_update_serialize(
             id=id,
             tag_request=tag_request,
             _request_auth=_request_auth,
@@ -10316,7 +10316,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def findings_remove_tags_update_with_http_info(
+    def remove_tags_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         tag_request: TagRequest,
@@ -10330,7 +10330,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[None]:
-        """findings_remove_tags_update
+        """remove_tags_update
 
         Remove Tag(s) from finding list of tags
 
@@ -10360,7 +10360,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_remove_tags_update_serialize(
+        _param = self._remove_tags_update_serialize(
             id=id,
             tag_request=tag_request,
             _request_auth=_request_auth,
@@ -10379,7 +10379,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    def findings_remove_tags_update_without_preload_content(
+    def remove_tags_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         tag_request: TagRequest,
@@ -10393,7 +10393,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """findings_remove_tags_update
+        """remove_tags_update
 
         Remove Tag(s) from finding list of tags
 
@@ -10423,7 +10423,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_remove_tags_update_serialize(
+        _param = self._remove_tags_update_serialize(
             id=id,
             tag_request=tag_request,
             _request_auth=_request_auth,
@@ -10438,7 +10438,7 @@ class FindingsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _findings_remove_tags_update_serialize(
+    def _remove_tags_update_serialize(
         self,
         id,
         tag_request,
@@ -10496,7 +10496,7 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    def findings_request_response_create(
+    def request_response_create(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         burp_raw_request_response_request: BurpRawRequestResponseRequest,
@@ -10510,7 +10510,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> BurpRawRequestResponse:
-        """findings_request_response_create
+        """request_response_create
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -10539,7 +10539,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_request_response_create_serialize(
+        _param = self._request_response_create_serialize(
             id=id,
             burp_raw_request_response_request=burp_raw_request_response_request,
             _request_auth=_request_auth,
@@ -10558,7 +10558,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def findings_request_response_create_with_http_info(
+    def request_response_create_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         burp_raw_request_response_request: BurpRawRequestResponseRequest,
@@ -10572,7 +10572,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[BurpRawRequestResponse]:
-        """findings_request_response_create
+        """request_response_create
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -10601,7 +10601,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_request_response_create_serialize(
+        _param = self._request_response_create_serialize(
             id=id,
             burp_raw_request_response_request=burp_raw_request_response_request,
             _request_auth=_request_auth,
@@ -10620,7 +10620,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    def findings_request_response_create_without_preload_content(
+    def request_response_create_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         burp_raw_request_response_request: BurpRawRequestResponseRequest,
@@ -10634,7 +10634,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """findings_request_response_create
+        """request_response_create
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -10663,7 +10663,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_request_response_create_serialize(
+        _param = self._request_response_create_serialize(
             id=id,
             burp_raw_request_response_request=burp_raw_request_response_request,
             _request_auth=_request_auth,
@@ -10678,7 +10678,7 @@ class FindingsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _findings_request_response_create_serialize(
+    def _request_response_create_serialize(
         self,
         id,
         burp_raw_request_response_request,
@@ -10740,7 +10740,7 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    def findings_request_response_retrieve(
+    def request_response_retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         _request_timeout: Union[
@@ -10753,7 +10753,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> BurpRawRequestResponse:
-        """findings_request_response_retrieve
+        """request_response_retrieve
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -10780,7 +10780,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_request_response_retrieve_serialize(
+        _param = self._request_response_retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -10794,7 +10794,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def findings_request_response_retrieve_with_http_info(
+    def request_response_retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         _request_timeout: Union[
@@ -10807,7 +10807,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[BurpRawRequestResponse]:
-        """findings_request_response_retrieve
+        """request_response_retrieve
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -10834,7 +10834,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_request_response_retrieve_serialize(
+        _param = self._request_response_retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -10848,7 +10848,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    def findings_request_response_retrieve_without_preload_content(
+    def request_response_retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         _request_timeout: Union[
@@ -10861,7 +10861,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """findings_request_response_retrieve
+        """request_response_retrieve
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -10888,7 +10888,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_request_response_retrieve_serialize(
+        _param = self._request_response_retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -10898,7 +10898,7 @@ class FindingsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _findings_request_response_retrieve_serialize(
+    def _request_response_retrieve_serialize(
         self,
         id,
         _request_auth,
@@ -10947,7 +10947,7 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    def findings_retrieve(
+    def retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         prefetch: Annotated[
@@ -10970,7 +10970,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Finding:
-        """findings_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -11001,7 +11001,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id,
             prefetch=prefetch,
             related_fields=related_fields,
@@ -11021,7 +11021,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def findings_retrieve_with_http_info(
+    def retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         prefetch: Annotated[
@@ -11044,7 +11044,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Finding]:
-        """findings_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -11075,7 +11075,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id,
             prefetch=prefetch,
             related_fields=related_fields,
@@ -11095,7 +11095,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    def findings_retrieve_without_preload_content(
+    def retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         prefetch: Annotated[
@@ -11118,7 +11118,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """findings_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -11149,7 +11149,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id,
             prefetch=prefetch,
             related_fields=related_fields,
@@ -11165,7 +11165,7 @@ class FindingsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _findings_retrieve_serialize(
+    def _retrieve_serialize(
         self,
         id,
         prefetch,
@@ -11224,7 +11224,7 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    def findings_tags_create(
+    def tags_create(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         tag_request: TagRequest,
@@ -11238,7 +11238,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Tag:
-        """findings_tags_create
+        """tags_create
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -11267,7 +11267,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_tags_create_serialize(
+        _param = self._tags_create_serialize(
             id=id,
             tag_request=tag_request,
             _request_auth=_request_auth,
@@ -11286,7 +11286,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def findings_tags_create_with_http_info(
+    def tags_create_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         tag_request: TagRequest,
@@ -11300,7 +11300,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Tag]:
-        """findings_tags_create
+        """tags_create
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -11329,7 +11329,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_tags_create_serialize(
+        _param = self._tags_create_serialize(
             id=id,
             tag_request=tag_request,
             _request_auth=_request_auth,
@@ -11348,7 +11348,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    def findings_tags_create_without_preload_content(
+    def tags_create_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         tag_request: TagRequest,
@@ -11362,7 +11362,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """findings_tags_create
+        """tags_create
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -11391,7 +11391,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_tags_create_serialize(
+        _param = self._tags_create_serialize(
             id=id,
             tag_request=tag_request,
             _request_auth=_request_auth,
@@ -11406,7 +11406,7 @@ class FindingsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _findings_tags_create_serialize(
+    def _tags_create_serialize(
         self,
         id,
         tag_request,
@@ -11468,7 +11468,7 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    def findings_tags_retrieve(
+    def tags_retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         _request_timeout: Union[
@@ -11481,7 +11481,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Tag:
-        """findings_tags_retrieve
+        """tags_retrieve
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -11508,7 +11508,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_tags_retrieve_serialize(
+        _param = self._tags_retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -11522,7 +11522,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def findings_tags_retrieve_with_http_info(
+    def tags_retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         _request_timeout: Union[
@@ -11535,7 +11535,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Tag]:
-        """findings_tags_retrieve
+        """tags_retrieve
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -11562,7 +11562,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_tags_retrieve_serialize(
+        _param = self._tags_retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -11576,7 +11576,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    def findings_tags_retrieve_without_preload_content(
+    def tags_retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         _request_timeout: Union[
@@ -11589,7 +11589,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """findings_tags_retrieve
+        """tags_retrieve
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -11616,7 +11616,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_tags_retrieve_serialize(
+        _param = self._tags_retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -11626,7 +11626,7 @@ class FindingsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _findings_tags_retrieve_serialize(
+    def _tags_retrieve_serialize(
         self,
         id,
         _request_auth,
@@ -11675,7 +11675,7 @@ class FindingsApi:
             _request_auth=_request_auth,
         )
 
-    def findings_update(
+    def update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         finding_request: FindingRequest,
@@ -11689,7 +11689,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Finding:
-        """findings_update
+        """update
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -11718,7 +11718,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_update_serialize(
+        _param = self._update_serialize(
             id=id,
             finding_request=finding_request,
             _request_auth=_request_auth,
@@ -11737,7 +11737,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def findings_update_with_http_info(
+    def update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         finding_request: FindingRequest,
@@ -11751,7 +11751,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Finding]:
-        """findings_update
+        """update
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -11780,7 +11780,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_update_serialize(
+        _param = self._update_serialize(
             id=id,
             finding_request=finding_request,
             _request_auth=_request_auth,
@@ -11799,7 +11799,7 @@ class FindingsApi:
             response_types_map=_response_types_map,
         )
 
-    def findings_update_without_preload_content(
+    def update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
         finding_request: FindingRequest,
@@ -11813,7 +11813,7 @@ class FindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """findings_update
+        """update
 
 
         :param id: A unique integer value identifying this finding. (required)
@@ -11842,7 +11842,7 @@ class FindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._findings_update_serialize(
+        _param = self._update_serialize(
             id=id,
             finding_request=finding_request,
             _request_auth=_request_auth,
@@ -11857,7 +11857,7 @@ class FindingsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _findings_update_serialize(
+    def _update_serialize(
         self,
         id,
         finding_request,

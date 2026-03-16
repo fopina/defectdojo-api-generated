@@ -24,80 +24,80 @@ class TestEngagementsApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_engagements_accept_risks_create(self) -> None:
-        """Test case for engagements_accept_risks_create"""
+    def test_accept_risks_create(self) -> None:
+        """Test case for accept_risks_create"""
         pass
 
-    def test_engagements_close_create(self) -> None:
-        """Test case for engagements_close_create"""
+    def test_close_create(self) -> None:
+        """Test case for close_create"""
         pass
 
-    def test_engagements_complete_checklist_create(self) -> None:
-        """Test case for engagements_complete_checklist_create"""
+    def test_complete_checklist_create(self) -> None:
+        """Test case for complete_checklist_create"""
         pass
 
-    def test_engagements_complete_checklist_retrieve(self) -> None:
-        """Test case for engagements_complete_checklist_retrieve"""
+    def test_complete_checklist_retrieve(self) -> None:
+        """Test case for complete_checklist_retrieve"""
         pass
 
-    def test_engagements_create(self) -> None:
-        """Test case for engagements_create"""
+    def test_create(self) -> None:
+        """Test case for create"""
         pass
 
-    def test_engagements_delete_preview_list(self) -> None:
-        """Test case for engagements_delete_preview_list"""
+    def test_delete_preview_list(self) -> None:
+        """Test case for delete_preview_list"""
         pass
 
-    def test_engagements_destroy(self) -> None:
-        """Test case for engagements_destroy"""
+    def test_destroy(self) -> None:
+        """Test case for destroy"""
         pass
 
-    def test_engagements_files_create(self) -> None:
-        """Test case for engagements_files_create"""
+    def test_files_create(self) -> None:
+        """Test case for files_create"""
         pass
 
-    def test_engagements_files_download_retrieve(self) -> None:
-        """Test case for engagements_files_download_retrieve"""
+    def test_files_download_retrieve(self) -> None:
+        """Test case for files_download_retrieve"""
         pass
 
-    def test_engagements_files_retrieve(self) -> None:
-        """Test case for engagements_files_retrieve"""
+    def test_files_retrieve(self) -> None:
+        """Test case for files_retrieve"""
         pass
 
-    def test_engagements_generate_report_create(self) -> None:
-        """Test case for engagements_generate_report_create"""
+    def test_generate_report_create(self) -> None:
+        """Test case for generate_report_create"""
         pass
 
-    def test_engagements_list(self) -> None:
-        """Test case for engagements_list"""
+    def test_list(self) -> None:
+        """Test case for list"""
         pass
 
-    def test_engagements_notes_create(self) -> None:
-        """Test case for engagements_notes_create"""
+    def test_notes_create(self) -> None:
+        """Test case for notes_create"""
         pass
 
-    def test_engagements_notes_retrieve(self) -> None:
-        """Test case for engagements_notes_retrieve"""
+    def test_notes_retrieve(self) -> None:
+        """Test case for notes_retrieve"""
         pass
 
-    def test_engagements_partial_update(self) -> None:
-        """Test case for engagements_partial_update"""
+    def test_partial_update(self) -> None:
+        """Test case for partial_update"""
         pass
 
-    def test_engagements_reopen_create(self) -> None:
-        """Test case for engagements_reopen_create"""
+    def test_reopen_create(self) -> None:
+        """Test case for reopen_create"""
         pass
 
-    def test_engagements_retrieve(self) -> None:
-        """Test case for engagements_retrieve"""
+    def test_retrieve(self) -> None:
+        """Test case for retrieve"""
         pass
 
-    def test_engagements_update(self) -> None:
-        """Test case for engagements_update"""
+    def test_update(self) -> None:
+        """Test case for update"""
         pass
 
-    def test_engagements_update_jira_epic_create(self) -> None:
-        """Test case for engagements_update_jira_epic_create"""
+    def test_update_jira_epic_create(self) -> None:
+        """Test case for update_jira_epic_create"""
         pass
 
 

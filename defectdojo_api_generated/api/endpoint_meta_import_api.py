@@ -34,7 +34,7 @@ class EndpointMetaImportApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    def endpoint_meta_import_create(
+    def create(
         self,
         file: Optional[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]]] = None,
         create_endpoints: Optional[StrictBool] = None,
@@ -52,7 +52,7 @@ class EndpointMetaImportApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> EndpointMetaImporter:
-        """endpoint_meta_import_create
+        """create
 
         Imports a CSV file into a product to propagate arbitrary meta and tags on endpoints.  By Names: - Provide `product_name` of existing product  By ID: - Provide the id of the product in the `product` parameter  In this scenario Defect Dojo will look up the product by the provided details.
 
@@ -90,7 +90,7 @@ class EndpointMetaImportApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._endpoint_meta_import_create_serialize(
+        _param = self._create_serialize(
             file=file,
             create_endpoints=create_endpoints,
             create_tags=create_tags,
@@ -113,7 +113,7 @@ class EndpointMetaImportApi:
             response_types_map=_response_types_map,
         ).data
 
-    def endpoint_meta_import_create_with_http_info(
+    def create_with_http_info(
         self,
         file: Optional[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]]] = None,
         create_endpoints: Optional[StrictBool] = None,
@@ -131,7 +131,7 @@ class EndpointMetaImportApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[EndpointMetaImporter]:
-        """endpoint_meta_import_create
+        """create
 
         Imports a CSV file into a product to propagate arbitrary meta and tags on endpoints.  By Names: - Provide `product_name` of existing product  By ID: - Provide the id of the product in the `product` parameter  In this scenario Defect Dojo will look up the product by the provided details.
 
@@ -169,7 +169,7 @@ class EndpointMetaImportApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._endpoint_meta_import_create_serialize(
+        _param = self._create_serialize(
             file=file,
             create_endpoints=create_endpoints,
             create_tags=create_tags,
@@ -192,7 +192,7 @@ class EndpointMetaImportApi:
             response_types_map=_response_types_map,
         )
 
-    def endpoint_meta_import_create_without_preload_content(
+    def create_without_preload_content(
         self,
         file: Optional[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]]] = None,
         create_endpoints: Optional[StrictBool] = None,
@@ -210,7 +210,7 @@ class EndpointMetaImportApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """endpoint_meta_import_create
+        """create
 
         Imports a CSV file into a product to propagate arbitrary meta and tags on endpoints.  By Names: - Provide `product_name` of existing product  By ID: - Provide the id of the product in the `product` parameter  In this scenario Defect Dojo will look up the product by the provided details.
 
@@ -248,7 +248,7 @@ class EndpointMetaImportApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._endpoint_meta_import_create_serialize(
+        _param = self._create_serialize(
             file=file,
             create_endpoints=create_endpoints,
             create_tags=create_tags,
@@ -267,7 +267,7 @@ class EndpointMetaImportApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _endpoint_meta_import_create_serialize(
+    def _create_serialize(
         self,
         file,
         create_endpoints,

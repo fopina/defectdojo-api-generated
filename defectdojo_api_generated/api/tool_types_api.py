@@ -40,7 +40,7 @@ class ToolTypesApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    def tool_types_create(
+    def create(
         self,
         tool_type_request: ToolTypeRequest,
         _request_timeout: Union[
@@ -53,7 +53,7 @@ class ToolTypesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ToolType:
-        """tool_types_create
+        """create
 
 
         :param tool_type_request: (required)
@@ -80,7 +80,7 @@ class ToolTypesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tool_types_create_serialize(
+        _param = self._create_serialize(
             tool_type_request=tool_type_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -98,7 +98,7 @@ class ToolTypesApi:
             response_types_map=_response_types_map,
         ).data
 
-    def tool_types_create_with_http_info(
+    def create_with_http_info(
         self,
         tool_type_request: ToolTypeRequest,
         _request_timeout: Union[
@@ -111,7 +111,7 @@ class ToolTypesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[ToolType]:
-        """tool_types_create
+        """create
 
 
         :param tool_type_request: (required)
@@ -138,7 +138,7 @@ class ToolTypesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tool_types_create_serialize(
+        _param = self._create_serialize(
             tool_type_request=tool_type_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -156,7 +156,7 @@ class ToolTypesApi:
             response_types_map=_response_types_map,
         )
 
-    def tool_types_create_without_preload_content(
+    def create_without_preload_content(
         self,
         tool_type_request: ToolTypeRequest,
         _request_timeout: Union[
@@ -169,7 +169,7 @@ class ToolTypesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """tool_types_create
+        """create
 
 
         :param tool_type_request: (required)
@@ -196,7 +196,7 @@ class ToolTypesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tool_types_create_serialize(
+        _param = self._create_serialize(
             tool_type_request=tool_type_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -210,7 +210,7 @@ class ToolTypesApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _tool_types_create_serialize(
+    def _create_serialize(
         self,
         tool_type_request,
         _request_auth,
@@ -269,7 +269,7 @@ class ToolTypesApi:
             _request_auth=_request_auth,
         )
 
-    def tool_types_delete_preview_list(
+    def delete_preview_list(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this tool_ type.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -286,7 +286,7 @@ class ToolTypesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedDeletePreviewList:
-        """tool_types_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this tool_ type. (required)
@@ -317,7 +317,7 @@ class ToolTypesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tool_types_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -337,7 +337,7 @@ class ToolTypesApi:
             response_types_map=_response_types_map,
         ).data
 
-    def tool_types_delete_preview_list_with_http_info(
+    def delete_preview_list_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this tool_ type.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -354,7 +354,7 @@ class ToolTypesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedDeletePreviewList]:
-        """tool_types_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this tool_ type. (required)
@@ -385,7 +385,7 @@ class ToolTypesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tool_types_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -405,7 +405,7 @@ class ToolTypesApi:
             response_types_map=_response_types_map,
         )
 
-    def tool_types_delete_preview_list_without_preload_content(
+    def delete_preview_list_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this tool_ type.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -422,7 +422,7 @@ class ToolTypesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """tool_types_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this tool_ type. (required)
@@ -453,7 +453,7 @@ class ToolTypesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tool_types_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -469,7 +469,7 @@ class ToolTypesApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _tool_types_delete_preview_list_serialize(
+    def _delete_preview_list_serialize(
         self,
         id,
         limit,
@@ -526,7 +526,7 @@ class ToolTypesApi:
             _request_auth=_request_auth,
         )
 
-    def tool_types_delete_preview_list_iterator(
+    def delete_preview_list_iterator(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this tool_ type.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -544,11 +544,11 @@ class ToolTypesApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[DeletePreview, PaginatedDeletePreviewList], None, None]':
         _params = locals()
-        for page in get_all_pages(self.api_client, ToolTypesApi.tool_types_delete_preview_list, **_params):
+        for page in get_all_pages(self.api_client, ToolTypesApi.delete_preview_list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def tool_types_destroy(
+    def destroy(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this tool_ type.')],
         _request_timeout: Union[
@@ -561,7 +561,7 @@ class ToolTypesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> None:
-        """tool_types_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this tool_ type. (required)
@@ -588,7 +588,7 @@ class ToolTypesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tool_types_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -602,7 +602,7 @@ class ToolTypesApi:
             response_types_map=_response_types_map,
         ).data
 
-    def tool_types_destroy_with_http_info(
+    def destroy_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this tool_ type.')],
         _request_timeout: Union[
@@ -615,7 +615,7 @@ class ToolTypesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[None]:
-        """tool_types_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this tool_ type. (required)
@@ -642,7 +642,7 @@ class ToolTypesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tool_types_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -656,7 +656,7 @@ class ToolTypesApi:
             response_types_map=_response_types_map,
         )
 
-    def tool_types_destroy_without_preload_content(
+    def destroy_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this tool_ type.')],
         _request_timeout: Union[
@@ -669,7 +669,7 @@ class ToolTypesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """tool_types_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this tool_ type. (required)
@@ -696,7 +696,7 @@ class ToolTypesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tool_types_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -706,7 +706,7 @@ class ToolTypesApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _tool_types_destroy_serialize(
+    def _destroy_serialize(
         self,
         id,
         _request_auth,
@@ -751,7 +751,7 @@ class ToolTypesApi:
             _request_auth=_request_auth,
         )
 
-    def tool_types_list(
+    def list(
         self,
         description: Optional[StrictStr] = None,
         id: Optional[StrictInt] = None,
@@ -770,7 +770,7 @@ class ToolTypesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedToolTypeList:
-        """tool_types_list
+        """list
 
 
         :param description:
@@ -805,7 +805,7 @@ class ToolTypesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tool_types_list_serialize(
+        _param = self._list_serialize(
             description=description,
             id=id,
             limit=limit,
@@ -827,7 +827,7 @@ class ToolTypesApi:
             response_types_map=_response_types_map,
         ).data
 
-    def tool_types_list_with_http_info(
+    def list_with_http_info(
         self,
         description: Optional[StrictStr] = None,
         id: Optional[StrictInt] = None,
@@ -846,7 +846,7 @@ class ToolTypesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedToolTypeList]:
-        """tool_types_list
+        """list
 
 
         :param description:
@@ -881,7 +881,7 @@ class ToolTypesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tool_types_list_serialize(
+        _param = self._list_serialize(
             description=description,
             id=id,
             limit=limit,
@@ -903,7 +903,7 @@ class ToolTypesApi:
             response_types_map=_response_types_map,
         )
 
-    def tool_types_list_without_preload_content(
+    def list_without_preload_content(
         self,
         description: Optional[StrictStr] = None,
         id: Optional[StrictInt] = None,
@@ -922,7 +922,7 @@ class ToolTypesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """tool_types_list
+        """list
 
 
         :param description:
@@ -957,7 +957,7 @@ class ToolTypesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tool_types_list_serialize(
+        _param = self._list_serialize(
             description=description,
             id=id,
             limit=limit,
@@ -975,7 +975,7 @@ class ToolTypesApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _tool_types_list_serialize(
+    def _list_serialize(
         self,
         description,
         id,
@@ -1041,7 +1041,7 @@ class ToolTypesApi:
             _request_auth=_request_auth,
         )
 
-    def tool_types_list_iterator(
+    def list_iterator(
         self,
         description: Optional[StrictStr] = None,
         id: Optional[StrictInt] = None,
@@ -1061,11 +1061,11 @@ class ToolTypesApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[ToolType, PaginatedToolTypeList], None, None]':
         _params = locals()
-        for page in get_all_pages(self.api_client, ToolTypesApi.tool_types_list, **_params):
+        for page in get_all_pages(self.api_client, ToolTypesApi.list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def tool_types_partial_update(
+    def partial_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this tool_ type.')],
         patched_tool_type_request: Optional[PatchedToolTypeRequest] = None,
@@ -1079,7 +1079,7 @@ class ToolTypesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ToolType:
-        """tool_types_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this tool_ type. (required)
@@ -1108,7 +1108,7 @@ class ToolTypesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tool_types_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_tool_type_request=patched_tool_type_request,
             _request_auth=_request_auth,
@@ -1127,7 +1127,7 @@ class ToolTypesApi:
             response_types_map=_response_types_map,
         ).data
 
-    def tool_types_partial_update_with_http_info(
+    def partial_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this tool_ type.')],
         patched_tool_type_request: Optional[PatchedToolTypeRequest] = None,
@@ -1141,7 +1141,7 @@ class ToolTypesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[ToolType]:
-        """tool_types_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this tool_ type. (required)
@@ -1170,7 +1170,7 @@ class ToolTypesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tool_types_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_tool_type_request=patched_tool_type_request,
             _request_auth=_request_auth,
@@ -1189,7 +1189,7 @@ class ToolTypesApi:
             response_types_map=_response_types_map,
         )
 
-    def tool_types_partial_update_without_preload_content(
+    def partial_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this tool_ type.')],
         patched_tool_type_request: Optional[PatchedToolTypeRequest] = None,
@@ -1203,7 +1203,7 @@ class ToolTypesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """tool_types_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this tool_ type. (required)
@@ -1232,7 +1232,7 @@ class ToolTypesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tool_types_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_tool_type_request=patched_tool_type_request,
             _request_auth=_request_auth,
@@ -1247,7 +1247,7 @@ class ToolTypesApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _tool_types_partial_update_serialize(
+    def _partial_update_serialize(
         self,
         id,
         patched_tool_type_request,
@@ -1309,7 +1309,7 @@ class ToolTypesApi:
             _request_auth=_request_auth,
         )
 
-    def tool_types_retrieve(
+    def retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this tool_ type.')],
         _request_timeout: Union[
@@ -1322,7 +1322,7 @@ class ToolTypesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ToolType:
-        """tool_types_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this tool_ type. (required)
@@ -1349,7 +1349,7 @@ class ToolTypesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tool_types_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1363,7 +1363,7 @@ class ToolTypesApi:
             response_types_map=_response_types_map,
         ).data
 
-    def tool_types_retrieve_with_http_info(
+    def retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this tool_ type.')],
         _request_timeout: Union[
@@ -1376,7 +1376,7 @@ class ToolTypesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[ToolType]:
-        """tool_types_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this tool_ type. (required)
@@ -1403,7 +1403,7 @@ class ToolTypesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tool_types_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1417,7 +1417,7 @@ class ToolTypesApi:
             response_types_map=_response_types_map,
         )
 
-    def tool_types_retrieve_without_preload_content(
+    def retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this tool_ type.')],
         _request_timeout: Union[
@@ -1430,7 +1430,7 @@ class ToolTypesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """tool_types_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this tool_ type. (required)
@@ -1457,7 +1457,7 @@ class ToolTypesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tool_types_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1467,7 +1467,7 @@ class ToolTypesApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _tool_types_retrieve_serialize(
+    def _retrieve_serialize(
         self,
         id,
         _request_auth,
@@ -1516,7 +1516,7 @@ class ToolTypesApi:
             _request_auth=_request_auth,
         )
 
-    def tool_types_update(
+    def update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this tool_ type.')],
         tool_type_request: ToolTypeRequest,
@@ -1530,7 +1530,7 @@ class ToolTypesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ToolType:
-        """tool_types_update
+        """update
 
 
         :param id: A unique integer value identifying this tool_ type. (required)
@@ -1559,7 +1559,7 @@ class ToolTypesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tool_types_update_serialize(
+        _param = self._update_serialize(
             id=id,
             tool_type_request=tool_type_request,
             _request_auth=_request_auth,
@@ -1578,7 +1578,7 @@ class ToolTypesApi:
             response_types_map=_response_types_map,
         ).data
 
-    def tool_types_update_with_http_info(
+    def update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this tool_ type.')],
         tool_type_request: ToolTypeRequest,
@@ -1592,7 +1592,7 @@ class ToolTypesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[ToolType]:
-        """tool_types_update
+        """update
 
 
         :param id: A unique integer value identifying this tool_ type. (required)
@@ -1621,7 +1621,7 @@ class ToolTypesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tool_types_update_serialize(
+        _param = self._update_serialize(
             id=id,
             tool_type_request=tool_type_request,
             _request_auth=_request_auth,
@@ -1640,7 +1640,7 @@ class ToolTypesApi:
             response_types_map=_response_types_map,
         )
 
-    def tool_types_update_without_preload_content(
+    def update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this tool_ type.')],
         tool_type_request: ToolTypeRequest,
@@ -1654,7 +1654,7 @@ class ToolTypesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """tool_types_update
+        """update
 
 
         :param id: A unique integer value identifying this tool_ type. (required)
@@ -1683,7 +1683,7 @@ class ToolTypesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tool_types_update_serialize(
+        _param = self._update_serialize(
             id=id,
             tool_type_request=tool_type_request,
             _request_auth=_request_auth,
@@ -1698,7 +1698,7 @@ class ToolTypesApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _tool_types_update_serialize(
+    def _update_serialize(
         self,
         id,
         tool_type_request,

@@ -44,7 +44,7 @@ class RequestResponsePairsApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    def request_response_pairs_create(
+    def create(
         self,
         burp_raw_request_response_multi_request: BurpRawRequestResponseMultiRequest,
         _request_timeout: Union[
@@ -57,7 +57,7 @@ class RequestResponsePairsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> BurpRawRequestResponseMulti:
-        """request_response_pairs_create
+        """create
 
 
         :param burp_raw_request_response_multi_request: (required)
@@ -84,7 +84,7 @@ class RequestResponsePairsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._request_response_pairs_create_serialize(
+        _param = self._create_serialize(
             burp_raw_request_response_multi_request=burp_raw_request_response_multi_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -102,7 +102,7 @@ class RequestResponsePairsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def request_response_pairs_create_with_http_info(
+    def create_with_http_info(
         self,
         burp_raw_request_response_multi_request: BurpRawRequestResponseMultiRequest,
         _request_timeout: Union[
@@ -115,7 +115,7 @@ class RequestResponsePairsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[BurpRawRequestResponseMulti]:
-        """request_response_pairs_create
+        """create
 
 
         :param burp_raw_request_response_multi_request: (required)
@@ -142,7 +142,7 @@ class RequestResponsePairsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._request_response_pairs_create_serialize(
+        _param = self._create_serialize(
             burp_raw_request_response_multi_request=burp_raw_request_response_multi_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -160,7 +160,7 @@ class RequestResponsePairsApi:
             response_types_map=_response_types_map,
         )
 
-    def request_response_pairs_create_without_preload_content(
+    def create_without_preload_content(
         self,
         burp_raw_request_response_multi_request: BurpRawRequestResponseMultiRequest,
         _request_timeout: Union[
@@ -173,7 +173,7 @@ class RequestResponsePairsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """request_response_pairs_create
+        """create
 
 
         :param burp_raw_request_response_multi_request: (required)
@@ -200,7 +200,7 @@ class RequestResponsePairsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._request_response_pairs_create_serialize(
+        _param = self._create_serialize(
             burp_raw_request_response_multi_request=burp_raw_request_response_multi_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -214,7 +214,7 @@ class RequestResponsePairsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _request_response_pairs_create_serialize(
+    def _create_serialize(
         self,
         burp_raw_request_response_multi_request,
         _request_auth,
@@ -273,7 +273,7 @@ class RequestResponsePairsApi:
             _request_auth=_request_auth,
         )
 
-    def request_response_pairs_delete_preview_list(
+    def delete_preview_list(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this burp raw request response.')
@@ -292,7 +292,7 @@ class RequestResponsePairsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedDeletePreviewList:
-        """request_response_pairs_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this burp raw request response. (required)
@@ -323,7 +323,7 @@ class RequestResponsePairsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._request_response_pairs_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -343,7 +343,7 @@ class RequestResponsePairsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def request_response_pairs_delete_preview_list_with_http_info(
+    def delete_preview_list_with_http_info(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this burp raw request response.')
@@ -362,7 +362,7 @@ class RequestResponsePairsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedDeletePreviewList]:
-        """request_response_pairs_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this burp raw request response. (required)
@@ -393,7 +393,7 @@ class RequestResponsePairsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._request_response_pairs_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -413,7 +413,7 @@ class RequestResponsePairsApi:
             response_types_map=_response_types_map,
         )
 
-    def request_response_pairs_delete_preview_list_without_preload_content(
+    def delete_preview_list_without_preload_content(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this burp raw request response.')
@@ -432,7 +432,7 @@ class RequestResponsePairsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """request_response_pairs_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this burp raw request response. (required)
@@ -463,7 +463,7 @@ class RequestResponsePairsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._request_response_pairs_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -479,7 +479,7 @@ class RequestResponsePairsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _request_response_pairs_delete_preview_list_serialize(
+    def _delete_preview_list_serialize(
         self,
         id,
         limit,
@@ -536,7 +536,7 @@ class RequestResponsePairsApi:
             _request_auth=_request_auth,
         )
 
-    def request_response_pairs_delete_preview_list_iterator(
+    def delete_preview_list_iterator(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this burp raw request response.')
@@ -556,13 +556,11 @@ class RequestResponsePairsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[DeletePreview, PaginatedDeletePreviewList], None, None]':
         _params = locals()
-        for page in get_all_pages(
-            self.api_client, RequestResponsePairsApi.request_response_pairs_delete_preview_list, **_params
-        ):
+        for page in get_all_pages(self.api_client, RequestResponsePairsApi.delete_preview_list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def request_response_pairs_destroy(
+    def destroy(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this burp raw request response.')
@@ -577,7 +575,7 @@ class RequestResponsePairsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> None:
-        """request_response_pairs_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this burp raw request response. (required)
@@ -604,7 +602,7 @@ class RequestResponsePairsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._request_response_pairs_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -618,7 +616,7 @@ class RequestResponsePairsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def request_response_pairs_destroy_with_http_info(
+    def destroy_with_http_info(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this burp raw request response.')
@@ -633,7 +631,7 @@ class RequestResponsePairsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[None]:
-        """request_response_pairs_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this burp raw request response. (required)
@@ -660,7 +658,7 @@ class RequestResponsePairsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._request_response_pairs_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -674,7 +672,7 @@ class RequestResponsePairsApi:
             response_types_map=_response_types_map,
         )
 
-    def request_response_pairs_destroy_without_preload_content(
+    def destroy_without_preload_content(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this burp raw request response.')
@@ -689,7 +687,7 @@ class RequestResponsePairsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """request_response_pairs_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this burp raw request response. (required)
@@ -716,7 +714,7 @@ class RequestResponsePairsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._request_response_pairs_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -726,7 +724,7 @@ class RequestResponsePairsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _request_response_pairs_destroy_serialize(
+    def _destroy_serialize(
         self,
         id,
         _request_auth,
@@ -771,7 +769,7 @@ class RequestResponsePairsApi:
             _request_auth=_request_auth,
         )
 
-    def request_response_pairs_list(
+    def list(
         self,
         finding: Optional[StrictInt] = None,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -788,7 +786,7 @@ class RequestResponsePairsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedBurpRawRequestResponseMultiList:
-        """request_response_pairs_list
+        """list
 
 
         :param finding:
@@ -819,7 +817,7 @@ class RequestResponsePairsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._request_response_pairs_list_serialize(
+        _param = self._list_serialize(
             finding=finding,
             limit=limit,
             offset=offset,
@@ -839,7 +837,7 @@ class RequestResponsePairsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def request_response_pairs_list_with_http_info(
+    def list_with_http_info(
         self,
         finding: Optional[StrictInt] = None,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -856,7 +854,7 @@ class RequestResponsePairsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedBurpRawRequestResponseMultiList]:
-        """request_response_pairs_list
+        """list
 
 
         :param finding:
@@ -887,7 +885,7 @@ class RequestResponsePairsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._request_response_pairs_list_serialize(
+        _param = self._list_serialize(
             finding=finding,
             limit=limit,
             offset=offset,
@@ -907,7 +905,7 @@ class RequestResponsePairsApi:
             response_types_map=_response_types_map,
         )
 
-    def request_response_pairs_list_without_preload_content(
+    def list_without_preload_content(
         self,
         finding: Optional[StrictInt] = None,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -924,7 +922,7 @@ class RequestResponsePairsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """request_response_pairs_list
+        """list
 
 
         :param finding:
@@ -955,7 +953,7 @@ class RequestResponsePairsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._request_response_pairs_list_serialize(
+        _param = self._list_serialize(
             finding=finding,
             limit=limit,
             offset=offset,
@@ -971,7 +969,7 @@ class RequestResponsePairsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _request_response_pairs_list_serialize(
+    def _list_serialize(
         self,
         finding,
         limit,
@@ -1029,7 +1027,7 @@ class RequestResponsePairsApi:
             _request_auth=_request_auth,
         )
 
-    def request_response_pairs_list_iterator(
+    def list_iterator(
         self,
         finding: Optional[StrictInt] = None,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -1047,11 +1045,11 @@ class RequestResponsePairsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[BurpRawRequestResponseMulti, PaginatedBurpRawRequestResponseMultiList], None, None]':
         _params = locals()
-        for page in get_all_pages(self.api_client, RequestResponsePairsApi.request_response_pairs_list, **_params):
+        for page in get_all_pages(self.api_client, RequestResponsePairsApi.list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def request_response_pairs_partial_update(
+    def partial_update(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this burp raw request response.')
@@ -1067,7 +1065,7 @@ class RequestResponsePairsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> BurpRawRequestResponseMulti:
-        """request_response_pairs_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this burp raw request response. (required)
@@ -1096,7 +1094,7 @@ class RequestResponsePairsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._request_response_pairs_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_burp_raw_request_response_multi_request=patched_burp_raw_request_response_multi_request,
             _request_auth=_request_auth,
@@ -1115,7 +1113,7 @@ class RequestResponsePairsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def request_response_pairs_partial_update_with_http_info(
+    def partial_update_with_http_info(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this burp raw request response.')
@@ -1131,7 +1129,7 @@ class RequestResponsePairsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[BurpRawRequestResponseMulti]:
-        """request_response_pairs_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this burp raw request response. (required)
@@ -1160,7 +1158,7 @@ class RequestResponsePairsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._request_response_pairs_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_burp_raw_request_response_multi_request=patched_burp_raw_request_response_multi_request,
             _request_auth=_request_auth,
@@ -1179,7 +1177,7 @@ class RequestResponsePairsApi:
             response_types_map=_response_types_map,
         )
 
-    def request_response_pairs_partial_update_without_preload_content(
+    def partial_update_without_preload_content(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this burp raw request response.')
@@ -1195,7 +1193,7 @@ class RequestResponsePairsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """request_response_pairs_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this burp raw request response. (required)
@@ -1224,7 +1222,7 @@ class RequestResponsePairsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._request_response_pairs_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_burp_raw_request_response_multi_request=patched_burp_raw_request_response_multi_request,
             _request_auth=_request_auth,
@@ -1239,7 +1237,7 @@ class RequestResponsePairsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _request_response_pairs_partial_update_serialize(
+    def _partial_update_serialize(
         self,
         id,
         patched_burp_raw_request_response_multi_request,
@@ -1301,7 +1299,7 @@ class RequestResponsePairsApi:
             _request_auth=_request_auth,
         )
 
-    def request_response_pairs_retrieve(
+    def retrieve(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this burp raw request response.')
@@ -1316,7 +1314,7 @@ class RequestResponsePairsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> BurpRawRequestResponseMulti:
-        """request_response_pairs_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this burp raw request response. (required)
@@ -1343,7 +1341,7 @@ class RequestResponsePairsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._request_response_pairs_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1357,7 +1355,7 @@ class RequestResponsePairsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def request_response_pairs_retrieve_with_http_info(
+    def retrieve_with_http_info(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this burp raw request response.')
@@ -1372,7 +1370,7 @@ class RequestResponsePairsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[BurpRawRequestResponseMulti]:
-        """request_response_pairs_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this burp raw request response. (required)
@@ -1399,7 +1397,7 @@ class RequestResponsePairsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._request_response_pairs_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1413,7 +1411,7 @@ class RequestResponsePairsApi:
             response_types_map=_response_types_map,
         )
 
-    def request_response_pairs_retrieve_without_preload_content(
+    def retrieve_without_preload_content(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this burp raw request response.')
@@ -1428,7 +1426,7 @@ class RequestResponsePairsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """request_response_pairs_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this burp raw request response. (required)
@@ -1455,7 +1453,7 @@ class RequestResponsePairsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._request_response_pairs_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1465,7 +1463,7 @@ class RequestResponsePairsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _request_response_pairs_retrieve_serialize(
+    def _retrieve_serialize(
         self,
         id,
         _request_auth,
@@ -1514,7 +1512,7 @@ class RequestResponsePairsApi:
             _request_auth=_request_auth,
         )
 
-    def request_response_pairs_update(
+    def update(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this burp raw request response.')
@@ -1530,7 +1528,7 @@ class RequestResponsePairsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> BurpRawRequestResponseMulti:
-        """request_response_pairs_update
+        """update
 
 
         :param id: A unique integer value identifying this burp raw request response. (required)
@@ -1559,7 +1557,7 @@ class RequestResponsePairsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._request_response_pairs_update_serialize(
+        _param = self._update_serialize(
             id=id,
             burp_raw_request_response_multi_request=burp_raw_request_response_multi_request,
             _request_auth=_request_auth,
@@ -1578,7 +1576,7 @@ class RequestResponsePairsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def request_response_pairs_update_with_http_info(
+    def update_with_http_info(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this burp raw request response.')
@@ -1594,7 +1592,7 @@ class RequestResponsePairsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[BurpRawRequestResponseMulti]:
-        """request_response_pairs_update
+        """update
 
 
         :param id: A unique integer value identifying this burp raw request response. (required)
@@ -1623,7 +1621,7 @@ class RequestResponsePairsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._request_response_pairs_update_serialize(
+        _param = self._update_serialize(
             id=id,
             burp_raw_request_response_multi_request=burp_raw_request_response_multi_request,
             _request_auth=_request_auth,
@@ -1642,7 +1640,7 @@ class RequestResponsePairsApi:
             response_types_map=_response_types_map,
         )
 
-    def request_response_pairs_update_without_preload_content(
+    def update_without_preload_content(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this burp raw request response.')
@@ -1658,7 +1656,7 @@ class RequestResponsePairsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """request_response_pairs_update
+        """update
 
 
         :param id: A unique integer value identifying this burp raw request response. (required)
@@ -1687,7 +1685,7 @@ class RequestResponsePairsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._request_response_pairs_update_serialize(
+        _param = self._update_serialize(
             id=id,
             burp_raw_request_response_multi_request=burp_raw_request_response_multi_request,
             _request_auth=_request_auth,
@@ -1702,7 +1700,7 @@ class RequestResponsePairsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _request_response_pairs_update_serialize(
+    def _update_serialize(
         self,
         id,
         burp_raw_request_response_multi_request,

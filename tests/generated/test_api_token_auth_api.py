@@ -24,8 +24,8 @@ class TestApiTokenAuthApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_api_token_auth_create(self) -> None:
-        """Test case for api_token_auth_create"""
+    def test_create(self) -> None:
+        """Test case for create"""
         pass
 
 

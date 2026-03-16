@@ -3,7 +3,7 @@
 import json
 import os
 from dataclasses import dataclass
-from typing import Any, Optional, Sequence
+from typing import Any, Optional
 
 import click
 from classyclick import Command, Context, ContextObj, Group, Option
@@ -116,5 +116,9 @@ class SystemSettings(DojoCli.Command, Command):
         _print_payload(payload)
 
 
-def main(argv: Optional[Sequence[str]] = None) -> int:
-    return DojoCli.click.main(args=list(argv) if argv is not None else None, prog_name='defectdojo')
+def main() -> int:
+    return DojoCli.click()
+
+
+if __name__ == '__main__':
+    main()

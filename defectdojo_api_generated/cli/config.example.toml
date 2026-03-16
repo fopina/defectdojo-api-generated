@@ -1,0 +1,13 @@
+# TODO: add comprehensive and documented examples of how to use this file
+# keep everything commented as this will be copied if no other config exists
+# highlight "env" config is merged with root config
+
+# explain envs and default_env
+# default_env = 'xx'
+
+# host = "https://demo.defectdojo.org/"
+# token = "..."
+
+# [env.local]
+# host = "http://localhost:8080"
+# token = "..."

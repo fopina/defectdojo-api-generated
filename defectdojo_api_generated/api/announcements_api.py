@@ -40,7 +40,7 @@ class AnnouncementsApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    def announcements_create(
+    def create(
         self,
         announcement_request: Optional[AnnouncementRequest] = None,
         _request_timeout: Union[
@@ -53,7 +53,7 @@ class AnnouncementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Announcement:
-        """announcements_create
+        """create
 
 
         :param announcement_request:
@@ -80,7 +80,7 @@ class AnnouncementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._announcements_create_serialize(
+        _param = self._create_serialize(
             announcement_request=announcement_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -98,7 +98,7 @@ class AnnouncementsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def announcements_create_with_http_info(
+    def create_with_http_info(
         self,
         announcement_request: Optional[AnnouncementRequest] = None,
         _request_timeout: Union[
@@ -111,7 +111,7 @@ class AnnouncementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Announcement]:
-        """announcements_create
+        """create
 
 
         :param announcement_request:
@@ -138,7 +138,7 @@ class AnnouncementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._announcements_create_serialize(
+        _param = self._create_serialize(
             announcement_request=announcement_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -156,7 +156,7 @@ class AnnouncementsApi:
             response_types_map=_response_types_map,
         )
 
-    def announcements_create_without_preload_content(
+    def create_without_preload_content(
         self,
         announcement_request: Optional[AnnouncementRequest] = None,
         _request_timeout: Union[
@@ -169,7 +169,7 @@ class AnnouncementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """announcements_create
+        """create
 
 
         :param announcement_request:
@@ -196,7 +196,7 @@ class AnnouncementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._announcements_create_serialize(
+        _param = self._create_serialize(
             announcement_request=announcement_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -210,7 +210,7 @@ class AnnouncementsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _announcements_create_serialize(
+    def _create_serialize(
         self,
         announcement_request,
         _request_auth,
@@ -269,7 +269,7 @@ class AnnouncementsApi:
             _request_auth=_request_auth,
         )
 
-    def announcements_delete_preview_list(
+    def delete_preview_list(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this announcement.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -286,7 +286,7 @@ class AnnouncementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedDeletePreviewList:
-        """announcements_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this announcement. (required)
@@ -317,7 +317,7 @@ class AnnouncementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._announcements_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -337,7 +337,7 @@ class AnnouncementsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def announcements_delete_preview_list_with_http_info(
+    def delete_preview_list_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this announcement.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -354,7 +354,7 @@ class AnnouncementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedDeletePreviewList]:
-        """announcements_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this announcement. (required)
@@ -385,7 +385,7 @@ class AnnouncementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._announcements_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -405,7 +405,7 @@ class AnnouncementsApi:
             response_types_map=_response_types_map,
         )
 
-    def announcements_delete_preview_list_without_preload_content(
+    def delete_preview_list_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this announcement.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -422,7 +422,7 @@ class AnnouncementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """announcements_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this announcement. (required)
@@ -453,7 +453,7 @@ class AnnouncementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._announcements_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -469,7 +469,7 @@ class AnnouncementsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _announcements_delete_preview_list_serialize(
+    def _delete_preview_list_serialize(
         self,
         id,
         limit,
@@ -526,7 +526,7 @@ class AnnouncementsApi:
             _request_auth=_request_auth,
         )
 
-    def announcements_delete_preview_list_iterator(
+    def delete_preview_list_iterator(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this announcement.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -544,11 +544,11 @@ class AnnouncementsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[DeletePreview, PaginatedDeletePreviewList], None, None]':
         _params = locals()
-        for page in get_all_pages(self.api_client, AnnouncementsApi.announcements_delete_preview_list, **_params):
+        for page in get_all_pages(self.api_client, AnnouncementsApi.delete_preview_list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def announcements_destroy(
+    def destroy(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this announcement.')],
         _request_timeout: Union[
@@ -561,7 +561,7 @@ class AnnouncementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> None:
-        """announcements_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this announcement. (required)
@@ -588,7 +588,7 @@ class AnnouncementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._announcements_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -602,7 +602,7 @@ class AnnouncementsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def announcements_destroy_with_http_info(
+    def destroy_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this announcement.')],
         _request_timeout: Union[
@@ -615,7 +615,7 @@ class AnnouncementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[None]:
-        """announcements_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this announcement. (required)
@@ -642,7 +642,7 @@ class AnnouncementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._announcements_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -656,7 +656,7 @@ class AnnouncementsApi:
             response_types_map=_response_types_map,
         )
 
-    def announcements_destroy_without_preload_content(
+    def destroy_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this announcement.')],
         _request_timeout: Union[
@@ -669,7 +669,7 @@ class AnnouncementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """announcements_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this announcement. (required)
@@ -696,7 +696,7 @@ class AnnouncementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._announcements_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -706,7 +706,7 @@ class AnnouncementsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _announcements_destroy_serialize(
+    def _destroy_serialize(
         self,
         id,
         _request_auth,
@@ -751,7 +751,7 @@ class AnnouncementsApi:
             _request_auth=_request_auth,
         )
 
-    def announcements_list(
+    def list(
         self,
         dismissable: Optional[StrictBool] = None,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -775,7 +775,7 @@ class AnnouncementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedAnnouncementList:
-        """announcements_list
+        """list
 
 
         :param dismissable:
@@ -810,7 +810,7 @@ class AnnouncementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._announcements_list_serialize(
+        _param = self._list_serialize(
             dismissable=dismissable,
             limit=limit,
             message=message,
@@ -832,7 +832,7 @@ class AnnouncementsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def announcements_list_with_http_info(
+    def list_with_http_info(
         self,
         dismissable: Optional[StrictBool] = None,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -856,7 +856,7 @@ class AnnouncementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedAnnouncementList]:
-        """announcements_list
+        """list
 
 
         :param dismissable:
@@ -891,7 +891,7 @@ class AnnouncementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._announcements_list_serialize(
+        _param = self._list_serialize(
             dismissable=dismissable,
             limit=limit,
             message=message,
@@ -913,7 +913,7 @@ class AnnouncementsApi:
             response_types_map=_response_types_map,
         )
 
-    def announcements_list_without_preload_content(
+    def list_without_preload_content(
         self,
         dismissable: Optional[StrictBool] = None,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -937,7 +937,7 @@ class AnnouncementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """announcements_list
+        """list
 
 
         :param dismissable:
@@ -972,7 +972,7 @@ class AnnouncementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._announcements_list_serialize(
+        _param = self._list_serialize(
             dismissable=dismissable,
             limit=limit,
             message=message,
@@ -990,7 +990,7 @@ class AnnouncementsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _announcements_list_serialize(
+    def _list_serialize(
         self,
         dismissable,
         limit,
@@ -1056,7 +1056,7 @@ class AnnouncementsApi:
             _request_auth=_request_auth,
         )
 
-    def announcements_list_iterator(
+    def list_iterator(
         self,
         dismissable: Optional[StrictBool] = None,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -1081,11 +1081,11 @@ class AnnouncementsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[Announcement, PaginatedAnnouncementList], None, None]':
         _params = locals()
-        for page in get_all_pages(self.api_client, AnnouncementsApi.announcements_list, **_params):
+        for page in get_all_pages(self.api_client, AnnouncementsApi.list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def announcements_partial_update(
+    def partial_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this announcement.')],
         patched_announcement_request: Optional[PatchedAnnouncementRequest] = None,
@@ -1099,7 +1099,7 @@ class AnnouncementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Announcement:
-        """announcements_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this announcement. (required)
@@ -1128,7 +1128,7 @@ class AnnouncementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._announcements_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_announcement_request=patched_announcement_request,
             _request_auth=_request_auth,
@@ -1147,7 +1147,7 @@ class AnnouncementsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def announcements_partial_update_with_http_info(
+    def partial_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this announcement.')],
         patched_announcement_request: Optional[PatchedAnnouncementRequest] = None,
@@ -1161,7 +1161,7 @@ class AnnouncementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Announcement]:
-        """announcements_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this announcement. (required)
@@ -1190,7 +1190,7 @@ class AnnouncementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._announcements_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_announcement_request=patched_announcement_request,
             _request_auth=_request_auth,
@@ -1209,7 +1209,7 @@ class AnnouncementsApi:
             response_types_map=_response_types_map,
         )
 
-    def announcements_partial_update_without_preload_content(
+    def partial_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this announcement.')],
         patched_announcement_request: Optional[PatchedAnnouncementRequest] = None,
@@ -1223,7 +1223,7 @@ class AnnouncementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """announcements_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this announcement. (required)
@@ -1252,7 +1252,7 @@ class AnnouncementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._announcements_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_announcement_request=patched_announcement_request,
             _request_auth=_request_auth,
@@ -1267,7 +1267,7 @@ class AnnouncementsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _announcements_partial_update_serialize(
+    def _partial_update_serialize(
         self,
         id,
         patched_announcement_request,
@@ -1329,7 +1329,7 @@ class AnnouncementsApi:
             _request_auth=_request_auth,
         )
 
-    def announcements_retrieve(
+    def retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this announcement.')],
         _request_timeout: Union[
@@ -1342,7 +1342,7 @@ class AnnouncementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Announcement:
-        """announcements_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this announcement. (required)
@@ -1369,7 +1369,7 @@ class AnnouncementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._announcements_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1383,7 +1383,7 @@ class AnnouncementsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def announcements_retrieve_with_http_info(
+    def retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this announcement.')],
         _request_timeout: Union[
@@ -1396,7 +1396,7 @@ class AnnouncementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Announcement]:
-        """announcements_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this announcement. (required)
@@ -1423,7 +1423,7 @@ class AnnouncementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._announcements_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1437,7 +1437,7 @@ class AnnouncementsApi:
             response_types_map=_response_types_map,
         )
 
-    def announcements_retrieve_without_preload_content(
+    def retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this announcement.')],
         _request_timeout: Union[
@@ -1450,7 +1450,7 @@ class AnnouncementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """announcements_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this announcement. (required)
@@ -1477,7 +1477,7 @@ class AnnouncementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._announcements_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1487,7 +1487,7 @@ class AnnouncementsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _announcements_retrieve_serialize(
+    def _retrieve_serialize(
         self,
         id,
         _request_auth,
@@ -1536,7 +1536,7 @@ class AnnouncementsApi:
             _request_auth=_request_auth,
         )
 
-    def announcements_update(
+    def update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this announcement.')],
         announcement_request: Optional[AnnouncementRequest] = None,
@@ -1550,7 +1550,7 @@ class AnnouncementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Announcement:
-        """announcements_update
+        """update
 
 
         :param id: A unique integer value identifying this announcement. (required)
@@ -1579,7 +1579,7 @@ class AnnouncementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._announcements_update_serialize(
+        _param = self._update_serialize(
             id=id,
             announcement_request=announcement_request,
             _request_auth=_request_auth,
@@ -1598,7 +1598,7 @@ class AnnouncementsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def announcements_update_with_http_info(
+    def update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this announcement.')],
         announcement_request: Optional[AnnouncementRequest] = None,
@@ -1612,7 +1612,7 @@ class AnnouncementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Announcement]:
-        """announcements_update
+        """update
 
 
         :param id: A unique integer value identifying this announcement. (required)
@@ -1641,7 +1641,7 @@ class AnnouncementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._announcements_update_serialize(
+        _param = self._update_serialize(
             id=id,
             announcement_request=announcement_request,
             _request_auth=_request_auth,
@@ -1660,7 +1660,7 @@ class AnnouncementsApi:
             response_types_map=_response_types_map,
         )
 
-    def announcements_update_without_preload_content(
+    def update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this announcement.')],
         announcement_request: Optional[AnnouncementRequest] = None,
@@ -1674,7 +1674,7 @@ class AnnouncementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """announcements_update
+        """update
 
 
         :param id: A unique integer value identifying this announcement. (required)
@@ -1703,7 +1703,7 @@ class AnnouncementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._announcements_update_serialize(
+        _param = self._update_serialize(
             id=id,
             announcement_request=announcement_request,
             _request_auth=_request_auth,
@@ -1718,7 +1718,7 @@ class AnnouncementsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _announcements_update_serialize(
+    def _update_serialize(
         self,
         id,
         announcement_request,

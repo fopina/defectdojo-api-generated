@@ -43,7 +43,7 @@ class StubFindingsApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    def stub_findings_create(
+    def create(
         self,
         stub_finding_create_request: StubFindingCreateRequest,
         _request_timeout: Union[
@@ -56,7 +56,7 @@ class StubFindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> StubFindingCreate:
-        """stub_findings_create
+        """create
 
 
         :param stub_finding_create_request: (required)
@@ -83,7 +83,7 @@ class StubFindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._stub_findings_create_serialize(
+        _param = self._create_serialize(
             stub_finding_create_request=stub_finding_create_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -101,7 +101,7 @@ class StubFindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def stub_findings_create_with_http_info(
+    def create_with_http_info(
         self,
         stub_finding_create_request: StubFindingCreateRequest,
         _request_timeout: Union[
@@ -114,7 +114,7 @@ class StubFindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[StubFindingCreate]:
-        """stub_findings_create
+        """create
 
 
         :param stub_finding_create_request: (required)
@@ -141,7 +141,7 @@ class StubFindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._stub_findings_create_serialize(
+        _param = self._create_serialize(
             stub_finding_create_request=stub_finding_create_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -159,7 +159,7 @@ class StubFindingsApi:
             response_types_map=_response_types_map,
         )
 
-    def stub_findings_create_without_preload_content(
+    def create_without_preload_content(
         self,
         stub_finding_create_request: StubFindingCreateRequest,
         _request_timeout: Union[
@@ -172,7 +172,7 @@ class StubFindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """stub_findings_create
+        """create
 
 
         :param stub_finding_create_request: (required)
@@ -199,7 +199,7 @@ class StubFindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._stub_findings_create_serialize(
+        _param = self._create_serialize(
             stub_finding_create_request=stub_finding_create_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -213,7 +213,7 @@ class StubFindingsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _stub_findings_create_serialize(
+    def _create_serialize(
         self,
         stub_finding_create_request,
         _request_auth,
@@ -272,7 +272,7 @@ class StubFindingsApi:
             _request_auth=_request_auth,
         )
 
-    def stub_findings_delete_preview_list(
+    def delete_preview_list(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this stub_ finding.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -289,7 +289,7 @@ class StubFindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedDeletePreviewList:
-        """stub_findings_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this stub_ finding. (required)
@@ -320,7 +320,7 @@ class StubFindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._stub_findings_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -340,7 +340,7 @@ class StubFindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def stub_findings_delete_preview_list_with_http_info(
+    def delete_preview_list_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this stub_ finding.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -357,7 +357,7 @@ class StubFindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedDeletePreviewList]:
-        """stub_findings_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this stub_ finding. (required)
@@ -388,7 +388,7 @@ class StubFindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._stub_findings_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -408,7 +408,7 @@ class StubFindingsApi:
             response_types_map=_response_types_map,
         )
 
-    def stub_findings_delete_preview_list_without_preload_content(
+    def delete_preview_list_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this stub_ finding.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -425,7 +425,7 @@ class StubFindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """stub_findings_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this stub_ finding. (required)
@@ -456,7 +456,7 @@ class StubFindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._stub_findings_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -472,7 +472,7 @@ class StubFindingsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _stub_findings_delete_preview_list_serialize(
+    def _delete_preview_list_serialize(
         self,
         id,
         limit,
@@ -529,7 +529,7 @@ class StubFindingsApi:
             _request_auth=_request_auth,
         )
 
-    def stub_findings_delete_preview_list_iterator(
+    def delete_preview_list_iterator(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this stub_ finding.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -547,11 +547,11 @@ class StubFindingsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[DeletePreview, PaginatedDeletePreviewList], None, None]':
         _params = locals()
-        for page in get_all_pages(self.api_client, StubFindingsApi.stub_findings_delete_preview_list, **_params):
+        for page in get_all_pages(self.api_client, StubFindingsApi.delete_preview_list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def stub_findings_destroy(
+    def destroy(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this stub_ finding.')],
         _request_timeout: Union[
@@ -564,7 +564,7 @@ class StubFindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> None:
-        """stub_findings_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this stub_ finding. (required)
@@ -591,7 +591,7 @@ class StubFindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._stub_findings_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -605,7 +605,7 @@ class StubFindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def stub_findings_destroy_with_http_info(
+    def destroy_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this stub_ finding.')],
         _request_timeout: Union[
@@ -618,7 +618,7 @@ class StubFindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[None]:
-        """stub_findings_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this stub_ finding. (required)
@@ -645,7 +645,7 @@ class StubFindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._stub_findings_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -659,7 +659,7 @@ class StubFindingsApi:
             response_types_map=_response_types_map,
         )
 
-    def stub_findings_destroy_without_preload_content(
+    def destroy_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this stub_ finding.')],
         _request_timeout: Union[
@@ -672,7 +672,7 @@ class StubFindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """stub_findings_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this stub_ finding. (required)
@@ -699,7 +699,7 @@ class StubFindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._stub_findings_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -709,7 +709,7 @@ class StubFindingsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _stub_findings_destroy_serialize(
+    def _destroy_serialize(
         self,
         id,
         _request_auth,
@@ -754,7 +754,7 @@ class StubFindingsApi:
             _request_auth=_request_auth,
         )
 
-    def stub_findings_list(
+    def list(
         self,
         var_date: Optional[date] = None,
         description: Optional[StrictStr] = None,
@@ -775,7 +775,7 @@ class StubFindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedStubFindingList:
-        """stub_findings_list
+        """list
 
 
         :param var_date:
@@ -814,7 +814,7 @@ class StubFindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._stub_findings_list_serialize(
+        _param = self._list_serialize(
             var_date=var_date,
             description=description,
             id=id,
@@ -838,7 +838,7 @@ class StubFindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def stub_findings_list_with_http_info(
+    def list_with_http_info(
         self,
         var_date: Optional[date] = None,
         description: Optional[StrictStr] = None,
@@ -859,7 +859,7 @@ class StubFindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedStubFindingList]:
-        """stub_findings_list
+        """list
 
 
         :param var_date:
@@ -898,7 +898,7 @@ class StubFindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._stub_findings_list_serialize(
+        _param = self._list_serialize(
             var_date=var_date,
             description=description,
             id=id,
@@ -922,7 +922,7 @@ class StubFindingsApi:
             response_types_map=_response_types_map,
         )
 
-    def stub_findings_list_without_preload_content(
+    def list_without_preload_content(
         self,
         var_date: Optional[date] = None,
         description: Optional[StrictStr] = None,
@@ -943,7 +943,7 @@ class StubFindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """stub_findings_list
+        """list
 
 
         :param var_date:
@@ -982,7 +982,7 @@ class StubFindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._stub_findings_list_serialize(
+        _param = self._list_serialize(
             var_date=var_date,
             description=description,
             id=id,
@@ -1002,7 +1002,7 @@ class StubFindingsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _stub_findings_list_serialize(
+    def _list_serialize(
         self,
         var_date,
         description,
@@ -1079,7 +1079,7 @@ class StubFindingsApi:
             _request_auth=_request_auth,
         )
 
-    def stub_findings_list_iterator(
+    def list_iterator(
         self,
         var_date: Optional[date] = None,
         description: Optional[StrictStr] = None,
@@ -1101,11 +1101,11 @@ class StubFindingsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[StubFinding, PaginatedStubFindingList], None, None]':
         _params = locals()
-        for page in get_all_pages(self.api_client, StubFindingsApi.stub_findings_list, **_params):
+        for page in get_all_pages(self.api_client, StubFindingsApi.list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def stub_findings_partial_update(
+    def partial_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this stub_ finding.')],
         patched_stub_finding_request: Optional[PatchedStubFindingRequest] = None,
@@ -1119,7 +1119,7 @@ class StubFindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> StubFinding:
-        """stub_findings_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this stub_ finding. (required)
@@ -1148,7 +1148,7 @@ class StubFindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._stub_findings_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_stub_finding_request=patched_stub_finding_request,
             _request_auth=_request_auth,
@@ -1167,7 +1167,7 @@ class StubFindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def stub_findings_partial_update_with_http_info(
+    def partial_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this stub_ finding.')],
         patched_stub_finding_request: Optional[PatchedStubFindingRequest] = None,
@@ -1181,7 +1181,7 @@ class StubFindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[StubFinding]:
-        """stub_findings_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this stub_ finding. (required)
@@ -1210,7 +1210,7 @@ class StubFindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._stub_findings_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_stub_finding_request=patched_stub_finding_request,
             _request_auth=_request_auth,
@@ -1229,7 +1229,7 @@ class StubFindingsApi:
             response_types_map=_response_types_map,
         )
 
-    def stub_findings_partial_update_without_preload_content(
+    def partial_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this stub_ finding.')],
         patched_stub_finding_request: Optional[PatchedStubFindingRequest] = None,
@@ -1243,7 +1243,7 @@ class StubFindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """stub_findings_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this stub_ finding. (required)
@@ -1272,7 +1272,7 @@ class StubFindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._stub_findings_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_stub_finding_request=patched_stub_finding_request,
             _request_auth=_request_auth,
@@ -1287,7 +1287,7 @@ class StubFindingsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _stub_findings_partial_update_serialize(
+    def _partial_update_serialize(
         self,
         id,
         patched_stub_finding_request,
@@ -1349,7 +1349,7 @@ class StubFindingsApi:
             _request_auth=_request_auth,
         )
 
-    def stub_findings_retrieve(
+    def retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this stub_ finding.')],
         _request_timeout: Union[
@@ -1362,7 +1362,7 @@ class StubFindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> StubFinding:
-        """stub_findings_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this stub_ finding. (required)
@@ -1389,7 +1389,7 @@ class StubFindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._stub_findings_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1403,7 +1403,7 @@ class StubFindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def stub_findings_retrieve_with_http_info(
+    def retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this stub_ finding.')],
         _request_timeout: Union[
@@ -1416,7 +1416,7 @@ class StubFindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[StubFinding]:
-        """stub_findings_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this stub_ finding. (required)
@@ -1443,7 +1443,7 @@ class StubFindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._stub_findings_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1457,7 +1457,7 @@ class StubFindingsApi:
             response_types_map=_response_types_map,
         )
 
-    def stub_findings_retrieve_without_preload_content(
+    def retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this stub_ finding.')],
         _request_timeout: Union[
@@ -1470,7 +1470,7 @@ class StubFindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """stub_findings_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this stub_ finding. (required)
@@ -1497,7 +1497,7 @@ class StubFindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._stub_findings_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1507,7 +1507,7 @@ class StubFindingsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _stub_findings_retrieve_serialize(
+    def _retrieve_serialize(
         self,
         id,
         _request_auth,
@@ -1556,7 +1556,7 @@ class StubFindingsApi:
             _request_auth=_request_auth,
         )
 
-    def stub_findings_update(
+    def update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this stub_ finding.')],
         stub_finding_request: StubFindingRequest,
@@ -1570,7 +1570,7 @@ class StubFindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> StubFinding:
-        """stub_findings_update
+        """update
 
 
         :param id: A unique integer value identifying this stub_ finding. (required)
@@ -1599,7 +1599,7 @@ class StubFindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._stub_findings_update_serialize(
+        _param = self._update_serialize(
             id=id,
             stub_finding_request=stub_finding_request,
             _request_auth=_request_auth,
@@ -1618,7 +1618,7 @@ class StubFindingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def stub_findings_update_with_http_info(
+    def update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this stub_ finding.')],
         stub_finding_request: StubFindingRequest,
@@ -1632,7 +1632,7 @@ class StubFindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[StubFinding]:
-        """stub_findings_update
+        """update
 
 
         :param id: A unique integer value identifying this stub_ finding. (required)
@@ -1661,7 +1661,7 @@ class StubFindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._stub_findings_update_serialize(
+        _param = self._update_serialize(
             id=id,
             stub_finding_request=stub_finding_request,
             _request_auth=_request_auth,
@@ -1680,7 +1680,7 @@ class StubFindingsApi:
             response_types_map=_response_types_map,
         )
 
-    def stub_findings_update_without_preload_content(
+    def update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this stub_ finding.')],
         stub_finding_request: StubFindingRequest,
@@ -1694,7 +1694,7 @@ class StubFindingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """stub_findings_update
+        """update
 
 
         :param id: A unique integer value identifying this stub_ finding. (required)
@@ -1723,7 +1723,7 @@ class StubFindingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._stub_findings_update_serialize(
+        _param = self._update_serialize(
             id=id,
             stub_finding_request=stub_finding_request,
             _request_auth=_request_auth,
@@ -1738,7 +1738,7 @@ class StubFindingsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _stub_findings_update_serialize(
+    def _update_serialize(
         self,
         id,
         stub_finding_request,

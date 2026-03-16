@@ -33,7 +33,7 @@ class Oa3Api:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    def oa3_schema_retrieve(
+    def schema_retrieve(
         self,
         format: Optional[StrictStr] = None,
         lang: Optional[StrictStr] = None,
@@ -47,7 +47,7 @@ class Oa3Api:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Dict[str, object]:
-        """oa3_schema_retrieve
+        """schema_retrieve
 
         OpenApi3 schema for this API. Format can be selected via content negotiation.  - YAML: application/vnd.oai.openapi - JSON: application/vnd.oai.openapi+json
 
@@ -77,7 +77,7 @@ class Oa3Api:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._oa3_schema_retrieve_serialize(
+        _param = self._schema_retrieve_serialize(
             format=format,
             lang=lang,
             _request_auth=_request_auth,
@@ -96,7 +96,7 @@ class Oa3Api:
             response_types_map=_response_types_map,
         ).data
 
-    def oa3_schema_retrieve_with_http_info(
+    def schema_retrieve_with_http_info(
         self,
         format: Optional[StrictStr] = None,
         lang: Optional[StrictStr] = None,
@@ -110,7 +110,7 @@ class Oa3Api:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Dict[str, object]]:
-        """oa3_schema_retrieve
+        """schema_retrieve
 
         OpenApi3 schema for this API. Format can be selected via content negotiation.  - YAML: application/vnd.oai.openapi - JSON: application/vnd.oai.openapi+json
 
@@ -140,7 +140,7 @@ class Oa3Api:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._oa3_schema_retrieve_serialize(
+        _param = self._schema_retrieve_serialize(
             format=format,
             lang=lang,
             _request_auth=_request_auth,
@@ -159,7 +159,7 @@ class Oa3Api:
             response_types_map=_response_types_map,
         )
 
-    def oa3_schema_retrieve_without_preload_content(
+    def schema_retrieve_without_preload_content(
         self,
         format: Optional[StrictStr] = None,
         lang: Optional[StrictStr] = None,
@@ -173,7 +173,7 @@ class Oa3Api:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """oa3_schema_retrieve
+        """schema_retrieve
 
         OpenApi3 schema for this API. Format can be selected via content negotiation.  - YAML: application/vnd.oai.openapi - JSON: application/vnd.oai.openapi+json
 
@@ -203,7 +203,7 @@ class Oa3Api:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._oa3_schema_retrieve_serialize(
+        _param = self._schema_retrieve_serialize(
             format=format,
             lang=lang,
             _request_auth=_request_auth,
@@ -218,7 +218,7 @@ class Oa3Api:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _oa3_schema_retrieve_serialize(
+    def _schema_retrieve_serialize(
         self,
         format,
         lang,

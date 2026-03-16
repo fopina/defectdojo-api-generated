@@ -40,7 +40,7 @@ class DojoGroupsApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    def dojo_groups_create(
+    def create(
         self,
         dojo_group_request: DojoGroupRequest,
         _request_timeout: Union[
@@ -53,7 +53,7 @@ class DojoGroupsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> DojoGroup:
-        """dojo_groups_create
+        """create
 
 
         :param dojo_group_request: (required)
@@ -80,7 +80,7 @@ class DojoGroupsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._dojo_groups_create_serialize(
+        _param = self._create_serialize(
             dojo_group_request=dojo_group_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -98,7 +98,7 @@ class DojoGroupsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def dojo_groups_create_with_http_info(
+    def create_with_http_info(
         self,
         dojo_group_request: DojoGroupRequest,
         _request_timeout: Union[
@@ -111,7 +111,7 @@ class DojoGroupsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[DojoGroup]:
-        """dojo_groups_create
+        """create
 
 
         :param dojo_group_request: (required)
@@ -138,7 +138,7 @@ class DojoGroupsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._dojo_groups_create_serialize(
+        _param = self._create_serialize(
             dojo_group_request=dojo_group_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -156,7 +156,7 @@ class DojoGroupsApi:
             response_types_map=_response_types_map,
         )
 
-    def dojo_groups_create_without_preload_content(
+    def create_without_preload_content(
         self,
         dojo_group_request: DojoGroupRequest,
         _request_timeout: Union[
@@ -169,7 +169,7 @@ class DojoGroupsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """dojo_groups_create
+        """create
 
 
         :param dojo_group_request: (required)
@@ -196,7 +196,7 @@ class DojoGroupsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._dojo_groups_create_serialize(
+        _param = self._create_serialize(
             dojo_group_request=dojo_group_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -210,7 +210,7 @@ class DojoGroupsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _dojo_groups_create_serialize(
+    def _create_serialize(
         self,
         dojo_group_request,
         _request_auth,
@@ -269,7 +269,7 @@ class DojoGroupsApi:
             _request_auth=_request_auth,
         )
 
-    def dojo_groups_delete_preview_list(
+    def delete_preview_list(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this dojo_ group.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -286,7 +286,7 @@ class DojoGroupsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedDeletePreviewList:
-        """dojo_groups_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this dojo_ group. (required)
@@ -317,7 +317,7 @@ class DojoGroupsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._dojo_groups_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -337,7 +337,7 @@ class DojoGroupsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def dojo_groups_delete_preview_list_with_http_info(
+    def delete_preview_list_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this dojo_ group.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -354,7 +354,7 @@ class DojoGroupsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedDeletePreviewList]:
-        """dojo_groups_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this dojo_ group. (required)
@@ -385,7 +385,7 @@ class DojoGroupsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._dojo_groups_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -405,7 +405,7 @@ class DojoGroupsApi:
             response_types_map=_response_types_map,
         )
 
-    def dojo_groups_delete_preview_list_without_preload_content(
+    def delete_preview_list_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this dojo_ group.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -422,7 +422,7 @@ class DojoGroupsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """dojo_groups_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this dojo_ group. (required)
@@ -453,7 +453,7 @@ class DojoGroupsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._dojo_groups_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -469,7 +469,7 @@ class DojoGroupsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _dojo_groups_delete_preview_list_serialize(
+    def _delete_preview_list_serialize(
         self,
         id,
         limit,
@@ -526,7 +526,7 @@ class DojoGroupsApi:
             _request_auth=_request_auth,
         )
 
-    def dojo_groups_delete_preview_list_iterator(
+    def delete_preview_list_iterator(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this dojo_ group.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -544,11 +544,11 @@ class DojoGroupsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[DeletePreview, PaginatedDeletePreviewList], None, None]':
         _params = locals()
-        for page in get_all_pages(self.api_client, DojoGroupsApi.dojo_groups_delete_preview_list, **_params):
+        for page in get_all_pages(self.api_client, DojoGroupsApi.delete_preview_list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def dojo_groups_destroy(
+    def destroy(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this dojo_ group.')],
         _request_timeout: Union[
@@ -561,7 +561,7 @@ class DojoGroupsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> None:
-        """dojo_groups_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this dojo_ group. (required)
@@ -588,7 +588,7 @@ class DojoGroupsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._dojo_groups_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -602,7 +602,7 @@ class DojoGroupsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def dojo_groups_destroy_with_http_info(
+    def destroy_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this dojo_ group.')],
         _request_timeout: Union[
@@ -615,7 +615,7 @@ class DojoGroupsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[None]:
-        """dojo_groups_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this dojo_ group. (required)
@@ -642,7 +642,7 @@ class DojoGroupsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._dojo_groups_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -656,7 +656,7 @@ class DojoGroupsApi:
             response_types_map=_response_types_map,
         )
 
-    def dojo_groups_destroy_without_preload_content(
+    def destroy_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this dojo_ group.')],
         _request_timeout: Union[
@@ -669,7 +669,7 @@ class DojoGroupsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """dojo_groups_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this dojo_ group. (required)
@@ -696,7 +696,7 @@ class DojoGroupsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._dojo_groups_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -706,7 +706,7 @@ class DojoGroupsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _dojo_groups_destroy_serialize(
+    def _destroy_serialize(
         self,
         id,
         _request_auth,
@@ -751,7 +751,7 @@ class DojoGroupsApi:
             _request_auth=_request_auth,
         )
 
-    def dojo_groups_list(
+    def list(
         self,
         id: Optional[StrictInt] = None,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -777,7 +777,7 @@ class DojoGroupsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedDojoGroupList:
-        """dojo_groups_list
+        """list
 
 
         :param id:
@@ -814,7 +814,7 @@ class DojoGroupsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._dojo_groups_list_serialize(
+        _param = self._list_serialize(
             id=id,
             limit=limit,
             name=name,
@@ -837,7 +837,7 @@ class DojoGroupsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def dojo_groups_list_with_http_info(
+    def list_with_http_info(
         self,
         id: Optional[StrictInt] = None,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -863,7 +863,7 @@ class DojoGroupsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedDojoGroupList]:
-        """dojo_groups_list
+        """list
 
 
         :param id:
@@ -900,7 +900,7 @@ class DojoGroupsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._dojo_groups_list_serialize(
+        _param = self._list_serialize(
             id=id,
             limit=limit,
             name=name,
@@ -923,7 +923,7 @@ class DojoGroupsApi:
             response_types_map=_response_types_map,
         )
 
-    def dojo_groups_list_without_preload_content(
+    def list_without_preload_content(
         self,
         id: Optional[StrictInt] = None,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -949,7 +949,7 @@ class DojoGroupsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """dojo_groups_list
+        """list
 
 
         :param id:
@@ -986,7 +986,7 @@ class DojoGroupsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._dojo_groups_list_serialize(
+        _param = self._list_serialize(
             id=id,
             limit=limit,
             name=name,
@@ -1005,7 +1005,7 @@ class DojoGroupsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _dojo_groups_list_serialize(
+    def _list_serialize(
         self,
         id,
         limit,
@@ -1077,7 +1077,7 @@ class DojoGroupsApi:
             _request_auth=_request_auth,
         )
 
-    def dojo_groups_list_iterator(
+    def list_iterator(
         self,
         id: Optional[StrictInt] = None,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -1104,11 +1104,11 @@ class DojoGroupsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[DojoGroup, PaginatedDojoGroupList], None, None]':
         _params = locals()
-        for page in get_all_pages(self.api_client, DojoGroupsApi.dojo_groups_list, **_params):
+        for page in get_all_pages(self.api_client, DojoGroupsApi.list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def dojo_groups_partial_update(
+    def partial_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this dojo_ group.')],
         patched_dojo_group_request: Optional[PatchedDojoGroupRequest] = None,
@@ -1122,7 +1122,7 @@ class DojoGroupsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> DojoGroup:
-        """dojo_groups_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this dojo_ group. (required)
@@ -1151,7 +1151,7 @@ class DojoGroupsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._dojo_groups_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_dojo_group_request=patched_dojo_group_request,
             _request_auth=_request_auth,
@@ -1170,7 +1170,7 @@ class DojoGroupsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def dojo_groups_partial_update_with_http_info(
+    def partial_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this dojo_ group.')],
         patched_dojo_group_request: Optional[PatchedDojoGroupRequest] = None,
@@ -1184,7 +1184,7 @@ class DojoGroupsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[DojoGroup]:
-        """dojo_groups_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this dojo_ group. (required)
@@ -1213,7 +1213,7 @@ class DojoGroupsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._dojo_groups_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_dojo_group_request=patched_dojo_group_request,
             _request_auth=_request_auth,
@@ -1232,7 +1232,7 @@ class DojoGroupsApi:
             response_types_map=_response_types_map,
         )
 
-    def dojo_groups_partial_update_without_preload_content(
+    def partial_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this dojo_ group.')],
         patched_dojo_group_request: Optional[PatchedDojoGroupRequest] = None,
@@ -1246,7 +1246,7 @@ class DojoGroupsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """dojo_groups_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this dojo_ group. (required)
@@ -1275,7 +1275,7 @@ class DojoGroupsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._dojo_groups_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_dojo_group_request=patched_dojo_group_request,
             _request_auth=_request_auth,
@@ -1290,7 +1290,7 @@ class DojoGroupsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _dojo_groups_partial_update_serialize(
+    def _partial_update_serialize(
         self,
         id,
         patched_dojo_group_request,
@@ -1352,7 +1352,7 @@ class DojoGroupsApi:
             _request_auth=_request_auth,
         )
 
-    def dojo_groups_retrieve(
+    def retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this dojo_ group.')],
         prefetch: Annotated[
@@ -1369,7 +1369,7 @@ class DojoGroupsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> DojoGroup:
-        """dojo_groups_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this dojo_ group. (required)
@@ -1398,7 +1398,7 @@ class DojoGroupsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._dojo_groups_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id,
             prefetch=prefetch,
             _request_auth=_request_auth,
@@ -1417,7 +1417,7 @@ class DojoGroupsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def dojo_groups_retrieve_with_http_info(
+    def retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this dojo_ group.')],
         prefetch: Annotated[
@@ -1434,7 +1434,7 @@ class DojoGroupsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[DojoGroup]:
-        """dojo_groups_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this dojo_ group. (required)
@@ -1463,7 +1463,7 @@ class DojoGroupsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._dojo_groups_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id,
             prefetch=prefetch,
             _request_auth=_request_auth,
@@ -1482,7 +1482,7 @@ class DojoGroupsApi:
             response_types_map=_response_types_map,
         )
 
-    def dojo_groups_retrieve_without_preload_content(
+    def retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this dojo_ group.')],
         prefetch: Annotated[
@@ -1499,7 +1499,7 @@ class DojoGroupsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """dojo_groups_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this dojo_ group. (required)
@@ -1528,7 +1528,7 @@ class DojoGroupsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._dojo_groups_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id,
             prefetch=prefetch,
             _request_auth=_request_auth,
@@ -1543,7 +1543,7 @@ class DojoGroupsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _dojo_groups_retrieve_serialize(
+    def _retrieve_serialize(
         self,
         id,
         prefetch,
@@ -1598,7 +1598,7 @@ class DojoGroupsApi:
             _request_auth=_request_auth,
         )
 
-    def dojo_groups_update(
+    def update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this dojo_ group.')],
         dojo_group_request: DojoGroupRequest,
@@ -1612,7 +1612,7 @@ class DojoGroupsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> DojoGroup:
-        """dojo_groups_update
+        """update
 
 
         :param id: A unique integer value identifying this dojo_ group. (required)
@@ -1641,7 +1641,7 @@ class DojoGroupsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._dojo_groups_update_serialize(
+        _param = self._update_serialize(
             id=id,
             dojo_group_request=dojo_group_request,
             _request_auth=_request_auth,
@@ -1660,7 +1660,7 @@ class DojoGroupsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def dojo_groups_update_with_http_info(
+    def update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this dojo_ group.')],
         dojo_group_request: DojoGroupRequest,
@@ -1674,7 +1674,7 @@ class DojoGroupsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[DojoGroup]:
-        """dojo_groups_update
+        """update
 
 
         :param id: A unique integer value identifying this dojo_ group. (required)
@@ -1703,7 +1703,7 @@ class DojoGroupsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._dojo_groups_update_serialize(
+        _param = self._update_serialize(
             id=id,
             dojo_group_request=dojo_group_request,
             _request_auth=_request_auth,
@@ -1722,7 +1722,7 @@ class DojoGroupsApi:
             response_types_map=_response_types_map,
         )
 
-    def dojo_groups_update_without_preload_content(
+    def update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this dojo_ group.')],
         dojo_group_request: DojoGroupRequest,
@@ -1736,7 +1736,7 @@ class DojoGroupsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """dojo_groups_update
+        """update
 
 
         :param id: A unique integer value identifying this dojo_ group. (required)
@@ -1765,7 +1765,7 @@ class DojoGroupsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._dojo_groups_update_serialize(
+        _param = self._update_serialize(
             id=id,
             dojo_group_request=dojo_group_request,
             _request_auth=_request_auth,
@@ -1780,7 +1780,7 @@ class DojoGroupsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _dojo_groups_update_serialize(
+    def _update_serialize(
         self,
         id,
         dojo_group_request,

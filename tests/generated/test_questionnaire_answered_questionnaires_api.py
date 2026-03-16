@@ -26,12 +26,12 @@ class TestQuestionnaireAnsweredQuestionnairesApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_questionnaire_answered_questionnaires_list(self) -> None:
-        """Test case for questionnaire_answered_questionnaires_list"""
+    def test_list(self) -> None:
+        """Test case for list"""
         pass
 
-    def test_questionnaire_answered_questionnaires_retrieve(self) -> None:
-        """Test case for questionnaire_answered_questionnaires_retrieve"""
+    def test_retrieve(self) -> None:
+        """Test case for retrieve"""
         pass
 
 

@@ -44,7 +44,7 @@ class ProductApiScanConfigurationsApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    def product_api_scan_configurations_create(
+    def create(
         self,
         product_api_scan_configuration_request: ProductAPIScanConfigurationRequest,
         _request_timeout: Union[
@@ -57,7 +57,7 @@ class ProductApiScanConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ProductAPIScanConfiguration:
-        """product_api_scan_configurations_create
+        """create
 
 
         :param product_api_scan_configuration_request: (required)
@@ -84,7 +84,7 @@ class ProductApiScanConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_api_scan_configurations_create_serialize(
+        _param = self._create_serialize(
             product_api_scan_configuration_request=product_api_scan_configuration_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -102,7 +102,7 @@ class ProductApiScanConfigurationsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def product_api_scan_configurations_create_with_http_info(
+    def create_with_http_info(
         self,
         product_api_scan_configuration_request: ProductAPIScanConfigurationRequest,
         _request_timeout: Union[
@@ -115,7 +115,7 @@ class ProductApiScanConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[ProductAPIScanConfiguration]:
-        """product_api_scan_configurations_create
+        """create
 
 
         :param product_api_scan_configuration_request: (required)
@@ -142,7 +142,7 @@ class ProductApiScanConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_api_scan_configurations_create_serialize(
+        _param = self._create_serialize(
             product_api_scan_configuration_request=product_api_scan_configuration_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -160,7 +160,7 @@ class ProductApiScanConfigurationsApi:
             response_types_map=_response_types_map,
         )
 
-    def product_api_scan_configurations_create_without_preload_content(
+    def create_without_preload_content(
         self,
         product_api_scan_configuration_request: ProductAPIScanConfigurationRequest,
         _request_timeout: Union[
@@ -173,7 +173,7 @@ class ProductApiScanConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """product_api_scan_configurations_create
+        """create
 
 
         :param product_api_scan_configuration_request: (required)
@@ -200,7 +200,7 @@ class ProductApiScanConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_api_scan_configurations_create_serialize(
+        _param = self._create_serialize(
             product_api_scan_configuration_request=product_api_scan_configuration_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -214,7 +214,7 @@ class ProductApiScanConfigurationsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _product_api_scan_configurations_create_serialize(
+    def _create_serialize(
         self,
         product_api_scan_configuration_request,
         _request_auth,
@@ -273,7 +273,7 @@ class ProductApiScanConfigurationsApi:
             _request_auth=_request_auth,
         )
 
-    def product_api_scan_configurations_delete_preview_list(
+    def delete_preview_list(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this product_ap i_ scan_ configuration.')
@@ -292,7 +292,7 @@ class ProductApiScanConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedDeletePreviewList:
-        """product_api_scan_configurations_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this product_ap i_ scan_ configuration. (required)
@@ -323,7 +323,7 @@ class ProductApiScanConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_api_scan_configurations_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -343,7 +343,7 @@ class ProductApiScanConfigurationsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def product_api_scan_configurations_delete_preview_list_with_http_info(
+    def delete_preview_list_with_http_info(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this product_ap i_ scan_ configuration.')
@@ -362,7 +362,7 @@ class ProductApiScanConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedDeletePreviewList]:
-        """product_api_scan_configurations_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this product_ap i_ scan_ configuration. (required)
@@ -393,7 +393,7 @@ class ProductApiScanConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_api_scan_configurations_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -413,7 +413,7 @@ class ProductApiScanConfigurationsApi:
             response_types_map=_response_types_map,
         )
 
-    def product_api_scan_configurations_delete_preview_list_without_preload_content(
+    def delete_preview_list_without_preload_content(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this product_ap i_ scan_ configuration.')
@@ -432,7 +432,7 @@ class ProductApiScanConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """product_api_scan_configurations_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this product_ap i_ scan_ configuration. (required)
@@ -463,7 +463,7 @@ class ProductApiScanConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_api_scan_configurations_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -479,7 +479,7 @@ class ProductApiScanConfigurationsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _product_api_scan_configurations_delete_preview_list_serialize(
+    def _delete_preview_list_serialize(
         self,
         id,
         limit,
@@ -536,7 +536,7 @@ class ProductApiScanConfigurationsApi:
             _request_auth=_request_auth,
         )
 
-    def product_api_scan_configurations_delete_preview_list_iterator(
+    def delete_preview_list_iterator(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this product_ap i_ scan_ configuration.')
@@ -556,15 +556,11 @@ class ProductApiScanConfigurationsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[DeletePreview, PaginatedDeletePreviewList], None, None]':
         _params = locals()
-        for page in get_all_pages(
-            self.api_client,
-            ProductApiScanConfigurationsApi.product_api_scan_configurations_delete_preview_list,
-            **_params,
-        ):
+        for page in get_all_pages(self.api_client, ProductApiScanConfigurationsApi.delete_preview_list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def product_api_scan_configurations_destroy(
+    def destroy(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this product_ap i_ scan_ configuration.')
@@ -579,7 +575,7 @@ class ProductApiScanConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> None:
-        """product_api_scan_configurations_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this product_ap i_ scan_ configuration. (required)
@@ -606,7 +602,7 @@ class ProductApiScanConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_api_scan_configurations_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -620,7 +616,7 @@ class ProductApiScanConfigurationsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def product_api_scan_configurations_destroy_with_http_info(
+    def destroy_with_http_info(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this product_ap i_ scan_ configuration.')
@@ -635,7 +631,7 @@ class ProductApiScanConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[None]:
-        """product_api_scan_configurations_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this product_ap i_ scan_ configuration. (required)
@@ -662,7 +658,7 @@ class ProductApiScanConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_api_scan_configurations_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -676,7 +672,7 @@ class ProductApiScanConfigurationsApi:
             response_types_map=_response_types_map,
         )
 
-    def product_api_scan_configurations_destroy_without_preload_content(
+    def destroy_without_preload_content(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this product_ap i_ scan_ configuration.')
@@ -691,7 +687,7 @@ class ProductApiScanConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """product_api_scan_configurations_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this product_ap i_ scan_ configuration. (required)
@@ -718,7 +714,7 @@ class ProductApiScanConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_api_scan_configurations_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -728,7 +724,7 @@ class ProductApiScanConfigurationsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _product_api_scan_configurations_destroy_serialize(
+    def _destroy_serialize(
         self,
         id,
         _request_auth,
@@ -773,7 +769,7 @@ class ProductApiScanConfigurationsApi:
             _request_auth=_request_auth,
         )
 
-    def product_api_scan_configurations_list(
+    def list(
         self,
         id: Optional[StrictInt] = None,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -799,7 +795,7 @@ class ProductApiScanConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedProductAPIScanConfigurationList:
-        """product_api_scan_configurations_list
+        """list
 
 
         :param id:
@@ -842,7 +838,7 @@ class ProductApiScanConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_api_scan_configurations_list_serialize(
+        _param = self._list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -868,7 +864,7 @@ class ProductApiScanConfigurationsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def product_api_scan_configurations_list_with_http_info(
+    def list_with_http_info(
         self,
         id: Optional[StrictInt] = None,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -894,7 +890,7 @@ class ProductApiScanConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedProductAPIScanConfigurationList]:
-        """product_api_scan_configurations_list
+        """list
 
 
         :param id:
@@ -937,7 +933,7 @@ class ProductApiScanConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_api_scan_configurations_list_serialize(
+        _param = self._list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -963,7 +959,7 @@ class ProductApiScanConfigurationsApi:
             response_types_map=_response_types_map,
         )
 
-    def product_api_scan_configurations_list_without_preload_content(
+    def list_without_preload_content(
         self,
         id: Optional[StrictInt] = None,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -989,7 +985,7 @@ class ProductApiScanConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """product_api_scan_configurations_list
+        """list
 
 
         :param id:
@@ -1032,7 +1028,7 @@ class ProductApiScanConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_api_scan_configurations_list_serialize(
+        _param = self._list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -1054,7 +1050,7 @@ class ProductApiScanConfigurationsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _product_api_scan_configurations_list_serialize(
+    def _list_serialize(
         self,
         id,
         limit,
@@ -1138,7 +1134,7 @@ class ProductApiScanConfigurationsApi:
             _request_auth=_request_auth,
         )
 
-    def product_api_scan_configurations_list_iterator(
+    def list_iterator(
         self,
         id: Optional[StrictInt] = None,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -1165,13 +1161,11 @@ class ProductApiScanConfigurationsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[ProductAPIScanConfiguration, PaginatedProductAPIScanConfigurationList], None, None]':
         _params = locals()
-        for page in get_all_pages(
-            self.api_client, ProductApiScanConfigurationsApi.product_api_scan_configurations_list, **_params
-        ):
+        for page in get_all_pages(self.api_client, ProductApiScanConfigurationsApi.list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def product_api_scan_configurations_partial_update(
+    def partial_update(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this product_ap i_ scan_ configuration.')
@@ -1187,7 +1181,7 @@ class ProductApiScanConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ProductAPIScanConfiguration:
-        """product_api_scan_configurations_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this product_ap i_ scan_ configuration. (required)
@@ -1216,7 +1210,7 @@ class ProductApiScanConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_api_scan_configurations_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_product_api_scan_configuration_request=patched_product_api_scan_configuration_request,
             _request_auth=_request_auth,
@@ -1235,7 +1229,7 @@ class ProductApiScanConfigurationsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def product_api_scan_configurations_partial_update_with_http_info(
+    def partial_update_with_http_info(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this product_ap i_ scan_ configuration.')
@@ -1251,7 +1245,7 @@ class ProductApiScanConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[ProductAPIScanConfiguration]:
-        """product_api_scan_configurations_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this product_ap i_ scan_ configuration. (required)
@@ -1280,7 +1274,7 @@ class ProductApiScanConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_api_scan_configurations_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_product_api_scan_configuration_request=patched_product_api_scan_configuration_request,
             _request_auth=_request_auth,
@@ -1299,7 +1293,7 @@ class ProductApiScanConfigurationsApi:
             response_types_map=_response_types_map,
         )
 
-    def product_api_scan_configurations_partial_update_without_preload_content(
+    def partial_update_without_preload_content(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this product_ap i_ scan_ configuration.')
@@ -1315,7 +1309,7 @@ class ProductApiScanConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """product_api_scan_configurations_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this product_ap i_ scan_ configuration. (required)
@@ -1344,7 +1338,7 @@ class ProductApiScanConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_api_scan_configurations_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_product_api_scan_configuration_request=patched_product_api_scan_configuration_request,
             _request_auth=_request_auth,
@@ -1359,7 +1353,7 @@ class ProductApiScanConfigurationsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _product_api_scan_configurations_partial_update_serialize(
+    def _partial_update_serialize(
         self,
         id,
         patched_product_api_scan_configuration_request,
@@ -1421,7 +1415,7 @@ class ProductApiScanConfigurationsApi:
             _request_auth=_request_auth,
         )
 
-    def product_api_scan_configurations_retrieve(
+    def retrieve(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this product_ap i_ scan_ configuration.')
@@ -1440,7 +1434,7 @@ class ProductApiScanConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ProductAPIScanConfiguration:
-        """product_api_scan_configurations_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this product_ap i_ scan_ configuration. (required)
@@ -1469,7 +1463,7 @@ class ProductApiScanConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_api_scan_configurations_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id,
             prefetch=prefetch,
             _request_auth=_request_auth,
@@ -1488,7 +1482,7 @@ class ProductApiScanConfigurationsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def product_api_scan_configurations_retrieve_with_http_info(
+    def retrieve_with_http_info(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this product_ap i_ scan_ configuration.')
@@ -1507,7 +1501,7 @@ class ProductApiScanConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[ProductAPIScanConfiguration]:
-        """product_api_scan_configurations_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this product_ap i_ scan_ configuration. (required)
@@ -1536,7 +1530,7 @@ class ProductApiScanConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_api_scan_configurations_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id,
             prefetch=prefetch,
             _request_auth=_request_auth,
@@ -1555,7 +1549,7 @@ class ProductApiScanConfigurationsApi:
             response_types_map=_response_types_map,
         )
 
-    def product_api_scan_configurations_retrieve_without_preload_content(
+    def retrieve_without_preload_content(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this product_ap i_ scan_ configuration.')
@@ -1574,7 +1568,7 @@ class ProductApiScanConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """product_api_scan_configurations_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this product_ap i_ scan_ configuration. (required)
@@ -1603,7 +1597,7 @@ class ProductApiScanConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_api_scan_configurations_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id,
             prefetch=prefetch,
             _request_auth=_request_auth,
@@ -1618,7 +1612,7 @@ class ProductApiScanConfigurationsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _product_api_scan_configurations_retrieve_serialize(
+    def _retrieve_serialize(
         self,
         id,
         prefetch,
@@ -1673,7 +1667,7 @@ class ProductApiScanConfigurationsApi:
             _request_auth=_request_auth,
         )
 
-    def product_api_scan_configurations_update(
+    def update(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this product_ap i_ scan_ configuration.')
@@ -1689,7 +1683,7 @@ class ProductApiScanConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ProductAPIScanConfiguration:
-        """product_api_scan_configurations_update
+        """update
 
 
         :param id: A unique integer value identifying this product_ap i_ scan_ configuration. (required)
@@ -1718,7 +1712,7 @@ class ProductApiScanConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_api_scan_configurations_update_serialize(
+        _param = self._update_serialize(
             id=id,
             product_api_scan_configuration_request=product_api_scan_configuration_request,
             _request_auth=_request_auth,
@@ -1737,7 +1731,7 @@ class ProductApiScanConfigurationsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def product_api_scan_configurations_update_with_http_info(
+    def update_with_http_info(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this product_ap i_ scan_ configuration.')
@@ -1753,7 +1747,7 @@ class ProductApiScanConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[ProductAPIScanConfiguration]:
-        """product_api_scan_configurations_update
+        """update
 
 
         :param id: A unique integer value identifying this product_ap i_ scan_ configuration. (required)
@@ -1782,7 +1776,7 @@ class ProductApiScanConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_api_scan_configurations_update_serialize(
+        _param = self._update_serialize(
             id=id,
             product_api_scan_configuration_request=product_api_scan_configuration_request,
             _request_auth=_request_auth,
@@ -1801,7 +1795,7 @@ class ProductApiScanConfigurationsApi:
             response_types_map=_response_types_map,
         )
 
-    def product_api_scan_configurations_update_without_preload_content(
+    def update_without_preload_content(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this product_ap i_ scan_ configuration.')
@@ -1817,7 +1811,7 @@ class ProductApiScanConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """product_api_scan_configurations_update
+        """update
 
 
         :param id: A unique integer value identifying this product_ap i_ scan_ configuration. (required)
@@ -1846,7 +1840,7 @@ class ProductApiScanConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_api_scan_configurations_update_serialize(
+        _param = self._update_serialize(
             id=id,
             product_api_scan_configuration_request=product_api_scan_configuration_request,
             _request_auth=_request_auth,
@@ -1861,7 +1855,7 @@ class ProductApiScanConfigurationsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _product_api_scan_configurations_update_serialize(
+    def _update_serialize(
         self,
         id,
         product_api_scan_configuration_request,

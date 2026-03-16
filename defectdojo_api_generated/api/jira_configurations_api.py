@@ -40,7 +40,7 @@ class JiraConfigurationsApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    def jira_configurations_create(
+    def create(
         self,
         jira_instance_request: JIRAInstanceRequest,
         _request_timeout: Union[
@@ -53,7 +53,7 @@ class JiraConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> JIRAInstance:
-        """jira_configurations_create
+        """create
 
 
         :param jira_instance_request: (required)
@@ -80,7 +80,7 @@ class JiraConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._jira_configurations_create_serialize(
+        _param = self._create_serialize(
             jira_instance_request=jira_instance_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -98,7 +98,7 @@ class JiraConfigurationsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def jira_configurations_create_with_http_info(
+    def create_with_http_info(
         self,
         jira_instance_request: JIRAInstanceRequest,
         _request_timeout: Union[
@@ -111,7 +111,7 @@ class JiraConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[JIRAInstance]:
-        """jira_configurations_create
+        """create
 
 
         :param jira_instance_request: (required)
@@ -138,7 +138,7 @@ class JiraConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._jira_configurations_create_serialize(
+        _param = self._create_serialize(
             jira_instance_request=jira_instance_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -156,7 +156,7 @@ class JiraConfigurationsApi:
             response_types_map=_response_types_map,
         )
 
-    def jira_configurations_create_without_preload_content(
+    def create_without_preload_content(
         self,
         jira_instance_request: JIRAInstanceRequest,
         _request_timeout: Union[
@@ -169,7 +169,7 @@ class JiraConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """jira_configurations_create
+        """create
 
 
         :param jira_instance_request: (required)
@@ -196,7 +196,7 @@ class JiraConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._jira_configurations_create_serialize(
+        _param = self._create_serialize(
             jira_instance_request=jira_instance_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -210,7 +210,7 @@ class JiraConfigurationsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _jira_configurations_create_serialize(
+    def _create_serialize(
         self,
         jira_instance_request,
         _request_auth,
@@ -269,7 +269,7 @@ class JiraConfigurationsApi:
             _request_auth=_request_auth,
         )
 
-    def jira_configurations_delete_preview_list(
+    def delete_preview_list(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this jir a_ instance.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -286,7 +286,7 @@ class JiraConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedDeletePreviewList:
-        """jira_configurations_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this jir a_ instance. (required)
@@ -317,7 +317,7 @@ class JiraConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._jira_configurations_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -337,7 +337,7 @@ class JiraConfigurationsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def jira_configurations_delete_preview_list_with_http_info(
+    def delete_preview_list_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this jir a_ instance.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -354,7 +354,7 @@ class JiraConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedDeletePreviewList]:
-        """jira_configurations_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this jir a_ instance. (required)
@@ -385,7 +385,7 @@ class JiraConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._jira_configurations_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -405,7 +405,7 @@ class JiraConfigurationsApi:
             response_types_map=_response_types_map,
         )
 
-    def jira_configurations_delete_preview_list_without_preload_content(
+    def delete_preview_list_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this jir a_ instance.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -422,7 +422,7 @@ class JiraConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """jira_configurations_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this jir a_ instance. (required)
@@ -453,7 +453,7 @@ class JiraConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._jira_configurations_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -469,7 +469,7 @@ class JiraConfigurationsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _jira_configurations_delete_preview_list_serialize(
+    def _delete_preview_list_serialize(
         self,
         id,
         limit,
@@ -526,7 +526,7 @@ class JiraConfigurationsApi:
             _request_auth=_request_auth,
         )
 
-    def jira_configurations_delete_preview_list_iterator(
+    def delete_preview_list_iterator(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this jir a_ instance.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -544,13 +544,11 @@ class JiraConfigurationsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[DeletePreview, PaginatedDeletePreviewList], None, None]':
         _params = locals()
-        for page in get_all_pages(
-            self.api_client, JiraConfigurationsApi.jira_configurations_delete_preview_list, **_params
-        ):
+        for page in get_all_pages(self.api_client, JiraConfigurationsApi.delete_preview_list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def jira_configurations_destroy(
+    def destroy(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this jir a_ instance.')],
         _request_timeout: Union[
@@ -563,7 +561,7 @@ class JiraConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> None:
-        """jira_configurations_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this jir a_ instance. (required)
@@ -590,7 +588,7 @@ class JiraConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._jira_configurations_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -604,7 +602,7 @@ class JiraConfigurationsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def jira_configurations_destroy_with_http_info(
+    def destroy_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this jir a_ instance.')],
         _request_timeout: Union[
@@ -617,7 +615,7 @@ class JiraConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[None]:
-        """jira_configurations_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this jir a_ instance. (required)
@@ -644,7 +642,7 @@ class JiraConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._jira_configurations_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -658,7 +656,7 @@ class JiraConfigurationsApi:
             response_types_map=_response_types_map,
         )
 
-    def jira_configurations_destroy_without_preload_content(
+    def destroy_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this jir a_ instance.')],
         _request_timeout: Union[
@@ -671,7 +669,7 @@ class JiraConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """jira_configurations_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this jir a_ instance. (required)
@@ -698,7 +696,7 @@ class JiraConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._jira_configurations_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -708,7 +706,7 @@ class JiraConfigurationsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _jira_configurations_destroy_serialize(
+    def _destroy_serialize(
         self,
         id,
         _request_auth,
@@ -753,7 +751,7 @@ class JiraConfigurationsApi:
             _request_auth=_request_auth,
         )
 
-    def jira_configurations_list(
+    def list(
         self,
         id: Optional[StrictInt] = None,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -771,7 +769,7 @@ class JiraConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedJIRAInstanceList:
-        """jira_configurations_list
+        """list
 
 
         :param id:
@@ -804,7 +802,7 @@ class JiraConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._jira_configurations_list_serialize(
+        _param = self._list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -825,7 +823,7 @@ class JiraConfigurationsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def jira_configurations_list_with_http_info(
+    def list_with_http_info(
         self,
         id: Optional[StrictInt] = None,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -843,7 +841,7 @@ class JiraConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedJIRAInstanceList]:
-        """jira_configurations_list
+        """list
 
 
         :param id:
@@ -876,7 +874,7 @@ class JiraConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._jira_configurations_list_serialize(
+        _param = self._list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -897,7 +895,7 @@ class JiraConfigurationsApi:
             response_types_map=_response_types_map,
         )
 
-    def jira_configurations_list_without_preload_content(
+    def list_without_preload_content(
         self,
         id: Optional[StrictInt] = None,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -915,7 +913,7 @@ class JiraConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """jira_configurations_list
+        """list
 
 
         :param id:
@@ -948,7 +946,7 @@ class JiraConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._jira_configurations_list_serialize(
+        _param = self._list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -965,7 +963,7 @@ class JiraConfigurationsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _jira_configurations_list_serialize(
+    def _list_serialize(
         self,
         id,
         limit,
@@ -1027,7 +1025,7 @@ class JiraConfigurationsApi:
             _request_auth=_request_auth,
         )
 
-    def jira_configurations_list_iterator(
+    def list_iterator(
         self,
         id: Optional[StrictInt] = None,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -1046,11 +1044,11 @@ class JiraConfigurationsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[JIRAInstance, PaginatedJIRAInstanceList], None, None]':
         _params = locals()
-        for page in get_all_pages(self.api_client, JiraConfigurationsApi.jira_configurations_list, **_params):
+        for page in get_all_pages(self.api_client, JiraConfigurationsApi.list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def jira_configurations_partial_update(
+    def partial_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this jir a_ instance.')],
         patched_jira_instance_request: Optional[PatchedJIRAInstanceRequest] = None,
@@ -1064,7 +1062,7 @@ class JiraConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> JIRAInstance:
-        """jira_configurations_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this jir a_ instance. (required)
@@ -1093,7 +1091,7 @@ class JiraConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._jira_configurations_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_jira_instance_request=patched_jira_instance_request,
             _request_auth=_request_auth,
@@ -1112,7 +1110,7 @@ class JiraConfigurationsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def jira_configurations_partial_update_with_http_info(
+    def partial_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this jir a_ instance.')],
         patched_jira_instance_request: Optional[PatchedJIRAInstanceRequest] = None,
@@ -1126,7 +1124,7 @@ class JiraConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[JIRAInstance]:
-        """jira_configurations_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this jir a_ instance. (required)
@@ -1155,7 +1153,7 @@ class JiraConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._jira_configurations_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_jira_instance_request=patched_jira_instance_request,
             _request_auth=_request_auth,
@@ -1174,7 +1172,7 @@ class JiraConfigurationsApi:
             response_types_map=_response_types_map,
         )
 
-    def jira_configurations_partial_update_without_preload_content(
+    def partial_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this jir a_ instance.')],
         patched_jira_instance_request: Optional[PatchedJIRAInstanceRequest] = None,
@@ -1188,7 +1186,7 @@ class JiraConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """jira_configurations_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this jir a_ instance. (required)
@@ -1217,7 +1215,7 @@ class JiraConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._jira_configurations_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_jira_instance_request=patched_jira_instance_request,
             _request_auth=_request_auth,
@@ -1232,7 +1230,7 @@ class JiraConfigurationsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _jira_configurations_partial_update_serialize(
+    def _partial_update_serialize(
         self,
         id,
         patched_jira_instance_request,
@@ -1294,7 +1292,7 @@ class JiraConfigurationsApi:
             _request_auth=_request_auth,
         )
 
-    def jira_configurations_retrieve(
+    def retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this jir a_ instance.')],
         _request_timeout: Union[
@@ -1307,7 +1305,7 @@ class JiraConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> JIRAInstance:
-        """jira_configurations_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this jir a_ instance. (required)
@@ -1334,7 +1332,7 @@ class JiraConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._jira_configurations_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1348,7 +1346,7 @@ class JiraConfigurationsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def jira_configurations_retrieve_with_http_info(
+    def retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this jir a_ instance.')],
         _request_timeout: Union[
@@ -1361,7 +1359,7 @@ class JiraConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[JIRAInstance]:
-        """jira_configurations_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this jir a_ instance. (required)
@@ -1388,7 +1386,7 @@ class JiraConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._jira_configurations_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1402,7 +1400,7 @@ class JiraConfigurationsApi:
             response_types_map=_response_types_map,
         )
 
-    def jira_configurations_retrieve_without_preload_content(
+    def retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this jir a_ instance.')],
         _request_timeout: Union[
@@ -1415,7 +1413,7 @@ class JiraConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """jira_configurations_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this jir a_ instance. (required)
@@ -1442,7 +1440,7 @@ class JiraConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._jira_configurations_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1452,7 +1450,7 @@ class JiraConfigurationsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _jira_configurations_retrieve_serialize(
+    def _retrieve_serialize(
         self,
         id,
         _request_auth,
@@ -1501,7 +1499,7 @@ class JiraConfigurationsApi:
             _request_auth=_request_auth,
         )
 
-    def jira_configurations_update(
+    def update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this jir a_ instance.')],
         jira_instance_request: JIRAInstanceRequest,
@@ -1515,7 +1513,7 @@ class JiraConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> JIRAInstance:
-        """jira_configurations_update
+        """update
 
 
         :param id: A unique integer value identifying this jir a_ instance. (required)
@@ -1544,7 +1542,7 @@ class JiraConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._jira_configurations_update_serialize(
+        _param = self._update_serialize(
             id=id,
             jira_instance_request=jira_instance_request,
             _request_auth=_request_auth,
@@ -1563,7 +1561,7 @@ class JiraConfigurationsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def jira_configurations_update_with_http_info(
+    def update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this jir a_ instance.')],
         jira_instance_request: JIRAInstanceRequest,
@@ -1577,7 +1575,7 @@ class JiraConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[JIRAInstance]:
-        """jira_configurations_update
+        """update
 
 
         :param id: A unique integer value identifying this jir a_ instance. (required)
@@ -1606,7 +1604,7 @@ class JiraConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._jira_configurations_update_serialize(
+        _param = self._update_serialize(
             id=id,
             jira_instance_request=jira_instance_request,
             _request_auth=_request_auth,
@@ -1625,7 +1623,7 @@ class JiraConfigurationsApi:
             response_types_map=_response_types_map,
         )
 
-    def jira_configurations_update_without_preload_content(
+    def update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this jir a_ instance.')],
         jira_instance_request: JIRAInstanceRequest,
@@ -1639,7 +1637,7 @@ class JiraConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """jira_configurations_update
+        """update
 
 
         :param id: A unique integer value identifying this jir a_ instance. (required)
@@ -1668,7 +1666,7 @@ class JiraConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._jira_configurations_update_serialize(
+        _param = self._update_serialize(
             id=id,
             jira_instance_request=jira_instance_request,
             _request_auth=_request_auth,
@@ -1683,7 +1681,7 @@ class JiraConfigurationsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _jira_configurations_update_serialize(
+    def _update_serialize(
         self,
         id,
         jira_instance_request,

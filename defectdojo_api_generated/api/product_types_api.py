@@ -43,7 +43,7 @@ class ProductTypesApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    def product_types_create(
+    def create(
         self,
         product_type_request: ProductTypeRequest,
         _request_timeout: Union[
@@ -56,7 +56,7 @@ class ProductTypesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ProductType:
-        """product_types_create
+        """create
 
 
         :param product_type_request: (required)
@@ -83,7 +83,7 @@ class ProductTypesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_types_create_serialize(
+        _param = self._create_serialize(
             product_type_request=product_type_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -101,7 +101,7 @@ class ProductTypesApi:
             response_types_map=_response_types_map,
         ).data
 
-    def product_types_create_with_http_info(
+    def create_with_http_info(
         self,
         product_type_request: ProductTypeRequest,
         _request_timeout: Union[
@@ -114,7 +114,7 @@ class ProductTypesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[ProductType]:
-        """product_types_create
+        """create
 
 
         :param product_type_request: (required)
@@ -141,7 +141,7 @@ class ProductTypesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_types_create_serialize(
+        _param = self._create_serialize(
             product_type_request=product_type_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -159,7 +159,7 @@ class ProductTypesApi:
             response_types_map=_response_types_map,
         )
 
-    def product_types_create_without_preload_content(
+    def create_without_preload_content(
         self,
         product_type_request: ProductTypeRequest,
         _request_timeout: Union[
@@ -172,7 +172,7 @@ class ProductTypesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """product_types_create
+        """create
 
 
         :param product_type_request: (required)
@@ -199,7 +199,7 @@ class ProductTypesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_types_create_serialize(
+        _param = self._create_serialize(
             product_type_request=product_type_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -213,7 +213,7 @@ class ProductTypesApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _product_types_create_serialize(
+    def _create_serialize(
         self,
         product_type_request,
         _request_auth,
@@ -272,7 +272,7 @@ class ProductTypesApi:
             _request_auth=_request_auth,
         )
 
-    def product_types_delete_preview_list(
+    def delete_preview_list(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ type.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -289,7 +289,7 @@ class ProductTypesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedDeletePreviewList:
-        """product_types_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this product_ type. (required)
@@ -320,7 +320,7 @@ class ProductTypesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_types_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -340,7 +340,7 @@ class ProductTypesApi:
             response_types_map=_response_types_map,
         ).data
 
-    def product_types_delete_preview_list_with_http_info(
+    def delete_preview_list_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ type.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -357,7 +357,7 @@ class ProductTypesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedDeletePreviewList]:
-        """product_types_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this product_ type. (required)
@@ -388,7 +388,7 @@ class ProductTypesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_types_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -408,7 +408,7 @@ class ProductTypesApi:
             response_types_map=_response_types_map,
         )
 
-    def product_types_delete_preview_list_without_preload_content(
+    def delete_preview_list_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ type.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -425,7 +425,7 @@ class ProductTypesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """product_types_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this product_ type. (required)
@@ -456,7 +456,7 @@ class ProductTypesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_types_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -472,7 +472,7 @@ class ProductTypesApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _product_types_delete_preview_list_serialize(
+    def _delete_preview_list_serialize(
         self,
         id,
         limit,
@@ -529,7 +529,7 @@ class ProductTypesApi:
             _request_auth=_request_auth,
         )
 
-    def product_types_delete_preview_list_iterator(
+    def delete_preview_list_iterator(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ type.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -547,11 +547,11 @@ class ProductTypesApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[DeletePreview, PaginatedDeletePreviewList], None, None]':
         _params = locals()
-        for page in get_all_pages(self.api_client, ProductTypesApi.product_types_delete_preview_list, **_params):
+        for page in get_all_pages(self.api_client, ProductTypesApi.delete_preview_list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def product_types_destroy(
+    def destroy(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ type.')],
         _request_timeout: Union[
@@ -564,7 +564,7 @@ class ProductTypesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> None:
-        """product_types_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this product_ type. (required)
@@ -591,7 +591,7 @@ class ProductTypesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_types_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -605,7 +605,7 @@ class ProductTypesApi:
             response_types_map=_response_types_map,
         ).data
 
-    def product_types_destroy_with_http_info(
+    def destroy_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ type.')],
         _request_timeout: Union[
@@ -618,7 +618,7 @@ class ProductTypesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[None]:
-        """product_types_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this product_ type. (required)
@@ -645,7 +645,7 @@ class ProductTypesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_types_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -659,7 +659,7 @@ class ProductTypesApi:
             response_types_map=_response_types_map,
         )
 
-    def product_types_destroy_without_preload_content(
+    def destroy_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ type.')],
         _request_timeout: Union[
@@ -672,7 +672,7 @@ class ProductTypesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """product_types_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this product_ type. (required)
@@ -699,7 +699,7 @@ class ProductTypesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_types_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -709,7 +709,7 @@ class ProductTypesApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _product_types_destroy_serialize(
+    def _destroy_serialize(
         self,
         id,
         _request_auth,
@@ -754,7 +754,7 @@ class ProductTypesApi:
             _request_auth=_request_auth,
         )
 
-    def product_types_generate_report_create(
+    def generate_report_create(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ type.')],
         report_generate_option_request: Optional[ReportGenerateOptionRequest] = None,
@@ -768,7 +768,7 @@ class ProductTypesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ReportGenerate:
-        """product_types_generate_report_create
+        """generate_report_create
 
 
         :param id: A unique integer value identifying this product_ type. (required)
@@ -797,7 +797,7 @@ class ProductTypesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_types_generate_report_create_serialize(
+        _param = self._generate_report_create_serialize(
             id=id,
             report_generate_option_request=report_generate_option_request,
             _request_auth=_request_auth,
@@ -816,7 +816,7 @@ class ProductTypesApi:
             response_types_map=_response_types_map,
         ).data
 
-    def product_types_generate_report_create_with_http_info(
+    def generate_report_create_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ type.')],
         report_generate_option_request: Optional[ReportGenerateOptionRequest] = None,
@@ -830,7 +830,7 @@ class ProductTypesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[ReportGenerate]:
-        """product_types_generate_report_create
+        """generate_report_create
 
 
         :param id: A unique integer value identifying this product_ type. (required)
@@ -859,7 +859,7 @@ class ProductTypesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_types_generate_report_create_serialize(
+        _param = self._generate_report_create_serialize(
             id=id,
             report_generate_option_request=report_generate_option_request,
             _request_auth=_request_auth,
@@ -878,7 +878,7 @@ class ProductTypesApi:
             response_types_map=_response_types_map,
         )
 
-    def product_types_generate_report_create_without_preload_content(
+    def generate_report_create_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ type.')],
         report_generate_option_request: Optional[ReportGenerateOptionRequest] = None,
@@ -892,7 +892,7 @@ class ProductTypesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """product_types_generate_report_create
+        """generate_report_create
 
 
         :param id: A unique integer value identifying this product_ type. (required)
@@ -921,7 +921,7 @@ class ProductTypesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_types_generate_report_create_serialize(
+        _param = self._generate_report_create_serialize(
             id=id,
             report_generate_option_request=report_generate_option_request,
             _request_auth=_request_auth,
@@ -936,7 +936,7 @@ class ProductTypesApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _product_types_generate_report_create_serialize(
+    def _generate_report_create_serialize(
         self,
         id,
         report_generate_option_request,
@@ -998,7 +998,7 @@ class ProductTypesApi:
             _request_auth=_request_auth,
         )
 
-    def product_types_list(
+    def list(
         self,
         created: Optional[datetime] = None,
         critical_product: Optional[StrictBool] = None,
@@ -1024,7 +1024,7 @@ class ProductTypesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedProductTypeList:
-        """product_types_list
+        """list
 
 
         :param created:
@@ -1067,7 +1067,7 @@ class ProductTypesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_types_list_serialize(
+        _param = self._list_serialize(
             created=created,
             critical_product=critical_product,
             id=id,
@@ -1093,7 +1093,7 @@ class ProductTypesApi:
             response_types_map=_response_types_map,
         ).data
 
-    def product_types_list_with_http_info(
+    def list_with_http_info(
         self,
         created: Optional[datetime] = None,
         critical_product: Optional[StrictBool] = None,
@@ -1119,7 +1119,7 @@ class ProductTypesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedProductTypeList]:
-        """product_types_list
+        """list
 
 
         :param created:
@@ -1162,7 +1162,7 @@ class ProductTypesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_types_list_serialize(
+        _param = self._list_serialize(
             created=created,
             critical_product=critical_product,
             id=id,
@@ -1188,7 +1188,7 @@ class ProductTypesApi:
             response_types_map=_response_types_map,
         )
 
-    def product_types_list_without_preload_content(
+    def list_without_preload_content(
         self,
         created: Optional[datetime] = None,
         critical_product: Optional[StrictBool] = None,
@@ -1214,7 +1214,7 @@ class ProductTypesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """product_types_list
+        """list
 
 
         :param created:
@@ -1257,7 +1257,7 @@ class ProductTypesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_types_list_serialize(
+        _param = self._list_serialize(
             created=created,
             critical_product=critical_product,
             id=id,
@@ -1279,7 +1279,7 @@ class ProductTypesApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _product_types_list_serialize(
+    def _list_serialize(
         self,
         created,
         critical_product,
@@ -1369,7 +1369,7 @@ class ProductTypesApi:
             _request_auth=_request_auth,
         )
 
-    def product_types_list_iterator(
+    def list_iterator(
         self,
         created: Optional[datetime] = None,
         critical_product: Optional[StrictBool] = None,
@@ -1396,11 +1396,11 @@ class ProductTypesApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[ProductType, PaginatedProductTypeList], None, None]':
         _params = locals()
-        for page in get_all_pages(self.api_client, ProductTypesApi.product_types_list, **_params):
+        for page in get_all_pages(self.api_client, ProductTypesApi.list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def product_types_partial_update(
+    def partial_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ type.')],
         patched_product_type_request: Optional[PatchedProductTypeRequest] = None,
@@ -1414,7 +1414,7 @@ class ProductTypesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ProductType:
-        """product_types_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this product_ type. (required)
@@ -1443,7 +1443,7 @@ class ProductTypesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_types_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_product_type_request=patched_product_type_request,
             _request_auth=_request_auth,
@@ -1462,7 +1462,7 @@ class ProductTypesApi:
             response_types_map=_response_types_map,
         ).data
 
-    def product_types_partial_update_with_http_info(
+    def partial_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ type.')],
         patched_product_type_request: Optional[PatchedProductTypeRequest] = None,
@@ -1476,7 +1476,7 @@ class ProductTypesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[ProductType]:
-        """product_types_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this product_ type. (required)
@@ -1505,7 +1505,7 @@ class ProductTypesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_types_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_product_type_request=patched_product_type_request,
             _request_auth=_request_auth,
@@ -1524,7 +1524,7 @@ class ProductTypesApi:
             response_types_map=_response_types_map,
         )
 
-    def product_types_partial_update_without_preload_content(
+    def partial_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ type.')],
         patched_product_type_request: Optional[PatchedProductTypeRequest] = None,
@@ -1538,7 +1538,7 @@ class ProductTypesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """product_types_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this product_ type. (required)
@@ -1567,7 +1567,7 @@ class ProductTypesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_types_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_product_type_request=patched_product_type_request,
             _request_auth=_request_auth,
@@ -1582,7 +1582,7 @@ class ProductTypesApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _product_types_partial_update_serialize(
+    def _partial_update_serialize(
         self,
         id,
         patched_product_type_request,
@@ -1644,7 +1644,7 @@ class ProductTypesApi:
             _request_auth=_request_auth,
         )
 
-    def product_types_retrieve(
+    def retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ type.')],
         prefetch: Annotated[
@@ -1661,7 +1661,7 @@ class ProductTypesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ProductType:
-        """product_types_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this product_ type. (required)
@@ -1690,7 +1690,7 @@ class ProductTypesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_types_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id,
             prefetch=prefetch,
             _request_auth=_request_auth,
@@ -1709,7 +1709,7 @@ class ProductTypesApi:
             response_types_map=_response_types_map,
         ).data
 
-    def product_types_retrieve_with_http_info(
+    def retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ type.')],
         prefetch: Annotated[
@@ -1726,7 +1726,7 @@ class ProductTypesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[ProductType]:
-        """product_types_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this product_ type. (required)
@@ -1755,7 +1755,7 @@ class ProductTypesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_types_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id,
             prefetch=prefetch,
             _request_auth=_request_auth,
@@ -1774,7 +1774,7 @@ class ProductTypesApi:
             response_types_map=_response_types_map,
         )
 
-    def product_types_retrieve_without_preload_content(
+    def retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ type.')],
         prefetch: Annotated[
@@ -1791,7 +1791,7 @@ class ProductTypesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """product_types_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this product_ type. (required)
@@ -1820,7 +1820,7 @@ class ProductTypesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_types_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id,
             prefetch=prefetch,
             _request_auth=_request_auth,
@@ -1835,7 +1835,7 @@ class ProductTypesApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _product_types_retrieve_serialize(
+    def _retrieve_serialize(
         self,
         id,
         prefetch,
@@ -1890,7 +1890,7 @@ class ProductTypesApi:
             _request_auth=_request_auth,
         )
 
-    def product_types_update(
+    def update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ type.')],
         product_type_request: ProductTypeRequest,
@@ -1904,7 +1904,7 @@ class ProductTypesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ProductType:
-        """product_types_update
+        """update
 
 
         :param id: A unique integer value identifying this product_ type. (required)
@@ -1933,7 +1933,7 @@ class ProductTypesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_types_update_serialize(
+        _param = self._update_serialize(
             id=id,
             product_type_request=product_type_request,
             _request_auth=_request_auth,
@@ -1952,7 +1952,7 @@ class ProductTypesApi:
             response_types_map=_response_types_map,
         ).data
 
-    def product_types_update_with_http_info(
+    def update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ type.')],
         product_type_request: ProductTypeRequest,
@@ -1966,7 +1966,7 @@ class ProductTypesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[ProductType]:
-        """product_types_update
+        """update
 
 
         :param id: A unique integer value identifying this product_ type. (required)
@@ -1995,7 +1995,7 @@ class ProductTypesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_types_update_serialize(
+        _param = self._update_serialize(
             id=id,
             product_type_request=product_type_request,
             _request_auth=_request_auth,
@@ -2014,7 +2014,7 @@ class ProductTypesApi:
             response_types_map=_response_types_map,
         )
 
-    def product_types_update_without_preload_content(
+    def update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ type.')],
         product_type_request: ProductTypeRequest,
@@ -2028,7 +2028,7 @@ class ProductTypesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """product_types_update
+        """update
 
 
         :param id: A unique integer value identifying this product_ type. (required)
@@ -2057,7 +2057,7 @@ class ProductTypesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._product_types_update_serialize(
+        _param = self._update_serialize(
             id=id,
             product_type_request=product_type_request,
             _request_auth=_request_auth,
@@ -2072,7 +2072,7 @@ class ProductTypesApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _product_types_update_serialize(
+    def _update_serialize(
         self,
         id,
         product_type_request,

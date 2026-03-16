@@ -40,7 +40,7 @@ class NoteTypeApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    def note_type_create(
+    def create(
         self,
         note_type_request: NoteTypeRequest,
         _request_timeout: Union[
@@ -53,7 +53,7 @@ class NoteTypeApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> NoteType:
-        """note_type_create
+        """create
 
 
         :param note_type_request: (required)
@@ -80,7 +80,7 @@ class NoteTypeApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._note_type_create_serialize(
+        _param = self._create_serialize(
             note_type_request=note_type_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -98,7 +98,7 @@ class NoteTypeApi:
             response_types_map=_response_types_map,
         ).data
 
-    def note_type_create_with_http_info(
+    def create_with_http_info(
         self,
         note_type_request: NoteTypeRequest,
         _request_timeout: Union[
@@ -111,7 +111,7 @@ class NoteTypeApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[NoteType]:
-        """note_type_create
+        """create
 
 
         :param note_type_request: (required)
@@ -138,7 +138,7 @@ class NoteTypeApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._note_type_create_serialize(
+        _param = self._create_serialize(
             note_type_request=note_type_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -156,7 +156,7 @@ class NoteTypeApi:
             response_types_map=_response_types_map,
         )
 
-    def note_type_create_without_preload_content(
+    def create_without_preload_content(
         self,
         note_type_request: NoteTypeRequest,
         _request_timeout: Union[
@@ -169,7 +169,7 @@ class NoteTypeApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """note_type_create
+        """create
 
 
         :param note_type_request: (required)
@@ -196,7 +196,7 @@ class NoteTypeApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._note_type_create_serialize(
+        _param = self._create_serialize(
             note_type_request=note_type_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -210,7 +210,7 @@ class NoteTypeApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _note_type_create_serialize(
+    def _create_serialize(
         self,
         note_type_request,
         _request_auth,
@@ -269,7 +269,7 @@ class NoteTypeApi:
             _request_auth=_request_auth,
         )
 
-    def note_type_delete_preview_list(
+    def delete_preview_list(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this note_ type.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -286,7 +286,7 @@ class NoteTypeApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedDeletePreviewList:
-        """note_type_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this note_ type. (required)
@@ -317,7 +317,7 @@ class NoteTypeApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._note_type_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -337,7 +337,7 @@ class NoteTypeApi:
             response_types_map=_response_types_map,
         ).data
 
-    def note_type_delete_preview_list_with_http_info(
+    def delete_preview_list_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this note_ type.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -354,7 +354,7 @@ class NoteTypeApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedDeletePreviewList]:
-        """note_type_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this note_ type. (required)
@@ -385,7 +385,7 @@ class NoteTypeApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._note_type_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -405,7 +405,7 @@ class NoteTypeApi:
             response_types_map=_response_types_map,
         )
 
-    def note_type_delete_preview_list_without_preload_content(
+    def delete_preview_list_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this note_ type.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -422,7 +422,7 @@ class NoteTypeApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """note_type_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this note_ type. (required)
@@ -453,7 +453,7 @@ class NoteTypeApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._note_type_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -469,7 +469,7 @@ class NoteTypeApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _note_type_delete_preview_list_serialize(
+    def _delete_preview_list_serialize(
         self,
         id,
         limit,
@@ -526,7 +526,7 @@ class NoteTypeApi:
             _request_auth=_request_auth,
         )
 
-    def note_type_delete_preview_list_iterator(
+    def delete_preview_list_iterator(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this note_ type.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -544,11 +544,11 @@ class NoteTypeApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[DeletePreview, PaginatedDeletePreviewList], None, None]':
         _params = locals()
-        for page in get_all_pages(self.api_client, NoteTypeApi.note_type_delete_preview_list, **_params):
+        for page in get_all_pages(self.api_client, NoteTypeApi.delete_preview_list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def note_type_destroy(
+    def destroy(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this note_ type.')],
         _request_timeout: Union[
@@ -561,7 +561,7 @@ class NoteTypeApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> None:
-        """note_type_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this note_ type. (required)
@@ -588,7 +588,7 @@ class NoteTypeApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._note_type_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -602,7 +602,7 @@ class NoteTypeApi:
             response_types_map=_response_types_map,
         ).data
 
-    def note_type_destroy_with_http_info(
+    def destroy_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this note_ type.')],
         _request_timeout: Union[
@@ -615,7 +615,7 @@ class NoteTypeApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[None]:
-        """note_type_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this note_ type. (required)
@@ -642,7 +642,7 @@ class NoteTypeApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._note_type_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -656,7 +656,7 @@ class NoteTypeApi:
             response_types_map=_response_types_map,
         )
 
-    def note_type_destroy_without_preload_content(
+    def destroy_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this note_ type.')],
         _request_timeout: Union[
@@ -669,7 +669,7 @@ class NoteTypeApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """note_type_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this note_ type. (required)
@@ -696,7 +696,7 @@ class NoteTypeApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._note_type_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -706,7 +706,7 @@ class NoteTypeApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _note_type_destroy_serialize(
+    def _destroy_serialize(
         self,
         id,
         _request_auth,
@@ -751,7 +751,7 @@ class NoteTypeApi:
             _request_auth=_request_auth,
         )
 
-    def note_type_list(
+    def list(
         self,
         description: Optional[StrictStr] = None,
         id: Optional[StrictInt] = None,
@@ -773,7 +773,7 @@ class NoteTypeApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedNoteTypeList:
-        """note_type_list
+        """list
 
 
         :param description:
@@ -814,7 +814,7 @@ class NoteTypeApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._note_type_list_serialize(
+        _param = self._list_serialize(
             description=description,
             id=id,
             is_active=is_active,
@@ -839,7 +839,7 @@ class NoteTypeApi:
             response_types_map=_response_types_map,
         ).data
 
-    def note_type_list_with_http_info(
+    def list_with_http_info(
         self,
         description: Optional[StrictStr] = None,
         id: Optional[StrictInt] = None,
@@ -861,7 +861,7 @@ class NoteTypeApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedNoteTypeList]:
-        """note_type_list
+        """list
 
 
         :param description:
@@ -902,7 +902,7 @@ class NoteTypeApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._note_type_list_serialize(
+        _param = self._list_serialize(
             description=description,
             id=id,
             is_active=is_active,
@@ -927,7 +927,7 @@ class NoteTypeApi:
             response_types_map=_response_types_map,
         )
 
-    def note_type_list_without_preload_content(
+    def list_without_preload_content(
         self,
         description: Optional[StrictStr] = None,
         id: Optional[StrictInt] = None,
@@ -949,7 +949,7 @@ class NoteTypeApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """note_type_list
+        """list
 
 
         :param description:
@@ -990,7 +990,7 @@ class NoteTypeApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._note_type_list_serialize(
+        _param = self._list_serialize(
             description=description,
             id=id,
             is_active=is_active,
@@ -1011,7 +1011,7 @@ class NoteTypeApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _note_type_list_serialize(
+    def _list_serialize(
         self,
         description,
         id,
@@ -1089,7 +1089,7 @@ class NoteTypeApi:
             _request_auth=_request_auth,
         )
 
-    def note_type_list_iterator(
+    def list_iterator(
         self,
         description: Optional[StrictStr] = None,
         id: Optional[StrictInt] = None,
@@ -1112,11 +1112,11 @@ class NoteTypeApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[NoteType, PaginatedNoteTypeList], None, None]':
         _params = locals()
-        for page in get_all_pages(self.api_client, NoteTypeApi.note_type_list, **_params):
+        for page in get_all_pages(self.api_client, NoteTypeApi.list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def note_type_partial_update(
+    def partial_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this note_ type.')],
         patched_note_type_request: Optional[PatchedNoteTypeRequest] = None,
@@ -1130,7 +1130,7 @@ class NoteTypeApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> NoteType:
-        """note_type_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this note_ type. (required)
@@ -1159,7 +1159,7 @@ class NoteTypeApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._note_type_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_note_type_request=patched_note_type_request,
             _request_auth=_request_auth,
@@ -1178,7 +1178,7 @@ class NoteTypeApi:
             response_types_map=_response_types_map,
         ).data
 
-    def note_type_partial_update_with_http_info(
+    def partial_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this note_ type.')],
         patched_note_type_request: Optional[PatchedNoteTypeRequest] = None,
@@ -1192,7 +1192,7 @@ class NoteTypeApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[NoteType]:
-        """note_type_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this note_ type. (required)
@@ -1221,7 +1221,7 @@ class NoteTypeApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._note_type_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_note_type_request=patched_note_type_request,
             _request_auth=_request_auth,
@@ -1240,7 +1240,7 @@ class NoteTypeApi:
             response_types_map=_response_types_map,
         )
 
-    def note_type_partial_update_without_preload_content(
+    def partial_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this note_ type.')],
         patched_note_type_request: Optional[PatchedNoteTypeRequest] = None,
@@ -1254,7 +1254,7 @@ class NoteTypeApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """note_type_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this note_ type. (required)
@@ -1283,7 +1283,7 @@ class NoteTypeApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._note_type_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_note_type_request=patched_note_type_request,
             _request_auth=_request_auth,
@@ -1298,7 +1298,7 @@ class NoteTypeApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _note_type_partial_update_serialize(
+    def _partial_update_serialize(
         self,
         id,
         patched_note_type_request,
@@ -1360,7 +1360,7 @@ class NoteTypeApi:
             _request_auth=_request_auth,
         )
 
-    def note_type_retrieve(
+    def retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this note_ type.')],
         _request_timeout: Union[
@@ -1373,7 +1373,7 @@ class NoteTypeApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> NoteType:
-        """note_type_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this note_ type. (required)
@@ -1400,7 +1400,7 @@ class NoteTypeApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._note_type_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1414,7 +1414,7 @@ class NoteTypeApi:
             response_types_map=_response_types_map,
         ).data
 
-    def note_type_retrieve_with_http_info(
+    def retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this note_ type.')],
         _request_timeout: Union[
@@ -1427,7 +1427,7 @@ class NoteTypeApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[NoteType]:
-        """note_type_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this note_ type. (required)
@@ -1454,7 +1454,7 @@ class NoteTypeApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._note_type_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1468,7 +1468,7 @@ class NoteTypeApi:
             response_types_map=_response_types_map,
         )
 
-    def note_type_retrieve_without_preload_content(
+    def retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this note_ type.')],
         _request_timeout: Union[
@@ -1481,7 +1481,7 @@ class NoteTypeApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """note_type_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this note_ type. (required)
@@ -1508,7 +1508,7 @@ class NoteTypeApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._note_type_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1518,7 +1518,7 @@ class NoteTypeApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _note_type_retrieve_serialize(
+    def _retrieve_serialize(
         self,
         id,
         _request_auth,
@@ -1567,7 +1567,7 @@ class NoteTypeApi:
             _request_auth=_request_auth,
         )
 
-    def note_type_update(
+    def update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this note_ type.')],
         note_type_request: NoteTypeRequest,
@@ -1581,7 +1581,7 @@ class NoteTypeApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> NoteType:
-        """note_type_update
+        """update
 
 
         :param id: A unique integer value identifying this note_ type. (required)
@@ -1610,7 +1610,7 @@ class NoteTypeApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._note_type_update_serialize(
+        _param = self._update_serialize(
             id=id,
             note_type_request=note_type_request,
             _request_auth=_request_auth,
@@ -1629,7 +1629,7 @@ class NoteTypeApi:
             response_types_map=_response_types_map,
         ).data
 
-    def note_type_update_with_http_info(
+    def update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this note_ type.')],
         note_type_request: NoteTypeRequest,
@@ -1643,7 +1643,7 @@ class NoteTypeApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[NoteType]:
-        """note_type_update
+        """update
 
 
         :param id: A unique integer value identifying this note_ type. (required)
@@ -1672,7 +1672,7 @@ class NoteTypeApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._note_type_update_serialize(
+        _param = self._update_serialize(
             id=id,
             note_type_request=note_type_request,
             _request_auth=_request_auth,
@@ -1691,7 +1691,7 @@ class NoteTypeApi:
             response_types_map=_response_types_map,
         )
 
-    def note_type_update_without_preload_content(
+    def update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this note_ type.')],
         note_type_request: NoteTypeRequest,
@@ -1705,7 +1705,7 @@ class NoteTypeApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """note_type_update
+        """update
 
 
         :param id: A unique integer value identifying this note_ type. (required)
@@ -1734,7 +1734,7 @@ class NoteTypeApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._note_type_update_serialize(
+        _param = self._update_serialize(
             id=id,
             note_type_request=note_type_request,
             _request_auth=_request_auth,
@@ -1749,7 +1749,7 @@ class NoteTypeApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _note_type_update_serialize(
+    def _update_serialize(
         self,
         id,
         note_type_request,

@@ -24,8 +24,8 @@ class TestImportScanApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_import_scan_create(self) -> None:
-        """Test case for import_scan_create"""
+    def test_create(self) -> None:
+        """Test case for create"""
         pass
 
 

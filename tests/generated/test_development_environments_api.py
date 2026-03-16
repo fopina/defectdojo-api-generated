@@ -24,32 +24,32 @@ class TestDevelopmentEnvironmentsApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_development_environments_create(self) -> None:
-        """Test case for development_environments_create"""
+    def test_create(self) -> None:
+        """Test case for create"""
         pass
 
-    def test_development_environments_delete_preview_list(self) -> None:
-        """Test case for development_environments_delete_preview_list"""
+    def test_delete_preview_list(self) -> None:
+        """Test case for delete_preview_list"""
         pass
 
-    def test_development_environments_destroy(self) -> None:
-        """Test case for development_environments_destroy"""
+    def test_destroy(self) -> None:
+        """Test case for destroy"""
         pass
 
-    def test_development_environments_list(self) -> None:
-        """Test case for development_environments_list"""
+    def test_list(self) -> None:
+        """Test case for list"""
         pass
 
-    def test_development_environments_partial_update(self) -> None:
-        """Test case for development_environments_partial_update"""
+    def test_partial_update(self) -> None:
+        """Test case for partial_update"""
         pass
 
-    def test_development_environments_retrieve(self) -> None:
-        """Test case for development_environments_retrieve"""
+    def test_retrieve(self) -> None:
+        """Test case for retrieve"""
         pass
 
-    def test_development_environments_update(self) -> None:
-        """Test case for development_environments_update"""
+    def test_update(self) -> None:
+        """Test case for update"""
         pass
 
 

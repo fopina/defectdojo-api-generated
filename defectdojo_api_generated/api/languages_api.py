@@ -40,7 +40,7 @@ class LanguagesApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    def languages_create(
+    def create(
         self,
         language_request: LanguageRequest,
         _request_timeout: Union[
@@ -53,7 +53,7 @@ class LanguagesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Language:
-        """languages_create
+        """create
 
 
         :param language_request: (required)
@@ -80,7 +80,7 @@ class LanguagesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._languages_create_serialize(
+        _param = self._create_serialize(
             language_request=language_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -98,7 +98,7 @@ class LanguagesApi:
             response_types_map=_response_types_map,
         ).data
 
-    def languages_create_with_http_info(
+    def create_with_http_info(
         self,
         language_request: LanguageRequest,
         _request_timeout: Union[
@@ -111,7 +111,7 @@ class LanguagesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Language]:
-        """languages_create
+        """create
 
 
         :param language_request: (required)
@@ -138,7 +138,7 @@ class LanguagesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._languages_create_serialize(
+        _param = self._create_serialize(
             language_request=language_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -156,7 +156,7 @@ class LanguagesApi:
             response_types_map=_response_types_map,
         )
 
-    def languages_create_without_preload_content(
+    def create_without_preload_content(
         self,
         language_request: LanguageRequest,
         _request_timeout: Union[
@@ -169,7 +169,7 @@ class LanguagesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """languages_create
+        """create
 
 
         :param language_request: (required)
@@ -196,7 +196,7 @@ class LanguagesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._languages_create_serialize(
+        _param = self._create_serialize(
             language_request=language_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -210,7 +210,7 @@ class LanguagesApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _languages_create_serialize(
+    def _create_serialize(
         self,
         language_request,
         _request_auth,
@@ -269,7 +269,7 @@ class LanguagesApi:
             _request_auth=_request_auth,
         )
 
-    def languages_delete_preview_list(
+    def delete_preview_list(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this languages.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -286,7 +286,7 @@ class LanguagesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedDeletePreviewList:
-        """languages_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this languages. (required)
@@ -317,7 +317,7 @@ class LanguagesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._languages_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -337,7 +337,7 @@ class LanguagesApi:
             response_types_map=_response_types_map,
         ).data
 
-    def languages_delete_preview_list_with_http_info(
+    def delete_preview_list_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this languages.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -354,7 +354,7 @@ class LanguagesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedDeletePreviewList]:
-        """languages_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this languages. (required)
@@ -385,7 +385,7 @@ class LanguagesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._languages_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -405,7 +405,7 @@ class LanguagesApi:
             response_types_map=_response_types_map,
         )
 
-    def languages_delete_preview_list_without_preload_content(
+    def delete_preview_list_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this languages.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -422,7 +422,7 @@ class LanguagesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """languages_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this languages. (required)
@@ -453,7 +453,7 @@ class LanguagesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._languages_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -469,7 +469,7 @@ class LanguagesApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _languages_delete_preview_list_serialize(
+    def _delete_preview_list_serialize(
         self,
         id,
         limit,
@@ -526,7 +526,7 @@ class LanguagesApi:
             _request_auth=_request_auth,
         )
 
-    def languages_delete_preview_list_iterator(
+    def delete_preview_list_iterator(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this languages.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -544,11 +544,11 @@ class LanguagesApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[DeletePreview, PaginatedDeletePreviewList], None, None]':
         _params = locals()
-        for page in get_all_pages(self.api_client, LanguagesApi.languages_delete_preview_list, **_params):
+        for page in get_all_pages(self.api_client, LanguagesApi.delete_preview_list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def languages_destroy(
+    def destroy(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this languages.')],
         _request_timeout: Union[
@@ -561,7 +561,7 @@ class LanguagesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> None:
-        """languages_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this languages. (required)
@@ -588,7 +588,7 @@ class LanguagesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._languages_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -602,7 +602,7 @@ class LanguagesApi:
             response_types_map=_response_types_map,
         ).data
 
-    def languages_destroy_with_http_info(
+    def destroy_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this languages.')],
         _request_timeout: Union[
@@ -615,7 +615,7 @@ class LanguagesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[None]:
-        """languages_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this languages. (required)
@@ -642,7 +642,7 @@ class LanguagesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._languages_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -656,7 +656,7 @@ class LanguagesApi:
             response_types_map=_response_types_map,
         )
 
-    def languages_destroy_without_preload_content(
+    def destroy_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this languages.')],
         _request_timeout: Union[
@@ -669,7 +669,7 @@ class LanguagesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """languages_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this languages. (required)
@@ -696,7 +696,7 @@ class LanguagesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._languages_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -706,7 +706,7 @@ class LanguagesApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _languages_destroy_serialize(
+    def _destroy_serialize(
         self,
         id,
         _request_auth,
@@ -751,7 +751,7 @@ class LanguagesApi:
             _request_auth=_request_auth,
         )
 
-    def languages_list(
+    def list(
         self,
         id: Optional[StrictInt] = None,
         language: Optional[StrictInt] = None,
@@ -774,7 +774,7 @@ class LanguagesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedLanguageList:
-        """languages_list
+        """list
 
 
         :param id:
@@ -811,7 +811,7 @@ class LanguagesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._languages_list_serialize(
+        _param = self._list_serialize(
             id=id,
             language=language,
             limit=limit,
@@ -834,7 +834,7 @@ class LanguagesApi:
             response_types_map=_response_types_map,
         ).data
 
-    def languages_list_with_http_info(
+    def list_with_http_info(
         self,
         id: Optional[StrictInt] = None,
         language: Optional[StrictInt] = None,
@@ -857,7 +857,7 @@ class LanguagesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedLanguageList]:
-        """languages_list
+        """list
 
 
         :param id:
@@ -894,7 +894,7 @@ class LanguagesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._languages_list_serialize(
+        _param = self._list_serialize(
             id=id,
             language=language,
             limit=limit,
@@ -917,7 +917,7 @@ class LanguagesApi:
             response_types_map=_response_types_map,
         )
 
-    def languages_list_without_preload_content(
+    def list_without_preload_content(
         self,
         id: Optional[StrictInt] = None,
         language: Optional[StrictInt] = None,
@@ -940,7 +940,7 @@ class LanguagesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """languages_list
+        """list
 
 
         :param id:
@@ -977,7 +977,7 @@ class LanguagesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._languages_list_serialize(
+        _param = self._list_serialize(
             id=id,
             language=language,
             limit=limit,
@@ -996,7 +996,7 @@ class LanguagesApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _languages_list_serialize(
+    def _list_serialize(
         self,
         id,
         language,
@@ -1068,7 +1068,7 @@ class LanguagesApi:
             _request_auth=_request_auth,
         )
 
-    def languages_list_iterator(
+    def list_iterator(
         self,
         id: Optional[StrictInt] = None,
         language: Optional[StrictInt] = None,
@@ -1092,11 +1092,11 @@ class LanguagesApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[Language, PaginatedLanguageList], None, None]':
         _params = locals()
-        for page in get_all_pages(self.api_client, LanguagesApi.languages_list, **_params):
+        for page in get_all_pages(self.api_client, LanguagesApi.list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def languages_partial_update(
+    def partial_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this languages.')],
         patched_language_request: Optional[PatchedLanguageRequest] = None,
@@ -1110,7 +1110,7 @@ class LanguagesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Language:
-        """languages_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this languages. (required)
@@ -1139,7 +1139,7 @@ class LanguagesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._languages_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_language_request=patched_language_request,
             _request_auth=_request_auth,
@@ -1158,7 +1158,7 @@ class LanguagesApi:
             response_types_map=_response_types_map,
         ).data
 
-    def languages_partial_update_with_http_info(
+    def partial_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this languages.')],
         patched_language_request: Optional[PatchedLanguageRequest] = None,
@@ -1172,7 +1172,7 @@ class LanguagesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Language]:
-        """languages_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this languages. (required)
@@ -1201,7 +1201,7 @@ class LanguagesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._languages_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_language_request=patched_language_request,
             _request_auth=_request_auth,
@@ -1220,7 +1220,7 @@ class LanguagesApi:
             response_types_map=_response_types_map,
         )
 
-    def languages_partial_update_without_preload_content(
+    def partial_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this languages.')],
         patched_language_request: Optional[PatchedLanguageRequest] = None,
@@ -1234,7 +1234,7 @@ class LanguagesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """languages_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this languages. (required)
@@ -1263,7 +1263,7 @@ class LanguagesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._languages_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_language_request=patched_language_request,
             _request_auth=_request_auth,
@@ -1278,7 +1278,7 @@ class LanguagesApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _languages_partial_update_serialize(
+    def _partial_update_serialize(
         self,
         id,
         patched_language_request,
@@ -1340,7 +1340,7 @@ class LanguagesApi:
             _request_auth=_request_auth,
         )
 
-    def languages_retrieve(
+    def retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this languages.')],
         prefetch: Annotated[
@@ -1357,7 +1357,7 @@ class LanguagesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Language:
-        """languages_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this languages. (required)
@@ -1386,7 +1386,7 @@ class LanguagesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._languages_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id,
             prefetch=prefetch,
             _request_auth=_request_auth,
@@ -1405,7 +1405,7 @@ class LanguagesApi:
             response_types_map=_response_types_map,
         ).data
 
-    def languages_retrieve_with_http_info(
+    def retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this languages.')],
         prefetch: Annotated[
@@ -1422,7 +1422,7 @@ class LanguagesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Language]:
-        """languages_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this languages. (required)
@@ -1451,7 +1451,7 @@ class LanguagesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._languages_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id,
             prefetch=prefetch,
             _request_auth=_request_auth,
@@ -1470,7 +1470,7 @@ class LanguagesApi:
             response_types_map=_response_types_map,
         )
 
-    def languages_retrieve_without_preload_content(
+    def retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this languages.')],
         prefetch: Annotated[
@@ -1487,7 +1487,7 @@ class LanguagesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """languages_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this languages. (required)
@@ -1516,7 +1516,7 @@ class LanguagesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._languages_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id,
             prefetch=prefetch,
             _request_auth=_request_auth,
@@ -1531,7 +1531,7 @@ class LanguagesApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _languages_retrieve_serialize(
+    def _retrieve_serialize(
         self,
         id,
         prefetch,
@@ -1586,7 +1586,7 @@ class LanguagesApi:
             _request_auth=_request_auth,
         )
 
-    def languages_update(
+    def update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this languages.')],
         language_request: LanguageRequest,
@@ -1600,7 +1600,7 @@ class LanguagesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Language:
-        """languages_update
+        """update
 
 
         :param id: A unique integer value identifying this languages. (required)
@@ -1629,7 +1629,7 @@ class LanguagesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._languages_update_serialize(
+        _param = self._update_serialize(
             id=id,
             language_request=language_request,
             _request_auth=_request_auth,
@@ -1648,7 +1648,7 @@ class LanguagesApi:
             response_types_map=_response_types_map,
         ).data
 
-    def languages_update_with_http_info(
+    def update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this languages.')],
         language_request: LanguageRequest,
@@ -1662,7 +1662,7 @@ class LanguagesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Language]:
-        """languages_update
+        """update
 
 
         :param id: A unique integer value identifying this languages. (required)
@@ -1691,7 +1691,7 @@ class LanguagesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._languages_update_serialize(
+        _param = self._update_serialize(
             id=id,
             language_request=language_request,
             _request_auth=_request_auth,
@@ -1710,7 +1710,7 @@ class LanguagesApi:
             response_types_map=_response_types_map,
         )
 
-    def languages_update_without_preload_content(
+    def update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this languages.')],
         language_request: LanguageRequest,
@@ -1724,7 +1724,7 @@ class LanguagesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """languages_update
+        """update
 
 
         :param id: A unique integer value identifying this languages. (required)
@@ -1753,7 +1753,7 @@ class LanguagesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._languages_update_serialize(
+        _param = self._update_serialize(
             id=id,
             language_request=language_request,
             _request_auth=_request_auth,
@@ -1768,7 +1768,7 @@ class LanguagesApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _languages_update_serialize(
+    def _update_serialize(
         self,
         id,
         language_request,

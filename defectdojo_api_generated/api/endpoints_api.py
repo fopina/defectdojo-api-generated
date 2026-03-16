@@ -42,7 +42,7 @@ class EndpointsApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    def endpoints_create(
+    def create(
         self,
         endpoint_request: Optional[EndpointRequest] = None,
         _request_timeout: Union[
@@ -55,7 +55,7 @@ class EndpointsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Endpoint:
-        """endpoints_create
+        """create
 
 
         :param endpoint_request:
@@ -82,7 +82,7 @@ class EndpointsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._endpoints_create_serialize(
+        _param = self._create_serialize(
             endpoint_request=endpoint_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -100,7 +100,7 @@ class EndpointsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def endpoints_create_with_http_info(
+    def create_with_http_info(
         self,
         endpoint_request: Optional[EndpointRequest] = None,
         _request_timeout: Union[
@@ -113,7 +113,7 @@ class EndpointsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Endpoint]:
-        """endpoints_create
+        """create
 
 
         :param endpoint_request:
@@ -140,7 +140,7 @@ class EndpointsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._endpoints_create_serialize(
+        _param = self._create_serialize(
             endpoint_request=endpoint_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -158,7 +158,7 @@ class EndpointsApi:
             response_types_map=_response_types_map,
         )
 
-    def endpoints_create_without_preload_content(
+    def create_without_preload_content(
         self,
         endpoint_request: Optional[EndpointRequest] = None,
         _request_timeout: Union[
@@ -171,7 +171,7 @@ class EndpointsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """endpoints_create
+        """create
 
 
         :param endpoint_request:
@@ -198,7 +198,7 @@ class EndpointsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._endpoints_create_serialize(
+        _param = self._create_serialize(
             endpoint_request=endpoint_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -212,7 +212,7 @@ class EndpointsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _endpoints_create_serialize(
+    def _create_serialize(
         self,
         endpoint_request,
         _request_auth,
@@ -271,7 +271,7 @@ class EndpointsApi:
             _request_auth=_request_auth,
         )
 
-    def endpoints_delete_preview_list(
+    def delete_preview_list(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this endpoint.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -288,7 +288,7 @@ class EndpointsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedDeletePreviewList:
-        """endpoints_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this endpoint. (required)
@@ -319,7 +319,7 @@ class EndpointsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._endpoints_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -339,7 +339,7 @@ class EndpointsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def endpoints_delete_preview_list_with_http_info(
+    def delete_preview_list_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this endpoint.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -356,7 +356,7 @@ class EndpointsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedDeletePreviewList]:
-        """endpoints_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this endpoint. (required)
@@ -387,7 +387,7 @@ class EndpointsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._endpoints_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -407,7 +407,7 @@ class EndpointsApi:
             response_types_map=_response_types_map,
         )
 
-    def endpoints_delete_preview_list_without_preload_content(
+    def delete_preview_list_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this endpoint.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -424,7 +424,7 @@ class EndpointsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """endpoints_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this endpoint. (required)
@@ -455,7 +455,7 @@ class EndpointsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._endpoints_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -471,7 +471,7 @@ class EndpointsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _endpoints_delete_preview_list_serialize(
+    def _delete_preview_list_serialize(
         self,
         id,
         limit,
@@ -528,7 +528,7 @@ class EndpointsApi:
             _request_auth=_request_auth,
         )
 
-    def endpoints_delete_preview_list_iterator(
+    def delete_preview_list_iterator(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this endpoint.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -546,11 +546,11 @@ class EndpointsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[DeletePreview, PaginatedDeletePreviewList], None, None]':
         _params = locals()
-        for page in get_all_pages(self.api_client, EndpointsApi.endpoints_delete_preview_list, **_params):
+        for page in get_all_pages(self.api_client, EndpointsApi.delete_preview_list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def endpoints_destroy(
+    def destroy(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this endpoint.')],
         _request_timeout: Union[
@@ -563,7 +563,7 @@ class EndpointsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> None:
-        """endpoints_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this endpoint. (required)
@@ -590,7 +590,7 @@ class EndpointsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._endpoints_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -604,7 +604,7 @@ class EndpointsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def endpoints_destroy_with_http_info(
+    def destroy_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this endpoint.')],
         _request_timeout: Union[
@@ -617,7 +617,7 @@ class EndpointsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[None]:
-        """endpoints_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this endpoint. (required)
@@ -644,7 +644,7 @@ class EndpointsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._endpoints_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -658,7 +658,7 @@ class EndpointsApi:
             response_types_map=_response_types_map,
         )
 
-    def endpoints_destroy_without_preload_content(
+    def destroy_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this endpoint.')],
         _request_timeout: Union[
@@ -671,7 +671,7 @@ class EndpointsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """endpoints_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this endpoint. (required)
@@ -698,7 +698,7 @@ class EndpointsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._endpoints_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -708,7 +708,7 @@ class EndpointsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _endpoints_destroy_serialize(
+    def _destroy_serialize(
         self,
         id,
         _request_auth,
@@ -753,7 +753,7 @@ class EndpointsApi:
             _request_auth=_request_auth,
         )
 
-    def endpoints_generate_report_create(
+    def generate_report_create(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this endpoint.')],
         report_generate_option_request: Optional[ReportGenerateOptionRequest] = None,
@@ -767,7 +767,7 @@ class EndpointsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ReportGenerate:
-        """endpoints_generate_report_create
+        """generate_report_create
 
 
         :param id: A unique integer value identifying this endpoint. (required)
@@ -796,7 +796,7 @@ class EndpointsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._endpoints_generate_report_create_serialize(
+        _param = self._generate_report_create_serialize(
             id=id,
             report_generate_option_request=report_generate_option_request,
             _request_auth=_request_auth,
@@ -815,7 +815,7 @@ class EndpointsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def endpoints_generate_report_create_with_http_info(
+    def generate_report_create_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this endpoint.')],
         report_generate_option_request: Optional[ReportGenerateOptionRequest] = None,
@@ -829,7 +829,7 @@ class EndpointsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[ReportGenerate]:
-        """endpoints_generate_report_create
+        """generate_report_create
 
 
         :param id: A unique integer value identifying this endpoint. (required)
@@ -858,7 +858,7 @@ class EndpointsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._endpoints_generate_report_create_serialize(
+        _param = self._generate_report_create_serialize(
             id=id,
             report_generate_option_request=report_generate_option_request,
             _request_auth=_request_auth,
@@ -877,7 +877,7 @@ class EndpointsApi:
             response_types_map=_response_types_map,
         )
 
-    def endpoints_generate_report_create_without_preload_content(
+    def generate_report_create_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this endpoint.')],
         report_generate_option_request: Optional[ReportGenerateOptionRequest] = None,
@@ -891,7 +891,7 @@ class EndpointsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """endpoints_generate_report_create
+        """generate_report_create
 
 
         :param id: A unique integer value identifying this endpoint. (required)
@@ -920,7 +920,7 @@ class EndpointsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._endpoints_generate_report_create_serialize(
+        _param = self._generate_report_create_serialize(
             id=id,
             report_generate_option_request=report_generate_option_request,
             _request_auth=_request_auth,
@@ -935,7 +935,7 @@ class EndpointsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _endpoints_generate_report_create_serialize(
+    def _generate_report_create_serialize(
         self,
         id,
         report_generate_option_request,
@@ -997,7 +997,7 @@ class EndpointsApi:
             _request_auth=_request_auth,
         )
 
-    def endpoints_list(
+    def list(
         self,
         fragment: Optional[StrictStr] = None,
         has_tags: Annotated[Optional[StrictBool], Field(description='Has tags')] = None,
@@ -1042,7 +1042,7 @@ class EndpointsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedEndpointList:
-        """endpoints_list
+        """list
 
 
         :param fragment:
@@ -1103,7 +1103,7 @@ class EndpointsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._endpoints_list_serialize(
+        _param = self._list_serialize(
             fragment=fragment,
             has_tags=has_tags,
             host=host,
@@ -1138,7 +1138,7 @@ class EndpointsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def endpoints_list_with_http_info(
+    def list_with_http_info(
         self,
         fragment: Optional[StrictStr] = None,
         has_tags: Annotated[Optional[StrictBool], Field(description='Has tags')] = None,
@@ -1183,7 +1183,7 @@ class EndpointsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedEndpointList]:
-        """endpoints_list
+        """list
 
 
         :param fragment:
@@ -1244,7 +1244,7 @@ class EndpointsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._endpoints_list_serialize(
+        _param = self._list_serialize(
             fragment=fragment,
             has_tags=has_tags,
             host=host,
@@ -1279,7 +1279,7 @@ class EndpointsApi:
             response_types_map=_response_types_map,
         )
 
-    def endpoints_list_without_preload_content(
+    def list_without_preload_content(
         self,
         fragment: Optional[StrictStr] = None,
         has_tags: Annotated[Optional[StrictBool], Field(description='Has tags')] = None,
@@ -1324,7 +1324,7 @@ class EndpointsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """endpoints_list
+        """list
 
 
         :param fragment:
@@ -1385,7 +1385,7 @@ class EndpointsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._endpoints_list_serialize(
+        _param = self._list_serialize(
             fragment=fragment,
             has_tags=has_tags,
             host=host,
@@ -1416,7 +1416,7 @@ class EndpointsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _endpoints_list_serialize(
+    def _list_serialize(
         self,
         fragment,
         has_tags,
@@ -1539,7 +1539,7 @@ class EndpointsApi:
             _request_auth=_request_auth,
         )
 
-    def endpoints_list_iterator(
+    def list_iterator(
         self,
         fragment: Optional[StrictStr] = None,
         has_tags: Annotated[Optional[StrictBool], Field(description='Has tags')] = None,
@@ -1585,11 +1585,11 @@ class EndpointsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[Endpoint, PaginatedEndpointList], None, None]':
         _params = locals()
-        for page in get_all_pages(self.api_client, EndpointsApi.endpoints_list, **_params):
+        for page in get_all_pages(self.api_client, EndpointsApi.list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def endpoints_partial_update(
+    def partial_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this endpoint.')],
         patched_endpoint_request: Optional[PatchedEndpointRequest] = None,
@@ -1603,7 +1603,7 @@ class EndpointsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Endpoint:
-        """endpoints_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this endpoint. (required)
@@ -1632,7 +1632,7 @@ class EndpointsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._endpoints_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_endpoint_request=patched_endpoint_request,
             _request_auth=_request_auth,
@@ -1651,7 +1651,7 @@ class EndpointsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def endpoints_partial_update_with_http_info(
+    def partial_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this endpoint.')],
         patched_endpoint_request: Optional[PatchedEndpointRequest] = None,
@@ -1665,7 +1665,7 @@ class EndpointsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Endpoint]:
-        """endpoints_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this endpoint. (required)
@@ -1694,7 +1694,7 @@ class EndpointsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._endpoints_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_endpoint_request=patched_endpoint_request,
             _request_auth=_request_auth,
@@ -1713,7 +1713,7 @@ class EndpointsApi:
             response_types_map=_response_types_map,
         )
 
-    def endpoints_partial_update_without_preload_content(
+    def partial_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this endpoint.')],
         patched_endpoint_request: Optional[PatchedEndpointRequest] = None,
@@ -1727,7 +1727,7 @@ class EndpointsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """endpoints_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this endpoint. (required)
@@ -1756,7 +1756,7 @@ class EndpointsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._endpoints_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_endpoint_request=patched_endpoint_request,
             _request_auth=_request_auth,
@@ -1771,7 +1771,7 @@ class EndpointsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _endpoints_partial_update_serialize(
+    def _partial_update_serialize(
         self,
         id,
         patched_endpoint_request,
@@ -1833,7 +1833,7 @@ class EndpointsApi:
             _request_auth=_request_auth,
         )
 
-    def endpoints_retrieve(
+    def retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this endpoint.')],
         _request_timeout: Union[
@@ -1846,7 +1846,7 @@ class EndpointsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Endpoint:
-        """endpoints_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this endpoint. (required)
@@ -1873,7 +1873,7 @@ class EndpointsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._endpoints_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1887,7 +1887,7 @@ class EndpointsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def endpoints_retrieve_with_http_info(
+    def retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this endpoint.')],
         _request_timeout: Union[
@@ -1900,7 +1900,7 @@ class EndpointsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Endpoint]:
-        """endpoints_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this endpoint. (required)
@@ -1927,7 +1927,7 @@ class EndpointsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._endpoints_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1941,7 +1941,7 @@ class EndpointsApi:
             response_types_map=_response_types_map,
         )
 
-    def endpoints_retrieve_without_preload_content(
+    def retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this endpoint.')],
         _request_timeout: Union[
@@ -1954,7 +1954,7 @@ class EndpointsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """endpoints_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this endpoint. (required)
@@ -1981,7 +1981,7 @@ class EndpointsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._endpoints_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1991,7 +1991,7 @@ class EndpointsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _endpoints_retrieve_serialize(
+    def _retrieve_serialize(
         self,
         id,
         _request_auth,
@@ -2040,7 +2040,7 @@ class EndpointsApi:
             _request_auth=_request_auth,
         )
 
-    def endpoints_update(
+    def update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this endpoint.')],
         endpoint_request: Optional[EndpointRequest] = None,
@@ -2054,7 +2054,7 @@ class EndpointsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Endpoint:
-        """endpoints_update
+        """update
 
 
         :param id: A unique integer value identifying this endpoint. (required)
@@ -2083,7 +2083,7 @@ class EndpointsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._endpoints_update_serialize(
+        _param = self._update_serialize(
             id=id,
             endpoint_request=endpoint_request,
             _request_auth=_request_auth,
@@ -2102,7 +2102,7 @@ class EndpointsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def endpoints_update_with_http_info(
+    def update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this endpoint.')],
         endpoint_request: Optional[EndpointRequest] = None,
@@ -2116,7 +2116,7 @@ class EndpointsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Endpoint]:
-        """endpoints_update
+        """update
 
 
         :param id: A unique integer value identifying this endpoint. (required)
@@ -2145,7 +2145,7 @@ class EndpointsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._endpoints_update_serialize(
+        _param = self._update_serialize(
             id=id,
             endpoint_request=endpoint_request,
             _request_auth=_request_auth,
@@ -2164,7 +2164,7 @@ class EndpointsApi:
             response_types_map=_response_types_map,
         )
 
-    def endpoints_update_without_preload_content(
+    def update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this endpoint.')],
         endpoint_request: Optional[EndpointRequest] = None,
@@ -2178,7 +2178,7 @@ class EndpointsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """endpoints_update
+        """update
 
 
         :param id: A unique integer value identifying this endpoint. (required)
@@ -2207,7 +2207,7 @@ class EndpointsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._endpoints_update_serialize(
+        _param = self._update_serialize(
             id=id,
             endpoint_request=endpoint_request,
             _request_auth=_request_auth,
@@ -2222,7 +2222,7 @@ class EndpointsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _endpoints_update_serialize(
+    def _update_serialize(
         self,
         id,
         endpoint_request,

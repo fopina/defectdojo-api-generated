@@ -24,16 +24,16 @@ class TestSystemSettingsApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_system_settings_list(self) -> None:
-        """Test case for system_settings_list"""
+    def test_list(self) -> None:
+        """Test case for list"""
         pass
 
-    def test_system_settings_partial_update(self) -> None:
-        """Test case for system_settings_partial_update"""
+    def test_partial_update(self) -> None:
+        """Test case for partial_update"""
         pass
 
-    def test_system_settings_update(self) -> None:
-        """Test case for system_settings_update"""
+    def test_update(self) -> None:
+        """Test case for update"""
         pass
 
 

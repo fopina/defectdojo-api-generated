@@ -40,7 +40,7 @@ class QuestionnaireAnsweredQuestionnairesApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    def questionnaire_answered_questionnaires_list(
+    def list(
         self,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
         offset: Annotated[
@@ -60,7 +60,7 @@ class QuestionnaireAnsweredQuestionnairesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedQuestionnaireAnsweredSurveyList:
-        """(Deprecated) questionnaire_answered_questionnaires_list
+        """(Deprecated) list
 
         This endpoint is deprecated and will be removed on 2026-06-01.
 
@@ -93,7 +93,7 @@ class QuestionnaireAnsweredQuestionnairesApi:
         """  # noqa: E501
         warnings.warn('GET /api/v2/questionnaire_answered_questionnaires/ is deprecated.', DeprecationWarning)
 
-        _param = self._questionnaire_answered_questionnaires_list_serialize(
+        _param = self._list_serialize(
             limit=limit,
             offset=offset,
             prefetch=prefetch,
@@ -113,7 +113,7 @@ class QuestionnaireAnsweredQuestionnairesApi:
             response_types_map=_response_types_map,
         ).data
 
-    def questionnaire_answered_questionnaires_list_with_http_info(
+    def list_with_http_info(
         self,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
         offset: Annotated[
@@ -133,7 +133,7 @@ class QuestionnaireAnsweredQuestionnairesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedQuestionnaireAnsweredSurveyList]:
-        """(Deprecated) questionnaire_answered_questionnaires_list
+        """(Deprecated) list
 
         This endpoint is deprecated and will be removed on 2026-06-01.
 
@@ -166,7 +166,7 @@ class QuestionnaireAnsweredQuestionnairesApi:
         """  # noqa: E501
         warnings.warn('GET /api/v2/questionnaire_answered_questionnaires/ is deprecated.', DeprecationWarning)
 
-        _param = self._questionnaire_answered_questionnaires_list_serialize(
+        _param = self._list_serialize(
             limit=limit,
             offset=offset,
             prefetch=prefetch,
@@ -186,7 +186,7 @@ class QuestionnaireAnsweredQuestionnairesApi:
             response_types_map=_response_types_map,
         )
 
-    def questionnaire_answered_questionnaires_list_without_preload_content(
+    def list_without_preload_content(
         self,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
         offset: Annotated[
@@ -206,7 +206,7 @@ class QuestionnaireAnsweredQuestionnairesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """(Deprecated) questionnaire_answered_questionnaires_list
+        """(Deprecated) list
 
         This endpoint is deprecated and will be removed on 2026-06-01.
 
@@ -239,7 +239,7 @@ class QuestionnaireAnsweredQuestionnairesApi:
         """  # noqa: E501
         warnings.warn('GET /api/v2/questionnaire_answered_questionnaires/ is deprecated.', DeprecationWarning)
 
-        _param = self._questionnaire_answered_questionnaires_list_serialize(
+        _param = self._list_serialize(
             limit=limit,
             offset=offset,
             prefetch=prefetch,
@@ -255,7 +255,7 @@ class QuestionnaireAnsweredQuestionnairesApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _questionnaire_answered_questionnaires_list_serialize(
+    def _list_serialize(
         self,
         limit,
         offset,
@@ -315,7 +315,7 @@ class QuestionnaireAnsweredQuestionnairesApi:
             _request_auth=_request_auth,
         )
 
-    def questionnaire_answered_questionnaires_list_iterator(
+    def list_iterator(
         self,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
         offset: Annotated[
@@ -336,15 +336,11 @@ class QuestionnaireAnsweredQuestionnairesApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[QuestionnaireAnsweredSurvey, PaginatedQuestionnaireAnsweredSurveyList], None, None]':
         _params = locals()
-        for page in get_all_pages(
-            self.api_client,
-            QuestionnaireAnsweredQuestionnairesApi.questionnaire_answered_questionnaires_list,
-            **_params,
-        ):
+        for page in get_all_pages(self.api_client, QuestionnaireAnsweredQuestionnairesApi.list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def questionnaire_answered_questionnaires_retrieve(
+    def retrieve(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this Answered Engagement Survey.')
@@ -363,7 +359,7 @@ class QuestionnaireAnsweredQuestionnairesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> QuestionnaireAnsweredSurvey:
-        """(Deprecated) questionnaire_answered_questionnaires_retrieve
+        """(Deprecated) retrieve
 
         This endpoint is deprecated and will be removed on 2026-06-01.
 
@@ -394,7 +390,7 @@ class QuestionnaireAnsweredQuestionnairesApi:
         """  # noqa: E501
         warnings.warn('GET /api/v2/questionnaire_answered_questionnaires/{id}/ is deprecated.', DeprecationWarning)
 
-        _param = self._questionnaire_answered_questionnaires_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id,
             prefetch=prefetch,
             _request_auth=_request_auth,
@@ -413,7 +409,7 @@ class QuestionnaireAnsweredQuestionnairesApi:
             response_types_map=_response_types_map,
         ).data
 
-    def questionnaire_answered_questionnaires_retrieve_with_http_info(
+    def retrieve_with_http_info(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this Answered Engagement Survey.')
@@ -432,7 +428,7 @@ class QuestionnaireAnsweredQuestionnairesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[QuestionnaireAnsweredSurvey]:
-        """(Deprecated) questionnaire_answered_questionnaires_retrieve
+        """(Deprecated) retrieve
 
         This endpoint is deprecated and will be removed on 2026-06-01.
 
@@ -463,7 +459,7 @@ class QuestionnaireAnsweredQuestionnairesApi:
         """  # noqa: E501
         warnings.warn('GET /api/v2/questionnaire_answered_questionnaires/{id}/ is deprecated.', DeprecationWarning)
 
-        _param = self._questionnaire_answered_questionnaires_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id,
             prefetch=prefetch,
             _request_auth=_request_auth,
@@ -482,7 +478,7 @@ class QuestionnaireAnsweredQuestionnairesApi:
             response_types_map=_response_types_map,
         )
 
-    def questionnaire_answered_questionnaires_retrieve_without_preload_content(
+    def retrieve_without_preload_content(
         self,
         id: Annotated[
             StrictInt, Field(description='A unique integer value identifying this Answered Engagement Survey.')
@@ -501,7 +497,7 @@ class QuestionnaireAnsweredQuestionnairesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """(Deprecated) questionnaire_answered_questionnaires_retrieve
+        """(Deprecated) retrieve
 
         This endpoint is deprecated and will be removed on 2026-06-01.
 
@@ -532,7 +528,7 @@ class QuestionnaireAnsweredQuestionnairesApi:
         """  # noqa: E501
         warnings.warn('GET /api/v2/questionnaire_answered_questionnaires/{id}/ is deprecated.', DeprecationWarning)
 
-        _param = self._questionnaire_answered_questionnaires_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id,
             prefetch=prefetch,
             _request_auth=_request_auth,
@@ -547,7 +543,7 @@ class QuestionnaireAnsweredQuestionnairesApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _questionnaire_answered_questionnaires_retrieve_serialize(
+    def _retrieve_serialize(
         self,
         id,
         prefetch,

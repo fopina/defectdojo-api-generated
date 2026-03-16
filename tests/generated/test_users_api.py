@@ -24,36 +24,36 @@ class TestUsersApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_users_create(self) -> None:
-        """Test case for users_create"""
+    def test_create(self) -> None:
+        """Test case for create"""
         pass
 
-    def test_users_delete_preview_list(self) -> None:
-        """Test case for users_delete_preview_list"""
+    def test_delete_preview_list(self) -> None:
+        """Test case for delete_preview_list"""
         pass
 
-    def test_users_destroy(self) -> None:
-        """Test case for users_destroy"""
+    def test_destroy(self) -> None:
+        """Test case for destroy"""
         pass
 
-    def test_users_list(self) -> None:
-        """Test case for users_list"""
+    def test_list(self) -> None:
+        """Test case for list"""
         pass
 
-    def test_users_partial_update(self) -> None:
-        """Test case for users_partial_update"""
+    def test_partial_update(self) -> None:
+        """Test case for partial_update"""
         pass
 
-    def test_users_reset_api_token_create(self) -> None:
-        """Test case for users_reset_api_token_create"""
+    def test_reset_api_token_create(self) -> None:
+        """Test case for reset_api_token_create"""
         pass
 
-    def test_users_retrieve(self) -> None:
-        """Test case for users_retrieve"""
+    def test_retrieve(self) -> None:
+        """Test case for retrieve"""
         pass
 
-    def test_users_update(self) -> None:
-        """Test case for users_update"""
+    def test_update(self) -> None:
+        """Test case for update"""
         pass
 
 

@@ -39,7 +39,7 @@ class AssetGroupsApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    def asset_groups_create(
+    def create(
         self,
         asset_group_request: AssetGroupRequest,
         _request_timeout: Union[
@@ -52,7 +52,7 @@ class AssetGroupsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AssetGroup:
-        """asset_groups_create
+        """create
 
 
         :param asset_group_request: (required)
@@ -79,7 +79,7 @@ class AssetGroupsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._asset_groups_create_serialize(
+        _param = self._create_serialize(
             asset_group_request=asset_group_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -97,7 +97,7 @@ class AssetGroupsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def asset_groups_create_with_http_info(
+    def create_with_http_info(
         self,
         asset_group_request: AssetGroupRequest,
         _request_timeout: Union[
@@ -110,7 +110,7 @@ class AssetGroupsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AssetGroup]:
-        """asset_groups_create
+        """create
 
 
         :param asset_group_request: (required)
@@ -137,7 +137,7 @@ class AssetGroupsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._asset_groups_create_serialize(
+        _param = self._create_serialize(
             asset_group_request=asset_group_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -155,7 +155,7 @@ class AssetGroupsApi:
             response_types_map=_response_types_map,
         )
 
-    def asset_groups_create_without_preload_content(
+    def create_without_preload_content(
         self,
         asset_group_request: AssetGroupRequest,
         _request_timeout: Union[
@@ -168,7 +168,7 @@ class AssetGroupsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """asset_groups_create
+        """create
 
 
         :param asset_group_request: (required)
@@ -195,7 +195,7 @@ class AssetGroupsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._asset_groups_create_serialize(
+        _param = self._create_serialize(
             asset_group_request=asset_group_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -209,7 +209,7 @@ class AssetGroupsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _asset_groups_create_serialize(
+    def _create_serialize(
         self,
         asset_group_request,
         _request_auth,
@@ -268,7 +268,7 @@ class AssetGroupsApi:
             _request_auth=_request_auth,
         )
 
-    def asset_groups_delete_preview_list(
+    def delete_preview_list(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ group.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -285,7 +285,7 @@ class AssetGroupsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedDeletePreviewList:
-        """asset_groups_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this product_ group. (required)
@@ -316,7 +316,7 @@ class AssetGroupsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._asset_groups_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -336,7 +336,7 @@ class AssetGroupsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def asset_groups_delete_preview_list_with_http_info(
+    def delete_preview_list_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ group.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -353,7 +353,7 @@ class AssetGroupsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedDeletePreviewList]:
-        """asset_groups_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this product_ group. (required)
@@ -384,7 +384,7 @@ class AssetGroupsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._asset_groups_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -404,7 +404,7 @@ class AssetGroupsApi:
             response_types_map=_response_types_map,
         )
 
-    def asset_groups_delete_preview_list_without_preload_content(
+    def delete_preview_list_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ group.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -421,7 +421,7 @@ class AssetGroupsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """asset_groups_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this product_ group. (required)
@@ -452,7 +452,7 @@ class AssetGroupsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._asset_groups_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -468,7 +468,7 @@ class AssetGroupsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _asset_groups_delete_preview_list_serialize(
+    def _delete_preview_list_serialize(
         self,
         id,
         limit,
@@ -525,7 +525,7 @@ class AssetGroupsApi:
             _request_auth=_request_auth,
         )
 
-    def asset_groups_delete_preview_list_iterator(
+    def delete_preview_list_iterator(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ group.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -543,11 +543,11 @@ class AssetGroupsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[DeletePreview, PaginatedDeletePreviewList], None, None]':
         _params = locals()
-        for page in get_all_pages(self.api_client, AssetGroupsApi.asset_groups_delete_preview_list, **_params):
+        for page in get_all_pages(self.api_client, AssetGroupsApi.delete_preview_list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def asset_groups_destroy(
+    def destroy(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ group.')],
         _request_timeout: Union[
@@ -560,7 +560,7 @@ class AssetGroupsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> None:
-        """asset_groups_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this product_ group. (required)
@@ -587,7 +587,7 @@ class AssetGroupsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._asset_groups_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -601,7 +601,7 @@ class AssetGroupsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def asset_groups_destroy_with_http_info(
+    def destroy_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ group.')],
         _request_timeout: Union[
@@ -614,7 +614,7 @@ class AssetGroupsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[None]:
-        """asset_groups_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this product_ group. (required)
@@ -641,7 +641,7 @@ class AssetGroupsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._asset_groups_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -655,7 +655,7 @@ class AssetGroupsApi:
             response_types_map=_response_types_map,
         )
 
-    def asset_groups_destroy_without_preload_content(
+    def destroy_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ group.')],
         _request_timeout: Union[
@@ -668,7 +668,7 @@ class AssetGroupsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """asset_groups_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this product_ group. (required)
@@ -695,7 +695,7 @@ class AssetGroupsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._asset_groups_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -705,7 +705,7 @@ class AssetGroupsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _asset_groups_destroy_serialize(
+    def _destroy_serialize(
         self,
         id,
         _request_auth,
@@ -750,7 +750,7 @@ class AssetGroupsApi:
             _request_auth=_request_auth,
         )
 
-    def asset_groups_list(
+    def list(
         self,
         asset_id: Optional[Union[StrictFloat, StrictInt]] = None,
         group_id: Optional[StrictInt] = None,
@@ -773,7 +773,7 @@ class AssetGroupsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedAssetGroupList:
-        """asset_groups_list
+        """list
 
 
         :param asset_id:
@@ -810,7 +810,7 @@ class AssetGroupsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._asset_groups_list_serialize(
+        _param = self._list_serialize(
             asset_id=asset_id,
             group_id=group_id,
             id=id,
@@ -833,7 +833,7 @@ class AssetGroupsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def asset_groups_list_with_http_info(
+    def list_with_http_info(
         self,
         asset_id: Optional[Union[StrictFloat, StrictInt]] = None,
         group_id: Optional[StrictInt] = None,
@@ -856,7 +856,7 @@ class AssetGroupsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedAssetGroupList]:
-        """asset_groups_list
+        """list
 
 
         :param asset_id:
@@ -893,7 +893,7 @@ class AssetGroupsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._asset_groups_list_serialize(
+        _param = self._list_serialize(
             asset_id=asset_id,
             group_id=group_id,
             id=id,
@@ -916,7 +916,7 @@ class AssetGroupsApi:
             response_types_map=_response_types_map,
         )
 
-    def asset_groups_list_without_preload_content(
+    def list_without_preload_content(
         self,
         asset_id: Optional[Union[StrictFloat, StrictInt]] = None,
         group_id: Optional[StrictInt] = None,
@@ -939,7 +939,7 @@ class AssetGroupsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """asset_groups_list
+        """list
 
 
         :param asset_id:
@@ -976,7 +976,7 @@ class AssetGroupsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._asset_groups_list_serialize(
+        _param = self._list_serialize(
             asset_id=asset_id,
             group_id=group_id,
             id=id,
@@ -995,7 +995,7 @@ class AssetGroupsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _asset_groups_list_serialize(
+    def _list_serialize(
         self,
         asset_id,
         group_id,
@@ -1067,7 +1067,7 @@ class AssetGroupsApi:
             _request_auth=_request_auth,
         )
 
-    def asset_groups_list_iterator(
+    def list_iterator(
         self,
         asset_id: Optional[Union[StrictFloat, StrictInt]] = None,
         group_id: Optional[StrictInt] = None,
@@ -1091,11 +1091,11 @@ class AssetGroupsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[AssetGroup, PaginatedAssetGroupList], None, None]':
         _params = locals()
-        for page in get_all_pages(self.api_client, AssetGroupsApi.asset_groups_list, **_params):
+        for page in get_all_pages(self.api_client, AssetGroupsApi.list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def asset_groups_retrieve(
+    def retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ group.')],
         prefetch: Annotated[
@@ -1112,7 +1112,7 @@ class AssetGroupsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AssetGroup:
-        """asset_groups_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this product_ group. (required)
@@ -1141,7 +1141,7 @@ class AssetGroupsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._asset_groups_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id,
             prefetch=prefetch,
             _request_auth=_request_auth,
@@ -1160,7 +1160,7 @@ class AssetGroupsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def asset_groups_retrieve_with_http_info(
+    def retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ group.')],
         prefetch: Annotated[
@@ -1177,7 +1177,7 @@ class AssetGroupsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AssetGroup]:
-        """asset_groups_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this product_ group. (required)
@@ -1206,7 +1206,7 @@ class AssetGroupsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._asset_groups_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id,
             prefetch=prefetch,
             _request_auth=_request_auth,
@@ -1225,7 +1225,7 @@ class AssetGroupsApi:
             response_types_map=_response_types_map,
         )
 
-    def asset_groups_retrieve_without_preload_content(
+    def retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ group.')],
         prefetch: Annotated[
@@ -1242,7 +1242,7 @@ class AssetGroupsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """asset_groups_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this product_ group. (required)
@@ -1271,7 +1271,7 @@ class AssetGroupsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._asset_groups_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id,
             prefetch=prefetch,
             _request_auth=_request_auth,
@@ -1286,7 +1286,7 @@ class AssetGroupsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _asset_groups_retrieve_serialize(
+    def _retrieve_serialize(
         self,
         id,
         prefetch,
@@ -1341,7 +1341,7 @@ class AssetGroupsApi:
             _request_auth=_request_auth,
         )
 
-    def asset_groups_update(
+    def update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ group.')],
         asset_group_request: AssetGroupRequest,
@@ -1355,7 +1355,7 @@ class AssetGroupsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> AssetGroup:
-        """asset_groups_update
+        """update
 
 
         :param id: A unique integer value identifying this product_ group. (required)
@@ -1384,7 +1384,7 @@ class AssetGroupsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._asset_groups_update_serialize(
+        _param = self._update_serialize(
             id=id,
             asset_group_request=asset_group_request,
             _request_auth=_request_auth,
@@ -1403,7 +1403,7 @@ class AssetGroupsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def asset_groups_update_with_http_info(
+    def update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ group.')],
         asset_group_request: AssetGroupRequest,
@@ -1417,7 +1417,7 @@ class AssetGroupsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[AssetGroup]:
-        """asset_groups_update
+        """update
 
 
         :param id: A unique integer value identifying this product_ group. (required)
@@ -1446,7 +1446,7 @@ class AssetGroupsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._asset_groups_update_serialize(
+        _param = self._update_serialize(
             id=id,
             asset_group_request=asset_group_request,
             _request_auth=_request_auth,
@@ -1465,7 +1465,7 @@ class AssetGroupsApi:
             response_types_map=_response_types_map,
         )
 
-    def asset_groups_update_without_preload_content(
+    def update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this product_ group.')],
         asset_group_request: AssetGroupRequest,
@@ -1479,7 +1479,7 @@ class AssetGroupsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """asset_groups_update
+        """update
 
 
         :param id: A unique integer value identifying this product_ group. (required)
@@ -1508,7 +1508,7 @@ class AssetGroupsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._asset_groups_update_serialize(
+        _param = self._update_serialize(
             id=id,
             asset_group_request=asset_group_request,
             _request_auth=_request_auth,
@@ -1523,7 +1523,7 @@ class AssetGroupsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _asset_groups_update_serialize(
+    def _update_serialize(
         self,
         id,
         asset_group_request,

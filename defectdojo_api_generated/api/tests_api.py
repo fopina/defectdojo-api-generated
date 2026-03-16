@@ -53,7 +53,7 @@ class TestsApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    def tests_accept_risks_create(
+    def accept_risks_create(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
         accepted_risk_request: List[AcceptedRiskRequest],
@@ -67,7 +67,7 @@ class TestsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> List[RiskAcceptance]:
-        """tests_accept_risks_create
+        """accept_risks_create
 
 
         :param id: A unique integer value identifying this test. (required)
@@ -96,7 +96,7 @@ class TestsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tests_accept_risks_create_serialize(
+        _param = self._accept_risks_create_serialize(
             id=id,
             accepted_risk_request=accepted_risk_request,
             _request_auth=_request_auth,
@@ -115,7 +115,7 @@ class TestsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def tests_accept_risks_create_with_http_info(
+    def accept_risks_create_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
         accepted_risk_request: List[AcceptedRiskRequest],
@@ -129,7 +129,7 @@ class TestsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[List[RiskAcceptance]]:
-        """tests_accept_risks_create
+        """accept_risks_create
 
 
         :param id: A unique integer value identifying this test. (required)
@@ -158,7 +158,7 @@ class TestsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tests_accept_risks_create_serialize(
+        _param = self._accept_risks_create_serialize(
             id=id,
             accepted_risk_request=accepted_risk_request,
             _request_auth=_request_auth,
@@ -177,7 +177,7 @@ class TestsApi:
             response_types_map=_response_types_map,
         )
 
-    def tests_accept_risks_create_without_preload_content(
+    def accept_risks_create_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
         accepted_risk_request: List[AcceptedRiskRequest],
@@ -191,7 +191,7 @@ class TestsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """tests_accept_risks_create
+        """accept_risks_create
 
 
         :param id: A unique integer value identifying this test. (required)
@@ -220,7 +220,7 @@ class TestsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tests_accept_risks_create_serialize(
+        _param = self._accept_risks_create_serialize(
             id=id,
             accepted_risk_request=accepted_risk_request,
             _request_auth=_request_auth,
@@ -235,7 +235,7 @@ class TestsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _tests_accept_risks_create_serialize(
+    def _accept_risks_create_serialize(
         self,
         id,
         accepted_risk_request,
@@ -299,7 +299,7 @@ class TestsApi:
             _request_auth=_request_auth,
         )
 
-    def tests_create(
+    def create(
         self,
         test_create_request: TestCreateRequest,
         _request_timeout: Union[
@@ -312,7 +312,7 @@ class TestsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> TestCreate:
-        """tests_create
+        """create
 
 
         :param test_create_request: (required)
@@ -339,7 +339,7 @@ class TestsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tests_create_serialize(
+        _param = self._create_serialize(
             test_create_request=test_create_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -357,7 +357,7 @@ class TestsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def tests_create_with_http_info(
+    def create_with_http_info(
         self,
         test_create_request: TestCreateRequest,
         _request_timeout: Union[
@@ -370,7 +370,7 @@ class TestsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[TestCreate]:
-        """tests_create
+        """create
 
 
         :param test_create_request: (required)
@@ -397,7 +397,7 @@ class TestsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tests_create_serialize(
+        _param = self._create_serialize(
             test_create_request=test_create_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -415,7 +415,7 @@ class TestsApi:
             response_types_map=_response_types_map,
         )
 
-    def tests_create_without_preload_content(
+    def create_without_preload_content(
         self,
         test_create_request: TestCreateRequest,
         _request_timeout: Union[
@@ -428,7 +428,7 @@ class TestsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """tests_create
+        """create
 
 
         :param test_create_request: (required)
@@ -455,7 +455,7 @@ class TestsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tests_create_serialize(
+        _param = self._create_serialize(
             test_create_request=test_create_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -469,7 +469,7 @@ class TestsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _tests_create_serialize(
+    def _create_serialize(
         self,
         test_create_request,
         _request_auth,
@@ -528,7 +528,7 @@ class TestsApi:
             _request_auth=_request_auth,
         )
 
-    def tests_delete_preview_list(
+    def delete_preview_list(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -545,7 +545,7 @@ class TestsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedDeletePreviewList:
-        """tests_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this test. (required)
@@ -576,7 +576,7 @@ class TestsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tests_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -596,7 +596,7 @@ class TestsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def tests_delete_preview_list_with_http_info(
+    def delete_preview_list_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -613,7 +613,7 @@ class TestsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedDeletePreviewList]:
-        """tests_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this test. (required)
@@ -644,7 +644,7 @@ class TestsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tests_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -664,7 +664,7 @@ class TestsApi:
             response_types_map=_response_types_map,
         )
 
-    def tests_delete_preview_list_without_preload_content(
+    def delete_preview_list_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -681,7 +681,7 @@ class TestsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """tests_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this test. (required)
@@ -712,7 +712,7 @@ class TestsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tests_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -728,7 +728,7 @@ class TestsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _tests_delete_preview_list_serialize(
+    def _delete_preview_list_serialize(
         self,
         id,
         limit,
@@ -785,7 +785,7 @@ class TestsApi:
             _request_auth=_request_auth,
         )
 
-    def tests_delete_preview_list_iterator(
+    def delete_preview_list_iterator(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -803,11 +803,11 @@ class TestsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[DeletePreview, PaginatedDeletePreviewList], None, None]':
         _params = locals()
-        for page in get_all_pages(self.api_client, TestsApi.tests_delete_preview_list, **_params):
+        for page in get_all_pages(self.api_client, TestsApi.delete_preview_list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def tests_destroy(
+    def destroy(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
         _request_timeout: Union[
@@ -820,7 +820,7 @@ class TestsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> None:
-        """tests_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this test. (required)
@@ -847,7 +847,7 @@ class TestsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tests_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -861,7 +861,7 @@ class TestsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def tests_destroy_with_http_info(
+    def destroy_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
         _request_timeout: Union[
@@ -874,7 +874,7 @@ class TestsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[None]:
-        """tests_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this test. (required)
@@ -901,7 +901,7 @@ class TestsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tests_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -915,7 +915,7 @@ class TestsApi:
             response_types_map=_response_types_map,
         )
 
-    def tests_destroy_without_preload_content(
+    def destroy_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
         _request_timeout: Union[
@@ -928,7 +928,7 @@ class TestsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """tests_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this test. (required)
@@ -955,7 +955,7 @@ class TestsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tests_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -965,7 +965,7 @@ class TestsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _tests_destroy_serialize(
+    def _destroy_serialize(
         self,
         id,
         _request_auth,
@@ -1010,7 +1010,7 @@ class TestsApi:
             _request_auth=_request_auth,
         )
 
-    def tests_files_create(
+    def files_create(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
         title: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=100)]] = None,
@@ -1025,7 +1025,7 @@ class TestsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> File:
-        """tests_files_create
+        """files_create
 
 
         :param id: A unique integer value identifying this test. (required)
@@ -1056,7 +1056,7 @@ class TestsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tests_files_create_serialize(
+        _param = self._files_create_serialize(
             id=id,
             title=title,
             file=file,
@@ -1076,7 +1076,7 @@ class TestsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def tests_files_create_with_http_info(
+    def files_create_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
         title: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=100)]] = None,
@@ -1091,7 +1091,7 @@ class TestsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[File]:
-        """tests_files_create
+        """files_create
 
 
         :param id: A unique integer value identifying this test. (required)
@@ -1122,7 +1122,7 @@ class TestsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tests_files_create_serialize(
+        _param = self._files_create_serialize(
             id=id,
             title=title,
             file=file,
@@ -1142,7 +1142,7 @@ class TestsApi:
             response_types_map=_response_types_map,
         )
 
-    def tests_files_create_without_preload_content(
+    def files_create_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
         title: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=100)]] = None,
@@ -1157,7 +1157,7 @@ class TestsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """tests_files_create
+        """files_create
 
 
         :param id: A unique integer value identifying this test. (required)
@@ -1188,7 +1188,7 @@ class TestsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tests_files_create_serialize(
+        _param = self._files_create_serialize(
             id=id,
             title=title,
             file=file,
@@ -1204,7 +1204,7 @@ class TestsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _tests_files_create_serialize(
+    def _files_create_serialize(
         self,
         id,
         title,
@@ -1267,7 +1267,7 @@ class TestsApi:
             _request_auth=_request_auth,
         )
 
-    def tests_files_download_retrieve(
+    def files_download_retrieve(
         self,
         file_id: Annotated[str, Field(strict=True)],
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
@@ -1281,7 +1281,7 @@ class TestsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RawFile:
-        """tests_files_download_retrieve
+        """files_download_retrieve
 
 
         :param file_id: (required)
@@ -1310,7 +1310,7 @@ class TestsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tests_files_download_retrieve_serialize(
+        _param = self._files_download_retrieve_serialize(
             file_id=file_id,
             id=id,
             _request_auth=_request_auth,
@@ -1329,7 +1329,7 @@ class TestsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def tests_files_download_retrieve_with_http_info(
+    def files_download_retrieve_with_http_info(
         self,
         file_id: Annotated[str, Field(strict=True)],
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
@@ -1343,7 +1343,7 @@ class TestsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[RawFile]:
-        """tests_files_download_retrieve
+        """files_download_retrieve
 
 
         :param file_id: (required)
@@ -1372,7 +1372,7 @@ class TestsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tests_files_download_retrieve_serialize(
+        _param = self._files_download_retrieve_serialize(
             file_id=file_id,
             id=id,
             _request_auth=_request_auth,
@@ -1391,7 +1391,7 @@ class TestsApi:
             response_types_map=_response_types_map,
         )
 
-    def tests_files_download_retrieve_without_preload_content(
+    def files_download_retrieve_without_preload_content(
         self,
         file_id: Annotated[str, Field(strict=True)],
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
@@ -1405,7 +1405,7 @@ class TestsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """tests_files_download_retrieve
+        """files_download_retrieve
 
 
         :param file_id: (required)
@@ -1434,7 +1434,7 @@ class TestsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tests_files_download_retrieve_serialize(
+        _param = self._files_download_retrieve_serialize(
             file_id=file_id,
             id=id,
             _request_auth=_request_auth,
@@ -1449,7 +1449,7 @@ class TestsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _tests_files_download_retrieve_serialize(
+    def _files_download_retrieve_serialize(
         self,
         file_id,
         id,
@@ -1501,7 +1501,7 @@ class TestsApi:
             _request_auth=_request_auth,
         )
 
-    def tests_files_retrieve(
+    def files_retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
         _request_timeout: Union[
@@ -1514,7 +1514,7 @@ class TestsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> TestToFiles:
-        """tests_files_retrieve
+        """files_retrieve
 
 
         :param id: A unique integer value identifying this test. (required)
@@ -1541,7 +1541,7 @@ class TestsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tests_files_retrieve_serialize(
+        _param = self._files_retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1555,7 +1555,7 @@ class TestsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def tests_files_retrieve_with_http_info(
+    def files_retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
         _request_timeout: Union[
@@ -1568,7 +1568,7 @@ class TestsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[TestToFiles]:
-        """tests_files_retrieve
+        """files_retrieve
 
 
         :param id: A unique integer value identifying this test. (required)
@@ -1595,7 +1595,7 @@ class TestsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tests_files_retrieve_serialize(
+        _param = self._files_retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1609,7 +1609,7 @@ class TestsApi:
             response_types_map=_response_types_map,
         )
 
-    def tests_files_retrieve_without_preload_content(
+    def files_retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
         _request_timeout: Union[
@@ -1622,7 +1622,7 @@ class TestsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """tests_files_retrieve
+        """files_retrieve
 
 
         :param id: A unique integer value identifying this test. (required)
@@ -1649,7 +1649,7 @@ class TestsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tests_files_retrieve_serialize(
+        _param = self._files_retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1659,7 +1659,7 @@ class TestsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _tests_files_retrieve_serialize(
+    def _files_retrieve_serialize(
         self,
         id,
         _request_auth,
@@ -1708,7 +1708,7 @@ class TestsApi:
             _request_auth=_request_auth,
         )
 
-    def tests_generate_report_create(
+    def generate_report_create(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
         report_generate_option_request: Optional[ReportGenerateOptionRequest] = None,
@@ -1722,7 +1722,7 @@ class TestsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ReportGenerate:
-        """tests_generate_report_create
+        """generate_report_create
 
 
         :param id: A unique integer value identifying this test. (required)
@@ -1751,7 +1751,7 @@ class TestsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tests_generate_report_create_serialize(
+        _param = self._generate_report_create_serialize(
             id=id,
             report_generate_option_request=report_generate_option_request,
             _request_auth=_request_auth,
@@ -1770,7 +1770,7 @@ class TestsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def tests_generate_report_create_with_http_info(
+    def generate_report_create_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
         report_generate_option_request: Optional[ReportGenerateOptionRequest] = None,
@@ -1784,7 +1784,7 @@ class TestsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[ReportGenerate]:
-        """tests_generate_report_create
+        """generate_report_create
 
 
         :param id: A unique integer value identifying this test. (required)
@@ -1813,7 +1813,7 @@ class TestsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tests_generate_report_create_serialize(
+        _param = self._generate_report_create_serialize(
             id=id,
             report_generate_option_request=report_generate_option_request,
             _request_auth=_request_auth,
@@ -1832,7 +1832,7 @@ class TestsApi:
             response_types_map=_response_types_map,
         )
 
-    def tests_generate_report_create_without_preload_content(
+    def generate_report_create_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
         report_generate_option_request: Optional[ReportGenerateOptionRequest] = None,
@@ -1846,7 +1846,7 @@ class TestsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """tests_generate_report_create
+        """generate_report_create
 
 
         :param id: A unique integer value identifying this test. (required)
@@ -1875,7 +1875,7 @@ class TestsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tests_generate_report_create_serialize(
+        _param = self._generate_report_create_serialize(
             id=id,
             report_generate_option_request=report_generate_option_request,
             _request_auth=_request_auth,
@@ -1890,7 +1890,7 @@ class TestsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _tests_generate_report_create_serialize(
+    def _generate_report_create_serialize(
         self,
         id,
         report_generate_option_request,
@@ -1952,7 +1952,7 @@ class TestsApi:
             _request_auth=_request_auth,
         )
 
-    def tests_list(
+    def list(
         self,
         api_scan_configuration: Optional[StrictInt] = None,
         branch_tag: Optional[StrictStr] = None,
@@ -2026,7 +2026,7 @@ class TestsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedTestList:
-        """tests_list
+        """list
 
 
         :param api_scan_configuration:
@@ -2109,7 +2109,7 @@ class TestsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tests_list_serialize(
+        _param = self._list_serialize(
             api_scan_configuration=api_scan_configuration,
             branch_tag=branch_tag,
             build_id=build_id,
@@ -2155,7 +2155,7 @@ class TestsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def tests_list_with_http_info(
+    def list_with_http_info(
         self,
         api_scan_configuration: Optional[StrictInt] = None,
         branch_tag: Optional[StrictStr] = None,
@@ -2229,7 +2229,7 @@ class TestsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedTestList]:
-        """tests_list
+        """list
 
 
         :param api_scan_configuration:
@@ -2312,7 +2312,7 @@ class TestsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tests_list_serialize(
+        _param = self._list_serialize(
             api_scan_configuration=api_scan_configuration,
             branch_tag=branch_tag,
             build_id=build_id,
@@ -2358,7 +2358,7 @@ class TestsApi:
             response_types_map=_response_types_map,
         )
 
-    def tests_list_without_preload_content(
+    def list_without_preload_content(
         self,
         api_scan_configuration: Optional[StrictInt] = None,
         branch_tag: Optional[StrictStr] = None,
@@ -2432,7 +2432,7 @@ class TestsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """tests_list
+        """list
 
 
         :param api_scan_configuration:
@@ -2515,7 +2515,7 @@ class TestsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tests_list_serialize(
+        _param = self._list_serialize(
             api_scan_configuration=api_scan_configuration,
             branch_tag=branch_tag,
             build_id=build_id,
@@ -2557,7 +2557,7 @@ class TestsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _tests_list_serialize(
+    def _list_serialize(
         self,
         api_scan_configuration,
         branch_tag,
@@ -2739,7 +2739,7 @@ class TestsApi:
             _request_auth=_request_auth,
         )
 
-    def tests_list_iterator(
+    def list_iterator(
         self,
         api_scan_configuration: Optional[StrictInt] = None,
         branch_tag: Optional[StrictStr] = None,
@@ -2814,11 +2814,11 @@ class TestsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[Test, PaginatedTestList], None, None]':
         _params = locals()
-        for page in get_all_pages(self.api_client, TestsApi.tests_list, **_params):
+        for page in get_all_pages(self.api_client, TestsApi.list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def tests_notes_create(
+    def notes_create(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
         add_new_note_option_request: AddNewNoteOptionRequest,
@@ -2832,7 +2832,7 @@ class TestsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Note:
-        """tests_notes_create
+        """notes_create
 
 
         :param id: A unique integer value identifying this test. (required)
@@ -2861,7 +2861,7 @@ class TestsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tests_notes_create_serialize(
+        _param = self._notes_create_serialize(
             id=id,
             add_new_note_option_request=add_new_note_option_request,
             _request_auth=_request_auth,
@@ -2880,7 +2880,7 @@ class TestsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def tests_notes_create_with_http_info(
+    def notes_create_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
         add_new_note_option_request: AddNewNoteOptionRequest,
@@ -2894,7 +2894,7 @@ class TestsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Note]:
-        """tests_notes_create
+        """notes_create
 
 
         :param id: A unique integer value identifying this test. (required)
@@ -2923,7 +2923,7 @@ class TestsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tests_notes_create_serialize(
+        _param = self._notes_create_serialize(
             id=id,
             add_new_note_option_request=add_new_note_option_request,
             _request_auth=_request_auth,
@@ -2942,7 +2942,7 @@ class TestsApi:
             response_types_map=_response_types_map,
         )
 
-    def tests_notes_create_without_preload_content(
+    def notes_create_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
         add_new_note_option_request: AddNewNoteOptionRequest,
@@ -2956,7 +2956,7 @@ class TestsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """tests_notes_create
+        """notes_create
 
 
         :param id: A unique integer value identifying this test. (required)
@@ -2985,7 +2985,7 @@ class TestsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tests_notes_create_serialize(
+        _param = self._notes_create_serialize(
             id=id,
             add_new_note_option_request=add_new_note_option_request,
             _request_auth=_request_auth,
@@ -3000,7 +3000,7 @@ class TestsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _tests_notes_create_serialize(
+    def _notes_create_serialize(
         self,
         id,
         add_new_note_option_request,
@@ -3062,7 +3062,7 @@ class TestsApi:
             _request_auth=_request_auth,
         )
 
-    def tests_notes_retrieve(
+    def notes_retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
         _request_timeout: Union[
@@ -3075,7 +3075,7 @@ class TestsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> TestToNotes:
-        """tests_notes_retrieve
+        """notes_retrieve
 
 
         :param id: A unique integer value identifying this test. (required)
@@ -3102,7 +3102,7 @@ class TestsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tests_notes_retrieve_serialize(
+        _param = self._notes_retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -3116,7 +3116,7 @@ class TestsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def tests_notes_retrieve_with_http_info(
+    def notes_retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
         _request_timeout: Union[
@@ -3129,7 +3129,7 @@ class TestsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[TestToNotes]:
-        """tests_notes_retrieve
+        """notes_retrieve
 
 
         :param id: A unique integer value identifying this test. (required)
@@ -3156,7 +3156,7 @@ class TestsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tests_notes_retrieve_serialize(
+        _param = self._notes_retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -3170,7 +3170,7 @@ class TestsApi:
             response_types_map=_response_types_map,
         )
 
-    def tests_notes_retrieve_without_preload_content(
+    def notes_retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
         _request_timeout: Union[
@@ -3183,7 +3183,7 @@ class TestsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """tests_notes_retrieve
+        """notes_retrieve
 
 
         :param id: A unique integer value identifying this test. (required)
@@ -3210,7 +3210,7 @@ class TestsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tests_notes_retrieve_serialize(
+        _param = self._notes_retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -3220,7 +3220,7 @@ class TestsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _tests_notes_retrieve_serialize(
+    def _notes_retrieve_serialize(
         self,
         id,
         _request_auth,
@@ -3269,7 +3269,7 @@ class TestsApi:
             _request_auth=_request_auth,
         )
 
-    def tests_partial_update(
+    def partial_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
         patched_test_request: Optional[PatchedTestRequest] = None,
@@ -3283,7 +3283,7 @@ class TestsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Test:
-        """tests_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this test. (required)
@@ -3312,7 +3312,7 @@ class TestsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tests_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_test_request=patched_test_request,
             _request_auth=_request_auth,
@@ -3331,7 +3331,7 @@ class TestsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def tests_partial_update_with_http_info(
+    def partial_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
         patched_test_request: Optional[PatchedTestRequest] = None,
@@ -3345,7 +3345,7 @@ class TestsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Test]:
-        """tests_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this test. (required)
@@ -3374,7 +3374,7 @@ class TestsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tests_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_test_request=patched_test_request,
             _request_auth=_request_auth,
@@ -3393,7 +3393,7 @@ class TestsApi:
             response_types_map=_response_types_map,
         )
 
-    def tests_partial_update_without_preload_content(
+    def partial_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
         patched_test_request: Optional[PatchedTestRequest] = None,
@@ -3407,7 +3407,7 @@ class TestsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """tests_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this test. (required)
@@ -3436,7 +3436,7 @@ class TestsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tests_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_test_request=patched_test_request,
             _request_auth=_request_auth,
@@ -3451,7 +3451,7 @@ class TestsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _tests_partial_update_serialize(
+    def _partial_update_serialize(
         self,
         id,
         patched_test_request,
@@ -3513,7 +3513,7 @@ class TestsApi:
             _request_auth=_request_auth,
         )
 
-    def tests_retrieve(
+    def retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
         _request_timeout: Union[
@@ -3526,7 +3526,7 @@ class TestsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Test:
-        """tests_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this test. (required)
@@ -3553,7 +3553,7 @@ class TestsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tests_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -3567,7 +3567,7 @@ class TestsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def tests_retrieve_with_http_info(
+    def retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
         _request_timeout: Union[
@@ -3580,7 +3580,7 @@ class TestsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Test]:
-        """tests_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this test. (required)
@@ -3607,7 +3607,7 @@ class TestsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tests_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -3621,7 +3621,7 @@ class TestsApi:
             response_types_map=_response_types_map,
         )
 
-    def tests_retrieve_without_preload_content(
+    def retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
         _request_timeout: Union[
@@ -3634,7 +3634,7 @@ class TestsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """tests_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this test. (required)
@@ -3661,7 +3661,7 @@ class TestsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tests_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -3671,7 +3671,7 @@ class TestsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _tests_retrieve_serialize(
+    def _retrieve_serialize(
         self,
         id,
         _request_auth,
@@ -3720,7 +3720,7 @@ class TestsApi:
             _request_auth=_request_auth,
         )
 
-    def tests_update(
+    def update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
         test_request: TestRequest,
@@ -3734,7 +3734,7 @@ class TestsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Test:
-        """tests_update
+        """update
 
 
         :param id: A unique integer value identifying this test. (required)
@@ -3763,7 +3763,7 @@ class TestsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tests_update_serialize(
+        _param = self._update_serialize(
             id=id,
             test_request=test_request,
             _request_auth=_request_auth,
@@ -3782,7 +3782,7 @@ class TestsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def tests_update_with_http_info(
+    def update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
         test_request: TestRequest,
@@ -3796,7 +3796,7 @@ class TestsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Test]:
-        """tests_update
+        """update
 
 
         :param id: A unique integer value identifying this test. (required)
@@ -3825,7 +3825,7 @@ class TestsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tests_update_serialize(
+        _param = self._update_serialize(
             id=id,
             test_request=test_request,
             _request_auth=_request_auth,
@@ -3844,7 +3844,7 @@ class TestsApi:
             response_types_map=_response_types_map,
         )
 
-    def tests_update_without_preload_content(
+    def update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test.')],
         test_request: TestRequest,
@@ -3858,7 +3858,7 @@ class TestsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """tests_update
+        """update
 
 
         :param id: A unique integer value identifying this test. (required)
@@ -3887,7 +3887,7 @@ class TestsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._tests_update_serialize(
+        _param = self._update_serialize(
             id=id,
             test_request=test_request,
             _request_auth=_request_auth,
@@ -3902,7 +3902,7 @@ class TestsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _tests_update_serialize(
+    def _update_serialize(
         self,
         id,
         test_request,

@@ -35,7 +35,7 @@ class ReimportScanApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    def reimport_scan_create(
+    def create(
         self,
         scan_date: Annotated[
             Optional[date], Field(description='Scan completion date will be used on all findings.')
@@ -172,7 +172,7 @@ class ReimportScanApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ReImportScan:
-        """reimport_scan_create
+        """create
 
         Reimports a scan report into an existing test.  By ID: - Create a Product (or use an existing product) - Create an Engagement inside the product - Import a scan report and find the id of the Test - Provide this in the `test` parameter  By Names: - Create a Product (or use an existing product) - Create an Engagement inside the product - Import a report which will create a Test - Provide `product_name` - Provide `engagement_name` - Optional: Provide `test_title`  In this scenario Defect Dojo will look up the Test by the provided details. If no `test_title` is provided, the latest test inside the engagement will be chosen based on scan_type.  When using names you can let the importer automatically create Engagements, Products and Product_Types by using `auto_create_context=True`.  When `auto_create_context` is set to `True` you can use `deduplication_on_engagement` to restrict deduplication for imported Findings to the newly created Engagement.
 
@@ -264,7 +264,7 @@ class ReimportScanApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._reimport_scan_create_serialize(
+        _param = self._create_serialize(
             scan_date=scan_date,
             minimum_severity=minimum_severity,
             active=active,
@@ -314,7 +314,7 @@ class ReimportScanApi:
             response_types_map=_response_types_map,
         ).data
 
-    def reimport_scan_create_with_http_info(
+    def create_with_http_info(
         self,
         scan_date: Annotated[
             Optional[date], Field(description='Scan completion date will be used on all findings.')
@@ -451,7 +451,7 @@ class ReimportScanApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[ReImportScan]:
-        """reimport_scan_create
+        """create
 
         Reimports a scan report into an existing test.  By ID: - Create a Product (or use an existing product) - Create an Engagement inside the product - Import a scan report and find the id of the Test - Provide this in the `test` parameter  By Names: - Create a Product (or use an existing product) - Create an Engagement inside the product - Import a report which will create a Test - Provide `product_name` - Provide `engagement_name` - Optional: Provide `test_title`  In this scenario Defect Dojo will look up the Test by the provided details. If no `test_title` is provided, the latest test inside the engagement will be chosen based on scan_type.  When using names you can let the importer automatically create Engagements, Products and Product_Types by using `auto_create_context=True`.  When `auto_create_context` is set to `True` you can use `deduplication_on_engagement` to restrict deduplication for imported Findings to the newly created Engagement.
 
@@ -543,7 +543,7 @@ class ReimportScanApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._reimport_scan_create_serialize(
+        _param = self._create_serialize(
             scan_date=scan_date,
             minimum_severity=minimum_severity,
             active=active,
@@ -593,7 +593,7 @@ class ReimportScanApi:
             response_types_map=_response_types_map,
         )
 
-    def reimport_scan_create_without_preload_content(
+    def create_without_preload_content(
         self,
         scan_date: Annotated[
             Optional[date], Field(description='Scan completion date will be used on all findings.')
@@ -730,7 +730,7 @@ class ReimportScanApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """reimport_scan_create
+        """create
 
         Reimports a scan report into an existing test.  By ID: - Create a Product (or use an existing product) - Create an Engagement inside the product - Import a scan report and find the id of the Test - Provide this in the `test` parameter  By Names: - Create a Product (or use an existing product) - Create an Engagement inside the product - Import a report which will create a Test - Provide `product_name` - Provide `engagement_name` - Optional: Provide `test_title`  In this scenario Defect Dojo will look up the Test by the provided details. If no `test_title` is provided, the latest test inside the engagement will be chosen based on scan_type.  When using names you can let the importer automatically create Engagements, Products and Product_Types by using `auto_create_context=True`.  When `auto_create_context` is set to `True` you can use `deduplication_on_engagement` to restrict deduplication for imported Findings to the newly created Engagement.
 
@@ -822,7 +822,7 @@ class ReimportScanApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._reimport_scan_create_serialize(
+        _param = self._create_serialize(
             scan_date=scan_date,
             minimum_severity=minimum_severity,
             active=active,
@@ -868,7 +868,7 @@ class ReimportScanApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _reimport_scan_create_serialize(
+    def _create_serialize(
         self,
         scan_date,
         minimum_severity,

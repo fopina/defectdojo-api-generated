@@ -34,7 +34,7 @@ class ImportLanguagesApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    def import_languages_create(
+    def create(
         self,
         product: Optional[StrictInt] = None,
         file: Optional[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]]] = None,
@@ -48,7 +48,7 @@ class ImportLanguagesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ImportLanguages:
-        """import_languages_create
+        """create
 
 
         :param product:
@@ -77,7 +77,7 @@ class ImportLanguagesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._import_languages_create_serialize(
+        _param = self._create_serialize(
             product=product,
             file=file,
             _request_auth=_request_auth,
@@ -96,7 +96,7 @@ class ImportLanguagesApi:
             response_types_map=_response_types_map,
         ).data
 
-    def import_languages_create_with_http_info(
+    def create_with_http_info(
         self,
         product: Optional[StrictInt] = None,
         file: Optional[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]]] = None,
@@ -110,7 +110,7 @@ class ImportLanguagesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[ImportLanguages]:
-        """import_languages_create
+        """create
 
 
         :param product:
@@ -139,7 +139,7 @@ class ImportLanguagesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._import_languages_create_serialize(
+        _param = self._create_serialize(
             product=product,
             file=file,
             _request_auth=_request_auth,
@@ -158,7 +158,7 @@ class ImportLanguagesApi:
             response_types_map=_response_types_map,
         )
 
-    def import_languages_create_without_preload_content(
+    def create_without_preload_content(
         self,
         product: Optional[StrictInt] = None,
         file: Optional[Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]]] = None,
@@ -172,7 +172,7 @@ class ImportLanguagesApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """import_languages_create
+        """create
 
 
         :param product:
@@ -201,7 +201,7 @@ class ImportLanguagesApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._import_languages_create_serialize(
+        _param = self._create_serialize(
             product=product,
             file=file,
             _request_auth=_request_auth,
@@ -216,7 +216,7 @@ class ImportLanguagesApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _import_languages_create_serialize(
+    def _create_serialize(
         self,
         product,
         file,

@@ -39,7 +39,7 @@ class SystemSettingsApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    def system_settings_list(
+    def list(
         self,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
         offset: Annotated[
@@ -55,7 +55,7 @@ class SystemSettingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedSystemSettingsList:
-        """system_settings_list
+        """list
 
         Basic control over System Settings. Use 'id' 1 for PUT, PATCH operations
 
@@ -85,7 +85,7 @@ class SystemSettingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._system_settings_list_serialize(
+        _param = self._list_serialize(
             limit=limit,
             offset=offset,
             _request_auth=_request_auth,
@@ -104,7 +104,7 @@ class SystemSettingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def system_settings_list_with_http_info(
+    def list_with_http_info(
         self,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
         offset: Annotated[
@@ -120,7 +120,7 @@ class SystemSettingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedSystemSettingsList]:
-        """system_settings_list
+        """list
 
         Basic control over System Settings. Use 'id' 1 for PUT, PATCH operations
 
@@ -150,7 +150,7 @@ class SystemSettingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._system_settings_list_serialize(
+        _param = self._list_serialize(
             limit=limit,
             offset=offset,
             _request_auth=_request_auth,
@@ -169,7 +169,7 @@ class SystemSettingsApi:
             response_types_map=_response_types_map,
         )
 
-    def system_settings_list_without_preload_content(
+    def list_without_preload_content(
         self,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
         offset: Annotated[
@@ -185,7 +185,7 @@ class SystemSettingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """system_settings_list
+        """list
 
         Basic control over System Settings. Use 'id' 1 for PUT, PATCH operations
 
@@ -215,7 +215,7 @@ class SystemSettingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._system_settings_list_serialize(
+        _param = self._list_serialize(
             limit=limit,
             offset=offset,
             _request_auth=_request_auth,
@@ -230,7 +230,7 @@ class SystemSettingsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _system_settings_list_serialize(
+    def _list_serialize(
         self,
         limit,
         offset,
@@ -284,7 +284,7 @@ class SystemSettingsApi:
             _request_auth=_request_auth,
         )
 
-    def system_settings_list_iterator(
+    def list_iterator(
         self,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
         offset: Annotated[
@@ -301,11 +301,11 @@ class SystemSettingsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[SystemSettings, PaginatedSystemSettingsList], None, None]':
         _params = locals()
-        for page in get_all_pages(self.api_client, SystemSettingsApi.system_settings_list, **_params):
+        for page in get_all_pages(self.api_client, SystemSettingsApi.list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def system_settings_partial_update(
+    def partial_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this system_ settings.')],
         patched_system_settings_request: Optional[PatchedSystemSettingsRequest] = None,
@@ -319,7 +319,7 @@ class SystemSettingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> SystemSettings:
-        """system_settings_partial_update
+        """partial_update
 
         Basic control over System Settings. Use 'id' 1 for PUT, PATCH operations
 
@@ -349,7 +349,7 @@ class SystemSettingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._system_settings_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_system_settings_request=patched_system_settings_request,
             _request_auth=_request_auth,
@@ -368,7 +368,7 @@ class SystemSettingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def system_settings_partial_update_with_http_info(
+    def partial_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this system_ settings.')],
         patched_system_settings_request: Optional[PatchedSystemSettingsRequest] = None,
@@ -382,7 +382,7 @@ class SystemSettingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[SystemSettings]:
-        """system_settings_partial_update
+        """partial_update
 
         Basic control over System Settings. Use 'id' 1 for PUT, PATCH operations
 
@@ -412,7 +412,7 @@ class SystemSettingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._system_settings_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_system_settings_request=patched_system_settings_request,
             _request_auth=_request_auth,
@@ -431,7 +431,7 @@ class SystemSettingsApi:
             response_types_map=_response_types_map,
         )
 
-    def system_settings_partial_update_without_preload_content(
+    def partial_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this system_ settings.')],
         patched_system_settings_request: Optional[PatchedSystemSettingsRequest] = None,
@@ -445,7 +445,7 @@ class SystemSettingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """system_settings_partial_update
+        """partial_update
 
         Basic control over System Settings. Use 'id' 1 for PUT, PATCH operations
 
@@ -475,7 +475,7 @@ class SystemSettingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._system_settings_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_system_settings_request=patched_system_settings_request,
             _request_auth=_request_auth,
@@ -490,7 +490,7 @@ class SystemSettingsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _system_settings_partial_update_serialize(
+    def _partial_update_serialize(
         self,
         id,
         patched_system_settings_request,
@@ -552,7 +552,7 @@ class SystemSettingsApi:
             _request_auth=_request_auth,
         )
 
-    def system_settings_update(
+    def update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this system_ settings.')],
         system_settings_request: Optional[SystemSettingsRequest] = None,
@@ -566,7 +566,7 @@ class SystemSettingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> SystemSettings:
-        """system_settings_update
+        """update
 
         Basic control over System Settings. Use 'id' 1 for PUT, PATCH operations
 
@@ -596,7 +596,7 @@ class SystemSettingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._system_settings_update_serialize(
+        _param = self._update_serialize(
             id=id,
             system_settings_request=system_settings_request,
             _request_auth=_request_auth,
@@ -615,7 +615,7 @@ class SystemSettingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def system_settings_update_with_http_info(
+    def update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this system_ settings.')],
         system_settings_request: Optional[SystemSettingsRequest] = None,
@@ -629,7 +629,7 @@ class SystemSettingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[SystemSettings]:
-        """system_settings_update
+        """update
 
         Basic control over System Settings. Use 'id' 1 for PUT, PATCH operations
 
@@ -659,7 +659,7 @@ class SystemSettingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._system_settings_update_serialize(
+        _param = self._update_serialize(
             id=id,
             system_settings_request=system_settings_request,
             _request_auth=_request_auth,
@@ -678,7 +678,7 @@ class SystemSettingsApi:
             response_types_map=_response_types_map,
         )
 
-    def system_settings_update_without_preload_content(
+    def update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this system_ settings.')],
         system_settings_request: Optional[SystemSettingsRequest] = None,
@@ -692,7 +692,7 @@ class SystemSettingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """system_settings_update
+        """update
 
         Basic control over System Settings. Use 'id' 1 for PUT, PATCH operations
 
@@ -722,7 +722,7 @@ class SystemSettingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._system_settings_update_serialize(
+        _param = self._update_serialize(
             id=id,
             system_settings_request=system_settings_request,
             _request_auth=_request_auth,
@@ -737,7 +737,7 @@ class SystemSettingsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _system_settings_update_serialize(
+    def _update_serialize(
         self,
         id,
         system_settings_request,

@@ -40,7 +40,7 @@ class JiraFindingMappingsApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    def jira_finding_mappings_create(
+    def create(
         self,
         jira_issue_request: JIRAIssueRequest,
         _request_timeout: Union[
@@ -53,7 +53,7 @@ class JiraFindingMappingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> JIRAIssue:
-        """jira_finding_mappings_create
+        """create
 
 
         :param jira_issue_request: (required)
@@ -80,7 +80,7 @@ class JiraFindingMappingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._jira_finding_mappings_create_serialize(
+        _param = self._create_serialize(
             jira_issue_request=jira_issue_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -98,7 +98,7 @@ class JiraFindingMappingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def jira_finding_mappings_create_with_http_info(
+    def create_with_http_info(
         self,
         jira_issue_request: JIRAIssueRequest,
         _request_timeout: Union[
@@ -111,7 +111,7 @@ class JiraFindingMappingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[JIRAIssue]:
-        """jira_finding_mappings_create
+        """create
 
 
         :param jira_issue_request: (required)
@@ -138,7 +138,7 @@ class JiraFindingMappingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._jira_finding_mappings_create_serialize(
+        _param = self._create_serialize(
             jira_issue_request=jira_issue_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -156,7 +156,7 @@ class JiraFindingMappingsApi:
             response_types_map=_response_types_map,
         )
 
-    def jira_finding_mappings_create_without_preload_content(
+    def create_without_preload_content(
         self,
         jira_issue_request: JIRAIssueRequest,
         _request_timeout: Union[
@@ -169,7 +169,7 @@ class JiraFindingMappingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """jira_finding_mappings_create
+        """create
 
 
         :param jira_issue_request: (required)
@@ -196,7 +196,7 @@ class JiraFindingMappingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._jira_finding_mappings_create_serialize(
+        _param = self._create_serialize(
             jira_issue_request=jira_issue_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -210,7 +210,7 @@ class JiraFindingMappingsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _jira_finding_mappings_create_serialize(
+    def _create_serialize(
         self,
         jira_issue_request,
         _request_auth,
@@ -269,7 +269,7 @@ class JiraFindingMappingsApi:
             _request_auth=_request_auth,
         )
 
-    def jira_finding_mappings_delete_preview_list(
+    def delete_preview_list(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this jir a_ issue.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -286,7 +286,7 @@ class JiraFindingMappingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedDeletePreviewList:
-        """jira_finding_mappings_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this jir a_ issue. (required)
@@ -317,7 +317,7 @@ class JiraFindingMappingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._jira_finding_mappings_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -337,7 +337,7 @@ class JiraFindingMappingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def jira_finding_mappings_delete_preview_list_with_http_info(
+    def delete_preview_list_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this jir a_ issue.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -354,7 +354,7 @@ class JiraFindingMappingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedDeletePreviewList]:
-        """jira_finding_mappings_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this jir a_ issue. (required)
@@ -385,7 +385,7 @@ class JiraFindingMappingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._jira_finding_mappings_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -405,7 +405,7 @@ class JiraFindingMappingsApi:
             response_types_map=_response_types_map,
         )
 
-    def jira_finding_mappings_delete_preview_list_without_preload_content(
+    def delete_preview_list_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this jir a_ issue.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -422,7 +422,7 @@ class JiraFindingMappingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """jira_finding_mappings_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this jir a_ issue. (required)
@@ -453,7 +453,7 @@ class JiraFindingMappingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._jira_finding_mappings_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -469,7 +469,7 @@ class JiraFindingMappingsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _jira_finding_mappings_delete_preview_list_serialize(
+    def _delete_preview_list_serialize(
         self,
         id,
         limit,
@@ -526,7 +526,7 @@ class JiraFindingMappingsApi:
             _request_auth=_request_auth,
         )
 
-    def jira_finding_mappings_delete_preview_list_iterator(
+    def delete_preview_list_iterator(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this jir a_ issue.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -544,13 +544,11 @@ class JiraFindingMappingsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[DeletePreview, PaginatedDeletePreviewList], None, None]':
         _params = locals()
-        for page in get_all_pages(
-            self.api_client, JiraFindingMappingsApi.jira_finding_mappings_delete_preview_list, **_params
-        ):
+        for page in get_all_pages(self.api_client, JiraFindingMappingsApi.delete_preview_list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def jira_finding_mappings_destroy(
+    def destroy(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this jir a_ issue.')],
         _request_timeout: Union[
@@ -563,7 +561,7 @@ class JiraFindingMappingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> None:
-        """jira_finding_mappings_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this jir a_ issue. (required)
@@ -590,7 +588,7 @@ class JiraFindingMappingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._jira_finding_mappings_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -604,7 +602,7 @@ class JiraFindingMappingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def jira_finding_mappings_destroy_with_http_info(
+    def destroy_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this jir a_ issue.')],
         _request_timeout: Union[
@@ -617,7 +615,7 @@ class JiraFindingMappingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[None]:
-        """jira_finding_mappings_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this jir a_ issue. (required)
@@ -644,7 +642,7 @@ class JiraFindingMappingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._jira_finding_mappings_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -658,7 +656,7 @@ class JiraFindingMappingsApi:
             response_types_map=_response_types_map,
         )
 
-    def jira_finding_mappings_destroy_without_preload_content(
+    def destroy_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this jir a_ issue.')],
         _request_timeout: Union[
@@ -671,7 +669,7 @@ class JiraFindingMappingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """jira_finding_mappings_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this jir a_ issue. (required)
@@ -698,7 +696,7 @@ class JiraFindingMappingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._jira_finding_mappings_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -708,7 +706,7 @@ class JiraFindingMappingsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _jira_finding_mappings_destroy_serialize(
+    def _destroy_serialize(
         self,
         id,
         _request_auth,
@@ -753,7 +751,7 @@ class JiraFindingMappingsApi:
             _request_auth=_request_auth,
         )
 
-    def jira_finding_mappings_list(
+    def list(
         self,
         engagement: Optional[StrictInt] = None,
         finding: Optional[StrictInt] = None,
@@ -775,7 +773,7 @@ class JiraFindingMappingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedJIRAIssueList:
-        """jira_finding_mappings_list
+        """list
 
 
         :param engagement:
@@ -816,7 +814,7 @@ class JiraFindingMappingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._jira_finding_mappings_list_serialize(
+        _param = self._list_serialize(
             engagement=engagement,
             finding=finding,
             finding_group=finding_group,
@@ -841,7 +839,7 @@ class JiraFindingMappingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def jira_finding_mappings_list_with_http_info(
+    def list_with_http_info(
         self,
         engagement: Optional[StrictInt] = None,
         finding: Optional[StrictInt] = None,
@@ -863,7 +861,7 @@ class JiraFindingMappingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedJIRAIssueList]:
-        """jira_finding_mappings_list
+        """list
 
 
         :param engagement:
@@ -904,7 +902,7 @@ class JiraFindingMappingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._jira_finding_mappings_list_serialize(
+        _param = self._list_serialize(
             engagement=engagement,
             finding=finding,
             finding_group=finding_group,
@@ -929,7 +927,7 @@ class JiraFindingMappingsApi:
             response_types_map=_response_types_map,
         )
 
-    def jira_finding_mappings_list_without_preload_content(
+    def list_without_preload_content(
         self,
         engagement: Optional[StrictInt] = None,
         finding: Optional[StrictInt] = None,
@@ -951,7 +949,7 @@ class JiraFindingMappingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """jira_finding_mappings_list
+        """list
 
 
         :param engagement:
@@ -992,7 +990,7 @@ class JiraFindingMappingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._jira_finding_mappings_list_serialize(
+        _param = self._list_serialize(
             engagement=engagement,
             finding=finding,
             finding_group=finding_group,
@@ -1013,7 +1011,7 @@ class JiraFindingMappingsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _jira_finding_mappings_list_serialize(
+    def _list_serialize(
         self,
         engagement,
         finding,
@@ -1091,7 +1089,7 @@ class JiraFindingMappingsApi:
             _request_auth=_request_auth,
         )
 
-    def jira_finding_mappings_list_iterator(
+    def list_iterator(
         self,
         engagement: Optional[StrictInt] = None,
         finding: Optional[StrictInt] = None,
@@ -1114,11 +1112,11 @@ class JiraFindingMappingsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[JIRAIssue, PaginatedJIRAIssueList], None, None]':
         _params = locals()
-        for page in get_all_pages(self.api_client, JiraFindingMappingsApi.jira_finding_mappings_list, **_params):
+        for page in get_all_pages(self.api_client, JiraFindingMappingsApi.list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def jira_finding_mappings_partial_update(
+    def partial_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this jir a_ issue.')],
         patched_jira_issue_request: Optional[PatchedJIRAIssueRequest] = None,
@@ -1132,7 +1130,7 @@ class JiraFindingMappingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> JIRAIssue:
-        """jira_finding_mappings_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this jir a_ issue. (required)
@@ -1161,7 +1159,7 @@ class JiraFindingMappingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._jira_finding_mappings_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_jira_issue_request=patched_jira_issue_request,
             _request_auth=_request_auth,
@@ -1180,7 +1178,7 @@ class JiraFindingMappingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def jira_finding_mappings_partial_update_with_http_info(
+    def partial_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this jir a_ issue.')],
         patched_jira_issue_request: Optional[PatchedJIRAIssueRequest] = None,
@@ -1194,7 +1192,7 @@ class JiraFindingMappingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[JIRAIssue]:
-        """jira_finding_mappings_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this jir a_ issue. (required)
@@ -1223,7 +1221,7 @@ class JiraFindingMappingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._jira_finding_mappings_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_jira_issue_request=patched_jira_issue_request,
             _request_auth=_request_auth,
@@ -1242,7 +1240,7 @@ class JiraFindingMappingsApi:
             response_types_map=_response_types_map,
         )
 
-    def jira_finding_mappings_partial_update_without_preload_content(
+    def partial_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this jir a_ issue.')],
         patched_jira_issue_request: Optional[PatchedJIRAIssueRequest] = None,
@@ -1256,7 +1254,7 @@ class JiraFindingMappingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """jira_finding_mappings_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this jir a_ issue. (required)
@@ -1285,7 +1283,7 @@ class JiraFindingMappingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._jira_finding_mappings_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_jira_issue_request=patched_jira_issue_request,
             _request_auth=_request_auth,
@@ -1300,7 +1298,7 @@ class JiraFindingMappingsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _jira_finding_mappings_partial_update_serialize(
+    def _partial_update_serialize(
         self,
         id,
         patched_jira_issue_request,
@@ -1362,7 +1360,7 @@ class JiraFindingMappingsApi:
             _request_auth=_request_auth,
         )
 
-    def jira_finding_mappings_retrieve(
+    def retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this jir a_ issue.')],
         _request_timeout: Union[
@@ -1375,7 +1373,7 @@ class JiraFindingMappingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> JIRAIssue:
-        """jira_finding_mappings_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this jir a_ issue. (required)
@@ -1402,7 +1400,7 @@ class JiraFindingMappingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._jira_finding_mappings_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1416,7 +1414,7 @@ class JiraFindingMappingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def jira_finding_mappings_retrieve_with_http_info(
+    def retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this jir a_ issue.')],
         _request_timeout: Union[
@@ -1429,7 +1427,7 @@ class JiraFindingMappingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[JIRAIssue]:
-        """jira_finding_mappings_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this jir a_ issue. (required)
@@ -1456,7 +1454,7 @@ class JiraFindingMappingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._jira_finding_mappings_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1470,7 +1468,7 @@ class JiraFindingMappingsApi:
             response_types_map=_response_types_map,
         )
 
-    def jira_finding_mappings_retrieve_without_preload_content(
+    def retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this jir a_ issue.')],
         _request_timeout: Union[
@@ -1483,7 +1481,7 @@ class JiraFindingMappingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """jira_finding_mappings_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this jir a_ issue. (required)
@@ -1510,7 +1508,7 @@ class JiraFindingMappingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._jira_finding_mappings_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1520,7 +1518,7 @@ class JiraFindingMappingsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _jira_finding_mappings_retrieve_serialize(
+    def _retrieve_serialize(
         self,
         id,
         _request_auth,
@@ -1569,7 +1567,7 @@ class JiraFindingMappingsApi:
             _request_auth=_request_auth,
         )
 
-    def jira_finding_mappings_update(
+    def update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this jir a_ issue.')],
         jira_issue_request: JIRAIssueRequest,
@@ -1583,7 +1581,7 @@ class JiraFindingMappingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> JIRAIssue:
-        """jira_finding_mappings_update
+        """update
 
 
         :param id: A unique integer value identifying this jir a_ issue. (required)
@@ -1612,7 +1610,7 @@ class JiraFindingMappingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._jira_finding_mappings_update_serialize(
+        _param = self._update_serialize(
             id=id,
             jira_issue_request=jira_issue_request,
             _request_auth=_request_auth,
@@ -1631,7 +1629,7 @@ class JiraFindingMappingsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def jira_finding_mappings_update_with_http_info(
+    def update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this jir a_ issue.')],
         jira_issue_request: JIRAIssueRequest,
@@ -1645,7 +1643,7 @@ class JiraFindingMappingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[JIRAIssue]:
-        """jira_finding_mappings_update
+        """update
 
 
         :param id: A unique integer value identifying this jir a_ issue. (required)
@@ -1674,7 +1672,7 @@ class JiraFindingMappingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._jira_finding_mappings_update_serialize(
+        _param = self._update_serialize(
             id=id,
             jira_issue_request=jira_issue_request,
             _request_auth=_request_auth,
@@ -1693,7 +1691,7 @@ class JiraFindingMappingsApi:
             response_types_map=_response_types_map,
         )
 
-    def jira_finding_mappings_update_without_preload_content(
+    def update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this jir a_ issue.')],
         jira_issue_request: JIRAIssueRequest,
@@ -1707,7 +1705,7 @@ class JiraFindingMappingsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """jira_finding_mappings_update
+        """update
 
 
         :param id: A unique integer value identifying this jir a_ issue. (required)
@@ -1736,7 +1734,7 @@ class JiraFindingMappingsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._jira_finding_mappings_update_serialize(
+        _param = self._update_serialize(
             id=id,
             jira_issue_request=jira_issue_request,
             _request_auth=_request_auth,
@@ -1751,7 +1749,7 @@ class JiraFindingMappingsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _jira_finding_mappings_update_serialize(
+    def _update_serialize(
         self,
         id,
         jira_issue_request,

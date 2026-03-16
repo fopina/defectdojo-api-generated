@@ -40,7 +40,7 @@ class NotificationsApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    def notifications_create(
+    def create(
         self,
         notifications_request: Optional[NotificationsRequest] = None,
         _request_timeout: Union[
@@ -53,7 +53,7 @@ class NotificationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Notifications:
-        """notifications_create
+        """create
 
 
         :param notifications_request:
@@ -80,7 +80,7 @@ class NotificationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notifications_create_serialize(
+        _param = self._create_serialize(
             notifications_request=notifications_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -98,7 +98,7 @@ class NotificationsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def notifications_create_with_http_info(
+    def create_with_http_info(
         self,
         notifications_request: Optional[NotificationsRequest] = None,
         _request_timeout: Union[
@@ -111,7 +111,7 @@ class NotificationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Notifications]:
-        """notifications_create
+        """create
 
 
         :param notifications_request:
@@ -138,7 +138,7 @@ class NotificationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notifications_create_serialize(
+        _param = self._create_serialize(
             notifications_request=notifications_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -156,7 +156,7 @@ class NotificationsApi:
             response_types_map=_response_types_map,
         )
 
-    def notifications_create_without_preload_content(
+    def create_without_preload_content(
         self,
         notifications_request: Optional[NotificationsRequest] = None,
         _request_timeout: Union[
@@ -169,7 +169,7 @@ class NotificationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """notifications_create
+        """create
 
 
         :param notifications_request:
@@ -196,7 +196,7 @@ class NotificationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notifications_create_serialize(
+        _param = self._create_serialize(
             notifications_request=notifications_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -210,7 +210,7 @@ class NotificationsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _notifications_create_serialize(
+    def _create_serialize(
         self,
         notifications_request,
         _request_auth,
@@ -269,7 +269,7 @@ class NotificationsApi:
             _request_auth=_request_auth,
         )
 
-    def notifications_delete_preview_list(
+    def delete_preview_list(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notifications.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -286,7 +286,7 @@ class NotificationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedDeletePreviewList:
-        """notifications_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this notifications. (required)
@@ -317,7 +317,7 @@ class NotificationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notifications_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -337,7 +337,7 @@ class NotificationsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def notifications_delete_preview_list_with_http_info(
+    def delete_preview_list_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notifications.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -354,7 +354,7 @@ class NotificationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedDeletePreviewList]:
-        """notifications_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this notifications. (required)
@@ -385,7 +385,7 @@ class NotificationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notifications_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -405,7 +405,7 @@ class NotificationsApi:
             response_types_map=_response_types_map,
         )
 
-    def notifications_delete_preview_list_without_preload_content(
+    def delete_preview_list_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notifications.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -422,7 +422,7 @@ class NotificationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """notifications_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this notifications. (required)
@@ -453,7 +453,7 @@ class NotificationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notifications_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -469,7 +469,7 @@ class NotificationsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _notifications_delete_preview_list_serialize(
+    def _delete_preview_list_serialize(
         self,
         id,
         limit,
@@ -526,7 +526,7 @@ class NotificationsApi:
             _request_auth=_request_auth,
         )
 
-    def notifications_delete_preview_list_iterator(
+    def delete_preview_list_iterator(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notifications.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -544,11 +544,11 @@ class NotificationsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[DeletePreview, PaginatedDeletePreviewList], None, None]':
         _params = locals()
-        for page in get_all_pages(self.api_client, NotificationsApi.notifications_delete_preview_list, **_params):
+        for page in get_all_pages(self.api_client, NotificationsApi.delete_preview_list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def notifications_destroy(
+    def destroy(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notifications.')],
         _request_timeout: Union[
@@ -561,7 +561,7 @@ class NotificationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> None:
-        """notifications_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this notifications. (required)
@@ -588,7 +588,7 @@ class NotificationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notifications_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -602,7 +602,7 @@ class NotificationsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def notifications_destroy_with_http_info(
+    def destroy_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notifications.')],
         _request_timeout: Union[
@@ -615,7 +615,7 @@ class NotificationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[None]:
-        """notifications_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this notifications. (required)
@@ -642,7 +642,7 @@ class NotificationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notifications_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -656,7 +656,7 @@ class NotificationsApi:
             response_types_map=_response_types_map,
         )
 
-    def notifications_destroy_without_preload_content(
+    def destroy_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notifications.')],
         _request_timeout: Union[
@@ -669,7 +669,7 @@ class NotificationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """notifications_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this notifications. (required)
@@ -696,7 +696,7 @@ class NotificationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notifications_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -706,7 +706,7 @@ class NotificationsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _notifications_destroy_serialize(
+    def _destroy_serialize(
         self,
         id,
         _request_auth,
@@ -751,7 +751,7 @@ class NotificationsApi:
             _request_auth=_request_auth,
         )
 
-    def notifications_list(
+    def list(
         self,
         id: Optional[StrictInt] = None,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -775,7 +775,7 @@ class NotificationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedNotificationsList:
-        """notifications_list
+        """list
 
 
         :param id:
@@ -814,7 +814,7 @@ class NotificationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notifications_list_serialize(
+        _param = self._list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -838,7 +838,7 @@ class NotificationsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def notifications_list_with_http_info(
+    def list_with_http_info(
         self,
         id: Optional[StrictInt] = None,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -862,7 +862,7 @@ class NotificationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedNotificationsList]:
-        """notifications_list
+        """list
 
 
         :param id:
@@ -901,7 +901,7 @@ class NotificationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notifications_list_serialize(
+        _param = self._list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -925,7 +925,7 @@ class NotificationsApi:
             response_types_map=_response_types_map,
         )
 
-    def notifications_list_without_preload_content(
+    def list_without_preload_content(
         self,
         id: Optional[StrictInt] = None,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -949,7 +949,7 @@ class NotificationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """notifications_list
+        """list
 
 
         :param id:
@@ -988,7 +988,7 @@ class NotificationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notifications_list_serialize(
+        _param = self._list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -1008,7 +1008,7 @@ class NotificationsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _notifications_list_serialize(
+    def _list_serialize(
         self,
         id,
         limit,
@@ -1084,7 +1084,7 @@ class NotificationsApi:
             _request_auth=_request_auth,
         )
 
-    def notifications_list_iterator(
+    def list_iterator(
         self,
         id: Optional[StrictInt] = None,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -1109,11 +1109,11 @@ class NotificationsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[Notifications, PaginatedNotificationsList], None, None]':
         _params = locals()
-        for page in get_all_pages(self.api_client, NotificationsApi.notifications_list, **_params):
+        for page in get_all_pages(self.api_client, NotificationsApi.list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def notifications_partial_update(
+    def partial_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notifications.')],
         patched_notifications_request: Optional[PatchedNotificationsRequest] = None,
@@ -1127,7 +1127,7 @@ class NotificationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Notifications:
-        """notifications_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this notifications. (required)
@@ -1156,7 +1156,7 @@ class NotificationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notifications_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_notifications_request=patched_notifications_request,
             _request_auth=_request_auth,
@@ -1175,7 +1175,7 @@ class NotificationsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def notifications_partial_update_with_http_info(
+    def partial_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notifications.')],
         patched_notifications_request: Optional[PatchedNotificationsRequest] = None,
@@ -1189,7 +1189,7 @@ class NotificationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Notifications]:
-        """notifications_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this notifications. (required)
@@ -1218,7 +1218,7 @@ class NotificationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notifications_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_notifications_request=patched_notifications_request,
             _request_auth=_request_auth,
@@ -1237,7 +1237,7 @@ class NotificationsApi:
             response_types_map=_response_types_map,
         )
 
-    def notifications_partial_update_without_preload_content(
+    def partial_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notifications.')],
         patched_notifications_request: Optional[PatchedNotificationsRequest] = None,
@@ -1251,7 +1251,7 @@ class NotificationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """notifications_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this notifications. (required)
@@ -1280,7 +1280,7 @@ class NotificationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notifications_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_notifications_request=patched_notifications_request,
             _request_auth=_request_auth,
@@ -1295,7 +1295,7 @@ class NotificationsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _notifications_partial_update_serialize(
+    def _partial_update_serialize(
         self,
         id,
         patched_notifications_request,
@@ -1357,7 +1357,7 @@ class NotificationsApi:
             _request_auth=_request_auth,
         )
 
-    def notifications_retrieve(
+    def retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notifications.')],
         prefetch: Annotated[
@@ -1374,7 +1374,7 @@ class NotificationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Notifications:
-        """notifications_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this notifications. (required)
@@ -1403,7 +1403,7 @@ class NotificationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notifications_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id,
             prefetch=prefetch,
             _request_auth=_request_auth,
@@ -1422,7 +1422,7 @@ class NotificationsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def notifications_retrieve_with_http_info(
+    def retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notifications.')],
         prefetch: Annotated[
@@ -1439,7 +1439,7 @@ class NotificationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Notifications]:
-        """notifications_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this notifications. (required)
@@ -1468,7 +1468,7 @@ class NotificationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notifications_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id,
             prefetch=prefetch,
             _request_auth=_request_auth,
@@ -1487,7 +1487,7 @@ class NotificationsApi:
             response_types_map=_response_types_map,
         )
 
-    def notifications_retrieve_without_preload_content(
+    def retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notifications.')],
         prefetch: Annotated[
@@ -1504,7 +1504,7 @@ class NotificationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """notifications_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this notifications. (required)
@@ -1533,7 +1533,7 @@ class NotificationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notifications_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id,
             prefetch=prefetch,
             _request_auth=_request_auth,
@@ -1548,7 +1548,7 @@ class NotificationsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _notifications_retrieve_serialize(
+    def _retrieve_serialize(
         self,
         id,
         prefetch,
@@ -1603,7 +1603,7 @@ class NotificationsApi:
             _request_auth=_request_auth,
         )
 
-    def notifications_update(
+    def update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notifications.')],
         notifications_request: Optional[NotificationsRequest] = None,
@@ -1617,7 +1617,7 @@ class NotificationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Notifications:
-        """notifications_update
+        """update
 
 
         :param id: A unique integer value identifying this notifications. (required)
@@ -1646,7 +1646,7 @@ class NotificationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notifications_update_serialize(
+        _param = self._update_serialize(
             id=id,
             notifications_request=notifications_request,
             _request_auth=_request_auth,
@@ -1665,7 +1665,7 @@ class NotificationsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def notifications_update_with_http_info(
+    def update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notifications.')],
         notifications_request: Optional[NotificationsRequest] = None,
@@ -1679,7 +1679,7 @@ class NotificationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Notifications]:
-        """notifications_update
+        """update
 
 
         :param id: A unique integer value identifying this notifications. (required)
@@ -1708,7 +1708,7 @@ class NotificationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notifications_update_serialize(
+        _param = self._update_serialize(
             id=id,
             notifications_request=notifications_request,
             _request_auth=_request_auth,
@@ -1727,7 +1727,7 @@ class NotificationsApi:
             response_types_map=_response_types_map,
         )
 
-    def notifications_update_without_preload_content(
+    def update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notifications.')],
         notifications_request: Optional[NotificationsRequest] = None,
@@ -1741,7 +1741,7 @@ class NotificationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """notifications_update
+        """update
 
 
         :param id: A unique integer value identifying this notifications. (required)
@@ -1770,7 +1770,7 @@ class NotificationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notifications_update_serialize(
+        _param = self._update_serialize(
             id=id,
             notifications_request=notifications_request,
             _request_auth=_request_auth,
@@ -1785,7 +1785,7 @@ class NotificationsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _notifications_update_serialize(
+    def _update_serialize(
         self,
         id,
         notifications_request,

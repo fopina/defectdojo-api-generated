@@ -24,24 +24,24 @@ class TestTestTypesApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_test_types_create(self) -> None:
-        """Test case for test_types_create"""
+    def test_create(self) -> None:
+        """Test case for create"""
         pass
 
-    def test_test_types_list(self) -> None:
-        """Test case for test_types_list"""
+    def test_list(self) -> None:
+        """Test case for list"""
         pass
 
-    def test_test_types_partial_update(self) -> None:
-        """Test case for test_types_partial_update"""
+    def test_partial_update(self) -> None:
+        """Test case for partial_update"""
         pass
 
-    def test_test_types_retrieve(self) -> None:
-        """Test case for test_types_retrieve"""
+    def test_retrieve(self) -> None:
+        """Test case for retrieve"""
         pass
 
-    def test_test_types_update(self) -> None:
-        """Test case for test_types_update"""
+    def test_update(self) -> None:
+        """Test case for update"""
         pass
 
 

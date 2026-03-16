@@ -41,7 +41,7 @@ class TestImportsApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    def test_imports_create(
+    def create(
         self,
         test_import_request: Optional[TestImportRequest] = None,
         _request_timeout: Union[
@@ -54,7 +54,7 @@ class TestImportsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> TestImport:
-        """test_imports_create
+        """create
 
 
         :param test_import_request:
@@ -81,7 +81,7 @@ class TestImportsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._test_imports_create_serialize(
+        _param = self._create_serialize(
             test_import_request=test_import_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -99,7 +99,7 @@ class TestImportsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def test_imports_create_with_http_info(
+    def create_with_http_info(
         self,
         test_import_request: Optional[TestImportRequest] = None,
         _request_timeout: Union[
@@ -112,7 +112,7 @@ class TestImportsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[TestImport]:
-        """test_imports_create
+        """create
 
 
         :param test_import_request:
@@ -139,7 +139,7 @@ class TestImportsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._test_imports_create_serialize(
+        _param = self._create_serialize(
             test_import_request=test_import_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -157,7 +157,7 @@ class TestImportsApi:
             response_types_map=_response_types_map,
         )
 
-    def test_imports_create_without_preload_content(
+    def create_without_preload_content(
         self,
         test_import_request: Optional[TestImportRequest] = None,
         _request_timeout: Union[
@@ -170,7 +170,7 @@ class TestImportsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """test_imports_create
+        """create
 
 
         :param test_import_request:
@@ -197,7 +197,7 @@ class TestImportsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._test_imports_create_serialize(
+        _param = self._create_serialize(
             test_import_request=test_import_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -211,7 +211,7 @@ class TestImportsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _test_imports_create_serialize(
+    def _create_serialize(
         self,
         test_import_request,
         _request_auth,
@@ -270,7 +270,7 @@ class TestImportsApi:
             _request_auth=_request_auth,
         )
 
-    def test_imports_delete_preview_list(
+    def delete_preview_list(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test_ import.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -287,7 +287,7 @@ class TestImportsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedDeletePreviewList:
-        """test_imports_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this test_ import. (required)
@@ -318,7 +318,7 @@ class TestImportsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._test_imports_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -338,7 +338,7 @@ class TestImportsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def test_imports_delete_preview_list_with_http_info(
+    def delete_preview_list_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test_ import.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -355,7 +355,7 @@ class TestImportsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedDeletePreviewList]:
-        """test_imports_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this test_ import. (required)
@@ -386,7 +386,7 @@ class TestImportsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._test_imports_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -406,7 +406,7 @@ class TestImportsApi:
             response_types_map=_response_types_map,
         )
 
-    def test_imports_delete_preview_list_without_preload_content(
+    def delete_preview_list_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test_ import.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -423,7 +423,7 @@ class TestImportsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """test_imports_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this test_ import. (required)
@@ -454,7 +454,7 @@ class TestImportsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._test_imports_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -470,7 +470,7 @@ class TestImportsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _test_imports_delete_preview_list_serialize(
+    def _delete_preview_list_serialize(
         self,
         id,
         limit,
@@ -527,7 +527,7 @@ class TestImportsApi:
             _request_auth=_request_auth,
         )
 
-    def test_imports_delete_preview_list_iterator(
+    def delete_preview_list_iterator(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test_ import.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -545,11 +545,11 @@ class TestImportsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[DeletePreview, PaginatedDeletePreviewList], None, None]':
         _params = locals()
-        for page in get_all_pages(self.api_client, TestImportsApi.test_imports_delete_preview_list, **_params):
+        for page in get_all_pages(self.api_client, TestImportsApi.delete_preview_list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def test_imports_destroy(
+    def destroy(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test_ import.')],
         _request_timeout: Union[
@@ -562,7 +562,7 @@ class TestImportsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> None:
-        """test_imports_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this test_ import. (required)
@@ -589,7 +589,7 @@ class TestImportsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._test_imports_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -603,7 +603,7 @@ class TestImportsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def test_imports_destroy_with_http_info(
+    def destroy_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test_ import.')],
         _request_timeout: Union[
@@ -616,7 +616,7 @@ class TestImportsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[None]:
-        """test_imports_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this test_ import. (required)
@@ -643,7 +643,7 @@ class TestImportsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._test_imports_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -657,7 +657,7 @@ class TestImportsApi:
             response_types_map=_response_types_map,
         )
 
-    def test_imports_destroy_without_preload_content(
+    def destroy_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test_ import.')],
         _request_timeout: Union[
@@ -670,7 +670,7 @@ class TestImportsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """test_imports_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this test_ import. (required)
@@ -697,7 +697,7 @@ class TestImportsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._test_imports_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -707,7 +707,7 @@ class TestImportsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _test_imports_destroy_serialize(
+    def _destroy_serialize(
         self,
         id,
         _request_auth,
@@ -752,7 +752,7 @@ class TestImportsApi:
             _request_auth=_request_auth,
         )
 
-    def test_imports_list(
+    def list(
         self,
         branch_tag: Optional[StrictStr] = None,
         build_id: Optional[StrictStr] = None,
@@ -786,7 +786,7 @@ class TestImportsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedTestImportList:
-        """test_imports_list
+        """list
 
 
         :param branch_tag:
@@ -835,7 +835,7 @@ class TestImportsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._test_imports_list_serialize(
+        _param = self._list_serialize(
             branch_tag=branch_tag,
             build_id=build_id,
             commit_hash=commit_hash,
@@ -864,7 +864,7 @@ class TestImportsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def test_imports_list_with_http_info(
+    def list_with_http_info(
         self,
         branch_tag: Optional[StrictStr] = None,
         build_id: Optional[StrictStr] = None,
@@ -898,7 +898,7 @@ class TestImportsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedTestImportList]:
-        """test_imports_list
+        """list
 
 
         :param branch_tag:
@@ -947,7 +947,7 @@ class TestImportsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._test_imports_list_serialize(
+        _param = self._list_serialize(
             branch_tag=branch_tag,
             build_id=build_id,
             commit_hash=commit_hash,
@@ -976,7 +976,7 @@ class TestImportsApi:
             response_types_map=_response_types_map,
         )
 
-    def test_imports_list_without_preload_content(
+    def list_without_preload_content(
         self,
         branch_tag: Optional[StrictStr] = None,
         build_id: Optional[StrictStr] = None,
@@ -1010,7 +1010,7 @@ class TestImportsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """test_imports_list
+        """list
 
 
         :param branch_tag:
@@ -1059,7 +1059,7 @@ class TestImportsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._test_imports_list_serialize(
+        _param = self._list_serialize(
             branch_tag=branch_tag,
             build_id=build_id,
             commit_hash=commit_hash,
@@ -1084,7 +1084,7 @@ class TestImportsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _test_imports_list_serialize(
+    def _list_serialize(
         self,
         branch_tag,
         build_id,
@@ -1189,7 +1189,7 @@ class TestImportsApi:
             _request_auth=_request_auth,
         )
 
-    def test_imports_list_iterator(
+    def list_iterator(
         self,
         branch_tag: Optional[StrictStr] = None,
         build_id: Optional[StrictStr] = None,
@@ -1224,11 +1224,11 @@ class TestImportsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[TestImport, PaginatedTestImportList], None, None]':
         _params = locals()
-        for page in get_all_pages(self.api_client, TestImportsApi.test_imports_list, **_params):
+        for page in get_all_pages(self.api_client, TestImportsApi.list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def test_imports_partial_update(
+    def partial_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test_ import.')],
         patched_test_import_request: Optional[PatchedTestImportRequest] = None,
@@ -1242,7 +1242,7 @@ class TestImportsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> TestImport:
-        """test_imports_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this test_ import. (required)
@@ -1271,7 +1271,7 @@ class TestImportsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._test_imports_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_test_import_request=patched_test_import_request,
             _request_auth=_request_auth,
@@ -1290,7 +1290,7 @@ class TestImportsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def test_imports_partial_update_with_http_info(
+    def partial_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test_ import.')],
         patched_test_import_request: Optional[PatchedTestImportRequest] = None,
@@ -1304,7 +1304,7 @@ class TestImportsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[TestImport]:
-        """test_imports_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this test_ import. (required)
@@ -1333,7 +1333,7 @@ class TestImportsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._test_imports_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_test_import_request=patched_test_import_request,
             _request_auth=_request_auth,
@@ -1352,7 +1352,7 @@ class TestImportsApi:
             response_types_map=_response_types_map,
         )
 
-    def test_imports_partial_update_without_preload_content(
+    def partial_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test_ import.')],
         patched_test_import_request: Optional[PatchedTestImportRequest] = None,
@@ -1366,7 +1366,7 @@ class TestImportsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """test_imports_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this test_ import. (required)
@@ -1395,7 +1395,7 @@ class TestImportsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._test_imports_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_test_import_request=patched_test_import_request,
             _request_auth=_request_auth,
@@ -1410,7 +1410,7 @@ class TestImportsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _test_imports_partial_update_serialize(
+    def _partial_update_serialize(
         self,
         id,
         patched_test_import_request,
@@ -1472,7 +1472,7 @@ class TestImportsApi:
             _request_auth=_request_auth,
         )
 
-    def test_imports_retrieve(
+    def retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test_ import.')],
         _request_timeout: Union[
@@ -1485,7 +1485,7 @@ class TestImportsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> TestImport:
-        """test_imports_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this test_ import. (required)
@@ -1512,7 +1512,7 @@ class TestImportsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._test_imports_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1526,7 +1526,7 @@ class TestImportsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def test_imports_retrieve_with_http_info(
+    def retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test_ import.')],
         _request_timeout: Union[
@@ -1539,7 +1539,7 @@ class TestImportsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[TestImport]:
-        """test_imports_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this test_ import. (required)
@@ -1566,7 +1566,7 @@ class TestImportsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._test_imports_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1580,7 +1580,7 @@ class TestImportsApi:
             response_types_map=_response_types_map,
         )
 
-    def test_imports_retrieve_without_preload_content(
+    def retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test_ import.')],
         _request_timeout: Union[
@@ -1593,7 +1593,7 @@ class TestImportsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """test_imports_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this test_ import. (required)
@@ -1620,7 +1620,7 @@ class TestImportsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._test_imports_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1630,7 +1630,7 @@ class TestImportsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _test_imports_retrieve_serialize(
+    def _retrieve_serialize(
         self,
         id,
         _request_auth,
@@ -1679,7 +1679,7 @@ class TestImportsApi:
             _request_auth=_request_auth,
         )
 
-    def test_imports_update(
+    def update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test_ import.')],
         test_import_request: Optional[TestImportRequest] = None,
@@ -1693,7 +1693,7 @@ class TestImportsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> TestImport:
-        """test_imports_update
+        """update
 
 
         :param id: A unique integer value identifying this test_ import. (required)
@@ -1722,7 +1722,7 @@ class TestImportsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._test_imports_update_serialize(
+        _param = self._update_serialize(
             id=id,
             test_import_request=test_import_request,
             _request_auth=_request_auth,
@@ -1741,7 +1741,7 @@ class TestImportsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def test_imports_update_with_http_info(
+    def update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test_ import.')],
         test_import_request: Optional[TestImportRequest] = None,
@@ -1755,7 +1755,7 @@ class TestImportsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[TestImport]:
-        """test_imports_update
+        """update
 
 
         :param id: A unique integer value identifying this test_ import. (required)
@@ -1784,7 +1784,7 @@ class TestImportsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._test_imports_update_serialize(
+        _param = self._update_serialize(
             id=id,
             test_import_request=test_import_request,
             _request_auth=_request_auth,
@@ -1803,7 +1803,7 @@ class TestImportsApi:
             response_types_map=_response_types_map,
         )
 
-    def test_imports_update_without_preload_content(
+    def update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this test_ import.')],
         test_import_request: Optional[TestImportRequest] = None,
@@ -1817,7 +1817,7 @@ class TestImportsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """test_imports_update
+        """update
 
 
         :param id: A unique integer value identifying this test_ import. (required)
@@ -1846,7 +1846,7 @@ class TestImportsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._test_imports_update_serialize(
+        _param = self._update_serialize(
             id=id,
             test_import_request=test_import_request,
             _request_auth=_request_auth,
@@ -1861,7 +1861,7 @@ class TestImportsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _test_imports_update_serialize(
+    def _update_serialize(
         self,
         id,
         test_import_request,

@@ -24,28 +24,28 @@ class TestProductGroupsApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_product_groups_create(self) -> None:
-        """Test case for product_groups_create"""
+    def test_create(self) -> None:
+        """Test case for create"""
         pass
 
-    def test_product_groups_delete_preview_list(self) -> None:
-        """Test case for product_groups_delete_preview_list"""
+    def test_delete_preview_list(self) -> None:
+        """Test case for delete_preview_list"""
         pass
 
-    def test_product_groups_destroy(self) -> None:
-        """Test case for product_groups_destroy"""
+    def test_destroy(self) -> None:
+        """Test case for destroy"""
         pass
 
-    def test_product_groups_list(self) -> None:
-        """Test case for product_groups_list"""
+    def test_list(self) -> None:
+        """Test case for list"""
         pass
 
-    def test_product_groups_retrieve(self) -> None:
-        """Test case for product_groups_retrieve"""
+    def test_retrieve(self) -> None:
+        """Test case for retrieve"""
         pass
 
-    def test_product_groups_update(self) -> None:
-        """Test case for product_groups_update"""
+    def test_update(self) -> None:
+        """Test case for update"""
         pass
 
 

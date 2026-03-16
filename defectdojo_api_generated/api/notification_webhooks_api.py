@@ -41,7 +41,7 @@ class NotificationWebhooksApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    def notification_webhooks_create(
+    def create(
         self,
         notification_webhooks_request: Optional[NotificationWebhooksRequest] = None,
         _request_timeout: Union[
@@ -54,7 +54,7 @@ class NotificationWebhooksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> NotificationWebhooks:
-        """notification_webhooks_create
+        """create
 
 
         :param notification_webhooks_request:
@@ -81,7 +81,7 @@ class NotificationWebhooksApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notification_webhooks_create_serialize(
+        _param = self._create_serialize(
             notification_webhooks_request=notification_webhooks_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -99,7 +99,7 @@ class NotificationWebhooksApi:
             response_types_map=_response_types_map,
         ).data
 
-    def notification_webhooks_create_with_http_info(
+    def create_with_http_info(
         self,
         notification_webhooks_request: Optional[NotificationWebhooksRequest] = None,
         _request_timeout: Union[
@@ -112,7 +112,7 @@ class NotificationWebhooksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[NotificationWebhooks]:
-        """notification_webhooks_create
+        """create
 
 
         :param notification_webhooks_request:
@@ -139,7 +139,7 @@ class NotificationWebhooksApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notification_webhooks_create_serialize(
+        _param = self._create_serialize(
             notification_webhooks_request=notification_webhooks_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -157,7 +157,7 @@ class NotificationWebhooksApi:
             response_types_map=_response_types_map,
         )
 
-    def notification_webhooks_create_without_preload_content(
+    def create_without_preload_content(
         self,
         notification_webhooks_request: Optional[NotificationWebhooksRequest] = None,
         _request_timeout: Union[
@@ -170,7 +170,7 @@ class NotificationWebhooksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """notification_webhooks_create
+        """create
 
 
         :param notification_webhooks_request:
@@ -197,7 +197,7 @@ class NotificationWebhooksApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notification_webhooks_create_serialize(
+        _param = self._create_serialize(
             notification_webhooks_request=notification_webhooks_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -211,7 +211,7 @@ class NotificationWebhooksApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _notification_webhooks_create_serialize(
+    def _create_serialize(
         self,
         notification_webhooks_request,
         _request_auth,
@@ -270,7 +270,7 @@ class NotificationWebhooksApi:
             _request_auth=_request_auth,
         )
 
-    def notification_webhooks_delete_preview_list(
+    def delete_preview_list(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notification_ webhooks.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -287,7 +287,7 @@ class NotificationWebhooksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedDeletePreviewList:
-        """notification_webhooks_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this notification_ webhooks. (required)
@@ -318,7 +318,7 @@ class NotificationWebhooksApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notification_webhooks_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -338,7 +338,7 @@ class NotificationWebhooksApi:
             response_types_map=_response_types_map,
         ).data
 
-    def notification_webhooks_delete_preview_list_with_http_info(
+    def delete_preview_list_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notification_ webhooks.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -355,7 +355,7 @@ class NotificationWebhooksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedDeletePreviewList]:
-        """notification_webhooks_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this notification_ webhooks. (required)
@@ -386,7 +386,7 @@ class NotificationWebhooksApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notification_webhooks_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -406,7 +406,7 @@ class NotificationWebhooksApi:
             response_types_map=_response_types_map,
         )
 
-    def notification_webhooks_delete_preview_list_without_preload_content(
+    def delete_preview_list_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notification_ webhooks.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -423,7 +423,7 @@ class NotificationWebhooksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """notification_webhooks_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this notification_ webhooks. (required)
@@ -454,7 +454,7 @@ class NotificationWebhooksApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notification_webhooks_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -470,7 +470,7 @@ class NotificationWebhooksApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _notification_webhooks_delete_preview_list_serialize(
+    def _delete_preview_list_serialize(
         self,
         id,
         limit,
@@ -527,7 +527,7 @@ class NotificationWebhooksApi:
             _request_auth=_request_auth,
         )
 
-    def notification_webhooks_delete_preview_list_iterator(
+    def delete_preview_list_iterator(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notification_ webhooks.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -545,13 +545,11 @@ class NotificationWebhooksApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[DeletePreview, PaginatedDeletePreviewList], None, None]':
         _params = locals()
-        for page in get_all_pages(
-            self.api_client, NotificationWebhooksApi.notification_webhooks_delete_preview_list, **_params
-        ):
+        for page in get_all_pages(self.api_client, NotificationWebhooksApi.delete_preview_list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def notification_webhooks_destroy(
+    def destroy(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notification_ webhooks.')],
         _request_timeout: Union[
@@ -564,7 +562,7 @@ class NotificationWebhooksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> None:
-        """notification_webhooks_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this notification_ webhooks. (required)
@@ -591,7 +589,7 @@ class NotificationWebhooksApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notification_webhooks_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -605,7 +603,7 @@ class NotificationWebhooksApi:
             response_types_map=_response_types_map,
         ).data
 
-    def notification_webhooks_destroy_with_http_info(
+    def destroy_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notification_ webhooks.')],
         _request_timeout: Union[
@@ -618,7 +616,7 @@ class NotificationWebhooksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[None]:
-        """notification_webhooks_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this notification_ webhooks. (required)
@@ -645,7 +643,7 @@ class NotificationWebhooksApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notification_webhooks_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -659,7 +657,7 @@ class NotificationWebhooksApi:
             response_types_map=_response_types_map,
         )
 
-    def notification_webhooks_destroy_without_preload_content(
+    def destroy_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notification_ webhooks.')],
         _request_timeout: Union[
@@ -672,7 +670,7 @@ class NotificationWebhooksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """notification_webhooks_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this notification_ webhooks. (required)
@@ -699,7 +697,7 @@ class NotificationWebhooksApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notification_webhooks_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -709,7 +707,7 @@ class NotificationWebhooksApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _notification_webhooks_destroy_serialize(
+    def _destroy_serialize(
         self,
         id,
         _request_auth,
@@ -754,7 +752,7 @@ class NotificationWebhooksApi:
             _request_auth=_request_auth,
         )
 
-    def notification_webhooks_list(
+    def list(
         self,
         first_error: Optional[datetime] = None,
         header_name: Optional[StrictStr] = None,
@@ -784,7 +782,7 @@ class NotificationWebhooksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedNotificationWebhooksList:
-        """notification_webhooks_list
+        """list
 
 
         :param first_error:
@@ -831,7 +829,7 @@ class NotificationWebhooksApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notification_webhooks_list_serialize(
+        _param = self._list_serialize(
             first_error=first_error,
             header_name=header_name,
             header_value=header_value,
@@ -859,7 +857,7 @@ class NotificationWebhooksApi:
             response_types_map=_response_types_map,
         ).data
 
-    def notification_webhooks_list_with_http_info(
+    def list_with_http_info(
         self,
         first_error: Optional[datetime] = None,
         header_name: Optional[StrictStr] = None,
@@ -889,7 +887,7 @@ class NotificationWebhooksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedNotificationWebhooksList]:
-        """notification_webhooks_list
+        """list
 
 
         :param first_error:
@@ -936,7 +934,7 @@ class NotificationWebhooksApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notification_webhooks_list_serialize(
+        _param = self._list_serialize(
             first_error=first_error,
             header_name=header_name,
             header_value=header_value,
@@ -964,7 +962,7 @@ class NotificationWebhooksApi:
             response_types_map=_response_types_map,
         )
 
-    def notification_webhooks_list_without_preload_content(
+    def list_without_preload_content(
         self,
         first_error: Optional[datetime] = None,
         header_name: Optional[StrictStr] = None,
@@ -994,7 +992,7 @@ class NotificationWebhooksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """notification_webhooks_list
+        """list
 
 
         :param first_error:
@@ -1041,7 +1039,7 @@ class NotificationWebhooksApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notification_webhooks_list_serialize(
+        _param = self._list_serialize(
             first_error=first_error,
             header_name=header_name,
             header_value=header_value,
@@ -1065,7 +1063,7 @@ class NotificationWebhooksApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _notification_webhooks_list_serialize(
+    def _list_serialize(
         self,
         first_error,
         header_name,
@@ -1163,7 +1161,7 @@ class NotificationWebhooksApi:
             _request_auth=_request_auth,
         )
 
-    def notification_webhooks_list_iterator(
+    def list_iterator(
         self,
         first_error: Optional[datetime] = None,
         header_name: Optional[StrictStr] = None,
@@ -1194,11 +1192,11 @@ class NotificationWebhooksApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[NotificationWebhooks, PaginatedNotificationWebhooksList], None, None]':
         _params = locals()
-        for page in get_all_pages(self.api_client, NotificationWebhooksApi.notification_webhooks_list, **_params):
+        for page in get_all_pages(self.api_client, NotificationWebhooksApi.list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def notification_webhooks_partial_update(
+    def partial_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notification_ webhooks.')],
         patched_notification_webhooks_request: Optional[PatchedNotificationWebhooksRequest] = None,
@@ -1212,7 +1210,7 @@ class NotificationWebhooksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> NotificationWebhooks:
-        """notification_webhooks_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this notification_ webhooks. (required)
@@ -1241,7 +1239,7 @@ class NotificationWebhooksApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notification_webhooks_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_notification_webhooks_request=patched_notification_webhooks_request,
             _request_auth=_request_auth,
@@ -1260,7 +1258,7 @@ class NotificationWebhooksApi:
             response_types_map=_response_types_map,
         ).data
 
-    def notification_webhooks_partial_update_with_http_info(
+    def partial_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notification_ webhooks.')],
         patched_notification_webhooks_request: Optional[PatchedNotificationWebhooksRequest] = None,
@@ -1274,7 +1272,7 @@ class NotificationWebhooksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[NotificationWebhooks]:
-        """notification_webhooks_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this notification_ webhooks. (required)
@@ -1303,7 +1301,7 @@ class NotificationWebhooksApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notification_webhooks_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_notification_webhooks_request=patched_notification_webhooks_request,
             _request_auth=_request_auth,
@@ -1322,7 +1320,7 @@ class NotificationWebhooksApi:
             response_types_map=_response_types_map,
         )
 
-    def notification_webhooks_partial_update_without_preload_content(
+    def partial_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notification_ webhooks.')],
         patched_notification_webhooks_request: Optional[PatchedNotificationWebhooksRequest] = None,
@@ -1336,7 +1334,7 @@ class NotificationWebhooksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """notification_webhooks_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this notification_ webhooks. (required)
@@ -1365,7 +1363,7 @@ class NotificationWebhooksApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notification_webhooks_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_notification_webhooks_request=patched_notification_webhooks_request,
             _request_auth=_request_auth,
@@ -1380,7 +1378,7 @@ class NotificationWebhooksApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _notification_webhooks_partial_update_serialize(
+    def _partial_update_serialize(
         self,
         id,
         patched_notification_webhooks_request,
@@ -1442,7 +1440,7 @@ class NotificationWebhooksApi:
             _request_auth=_request_auth,
         )
 
-    def notification_webhooks_retrieve(
+    def retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notification_ webhooks.')],
         _request_timeout: Union[
@@ -1455,7 +1453,7 @@ class NotificationWebhooksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> NotificationWebhooks:
-        """notification_webhooks_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this notification_ webhooks. (required)
@@ -1482,7 +1480,7 @@ class NotificationWebhooksApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notification_webhooks_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1496,7 +1494,7 @@ class NotificationWebhooksApi:
             response_types_map=_response_types_map,
         ).data
 
-    def notification_webhooks_retrieve_with_http_info(
+    def retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notification_ webhooks.')],
         _request_timeout: Union[
@@ -1509,7 +1507,7 @@ class NotificationWebhooksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[NotificationWebhooks]:
-        """notification_webhooks_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this notification_ webhooks. (required)
@@ -1536,7 +1534,7 @@ class NotificationWebhooksApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notification_webhooks_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1550,7 +1548,7 @@ class NotificationWebhooksApi:
             response_types_map=_response_types_map,
         )
 
-    def notification_webhooks_retrieve_without_preload_content(
+    def retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notification_ webhooks.')],
         _request_timeout: Union[
@@ -1563,7 +1561,7 @@ class NotificationWebhooksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """notification_webhooks_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this notification_ webhooks. (required)
@@ -1590,7 +1588,7 @@ class NotificationWebhooksApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notification_webhooks_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1600,7 +1598,7 @@ class NotificationWebhooksApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _notification_webhooks_retrieve_serialize(
+    def _retrieve_serialize(
         self,
         id,
         _request_auth,
@@ -1649,7 +1647,7 @@ class NotificationWebhooksApi:
             _request_auth=_request_auth,
         )
 
-    def notification_webhooks_update(
+    def update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notification_ webhooks.')],
         notification_webhooks_request: Optional[NotificationWebhooksRequest] = None,
@@ -1663,7 +1661,7 @@ class NotificationWebhooksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> NotificationWebhooks:
-        """notification_webhooks_update
+        """update
 
 
         :param id: A unique integer value identifying this notification_ webhooks. (required)
@@ -1692,7 +1690,7 @@ class NotificationWebhooksApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notification_webhooks_update_serialize(
+        _param = self._update_serialize(
             id=id,
             notification_webhooks_request=notification_webhooks_request,
             _request_auth=_request_auth,
@@ -1711,7 +1709,7 @@ class NotificationWebhooksApi:
             response_types_map=_response_types_map,
         ).data
 
-    def notification_webhooks_update_with_http_info(
+    def update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notification_ webhooks.')],
         notification_webhooks_request: Optional[NotificationWebhooksRequest] = None,
@@ -1725,7 +1723,7 @@ class NotificationWebhooksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[NotificationWebhooks]:
-        """notification_webhooks_update
+        """update
 
 
         :param id: A unique integer value identifying this notification_ webhooks. (required)
@@ -1754,7 +1752,7 @@ class NotificationWebhooksApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notification_webhooks_update_serialize(
+        _param = self._update_serialize(
             id=id,
             notification_webhooks_request=notification_webhooks_request,
             _request_auth=_request_auth,
@@ -1773,7 +1771,7 @@ class NotificationWebhooksApi:
             response_types_map=_response_types_map,
         )
 
-    def notification_webhooks_update_without_preload_content(
+    def update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this notification_ webhooks.')],
         notification_webhooks_request: Optional[NotificationWebhooksRequest] = None,
@@ -1787,7 +1785,7 @@ class NotificationWebhooksApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """notification_webhooks_update
+        """update
 
 
         :param id: A unique integer value identifying this notification_ webhooks. (required)
@@ -1816,7 +1814,7 @@ class NotificationWebhooksApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._notification_webhooks_update_serialize(
+        _param = self._update_serialize(
             id=id,
             notification_webhooks_request=notification_webhooks_request,
             _request_auth=_request_auth,
@@ -1831,7 +1829,7 @@ class NotificationWebhooksApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _notification_webhooks_update_serialize(
+    def _update_serialize(
         self,
         id,
         notification_webhooks_request,

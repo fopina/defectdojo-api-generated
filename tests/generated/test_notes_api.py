@@ -24,20 +24,20 @@ class TestNotesApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_notes_list(self) -> None:
-        """Test case for notes_list"""
+    def test_list(self) -> None:
+        """Test case for list"""
         pass
 
-    def test_notes_partial_update(self) -> None:
-        """Test case for notes_partial_update"""
+    def test_partial_update(self) -> None:
+        """Test case for partial_update"""
         pass
 
-    def test_notes_retrieve(self) -> None:
-        """Test case for notes_retrieve"""
+    def test_retrieve(self) -> None:
+        """Test case for retrieve"""
         pass
 
-    def test_notes_update(self) -> None:
-        """Test case for notes_update"""
+    def test_update(self) -> None:
+        """Test case for update"""
         pass
 
 

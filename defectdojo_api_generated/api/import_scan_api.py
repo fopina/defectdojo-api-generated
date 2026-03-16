@@ -35,7 +35,7 @@ class ImportScanApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    def import_scan_create(
+    def create(
         self,
         scan_date: Annotated[
             Optional[date], Field(description='Scan completion date will be used on all findings.')
@@ -164,7 +164,7 @@ class ImportScanApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ImportScan:
-        """import_scan_create
+        """create
 
         Imports a scan report into an engagement or product.  By ID: - Create a Product (or use an existing product) - Create an Engagement inside the product - Provide the id of the engagement in the `engagement` parameter  In this scenario a new Test will be created inside the engagement.  By Names: - Create a Product (or use an existing product) - Create an Engagement inside the product - Provide `product_name` - Provide `engagement_name` - Optionally provide `product_type_name`  In this scenario Defect Dojo will look up the Engagement by the provided details.  When using names you can let the importer automatically create Engagements, Products and Product_Types by using `auto_create_context=True`.  When `auto_create_context` is set to `True` you can use `deduplication_on_engagement` to restrict deduplication for imported Findings to the newly created Engagement.
 
@@ -254,7 +254,7 @@ class ImportScanApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._import_scan_create_serialize(
+        _param = self._create_serialize(
             scan_date=scan_date,
             minimum_severity=minimum_severity,
             active=active,
@@ -303,7 +303,7 @@ class ImportScanApi:
             response_types_map=_response_types_map,
         ).data
 
-    def import_scan_create_with_http_info(
+    def create_with_http_info(
         self,
         scan_date: Annotated[
             Optional[date], Field(description='Scan completion date will be used on all findings.')
@@ -432,7 +432,7 @@ class ImportScanApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[ImportScan]:
-        """import_scan_create
+        """create
 
         Imports a scan report into an engagement or product.  By ID: - Create a Product (or use an existing product) - Create an Engagement inside the product - Provide the id of the engagement in the `engagement` parameter  In this scenario a new Test will be created inside the engagement.  By Names: - Create a Product (or use an existing product) - Create an Engagement inside the product - Provide `product_name` - Provide `engagement_name` - Optionally provide `product_type_name`  In this scenario Defect Dojo will look up the Engagement by the provided details.  When using names you can let the importer automatically create Engagements, Products and Product_Types by using `auto_create_context=True`.  When `auto_create_context` is set to `True` you can use `deduplication_on_engagement` to restrict deduplication for imported Findings to the newly created Engagement.
 
@@ -522,7 +522,7 @@ class ImportScanApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._import_scan_create_serialize(
+        _param = self._create_serialize(
             scan_date=scan_date,
             minimum_severity=minimum_severity,
             active=active,
@@ -571,7 +571,7 @@ class ImportScanApi:
             response_types_map=_response_types_map,
         )
 
-    def import_scan_create_without_preload_content(
+    def create_without_preload_content(
         self,
         scan_date: Annotated[
             Optional[date], Field(description='Scan completion date will be used on all findings.')
@@ -700,7 +700,7 @@ class ImportScanApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """import_scan_create
+        """create
 
         Imports a scan report into an engagement or product.  By ID: - Create a Product (or use an existing product) - Create an Engagement inside the product - Provide the id of the engagement in the `engagement` parameter  In this scenario a new Test will be created inside the engagement.  By Names: - Create a Product (or use an existing product) - Create an Engagement inside the product - Provide `product_name` - Provide `engagement_name` - Optionally provide `product_type_name`  In this scenario Defect Dojo will look up the Engagement by the provided details.  When using names you can let the importer automatically create Engagements, Products and Product_Types by using `auto_create_context=True`.  When `auto_create_context` is set to `True` you can use `deduplication_on_engagement` to restrict deduplication for imported Findings to the newly created Engagement.
 
@@ -790,7 +790,7 @@ class ImportScanApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._import_scan_create_serialize(
+        _param = self._create_serialize(
             scan_date=scan_date,
             minimum_severity=minimum_severity,
             active=active,
@@ -835,7 +835,7 @@ class ImportScanApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _import_scan_create_serialize(
+    def _create_serialize(
         self,
         scan_date,
         minimum_severity,

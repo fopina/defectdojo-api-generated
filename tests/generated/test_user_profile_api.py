@@ -24,8 +24,8 @@ class TestUserProfileApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_user_profile_retrieve(self) -> None:
-        """Test case for user_profile_retrieve"""
+    def test_retrieve(self) -> None:
+        """Test case for retrieve"""
         pass
 
 

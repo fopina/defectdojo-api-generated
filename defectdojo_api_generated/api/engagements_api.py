@@ -55,7 +55,7 @@ class EngagementsApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    def engagements_accept_risks_create(
+    def accept_risks_create(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
         accepted_risk_request: List[AcceptedRiskRequest],
@@ -69,7 +69,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> List[RiskAcceptance]:
-        """engagements_accept_risks_create
+        """accept_risks_create
 
 
         :param id: A unique integer value identifying this engagement. (required)
@@ -98,7 +98,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_accept_risks_create_serialize(
+        _param = self._accept_risks_create_serialize(
             id=id,
             accepted_risk_request=accepted_risk_request,
             _request_auth=_request_auth,
@@ -117,7 +117,7 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def engagements_accept_risks_create_with_http_info(
+    def accept_risks_create_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
         accepted_risk_request: List[AcceptedRiskRequest],
@@ -131,7 +131,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[List[RiskAcceptance]]:
-        """engagements_accept_risks_create
+        """accept_risks_create
 
 
         :param id: A unique integer value identifying this engagement. (required)
@@ -160,7 +160,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_accept_risks_create_serialize(
+        _param = self._accept_risks_create_serialize(
             id=id,
             accepted_risk_request=accepted_risk_request,
             _request_auth=_request_auth,
@@ -179,7 +179,7 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         )
 
-    def engagements_accept_risks_create_without_preload_content(
+    def accept_risks_create_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
         accepted_risk_request: List[AcceptedRiskRequest],
@@ -193,7 +193,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """engagements_accept_risks_create
+        """accept_risks_create
 
 
         :param id: A unique integer value identifying this engagement. (required)
@@ -222,7 +222,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_accept_risks_create_serialize(
+        _param = self._accept_risks_create_serialize(
             id=id,
             accepted_risk_request=accepted_risk_request,
             _request_auth=_request_auth,
@@ -237,7 +237,7 @@ class EngagementsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _engagements_accept_risks_create_serialize(
+    def _accept_risks_create_serialize(
         self,
         id,
         accepted_risk_request,
@@ -301,7 +301,7 @@ class EngagementsApi:
             _request_auth=_request_auth,
         )
 
-    def engagements_close_create(
+    def close_create(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
         _request_timeout: Union[
@@ -314,7 +314,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> None:
-        """engagements_close_create
+        """close_create
 
 
         :param id: A unique integer value identifying this engagement. (required)
@@ -341,7 +341,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_close_create_serialize(
+        _param = self._close_create_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -355,7 +355,7 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def engagements_close_create_with_http_info(
+    def close_create_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
         _request_timeout: Union[
@@ -368,7 +368,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[None]:
-        """engagements_close_create
+        """close_create
 
 
         :param id: A unique integer value identifying this engagement. (required)
@@ -395,7 +395,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_close_create_serialize(
+        _param = self._close_create_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -409,7 +409,7 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         )
 
-    def engagements_close_create_without_preload_content(
+    def close_create_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
         _request_timeout: Union[
@@ -422,7 +422,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """engagements_close_create
+        """close_create
 
 
         :param id: A unique integer value identifying this engagement. (required)
@@ -449,7 +449,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_close_create_serialize(
+        _param = self._close_create_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -459,7 +459,7 @@ class EngagementsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _engagements_close_create_serialize(
+    def _close_create_serialize(
         self,
         id,
         _request_auth,
@@ -504,7 +504,7 @@ class EngagementsApi:
             _request_auth=_request_auth,
         )
 
-    def engagements_complete_checklist_create(
+    def complete_checklist_create(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
         engagement_check_list_request: Optional[EngagementCheckListRequest] = None,
@@ -518,7 +518,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> EngagementCheckList:
-        """engagements_complete_checklist_create
+        """complete_checklist_create
 
 
         :param id: A unique integer value identifying this engagement. (required)
@@ -547,7 +547,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_complete_checklist_create_serialize(
+        _param = self._complete_checklist_create_serialize(
             id=id,
             engagement_check_list_request=engagement_check_list_request,
             _request_auth=_request_auth,
@@ -566,7 +566,7 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def engagements_complete_checklist_create_with_http_info(
+    def complete_checklist_create_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
         engagement_check_list_request: Optional[EngagementCheckListRequest] = None,
@@ -580,7 +580,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[EngagementCheckList]:
-        """engagements_complete_checklist_create
+        """complete_checklist_create
 
 
         :param id: A unique integer value identifying this engagement. (required)
@@ -609,7 +609,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_complete_checklist_create_serialize(
+        _param = self._complete_checklist_create_serialize(
             id=id,
             engagement_check_list_request=engagement_check_list_request,
             _request_auth=_request_auth,
@@ -628,7 +628,7 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         )
 
-    def engagements_complete_checklist_create_without_preload_content(
+    def complete_checklist_create_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
         engagement_check_list_request: Optional[EngagementCheckListRequest] = None,
@@ -642,7 +642,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """engagements_complete_checklist_create
+        """complete_checklist_create
 
 
         :param id: A unique integer value identifying this engagement. (required)
@@ -671,7 +671,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_complete_checklist_create_serialize(
+        _param = self._complete_checklist_create_serialize(
             id=id,
             engagement_check_list_request=engagement_check_list_request,
             _request_auth=_request_auth,
@@ -686,7 +686,7 @@ class EngagementsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _engagements_complete_checklist_create_serialize(
+    def _complete_checklist_create_serialize(
         self,
         id,
         engagement_check_list_request,
@@ -748,7 +748,7 @@ class EngagementsApi:
             _request_auth=_request_auth,
         )
 
-    def engagements_complete_checklist_retrieve(
+    def complete_checklist_retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
         _request_timeout: Union[
@@ -761,7 +761,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Engagement:
-        """engagements_complete_checklist_retrieve
+        """complete_checklist_retrieve
 
 
         :param id: A unique integer value identifying this engagement. (required)
@@ -788,7 +788,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_complete_checklist_retrieve_serialize(
+        _param = self._complete_checklist_retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -802,7 +802,7 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def engagements_complete_checklist_retrieve_with_http_info(
+    def complete_checklist_retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
         _request_timeout: Union[
@@ -815,7 +815,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Engagement]:
-        """engagements_complete_checklist_retrieve
+        """complete_checklist_retrieve
 
 
         :param id: A unique integer value identifying this engagement. (required)
@@ -842,7 +842,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_complete_checklist_retrieve_serialize(
+        _param = self._complete_checklist_retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -856,7 +856,7 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         )
 
-    def engagements_complete_checklist_retrieve_without_preload_content(
+    def complete_checklist_retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
         _request_timeout: Union[
@@ -869,7 +869,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """engagements_complete_checklist_retrieve
+        """complete_checklist_retrieve
 
 
         :param id: A unique integer value identifying this engagement. (required)
@@ -896,7 +896,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_complete_checklist_retrieve_serialize(
+        _param = self._complete_checklist_retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -906,7 +906,7 @@ class EngagementsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _engagements_complete_checklist_retrieve_serialize(
+    def _complete_checklist_retrieve_serialize(
         self,
         id,
         _request_auth,
@@ -955,7 +955,7 @@ class EngagementsApi:
             _request_auth=_request_auth,
         )
 
-    def engagements_create(
+    def create(
         self,
         engagement_request: EngagementRequest,
         _request_timeout: Union[
@@ -968,7 +968,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Engagement:
-        """engagements_create
+        """create
 
 
         :param engagement_request: (required)
@@ -995,7 +995,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_create_serialize(
+        _param = self._create_serialize(
             engagement_request=engagement_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1013,7 +1013,7 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def engagements_create_with_http_info(
+    def create_with_http_info(
         self,
         engagement_request: EngagementRequest,
         _request_timeout: Union[
@@ -1026,7 +1026,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Engagement]:
-        """engagements_create
+        """create
 
 
         :param engagement_request: (required)
@@ -1053,7 +1053,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_create_serialize(
+        _param = self._create_serialize(
             engagement_request=engagement_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1071,7 +1071,7 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         )
 
-    def engagements_create_without_preload_content(
+    def create_without_preload_content(
         self,
         engagement_request: EngagementRequest,
         _request_timeout: Union[
@@ -1084,7 +1084,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """engagements_create
+        """create
 
 
         :param engagement_request: (required)
@@ -1111,7 +1111,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_create_serialize(
+        _param = self._create_serialize(
             engagement_request=engagement_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1125,7 +1125,7 @@ class EngagementsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _engagements_create_serialize(
+    def _create_serialize(
         self,
         engagement_request,
         _request_auth,
@@ -1184,7 +1184,7 @@ class EngagementsApi:
             _request_auth=_request_auth,
         )
 
-    def engagements_delete_preview_list(
+    def delete_preview_list(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -1201,7 +1201,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedDeletePreviewList:
-        """engagements_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this engagement. (required)
@@ -1232,7 +1232,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -1252,7 +1252,7 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def engagements_delete_preview_list_with_http_info(
+    def delete_preview_list_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -1269,7 +1269,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedDeletePreviewList]:
-        """engagements_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this engagement. (required)
@@ -1300,7 +1300,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -1320,7 +1320,7 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         )
 
-    def engagements_delete_preview_list_without_preload_content(
+    def delete_preview_list_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -1337,7 +1337,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """engagements_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this engagement. (required)
@@ -1368,7 +1368,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -1384,7 +1384,7 @@ class EngagementsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _engagements_delete_preview_list_serialize(
+    def _delete_preview_list_serialize(
         self,
         id,
         limit,
@@ -1441,7 +1441,7 @@ class EngagementsApi:
             _request_auth=_request_auth,
         )
 
-    def engagements_delete_preview_list_iterator(
+    def delete_preview_list_iterator(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -1459,11 +1459,11 @@ class EngagementsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[DeletePreview, PaginatedDeletePreviewList], None, None]':
         _params = locals()
-        for page in get_all_pages(self.api_client, EngagementsApi.engagements_delete_preview_list, **_params):
+        for page in get_all_pages(self.api_client, EngagementsApi.delete_preview_list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def engagements_destroy(
+    def destroy(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
         _request_timeout: Union[
@@ -1476,7 +1476,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> None:
-        """engagements_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this engagement. (required)
@@ -1503,7 +1503,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1517,7 +1517,7 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def engagements_destroy_with_http_info(
+    def destroy_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
         _request_timeout: Union[
@@ -1530,7 +1530,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[None]:
-        """engagements_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this engagement. (required)
@@ -1557,7 +1557,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1571,7 +1571,7 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         )
 
-    def engagements_destroy_without_preload_content(
+    def destroy_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
         _request_timeout: Union[
@@ -1584,7 +1584,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """engagements_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this engagement. (required)
@@ -1611,7 +1611,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1621,7 +1621,7 @@ class EngagementsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _engagements_destroy_serialize(
+    def _destroy_serialize(
         self,
         id,
         _request_auth,
@@ -1666,7 +1666,7 @@ class EngagementsApi:
             _request_auth=_request_auth,
         )
 
-    def engagements_files_create(
+    def files_create(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
         title: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=100)]] = None,
@@ -1681,7 +1681,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> File:
-        """engagements_files_create
+        """files_create
 
 
         :param id: A unique integer value identifying this engagement. (required)
@@ -1712,7 +1712,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_files_create_serialize(
+        _param = self._files_create_serialize(
             id=id,
             title=title,
             file=file,
@@ -1732,7 +1732,7 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def engagements_files_create_with_http_info(
+    def files_create_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
         title: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=100)]] = None,
@@ -1747,7 +1747,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[File]:
-        """engagements_files_create
+        """files_create
 
 
         :param id: A unique integer value identifying this engagement. (required)
@@ -1778,7 +1778,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_files_create_serialize(
+        _param = self._files_create_serialize(
             id=id,
             title=title,
             file=file,
@@ -1798,7 +1798,7 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         )
 
-    def engagements_files_create_without_preload_content(
+    def files_create_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
         title: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=100)]] = None,
@@ -1813,7 +1813,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """engagements_files_create
+        """files_create
 
 
         :param id: A unique integer value identifying this engagement. (required)
@@ -1844,7 +1844,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_files_create_serialize(
+        _param = self._files_create_serialize(
             id=id,
             title=title,
             file=file,
@@ -1860,7 +1860,7 @@ class EngagementsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _engagements_files_create_serialize(
+    def _files_create_serialize(
         self,
         id,
         title,
@@ -1923,7 +1923,7 @@ class EngagementsApi:
             _request_auth=_request_auth,
         )
 
-    def engagements_files_download_retrieve(
+    def files_download_retrieve(
         self,
         file_id: Annotated[str, Field(strict=True)],
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
@@ -1937,7 +1937,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RawFile:
-        """engagements_files_download_retrieve
+        """files_download_retrieve
 
 
         :param file_id: (required)
@@ -1966,7 +1966,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_files_download_retrieve_serialize(
+        _param = self._files_download_retrieve_serialize(
             file_id=file_id,
             id=id,
             _request_auth=_request_auth,
@@ -1985,7 +1985,7 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def engagements_files_download_retrieve_with_http_info(
+    def files_download_retrieve_with_http_info(
         self,
         file_id: Annotated[str, Field(strict=True)],
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
@@ -1999,7 +1999,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[RawFile]:
-        """engagements_files_download_retrieve
+        """files_download_retrieve
 
 
         :param file_id: (required)
@@ -2028,7 +2028,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_files_download_retrieve_serialize(
+        _param = self._files_download_retrieve_serialize(
             file_id=file_id,
             id=id,
             _request_auth=_request_auth,
@@ -2047,7 +2047,7 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         )
 
-    def engagements_files_download_retrieve_without_preload_content(
+    def files_download_retrieve_without_preload_content(
         self,
         file_id: Annotated[str, Field(strict=True)],
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
@@ -2061,7 +2061,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """engagements_files_download_retrieve
+        """files_download_retrieve
 
 
         :param file_id: (required)
@@ -2090,7 +2090,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_files_download_retrieve_serialize(
+        _param = self._files_download_retrieve_serialize(
             file_id=file_id,
             id=id,
             _request_auth=_request_auth,
@@ -2105,7 +2105,7 @@ class EngagementsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _engagements_files_download_retrieve_serialize(
+    def _files_download_retrieve_serialize(
         self,
         file_id,
         id,
@@ -2157,7 +2157,7 @@ class EngagementsApi:
             _request_auth=_request_auth,
         )
 
-    def engagements_files_retrieve(
+    def files_retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
         _request_timeout: Union[
@@ -2170,7 +2170,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> EngagementToFiles:
-        """engagements_files_retrieve
+        """files_retrieve
 
 
         :param id: A unique integer value identifying this engagement. (required)
@@ -2197,7 +2197,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_files_retrieve_serialize(
+        _param = self._files_retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -2211,7 +2211,7 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def engagements_files_retrieve_with_http_info(
+    def files_retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
         _request_timeout: Union[
@@ -2224,7 +2224,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[EngagementToFiles]:
-        """engagements_files_retrieve
+        """files_retrieve
 
 
         :param id: A unique integer value identifying this engagement. (required)
@@ -2251,7 +2251,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_files_retrieve_serialize(
+        _param = self._files_retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -2265,7 +2265,7 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         )
 
-    def engagements_files_retrieve_without_preload_content(
+    def files_retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
         _request_timeout: Union[
@@ -2278,7 +2278,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """engagements_files_retrieve
+        """files_retrieve
 
 
         :param id: A unique integer value identifying this engagement. (required)
@@ -2305,7 +2305,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_files_retrieve_serialize(
+        _param = self._files_retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -2315,7 +2315,7 @@ class EngagementsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _engagements_files_retrieve_serialize(
+    def _files_retrieve_serialize(
         self,
         id,
         _request_auth,
@@ -2364,7 +2364,7 @@ class EngagementsApi:
             _request_auth=_request_auth,
         )
 
-    def engagements_generate_report_create(
+    def generate_report_create(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
         report_generate_option_request: Optional[ReportGenerateOptionRequest] = None,
@@ -2378,7 +2378,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ReportGenerate:
-        """engagements_generate_report_create
+        """generate_report_create
 
 
         :param id: A unique integer value identifying this engagement. (required)
@@ -2407,7 +2407,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_generate_report_create_serialize(
+        _param = self._generate_report_create_serialize(
             id=id,
             report_generate_option_request=report_generate_option_request,
             _request_auth=_request_auth,
@@ -2426,7 +2426,7 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def engagements_generate_report_create_with_http_info(
+    def generate_report_create_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
         report_generate_option_request: Optional[ReportGenerateOptionRequest] = None,
@@ -2440,7 +2440,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[ReportGenerate]:
-        """engagements_generate_report_create
+        """generate_report_create
 
 
         :param id: A unique integer value identifying this engagement. (required)
@@ -2469,7 +2469,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_generate_report_create_serialize(
+        _param = self._generate_report_create_serialize(
             id=id,
             report_generate_option_request=report_generate_option_request,
             _request_auth=_request_auth,
@@ -2488,7 +2488,7 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         )
 
-    def engagements_generate_report_create_without_preload_content(
+    def generate_report_create_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
         report_generate_option_request: Optional[ReportGenerateOptionRequest] = None,
@@ -2502,7 +2502,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """engagements_generate_report_create
+        """generate_report_create
 
 
         :param id: A unique integer value identifying this engagement. (required)
@@ -2531,7 +2531,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_generate_report_create_serialize(
+        _param = self._generate_report_create_serialize(
             id=id,
             report_generate_option_request=report_generate_option_request,
             _request_auth=_request_auth,
@@ -2546,7 +2546,7 @@ class EngagementsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _engagements_generate_report_create_serialize(
+    def _generate_report_create_serialize(
         self,
         id,
         report_generate_option_request,
@@ -2608,7 +2608,7 @@ class EngagementsApi:
             _request_auth=_request_auth,
         )
 
-    def engagements_list(
+    def list(
         self,
         active: Optional[StrictBool] = None,
         api_test: Optional[StrictBool] = None,
@@ -2677,7 +2677,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedEngagementList:
-        """engagements_list
+        """list
 
 
         :param active:
@@ -2756,7 +2756,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_list_serialize(
+        _param = self._list_serialize(
             active=active,
             api_test=api_test,
             has_tags=has_tags,
@@ -2800,7 +2800,7 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def engagements_list_with_http_info(
+    def list_with_http_info(
         self,
         active: Optional[StrictBool] = None,
         api_test: Optional[StrictBool] = None,
@@ -2869,7 +2869,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedEngagementList]:
-        """engagements_list
+        """list
 
 
         :param active:
@@ -2948,7 +2948,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_list_serialize(
+        _param = self._list_serialize(
             active=active,
             api_test=api_test,
             has_tags=has_tags,
@@ -2992,7 +2992,7 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         )
 
-    def engagements_list_without_preload_content(
+    def list_without_preload_content(
         self,
         active: Optional[StrictBool] = None,
         api_test: Optional[StrictBool] = None,
@@ -3061,7 +3061,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """engagements_list
+        """list
 
 
         :param active:
@@ -3140,7 +3140,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_list_serialize(
+        _param = self._list_serialize(
             active=active,
             api_test=api_test,
             has_tags=has_tags,
@@ -3180,7 +3180,7 @@ class EngagementsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _engagements_list_serialize(
+    def _list_serialize(
         self,
         active,
         api_test,
@@ -3352,7 +3352,7 @@ class EngagementsApi:
             _request_auth=_request_auth,
         )
 
-    def engagements_list_iterator(
+    def list_iterator(
         self,
         active: Optional[StrictBool] = None,
         api_test: Optional[StrictBool] = None,
@@ -3422,11 +3422,11 @@ class EngagementsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[Engagement, PaginatedEngagementList], None, None]':
         _params = locals()
-        for page in get_all_pages(self.api_client, EngagementsApi.engagements_list, **_params):
+        for page in get_all_pages(self.api_client, EngagementsApi.list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def engagements_notes_create(
+    def notes_create(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
         add_new_note_option_request: AddNewNoteOptionRequest,
@@ -3440,7 +3440,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Note:
-        """engagements_notes_create
+        """notes_create
 
 
         :param id: A unique integer value identifying this engagement. (required)
@@ -3469,7 +3469,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_notes_create_serialize(
+        _param = self._notes_create_serialize(
             id=id,
             add_new_note_option_request=add_new_note_option_request,
             _request_auth=_request_auth,
@@ -3488,7 +3488,7 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def engagements_notes_create_with_http_info(
+    def notes_create_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
         add_new_note_option_request: AddNewNoteOptionRequest,
@@ -3502,7 +3502,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Note]:
-        """engagements_notes_create
+        """notes_create
 
 
         :param id: A unique integer value identifying this engagement. (required)
@@ -3531,7 +3531,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_notes_create_serialize(
+        _param = self._notes_create_serialize(
             id=id,
             add_new_note_option_request=add_new_note_option_request,
             _request_auth=_request_auth,
@@ -3550,7 +3550,7 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         )
 
-    def engagements_notes_create_without_preload_content(
+    def notes_create_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
         add_new_note_option_request: AddNewNoteOptionRequest,
@@ -3564,7 +3564,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """engagements_notes_create
+        """notes_create
 
 
         :param id: A unique integer value identifying this engagement. (required)
@@ -3593,7 +3593,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_notes_create_serialize(
+        _param = self._notes_create_serialize(
             id=id,
             add_new_note_option_request=add_new_note_option_request,
             _request_auth=_request_auth,
@@ -3608,7 +3608,7 @@ class EngagementsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _engagements_notes_create_serialize(
+    def _notes_create_serialize(
         self,
         id,
         add_new_note_option_request,
@@ -3670,7 +3670,7 @@ class EngagementsApi:
             _request_auth=_request_auth,
         )
 
-    def engagements_notes_retrieve(
+    def notes_retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
         _request_timeout: Union[
@@ -3683,7 +3683,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> EngagementToNotes:
-        """engagements_notes_retrieve
+        """notes_retrieve
 
 
         :param id: A unique integer value identifying this engagement. (required)
@@ -3710,7 +3710,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_notes_retrieve_serialize(
+        _param = self._notes_retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -3724,7 +3724,7 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def engagements_notes_retrieve_with_http_info(
+    def notes_retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
         _request_timeout: Union[
@@ -3737,7 +3737,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[EngagementToNotes]:
-        """engagements_notes_retrieve
+        """notes_retrieve
 
 
         :param id: A unique integer value identifying this engagement. (required)
@@ -3764,7 +3764,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_notes_retrieve_serialize(
+        _param = self._notes_retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -3778,7 +3778,7 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         )
 
-    def engagements_notes_retrieve_without_preload_content(
+    def notes_retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
         _request_timeout: Union[
@@ -3791,7 +3791,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """engagements_notes_retrieve
+        """notes_retrieve
 
 
         :param id: A unique integer value identifying this engagement. (required)
@@ -3818,7 +3818,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_notes_retrieve_serialize(
+        _param = self._notes_retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -3828,7 +3828,7 @@ class EngagementsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _engagements_notes_retrieve_serialize(
+    def _notes_retrieve_serialize(
         self,
         id,
         _request_auth,
@@ -3877,7 +3877,7 @@ class EngagementsApi:
             _request_auth=_request_auth,
         )
 
-    def engagements_partial_update(
+    def partial_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
         patched_engagement_request: Optional[PatchedEngagementRequest] = None,
@@ -3891,7 +3891,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Engagement:
-        """engagements_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this engagement. (required)
@@ -3920,7 +3920,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_engagement_request=patched_engagement_request,
             _request_auth=_request_auth,
@@ -3939,7 +3939,7 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def engagements_partial_update_with_http_info(
+    def partial_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
         patched_engagement_request: Optional[PatchedEngagementRequest] = None,
@@ -3953,7 +3953,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Engagement]:
-        """engagements_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this engagement. (required)
@@ -3982,7 +3982,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_engagement_request=patched_engagement_request,
             _request_auth=_request_auth,
@@ -4001,7 +4001,7 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         )
 
-    def engagements_partial_update_without_preload_content(
+    def partial_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
         patched_engagement_request: Optional[PatchedEngagementRequest] = None,
@@ -4015,7 +4015,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """engagements_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this engagement. (required)
@@ -4044,7 +4044,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_engagement_request=patched_engagement_request,
             _request_auth=_request_auth,
@@ -4059,7 +4059,7 @@ class EngagementsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _engagements_partial_update_serialize(
+    def _partial_update_serialize(
         self,
         id,
         patched_engagement_request,
@@ -4121,7 +4121,7 @@ class EngagementsApi:
             _request_auth=_request_auth,
         )
 
-    def engagements_reopen_create(
+    def reopen_create(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
         _request_timeout: Union[
@@ -4134,7 +4134,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> None:
-        """engagements_reopen_create
+        """reopen_create
 
 
         :param id: A unique integer value identifying this engagement. (required)
@@ -4161,7 +4161,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_reopen_create_serialize(
+        _param = self._reopen_create_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -4175,7 +4175,7 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def engagements_reopen_create_with_http_info(
+    def reopen_create_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
         _request_timeout: Union[
@@ -4188,7 +4188,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[None]:
-        """engagements_reopen_create
+        """reopen_create
 
 
         :param id: A unique integer value identifying this engagement. (required)
@@ -4215,7 +4215,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_reopen_create_serialize(
+        _param = self._reopen_create_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -4229,7 +4229,7 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         )
 
-    def engagements_reopen_create_without_preload_content(
+    def reopen_create_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
         _request_timeout: Union[
@@ -4242,7 +4242,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """engagements_reopen_create
+        """reopen_create
 
 
         :param id: A unique integer value identifying this engagement. (required)
@@ -4269,7 +4269,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_reopen_create_serialize(
+        _param = self._reopen_create_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -4279,7 +4279,7 @@ class EngagementsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _engagements_reopen_create_serialize(
+    def _reopen_create_serialize(
         self,
         id,
         _request_auth,
@@ -4324,7 +4324,7 @@ class EngagementsApi:
             _request_auth=_request_auth,
         )
 
-    def engagements_retrieve(
+    def retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
         _request_timeout: Union[
@@ -4337,7 +4337,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Engagement:
-        """engagements_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this engagement. (required)
@@ -4364,7 +4364,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -4378,7 +4378,7 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def engagements_retrieve_with_http_info(
+    def retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
         _request_timeout: Union[
@@ -4391,7 +4391,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Engagement]:
-        """engagements_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this engagement. (required)
@@ -4418,7 +4418,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -4432,7 +4432,7 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         )
 
-    def engagements_retrieve_without_preload_content(
+    def retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
         _request_timeout: Union[
@@ -4445,7 +4445,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """engagements_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this engagement. (required)
@@ -4472,7 +4472,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -4482,7 +4482,7 @@ class EngagementsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _engagements_retrieve_serialize(
+    def _retrieve_serialize(
         self,
         id,
         _request_auth,
@@ -4531,7 +4531,7 @@ class EngagementsApi:
             _request_auth=_request_auth,
         )
 
-    def engagements_update(
+    def update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
         engagement_request: EngagementRequest,
@@ -4545,7 +4545,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Engagement:
-        """engagements_update
+        """update
 
 
         :param id: A unique integer value identifying this engagement. (required)
@@ -4574,7 +4574,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_update_serialize(
+        _param = self._update_serialize(
             id=id,
             engagement_request=engagement_request,
             _request_auth=_request_auth,
@@ -4593,7 +4593,7 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def engagements_update_with_http_info(
+    def update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
         engagement_request: EngagementRequest,
@@ -4607,7 +4607,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Engagement]:
-        """engagements_update
+        """update
 
 
         :param id: A unique integer value identifying this engagement. (required)
@@ -4636,7 +4636,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_update_serialize(
+        _param = self._update_serialize(
             id=id,
             engagement_request=engagement_request,
             _request_auth=_request_auth,
@@ -4655,7 +4655,7 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         )
 
-    def engagements_update_without_preload_content(
+    def update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
         engagement_request: EngagementRequest,
@@ -4669,7 +4669,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """engagements_update
+        """update
 
 
         :param id: A unique integer value identifying this engagement. (required)
@@ -4698,7 +4698,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_update_serialize(
+        _param = self._update_serialize(
             id=id,
             engagement_request=engagement_request,
             _request_auth=_request_auth,
@@ -4713,7 +4713,7 @@ class EngagementsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _engagements_update_serialize(
+    def _update_serialize(
         self,
         id,
         engagement_request,
@@ -4775,7 +4775,7 @@ class EngagementsApi:
             _request_auth=_request_auth,
         )
 
-    def engagements_update_jira_epic_create(
+    def update_jira_epic_create(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
         engagement_update_jira_epic_request: Optional[EngagementUpdateJiraEpicRequest] = None,
@@ -4789,7 +4789,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> EngagementUpdateJiraEpic:
-        """engagements_update_jira_epic_create
+        """update_jira_epic_create
 
 
         :param id: A unique integer value identifying this engagement. (required)
@@ -4818,7 +4818,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_update_jira_epic_create_serialize(
+        _param = self._update_jira_epic_create_serialize(
             id=id,
             engagement_update_jira_epic_request=engagement_update_jira_epic_request,
             _request_auth=_request_auth,
@@ -4837,7 +4837,7 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def engagements_update_jira_epic_create_with_http_info(
+    def update_jira_epic_create_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
         engagement_update_jira_epic_request: Optional[EngagementUpdateJiraEpicRequest] = None,
@@ -4851,7 +4851,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[EngagementUpdateJiraEpic]:
-        """engagements_update_jira_epic_create
+        """update_jira_epic_create
 
 
         :param id: A unique integer value identifying this engagement. (required)
@@ -4880,7 +4880,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_update_jira_epic_create_serialize(
+        _param = self._update_jira_epic_create_serialize(
             id=id,
             engagement_update_jira_epic_request=engagement_update_jira_epic_request,
             _request_auth=_request_auth,
@@ -4899,7 +4899,7 @@ class EngagementsApi:
             response_types_map=_response_types_map,
         )
 
-    def engagements_update_jira_epic_create_without_preload_content(
+    def update_jira_epic_create_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this engagement.')],
         engagement_update_jira_epic_request: Optional[EngagementUpdateJiraEpicRequest] = None,
@@ -4913,7 +4913,7 @@ class EngagementsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """engagements_update_jira_epic_create
+        """update_jira_epic_create
 
 
         :param id: A unique integer value identifying this engagement. (required)
@@ -4942,7 +4942,7 @@ class EngagementsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._engagements_update_jira_epic_create_serialize(
+        _param = self._update_jira_epic_create_serialize(
             id=id,
             engagement_update_jira_epic_request=engagement_update_jira_epic_request,
             _request_auth=_request_auth,
@@ -4957,7 +4957,7 @@ class EngagementsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _engagements_update_jira_epic_create_serialize(
+    def _update_jira_epic_create_serialize(
         self,
         id,
         engagement_update_jira_epic_request,

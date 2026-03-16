@@ -40,7 +40,7 @@ class SlaConfigurationsApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    def sla_configurations_create(
+    def create(
         self,
         sla_configuration_request: SLAConfigurationRequest,
         _request_timeout: Union[
@@ -53,7 +53,7 @@ class SlaConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> SLAConfiguration:
-        """sla_configurations_create
+        """create
 
 
         :param sla_configuration_request: (required)
@@ -80,7 +80,7 @@ class SlaConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._sla_configurations_create_serialize(
+        _param = self._create_serialize(
             sla_configuration_request=sla_configuration_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -98,7 +98,7 @@ class SlaConfigurationsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def sla_configurations_create_with_http_info(
+    def create_with_http_info(
         self,
         sla_configuration_request: SLAConfigurationRequest,
         _request_timeout: Union[
@@ -111,7 +111,7 @@ class SlaConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[SLAConfiguration]:
-        """sla_configurations_create
+        """create
 
 
         :param sla_configuration_request: (required)
@@ -138,7 +138,7 @@ class SlaConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._sla_configurations_create_serialize(
+        _param = self._create_serialize(
             sla_configuration_request=sla_configuration_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -156,7 +156,7 @@ class SlaConfigurationsApi:
             response_types_map=_response_types_map,
         )
 
-    def sla_configurations_create_without_preload_content(
+    def create_without_preload_content(
         self,
         sla_configuration_request: SLAConfigurationRequest,
         _request_timeout: Union[
@@ -169,7 +169,7 @@ class SlaConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """sla_configurations_create
+        """create
 
 
         :param sla_configuration_request: (required)
@@ -196,7 +196,7 @@ class SlaConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._sla_configurations_create_serialize(
+        _param = self._create_serialize(
             sla_configuration_request=sla_configuration_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -210,7 +210,7 @@ class SlaConfigurationsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _sla_configurations_create_serialize(
+    def _create_serialize(
         self,
         sla_configuration_request,
         _request_auth,
@@ -269,7 +269,7 @@ class SlaConfigurationsApi:
             _request_auth=_request_auth,
         )
 
-    def sla_configurations_delete_preview_list(
+    def delete_preview_list(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this sl a_ configuration.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -286,7 +286,7 @@ class SlaConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedDeletePreviewList:
-        """sla_configurations_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this sl a_ configuration. (required)
@@ -317,7 +317,7 @@ class SlaConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._sla_configurations_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -337,7 +337,7 @@ class SlaConfigurationsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def sla_configurations_delete_preview_list_with_http_info(
+    def delete_preview_list_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this sl a_ configuration.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -354,7 +354,7 @@ class SlaConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedDeletePreviewList]:
-        """sla_configurations_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this sl a_ configuration. (required)
@@ -385,7 +385,7 @@ class SlaConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._sla_configurations_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -405,7 +405,7 @@ class SlaConfigurationsApi:
             response_types_map=_response_types_map,
         )
 
-    def sla_configurations_delete_preview_list_without_preload_content(
+    def delete_preview_list_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this sl a_ configuration.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -422,7 +422,7 @@ class SlaConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """sla_configurations_delete_preview_list
+        """delete_preview_list
 
 
         :param id: A unique integer value identifying this sl a_ configuration. (required)
@@ -453,7 +453,7 @@ class SlaConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._sla_configurations_delete_preview_list_serialize(
+        _param = self._delete_preview_list_serialize(
             id=id,
             limit=limit,
             offset=offset,
@@ -469,7 +469,7 @@ class SlaConfigurationsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _sla_configurations_delete_preview_list_serialize(
+    def _delete_preview_list_serialize(
         self,
         id,
         limit,
@@ -526,7 +526,7 @@ class SlaConfigurationsApi:
             _request_auth=_request_auth,
         )
 
-    def sla_configurations_delete_preview_list_iterator(
+    def delete_preview_list_iterator(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this sl a_ configuration.')],
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
@@ -544,13 +544,11 @@ class SlaConfigurationsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[DeletePreview, PaginatedDeletePreviewList], None, None]':
         _params = locals()
-        for page in get_all_pages(
-            self.api_client, SlaConfigurationsApi.sla_configurations_delete_preview_list, **_params
-        ):
+        for page in get_all_pages(self.api_client, SlaConfigurationsApi.delete_preview_list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def sla_configurations_destroy(
+    def destroy(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this sl a_ configuration.')],
         _request_timeout: Union[
@@ -563,7 +561,7 @@ class SlaConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> None:
-        """sla_configurations_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this sl a_ configuration. (required)
@@ -590,7 +588,7 @@ class SlaConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._sla_configurations_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -604,7 +602,7 @@ class SlaConfigurationsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def sla_configurations_destroy_with_http_info(
+    def destroy_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this sl a_ configuration.')],
         _request_timeout: Union[
@@ -617,7 +615,7 @@ class SlaConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[None]:
-        """sla_configurations_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this sl a_ configuration. (required)
@@ -644,7 +642,7 @@ class SlaConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._sla_configurations_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -658,7 +656,7 @@ class SlaConfigurationsApi:
             response_types_map=_response_types_map,
         )
 
-    def sla_configurations_destroy_without_preload_content(
+    def destroy_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this sl a_ configuration.')],
         _request_timeout: Union[
@@ -671,7 +669,7 @@ class SlaConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """sla_configurations_destroy
+        """destroy
 
 
         :param id: A unique integer value identifying this sl a_ configuration. (required)
@@ -698,7 +696,7 @@ class SlaConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._sla_configurations_destroy_serialize(
+        _param = self._destroy_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -708,7 +706,7 @@ class SlaConfigurationsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _sla_configurations_destroy_serialize(
+    def _destroy_serialize(
         self,
         id,
         _request_auth,
@@ -753,7 +751,7 @@ class SlaConfigurationsApi:
             _request_auth=_request_auth,
         )
 
-    def sla_configurations_list(
+    def list(
         self,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
         offset: Annotated[
@@ -769,7 +767,7 @@ class SlaConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedSLAConfigurationList:
-        """sla_configurations_list
+        """list
 
 
         :param limit: Number of results to return per page.
@@ -798,7 +796,7 @@ class SlaConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._sla_configurations_list_serialize(
+        _param = self._list_serialize(
             limit=limit,
             offset=offset,
             _request_auth=_request_auth,
@@ -817,7 +815,7 @@ class SlaConfigurationsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def sla_configurations_list_with_http_info(
+    def list_with_http_info(
         self,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
         offset: Annotated[
@@ -833,7 +831,7 @@ class SlaConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedSLAConfigurationList]:
-        """sla_configurations_list
+        """list
 
 
         :param limit: Number of results to return per page.
@@ -862,7 +860,7 @@ class SlaConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._sla_configurations_list_serialize(
+        _param = self._list_serialize(
             limit=limit,
             offset=offset,
             _request_auth=_request_auth,
@@ -881,7 +879,7 @@ class SlaConfigurationsApi:
             response_types_map=_response_types_map,
         )
 
-    def sla_configurations_list_without_preload_content(
+    def list_without_preload_content(
         self,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
         offset: Annotated[
@@ -897,7 +895,7 @@ class SlaConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """sla_configurations_list
+        """list
 
 
         :param limit: Number of results to return per page.
@@ -926,7 +924,7 @@ class SlaConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._sla_configurations_list_serialize(
+        _param = self._list_serialize(
             limit=limit,
             offset=offset,
             _request_auth=_request_auth,
@@ -941,7 +939,7 @@ class SlaConfigurationsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _sla_configurations_list_serialize(
+    def _list_serialize(
         self,
         limit,
         offset,
@@ -995,7 +993,7 @@ class SlaConfigurationsApi:
             _request_auth=_request_auth,
         )
 
-    def sla_configurations_list_iterator(
+    def list_iterator(
         self,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
         offset: Annotated[
@@ -1012,11 +1010,11 @@ class SlaConfigurationsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[SLAConfiguration, PaginatedSLAConfigurationList], None, None]':
         _params = locals()
-        for page in get_all_pages(self.api_client, SlaConfigurationsApi.sla_configurations_list, **_params):
+        for page in get_all_pages(self.api_client, SlaConfigurationsApi.list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def sla_configurations_partial_update(
+    def partial_update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this sl a_ configuration.')],
         patched_sla_configuration_request: Optional[PatchedSLAConfigurationRequest] = None,
@@ -1030,7 +1028,7 @@ class SlaConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> SLAConfiguration:
-        """sla_configurations_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this sl a_ configuration. (required)
@@ -1059,7 +1057,7 @@ class SlaConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._sla_configurations_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_sla_configuration_request=patched_sla_configuration_request,
             _request_auth=_request_auth,
@@ -1078,7 +1076,7 @@ class SlaConfigurationsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def sla_configurations_partial_update_with_http_info(
+    def partial_update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this sl a_ configuration.')],
         patched_sla_configuration_request: Optional[PatchedSLAConfigurationRequest] = None,
@@ -1092,7 +1090,7 @@ class SlaConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[SLAConfiguration]:
-        """sla_configurations_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this sl a_ configuration. (required)
@@ -1121,7 +1119,7 @@ class SlaConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._sla_configurations_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_sla_configuration_request=patched_sla_configuration_request,
             _request_auth=_request_auth,
@@ -1140,7 +1138,7 @@ class SlaConfigurationsApi:
             response_types_map=_response_types_map,
         )
 
-    def sla_configurations_partial_update_without_preload_content(
+    def partial_update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this sl a_ configuration.')],
         patched_sla_configuration_request: Optional[PatchedSLAConfigurationRequest] = None,
@@ -1154,7 +1152,7 @@ class SlaConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """sla_configurations_partial_update
+        """partial_update
 
 
         :param id: A unique integer value identifying this sl a_ configuration. (required)
@@ -1183,7 +1181,7 @@ class SlaConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._sla_configurations_partial_update_serialize(
+        _param = self._partial_update_serialize(
             id=id,
             patched_sla_configuration_request=patched_sla_configuration_request,
             _request_auth=_request_auth,
@@ -1198,7 +1196,7 @@ class SlaConfigurationsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _sla_configurations_partial_update_serialize(
+    def _partial_update_serialize(
         self,
         id,
         patched_sla_configuration_request,
@@ -1260,7 +1258,7 @@ class SlaConfigurationsApi:
             _request_auth=_request_auth,
         )
 
-    def sla_configurations_retrieve(
+    def retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this sl a_ configuration.')],
         _request_timeout: Union[
@@ -1273,7 +1271,7 @@ class SlaConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> SLAConfiguration:
-        """sla_configurations_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this sl a_ configuration. (required)
@@ -1300,7 +1298,7 @@ class SlaConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._sla_configurations_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1314,7 +1312,7 @@ class SlaConfigurationsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def sla_configurations_retrieve_with_http_info(
+    def retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this sl a_ configuration.')],
         _request_timeout: Union[
@@ -1327,7 +1325,7 @@ class SlaConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[SLAConfiguration]:
-        """sla_configurations_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this sl a_ configuration. (required)
@@ -1354,7 +1352,7 @@ class SlaConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._sla_configurations_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1368,7 +1366,7 @@ class SlaConfigurationsApi:
             response_types_map=_response_types_map,
         )
 
-    def sla_configurations_retrieve_without_preload_content(
+    def retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this sl a_ configuration.')],
         _request_timeout: Union[
@@ -1381,7 +1379,7 @@ class SlaConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """sla_configurations_retrieve
+        """retrieve
 
 
         :param id: A unique integer value identifying this sl a_ configuration. (required)
@@ -1408,7 +1406,7 @@ class SlaConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._sla_configurations_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -1418,7 +1416,7 @@ class SlaConfigurationsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _sla_configurations_retrieve_serialize(
+    def _retrieve_serialize(
         self,
         id,
         _request_auth,
@@ -1467,7 +1465,7 @@ class SlaConfigurationsApi:
             _request_auth=_request_auth,
         )
 
-    def sla_configurations_update(
+    def update(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this sl a_ configuration.')],
         sla_configuration_request: SLAConfigurationRequest,
@@ -1481,7 +1479,7 @@ class SlaConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> SLAConfiguration:
-        """sla_configurations_update
+        """update
 
 
         :param id: A unique integer value identifying this sl a_ configuration. (required)
@@ -1510,7 +1508,7 @@ class SlaConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._sla_configurations_update_serialize(
+        _param = self._update_serialize(
             id=id,
             sla_configuration_request=sla_configuration_request,
             _request_auth=_request_auth,
@@ -1529,7 +1527,7 @@ class SlaConfigurationsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def sla_configurations_update_with_http_info(
+    def update_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this sl a_ configuration.')],
         sla_configuration_request: SLAConfigurationRequest,
@@ -1543,7 +1541,7 @@ class SlaConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[SLAConfiguration]:
-        """sla_configurations_update
+        """update
 
 
         :param id: A unique integer value identifying this sl a_ configuration. (required)
@@ -1572,7 +1570,7 @@ class SlaConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._sla_configurations_update_serialize(
+        _param = self._update_serialize(
             id=id,
             sla_configuration_request=sla_configuration_request,
             _request_auth=_request_auth,
@@ -1591,7 +1589,7 @@ class SlaConfigurationsApi:
             response_types_map=_response_types_map,
         )
 
-    def sla_configurations_update_without_preload_content(
+    def update_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this sl a_ configuration.')],
         sla_configuration_request: SLAConfigurationRequest,
@@ -1605,7 +1603,7 @@ class SlaConfigurationsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """sla_configurations_update
+        """update
 
 
         :param id: A unique integer value identifying this sl a_ configuration. (required)
@@ -1634,7 +1632,7 @@ class SlaConfigurationsApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._sla_configurations_update_serialize(
+        _param = self._update_serialize(
             id=id,
             sla_configuration_request=sla_configuration_request,
             _request_auth=_request_auth,
@@ -1649,7 +1647,7 @@ class SlaConfigurationsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _sla_configurations_update_serialize(
+    def _update_serialize(
         self,
         id,
         sla_configuration_request,

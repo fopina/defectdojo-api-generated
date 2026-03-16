@@ -38,7 +38,7 @@ class QuestionnaireQuestionsApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-    def questionnaire_questions_list(
+    def list(
         self,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
         offset: Annotated[
@@ -54,7 +54,7 @@ class QuestionnaireQuestionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PaginatedQuestionnaireQuestionList:
-        """(Deprecated) questionnaire_questions_list
+        """(Deprecated) list
 
         This endpoint is deprecated and will be removed on 2026-06-01.
 
@@ -85,7 +85,7 @@ class QuestionnaireQuestionsApi:
         """  # noqa: E501
         warnings.warn('GET /api/v2/questionnaire_questions/ is deprecated.', DeprecationWarning)
 
-        _param = self._questionnaire_questions_list_serialize(
+        _param = self._list_serialize(
             limit=limit,
             offset=offset,
             _request_auth=_request_auth,
@@ -104,7 +104,7 @@ class QuestionnaireQuestionsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def questionnaire_questions_list_with_http_info(
+    def list_with_http_info(
         self,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
         offset: Annotated[
@@ -120,7 +120,7 @@ class QuestionnaireQuestionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PaginatedQuestionnaireQuestionList]:
-        """(Deprecated) questionnaire_questions_list
+        """(Deprecated) list
 
         This endpoint is deprecated and will be removed on 2026-06-01.
 
@@ -151,7 +151,7 @@ class QuestionnaireQuestionsApi:
         """  # noqa: E501
         warnings.warn('GET /api/v2/questionnaire_questions/ is deprecated.', DeprecationWarning)
 
-        _param = self._questionnaire_questions_list_serialize(
+        _param = self._list_serialize(
             limit=limit,
             offset=offset,
             _request_auth=_request_auth,
@@ -170,7 +170,7 @@ class QuestionnaireQuestionsApi:
             response_types_map=_response_types_map,
         )
 
-    def questionnaire_questions_list_without_preload_content(
+    def list_without_preload_content(
         self,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
         offset: Annotated[
@@ -186,7 +186,7 @@ class QuestionnaireQuestionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """(Deprecated) questionnaire_questions_list
+        """(Deprecated) list
 
         This endpoint is deprecated and will be removed on 2026-06-01.
 
@@ -217,7 +217,7 @@ class QuestionnaireQuestionsApi:
         """  # noqa: E501
         warnings.warn('GET /api/v2/questionnaire_questions/ is deprecated.', DeprecationWarning)
 
-        _param = self._questionnaire_questions_list_serialize(
+        _param = self._list_serialize(
             limit=limit,
             offset=offset,
             _request_auth=_request_auth,
@@ -232,7 +232,7 @@ class QuestionnaireQuestionsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _questionnaire_questions_list_serialize(
+    def _list_serialize(
         self,
         limit,
         offset,
@@ -286,7 +286,7 @@ class QuestionnaireQuestionsApi:
             _request_auth=_request_auth,
         )
 
-    def questionnaire_questions_list_iterator(
+    def list_iterator(
         self,
         limit: Annotated[Optional[StrictInt], Field(description='Number of results to return per page.')] = None,
         offset: Annotated[
@@ -303,11 +303,11 @@ class QuestionnaireQuestionsApi:
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> 'Generator[IteratorResult[QuestionnaireQuestion, PaginatedQuestionnaireQuestionList], None, None]':
         _params = locals()
-        for page in get_all_pages(self.api_client, QuestionnaireQuestionsApi.questionnaire_questions_list, **_params):
+        for page in get_all_pages(self.api_client, QuestionnaireQuestionsApi.list, **_params):
             for result in page.results:
                 yield IteratorResult(result=result, page=page)
 
-    def questionnaire_questions_retrieve(
+    def retrieve(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this question.')],
         _request_timeout: Union[
@@ -320,7 +320,7 @@ class QuestionnaireQuestionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> QuestionnaireQuestion:
-        """(Deprecated) questionnaire_questions_retrieve
+        """(Deprecated) retrieve
 
         This endpoint is deprecated and will be removed on 2026-06-01.
 
@@ -349,7 +349,7 @@ class QuestionnaireQuestionsApi:
         """  # noqa: E501
         warnings.warn('GET /api/v2/questionnaire_questions/{id}/ is deprecated.', DeprecationWarning)
 
-        _param = self._questionnaire_questions_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -363,7 +363,7 @@ class QuestionnaireQuestionsApi:
             response_types_map=_response_types_map,
         ).data
 
-    def questionnaire_questions_retrieve_with_http_info(
+    def retrieve_with_http_info(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this question.')],
         _request_timeout: Union[
@@ -376,7 +376,7 @@ class QuestionnaireQuestionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[QuestionnaireQuestion]:
-        """(Deprecated) questionnaire_questions_retrieve
+        """(Deprecated) retrieve
 
         This endpoint is deprecated and will be removed on 2026-06-01.
 
@@ -405,7 +405,7 @@ class QuestionnaireQuestionsApi:
         """  # noqa: E501
         warnings.warn('GET /api/v2/questionnaire_questions/{id}/ is deprecated.', DeprecationWarning)
 
-        _param = self._questionnaire_questions_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -419,7 +419,7 @@ class QuestionnaireQuestionsApi:
             response_types_map=_response_types_map,
         )
 
-    def questionnaire_questions_retrieve_without_preload_content(
+    def retrieve_without_preload_content(
         self,
         id: Annotated[StrictInt, Field(description='A unique integer value identifying this question.')],
         _request_timeout: Union[
@@ -432,7 +432,7 @@ class QuestionnaireQuestionsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """(Deprecated) questionnaire_questions_retrieve
+        """(Deprecated) retrieve
 
         This endpoint is deprecated and will be removed on 2026-06-01.
 
@@ -461,7 +461,7 @@ class QuestionnaireQuestionsApi:
         """  # noqa: E501
         warnings.warn('GET /api/v2/questionnaire_questions/{id}/ is deprecated.', DeprecationWarning)
 
-        _param = self._questionnaire_questions_retrieve_serialize(
+        _param = self._retrieve_serialize(
             id=id, _request_auth=_request_auth, _content_type=_content_type, _headers=_headers, _host_index=_host_index
         )
 
@@ -471,7 +471,7 @@ class QuestionnaireQuestionsApi:
         response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
         return response_data.response
 
-    def _questionnaire_questions_retrieve_serialize(
+    def _retrieve_serialize(
         self,
         id,
         _request_auth,

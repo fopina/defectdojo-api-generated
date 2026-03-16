@@ -24,120 +24,120 @@ class TestFindingsApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
-    def test_findings_accept_risks_create(self) -> None:
-        """Test case for findings_accept_risks_create"""
+    def test_accept_risks_create(self) -> None:
+        """Test case for accept_risks_create"""
         pass
 
-    def test_findings_close_create(self) -> None:
-        """Test case for findings_close_create"""
+    def test_close_create(self) -> None:
+        """Test case for close_create"""
         pass
 
-    def test_findings_create(self) -> None:
-        """Test case for findings_create"""
+    def test_create(self) -> None:
+        """Test case for create"""
         pass
 
-    def test_findings_delete_preview_list(self) -> None:
-        """Test case for findings_delete_preview_list"""
+    def test_delete_preview_list(self) -> None:
+        """Test case for delete_preview_list"""
         pass
 
-    def test_findings_destroy(self) -> None:
-        """Test case for findings_destroy"""
+    def test_destroy(self) -> None:
+        """Test case for destroy"""
         pass
 
-    def test_findings_duplicate_list(self) -> None:
-        """Test case for findings_duplicate_list"""
+    def test_duplicate_list(self) -> None:
+        """Test case for duplicate_list"""
         pass
 
-    def test_findings_duplicate_reset_create(self) -> None:
-        """Test case for findings_duplicate_reset_create"""
+    def test_duplicate_reset_create(self) -> None:
+        """Test case for duplicate_reset_create"""
         pass
 
-    def test_findings_files_create(self) -> None:
-        """Test case for findings_files_create"""
+    def test_files_create(self) -> None:
+        """Test case for files_create"""
         pass
 
-    def test_findings_files_download_retrieve(self) -> None:
-        """Test case for findings_files_download_retrieve"""
+    def test_files_download_retrieve(self) -> None:
+        """Test case for files_download_retrieve"""
         pass
 
-    def test_findings_files_retrieve(self) -> None:
-        """Test case for findings_files_retrieve"""
+    def test_files_retrieve(self) -> None:
+        """Test case for files_retrieve"""
         pass
 
-    def test_findings_generate_report_create(self) -> None:
-        """Test case for findings_generate_report_create"""
+    def test_generate_report_create(self) -> None:
+        """Test case for generate_report_create"""
         pass
 
-    def test_findings_list(self) -> None:
-        """Test case for findings_list"""
+    def test_list(self) -> None:
+        """Test case for list"""
         pass
 
-    def test_findings_metadata_create(self) -> None:
-        """Test case for findings_metadata_create"""
+    def test_metadata_create(self) -> None:
+        """Test case for metadata_create"""
         pass
 
-    def test_findings_metadata_destroy(self) -> None:
-        """Test case for findings_metadata_destroy"""
+    def test_metadata_destroy(self) -> None:
+        """Test case for metadata_destroy"""
         pass
 
-    def test_findings_metadata_list(self) -> None:
-        """Test case for findings_metadata_list"""
+    def test_metadata_list(self) -> None:
+        """Test case for metadata_list"""
         pass
 
-    def test_findings_metadata_update(self) -> None:
-        """Test case for findings_metadata_update"""
+    def test_metadata_update(self) -> None:
+        """Test case for metadata_update"""
         pass
 
-    def test_findings_notes_create(self) -> None:
-        """Test case for findings_notes_create"""
+    def test_notes_create(self) -> None:
+        """Test case for notes_create"""
         pass
 
-    def test_findings_notes_retrieve(self) -> None:
-        """Test case for findings_notes_retrieve"""
+    def test_notes_retrieve(self) -> None:
+        """Test case for notes_retrieve"""
         pass
 
-    def test_findings_original_create(self) -> None:
-        """Test case for findings_original_create"""
+    def test_original_create(self) -> None:
+        """Test case for original_create"""
         pass
 
-    def test_findings_partial_update(self) -> None:
-        """Test case for findings_partial_update"""
+    def test_partial_update(self) -> None:
+        """Test case for partial_update"""
         pass
 
-    def test_findings_remove_note_partial_update(self) -> None:
-        """Test case for findings_remove_note_partial_update"""
+    def test_remove_note_partial_update(self) -> None:
+        """Test case for remove_note_partial_update"""
         pass
 
-    def test_findings_remove_tags_partial_update(self) -> None:
-        """Test case for findings_remove_tags_partial_update"""
+    def test_remove_tags_partial_update(self) -> None:
+        """Test case for remove_tags_partial_update"""
         pass
 
-    def test_findings_remove_tags_update(self) -> None:
-        """Test case for findings_remove_tags_update"""
+    def test_remove_tags_update(self) -> None:
+        """Test case for remove_tags_update"""
         pass
 
-    def test_findings_request_response_create(self) -> None:
-        """Test case for findings_request_response_create"""
+    def test_request_response_create(self) -> None:
+        """Test case for request_response_create"""
         pass
 
-    def test_findings_request_response_retrieve(self) -> None:
-        """Test case for findings_request_response_retrieve"""
+    def test_request_response_retrieve(self) -> None:
+        """Test case for request_response_retrieve"""
         pass
 
-    def test_findings_retrieve(self) -> None:
-        """Test case for findings_retrieve"""
+    def test_retrieve(self) -> None:
+        """Test case for retrieve"""
         pass
 
-    def test_findings_tags_create(self) -> None:
-        """Test case for findings_tags_create"""
+    def test_tags_create(self) -> None:
+        """Test case for tags_create"""
         pass
 
-    def test_findings_tags_retrieve(self) -> None:
-        """Test case for findings_tags_retrieve"""
+    def test_tags_retrieve(self) -> None:
+        """Test case for tags_retrieve"""
         pass
 
-    def test_findings_update(self) -> None:
-        """Test case for findings_update"""
+    def test_update(self) -> None:
+        """Test case for update"""
         pass
 
 

@@ -92,6 +92,13 @@ def render_entry(old_data: dict, new_data: dict) -> str:
 def update_changelog(old_path: Path, new_path: Path, changelog_path: Path = CHANGELOG) -> None:
     old_data = load_json(old_path)
     new_data = load_json(new_path)
+    old_version = get_version(old_data)
+    new_version = get_version(new_data)
+
+    if old_version == new_version:
+        print(f'Versions are the same ({new_version}); changelog not updated.')
+        return
+
     entry = render_entry(old_data, new_data)
 
     previous = ''

@@ -66,7 +66,8 @@ class Test(unittest.TestCase):
         report = self._reimport_scan()
         self.assertEqual(report.statistics.after.total.total, 3)
 
-    def DISABLED_test_bad_api_model_definitions(self):
+    @unittest.skip('Issue fixed')
+    def test_bad_api_model_definitions(self):
         """This a test to assert issue https://github.com/fopina/defectdojo-api-generated/issues/39"""
         # this has been disabled as https://github.com/fopina/defectdojo-api-generated/pull/45 made all properties optional
         # this can be re-introduced by removing `tweak_required` from `tweak_openapi.py`

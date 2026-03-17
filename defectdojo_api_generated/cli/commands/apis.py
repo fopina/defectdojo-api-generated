@@ -39,10 +39,23 @@ def _build_api_group(module_name: str, api_class: type) -> type:
             name=group_name,
             help=f'`{api_class.__name__}`.',
         )
-        client: DefectDojo = classyclick.ContextMeta('client')
 
     methods = sorted(name for name, member in inspect.getmembers(api_class, callable) if not name.startswith('_'))
     method_set = set(methods)
+
+    def _build_api_command(command_name: str, target_method: str):
+        class ApiCommand(ApiGroup.Command, classyclick.Command):
+            __config__ = classyclick.Command.Config(
+                name=command_name,
+                help=f'`{target_method}`.',
+            )
+            client: DefectDojo = classyclick.ContextMeta('client')
+
+            def __call__(self):
+                print(getattr(api_class(self.client.api_client), target_method)())
+
+        return ApiCommand
+
     for method in methods:
         if method.endswith('_with_http_info') or method.endswith('_without_preload_content'):
             continue
@@ -51,15 +64,7 @@ def _build_api_group(module_name: str, api_class: type) -> type:
         method_name = method
         if method.endswith('_iterator') and method[:-9] in method_set:
             method_name = method[:-9]
-
-        class ApiCommand(ApiGroup.Command, classyclick.Command):
-            __config__ = classyclick.Command.Config(
-                name=method_name,
-                help=f'`{method}`.',
-            )
-
-            def __call__(self):
-                pass
+        _build_api_command(method_name, method)
 
     return ApiGroup
 

@@ -23,3 +23,17 @@ class TestCLI(unittest.TestCase):
         expected_exit_code = 2 if click_version >= (8, 2) else 0
         self.assertEqual(result.exit_code, expected_exit_code)
         self.assertRegex(result.output, r'findings\s+`FindingsApi`\.')
+
+    def test_api_commands_capture_their_own_method(self):
+        runner = CliRunner()
+        with runner.isolated_filesystem():
+            config_path = Path('config.toml')
+            config_path.write_text("host = 'https://example.com'\ntoken = 'token'\n")
+
+            list_result = runner.invoke(CLI.click, ['--config', str(config_path), 'findings', 'list'])
+            create_result = runner.invoke(CLI.click, ['--config', str(config_path), 'findings', 'create'])
+
+        self.assertEqual(list_result.exit_code, 0)
+        self.assertEqual(create_result.exit_code, 0)
+        self.assertIn('FindingsApi.list_iterator', list_result.output)
+        self.assertIn('FindingsApi.create', create_result.output)

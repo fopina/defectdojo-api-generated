@@ -1,4 +1,5 @@
 import unittest
+from importlib.metadata import version
 from pathlib import Path
 
 from click.testing import CliRunner
@@ -18,5 +19,7 @@ class TestCLI(unittest.TestCase):
 
             result = runner.invoke(CLI.click)
 
-        self.assertEqual(result.exit_code, 2)
+        click_version = tuple(int(part) for part in version('click').split('.')[:2])
+        expected_exit_code = 2 if click_version >= (8, 2) else 0
+        self.assertEqual(result.exit_code, expected_exit_code)
         self.assertRegex(result.output, r'findings\s+`FindingsApi`\.')

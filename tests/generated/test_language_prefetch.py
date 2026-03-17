@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.language_prefetch import LanguagePrefetch
+from defectdojo_api_generated.models.language_prefetch import LanguagePrefetch as _LanguagePrefetch
 
 
 class TestLanguagePrefetch(unittest.TestCase):
@@ -24,16 +24,16 @@ class TestLanguagePrefetch(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> LanguagePrefetch:
+    def make_instance(self, include_optional) -> _LanguagePrefetch:
         """Test LanguagePrefetch
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `LanguagePrefetch`
         """
-        model = LanguagePrefetch()
+        model = _LanguagePrefetch()
         if include_optional:
-            return LanguagePrefetch(
+            return _LanguagePrefetch(
                 language = {
                     'key' : defectdojo_api_generated.models.language_type.LanguageType(
                         id = 56, 
@@ -137,7 +137,7 @@ class TestLanguagePrefetch(unittest.TestCase):
                     }
             )
         else:
-            return LanguagePrefetch(
+            return _LanguagePrefetch(
         )
         """
 

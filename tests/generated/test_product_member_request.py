@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.product_member_request import ProductMemberRequest
+from defectdojo_api_generated.models.product_member_request import ProductMemberRequest as _ProductMemberRequest
 
 
 class TestProductMemberRequest(unittest.TestCase):
@@ -24,22 +24,22 @@ class TestProductMemberRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ProductMemberRequest:
+    def make_instance(self, include_optional) -> _ProductMemberRequest:
         """Test ProductMemberRequest
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `ProductMemberRequest`
         """
-        model = ProductMemberRequest()
+        model = _ProductMemberRequest()
         if include_optional:
-            return ProductMemberRequest(
+            return _ProductMemberRequest(
                 product = 56,
                 user = 56,
                 role = 56
             )
         else:
-            return ProductMemberRequest(
+            return _ProductMemberRequest(
         )
         """
 

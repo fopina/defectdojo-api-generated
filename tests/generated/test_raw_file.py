@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.raw_file import RawFile
+from defectdojo_api_generated.models.raw_file import RawFile as _RawFile
 
 
 class TestRawFile(unittest.TestCase):
@@ -24,20 +24,20 @@ class TestRawFile(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> RawFile:
+    def make_instance(self, include_optional) -> _RawFile:
         """Test RawFile
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `RawFile`
         """
-        model = RawFile()
+        model = _RawFile()
         if include_optional:
-            return RawFile(
+            return _RawFile(
                 file = ''
             )
         else:
-            return RawFile(
+            return _RawFile(
         )
         """
 

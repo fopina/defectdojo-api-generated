@@ -12,14 +12,14 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.api.global_roles_api import GlobalRolesApi
+from defectdojo_api_generated.api.global_roles_api import GlobalRolesApi as _GlobalRolesApi
 
 
 class TestGlobalRolesApi(unittest.TestCase):
     """GlobalRolesApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = GlobalRolesApi()
+        self.api = _GlobalRolesApi()
 
     def tearDown(self) -> None:
         pass

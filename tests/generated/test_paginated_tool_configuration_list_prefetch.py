@@ -13,7 +13,7 @@ Do not edit the class manually.
 import unittest
 
 from defectdojo_api_generated.models.paginated_tool_configuration_list_prefetch import (
-    PaginatedToolConfigurationListPrefetch,
+    PaginatedToolConfigurationListPrefetch as _PaginatedToolConfigurationListPrefetch,
 )
 
 
@@ -26,16 +26,16 @@ class TestPaginatedToolConfigurationListPrefetch(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PaginatedToolConfigurationListPrefetch:
+    def make_instance(self, include_optional) -> _PaginatedToolConfigurationListPrefetch:
         """Test PaginatedToolConfigurationListPrefetch
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `PaginatedToolConfigurationListPrefetch`
         """
-        model = PaginatedToolConfigurationListPrefetch()
+        model = _PaginatedToolConfigurationListPrefetch()
         if include_optional:
-            return PaginatedToolConfigurationListPrefetch(
+            return _PaginatedToolConfigurationListPrefetch(
                 tool_type = {
                     'key' : defectdojo_api_generated.models.tool_type.ToolType(
                         id = 56, 
@@ -44,7 +44,7 @@ class TestPaginatedToolConfigurationListPrefetch(unittest.TestCase):
                     }
             )
         else:
-            return PaginatedToolConfigurationListPrefetch(
+            return _PaginatedToolConfigurationListPrefetch(
         )
         """
 

@@ -12,7 +12,9 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.patched_sonarqube_issue_request import PatchedSonarqubeIssueRequest
+from defectdojo_api_generated.models.patched_sonarqube_issue_request import (
+    PatchedSonarqubeIssueRequest as _PatchedSonarqubeIssueRequest,
+)
 
 
 class TestPatchedSonarqubeIssueRequest(unittest.TestCase):
@@ -24,22 +26,22 @@ class TestPatchedSonarqubeIssueRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PatchedSonarqubeIssueRequest:
+    def make_instance(self, include_optional) -> _PatchedSonarqubeIssueRequest:
         """Test PatchedSonarqubeIssueRequest
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `PatchedSonarqubeIssueRequest`
         """
-        model = PatchedSonarqubeIssueRequest()
+        model = _PatchedSonarqubeIssueRequest()
         if include_optional:
-            return PatchedSonarqubeIssueRequest(
+            return _PatchedSonarqubeIssueRequest(
                 key = '0',
                 status = '0',
                 type = '0'
             )
         else:
-            return PatchedSonarqubeIssueRequest(
+            return _PatchedSonarqubeIssueRequest(
         )
         """
 

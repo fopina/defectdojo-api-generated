@@ -12,14 +12,14 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.api.jira_configurations_api import JiraConfigurationsApi
+from defectdojo_api_generated.api.jira_configurations_api import JiraConfigurationsApi as _JiraConfigurationsApi
 
 
 class TestJiraConfigurationsApi(unittest.TestCase):
     """JiraConfigurationsApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = JiraConfigurationsApi()
+        self.api = _JiraConfigurationsApi()
 
     def tearDown(self) -> None:
         pass

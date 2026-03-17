@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.finding_related_fields import FindingRelatedFields
+from defectdojo_api_generated.models.finding_related_fields import FindingRelatedFields as _FindingRelatedFields
 
 
 class TestFindingRelatedFields(unittest.TestCase):
@@ -24,16 +24,16 @@ class TestFindingRelatedFields(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> FindingRelatedFields:
+    def make_instance(self, include_optional) -> _FindingRelatedFields:
         """Test FindingRelatedFields
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `FindingRelatedFields`
         """
-        model = FindingRelatedFields()
+        model = _FindingRelatedFields()
         if include_optional:
-            return FindingRelatedFields(
+            return _FindingRelatedFields(
                 test = defectdojo_api_generated.models.finding_test.FindingTest(
                     id = 56, 
                     title = '', 
@@ -79,7 +79,7 @@ class TestFindingRelatedFields(unittest.TestCase):
                     finding_group = 56, )
             )
         else:
-            return FindingRelatedFields(
+            return _FindingRelatedFields(
         )
         """
 

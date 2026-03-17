@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.endpoint_request import EndpointRequest
+from defectdojo_api_generated.models.endpoint_request import EndpointRequest as _EndpointRequest
 
 
 class TestEndpointRequest(unittest.TestCase):
@@ -24,16 +24,16 @@ class TestEndpointRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> EndpointRequest:
+    def make_instance(self, include_optional) -> _EndpointRequest:
         """Test EndpointRequest
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `EndpointRequest`
         """
-        model = EndpointRequest()
+        model = _EndpointRequest()
         if include_optional:
-            return EndpointRequest(
+            return _EndpointRequest(
                 tags = [
                     '0'
                     ],
@@ -47,7 +47,7 @@ class TestEndpointRequest(unittest.TestCase):
                 product = 56
             )
         else:
-            return EndpointRequest(
+            return _EndpointRequest(
         )
         """
 

@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.tool_type import ToolType
+from defectdojo_api_generated.models.tool_type import ToolType as _ToolType
 
 
 class TestToolType(unittest.TestCase):
@@ -24,22 +24,22 @@ class TestToolType(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ToolType:
+    def make_instance(self, include_optional) -> _ToolType:
         """Test ToolType
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `ToolType`
         """
-        model = ToolType()
+        model = _ToolType()
         if include_optional:
-            return ToolType(
+            return _ToolType(
                 id = 56,
                 name = '',
                 description = ''
             )
         else:
-            return ToolType(
+            return _ToolType(
         )
         """
 

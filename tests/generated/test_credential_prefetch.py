@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.credential_prefetch import CredentialPrefetch
+from defectdojo_api_generated.models.credential_prefetch import CredentialPrefetch as _CredentialPrefetch
 
 
 class TestCredentialPrefetch(unittest.TestCase):
@@ -24,16 +24,16 @@ class TestCredentialPrefetch(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> CredentialPrefetch:
+    def make_instance(self, include_optional) -> _CredentialPrefetch:
         """Test CredentialPrefetch
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `CredentialPrefetch`
         """
-        model = CredentialPrefetch()
+        model = _CredentialPrefetch()
         if include_optional:
-            return CredentialPrefetch(
+            return _CredentialPrefetch(
                 environment = {
                     'key' : defectdojo_api_generated.models.finding_environment.FindingEnvironment(
                         id = 56, 
@@ -61,7 +61,7 @@ class TestCredentialPrefetch(unittest.TestCase):
                     }
             )
         else:
-            return CredentialPrefetch(
+            return _CredentialPrefetch(
         )
         """
 

@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.asset_member_prefetch import AssetMemberPrefetch
+from defectdojo_api_generated.models.asset_member_prefetch import AssetMemberPrefetch as _AssetMemberPrefetch
 
 
 class TestAssetMemberPrefetch(unittest.TestCase):
@@ -24,16 +24,16 @@ class TestAssetMemberPrefetch(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> AssetMemberPrefetch:
+    def make_instance(self, include_optional) -> _AssetMemberPrefetch:
         """Test AssetMemberPrefetch
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `AssetMemberPrefetch`
         """
-        model = AssetMemberPrefetch()
+        model = _AssetMemberPrefetch()
         if include_optional:
-            return AssetMemberPrefetch(
+            return _AssetMemberPrefetch(
                 product = {
                     'key' : defectdojo_api_generated.models.product.Product(
                         id = 56, 
@@ -138,7 +138,7 @@ class TestAssetMemberPrefetch(unittest.TestCase):
                     }
             )
         else:
-            return AssetMemberPrefetch(
+            return _AssetMemberPrefetch(
         )
         """
 

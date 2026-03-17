@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.auth_token import AuthToken
+from defectdojo_api_generated.models.auth_token import AuthToken as _AuthToken
 
 
 class TestAuthToken(unittest.TestCase):
@@ -24,20 +24,20 @@ class TestAuthToken(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> AuthToken:
+    def make_instance(self, include_optional) -> _AuthToken:
         """Test AuthToken
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `AuthToken`
         """
-        model = AuthToken()
+        model = _AuthToken()
         if include_optional:
-            return AuthToken(
+            return _AuthToken(
                 token = ''
             )
         else:
-            return AuthToken(
+            return _AuthToken(
         )
         """
 

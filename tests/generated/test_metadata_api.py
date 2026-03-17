@@ -12,14 +12,14 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.api.metadata_api import MetadataApi
+from defectdojo_api_generated.api.metadata_api import MetadataApi as _MetadataApi
 
 
 class TestMetadataApi(unittest.TestCase):
     """MetadataApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = MetadataApi()
+        self.api = _MetadataApi()
 
     def tearDown(self) -> None:
         pass

@@ -13,7 +13,7 @@ Do not edit the class manually.
 import unittest
 
 from defectdojo_api_generated.models.patched_product_api_scan_configuration_request import (
-    PatchedProductAPIScanConfigurationRequest,
+    PatchedProductAPIScanConfigurationRequest as _PatchedProductAPIScanConfigurationRequest,
 )
 
 
@@ -26,16 +26,16 @@ class TestPatchedProductAPIScanConfigurationRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PatchedProductAPIScanConfigurationRequest:
+    def make_instance(self, include_optional) -> _PatchedProductAPIScanConfigurationRequest:
         """Test PatchedProductAPIScanConfigurationRequest
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `PatchedProductAPIScanConfigurationRequest`
         """
-        model = PatchedProductAPIScanConfigurationRequest()
+        model = _PatchedProductAPIScanConfigurationRequest()
         if include_optional:
-            return PatchedProductAPIScanConfigurationRequest(
+            return _PatchedProductAPIScanConfigurationRequest(
                 service_key_1 = '',
                 service_key_2 = '',
                 service_key_3 = '',
@@ -43,7 +43,7 @@ class TestPatchedProductAPIScanConfigurationRequest(unittest.TestCase):
                 tool_configuration = 56
             )
         else:
-            return PatchedProductAPIScanConfigurationRequest(
+            return _PatchedProductAPIScanConfigurationRequest(
         )
         """
 

@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.development_environment import DevelopmentEnvironment
+from defectdojo_api_generated.models.development_environment import DevelopmentEnvironment as _DevelopmentEnvironment
 
 
 class TestDevelopmentEnvironment(unittest.TestCase):
@@ -24,21 +24,21 @@ class TestDevelopmentEnvironment(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> DevelopmentEnvironment:
+    def make_instance(self, include_optional) -> _DevelopmentEnvironment:
         """Test DevelopmentEnvironment
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `DevelopmentEnvironment`
         """
-        model = DevelopmentEnvironment()
+        model = _DevelopmentEnvironment()
         if include_optional:
-            return DevelopmentEnvironment(
+            return _DevelopmentEnvironment(
                 id = 56,
                 name = ''
             )
         else:
-            return DevelopmentEnvironment(
+            return _DevelopmentEnvironment(
         )
         """
 

@@ -12,14 +12,14 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.api.note_type_api import NoteTypeApi
+from defectdojo_api_generated.api.note_type_api import NoteTypeApi as _NoteTypeApi
 
 
 class TestNoteTypeApi(unittest.TestCase):
     """NoteTypeApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = NoteTypeApi()
+        self.api = _NoteTypeApi()
 
     def tearDown(self) -> None:
         pass

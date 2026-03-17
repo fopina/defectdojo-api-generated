@@ -12,7 +12,9 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.burp_raw_request_response_request import BurpRawRequestResponseRequest
+from defectdojo_api_generated.models.burp_raw_request_response_request import (
+    BurpRawRequestResponseRequest as _BurpRawRequestResponseRequest,
+)
 
 
 class TestBurpRawRequestResponseRequest(unittest.TestCase):
@@ -24,16 +26,16 @@ class TestBurpRawRequestResponseRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> BurpRawRequestResponseRequest:
+    def make_instance(self, include_optional) -> _BurpRawRequestResponseRequest:
         """Test BurpRawRequestResponseRequest
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `BurpRawRequestResponseRequest`
         """
-        model = BurpRawRequestResponseRequest()
+        model = _BurpRawRequestResponseRequest()
         if include_optional:
-            return BurpRawRequestResponseRequest(
+            return _BurpRawRequestResponseRequest(
                 req_resp = [
                     {
                         'key' : '0'
@@ -41,7 +43,7 @@ class TestBurpRawRequestResponseRequest(unittest.TestCase):
                     ]
             )
         else:
-            return BurpRawRequestResponseRequest(
+            return _BurpRawRequestResponseRequest(
         )
         """
 

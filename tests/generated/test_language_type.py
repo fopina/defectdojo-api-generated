@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.language_type import LanguageType
+from defectdojo_api_generated.models.language_type import LanguageType as _LanguageType
 
 
 class TestLanguageType(unittest.TestCase):
@@ -24,22 +24,22 @@ class TestLanguageType(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> LanguageType:
+    def make_instance(self, include_optional) -> _LanguageType:
         """Test LanguageType
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `LanguageType`
         """
-        model = LanguageType()
+        model = _LanguageType()
         if include_optional:
-            return LanguageType(
+            return _LanguageType(
                 id = 56,
                 language = '',
                 color = ''
             )
         else:
-            return LanguageType(
+            return _LanguageType(
         )
         """
 

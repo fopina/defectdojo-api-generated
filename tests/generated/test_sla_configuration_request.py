@@ -12,7 +12,9 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.sla_configuration_request import SLAConfigurationRequest
+from defectdojo_api_generated.models.sla_configuration_request import (
+    SLAConfigurationRequest as _SLAConfigurationRequest,
+)
 
 
 class TestSLAConfigurationRequest(unittest.TestCase):
@@ -24,16 +26,16 @@ class TestSLAConfigurationRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> SLAConfigurationRequest:
+    def make_instance(self, include_optional) -> _SLAConfigurationRequest:
         """Test SLAConfigurationRequest
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `SLAConfigurationRequest`
         """
-        model = SLAConfigurationRequest()
+        model = _SLAConfigurationRequest()
         if include_optional:
-            return SLAConfigurationRequest(
+            return _SLAConfigurationRequest(
                 name = '0',
                 description = '',
                 critical = -2147483648,
@@ -47,7 +49,7 @@ class TestSLAConfigurationRequest(unittest.TestCase):
                 restart_sla_on_reactivation = True
             )
         else:
-            return SLAConfigurationRequest(
+            return _SLAConfigurationRequest(
         )
         """
 

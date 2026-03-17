@@ -12,14 +12,14 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.api.notification_webhooks_api import NotificationWebhooksApi
+from defectdojo_api_generated.api.notification_webhooks_api import NotificationWebhooksApi as _NotificationWebhooksApi
 
 
 class TestNotificationWebhooksApi(unittest.TestCase):
     """NotificationWebhooksApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = NotificationWebhooksApi()
+        self.api = _NotificationWebhooksApi()
 
     def tearDown(self) -> None:
         pass

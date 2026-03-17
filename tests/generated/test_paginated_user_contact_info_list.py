@@ -12,7 +12,9 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.paginated_user_contact_info_list import PaginatedUserContactInfoList
+from defectdojo_api_generated.models.paginated_user_contact_info_list import (
+    PaginatedUserContactInfoList as _PaginatedUserContactInfoList,
+)
 
 
 class TestPaginatedUserContactInfoList(unittest.TestCase):
@@ -24,16 +26,16 @@ class TestPaginatedUserContactInfoList(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PaginatedUserContactInfoList:
+    def make_instance(self, include_optional) -> _PaginatedUserContactInfoList:
         """Test PaginatedUserContactInfoList
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `PaginatedUserContactInfoList`
         """
-        model = PaginatedUserContactInfoList()
+        model = _PaginatedUserContactInfoList()
         if include_optional:
-            return PaginatedUserContactInfoList(
+            return _PaginatedUserContactInfoList(
                 count = 123,
                 next = 'http://api.example.org/accounts/?offset=400&limit=100',
                 previous = 'http://api.example.org/accounts/?offset=200&limit=100',
@@ -72,7 +74,7 @@ class TestPaginatedUserContactInfoList(unittest.TestCase):
                         }, )
             )
         else:
-            return PaginatedUserContactInfoList(
+            return _PaginatedUserContactInfoList(
         )
         """
 

@@ -12,14 +12,14 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.api.finding_templates_api import FindingTemplatesApi
+from defectdojo_api_generated.api.finding_templates_api import FindingTemplatesApi as _FindingTemplatesApi
 
 
 class TestFindingTemplatesApi(unittest.TestCase):
     """FindingTemplatesApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = FindingTemplatesApi()
+        self.api = _FindingTemplatesApi()
 
     def tearDown(self) -> None:
         pass

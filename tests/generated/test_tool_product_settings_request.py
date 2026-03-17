@@ -12,7 +12,9 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.tool_product_settings_request import ToolProductSettingsRequest
+from defectdojo_api_generated.models.tool_product_settings_request import (
+    ToolProductSettingsRequest as _ToolProductSettingsRequest,
+)
 
 
 class TestToolProductSettingsRequest(unittest.TestCase):
@@ -24,16 +26,16 @@ class TestToolProductSettingsRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ToolProductSettingsRequest:
+    def make_instance(self, include_optional) -> _ToolProductSettingsRequest:
         """Test ToolProductSettingsRequest
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `ToolProductSettingsRequest`
         """
-        model = ToolProductSettingsRequest()
+        model = _ToolProductSettingsRequest()
         if include_optional:
-            return ToolProductSettingsRequest(
+            return _ToolProductSettingsRequest(
                 setting_url = '0',
                 product = 56,
                 name = '0',
@@ -43,7 +45,7 @@ class TestToolProductSettingsRequest(unittest.TestCase):
                 tool_configuration = 56
             )
         else:
-            return ToolProductSettingsRequest(
+            return _ToolProductSettingsRequest(
         )
         """
 

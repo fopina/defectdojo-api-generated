@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.jira_project_prefetch import JIRAProjectPrefetch
+from defectdojo_api_generated.models.jira_project_prefetch import JIRAProjectPrefetch as _JIRAProjectPrefetch
 
 
 class TestJIRAProjectPrefetch(unittest.TestCase):
@@ -24,16 +24,16 @@ class TestJIRAProjectPrefetch(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> JIRAProjectPrefetch:
+    def make_instance(self, include_optional) -> _JIRAProjectPrefetch:
         """Test JIRAProjectPrefetch
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `JIRAProjectPrefetch`
         """
-        model = JIRAProjectPrefetch()
+        model = _JIRAProjectPrefetch()
         if include_optional:
-            return JIRAProjectPrefetch(
+            return _JIRAProjectPrefetch(
                 engagement = {
                     'key' : defectdojo_api_generated.models.finding_engagement.FindingEngagement(
                         id = 56, 
@@ -168,7 +168,7 @@ class TestJIRAProjectPrefetch(unittest.TestCase):
                     }
             )
         else:
-            return JIRAProjectPrefetch(
+            return _JIRAProjectPrefetch(
         )
         """
 

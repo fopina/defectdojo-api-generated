@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.finding_engagement import FindingEngagement
+from defectdojo_api_generated.models.finding_engagement import FindingEngagement as _FindingEngagement
 
 
 class TestFindingEngagement(unittest.TestCase):
@@ -24,16 +24,16 @@ class TestFindingEngagement(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> FindingEngagement:
+    def make_instance(self, include_optional) -> _FindingEngagement:
         """Test FindingEngagement
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `FindingEngagement`
         """
-        model = FindingEngagement()
+        model = _FindingEngagement()
         if include_optional:
-            return FindingEngagement(
+            return _FindingEngagement(
                 id = 56,
                 name = '',
                 description = '',
@@ -54,7 +54,7 @@ class TestFindingEngagement(unittest.TestCase):
                 updated = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f')
             )
         else:
-            return FindingEngagement(
+            return _FindingEngagement(
         )
         """
 

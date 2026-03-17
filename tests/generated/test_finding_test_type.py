@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.finding_test_type import FindingTestType
+from defectdojo_api_generated.models.finding_test_type import FindingTestType as _FindingTestType
 
 
 class TestFindingTestType(unittest.TestCase):
@@ -24,21 +24,21 @@ class TestFindingTestType(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> FindingTestType:
+    def make_instance(self, include_optional) -> _FindingTestType:
         """Test FindingTestType
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `FindingTestType`
         """
-        model = FindingTestType()
+        model = _FindingTestType()
         if include_optional:
-            return FindingTestType(
+            return _FindingTestType(
                 id = 56,
                 name = ''
             )
         else:
-            return FindingTestType(
+            return _FindingTestType(
         )
         """
 

@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.finding_group_request import FindingGroupRequest
+from defectdojo_api_generated.models.finding_group_request import FindingGroupRequest as _FindingGroupRequest
 
 
 class TestFindingGroupRequest(unittest.TestCase):
@@ -24,21 +24,21 @@ class TestFindingGroupRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> FindingGroupRequest:
+    def make_instance(self, include_optional) -> _FindingGroupRequest:
         """Test FindingGroupRequest
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `FindingGroupRequest`
         """
-        model = FindingGroupRequest()
+        model = _FindingGroupRequest()
         if include_optional:
-            return FindingGroupRequest(
+            return _FindingGroupRequest(
                 name = '0',
                 test = 56
             )
         else:
-            return FindingGroupRequest(
+            return _FindingGroupRequest(
         )
         """
 

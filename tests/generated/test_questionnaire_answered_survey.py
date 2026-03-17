@@ -12,7 +12,9 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.questionnaire_answered_survey import QuestionnaireAnsweredSurvey
+from defectdojo_api_generated.models.questionnaire_answered_survey import (
+    QuestionnaireAnsweredSurvey as _QuestionnaireAnsweredSurvey,
+)
 
 
 class TestQuestionnaireAnsweredSurvey(unittest.TestCase):
@@ -24,16 +26,16 @@ class TestQuestionnaireAnsweredSurvey(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> QuestionnaireAnsweredSurvey:
+    def make_instance(self, include_optional) -> _QuestionnaireAnsweredSurvey:
         """Test QuestionnaireAnsweredSurvey
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `QuestionnaireAnsweredSurvey`
         """
-        model = QuestionnaireAnsweredSurvey()
+        model = _QuestionnaireAnsweredSurvey()
         if include_optional:
-            return QuestionnaireAnsweredSurvey(
+            return _QuestionnaireAnsweredSurvey(
                 id = 56,
                 completed = True,
                 answered_on = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(),
@@ -89,7 +91,7 @@ class TestQuestionnaireAnsweredSurvey(unittest.TestCase):
                         }, )
             )
         else:
-            return QuestionnaireAnsweredSurvey(
+            return _QuestionnaireAnsweredSurvey(
         )
         """
 

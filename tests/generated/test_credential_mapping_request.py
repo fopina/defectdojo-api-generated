@@ -12,7 +12,9 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.credential_mapping_request import CredentialMappingRequest
+from defectdojo_api_generated.models.credential_mapping_request import (
+    CredentialMappingRequest as _CredentialMappingRequest,
+)
 
 
 class TestCredentialMappingRequest(unittest.TestCase):
@@ -24,16 +26,16 @@ class TestCredentialMappingRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> CredentialMappingRequest:
+    def make_instance(self, include_optional) -> _CredentialMappingRequest:
         """Test CredentialMappingRequest
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `CredentialMappingRequest`
         """
-        model = CredentialMappingRequest()
+        model = _CredentialMappingRequest()
         if include_optional:
-            return CredentialMappingRequest(
+            return _CredentialMappingRequest(
                 is_authn_provider = True,
                 url = '',
                 cred_id = 56,
@@ -43,7 +45,7 @@ class TestCredentialMappingRequest(unittest.TestCase):
                 test = 56
             )
         else:
-            return CredentialMappingRequest(
+            return _CredentialMappingRequest(
         )
         """
 

@@ -12,7 +12,9 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.paginated_sonarqube_issue_list import PaginatedSonarqubeIssueList
+from defectdojo_api_generated.models.paginated_sonarqube_issue_list import (
+    PaginatedSonarqubeIssueList as _PaginatedSonarqubeIssueList,
+)
 
 
 class TestPaginatedSonarqubeIssueList(unittest.TestCase):
@@ -24,16 +26,16 @@ class TestPaginatedSonarqubeIssueList(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PaginatedSonarqubeIssueList:
+    def make_instance(self, include_optional) -> _PaginatedSonarqubeIssueList:
         """Test PaginatedSonarqubeIssueList
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `PaginatedSonarqubeIssueList`
         """
-        model = PaginatedSonarqubeIssueList()
+        model = _PaginatedSonarqubeIssueList()
         if include_optional:
-            return PaginatedSonarqubeIssueList(
+            return _PaginatedSonarqubeIssueList(
                 count = 123,
                 next = 'http://api.example.org/accounts/?offset=400&limit=100',
                 previous = 'http://api.example.org/accounts/?offset=200&limit=100',
@@ -46,7 +48,7 @@ class TestPaginatedSonarqubeIssueList(unittest.TestCase):
                     ]
             )
         else:
-            return PaginatedSonarqubeIssueList(
+            return _PaginatedSonarqubeIssueList(
         )
         """
 

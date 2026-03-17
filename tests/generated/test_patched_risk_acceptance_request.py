@@ -12,7 +12,9 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.patched_risk_acceptance_request import PatchedRiskAcceptanceRequest
+from defectdojo_api_generated.models.patched_risk_acceptance_request import (
+    PatchedRiskAcceptanceRequest as _PatchedRiskAcceptanceRequest,
+)
 
 
 class TestPatchedRiskAcceptanceRequest(unittest.TestCase):
@@ -24,16 +26,16 @@ class TestPatchedRiskAcceptanceRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PatchedRiskAcceptanceRequest:
+    def make_instance(self, include_optional) -> _PatchedRiskAcceptanceRequest:
         """Test PatchedRiskAcceptanceRequest
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `PatchedRiskAcceptanceRequest`
         """
-        model = PatchedRiskAcceptanceRequest()
+        model = _PatchedRiskAcceptanceRequest()
         if include_optional:
-            return PatchedRiskAcceptanceRequest(
+            return _PatchedRiskAcceptanceRequest(
                 name = '0',
                 recommendation = 'A',
                 recommendation_details = '',
@@ -51,7 +53,7 @@ class TestPatchedRiskAcceptanceRequest(unittest.TestCase):
                     ]
             )
         else:
-            return PatchedRiskAcceptanceRequest(
+            return _PatchedRiskAcceptanceRequest(
         )
         """
 

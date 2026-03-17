@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.test_import import TestImport
+from defectdojo_api_generated.models.test_import import TestImport as _TestImport
 
 
 class TestTestImport(unittest.TestCase):
@@ -24,16 +24,16 @@ class TestTestImport(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> TestImport:
+    def make_instance(self, include_optional) -> _TestImport:
         """Test TestImport
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `TestImport`
         """
-        model = TestImport()
+        model = _TestImport()
         if include_optional:
-            return TestImport(
+            return _TestImport(
                 id = 56,
                 test_import_finding_action_set = [
                     defectdojo_api_generated.models.test_import_finding_action.TestImportFindingAction(
@@ -58,7 +58,7 @@ class TestTestImport(unittest.TestCase):
                     ]
             )
         else:
-            return TestImport(
+            return _TestImport(
         )
         """
 

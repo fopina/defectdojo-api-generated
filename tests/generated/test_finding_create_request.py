@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.finding_create_request import FindingCreateRequest
+from defectdojo_api_generated.models.finding_create_request import FindingCreateRequest as _FindingCreateRequest
 
 
 class TestFindingCreateRequest(unittest.TestCase):
@@ -24,16 +24,16 @@ class TestFindingCreateRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> FindingCreateRequest:
+    def make_instance(self, include_optional) -> _FindingCreateRequest:
         """Test FindingCreateRequest
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `FindingCreateRequest`
         """
-        model = FindingCreateRequest()
+        model = _FindingCreateRequest()
         if include_optional:
-            return FindingCreateRequest(
+            return _FindingCreateRequest(
                 mitigated = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 mitigated_by = 56,
                 test = 56,
@@ -110,7 +110,7 @@ class TestFindingCreateRequest(unittest.TestCase):
                     ]
             )
         else:
-            return FindingCreateRequest(
+            return _FindingCreateRequest(
         )
         """
 

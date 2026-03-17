@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.auth_token_request import AuthTokenRequest
+from defectdojo_api_generated.models.auth_token_request import AuthTokenRequest as _AuthTokenRequest
 
 
 class TestAuthTokenRequest(unittest.TestCase):
@@ -24,21 +24,21 @@ class TestAuthTokenRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> AuthTokenRequest:
+    def make_instance(self, include_optional) -> _AuthTokenRequest:
         """Test AuthTokenRequest
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `AuthTokenRequest`
         """
-        model = AuthTokenRequest()
+        model = _AuthTokenRequest()
         if include_optional:
-            return AuthTokenRequest(
+            return _AuthTokenRequest(
                 username = '0',
                 password = '0'
             )
         else:
-            return AuthTokenRequest(
+            return _AuthTokenRequest(
         )
         """
 

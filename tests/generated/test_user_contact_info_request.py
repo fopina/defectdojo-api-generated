@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.user_contact_info_request import UserContactInfoRequest
+from defectdojo_api_generated.models.user_contact_info_request import UserContactInfoRequest as _UserContactInfoRequest
 
 
 class TestUserContactInfoRequest(unittest.TestCase):
@@ -24,16 +24,16 @@ class TestUserContactInfoRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> UserContactInfoRequest:
+    def make_instance(self, include_optional) -> _UserContactInfoRequest:
         """Test UserContactInfoRequest
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `UserContactInfoRequest`
         """
-        model = UserContactInfoRequest()
+        model = _UserContactInfoRequest()
         if include_optional:
-            return UserContactInfoRequest(
+            return _UserContactInfoRequest(
                 title = '',
                 phone_number = '+10728880015280',
                 cell_number = '+10728880015280',
@@ -48,7 +48,7 @@ class TestUserContactInfoRequest(unittest.TestCase):
                 user = 56
             )
         else:
-            return UserContactInfoRequest(
+            return _UserContactInfoRequest(
         )
         """
 

@@ -12,7 +12,9 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.notification_webhooks_request import NotificationWebhooksRequest
+from defectdojo_api_generated.models.notification_webhooks_request import (
+    NotificationWebhooksRequest as _NotificationWebhooksRequest,
+)
 
 
 class TestNotificationWebhooksRequest(unittest.TestCase):
@@ -24,16 +26,16 @@ class TestNotificationWebhooksRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> NotificationWebhooksRequest:
+    def make_instance(self, include_optional) -> _NotificationWebhooksRequest:
         """Test NotificationWebhooksRequest
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `NotificationWebhooksRequest`
         """
-        model = NotificationWebhooksRequest()
+        model = _NotificationWebhooksRequest()
         if include_optional:
-            return NotificationWebhooksRequest(
+            return _NotificationWebhooksRequest(
                 name = '0',
                 url = '0',
                 header_name = '',
@@ -41,7 +43,7 @@ class TestNotificationWebhooksRequest(unittest.TestCase):
                 owner = 56
             )
         else:
-            return NotificationWebhooksRequest(
+            return _NotificationWebhooksRequest(
         )
         """
 

@@ -13,7 +13,7 @@ Do not edit the class manually.
 import unittest
 
 from defectdojo_api_generated.models.paginated_burp_raw_request_response_multi_list import (
-    PaginatedBurpRawRequestResponseMultiList,
+    PaginatedBurpRawRequestResponseMultiList as _PaginatedBurpRawRequestResponseMultiList,
 )
 
 
@@ -26,16 +26,16 @@ class TestPaginatedBurpRawRequestResponseMultiList(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PaginatedBurpRawRequestResponseMultiList:
+    def make_instance(self, include_optional) -> _PaginatedBurpRawRequestResponseMultiList:
         """Test PaginatedBurpRawRequestResponseMultiList
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `PaginatedBurpRawRequestResponseMultiList`
         """
-        model = PaginatedBurpRawRequestResponseMultiList()
+        model = _PaginatedBurpRawRequestResponseMultiList()
         if include_optional:
-            return PaginatedBurpRawRequestResponseMultiList(
+            return _PaginatedBurpRawRequestResponseMultiList(
                 count = 123,
                 next = 'http://api.example.org/accounts/?offset=400&limit=100',
                 previous = 'http://api.example.org/accounts/?offset=200&limit=100',
@@ -48,7 +48,7 @@ class TestPaginatedBurpRawRequestResponseMultiList(unittest.TestCase):
                     ]
             )
         else:
-            return PaginatedBurpRawRequestResponseMultiList(
+            return _PaginatedBurpRawRequestResponseMultiList(
         )
         """
 

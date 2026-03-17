@@ -12,7 +12,9 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.sonarqube_issue_transition import SonarqubeIssueTransition
+from defectdojo_api_generated.models.sonarqube_issue_transition import (
+    SonarqubeIssueTransition as _SonarqubeIssueTransition,
+)
 
 
 class TestSonarqubeIssueTransition(unittest.TestCase):
@@ -24,16 +26,16 @@ class TestSonarqubeIssueTransition(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> SonarqubeIssueTransition:
+    def make_instance(self, include_optional) -> _SonarqubeIssueTransition:
         """Test SonarqubeIssueTransition
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `SonarqubeIssueTransition`
         """
-        model = SonarqubeIssueTransition()
+        model = _SonarqubeIssueTransition()
         if include_optional:
-            return SonarqubeIssueTransition(
+            return _SonarqubeIssueTransition(
                 id = 56,
                 created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 finding_status = '',
@@ -42,7 +44,7 @@ class TestSonarqubeIssueTransition(unittest.TestCase):
                 sonarqube_issue = 56
             )
         else:
-            return SonarqubeIssueTransition(
+            return _SonarqubeIssueTransition(
         )
         """
 

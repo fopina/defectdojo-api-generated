@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.accepted_risk_request import AcceptedRiskRequest
+from defectdojo_api_generated.models.accepted_risk_request import AcceptedRiskRequest as _AcceptedRiskRequest
 
 
 class TestAcceptedRiskRequest(unittest.TestCase):
@@ -24,22 +24,22 @@ class TestAcceptedRiskRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> AcceptedRiskRequest:
+    def make_instance(self, include_optional) -> _AcceptedRiskRequest:
         """Test AcceptedRiskRequest
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `AcceptedRiskRequest`
         """
-        model = AcceptedRiskRequest()
+        model = _AcceptedRiskRequest()
         if include_optional:
-            return AcceptedRiskRequest(
+            return _AcceptedRiskRequest(
                 vulnerability_id = '0',
                 justification = '0',
                 accepted_by = '0'
             )
         else:
-            return AcceptedRiskRequest(
+            return _AcceptedRiskRequest(
         )
         """
 

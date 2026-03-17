@@ -12,14 +12,14 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.api.engagement_presets_api import EngagementPresetsApi
+from defectdojo_api_generated.api.engagement_presets_api import EngagementPresetsApi as _EngagementPresetsApi
 
 
 class TestEngagementPresetsApi(unittest.TestCase):
     """EngagementPresetsApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = EngagementPresetsApi()
+        self.api = _EngagementPresetsApi()
 
     def tearDown(self) -> None:
         pass

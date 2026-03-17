@@ -12,7 +12,9 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.engagement_update_jira_epic import EngagementUpdateJiraEpic
+from defectdojo_api_generated.models.engagement_update_jira_epic import (
+    EngagementUpdateJiraEpic as _EngagementUpdateJiraEpic,
+)
 
 
 class TestEngagementUpdateJiraEpic(unittest.TestCase):
@@ -24,21 +26,21 @@ class TestEngagementUpdateJiraEpic(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> EngagementUpdateJiraEpic:
+    def make_instance(self, include_optional) -> _EngagementUpdateJiraEpic:
         """Test EngagementUpdateJiraEpic
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `EngagementUpdateJiraEpic`
         """
-        model = EngagementUpdateJiraEpic()
+        model = _EngagementUpdateJiraEpic()
         if include_optional:
-            return EngagementUpdateJiraEpic(
+            return _EngagementUpdateJiraEpic(
                 epic_name = '',
                 epic_priority = ''
             )
         else:
-            return EngagementUpdateJiraEpic(
+            return _EngagementUpdateJiraEpic(
         )
         """
 

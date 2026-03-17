@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.test_to_files import TestToFiles
+from defectdojo_api_generated.models.test_to_files import TestToFiles as _TestToFiles
 
 
 class TestTestToFiles(unittest.TestCase):
@@ -24,16 +24,16 @@ class TestTestToFiles(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> TestToFiles:
+    def make_instance(self, include_optional) -> _TestToFiles:
         """Test TestToFiles
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `TestToFiles`
         """
-        model = TestToFiles()
+        model = _TestToFiles()
         if include_optional:
-            return TestToFiles(
+            return _TestToFiles(
                 test_id = 56,
                 files = [
                     defectdojo_api_generated.models.file.File(
@@ -43,7 +43,7 @@ class TestTestToFiles(unittest.TestCase):
                     ]
             )
         else:
-            return TestToFiles(
+            return _TestToFiles(
         )
         """
 

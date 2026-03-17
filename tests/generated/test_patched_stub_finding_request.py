@@ -12,7 +12,9 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.patched_stub_finding_request import PatchedStubFindingRequest
+from defectdojo_api_generated.models.patched_stub_finding_request import (
+    PatchedStubFindingRequest as _PatchedStubFindingRequest,
+)
 
 
 class TestPatchedStubFindingRequest(unittest.TestCase):
@@ -24,23 +26,23 @@ class TestPatchedStubFindingRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PatchedStubFindingRequest:
+    def make_instance(self, include_optional) -> _PatchedStubFindingRequest:
         """Test PatchedStubFindingRequest
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `PatchedStubFindingRequest`
         """
-        model = PatchedStubFindingRequest()
+        model = _PatchedStubFindingRequest()
         if include_optional:
-            return PatchedStubFindingRequest(
+            return _PatchedStubFindingRequest(
                 title = '0',
                 var_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(),
                 severity = '',
                 description = ''
             )
         else:
-            return PatchedStubFindingRequest(
+            return _PatchedStubFindingRequest(
         )
         """
 

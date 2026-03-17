@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.finding_to_files import FindingToFiles
+from defectdojo_api_generated.models.finding_to_files import FindingToFiles as _FindingToFiles
 
 
 class TestFindingToFiles(unittest.TestCase):
@@ -24,16 +24,16 @@ class TestFindingToFiles(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> FindingToFiles:
+    def make_instance(self, include_optional) -> _FindingToFiles:
         """Test FindingToFiles
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `FindingToFiles`
         """
-        model = FindingToFiles()
+        model = _FindingToFiles()
         if include_optional:
-            return FindingToFiles(
+            return _FindingToFiles(
                 finding_id = 56,
                 files = [
                     defectdojo_api_generated.models.file.File(
@@ -43,7 +43,7 @@ class TestFindingToFiles(unittest.TestCase):
                     ]
             )
         else:
-            return FindingToFiles(
+            return _FindingToFiles(
         )
         """
 

@@ -12,7 +12,9 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.patched_network_locations_request import PatchedNetworkLocationsRequest
+from defectdojo_api_generated.models.patched_network_locations_request import (
+    PatchedNetworkLocationsRequest as _PatchedNetworkLocationsRequest,
+)
 
 
 class TestPatchedNetworkLocationsRequest(unittest.TestCase):
@@ -24,20 +26,20 @@ class TestPatchedNetworkLocationsRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PatchedNetworkLocationsRequest:
+    def make_instance(self, include_optional) -> _PatchedNetworkLocationsRequest:
         """Test PatchedNetworkLocationsRequest
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `PatchedNetworkLocationsRequest`
         """
-        model = PatchedNetworkLocationsRequest()
+        model = _PatchedNetworkLocationsRequest()
         if include_optional:
-            return PatchedNetworkLocationsRequest(
+            return _PatchedNetworkLocationsRequest(
                 location = '0'
             )
         else:
-            return PatchedNetworkLocationsRequest(
+            return _PatchedNetworkLocationsRequest(
         )
         """
 

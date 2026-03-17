@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.app_analysis_request import AppAnalysisRequest
+from defectdojo_api_generated.models.app_analysis_request import AppAnalysisRequest as _AppAnalysisRequest
 
 
 class TestAppAnalysisRequest(unittest.TestCase):
@@ -24,16 +24,16 @@ class TestAppAnalysisRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> AppAnalysisRequest:
+    def make_instance(self, include_optional) -> _AppAnalysisRequest:
         """Test AppAnalysisRequest
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `AppAnalysisRequest`
         """
-        model = AppAnalysisRequest()
+        model = _AppAnalysisRequest()
         if include_optional:
-            return AppAnalysisRequest(
+            return _AppAnalysisRequest(
                 tags = [
                     '0'
                     ],
@@ -47,7 +47,7 @@ class TestAppAnalysisRequest(unittest.TestCase):
                 user = 56
             )
         else:
-            return AppAnalysisRequest(
+            return _AppAnalysisRequest(
         )
         """
 

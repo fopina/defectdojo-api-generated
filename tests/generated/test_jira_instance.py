@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.jira_instance import JIRAInstance
+from defectdojo_api_generated.models.jira_instance import JIRAInstance as _JIRAInstance
 
 
 class TestJIRAInstance(unittest.TestCase):
@@ -24,16 +24,16 @@ class TestJIRAInstance(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> JIRAInstance:
+    def make_instance(self, include_optional) -> _JIRAInstance:
         """Test JIRAInstance
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `JIRAInstance`
         """
-        model = JIRAInstance()
+        model = _JIRAInstance()
         if include_optional:
-            return JIRAInstance(
+            return _JIRAInstance(
                 id = 56,
                 configuration_name = '',
                 url = '',
@@ -55,7 +55,7 @@ class TestJIRAInstance(unittest.TestCase):
                 finding_jira_sync = True
             )
         else:
-            return JIRAInstance(
+            return _JIRAInstance(
         )
         """
 

@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.finding_to_notes import FindingToNotes
+from defectdojo_api_generated.models.finding_to_notes import FindingToNotes as _FindingToNotes
 
 
 class TestFindingToNotes(unittest.TestCase):
@@ -24,16 +24,16 @@ class TestFindingToNotes(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> FindingToNotes:
+    def make_instance(self, include_optional) -> _FindingToNotes:
         """Test FindingToNotes
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `FindingToNotes`
         """
-        model = FindingToNotes()
+        model = _FindingToNotes()
         if include_optional:
-            return FindingToNotes(
+            return _FindingToNotes(
                 finding_id = 56,
                 notes = [
                     defectdojo_api_generated.models.note.Note(
@@ -57,7 +57,7 @@ class TestFindingToNotes(unittest.TestCase):
                     ]
             )
         else:
-            return FindingToNotes(
+            return _FindingToNotes(
         )
         """
 

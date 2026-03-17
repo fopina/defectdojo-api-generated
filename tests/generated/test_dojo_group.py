@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.dojo_group import DojoGroup
+from defectdojo_api_generated.models.dojo_group import DojoGroup as _DojoGroup
 
 
 class TestDojoGroup(unittest.TestCase):
@@ -24,16 +24,16 @@ class TestDojoGroup(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> DojoGroup:
+    def make_instance(self, include_optional) -> _DojoGroup:
         """Test DojoGroup
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `DojoGroup`
         """
-        model = DojoGroup()
+        model = _DojoGroup()
         if include_optional:
-            return DojoGroup(
+            return _DojoGroup(
                 id = 56,
                 configuration_permissions = [
                     56
@@ -110,7 +110,7 @@ class TestDojoGroup(unittest.TestCase):
                         }, )
             )
         else:
-            return DojoGroup(
+            return _DojoGroup(
         )
         """
 

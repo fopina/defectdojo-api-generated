@@ -12,7 +12,9 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.asset_api_scan_configuration_request import AssetAPIScanConfigurationRequest
+from defectdojo_api_generated.models.asset_api_scan_configuration_request import (
+    AssetAPIScanConfigurationRequest as _AssetAPIScanConfigurationRequest,
+)
 
 
 class TestAssetAPIScanConfigurationRequest(unittest.TestCase):
@@ -24,16 +26,16 @@ class TestAssetAPIScanConfigurationRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> AssetAPIScanConfigurationRequest:
+    def make_instance(self, include_optional) -> _AssetAPIScanConfigurationRequest:
         """Test AssetAPIScanConfigurationRequest
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `AssetAPIScanConfigurationRequest`
         """
-        model = AssetAPIScanConfigurationRequest()
+        model = _AssetAPIScanConfigurationRequest()
         if include_optional:
-            return AssetAPIScanConfigurationRequest(
+            return _AssetAPIScanConfigurationRequest(
                 asset = 56,
                 service_key_1 = '',
                 service_key_2 = '',
@@ -41,7 +43,7 @@ class TestAssetAPIScanConfigurationRequest(unittest.TestCase):
                 tool_configuration = 56
             )
         else:
-            return AssetAPIScanConfigurationRequest(
+            return _AssetAPIScanConfigurationRequest(
         )
         """
 

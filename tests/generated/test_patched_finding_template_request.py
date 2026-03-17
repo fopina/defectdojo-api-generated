@@ -12,7 +12,9 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.patched_finding_template_request import PatchedFindingTemplateRequest
+from defectdojo_api_generated.models.patched_finding_template_request import (
+    PatchedFindingTemplateRequest as _PatchedFindingTemplateRequest,
+)
 
 
 class TestPatchedFindingTemplateRequest(unittest.TestCase):
@@ -24,16 +26,16 @@ class TestPatchedFindingTemplateRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PatchedFindingTemplateRequest:
+    def make_instance(self, include_optional) -> _PatchedFindingTemplateRequest:
         """Test PatchedFindingTemplateRequest
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `PatchedFindingTemplateRequest`
         """
-        model = PatchedFindingTemplateRequest()
+        model = _PatchedFindingTemplateRequest()
         if include_optional:
-            return PatchedFindingTemplateRequest(
+            return _PatchedFindingTemplateRequest(
                 tags = [
                     '0'
                     ],
@@ -60,7 +62,7 @@ class TestPatchedFindingTemplateRequest(unittest.TestCase):
                 endpoints_text = ''
             )
         else:
-            return PatchedFindingTemplateRequest(
+            return _PatchedFindingTemplateRequest(
         )
         """
 

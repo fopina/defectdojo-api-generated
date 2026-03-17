@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.engagement_to_files import EngagementToFiles
+from defectdojo_api_generated.models.engagement_to_files import EngagementToFiles as _EngagementToFiles
 
 
 class TestEngagementToFiles(unittest.TestCase):
@@ -24,16 +24,16 @@ class TestEngagementToFiles(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> EngagementToFiles:
+    def make_instance(self, include_optional) -> _EngagementToFiles:
         """Test EngagementToFiles
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `EngagementToFiles`
         """
-        model = EngagementToFiles()
+        model = _EngagementToFiles()
         if include_optional:
-            return EngagementToFiles(
+            return _EngagementToFiles(
                 engagement_id = 56,
                 files = [
                     defectdojo_api_generated.models.file.File(
@@ -43,7 +43,7 @@ class TestEngagementToFiles(unittest.TestCase):
                     ]
             )
         else:
-            return EngagementToFiles(
+            return _EngagementToFiles(
         )
         """
 

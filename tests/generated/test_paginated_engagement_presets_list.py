@@ -12,7 +12,9 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.paginated_engagement_presets_list import PaginatedEngagementPresetsList
+from defectdojo_api_generated.models.paginated_engagement_presets_list import (
+    PaginatedEngagementPresetsList as _PaginatedEngagementPresetsList,
+)
 
 
 class TestPaginatedEngagementPresetsList(unittest.TestCase):
@@ -24,16 +26,16 @@ class TestPaginatedEngagementPresetsList(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PaginatedEngagementPresetsList:
+    def make_instance(self, include_optional) -> _PaginatedEngagementPresetsList:
         """Test PaginatedEngagementPresetsList
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `PaginatedEngagementPresetsList`
         """
-        model = PaginatedEngagementPresetsList()
+        model = _PaginatedEngagementPresetsList()
         if include_optional:
-            return PaginatedEngagementPresetsList(
+            return _PaginatedEngagementPresetsList(
                 count = 123,
                 next = 'http://api.example.org/accounts/?offset=400&limit=100',
                 previous = 'http://api.example.org/accounts/?offset=200&limit=100',
@@ -204,7 +206,7 @@ class TestPaginatedEngagementPresetsList(unittest.TestCase):
                         }, )
             )
         else:
-            return PaginatedEngagementPresetsList(
+            return _PaginatedEngagementPresetsList(
         )
         """
 

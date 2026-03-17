@@ -12,7 +12,9 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.organization_group_request import OrganizationGroupRequest
+from defectdojo_api_generated.models.organization_group_request import (
+    OrganizationGroupRequest as _OrganizationGroupRequest,
+)
 
 
 class TestOrganizationGroupRequest(unittest.TestCase):
@@ -24,22 +26,22 @@ class TestOrganizationGroupRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> OrganizationGroupRequest:
+    def make_instance(self, include_optional) -> _OrganizationGroupRequest:
         """Test OrganizationGroupRequest
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `OrganizationGroupRequest`
         """
-        model = OrganizationGroupRequest()
+        model = _OrganizationGroupRequest()
         if include_optional:
-            return OrganizationGroupRequest(
+            return _OrganizationGroupRequest(
                 organization = 56,
                 group = 56,
                 role = 56
             )
         else:
-            return OrganizationGroupRequest(
+            return _OrganizationGroupRequest(
         )
         """
 

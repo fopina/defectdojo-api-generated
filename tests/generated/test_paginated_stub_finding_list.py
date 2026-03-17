@@ -12,7 +12,9 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.paginated_stub_finding_list import PaginatedStubFindingList
+from defectdojo_api_generated.models.paginated_stub_finding_list import (
+    PaginatedStubFindingList as _PaginatedStubFindingList,
+)
 
 
 class TestPaginatedStubFindingList(unittest.TestCase):
@@ -24,16 +26,16 @@ class TestPaginatedStubFindingList(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PaginatedStubFindingList:
+    def make_instance(self, include_optional) -> _PaginatedStubFindingList:
         """Test PaginatedStubFindingList
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `PaginatedStubFindingList`
         """
-        model = PaginatedStubFindingList()
+        model = _PaginatedStubFindingList()
         if include_optional:
-            return PaginatedStubFindingList(
+            return _PaginatedStubFindingList(
                 count = 123,
                 next = 'http://api.example.org/accounts/?offset=400&limit=100',
                 previous = 'http://api.example.org/accounts/?offset=200&limit=100',
@@ -49,7 +51,7 @@ class TestPaginatedStubFindingList(unittest.TestCase):
                     ]
             )
         else:
-            return PaginatedStubFindingList(
+            return _PaginatedStubFindingList(
         )
         """
 

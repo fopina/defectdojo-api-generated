@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.note_history_request import NoteHistoryRequest
+from defectdojo_api_generated.models.note_history_request import NoteHistoryRequest as _NoteHistoryRequest
 
 
 class TestNoteHistoryRequest(unittest.TestCase):
@@ -24,20 +24,20 @@ class TestNoteHistoryRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> NoteHistoryRequest:
+    def make_instance(self, include_optional) -> _NoteHistoryRequest:
         """Test NoteHistoryRequest
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `NoteHistoryRequest`
         """
-        model = NoteHistoryRequest()
+        model = _NoteHistoryRequest()
         if include_optional:
-            return NoteHistoryRequest(
+            return _NoteHistoryRequest(
                 data = '0'
             )
         else:
-            return NoteHistoryRequest(
+            return _NoteHistoryRequest(
         )
         """
 

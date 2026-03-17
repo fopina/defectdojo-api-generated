@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.paginated_meta_list import PaginatedMetaList
+from defectdojo_api_generated.models.paginated_meta_list import PaginatedMetaList as _PaginatedMetaList
 
 
 class TestPaginatedMetaList(unittest.TestCase):
@@ -24,16 +24,16 @@ class TestPaginatedMetaList(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PaginatedMetaList:
+    def make_instance(self, include_optional) -> _PaginatedMetaList:
         """Test PaginatedMetaList
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `PaginatedMetaList`
         """
-        model = PaginatedMetaList()
+        model = _PaginatedMetaList()
         if include_optional:
-            return PaginatedMetaList(
+            return _PaginatedMetaList(
                 count = 123,
                 next = 'http://api.example.org/accounts/?offset=400&limit=100',
                 previous = 'http://api.example.org/accounts/?offset=200&limit=100',
@@ -49,7 +49,7 @@ class TestPaginatedMetaList(unittest.TestCase):
                     ]
             )
         else:
-            return PaginatedMetaList(
+            return _PaginatedMetaList(
         )
         """
 

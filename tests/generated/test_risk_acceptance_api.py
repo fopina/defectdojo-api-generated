@@ -12,14 +12,14 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.api.risk_acceptance_api import RiskAcceptanceApi
+from defectdojo_api_generated.api.risk_acceptance_api import RiskAcceptanceApi as _RiskAcceptanceApi
 
 
 class TestRiskAcceptanceApi(unittest.TestCase):
     """RiskAcceptanceApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = RiskAcceptanceApi()
+        self.api = _RiskAcceptanceApi()
 
     def tearDown(self) -> None:
         pass

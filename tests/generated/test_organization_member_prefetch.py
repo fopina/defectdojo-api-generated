@@ -12,7 +12,9 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.organization_member_prefetch import OrganizationMemberPrefetch
+from defectdojo_api_generated.models.organization_member_prefetch import (
+    OrganizationMemberPrefetch as _OrganizationMemberPrefetch,
+)
 
 
 class TestOrganizationMemberPrefetch(unittest.TestCase):
@@ -24,16 +26,16 @@ class TestOrganizationMemberPrefetch(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> OrganizationMemberPrefetch:
+    def make_instance(self, include_optional) -> _OrganizationMemberPrefetch:
         """Test OrganizationMemberPrefetch
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `OrganizationMemberPrefetch`
         """
-        model = OrganizationMemberPrefetch()
+        model = _OrganizationMemberPrefetch()
         if include_optional:
-            return OrganizationMemberPrefetch(
+            return _OrganizationMemberPrefetch(
                 product_type = {
                     'key' : defectdojo_api_generated.models.product_type.ProductType(
                         id = 56, 
@@ -66,7 +68,7 @@ class TestOrganizationMemberPrefetch(unittest.TestCase):
                     }
             )
         else:
-            return OrganizationMemberPrefetch(
+            return _OrganizationMemberPrefetch(
         )
         """
 

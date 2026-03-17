@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.note_history import NoteHistory
+from defectdojo_api_generated.models.note_history import NoteHistory as _NoteHistory
 
 
 class TestNoteHistory(unittest.TestCase):
@@ -24,16 +24,16 @@ class TestNoteHistory(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> NoteHistory:
+    def make_instance(self, include_optional) -> _NoteHistory:
         """Test NoteHistory
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `NoteHistory`
         """
-        model = NoteHistory()
+        model = _NoteHistory()
         if include_optional:
-            return NoteHistory(
+            return _NoteHistory(
                 id = 56,
                 current_editor = defectdojo_api_generated.models.user_stub.UserStub(
                     id = 56, 
@@ -51,7 +51,7 @@ class TestNoteHistory(unittest.TestCase):
                 time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f')
             )
         else:
-            return NoteHistory(
+            return _NoteHistory(
         )
         """
 

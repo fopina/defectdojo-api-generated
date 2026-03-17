@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.paginated_note_type_list import PaginatedNoteTypeList
+from defectdojo_api_generated.models.paginated_note_type_list import PaginatedNoteTypeList as _PaginatedNoteTypeList
 
 
 class TestPaginatedNoteTypeList(unittest.TestCase):
@@ -24,16 +24,16 @@ class TestPaginatedNoteTypeList(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PaginatedNoteTypeList:
+    def make_instance(self, include_optional) -> _PaginatedNoteTypeList:
         """Test PaginatedNoteTypeList
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `PaginatedNoteTypeList`
         """
-        model = PaginatedNoteTypeList()
+        model = _PaginatedNoteTypeList()
         if include_optional:
-            return PaginatedNoteTypeList(
+            return _PaginatedNoteTypeList(
                 count = 123,
                 next = 'http://api.example.org/accounts/?offset=400&limit=100',
                 previous = 'http://api.example.org/accounts/?offset=200&limit=100',
@@ -48,7 +48,7 @@ class TestPaginatedNoteTypeList(unittest.TestCase):
                     ]
             )
         else:
-            return PaginatedNoteTypeList(
+            return _PaginatedNoteTypeList(
         )
         """
 

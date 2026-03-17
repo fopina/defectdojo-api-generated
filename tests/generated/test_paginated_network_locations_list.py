@@ -12,7 +12,9 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.paginated_network_locations_list import PaginatedNetworkLocationsList
+from defectdojo_api_generated.models.paginated_network_locations_list import (
+    PaginatedNetworkLocationsList as _PaginatedNetworkLocationsList,
+)
 
 
 class TestPaginatedNetworkLocationsList(unittest.TestCase):
@@ -24,16 +26,16 @@ class TestPaginatedNetworkLocationsList(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PaginatedNetworkLocationsList:
+    def make_instance(self, include_optional) -> _PaginatedNetworkLocationsList:
         """Test PaginatedNetworkLocationsList
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `PaginatedNetworkLocationsList`
         """
-        model = PaginatedNetworkLocationsList()
+        model = _PaginatedNetworkLocationsList()
         if include_optional:
-            return PaginatedNetworkLocationsList(
+            return _PaginatedNetworkLocationsList(
                 count = 123,
                 next = 'http://api.example.org/accounts/?offset=400&limit=100',
                 previous = 'http://api.example.org/accounts/?offset=200&limit=100',
@@ -44,7 +46,7 @@ class TestPaginatedNetworkLocationsList(unittest.TestCase):
                     ]
             )
         else:
-            return PaginatedNetworkLocationsList(
+            return _PaginatedNetworkLocationsList(
         )
         """
 

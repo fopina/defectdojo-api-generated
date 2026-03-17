@@ -12,7 +12,9 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.severity_status_statistics import SeverityStatusStatistics
+from defectdojo_api_generated.models.severity_status_statistics import (
+    SeverityStatusStatistics as _SeverityStatusStatistics,
+)
 
 
 class TestSeverityStatusStatistics(unittest.TestCase):
@@ -24,16 +26,16 @@ class TestSeverityStatusStatistics(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> SeverityStatusStatistics:
+    def make_instance(self, include_optional) -> _SeverityStatusStatistics:
         """Test SeverityStatusStatistics
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `SeverityStatusStatistics`
         """
-        model = SeverityStatusStatistics()
+        model = _SeverityStatusStatistics()
         if include_optional:
-            return SeverityStatusStatistics(
+            return _SeverityStatusStatistics(
                 info = defectdojo_api_generated.models.status_statistics.StatusStatistics(
                     active = 56, 
                     verified = 56, 
@@ -89,7 +91,7 @@ class TestSeverityStatusStatistics(unittest.TestCase):
                     risk_accepted = 56, )
             )
         else:
-            return SeverityStatusStatistics(
+            return _SeverityStatusStatistics(
         )
         """
 

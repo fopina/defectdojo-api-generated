@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.finding_meta_request import FindingMetaRequest
+from defectdojo_api_generated.models.finding_meta_request import FindingMetaRequest as _FindingMetaRequest
 
 
 class TestFindingMetaRequest(unittest.TestCase):
@@ -24,21 +24,21 @@ class TestFindingMetaRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> FindingMetaRequest:
+    def make_instance(self, include_optional) -> _FindingMetaRequest:
         """Test FindingMetaRequest
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `FindingMetaRequest`
         """
-        model = FindingMetaRequest()
+        model = _FindingMetaRequest()
         if include_optional:
-            return FindingMetaRequest(
+            return _FindingMetaRequest(
                 name = '0',
                 value = '0'
             )
         else:
-            return FindingMetaRequest(
+            return _FindingMetaRequest(
         )
         """
 

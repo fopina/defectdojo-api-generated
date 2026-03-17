@@ -12,7 +12,9 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.engagement_presets_prefetch import EngagementPresetsPrefetch
+from defectdojo_api_generated.models.engagement_presets_prefetch import (
+    EngagementPresetsPrefetch as _EngagementPresetsPrefetch,
+)
 
 
 class TestEngagementPresetsPrefetch(unittest.TestCase):
@@ -24,16 +26,16 @@ class TestEngagementPresetsPrefetch(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> EngagementPresetsPrefetch:
+    def make_instance(self, include_optional) -> _EngagementPresetsPrefetch:
         """Test EngagementPresetsPrefetch
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `EngagementPresetsPrefetch`
         """
-        model = EngagementPresetsPrefetch()
+        model = _EngagementPresetsPrefetch()
         if include_optional:
-            return EngagementPresetsPrefetch(
+            return _EngagementPresetsPrefetch(
                 network_locations = {
                     'key' : defectdojo_api_generated.models.network_locations.NetworkLocations(
                         id = 56, 
@@ -138,7 +140,7 @@ class TestEngagementPresetsPrefetch(unittest.TestCase):
                     }
             )
         else:
-            return EngagementPresetsPrefetch(
+            return _EngagementPresetsPrefetch(
         )
         """
 

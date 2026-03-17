@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.network_locations import NetworkLocations
+from defectdojo_api_generated.models.network_locations import NetworkLocations as _NetworkLocations
 
 
 class TestNetworkLocations(unittest.TestCase):
@@ -24,21 +24,21 @@ class TestNetworkLocations(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> NetworkLocations:
+    def make_instance(self, include_optional) -> _NetworkLocations:
         """Test NetworkLocations
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `NetworkLocations`
         """
-        model = NetworkLocations()
+        model = _NetworkLocations()
         if include_optional:
-            return NetworkLocations(
+            return _NetworkLocations(
                 id = 56,
                 location = ''
             )
         else:
-            return NetworkLocations(
+            return _NetworkLocations(
         )
         """
 

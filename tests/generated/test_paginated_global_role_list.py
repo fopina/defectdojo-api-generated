@@ -12,7 +12,9 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.paginated_global_role_list import PaginatedGlobalRoleList
+from defectdojo_api_generated.models.paginated_global_role_list import (
+    PaginatedGlobalRoleList as _PaginatedGlobalRoleList,
+)
 
 
 class TestPaginatedGlobalRoleList(unittest.TestCase):
@@ -24,16 +26,16 @@ class TestPaginatedGlobalRoleList(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PaginatedGlobalRoleList:
+    def make_instance(self, include_optional) -> _PaginatedGlobalRoleList:
         """Test PaginatedGlobalRoleList
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `PaginatedGlobalRoleList`
         """
-        model = PaginatedGlobalRoleList()
+        model = _PaginatedGlobalRoleList()
         if include_optional:
-            return PaginatedGlobalRoleList(
+            return _PaginatedGlobalRoleList(
                 count = 123,
                 next = 'http://api.example.org/accounts/?offset=400&limit=100',
                 previous = 'http://api.example.org/accounts/?offset=200&limit=100',
@@ -157,7 +159,7 @@ class TestPaginatedGlobalRoleList(unittest.TestCase):
                         }, )
             )
         else:
-            return PaginatedGlobalRoleList(
+            return _PaginatedGlobalRoleList(
         )
         """
 

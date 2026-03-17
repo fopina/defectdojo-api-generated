@@ -12,14 +12,14 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.api.product_type_members_api import ProductTypeMembersApi
+from defectdojo_api_generated.api.product_type_members_api import ProductTypeMembersApi as _ProductTypeMembersApi
 
 
 class TestProductTypeMembersApi(unittest.TestCase):
     """ProductTypeMembersApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = ProductTypeMembersApi()
+        self.api = _ProductTypeMembersApi()
 
     def tearDown(self) -> None:
         pass

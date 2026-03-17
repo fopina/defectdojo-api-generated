@@ -18,7 +18,7 @@ import re  # noqa: F401
 from datetime import datetime
 from typing import Any, ClassVar, Dict, List, Optional, Set
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr, field_validator
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing_extensions import Annotated, Self
 
 
@@ -96,26 +96,6 @@ class RiskAcceptance(BaseModel):
         'accepted_findings',
         'notes',
     ]
-
-    @field_validator('recommendation')
-    def recommendation_validate_enum(cls, value):
-        """Validates the enum"""
-        if value is None:
-            return value
-
-        if value not in set(['A', 'V', 'M', 'F', 'T']):
-            raise ValueError("must be one of enum values ('A', 'V', 'M', 'F', 'T')")
-        return value
-
-    @field_validator('decision')
-    def decision_validate_enum(cls, value):
-        """Validates the enum"""
-        if value is None:
-            return value
-
-        if value not in set(['A', 'V', 'M', 'F', 'T']):
-            raise ValueError("must be one of enum values ('A', 'V', 'M', 'F', 'T')")
-        return value
 
     model_config = ConfigDict(
         populate_by_name=True,

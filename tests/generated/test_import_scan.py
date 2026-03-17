@@ -71,7 +71,7 @@ class TestImportScan(unittest.TestCase):
                     ],
                 apply_tags_to_findings = True,
                 apply_tags_to_endpoints = True,
-                scan_type = 'Acunetix Scan',
+                scan_type = '',
                 engagement = 56,
                 tags = [
                     ''

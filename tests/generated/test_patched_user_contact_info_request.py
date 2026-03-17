@@ -37,8 +37,8 @@ class TestPatchedUserContactInfoRequest(unittest.TestCase):
         if include_optional:
             return _PatchedUserContactInfoRequest(
                 title = '',
-                phone_number = '+10728880015280',
-                cell_number = '+10728880015280',
+                phone_number = '',
+                cell_number = '',
                 twitter_username = '',
                 github_username = '',
                 slack_username = '',

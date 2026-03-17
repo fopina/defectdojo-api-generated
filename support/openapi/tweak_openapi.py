@@ -72,6 +72,36 @@ def tweak_operation_ids(data):
             operation['operationId'] = operation_id.replace(prefix, prefix.replace('_', 'S'), 1)
 
 
+def tweak_enums(data, property_name):
+    """Remove enum constraints from matching schema properties."""
+    for schema_name, schema in data['components']['schemas'].items():
+        try:
+            property_schema = schema['properties'][property_name]
+        except KeyError:
+            continue
+
+        if 'enum' in property_schema:
+            del property_schema['enum']
+            continue
+
+        print(f'Property {property_name!r} found without enum constraint (in {schema_name})')
+
+
+def tweak_patterns(data, property_name):
+    """Remove pattern constraints from matching schema properties."""
+    for schema_name, schema in data['components']['schemas'].items():
+        try:
+            property_schema = schema['properties'][property_name]
+        except KeyError:
+            continue
+
+        if 'pattern' in property_schema:
+            del property_schema['pattern']
+            continue
+
+        print(f'Property {property_name!r} found without pattern constraint (in {schema_name})')
+
+
 def main():
     BUILD.parent.mkdir(exist_ok=True)
     with FILE.open('r') as inp:
@@ -80,6 +110,11 @@ def main():
     tweak_operation_ids(data)
     tweak_paginated(data)
     tweak_required(data)
+    tweak_enums(data, 'scan_type')
+    tweak_enums(data, 'recommendation')
+    tweak_enums(data, 'decision')
+    tweak_patterns(data, 'phone_number')
+    tweak_patterns(data, 'cell_number')
 
     with BUILD.open('w') as out:
         json.dump(data, out, indent=4)

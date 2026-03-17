@@ -72,7 +72,7 @@ class TestReImportScan(unittest.TestCase):
                 apply_tags_to_findings = True,
                 apply_tags_to_endpoints = True,
                 do_not_reactivate = True,
-                scan_type = 'Acunetix Scan',
+                scan_type = '',
                 test = 56,
                 close_old_findings = True,
                 close_old_findings_product_scope = True,

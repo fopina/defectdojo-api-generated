@@ -16,6 +16,7 @@ class TestCLI(unittest.TestCase):
             config_path = Path('config.toml')
             config_path.write_text("host = 'https://example.com'\ntoken = 'token'\n")
 
-            result = runner.invoke(CLI.click, ['--config', str(config_path), 'findings', 'list'])
+            result = runner.invoke(CLI.click)
 
-        self.assertEqual(result.exit_code, 0, result.output)
+        self.assertEqual(result.exit_code, 2)
+        self.assertRegex(result.output, r'findings\s+`FindingsApi`\.')

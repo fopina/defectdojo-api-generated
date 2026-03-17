@@ -64,6 +64,7 @@ def _build_api_group(module_name: str, api_class: type) -> type:
         method_name = method
         if method.endswith('_iterator') and method[:-9] in method_set:
             method_name = method[:-9]
+        method_name = method_name.replace('_', '-')
         _build_api_command(method_name, method)
 
     return ApiGroup

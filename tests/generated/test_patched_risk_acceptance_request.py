@@ -37,9 +37,9 @@ class TestPatchedRiskAcceptanceRequest(unittest.TestCase):
         if include_optional:
             return _PatchedRiskAcceptanceRequest(
                 name = '0',
-                recommendation = 'A',
+                recommendation = '',
                 recommendation_details = '',
-                decision = 'A',
+                decision = '',
                 decision_details = '',
                 accepted_by = '',
                 expiration_date = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),

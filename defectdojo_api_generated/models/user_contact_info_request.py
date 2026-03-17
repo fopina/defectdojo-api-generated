@@ -18,7 +18,7 @@ import re  # noqa: F401
 from datetime import datetime
 from typing import Any, ClassVar, Dict, List, Optional, Set
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, field_validator
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt
 from typing_extensions import Annotated, Self
 
 
@@ -68,26 +68,6 @@ class UserContactInfoRequest(BaseModel):
         'password_last_reset',
         'user',
     ]
-
-    @field_validator('phone_number')
-    def phone_number_validate_regular_expression(cls, value):
-        """Validates the regular expression"""
-        if value is None:
-            return value
-
-        if not re.match(r'^\+?1?\d{9,15}$', value):
-            raise ValueError(r'must validate the regular expression /^\+?1?\d{9,15}$/')
-        return value
-
-    @field_validator('cell_number')
-    def cell_number_validate_regular_expression(cls, value):
-        """Validates the regular expression"""
-        if value is None:
-            return value
-
-        if not re.match(r'^\+?1?\d{9,15}$', value):
-            raise ValueError(r'must validate the regular expression /^\+?1?\d{9,15}$/')
-        return value
 
     model_config = ConfigDict(
         populate_by_name=True,

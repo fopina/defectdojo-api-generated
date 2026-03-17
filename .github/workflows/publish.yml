@@ -52,7 +52,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install uv
-          uv sync --dev
+          uv sync --dev --extra cli
       - name: force right version
         run: |
           .github/change_version.py --set '${{ inputs.version }}'

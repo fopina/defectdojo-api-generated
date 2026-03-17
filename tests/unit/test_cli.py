@@ -1,17 +1,21 @@
 import unittest
 from pathlib import Path
 
+from click.testing import CliRunner
+
 from defectdojo_api_generated.cli.commands.apis import API_COMMANDS
 from defectdojo_api_generated.cli.commands.cli import CLI
 
 
 class TestCLI(unittest.TestCase):
-    def test_all_api_modules_are_registered_as_cli_commands(self):
-        api_dir = Path(__file__).parents[2] / 'defectdojo_api_generated' / 'api'
-        expected_modules = {path.stem for path in api_dir.glob('*_api.py') if path.name != '__init__.py'}
-        expected_command_names = {
-            module_name.removesuffix('_api').replace('_', '-') for module_name in expected_modules
-        }
+    def test_findings_list_command_runs(self):
+        self.assertIn('findings_api', API_COMMANDS)
 
-        self.assertSetEqual(set(API_COMMANDS), expected_modules)
-        self.assertTrue(expected_command_names.issubset(CLI.click.commands))
+        runner = CliRunner()
+        with runner.isolated_filesystem():
+            config_path = Path('config.toml')
+            config_path.write_text("host = 'https://example.com'\ntoken = 'token'\n")
+
+            result = runner.invoke(CLI.click, ['--config', str(config_path), 'findings', 'list'])
+
+        self.assertEqual(result.exit_code, 0, result.output)

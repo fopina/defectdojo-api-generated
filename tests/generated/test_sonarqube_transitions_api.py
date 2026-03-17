@@ -12,14 +12,14 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.api.sonarqube_transitions_api import SonarqubeTransitionsApi
+from defectdojo_api_generated.api.sonarqube_transitions_api import SonarqubeTransitionsApi as _SonarqubeTransitionsApi
 
 
 class TestSonarqubeTransitionsApi(unittest.TestCase):
     """SonarqubeTransitionsApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = SonarqubeTransitionsApi()
+        self.api = _SonarqubeTransitionsApi()
 
     def tearDown(self) -> None:
         pass

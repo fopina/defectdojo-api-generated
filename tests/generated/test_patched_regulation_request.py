@@ -12,7 +12,9 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.patched_regulation_request import PatchedRegulationRequest
+from defectdojo_api_generated.models.patched_regulation_request import (
+    PatchedRegulationRequest as _PatchedRegulationRequest,
+)
 
 
 class TestPatchedRegulationRequest(unittest.TestCase):
@@ -24,16 +26,16 @@ class TestPatchedRegulationRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PatchedRegulationRequest:
+    def make_instance(self, include_optional) -> _PatchedRegulationRequest:
         """Test PatchedRegulationRequest
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `PatchedRegulationRequest`
         """
-        model = PatchedRegulationRequest()
+        model = _PatchedRegulationRequest()
         if include_optional:
-            return PatchedRegulationRequest(
+            return _PatchedRegulationRequest(
                 name = '0',
                 acronym = '0',
                 category = 'privacy',
@@ -42,7 +44,7 @@ class TestPatchedRegulationRequest(unittest.TestCase):
                 reference = ''
             )
         else:
-            return PatchedRegulationRequest(
+            return _PatchedRegulationRequest(
         )
         """
 

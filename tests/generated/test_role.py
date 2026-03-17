@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.role import Role
+from defectdojo_api_generated.models.role import Role as _Role
 
 
 class TestRole(unittest.TestCase):
@@ -24,22 +24,22 @@ class TestRole(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> Role:
+    def make_instance(self, include_optional) -> _Role:
         """Test Role
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `Role`
         """
-        model = Role()
+        model = _Role()
         if include_optional:
-            return Role(
+            return _Role(
                 id = 56,
                 name = '',
                 is_owner = True
             )
         else:
-            return Role(
+            return _Role(
         )
         """
 

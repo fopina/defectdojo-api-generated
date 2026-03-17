@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.status_statistics import StatusStatistics
+from defectdojo_api_generated.models.status_statistics import StatusStatistics as _StatusStatistics
 
 
 class TestStatusStatistics(unittest.TestCase):
@@ -24,16 +24,16 @@ class TestStatusStatistics(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> StatusStatistics:
+    def make_instance(self, include_optional) -> _StatusStatistics:
         """Test StatusStatistics
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `StatusStatistics`
         """
-        model = StatusStatistics()
+        model = _StatusStatistics()
         if include_optional:
-            return StatusStatistics(
+            return _StatusStatistics(
                 active = 56,
                 verified = 56,
                 duplicate = 56,
@@ -44,7 +44,7 @@ class TestStatusStatistics(unittest.TestCase):
                 total = 56
             )
         else:
-            return StatusStatistics(
+            return _StatusStatistics(
         )
         """
 

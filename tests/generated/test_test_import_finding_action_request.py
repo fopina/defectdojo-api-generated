@@ -12,7 +12,9 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.test_import_finding_action_request import TestImportFindingActionRequest
+from defectdojo_api_generated.models.test_import_finding_action_request import (
+    TestImportFindingActionRequest as _TestImportFindingActionRequest,
+)
 
 
 class TestTestImportFindingActionRequest(unittest.TestCase):
@@ -24,20 +26,20 @@ class TestTestImportFindingActionRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> TestImportFindingActionRequest:
+    def make_instance(self, include_optional) -> _TestImportFindingActionRequest:
         """Test TestImportFindingActionRequest
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `TestImportFindingActionRequest`
         """
-        model = TestImportFindingActionRequest()
+        model = _TestImportFindingActionRequest()
         if include_optional:
-            return TestImportFindingActionRequest(
+            return _TestImportFindingActionRequest(
                 action = 'N'
             )
         else:
-            return TestImportFindingActionRequest(
+            return _TestImportFindingActionRequest(
         )
         """
 

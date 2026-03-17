@@ -12,7 +12,9 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.paginated_delete_preview_list import PaginatedDeletePreviewList
+from defectdojo_api_generated.models.paginated_delete_preview_list import (
+    PaginatedDeletePreviewList as _PaginatedDeletePreviewList,
+)
 
 
 class TestPaginatedDeletePreviewList(unittest.TestCase):
@@ -24,16 +26,16 @@ class TestPaginatedDeletePreviewList(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PaginatedDeletePreviewList:
+    def make_instance(self, include_optional) -> _PaginatedDeletePreviewList:
         """Test PaginatedDeletePreviewList
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `PaginatedDeletePreviewList`
         """
-        model = PaginatedDeletePreviewList()
+        model = _PaginatedDeletePreviewList()
         if include_optional:
-            return PaginatedDeletePreviewList(
+            return _PaginatedDeletePreviewList(
                 count = 123,
                 next = 'http://api.example.org/accounts/?offset=400&limit=100',
                 previous = 'http://api.example.org/accounts/?offset=200&limit=100',
@@ -45,7 +47,7 @@ class TestPaginatedDeletePreviewList(unittest.TestCase):
                     ]
             )
         else:
-            return PaginatedDeletePreviewList(
+            return _PaginatedDeletePreviewList(
         )
         """
 

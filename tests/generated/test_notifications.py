@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.notifications import Notifications
+from defectdojo_api_generated.models.notifications import Notifications as _Notifications
 
 
 class TestNotifications(unittest.TestCase):
@@ -24,16 +24,16 @@ class TestNotifications(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> Notifications:
+    def make_instance(self, include_optional) -> _Notifications:
         """Test Notifications
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `Notifications`
         """
-        model = Notifications()
+        model = _Notifications()
         if include_optional:
-            return Notifications(
+            return _Notifications(
                 id = 56,
                 product = 56,
                 user = 56,
@@ -185,7 +185,7 @@ class TestNotifications(unittest.TestCase):
                         }, )
             )
         else:
-            return Notifications(
+            return _Notifications(
         )
         """
 

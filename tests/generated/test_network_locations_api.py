@@ -12,14 +12,14 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.api.network_locations_api import NetworkLocationsApi
+from defectdojo_api_generated.api.network_locations_api import NetworkLocationsApi as _NetworkLocationsApi
 
 
 class TestNetworkLocationsApi(unittest.TestCase):
     """NetworkLocationsApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = NetworkLocationsApi()
+        self.api = _NetworkLocationsApi()
 
     def tearDown(self) -> None:
         pass

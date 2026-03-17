@@ -12,7 +12,9 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.patched_test_import_request import PatchedTestImportRequest
+from defectdojo_api_generated.models.patched_test_import_request import (
+    PatchedTestImportRequest as _PatchedTestImportRequest,
+)
 
 
 class TestPatchedTestImportRequest(unittest.TestCase):
@@ -24,16 +26,16 @@ class TestPatchedTestImportRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PatchedTestImportRequest:
+    def make_instance(self, include_optional) -> _PatchedTestImportRequest:
         """Test PatchedTestImportRequest
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `PatchedTestImportRequest`
         """
-        model = PatchedTestImportRequest()
+        model = _PatchedTestImportRequest()
         if include_optional:
-            return PatchedTestImportRequest(
+            return _PatchedTestImportRequest(
                 import_settings = None,
                 type = '0',
                 version = '',
@@ -42,7 +44,7 @@ class TestPatchedTestImportRequest(unittest.TestCase):
                 branch_tag = ''
             )
         else:
-            return PatchedTestImportRequest(
+            return _PatchedTestImportRequest(
         )
         """
 

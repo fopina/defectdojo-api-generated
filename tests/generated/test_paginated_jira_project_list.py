@@ -12,7 +12,9 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.paginated_jira_project_list import PaginatedJIRAProjectList
+from defectdojo_api_generated.models.paginated_jira_project_list import (
+    PaginatedJIRAProjectList as _PaginatedJIRAProjectList,
+)
 
 
 class TestPaginatedJIRAProjectList(unittest.TestCase):
@@ -24,16 +26,16 @@ class TestPaginatedJIRAProjectList(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PaginatedJIRAProjectList:
+    def make_instance(self, include_optional) -> _PaginatedJIRAProjectList:
         """Test PaginatedJIRAProjectList
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `PaginatedJIRAProjectList`
         """
-        model = PaginatedJIRAProjectList()
+        model = _PaginatedJIRAProjectList()
         if include_optional:
-            return PaginatedJIRAProjectList(
+            return _PaginatedJIRAProjectList(
                 count = 123,
                 next = 'http://api.example.org/accounts/?offset=400&limit=100',
                 previous = 'http://api.example.org/accounts/?offset=200&limit=100',
@@ -271,7 +273,7 @@ class TestPaginatedJIRAProjectList(unittest.TestCase):
                         }, )
             )
         else:
-            return PaginatedJIRAProjectList(
+            return _PaginatedJIRAProjectList(
         )
         """
 

@@ -12,14 +12,16 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.api.configuration_permissions_api import ConfigurationPermissionsApi
+from defectdojo_api_generated.api.configuration_permissions_api import (
+    ConfigurationPermissionsApi as _ConfigurationPermissionsApi,
+)
 
 
 class TestConfigurationPermissionsApi(unittest.TestCase):
     """ConfigurationPermissionsApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = ConfigurationPermissionsApi()
+        self.api = _ConfigurationPermissionsApi()
 
     def tearDown(self) -> None:
         pass

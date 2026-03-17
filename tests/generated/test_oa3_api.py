@@ -12,14 +12,14 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.api.oa3_api import Oa3Api
+from defectdojo_api_generated.api.oa3_api import Oa3Api as _Oa3Api
 
 
 class TestOa3Api(unittest.TestCase):
     """Oa3Api unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = Oa3Api()
+        self.api = _Oa3Api()
 
     def tearDown(self) -> None:
         pass

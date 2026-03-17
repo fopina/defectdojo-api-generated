@@ -12,14 +12,14 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.api.sla_configurations_api import SlaConfigurationsApi
+from defectdojo_api_generated.api.sla_configurations_api import SlaConfigurationsApi as _SlaConfigurationsApi
 
 
 class TestSlaConfigurationsApi(unittest.TestCase):
     """SlaConfigurationsApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = SlaConfigurationsApi()
+        self.api = _SlaConfigurationsApi()
 
     def tearDown(self) -> None:
         pass

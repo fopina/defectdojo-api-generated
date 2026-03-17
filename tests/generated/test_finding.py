@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.finding import Finding
+from defectdojo_api_generated.models.finding import Finding as _Finding
 
 
 class TestFinding(unittest.TestCase):
@@ -24,16 +24,16 @@ class TestFinding(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> Finding:
+    def make_instance(self, include_optional) -> _Finding:
         """Test Finding
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `Finding`
         """
-        model = Finding()
+        model = _Finding()
         if include_optional:
-            return Finding(
+            return _Finding(
                 id = 56,
                 mitigated = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 mitigated_by = 56,
@@ -644,7 +644,7 @@ class TestFinding(unittest.TestCase):
                         }, )
             )
         else:
-            return Finding(
+            return _Finding(
         )
         """
 

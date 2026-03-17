@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.file_request import FileRequest
+from defectdojo_api_generated.models.file_request import FileRequest as _FileRequest
 
 
 class TestFileRequest(unittest.TestCase):
@@ -24,21 +24,21 @@ class TestFileRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> FileRequest:
+    def make_instance(self, include_optional) -> _FileRequest:
         """Test FileRequest
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `FileRequest`
         """
-        model = FileRequest()
+        model = _FileRequest()
         if include_optional:
-            return FileRequest(
+            return _FileRequest(
                 file = bytes(b'blah'),
                 title = '0'
             )
         else:
-            return FileRequest(
+            return _FileRequest(
         )
         """
 

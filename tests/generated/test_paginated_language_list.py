@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.paginated_language_list import PaginatedLanguageList
+from defectdojo_api_generated.models.paginated_language_list import PaginatedLanguageList as _PaginatedLanguageList
 
 
 class TestPaginatedLanguageList(unittest.TestCase):
@@ -24,16 +24,16 @@ class TestPaginatedLanguageList(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PaginatedLanguageList:
+    def make_instance(self, include_optional) -> _PaginatedLanguageList:
         """Test PaginatedLanguageList
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `PaginatedLanguageList`
         """
-        model = PaginatedLanguageList()
+        model = _PaginatedLanguageList()
         if include_optional:
-            return PaginatedLanguageList(
+            return _PaginatedLanguageList(
                 count = 123,
                 next = 'http://api.example.org/accounts/?offset=400&limit=100',
                 previous = 'http://api.example.org/accounts/?offset=200&limit=100',
@@ -208,7 +208,7 @@ class TestPaginatedLanguageList(unittest.TestCase):
                         }, )
             )
         else:
-            return PaginatedLanguageList(
+            return _PaginatedLanguageList(
         )
         """
 

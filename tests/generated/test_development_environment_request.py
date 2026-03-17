@@ -12,7 +12,9 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.development_environment_request import DevelopmentEnvironmentRequest
+from defectdojo_api_generated.models.development_environment_request import (
+    DevelopmentEnvironmentRequest as _DevelopmentEnvironmentRequest,
+)
 
 
 class TestDevelopmentEnvironmentRequest(unittest.TestCase):
@@ -24,20 +26,20 @@ class TestDevelopmentEnvironmentRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> DevelopmentEnvironmentRequest:
+    def make_instance(self, include_optional) -> _DevelopmentEnvironmentRequest:
         """Test DevelopmentEnvironmentRequest
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `DevelopmentEnvironmentRequest`
         """
-        model = DevelopmentEnvironmentRequest()
+        model = _DevelopmentEnvironmentRequest()
         if include_optional:
-            return DevelopmentEnvironmentRequest(
+            return _DevelopmentEnvironmentRequest(
                 name = '0'
             )
         else:
-            return DevelopmentEnvironmentRequest(
+            return _DevelopmentEnvironmentRequest(
         )
         """
 

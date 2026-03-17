@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.dojo_group_request import DojoGroupRequest
+from defectdojo_api_generated.models.dojo_group_request import DojoGroupRequest as _DojoGroupRequest
 
 
 class TestDojoGroupRequest(unittest.TestCase):
@@ -24,16 +24,16 @@ class TestDojoGroupRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> DojoGroupRequest:
+    def make_instance(self, include_optional) -> _DojoGroupRequest:
         """Test DojoGroupRequest
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `DojoGroupRequest`
         """
-        model = DojoGroupRequest()
+        model = _DojoGroupRequest()
         if include_optional:
-            return DojoGroupRequest(
+            return _DojoGroupRequest(
                 configuration_permissions = [
                     56
                     ],
@@ -42,7 +42,7 @@ class TestDojoGroupRequest(unittest.TestCase):
                 social_provider = 'AzureAD'
             )
         else:
-            return DojoGroupRequest(
+            return _DojoGroupRequest(
         )
         """
 

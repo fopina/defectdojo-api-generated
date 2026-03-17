@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.user_contact_info import UserContactInfo
+from defectdojo_api_generated.models.user_contact_info import UserContactInfo as _UserContactInfo
 
 
 class TestUserContactInfo(unittest.TestCase):
@@ -24,16 +24,16 @@ class TestUserContactInfo(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> UserContactInfo:
+    def make_instance(self, include_optional) -> _UserContactInfo:
         """Test UserContactInfo
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `UserContactInfo`
         """
-        model = UserContactInfo()
+        model = _UserContactInfo()
         if include_optional:
-            return UserContactInfo(
+            return _UserContactInfo(
                 id = 56,
                 user_profile = defectdojo_api_generated.models.user.User(
                     id = 56, 
@@ -72,7 +72,7 @@ class TestUserContactInfo(unittest.TestCase):
                         }, )
             )
         else:
-            return UserContactInfo(
+            return _UserContactInfo(
         )
         """
 

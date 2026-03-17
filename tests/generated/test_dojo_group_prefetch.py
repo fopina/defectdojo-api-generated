@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.dojo_group_prefetch import DojoGroupPrefetch
+from defectdojo_api_generated.models.dojo_group_prefetch import DojoGroupPrefetch as _DojoGroupPrefetch
 
 
 class TestDojoGroupPrefetch(unittest.TestCase):
@@ -24,16 +24,16 @@ class TestDojoGroupPrefetch(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> DojoGroupPrefetch:
+    def make_instance(self, include_optional) -> _DojoGroupPrefetch:
         """Test DojoGroupPrefetch
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `DojoGroupPrefetch`
         """
-        model = DojoGroupPrefetch()
+        model = _DojoGroupPrefetch()
         if include_optional:
-            return DojoGroupPrefetch(
+            return _DojoGroupPrefetch(
                 product_groups = {
                     'key' : defectdojo_api_generated.models.product.Product(
                         id = 56, 
@@ -149,7 +149,7 @@ class TestDojoGroupPrefetch(unittest.TestCase):
                     }
             )
         else:
-            return DojoGroupPrefetch(
+            return _DojoGroupPrefetch(
         )
         """
 

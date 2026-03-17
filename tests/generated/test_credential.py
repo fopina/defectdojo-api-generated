@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.credential import Credential
+from defectdojo_api_generated.models.credential import Credential as _Credential
 
 
 class TestCredential(unittest.TestCase):
@@ -24,16 +24,16 @@ class TestCredential(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> Credential:
+    def make_instance(self, include_optional) -> _Credential:
         """Test Credential
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `Credential`
         """
-        model = Credential()
+        model = _Credential()
         if include_optional:
-            return Credential(
+            return _Credential(
                 id = 56,
                 name = '',
                 username = '',
@@ -77,7 +77,7 @@ class TestCredential(unittest.TestCase):
                         }, )
             )
         else:
-            return Credential(
+            return _Credential(
         )
         """
 

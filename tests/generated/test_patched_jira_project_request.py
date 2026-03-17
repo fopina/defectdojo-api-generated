@@ -12,7 +12,9 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.patched_jira_project_request import PatchedJIRAProjectRequest
+from defectdojo_api_generated.models.patched_jira_project_request import (
+    PatchedJIRAProjectRequest as _PatchedJIRAProjectRequest,
+)
 
 
 class TestPatchedJIRAProjectRequest(unittest.TestCase):
@@ -24,16 +26,16 @@ class TestPatchedJIRAProjectRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PatchedJIRAProjectRequest:
+    def make_instance(self, include_optional) -> _PatchedJIRAProjectRequest:
         """Test PatchedJIRAProjectRequest
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `PatchedJIRAProjectRequest`
         """
-        model = PatchedJIRAProjectRequest()
+        model = _PatchedJIRAProjectRequest()
         if include_optional:
-            return PatchedJIRAProjectRequest(
+            return _PatchedJIRAProjectRequest(
                 project_key = '',
                 issue_template_dir = '',
                 component = '',
@@ -53,7 +55,7 @@ class TestPatchedJIRAProjectRequest(unittest.TestCase):
                 engagement = 56
             )
         else:
-            return PatchedJIRAProjectRequest(
+            return _PatchedJIRAProjectRequest(
         )
         """
 

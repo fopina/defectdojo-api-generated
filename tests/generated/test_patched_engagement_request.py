@@ -12,7 +12,9 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.patched_engagement_request import PatchedEngagementRequest
+from defectdojo_api_generated.models.patched_engagement_request import (
+    PatchedEngagementRequest as _PatchedEngagementRequest,
+)
 
 
 class TestPatchedEngagementRequest(unittest.TestCase):
@@ -24,16 +26,16 @@ class TestPatchedEngagementRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PatchedEngagementRequest:
+    def make_instance(self, include_optional) -> _PatchedEngagementRequest:
         """Test PatchedEngagementRequest
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `PatchedEngagementRequest`
         """
-        model = PatchedEngagementRequest()
+        model = _PatchedEngagementRequest()
         if include_optional:
-            return PatchedEngagementRequest(
+            return _PatchedEngagementRequest(
                 tags = [
                     '0'
                     ],
@@ -67,7 +69,7 @@ class TestPatchedEngagementRequest(unittest.TestCase):
                 orchestration_engine = 56
             )
         else:
-            return PatchedEngagementRequest(
+            return _PatchedEngagementRequest(
         )
         """
 

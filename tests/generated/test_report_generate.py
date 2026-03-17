@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.report_generate import ReportGenerate
+from defectdojo_api_generated.models.report_generate import ReportGenerate as _ReportGenerate
 
 
 class TestReportGenerate(unittest.TestCase):
@@ -24,16 +24,16 @@ class TestReportGenerate(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ReportGenerate:
+    def make_instance(self, include_optional) -> _ReportGenerate:
         """Test ReportGenerate
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `ReportGenerate`
         """
-        model = ReportGenerate()
+        model = _ReportGenerate()
         if include_optional:
-            return ReportGenerate(
+            return _ReportGenerate(
                 executive_summary = defectdojo_api_generated.models.executive_summary.ExecutiveSummary(
                     engagement_name = '', 
                     engagement_target_start = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(), 
@@ -771,7 +771,7 @@ class TestReportGenerate(unittest.TestCase):
                     ]
             )
         else:
-            return ReportGenerate(
+            return _ReportGenerate(
         )
         """
 

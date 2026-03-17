@@ -12,7 +12,9 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.paginated_sla_configuration_list import PaginatedSLAConfigurationList
+from defectdojo_api_generated.models.paginated_sla_configuration_list import (
+    PaginatedSLAConfigurationList as _PaginatedSLAConfigurationList,
+)
 
 
 class TestPaginatedSLAConfigurationList(unittest.TestCase):
@@ -24,16 +26,16 @@ class TestPaginatedSLAConfigurationList(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PaginatedSLAConfigurationList:
+    def make_instance(self, include_optional) -> _PaginatedSLAConfigurationList:
         """Test PaginatedSLAConfigurationList
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `PaginatedSLAConfigurationList`
         """
-        model = PaginatedSLAConfigurationList()
+        model = _PaginatedSLAConfigurationList()
         if include_optional:
-            return PaginatedSLAConfigurationList(
+            return _PaginatedSLAConfigurationList(
                 count = 123,
                 next = 'http://api.example.org/accounts/?offset=400&limit=100',
                 previous = 'http://api.example.org/accounts/?offset=200&limit=100',
@@ -54,7 +56,7 @@ class TestPaginatedSLAConfigurationList(unittest.TestCase):
                     ]
             )
         else:
-            return PaginatedSLAConfigurationList(
+            return _PaginatedSLAConfigurationList(
         )
         """
 

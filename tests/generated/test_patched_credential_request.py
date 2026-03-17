@@ -12,7 +12,9 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.patched_credential_request import PatchedCredentialRequest
+from defectdojo_api_generated.models.patched_credential_request import (
+    PatchedCredentialRequest as _PatchedCredentialRequest,
+)
 
 
 class TestPatchedCredentialRequest(unittest.TestCase):
@@ -24,16 +26,16 @@ class TestPatchedCredentialRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PatchedCredentialRequest:
+    def make_instance(self, include_optional) -> _PatchedCredentialRequest:
         """Test PatchedCredentialRequest
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `PatchedCredentialRequest`
         """
-        model = PatchedCredentialRequest()
+        model = _PatchedCredentialRequest()
         if include_optional:
-            return PatchedCredentialRequest(
+            return _PatchedCredentialRequest(
                 name = '0',
                 username = '0',
                 role = '0',
@@ -47,7 +49,7 @@ class TestPatchedCredentialRequest(unittest.TestCase):
                 environment = 56
             )
         else:
-            return PatchedCredentialRequest(
+            return _PatchedCredentialRequest(
         )
         """
 

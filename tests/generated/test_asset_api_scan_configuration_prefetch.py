@@ -12,7 +12,9 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.asset_api_scan_configuration_prefetch import AssetAPIScanConfigurationPrefetch
+from defectdojo_api_generated.models.asset_api_scan_configuration_prefetch import (
+    AssetAPIScanConfigurationPrefetch as _AssetAPIScanConfigurationPrefetch,
+)
 
 
 class TestAssetAPIScanConfigurationPrefetch(unittest.TestCase):
@@ -24,16 +26,16 @@ class TestAssetAPIScanConfigurationPrefetch(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> AssetAPIScanConfigurationPrefetch:
+    def make_instance(self, include_optional) -> _AssetAPIScanConfigurationPrefetch:
         """Test AssetAPIScanConfigurationPrefetch
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `AssetAPIScanConfigurationPrefetch`
         """
-        model = AssetAPIScanConfigurationPrefetch()
+        model = _AssetAPIScanConfigurationPrefetch()
         if include_optional:
-            return AssetAPIScanConfigurationPrefetch(
+            return _AssetAPIScanConfigurationPrefetch(
                 product = {
                     'key' : defectdojo_api_generated.models.product.Product(
                         id = 56, 
@@ -144,7 +146,7 @@ class TestAssetAPIScanConfigurationPrefetch(unittest.TestCase):
                     }
             )
         else:
-            return AssetAPIScanConfigurationPrefetch(
+            return _AssetAPIScanConfigurationPrefetch(
         )
         """
 

@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.patched_asset_request import PatchedAssetRequest
+from defectdojo_api_generated.models.patched_asset_request import PatchedAssetRequest as _PatchedAssetRequest
 
 
 class TestPatchedAssetRequest(unittest.TestCase):
@@ -24,16 +24,16 @@ class TestPatchedAssetRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PatchedAssetRequest:
+    def make_instance(self, include_optional) -> _PatchedAssetRequest:
         """Test PatchedAssetRequest
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `PatchedAssetRequest`
         """
-        model = PatchedAssetRequest()
+        model = _PatchedAssetRequest()
         if include_optional:
-            return PatchedAssetRequest(
+            return _PatchedAssetRequest(
                 tags = [
                     '0'
                     ],
@@ -62,7 +62,7 @@ class TestPatchedAssetRequest(unittest.TestCase):
                     ]
             )
         else:
-            return PatchedAssetRequest(
+            return _PatchedAssetRequest(
         )
         """
 

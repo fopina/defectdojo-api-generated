@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.system_settings import SystemSettings
+from defectdojo_api_generated.models.system_settings import SystemSettings as _SystemSettings
 
 
 class TestSystemSettings(unittest.TestCase):
@@ -24,16 +24,16 @@ class TestSystemSettings(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> SystemSettings:
+    def make_instance(self, include_optional) -> _SystemSettings:
         """Test SystemSettings
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `SystemSettings`
         """
-        model = SystemSettings()
+        model = _SystemSettings()
         if include_optional:
-            return SystemSettings(
+            return _SystemSettings(
                 id = 56,
                 enable_deduplication = True,
                 delete_duplicates = True,
@@ -114,7 +114,7 @@ class TestSystemSettings(unittest.TestCase):
                 default_group_role = 56
             )
         else:
-            return SystemSettings(
+            return _SystemSettings(
         )
         """
 

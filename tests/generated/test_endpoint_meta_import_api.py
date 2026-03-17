@@ -12,14 +12,14 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.api.endpoint_meta_import_api import EndpointMetaImportApi
+from defectdojo_api_generated.api.endpoint_meta_import_api import EndpointMetaImportApi as _EndpointMetaImportApi
 
 
 class TestEndpointMetaImportApi(unittest.TestCase):
     """EndpointMetaImportApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = EndpointMetaImportApi()
+        self.api = _EndpointMetaImportApi()
 
     def tearDown(self) -> None:
         pass

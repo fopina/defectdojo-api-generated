@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.endpoint import Endpoint
+from defectdojo_api_generated.models.endpoint import Endpoint as _Endpoint
 
 
 class TestEndpoint(unittest.TestCase):
@@ -24,16 +24,16 @@ class TestEndpoint(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> Endpoint:
+    def make_instance(self, include_optional) -> _Endpoint:
         """Test Endpoint
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `Endpoint`
         """
-        model = Endpoint()
+        model = _Endpoint()
         if include_optional:
-            return Endpoint(
+            return _Endpoint(
                 id = 56,
                 tags = [
                     ''
@@ -54,7 +54,7 @@ class TestEndpoint(unittest.TestCase):
                     ]
             )
         else:
-            return Endpoint(
+            return _Endpoint(
         )
         """
 

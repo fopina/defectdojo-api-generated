@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.delta_statistics import DeltaStatistics
+from defectdojo_api_generated.models.delta_statistics import DeltaStatistics as _DeltaStatistics
 
 
 class TestDeltaStatistics(unittest.TestCase):
@@ -24,16 +24,16 @@ class TestDeltaStatistics(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> DeltaStatistics:
+    def make_instance(self, include_optional) -> _DeltaStatistics:
         """Test DeltaStatistics
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `DeltaStatistics`
         """
-        model = DeltaStatistics()
+        model = _DeltaStatistics()
         if include_optional:
-            return DeltaStatistics(
+            return _DeltaStatistics(
                 created = defectdojo_api_generated.models.severity_status_statistics.SeverityStatusStatistics(
                     info = defectdojo_api_generated.models.status_statistics.StatusStatistics(
                         active = 56, 
@@ -128,7 +128,7 @@ class TestDeltaStatistics(unittest.TestCase):
                     total = , )
             )
         else:
-            return DeltaStatistics(
+            return _DeltaStatistics(
         )
         """
 

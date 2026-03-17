@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.note import Note
+from defectdojo_api_generated.models.note import Note as _Note
 
 
 class TestNote(unittest.TestCase):
@@ -24,16 +24,16 @@ class TestNote(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> Note:
+    def make_instance(self, include_optional) -> _Note:
         """Test Note
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `Note`
         """
-        model = Note()
+        model = _Note()
         if include_optional:
-            return Note(
+            return _Note(
                 id = 56,
                 author = defectdojo_api_generated.models.user_stub.UserStub(
                     id = 56, 
@@ -67,7 +67,7 @@ class TestNote(unittest.TestCase):
                 edit_time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f')
             )
         else:
-            return Note(
+            return _Note(
         )
         """
 

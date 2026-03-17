@@ -12,7 +12,9 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.patched_language_type_request import PatchedLanguageTypeRequest
+from defectdojo_api_generated.models.patched_language_type_request import (
+    PatchedLanguageTypeRequest as _PatchedLanguageTypeRequest,
+)
 
 
 class TestPatchedLanguageTypeRequest(unittest.TestCase):
@@ -24,21 +26,21 @@ class TestPatchedLanguageTypeRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PatchedLanguageTypeRequest:
+    def make_instance(self, include_optional) -> _PatchedLanguageTypeRequest:
         """Test PatchedLanguageTypeRequest
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `PatchedLanguageTypeRequest`
         """
-        model = PatchedLanguageTypeRequest()
+        model = _PatchedLanguageTypeRequest()
         if include_optional:
-            return PatchedLanguageTypeRequest(
+            return _PatchedLanguageTypeRequest(
                 language = '0',
                 color = ''
             )
         else:
-            return PatchedLanguageTypeRequest(
+            return _PatchedLanguageTypeRequest(
         )
         """
 

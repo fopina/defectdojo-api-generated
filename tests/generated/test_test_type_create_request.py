@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.test_type_create_request import TestTypeCreateRequest
+from defectdojo_api_generated.models.test_type_create_request import TestTypeCreateRequest as _TestTypeCreateRequest
 
 
 class TestTestTypeCreateRequest(unittest.TestCase):
@@ -24,23 +24,23 @@ class TestTestTypeCreateRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> TestTypeCreateRequest:
+    def make_instance(self, include_optional) -> _TestTypeCreateRequest:
         """Test TestTypeCreateRequest
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `TestTypeCreateRequest`
         """
-        model = TestTypeCreateRequest()
+        model = _TestTypeCreateRequest()
         if include_optional:
-            return TestTypeCreateRequest(
+            return _TestTypeCreateRequest(
                 name = '0',
                 static_tool = True,
                 dynamic_tool = True,
                 active = True
             )
         else:
-            return TestTypeCreateRequest(
+            return _TestTypeCreateRequest(
         )
         """
 

@@ -12,7 +12,9 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.burp_raw_request_response_multi_request import BurpRawRequestResponseMultiRequest
+from defectdojo_api_generated.models.burp_raw_request_response_multi_request import (
+    BurpRawRequestResponseMultiRequest as _BurpRawRequestResponseMultiRequest,
+)
 
 
 class TestBurpRawRequestResponseMultiRequest(unittest.TestCase):
@@ -24,22 +26,22 @@ class TestBurpRawRequestResponseMultiRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> BurpRawRequestResponseMultiRequest:
+    def make_instance(self, include_optional) -> _BurpRawRequestResponseMultiRequest:
         """Test BurpRawRequestResponseMultiRequest
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `BurpRawRequestResponseMultiRequest`
         """
-        model = BurpRawRequestResponseMultiRequest()
+        model = _BurpRawRequestResponseMultiRequest()
         if include_optional:
-            return BurpRawRequestResponseMultiRequest(
+            return _BurpRawRequestResponseMultiRequest(
                 burp_request_base64 = '0',
                 burp_response_base64 = '0',
                 finding = 56
             )
         else:
-            return BurpRawRequestResponseMultiRequest(
+            return _BurpRawRequestResponseMultiRequest(
         )
         """
 

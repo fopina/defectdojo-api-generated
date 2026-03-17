@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.user_stub import UserStub
+from defectdojo_api_generated.models.user_stub import UserStub as _UserStub
 
 
 class TestUserStub(unittest.TestCase):
@@ -24,23 +24,23 @@ class TestUserStub(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> UserStub:
+    def make_instance(self, include_optional) -> _UserStub:
         """Test UserStub
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `UserStub`
         """
-        model = UserStub()
+        model = _UserStub()
         if include_optional:
-            return UserStub(
+            return _UserStub(
                 id = 56,
                 username = 'A',
                 first_name = '',
                 last_name = ''
             )
         else:
-            return UserStub(
+            return _UserStub(
         )
         """
 

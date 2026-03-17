@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.delta_statistics_request import DeltaStatisticsRequest
+from defectdojo_api_generated.models.delta_statistics_request import DeltaStatisticsRequest as _DeltaStatisticsRequest
 
 
 class TestDeltaStatisticsRequest(unittest.TestCase):
@@ -24,16 +24,16 @@ class TestDeltaStatisticsRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> DeltaStatisticsRequest:
+    def make_instance(self, include_optional) -> _DeltaStatisticsRequest:
         """Test DeltaStatisticsRequest
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `DeltaStatisticsRequest`
         """
-        model = DeltaStatisticsRequest()
+        model = _DeltaStatisticsRequest()
         if include_optional:
-            return DeltaStatisticsRequest(
+            return _DeltaStatisticsRequest(
                 created = defectdojo_api_generated.models.severity_status_statistics_request.SeverityStatusStatisticsRequest(
                     info = defectdojo_api_generated.models.status_statistics_request.StatusStatisticsRequest(
                         active = 56, 
@@ -128,7 +128,7 @@ class TestDeltaStatisticsRequest(unittest.TestCase):
                     total = , )
             )
         else:
-            return DeltaStatisticsRequest(
+            return _DeltaStatisticsRequest(
         )
         """
 

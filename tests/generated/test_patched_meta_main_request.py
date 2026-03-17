@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.patched_meta_main_request import PatchedMetaMainRequest
+from defectdojo_api_generated.models.patched_meta_main_request import PatchedMetaMainRequest as _PatchedMetaMainRequest
 
 
 class TestPatchedMetaMainRequest(unittest.TestCase):
@@ -24,16 +24,16 @@ class TestPatchedMetaMainRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PatchedMetaMainRequest:
+    def make_instance(self, include_optional) -> _PatchedMetaMainRequest:
         """Test PatchedMetaMainRequest
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `PatchedMetaMainRequest`
         """
-        model = PatchedMetaMainRequest()
+        model = _PatchedMetaMainRequest()
         if include_optional:
-            return PatchedMetaMainRequest(
+            return _PatchedMetaMainRequest(
                 product = 56,
                 endpoint = 56,
                 finding = 56,
@@ -44,7 +44,7 @@ class TestPatchedMetaMainRequest(unittest.TestCase):
                     ]
             )
         else:
-            return PatchedMetaMainRequest(
+            return _PatchedMetaMainRequest(
         )
         """
 

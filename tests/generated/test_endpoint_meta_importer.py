@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.endpoint_meta_importer import EndpointMetaImporter
+from defectdojo_api_generated.models.endpoint_meta_importer import EndpointMetaImporter as _EndpointMetaImporter
 
 
 class TestEndpointMetaImporter(unittest.TestCase):
@@ -24,16 +24,16 @@ class TestEndpointMetaImporter(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> EndpointMetaImporter:
+    def make_instance(self, include_optional) -> _EndpointMetaImporter:
         """Test EndpointMetaImporter
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `EndpointMetaImporter`
         """
-        model = EndpointMetaImporter()
+        model = _EndpointMetaImporter()
         if include_optional:
-            return EndpointMetaImporter(
+            return _EndpointMetaImporter(
                 file = '',
                 create_endpoints = True,
                 create_tags = True,
@@ -43,7 +43,7 @@ class TestEndpointMetaImporter(unittest.TestCase):
                 product_id = 56
             )
         else:
-            return EndpointMetaImporter(
+            return _EndpointMetaImporter(
         )
         """
 

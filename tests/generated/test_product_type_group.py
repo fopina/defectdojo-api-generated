@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.product_type_group import ProductTypeGroup
+from defectdojo_api_generated.models.product_type_group import ProductTypeGroup as _ProductTypeGroup
 
 
 class TestProductTypeGroup(unittest.TestCase):
@@ -24,16 +24,16 @@ class TestProductTypeGroup(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ProductTypeGroup:
+    def make_instance(self, include_optional) -> _ProductTypeGroup:
         """Test ProductTypeGroup
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `ProductTypeGroup`
         """
-        model = ProductTypeGroup()
+        model = _ProductTypeGroup()
         if include_optional:
-            return ProductTypeGroup(
+            return _ProductTypeGroup(
                 id = 56,
                 product_type = 56,
                 group = 56,
@@ -76,7 +76,7 @@ class TestProductTypeGroup(unittest.TestCase):
                         }, )
             )
         else:
-            return ProductTypeGroup(
+            return _ProductTypeGroup(
         )
         """
 

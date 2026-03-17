@@ -12,14 +12,14 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.api.system_settings_api import SystemSettingsApi
+from defectdojo_api_generated.api.system_settings_api import SystemSettingsApi as _SystemSettingsApi
 
 
 class TestSystemSettingsApi(unittest.TestCase):
     """SystemSettingsApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = SystemSettingsApi()
+        self.api = _SystemSettingsApi()
 
     def tearDown(self) -> None:
         pass

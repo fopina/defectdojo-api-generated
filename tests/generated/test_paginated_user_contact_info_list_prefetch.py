@@ -13,7 +13,7 @@ Do not edit the class manually.
 import unittest
 
 from defectdojo_api_generated.models.paginated_user_contact_info_list_prefetch import (
-    PaginatedUserContactInfoListPrefetch,
+    PaginatedUserContactInfoListPrefetch as _PaginatedUserContactInfoListPrefetch,
 )
 
 
@@ -26,16 +26,16 @@ class TestPaginatedUserContactInfoListPrefetch(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PaginatedUserContactInfoListPrefetch:
+    def make_instance(self, include_optional) -> _PaginatedUserContactInfoListPrefetch:
         """Test PaginatedUserContactInfoListPrefetch
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `PaginatedUserContactInfoListPrefetch`
         """
-        model = PaginatedUserContactInfoListPrefetch()
+        model = _PaginatedUserContactInfoListPrefetch()
         if include_optional:
-            return PaginatedUserContactInfoListPrefetch(
+            return _PaginatedUserContactInfoListPrefetch(
                 user = {
                     'key' : defectdojo_api_generated.models.user_stub.UserStub(
                         id = 56, 
@@ -45,7 +45,7 @@ class TestPaginatedUserContactInfoListPrefetch(unittest.TestCase):
                     }
             )
         else:
-            return PaginatedUserContactInfoListPrefetch(
+            return _PaginatedUserContactInfoListPrefetch(
         )
         """
 

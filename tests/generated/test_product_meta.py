@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.product_meta import ProductMeta
+from defectdojo_api_generated.models.product_meta import ProductMeta as _ProductMeta
 
 
 class TestProductMeta(unittest.TestCase):
@@ -24,21 +24,21 @@ class TestProductMeta(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ProductMeta:
+    def make_instance(self, include_optional) -> _ProductMeta:
         """Test ProductMeta
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `ProductMeta`
         """
-        model = ProductMeta()
+        model = _ProductMeta()
         if include_optional:
-            return ProductMeta(
+            return _ProductMeta(
                 name = '',
                 value = ''
             )
         else:
-            return ProductMeta(
+            return _ProductMeta(
         )
         """
 

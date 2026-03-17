@@ -12,7 +12,9 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.engagement_check_list_request import EngagementCheckListRequest
+from defectdojo_api_generated.models.engagement_check_list_request import (
+    EngagementCheckListRequest as _EngagementCheckListRequest,
+)
 
 
 class TestEngagementCheckListRequest(unittest.TestCase):
@@ -24,16 +26,16 @@ class TestEngagementCheckListRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> EngagementCheckListRequest:
+    def make_instance(self, include_optional) -> _EngagementCheckListRequest:
         """Test EngagementCheckListRequest
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `EngagementCheckListRequest`
         """
-        model = EngagementCheckListRequest()
+        model = _EngagementCheckListRequest()
         if include_optional:
-            return EngagementCheckListRequest(
+            return _EngagementCheckListRequest(
                 session_management = '0',
                 encryption_crypto = '0',
                 configuration_management = '0',
@@ -68,7 +70,7 @@ class TestEngagementCheckListRequest(unittest.TestCase):
                     ]
             )
         else:
-            return EngagementCheckListRequest(
+            return _EngagementCheckListRequest(
         )
         """
 

@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.patched_test_request import PatchedTestRequest
+from defectdojo_api_generated.models.patched_test_request import PatchedTestRequest as _PatchedTestRequest
 
 
 class TestPatchedTestRequest(unittest.TestCase):
@@ -24,16 +24,16 @@ class TestPatchedTestRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PatchedTestRequest:
+    def make_instance(self, include_optional) -> _PatchedTestRequest:
         """Test PatchedTestRequest
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `PatchedTestRequest`
         """
-        model = PatchedTestRequest()
+        model = _PatchedTestRequest()
         if include_optional:
-            return PatchedTestRequest(
+            return _PatchedTestRequest(
                 tags = [
                     '0'
                     ],
@@ -53,7 +53,7 @@ class TestPatchedTestRequest(unittest.TestCase):
                 api_scan_configuration = 56
             )
         else:
-            return PatchedTestRequest(
+            return _PatchedTestRequest(
         )
         """
 

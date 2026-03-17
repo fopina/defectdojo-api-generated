@@ -12,14 +12,14 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.api.jira_finding_mappings_api import JiraFindingMappingsApi
+from defectdojo_api_generated.api.jira_finding_mappings_api import JiraFindingMappingsApi as _JiraFindingMappingsApi
 
 
 class TestJiraFindingMappingsApi(unittest.TestCase):
     """JiraFindingMappingsApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = JiraFindingMappingsApi()
+        self.api = _JiraFindingMappingsApi()
 
     def tearDown(self) -> None:
         pass

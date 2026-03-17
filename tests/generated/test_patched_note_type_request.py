@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.patched_note_type_request import PatchedNoteTypeRequest
+from defectdojo_api_generated.models.patched_note_type_request import PatchedNoteTypeRequest as _PatchedNoteTypeRequest
 
 
 class TestPatchedNoteTypeRequest(unittest.TestCase):
@@ -24,16 +24,16 @@ class TestPatchedNoteTypeRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PatchedNoteTypeRequest:
+    def make_instance(self, include_optional) -> _PatchedNoteTypeRequest:
         """Test PatchedNoteTypeRequest
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `PatchedNoteTypeRequest`
         """
-        model = PatchedNoteTypeRequest()
+        model = _PatchedNoteTypeRequest()
         if include_optional:
-            return PatchedNoteTypeRequest(
+            return _PatchedNoteTypeRequest(
                 name = '0',
                 description = '0',
                 is_single = True,
@@ -41,7 +41,7 @@ class TestPatchedNoteTypeRequest(unittest.TestCase):
                 is_mandatory = True
             )
         else:
-            return PatchedNoteTypeRequest(
+            return _PatchedNoteTypeRequest(
         )
         """
 

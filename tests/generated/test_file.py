@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.file import File
+from defectdojo_api_generated.models.file import File as _File
 
 
 class TestFile(unittest.TestCase):
@@ -24,22 +24,22 @@ class TestFile(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> File:
+    def make_instance(self, include_optional) -> _File:
         """Test File
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `File`
         """
-        model = File()
+        model = _File()
         if include_optional:
-            return File(
+            return _File(
                 id = 56,
                 file = '',
                 title = ''
             )
         else:
-            return File(
+            return _File(
         )
         """
 

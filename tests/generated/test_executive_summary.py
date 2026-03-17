@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.executive_summary import ExecutiveSummary
+from defectdojo_api_generated.models.executive_summary import ExecutiveSummary as _ExecutiveSummary
 
 
 class TestExecutiveSummary(unittest.TestCase):
@@ -24,16 +24,16 @@ class TestExecutiveSummary(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ExecutiveSummary:
+    def make_instance(self, include_optional) -> _ExecutiveSummary:
         """Test ExecutiveSummary
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `ExecutiveSummary`
         """
-        model = ExecutiveSummary()
+        model = _ExecutiveSummary()
         if include_optional:
-            return ExecutiveSummary(
+            return _ExecutiveSummary(
                 engagement_name = '',
                 engagement_target_start = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(),
                 engagement_target_end = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(),
@@ -45,7 +45,7 @@ class TestExecutiveSummary(unittest.TestCase):
                 total_findings = 56
             )
         else:
-            return ExecutiveSummary(
+            return _ExecutiveSummary(
         )
         """
 

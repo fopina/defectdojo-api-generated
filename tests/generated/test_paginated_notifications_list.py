@@ -12,7 +12,9 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.paginated_notifications_list import PaginatedNotificationsList
+from defectdojo_api_generated.models.paginated_notifications_list import (
+    PaginatedNotificationsList as _PaginatedNotificationsList,
+)
 
 
 class TestPaginatedNotificationsList(unittest.TestCase):
@@ -24,16 +26,16 @@ class TestPaginatedNotificationsList(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PaginatedNotificationsList:
+    def make_instance(self, include_optional) -> _PaginatedNotificationsList:
         """Test PaginatedNotificationsList
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `PaginatedNotificationsList`
         """
-        model = PaginatedNotificationsList()
+        model = _PaginatedNotificationsList()
         if include_optional:
-            return PaginatedNotificationsList(
+            return _PaginatedNotificationsList(
                 count = 123,
                 next = 'http://api.example.org/accounts/?offset=400&limit=100',
                 previous = 'http://api.example.org/accounts/?offset=200&limit=100',
@@ -245,7 +247,7 @@ class TestPaginatedNotificationsList(unittest.TestCase):
                         }, )
             )
         else:
-            return PaginatedNotificationsList(
+            return _PaginatedNotificationsList(
         )
         """
 

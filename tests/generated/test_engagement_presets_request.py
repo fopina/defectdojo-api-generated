@@ -12,7 +12,9 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.engagement_presets_request import EngagementPresetsRequest
+from defectdojo_api_generated.models.engagement_presets_request import (
+    EngagementPresetsRequest as _EngagementPresetsRequest,
+)
 
 
 class TestEngagementPresetsRequest(unittest.TestCase):
@@ -24,16 +26,16 @@ class TestEngagementPresetsRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> EngagementPresetsRequest:
+    def make_instance(self, include_optional) -> _EngagementPresetsRequest:
         """Test EngagementPresetsRequest
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `EngagementPresetsRequest`
         """
-        model = EngagementPresetsRequest()
+        model = _EngagementPresetsRequest()
         if include_optional:
-            return EngagementPresetsRequest(
+            return _EngagementPresetsRequest(
                 title = '0',
                 notes = '',
                 scope = '',
@@ -46,7 +48,7 @@ class TestEngagementPresetsRequest(unittest.TestCase):
                     ]
             )
         else:
-            return EngagementPresetsRequest(
+            return _EngagementPresetsRequest(
         )
         """
 

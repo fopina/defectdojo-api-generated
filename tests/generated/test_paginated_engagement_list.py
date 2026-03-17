@@ -12,7 +12,9 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.paginated_engagement_list import PaginatedEngagementList
+from defectdojo_api_generated.models.paginated_engagement_list import (
+    PaginatedEngagementList as _PaginatedEngagementList,
+)
 
 
 class TestPaginatedEngagementList(unittest.TestCase):
@@ -24,16 +26,16 @@ class TestPaginatedEngagementList(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PaginatedEngagementList:
+    def make_instance(self, include_optional) -> _PaginatedEngagementList:
         """Test PaginatedEngagementList
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `PaginatedEngagementList`
         """
-        model = PaginatedEngagementList()
+        model = _PaginatedEngagementList()
         if include_optional:
-            return PaginatedEngagementList(
+            return _PaginatedEngagementList(
                 count = 123,
                 next = 'http://api.example.org/accounts/?offset=400&limit=100',
                 previous = 'http://api.example.org/accounts/?offset=200&limit=100',
@@ -109,7 +111,7 @@ class TestPaginatedEngagementList(unittest.TestCase):
                     ]
             )
         else:
-            return PaginatedEngagementList(
+            return _PaginatedEngagementList(
         )
         """
 

@@ -12,7 +12,9 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.patched_global_role_request import PatchedGlobalRoleRequest
+from defectdojo_api_generated.models.patched_global_role_request import (
+    PatchedGlobalRoleRequest as _PatchedGlobalRoleRequest,
+)
 
 
 class TestPatchedGlobalRoleRequest(unittest.TestCase):
@@ -24,22 +26,22 @@ class TestPatchedGlobalRoleRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PatchedGlobalRoleRequest:
+    def make_instance(self, include_optional) -> _PatchedGlobalRoleRequest:
         """Test PatchedGlobalRoleRequest
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `PatchedGlobalRoleRequest`
         """
-        model = PatchedGlobalRoleRequest()
+        model = _PatchedGlobalRoleRequest()
         if include_optional:
-            return PatchedGlobalRoleRequest(
+            return _PatchedGlobalRoleRequest(
                 user = 56,
                 group = 56,
                 role = 56
             )
         else:
-            return PatchedGlobalRoleRequest(
+            return _PatchedGlobalRoleRequest(
         )
         """
 

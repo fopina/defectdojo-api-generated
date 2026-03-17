@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.app_analysis_prefetch import AppAnalysisPrefetch
+from defectdojo_api_generated.models.app_analysis_prefetch import AppAnalysisPrefetch as _AppAnalysisPrefetch
 
 
 class TestAppAnalysisPrefetch(unittest.TestCase):
@@ -24,16 +24,16 @@ class TestAppAnalysisPrefetch(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> AppAnalysisPrefetch:
+    def make_instance(self, include_optional) -> _AppAnalysisPrefetch:
         """Test AppAnalysisPrefetch
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `AppAnalysisPrefetch`
         """
-        model = AppAnalysisPrefetch()
+        model = _AppAnalysisPrefetch()
         if include_optional:
-            return AppAnalysisPrefetch(
+            return _AppAnalysisPrefetch(
                 product = {
                     'key' : defectdojo_api_generated.models.product.Product(
                         id = 56, 
@@ -132,7 +132,7 @@ class TestAppAnalysisPrefetch(unittest.TestCase):
                     }
             )
         else:
-            return AppAnalysisPrefetch(
+            return _AppAnalysisPrefetch(
         )
         """
 

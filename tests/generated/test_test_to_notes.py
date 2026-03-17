@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.test_to_notes import TestToNotes
+from defectdojo_api_generated.models.test_to_notes import TestToNotes as _TestToNotes
 
 
 class TestTestToNotes(unittest.TestCase):
@@ -24,16 +24,16 @@ class TestTestToNotes(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> TestToNotes:
+    def make_instance(self, include_optional) -> _TestToNotes:
         """Test TestToNotes
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `TestToNotes`
         """
-        model = TestToNotes()
+        model = _TestToNotes()
         if include_optional:
-            return TestToNotes(
+            return _TestToNotes(
                 test_id = 56,
                 notes = [
                     defectdojo_api_generated.models.note.Note(
@@ -57,7 +57,7 @@ class TestTestToNotes(unittest.TestCase):
                     ]
             )
         else:
-            return TestToNotes(
+            return _TestToNotes(
         )
         """
 

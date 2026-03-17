@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.finding_prefetch import FindingPrefetch
+from defectdojo_api_generated.models.finding_prefetch import FindingPrefetch as _FindingPrefetch
 
 
 class TestFindingPrefetch(unittest.TestCase):
@@ -24,16 +24,16 @@ class TestFindingPrefetch(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> FindingPrefetch:
+    def make_instance(self, include_optional) -> _FindingPrefetch:
         """Test FindingPrefetch
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `FindingPrefetch`
         """
-        model = FindingPrefetch()
+        model = _FindingPrefetch()
         if include_optional:
-            return FindingPrefetch(
+            return _FindingPrefetch(
                 auth_issues = {
                     'key' : defectdojo_api_generated.models.engagement_check_list.EngagementCheckList(
                         id = 56, 
@@ -890,7 +890,7 @@ class TestFindingPrefetch(unittest.TestCase):
                     }
             )
         else:
-            return FindingPrefetch(
+            return _FindingPrefetch(
         )
         """
 

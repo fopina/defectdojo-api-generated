@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.configuration_permission import ConfigurationPermission
+from defectdojo_api_generated.models.configuration_permission import ConfigurationPermission as _ConfigurationPermission
 
 
 class TestConfigurationPermission(unittest.TestCase):
@@ -24,22 +24,22 @@ class TestConfigurationPermission(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ConfigurationPermission:
+    def make_instance(self, include_optional) -> _ConfigurationPermission:
         """Test ConfigurationPermission
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `ConfigurationPermission`
         """
-        model = ConfigurationPermission()
+        model = _ConfigurationPermission()
         if include_optional:
-            return ConfigurationPermission(
+            return _ConfigurationPermission(
                 id = 56,
                 name = '',
                 codename = ''
             )
         else:
-            return ConfigurationPermission(
+            return _ConfigurationPermission(
         )
         """
 

@@ -12,7 +12,9 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.patched_announcement_request import PatchedAnnouncementRequest
+from defectdojo_api_generated.models.patched_announcement_request import (
+    PatchedAnnouncementRequest as _PatchedAnnouncementRequest,
+)
 
 
 class TestPatchedAnnouncementRequest(unittest.TestCase):
@@ -24,22 +26,22 @@ class TestPatchedAnnouncementRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PatchedAnnouncementRequest:
+    def make_instance(self, include_optional) -> _PatchedAnnouncementRequest:
         """Test PatchedAnnouncementRequest
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `PatchedAnnouncementRequest`
         """
-        model = PatchedAnnouncementRequest()
+        model = _PatchedAnnouncementRequest()
         if include_optional:
-            return PatchedAnnouncementRequest(
+            return _PatchedAnnouncementRequest(
                 message = '0',
                 style = 'info',
                 dismissable = True
             )
         else:
-            return PatchedAnnouncementRequest(
+            return _PatchedAnnouncementRequest(
         )
         """
 

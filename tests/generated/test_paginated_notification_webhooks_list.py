@@ -12,7 +12,9 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.paginated_notification_webhooks_list import PaginatedNotificationWebhooksList
+from defectdojo_api_generated.models.paginated_notification_webhooks_list import (
+    PaginatedNotificationWebhooksList as _PaginatedNotificationWebhooksList,
+)
 
 
 class TestPaginatedNotificationWebhooksList(unittest.TestCase):
@@ -24,16 +26,16 @@ class TestPaginatedNotificationWebhooksList(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PaginatedNotificationWebhooksList:
+    def make_instance(self, include_optional) -> _PaginatedNotificationWebhooksList:
         """Test PaginatedNotificationWebhooksList
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `PaginatedNotificationWebhooksList`
         """
-        model = PaginatedNotificationWebhooksList()
+        model = _PaginatedNotificationWebhooksList()
         if include_optional:
-            return PaginatedNotificationWebhooksList(
+            return _PaginatedNotificationWebhooksList(
                 count = 123,
                 next = 'http://api.example.org/accounts/?offset=400&limit=100',
                 previous = 'http://api.example.org/accounts/?offset=200&limit=100',
@@ -52,7 +54,7 @@ class TestPaginatedNotificationWebhooksList(unittest.TestCase):
                     ]
             )
         else:
-            return PaginatedNotificationWebhooksList(
+            return _PaginatedNotificationWebhooksList(
         )
         """
 

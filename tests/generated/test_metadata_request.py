@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.metadata_request import MetadataRequest
+from defectdojo_api_generated.models.metadata_request import MetadataRequest as _MetadataRequest
 
 
 class TestMetadataRequest(unittest.TestCase):
@@ -24,21 +24,21 @@ class TestMetadataRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> MetadataRequest:
+    def make_instance(self, include_optional) -> _MetadataRequest:
         """Test MetadataRequest
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `MetadataRequest`
         """
-        model = MetadataRequest()
+        model = _MetadataRequest()
         if include_optional:
-            return MetadataRequest(
+            return _MetadataRequest(
                 name = '0',
                 value = '0'
             )
         else:
-            return MetadataRequest(
+            return _MetadataRequest(
         )
         """
 

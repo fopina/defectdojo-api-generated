@@ -13,7 +13,7 @@ Do not edit the class manually.
 import unittest
 
 from defectdojo_api_generated.api.questionnaire_engagement_questionnaires_api import (
-    QuestionnaireEngagementQuestionnairesApi,
+    QuestionnaireEngagementQuestionnairesApi as _QuestionnaireEngagementQuestionnairesApi,
 )
 
 
@@ -21,7 +21,7 @@ class TestQuestionnaireEngagementQuestionnairesApi(unittest.TestCase):
     """QuestionnaireEngagementQuestionnairesApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = QuestionnaireEngagementQuestionnairesApi()
+        self.api = _QuestionnaireEngagementQuestionnairesApi()
 
     def tearDown(self) -> None:
         pass

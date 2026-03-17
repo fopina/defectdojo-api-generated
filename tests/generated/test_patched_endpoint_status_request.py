@@ -12,7 +12,9 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.patched_endpoint_status_request import PatchedEndpointStatusRequest
+from defectdojo_api_generated.models.patched_endpoint_status_request import (
+    PatchedEndpointStatusRequest as _PatchedEndpointStatusRequest,
+)
 
 
 class TestPatchedEndpointStatusRequest(unittest.TestCase):
@@ -24,16 +26,16 @@ class TestPatchedEndpointStatusRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PatchedEndpointStatusRequest:
+    def make_instance(self, include_optional) -> _PatchedEndpointStatusRequest:
         """Test PatchedEndpointStatusRequest
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `PatchedEndpointStatusRequest`
         """
-        model = PatchedEndpointStatusRequest()
+        model = _PatchedEndpointStatusRequest()
         if include_optional:
-            return PatchedEndpointStatusRequest(
+            return _PatchedEndpointStatusRequest(
                 var_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(),
                 mitigated = True,
                 false_positive = True,
@@ -44,7 +46,7 @@ class TestPatchedEndpointStatusRequest(unittest.TestCase):
                 finding = 56
             )
         else:
-            return PatchedEndpointStatusRequest(
+            return _PatchedEndpointStatusRequest(
         )
         """
 

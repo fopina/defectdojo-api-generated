@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.import_scan import ImportScan
+from defectdojo_api_generated.models.import_scan import ImportScan as _ImportScan
 
 
 class TestImportScan(unittest.TestCase):
@@ -24,16 +24,16 @@ class TestImportScan(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ImportScan:
+    def make_instance(self, include_optional) -> _ImportScan:
         """Test ImportScan
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `ImportScan`
         """
-        model = ImportScan()
+        model = _ImportScan()
         if include_optional:
-            return ImportScan(
+            return _ImportScan(
                 scan_date = datetime.datetime.strptime('1975-12-30', '%Y-%m-%d').date(),
                 minimum_severity = 'Info',
                 active = True,
@@ -82,7 +82,7 @@ class TestImportScan(unittest.TestCase):
                 test = 56
             )
         else:
-            return ImportScan(
+            return _ImportScan(
         )
         """
 

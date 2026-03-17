@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.paginated_asset_list import PaginatedAssetList
+from defectdojo_api_generated.models.paginated_asset_list import PaginatedAssetList as _PaginatedAssetList
 
 
 class TestPaginatedAssetList(unittest.TestCase):
@@ -24,16 +24,16 @@ class TestPaginatedAssetList(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PaginatedAssetList:
+    def make_instance(self, include_optional) -> _PaginatedAssetList:
         """Test PaginatedAssetList
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `PaginatedAssetList`
         """
-        model = PaginatedAssetList()
+        model = _PaginatedAssetList()
         if include_optional:
-            return PaginatedAssetList(
+            return _PaginatedAssetList(
                 count = 123,
                 next = 'http://api.example.org/accounts/?offset=400&limit=100',
                 previous = 'http://api.example.org/accounts/?offset=200&limit=100',
@@ -251,7 +251,7 @@ class TestPaginatedAssetList(unittest.TestCase):
                         }, )
             )
         else:
-            return PaginatedAssetList(
+            return _PaginatedAssetList(
         )
         """
 

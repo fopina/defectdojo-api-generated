@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.regulation import Regulation
+from defectdojo_api_generated.models.regulation import Regulation as _Regulation
 
 
 class TestRegulation(unittest.TestCase):
@@ -24,16 +24,16 @@ class TestRegulation(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> Regulation:
+    def make_instance(self, include_optional) -> _Regulation:
         """Test Regulation
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `Regulation`
         """
-        model = Regulation()
+        model = _Regulation()
         if include_optional:
-            return Regulation(
+            return _Regulation(
                 id = 56,
                 name = '',
                 acronym = '',
@@ -43,7 +43,7 @@ class TestRegulation(unittest.TestCase):
                 reference = ''
             )
         else:
-            return Regulation(
+            return _Regulation(
         )
         """
 

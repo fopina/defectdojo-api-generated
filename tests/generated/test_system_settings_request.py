@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.system_settings_request import SystemSettingsRequest
+from defectdojo_api_generated.models.system_settings_request import SystemSettingsRequest as _SystemSettingsRequest
 
 
 class TestSystemSettingsRequest(unittest.TestCase):
@@ -24,16 +24,16 @@ class TestSystemSettingsRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> SystemSettingsRequest:
+    def make_instance(self, include_optional) -> _SystemSettingsRequest:
         """Test SystemSettingsRequest
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `SystemSettingsRequest`
         """
-        model = SystemSettingsRequest()
+        model = _SystemSettingsRequest()
         if include_optional:
-            return SystemSettingsRequest(
+            return _SystemSettingsRequest(
                 enable_deduplication = True,
                 delete_duplicates = True,
                 max_dupes = -2147483648,
@@ -113,7 +113,7 @@ class TestSystemSettingsRequest(unittest.TestCase):
                 default_group_role = 56
             )
         else:
-            return SystemSettingsRequest(
+            return _SystemSettingsRequest(
         )
         """
 

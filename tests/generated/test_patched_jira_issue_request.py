@@ -12,7 +12,9 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.patched_jira_issue_request import PatchedJIRAIssueRequest
+from defectdojo_api_generated.models.patched_jira_issue_request import (
+    PatchedJIRAIssueRequest as _PatchedJIRAIssueRequest,
+)
 
 
 class TestPatchedJIRAIssueRequest(unittest.TestCase):
@@ -24,16 +26,16 @@ class TestPatchedJIRAIssueRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> PatchedJIRAIssueRequest:
+    def make_instance(self, include_optional) -> _PatchedJIRAIssueRequest:
         """Test PatchedJIRAIssueRequest
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `PatchedJIRAIssueRequest`
         """
-        model = PatchedJIRAIssueRequest()
+        model = _PatchedJIRAIssueRequest()
         if include_optional:
-            return PatchedJIRAIssueRequest(
+            return _PatchedJIRAIssueRequest(
                 jira_id = '0',
                 jira_key = '0',
                 jira_creation = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
@@ -44,7 +46,7 @@ class TestPatchedJIRAIssueRequest(unittest.TestCase):
                 finding_group = 56
             )
         else:
-            return PatchedJIRAIssueRequest(
+            return _PatchedJIRAIssueRequest(
         )
         """
 

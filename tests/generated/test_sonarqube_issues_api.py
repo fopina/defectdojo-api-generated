@@ -12,14 +12,14 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.api.sonarqube_issues_api import SonarqubeIssuesApi
+from defectdojo_api_generated.api.sonarqube_issues_api import SonarqubeIssuesApi as _SonarqubeIssuesApi
 
 
 class TestSonarqubeIssuesApi(unittest.TestCase):
     """SonarqubeIssuesApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = SonarqubeIssuesApi()
+        self.api = _SonarqubeIssuesApi()
 
     def tearDown(self) -> None:
         pass

@@ -12,7 +12,9 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.report_generate_option_request import ReportGenerateOptionRequest
+from defectdojo_api_generated.models.report_generate_option_request import (
+    ReportGenerateOptionRequest as _ReportGenerateOptionRequest,
+)
 
 
 class TestReportGenerateOptionRequest(unittest.TestCase):
@@ -24,23 +26,23 @@ class TestReportGenerateOptionRequest(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ReportGenerateOptionRequest:
+    def make_instance(self, include_optional) -> _ReportGenerateOptionRequest:
         """Test ReportGenerateOptionRequest
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `ReportGenerateOptionRequest`
         """
-        model = ReportGenerateOptionRequest()
+        model = _ReportGenerateOptionRequest()
         if include_optional:
-            return ReportGenerateOptionRequest(
+            return _ReportGenerateOptionRequest(
                 include_finding_notes = True,
                 include_finding_images = True,
                 include_executive_summary = True,
                 include_table_of_contents = True
             )
         else:
-            return ReportGenerateOptionRequest(
+            return _ReportGenerateOptionRequest(
         )
         """
 

@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.delete_preview import DeletePreview
+from defectdojo_api_generated.models.delete_preview import DeletePreview as _DeletePreview
 
 
 class TestDeletePreview(unittest.TestCase):
@@ -24,22 +24,22 @@ class TestDeletePreview(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> DeletePreview:
+    def make_instance(self, include_optional) -> _DeletePreview:
         """Test DeletePreview
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `DeletePreview`
         """
-        model = DeletePreview()
+        model = _DeletePreview()
         if include_optional:
-            return DeletePreview(
+            return _DeletePreview(
                 model = '',
                 id = 56,
                 name = ''
             )
         else:
-            return DeletePreview(
+            return _DeletePreview(
         )
         """
 

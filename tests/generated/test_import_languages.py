@@ -12,7 +12,7 @@ Do not edit the class manually.
 
 import unittest
 
-from defectdojo_api_generated.models.import_languages import ImportLanguages
+from defectdojo_api_generated.models.import_languages import ImportLanguages as _ImportLanguages
 
 
 class TestImportLanguages(unittest.TestCase):
@@ -24,21 +24,21 @@ class TestImportLanguages(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> ImportLanguages:
+    def make_instance(self, include_optional) -> _ImportLanguages:
         """Test ImportLanguages
         include_optional is a boolean, when False only required
         params are included, when True both required and
         optional params are included"""
         # uncomment below to create an instance of `ImportLanguages`
         """
-        model = ImportLanguages()
+        model = _ImportLanguages()
         if include_optional:
-            return ImportLanguages(
+            return _ImportLanguages(
                 product = 56,
                 file = ''
             )
         else:
-            return ImportLanguages(
+            return _ImportLanguages(
         )
         """
 

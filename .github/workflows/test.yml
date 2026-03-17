@@ -76,7 +76,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install uv
-          uv sync --dev
+          uv sync --dev --extra cli
 
       - name: Run e2e tests
         run: |

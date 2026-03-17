@@ -18,6 +18,7 @@ except ModuleNotFoundError:
     # Python < 3.11
     import tomli as tomllib
 
+
 DEFAULT_PATH = Path(user_config_dir('defectdojo-cli')) / 'config.toml'
 
 

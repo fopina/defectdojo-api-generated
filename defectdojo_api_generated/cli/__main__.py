@@ -2,9 +2,8 @@
 
 import importlib
 import pkgutil
+import sys
 from pathlib import Path
-
-from .commands.cli import CLI
 
 
 def discover_commands():
@@ -12,7 +11,22 @@ def discover_commands():
         importlib.import_module(f'{__package__}.commands.{module_name}')
 
 
+def load_cli():
+    try:
+        from .commands.cli import CLI
+    except ModuleNotFoundError as exc:
+        print(
+            'The DefectDojo CLI requires extra dependencies. '
+            'Install them using "defectdojo-api-generated[cli]" as package',
+            file=sys.stderr,
+        )
+        raise SystemExit(1) from exc
+
+    return CLI
+
+
 def main():
+    CLI = load_cli()
     discover_commands()
     CLI.click()
 

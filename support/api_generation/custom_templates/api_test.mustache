@@ -5,7 +5,7 @@
 
 import unittest
 
-from {{apiPackage}}.{{classFilename}} import {{classname}}
+from {{apiPackage}}.{{classFilename}} import {{classname}} as _{{classname}}
 
 
 class {{#operations}}Test{{classname}}(unittest.{{#async}}IsolatedAsyncio{{/async}}TestCase):
@@ -13,14 +13,14 @@ class {{#operations}}Test{{classname}}(unittest.{{#async}}IsolatedAsyncio{{/asyn
 
     {{#async}}
     async def asyncSetUp(self) -> None:
-        self.api = {{classname}}()
+        self.api = _{{classname}}()
 
     async def asyncTearDown(self) -> None:
         await self.api.api_client.close()
     {{/async}}
     {{^async}}
     def setUp(self) -> None:
-        self.api = {{classname}}()
+        self.api = _{{classname}}()
 
     def tearDown(self) -> None:
         pass

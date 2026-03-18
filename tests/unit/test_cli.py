@@ -1,3 +1,4 @@
+import json
 import unittest
 from importlib.metadata import version
 from pathlib import Path
@@ -57,7 +58,7 @@ class TestCLI(unittest.TestCase):
                 result = runner.invoke(CLI.click, ['--config', str(config_path), 'findings', 'list', '--limit', '1'])
 
         self.assertEqual(result.exit_code, 0)
-        self.assertIn("'limit': 1", result.output)
+        self.assertIn('limit: 1', result.output)
 
     def test_findings_list_prints_iterator_items_one_per_line(self):
         runner = CliRunner()
@@ -76,7 +77,28 @@ class TestCLI(unittest.TestCase):
                 result = runner.invoke(CLI.click, ['--config', str(config_path), 'findings', 'list'])
 
         self.assertEqual(result.exit_code, 0)
-        self.assertEqual(result.output.splitlines(), ['first', 'second'])
+        self.assertEqual(result.output.splitlines(), ['first', '---', 'second'])
+
+    def test_json_flag_dumps_json_output(self):
+        from defectdojo_api_generated.models.finding import Finding
+
+        runner = CliRunner()
+        with runner.isolated_filesystem():
+            config_path = Path('config.toml')
+            config_path.write_text("host = 'https://example.com'\ntoken = 'token'\n")
+
+            with mock.patch.object(
+                FindingsApi,
+                'list_iterator',
+                new=lambda self, **kwargs: [IteratorResult(result=Finding(id=1, title='Example'), page='page-1')],
+            ):
+                result = runner.invoke(CLI.click, ['--config', str(config_path), 'findings', 'list', '--json'])
+
+        self.assertEqual(result.exit_code, 0)
+        payload = json.loads(result.output)
+        self.assertEqual(payload['id'], 1)
+        self.assertEqual(payload['title'], 'Example')
+        self.assertIn('accepted_risks', payload)
 
     def test_api_command_help_uses_method_docstring(self):
         class DocstringApi:

@@ -2,10 +2,13 @@
 
 import importlib
 import inspect
+import json
 import pkgutil
 from typing import Annotated, Any, Union, get_args, get_origin
 
 import classyclick
+import click
+from pydantic import BaseModel
 
 from defectdojo_api_generated import api as api_package
 from defectdojo_api_generated.client import DefectDojo
@@ -124,22 +127,71 @@ def _iter_command_parameters(api_class: type, target_method: str):
         yield name, parameter
 
 
-def _print_result(result):
+def _iter_output_items(result):
     if isinstance(result, IteratorResult):
-        _print_result(result.result)
+        yield from _iter_output_items(result.result)
         return
 
     if isinstance(result, (list, tuple)):
         for item in result:
-            _print_result(item)
+            yield from _iter_output_items(item)
         return
 
     if inspect.isgenerator(result):
         for item in result:
-            _print_result(item)
+            yield from _iter_output_items(item)
         return
 
-    print(result)
+    yield result
+
+
+def _to_jsonable(value: Any, *, exclude_none: bool = False) -> Any:
+    if isinstance(value, BaseModel):
+        return value.model_dump(mode='json', exclude_none=exclude_none)
+
+    if isinstance(value, dict):
+        return {
+            key: _to_jsonable(item, exclude_none=exclude_none)
+            for key, item in value.items()
+            if not (exclude_none and item is None)
+        }
+
+    if isinstance(value, (list, tuple)):
+        return [_to_jsonable(item, exclude_none=exclude_none) for item in value if not (exclude_none and item is None)]
+
+    return value
+
+
+def _format_text_value(value: Any) -> str:
+    if isinstance(value, (dict, list, tuple, BaseModel)):
+        return json.dumps(_to_jsonable(value, exclude_none=True), ensure_ascii=False, default=str)
+    return str(value)
+
+
+def _format_text_item(item: Any) -> str:
+    if isinstance(item, BaseModel):
+        payload = item.model_dump(mode='json', exclude_none=True)
+    elif isinstance(item, dict):
+        payload = {key: value for key, value in item.items() if value is not None}
+    else:
+        return str(item)
+
+    lines = []
+    for key, value in payload.items():
+        lines.append(f'{click.style(str(key), bold=True)}: {_format_text_value(value)}')
+    return '\n'.join(lines)
+
+
+def _render_result(result: Any, *, json_mode: bool):
+    items = list(_iter_output_items(result))
+
+    if json_mode:
+        for item in items:
+            click.echo(json.dumps(_to_jsonable(item), ensure_ascii=False, default=str))
+        return
+
+    rendered_items = [_format_text_item(item) for item in items]
+    click.echo('\n---\n'.join(rendered_items))
 
 
 def make_api_command(api_class: type, command_name: str, target_method: str, *, parent_class: type):
@@ -158,7 +210,7 @@ def make_api_command(api_class: type, command_name: str, target_method: str, *, 
                     kwargs[name] = value
             elif value != parameter.default:
                 kwargs[name] = value
-        _print_result(method(**kwargs))
+        _render_result(method(**kwargs), json_mode=self.json)
 
     namespace = {
         '__config__': classyclick.Command.Config(
@@ -169,8 +221,11 @@ def make_api_command(api_class: type, command_name: str, target_method: str, *, 
         '__call__': __call__,
         '__annotations__': {
             'client': DefectDojo,
+            'json': bool,
         },
     }
+
+    namespace['json'] = classyclick.Option(help='Dump responses as JSON', default=False)
 
     for name, parameter, click_type, multiple in command_parameters:
         namespace['__annotations__'][name] = click_type

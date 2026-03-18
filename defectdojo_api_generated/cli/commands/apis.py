@@ -162,6 +162,18 @@ def _to_jsonable(value: Any, *, exclude_none: bool = False) -> Any:
     return value
 
 
+def _apply_jq(value: Any, jq_expression: str | None) -> Any:
+    if not jq_expression:
+        return value
+
+    try:
+        import jmespath
+    except ModuleNotFoundError as exc:
+        raise click.ClickException('jq support requires the jmespath package') from exc
+
+    return jmespath.search(jq_expression, _to_jsonable(value))
+
+
 def _format_text_value(value: Any) -> str:
     if isinstance(value, (dict, list, tuple, BaseModel)):
         return json.dumps(_to_jsonable(value, exclude_none=True), ensure_ascii=False, default=str)
@@ -173,6 +185,8 @@ def _format_text_item(item: Any) -> str:
         payload = item.model_dump(mode='json', exclude_none=True)
     elif isinstance(item, dict):
         payload = {key: value for key, value in item.items() if value is not None}
+    elif isinstance(item, (list, tuple)):
+        return json.dumps(_to_jsonable(item, exclude_none=True), ensure_ascii=False, default=str)
     else:
         return str(item)
 
@@ -182,16 +196,19 @@ def _format_text_item(item: Any) -> str:
     return '\n'.join(lines)
 
 
-def _render_result(result: Any, *, json_mode: bool):
-    items = list(_iter_output_items(result))
+def _render_result(result: Any, *, json_mode: bool, jq_expression: str | None):
+    div = False
+    for item in _iter_output_items(result):
+        item = _apply_jq(item, jq_expression)
 
-    if json_mode:
-        for item in items:
+        if json_mode:
             click.echo(json.dumps(_to_jsonable(item), ensure_ascii=False, default=str))
-        return
-
-    rendered_items = [_format_text_item(item) for item in items]
-    click.echo('\n---\n'.join(rendered_items))
+        else:
+            if div:
+                click.echo('\n---\n')
+            else:
+                div = True
+            click.echo(_format_text_item(item))
 
 
 def make_api_command(api_class: type, command_name: str, target_method: str, *, parent_class: type):
@@ -210,22 +227,23 @@ def make_api_command(api_class: type, command_name: str, target_method: str, *, 
                     kwargs[name] = value
             elif value != parameter.default:
                 kwargs[name] = value
-        _render_result(method(**kwargs), json_mode=self.json)
+        _render_result(method(**kwargs), json_mode=self.json, jq_expression=self.jq)
 
     namespace = {
         '__config__': classyclick.Command.Config(
             name=command_name,
             help=_get_command_help(api_class, target_method),
         ),
-        'client': classyclick.ContextMeta('client'),
         '__call__': __call__,
+        'client': classyclick.ContextMeta('client'),
+        'json': classyclick.Option(help='Dump responses as JSON'),
+        'jq': classyclick.Option(help='Apply a JMESPath expression to each response item', default=None),
         '__annotations__': {
             'client': DefectDojo,
             'json': bool,
+            'jq': str,
         },
     }
-
-    namespace['json'] = classyclick.Option(help='Dump responses as JSON', default=False)
 
     for name, parameter, click_type, multiple in command_parameters:
         namespace['__annotations__'][name] = click_type

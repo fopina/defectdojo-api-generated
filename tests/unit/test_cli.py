@@ -1,4 +1,5 @@
 import json
+import sys
 import unittest
 from importlib.metadata import version
 from pathlib import Path
@@ -99,6 +100,52 @@ class TestCLI(unittest.TestCase):
         self.assertEqual(payload['id'], 1)
         self.assertEqual(payload['title'], 'Example')
         self.assertIn('accepted_risks', payload)
+
+    def test_jq_flag_projects_text_output(self):
+        from defectdojo_api_generated.models.finding import Finding
+
+        runner = CliRunner()
+        with runner.isolated_filesystem():
+            config_path = Path('config.toml')
+            config_path.write_text("host = 'https://example.com'\ntoken = 'token'\n")
+
+            fake_jmespath = mock.Mock(search=lambda expression, data: data['title'])
+            with mock.patch.dict(sys.modules, {'jmespath': fake_jmespath}):
+                with mock.patch.object(
+                    FindingsApi,
+                    'list_iterator',
+                    new=lambda self, **kwargs: [IteratorResult(result=Finding(id=1, title='Example'), page='page-1')],
+                ):
+                    result = runner.invoke(
+                        CLI.click,
+                        ['--config', str(config_path), 'findings', 'list', '--jq', 'title'],
+                    )
+
+        self.assertEqual(result.exit_code, 0)
+        self.assertEqual(result.output.strip(), 'Example')
+
+    def test_jq_flag_projects_json_output(self):
+        from defectdojo_api_generated.models.finding import Finding
+
+        runner = CliRunner()
+        with runner.isolated_filesystem():
+            config_path = Path('config.toml')
+            config_path.write_text("host = 'https://example.com'\ntoken = 'token'\n")
+
+            fake_jmespath = mock.Mock(search=lambda expression, data: data['title'])
+            with mock.patch.dict(sys.modules, {'jmespath': fake_jmespath}):
+                with mock.patch.object(
+                    FindingsApi,
+                    'list_iterator',
+                    new=lambda self, **kwargs: [IteratorResult(result=Finding(id=1, title='Example'), page='page-1')],
+                ):
+                    result = runner.invoke(
+                        CLI.click,
+                        ['--config', str(config_path), 'findings', 'list', '--json', '--jq', 'title'],
+                    )
+
+        self.assertEqual(result.exit_code, 0)
+        self.assertEqual(json.loads(result.output), 'Example')
 
     def test_api_command_help_uses_method_docstring(self):
         class DocstringApi:

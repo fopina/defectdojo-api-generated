@@ -44,6 +44,39 @@ class TestCLI(unittest.TestCase):
         self.assertEqual(list_result.output.strip(), 'list-result')
         self.assertEqual(create_result.output.strip(), 'create-result')
 
+    def test_api_command_help_uses_method_docstring(self):
+        class DocstringApi:
+            def __init__(self, api_client):
+                self.api_client = api_client
+
+            def fetch(self):
+                """Fetch a single item."""
+                return 'ok'
+
+        make_api_group('docstring_api', DocstringApi)
+
+        runner = CliRunner()
+        with runner.isolated_filesystem():
+            config_path = Path('config.toml')
+            config_path.write_text("host = 'https://example.com'\ntoken = 'token'\n")
+
+            result = runner.invoke(CLI.click, ['--config', str(config_path), 'docstring', '--help'])
+
+        self.assertEqual(result.exit_code, 0)
+        self.assertIn('Fetch a single item.', result.output)
+        self.assertNotIn('`fetch`.', result.output)
+
+    def test_iterator_command_help_falls_back_to_base_method_docstring(self):
+        runner = CliRunner()
+        with runner.isolated_filesystem():
+            config_path = Path('config.toml')
+            config_path.write_text("host = 'https://example.com'\ntoken = 'token'\n")
+
+            result = runner.invoke(CLI.click, ['--config', str(config_path), 'findings', 'list', '--help'])
+
+        self.assertEqual(result.exit_code, 0)
+        self.assertNotIn('`list_iterator`.', result.output)
+
     def test_single_method_api_becomes_direct_command(self):
         class SingleMethodApi:
             def __init__(self, api_client):

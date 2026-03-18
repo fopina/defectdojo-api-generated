@@ -46,6 +46,20 @@ def _iter_command_methods(api_class: type):
         yield command_name.replace('_', '-'), method
 
 
+def _get_command_help(api_class: type, target_method: str) -> str:
+    doc_targets = [target_method]
+    if target_method.endswith('_iterator'):
+        doc_targets.append(target_method[:-9])
+
+    for method_name in doc_targets:
+        method = getattr(api_class, method_name, None)
+        doc = inspect.getdoc(method)
+        if doc:
+            return doc.splitlines()[0].strip()
+
+    return f'`{target_method}`.'
+
+
 def make_api_command(api_class: type, command_name: str, target_method: str, *, parent_class: type):
     def __call__(self):
         print(getattr(api_class(self.client.api_client), target_method)())
@@ -53,7 +67,7 @@ def make_api_command(api_class: type, command_name: str, target_method: str, *, 
     namespace = {
         '__config__': classyclick.Command.Config(
             name=command_name,
-            help=f'`{target_method}`.',
+            help=_get_command_help(api_class, target_method),
         ),
         'client': classyclick.ContextMeta('client'),
         '__call__': __call__,
@@ -80,7 +94,7 @@ def make_api_group(module_name: str, api_class: type) -> type:
     class ApiGroup(CLI.SubGroup, classyclick.Group):
         __config__ = classyclick.Group.Config(
             name=group_name,
-            help=f'`{api_class.__name__}`.',
+            help=f'methods from `{api_class.__name__}`.',
         )
 
     for command_name, target_method in command_methods:

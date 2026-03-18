@@ -10,6 +10,7 @@ from typing_extensions import Annotated
 from defectdojo_api_generated.api.findings_api import FindingsApi
 from defectdojo_api_generated.cli.commands.apis import API_COMMANDS, make_api_group
 from defectdojo_api_generated.cli.commands.cli import CLI
+from defectdojo_api_generated.helpers import IteratorResult
 
 
 class TestCLI(unittest.TestCase):
@@ -45,6 +46,37 @@ class TestCLI(unittest.TestCase):
         self.assertEqual(create_result.exit_code, 0)
         self.assertEqual(list_result.output.strip(), 'list-result')
         self.assertEqual(create_result.output.strip(), 'create-result')
+
+    def test_findings_list_accepts_limit_option(self):
+        runner = CliRunner()
+        with runner.isolated_filesystem():
+            config_path = Path('config.toml')
+            config_path.write_text("host = 'https://example.com'\ntoken = 'token'\n")
+
+            with mock.patch.object(FindingsApi, 'list_iterator', new=lambda self, **kwargs: kwargs):
+                result = runner.invoke(CLI.click, ['--config', str(config_path), 'findings', 'list', '--limit', '1'])
+
+        self.assertEqual(result.exit_code, 0)
+        self.assertIn("'limit': 1", result.output)
+
+    def test_findings_list_prints_iterator_items_one_per_line(self):
+        runner = CliRunner()
+        with runner.isolated_filesystem():
+            config_path = Path('config.toml')
+            config_path.write_text("host = 'https://example.com'\ntoken = 'token'\n")
+
+            with mock.patch.object(
+                FindingsApi,
+                'list_iterator',
+                new=lambda self, **kwargs: [
+                    IteratorResult(result='first', page='page-1'),
+                    IteratorResult(result='second', page='page-2'),
+                ],
+            ):
+                result = runner.invoke(CLI.click, ['--config', str(config_path), 'findings', 'list'])
+
+        self.assertEqual(result.exit_code, 0)
+        self.assertEqual(result.output.splitlines(), ['first', 'second'])
 
     def test_api_command_help_uses_method_docstring(self):
         class DocstringApi:

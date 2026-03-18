@@ -3,12 +3,13 @@
 import importlib
 import inspect
 import pkgutil
-from typing import Annotated, Any, get_args, get_origin
+from typing import Annotated, Any, Union, get_args, get_origin
 
 import classyclick
 
 from defectdojo_api_generated import api as api_package
 from defectdojo_api_generated.client import DefectDojo
+from defectdojo_api_generated.helpers import IteratorResult
 
 from .cli import CLI
 
@@ -72,6 +73,43 @@ def _get_help_from_annotation(annotation: Any) -> str | None:
     return None
 
 
+def _get_click_type(annotation: Any) -> tuple[Any, bool]:
+    multiple = False
+    current = annotation
+
+    while True:
+        if current is inspect.Signature.empty:
+            return Any, multiple
+
+        origin = get_origin(current)
+        if origin is Annotated:
+            current = get_args(current)[0]
+            continue
+
+        if origin is None:
+            return current, multiple
+
+        if origin is list:
+            multiple = True
+            list_args = get_args(current)
+            current = list_args[0] if list_args else Any
+            continue
+
+        if origin is tuple:
+            tuple_args = get_args(current)
+            current = tuple_args[0] if tuple_args else Any
+            continue
+
+        if origin is Union:
+            union_args = [arg for arg in get_args(current) if arg is not type(None)]
+            if not union_args:
+                return Any, multiple
+            current = union_args[0]
+            continue
+
+        return current, multiple
+
+
 def _iter_command_parameters(api_class: type, target_method: str):
     signature = inspect.signature(getattr(api_class, target_method))
 
@@ -86,17 +124,41 @@ def _iter_command_parameters(api_class: type, target_method: str):
         yield name, parameter
 
 
+def _print_result(result):
+    if isinstance(result, IteratorResult):
+        _print_result(result.result)
+        return
+
+    if isinstance(result, (list, tuple)):
+        for item in result:
+            _print_result(item)
+        return
+
+    if inspect.isgenerator(result):
+        for item in result:
+            _print_result(item)
+        return
+
+    print(result)
+
+
 def make_api_command(api_class: type, command_name: str, target_method: str, *, parent_class: type):
-    command_parameters = list(_iter_command_parameters(api_class, target_method))
+    command_parameters = [
+        (name, parameter, *_get_click_type(parameter.annotation))
+        for name, parameter in _iter_command_parameters(api_class, target_method)
+    ]
 
     def __call__(self):
         method = getattr(api_class(self.client.api_client), target_method)
-        kwargs = {
-            name: getattr(self, name)
-            for name, parameter in command_parameters
-            if getattr(self, name) != parameter.default
-        }
-        print(method(**kwargs))
+        kwargs = {}
+        for name, parameter, _, multiple in command_parameters:
+            value = getattr(self, name)
+            if multiple:
+                if value:
+                    kwargs[name] = value
+            elif value != parameter.default:
+                kwargs[name] = value
+        _print_result(method(**kwargs))
 
     namespace = {
         '__config__': classyclick.Command.Config(
@@ -110,14 +172,16 @@ def make_api_command(api_class: type, command_name: str, target_method: str, *, 
         },
     }
 
-    for name, parameter in command_parameters:
-        namespace['__annotations__'][name] = (
-            parameter.annotation if parameter.annotation is not inspect.Signature.empty else str
-        )
+    for name, parameter, click_type, multiple in command_parameters:
+        namespace['__annotations__'][name] = click_type
         option_kwargs = {
             'help': _get_help_from_annotation(parameter.annotation),
             'default': parameter.default,
         }
+        if click_type is not Any:
+            option_kwargs['type'] = click_type
+        if multiple:
+            option_kwargs['multiple'] = True
         if len(name) == 1:
             namespace[name] = classyclick.Option(f'-{name}', default_parameter=False, **option_kwargs)
         else:

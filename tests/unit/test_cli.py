@@ -78,7 +78,7 @@ class TestCLI(unittest.TestCase):
                 result = runner.invoke(CLI.click, ['--config', str(config_path), 'findings', 'list'])
 
         self.assertEqual(result.exit_code, 0)
-        self.assertEqual(result.output.splitlines(), ['first', '---', 'second'])
+        self.assertEqual(result.output.splitlines(), ['first', '', '---', '', 'second'])
 
     def test_json_flag_dumps_json_output(self):
         from defectdojo_api_generated.models.finding import Finding

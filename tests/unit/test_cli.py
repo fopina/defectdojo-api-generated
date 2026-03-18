@@ -1,10 +1,12 @@
 import unittest
 from importlib.metadata import version
 from pathlib import Path
+from unittest import mock
 
 from click.testing import CliRunner
 
-from defectdojo_api_generated.cli.commands.apis import API_COMMANDS
+from defectdojo_api_generated.api.findings_api import FindingsApi
+from defectdojo_api_generated.cli.commands.apis import API_COMMANDS, make_api_group
 from defectdojo_api_generated.cli.commands.cli import CLI
 
 
@@ -30,10 +32,39 @@ class TestCLI(unittest.TestCase):
             config_path = Path('config.toml')
             config_path.write_text("host = 'https://example.com'\ntoken = 'token'\n")
 
-            list_result = runner.invoke(CLI.click, ['--config', str(config_path), 'findings', 'list'])
-            create_result = runner.invoke(CLI.click, ['--config', str(config_path), 'findings', 'create'])
+            with (
+                mock.patch.object(FindingsApi, 'list_iterator', new=lambda self: 'list-result'),
+                mock.patch.object(FindingsApi, 'create', new=lambda self: 'create-result'),
+            ):
+                list_result = runner.invoke(CLI.click, ['--config', str(config_path), 'findings', 'list'])
+                create_result = runner.invoke(CLI.click, ['--config', str(config_path), 'findings', 'create'])
 
         self.assertEqual(list_result.exit_code, 0)
         self.assertEqual(create_result.exit_code, 0)
-        self.assertIn('FindingsApi.list_iterator', list_result.output)
-        self.assertIn('FindingsApi.create', create_result.output)
+        self.assertEqual(list_result.output.strip(), 'list-result')
+        self.assertEqual(create_result.output.strip(), 'create-result')
+
+    def test_single_method_api_becomes_direct_command(self):
+        class SingleMethodApi:
+            def __init__(self, api_client):
+                self.api_client = api_client
+
+            def ping(self):
+                return 'pong'
+
+            def ping_with_http_info(self):
+                raise AssertionError('should be filtered out')
+
+        make_api_group('single_method_api', SingleMethodApi)
+
+        runner = CliRunner()
+        with runner.isolated_filesystem():
+            config_path = Path('config.toml')
+            config_path.write_text("host = 'https://example.com'\ntoken = 'token'\n")
+
+            with mock.patch('defectdojo_api_generated.cli.commands.cli.DefectDojo') as defectdojo:
+                defectdojo.return_value = mock.Mock(api_client=object())
+                result = runner.invoke(CLI.click, ['--config', str(config_path), 'single-method'])
+
+        self.assertEqual(result.exit_code, 0)
+        self.assertEqual(result.output.strip(), 'pong')

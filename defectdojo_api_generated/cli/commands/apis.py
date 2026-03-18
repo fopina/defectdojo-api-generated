@@ -3,6 +3,7 @@
 import importlib
 import inspect
 import pkgutil
+from typing import Annotated, Any, get_args, get_origin
 
 import classyclick
 
@@ -60,9 +61,42 @@ def _get_command_help(api_class: type, target_method: str) -> str:
     return f'`{target_method}`.'
 
 
+def _get_help_from_annotation(annotation: Any) -> str | None:
+    if get_origin(annotation) is Annotated:
+        _, *metadata = get_args(annotation)
+        for item in metadata:
+            description = getattr(item, 'description', None)
+            if description:
+                return description
+
+    return None
+
+
+def _iter_command_parameters(api_class: type, target_method: str):
+    signature = inspect.signature(getattr(api_class, target_method))
+
+    for name, parameter in signature.parameters.items():
+        if name == 'self' or name.startswith('_'):
+            continue
+        if parameter.kind in (inspect.Parameter.VAR_POSITIONAL, inspect.Parameter.VAR_KEYWORD):
+            continue
+        if parameter.default is inspect.Signature.empty:
+            continue
+
+        yield name, parameter
+
+
 def make_api_command(api_class: type, command_name: str, target_method: str, *, parent_class: type):
+    command_parameters = list(_iter_command_parameters(api_class, target_method))
+
     def __call__(self):
-        print(getattr(api_class(self.client.api_client), target_method)())
+        method = getattr(api_class(self.client.api_client), target_method)
+        kwargs = {
+            name: getattr(self, name)
+            for name, parameter in command_parameters
+            if getattr(self, name) != parameter.default
+        }
+        print(method(**kwargs))
 
     namespace = {
         '__config__': classyclick.Command.Config(
@@ -75,6 +109,19 @@ def make_api_command(api_class: type, command_name: str, target_method: str, *, 
             'client': DefectDojo,
         },
     }
+
+    for name, parameter in command_parameters:
+        namespace['__annotations__'][name] = (
+            parameter.annotation if parameter.annotation is not inspect.Signature.empty else str
+        )
+        option_kwargs = {
+            'help': _get_help_from_annotation(parameter.annotation),
+            'default': parameter.default,
+        }
+        if len(name) == 1:
+            namespace[name] = classyclick.Option(f'-{name}', default_parameter=False, **option_kwargs)
+        else:
+            namespace[name] = classyclick.Option(**option_kwargs)
 
     return type(
         'ApiCommand',

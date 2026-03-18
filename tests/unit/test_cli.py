@@ -4,6 +4,8 @@ from pathlib import Path
 from unittest import mock
 
 from click.testing import CliRunner
+from pydantic import Field
+from typing_extensions import Annotated
 
 from defectdojo_api_generated.api.findings_api import FindingsApi
 from defectdojo_api_generated.cli.commands.apis import API_COMMANDS, make_api_group
@@ -24,7 +26,7 @@ class TestCLI(unittest.TestCase):
         click_version = tuple(int(part) for part in version('click').split('.')[:2])
         expected_exit_code = 2 if click_version >= (8, 2) else 0
         self.assertEqual(result.exit_code, expected_exit_code)
-        self.assertRegex(result.output, r'findings\s+`FindingsApi`\.')
+        self.assertRegex(result.output, r'findings\s+methods from `FindingsApi`\.')
 
     def test_api_commands_capture_their_own_method(self):
         runner = CliRunner()
@@ -76,6 +78,58 @@ class TestCLI(unittest.TestCase):
 
         self.assertEqual(result.exit_code, 0)
         self.assertNotIn('`list_iterator`.', result.output)
+
+    def test_annotated_method_parameters_become_options(self):
+        class AnnotatedApi:
+            def __init__(self, api_client):
+                self.api_client = api_client
+
+            def fetch(self, limit: Annotated[int, Field(description='How many items to return')] = 10):
+                return f'limit={limit}'
+
+        make_api_group('annotated_api', AnnotatedApi)
+
+        runner = CliRunner()
+        with runner.isolated_filesystem():
+            config_path = Path('config.toml')
+            config_path.write_text("host = 'https://example.com'\ntoken = 'token'\n")
+
+            help_result = runner.invoke(CLI.click, ['--config', str(config_path), 'annotated', '--help'])
+            run_result = runner.invoke(CLI.click, ['--config', str(config_path), 'annotated', '--limit', '7'])
+
+        self.assertEqual(help_result.exit_code, 0)
+        self.assertIn('--limit', help_result.output)
+        self.assertIn('How many items to return', help_result.output)
+        self.assertEqual(run_result.exit_code, 0)
+        self.assertEqual(run_result.output.strip(), 'limit=7')
+
+    def test_internal_method_parameters_are_skipped(self):
+        class InternalParamApi:
+            def __init__(self, api_client):
+                self.api_client = api_client
+
+            def fetch(self, limit: int = 10, _request_timeout: int = 5):
+                return f'limit={limit}'
+
+        make_api_group('internal_param_api', InternalParamApi)
+
+        runner = CliRunner()
+        with runner.isolated_filesystem():
+            config_path = Path('config.toml')
+            config_path.write_text("host = 'https://example.com'\ntoken = 'token'\n")
+
+            help_result = runner.invoke(CLI.click, ['--config', str(config_path), 'internal-param', '--help'])
+
+        self.assertEqual(help_result.exit_code, 0)
+        self.assertIn('--limit', help_result.output)
+        self.assertNotIn('_request_timeout', help_result.output)
+
+    def test_single_letter_parameters_use_short_options_only(self):
+        command = API_COMMANDS['findings_api'].click.commands['list']
+        option = next(param for param in command.params if getattr(param, 'name', None) == 'o')
+
+        self.assertEqual(option.opts, ['-o'])
+        self.assertEqual(option.secondary_opts, [])
 
     def test_single_method_api_becomes_direct_command(self):
         class SingleMethodApi:

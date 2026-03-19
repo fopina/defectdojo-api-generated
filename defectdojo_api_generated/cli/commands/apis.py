@@ -1,9 +1,12 @@
 """Dynamic API command registration for the CLI."""
 
+import datetime
+import decimal
 import importlib
 import inspect
 import json
 import pkgutil
+import types
 from typing import Annotated, Any, Union, get_args, get_origin
 
 import classyclick
@@ -12,11 +15,22 @@ from pydantic import BaseModel
 
 from defectdojo_api_generated import api as api_package
 from defectdojo_api_generated.client import DefectDojo
+from defectdojo_api_generated.exceptions import BadRequestException
 from defectdojo_api_generated.helpers import IteratorResult
 
 from .cli import CLI
 
 API_COMMANDS = {}
+_PRIMITIVE_CLICK_TYPES = (
+    bool,
+    bytes,
+    str,
+    int,
+    float,
+    datetime.date,
+    datetime.datetime,
+    decimal.Decimal,
+)
 
 
 def _iter_api_modules():
@@ -76,13 +90,21 @@ def _get_help_from_annotation(annotation: Any) -> str | None:
     return None
 
 
-def _get_click_type(annotation: Any) -> tuple[Any, bool]:
+def _is_primitive_click_type(annotation: Any) -> bool:
+    return inspect.isclass(annotation) and annotation in _PRIMITIVE_CLICK_TYPES
+
+
+def _is_model_click_type(annotation: Any) -> bool:
+    return inspect.isclass(annotation) and issubclass(annotation, BaseModel)
+
+
+def _get_click_type(annotation: Any, *, parameter_name: str | None = None) -> tuple[Any, bool, type[BaseModel] | None]:
     multiple = False
     current = annotation
 
     while True:
         if current is inspect.Signature.empty:
-            return Any, multiple
+            return Any, multiple, None
 
         origin = get_origin(current)
         if origin is Annotated:
@@ -90,7 +112,15 @@ def _get_click_type(annotation: Any) -> tuple[Any, bool]:
             continue
 
         if origin is None:
-            return current, multiple
+            if current is Any or _is_primitive_click_type(current):
+                return current, multiple, None
+            if _is_model_click_type(current):
+                return str, multiple, current
+
+            param_name = f' for parameter "{parameter_name}"' if parameter_name else ''
+            raise TypeError(
+                f'Unsupported CLI parameter type{param_name}: {current!r}. Only primitive types are supported.'
+            )
 
         if origin is list:
             multiple = True
@@ -103,14 +133,20 @@ def _get_click_type(annotation: Any) -> tuple[Any, bool]:
             current = tuple_args[0] if tuple_args else Any
             continue
 
-        if origin is Union:
+        if origin is Union or origin is getattr(types, 'UnionType', None):
             union_args = [arg for arg in get_args(current) if arg is not type(None)]
             if not union_args:
-                return Any, multiple
+                return Any, multiple, None
             current = union_args[0]
             continue
 
-        return current, multiple
+        if current is Any or _is_primitive_click_type(current):
+            return current, multiple, None
+        if _is_model_click_type(current):
+            return str, multiple, current
+
+        param_name = f' for parameter "{parameter_name}"' if parameter_name else ''
+        raise TypeError(f'Unsupported CLI parameter type{param_name}: {current!r}. Only primitive types are supported.')
 
 
 def _iter_command_parameters(api_class: type, target_method: str):
@@ -121,10 +157,120 @@ def _iter_command_parameters(api_class: type, target_method: str):
             continue
         if parameter.kind in (inspect.Parameter.VAR_POSITIONAL, inspect.Parameter.VAR_KEYWORD):
             continue
-        if parameter.default is inspect.Signature.empty:
-            continue
 
         yield name, parameter
+
+
+def _get_request_model_type(annotation: Any) -> type[BaseModel] | None:
+    _, _, converter = _get_click_type(annotation)
+    if converter is not None and converter.__name__.endswith('Request'):
+        return converter
+    return None
+
+
+def _get_model_field_help(field: Any) -> str | None:
+    return field.description or _get_help_from_annotation(field.annotation)
+
+
+def _build_model_field_command(
+    api_class: type,
+    command_name: str,
+    target_method: str,
+    *,
+    parent_class: type,
+    model_class: type[BaseModel],
+) -> type:
+    model_fields = model_class.model_fields
+    field_definitions = []
+
+    for field_name, field in model_fields.items():
+        click_type, multiple, converter = _get_click_type(field.annotation, parameter_name=field_name)
+        field_definitions.append((field_name, field, click_type, multiple, converter))
+
+    field_definitions.sort(key=lambda item: not item[1].is_required())
+    required_fields = [item for item in field_definitions if item[1].is_required()]
+    optional_fields = [item for item in field_definitions if not item[1].is_required()]
+
+    def _convert_value(value: Any, converter: type[BaseModel] | None, *, multiple: bool):
+        if converter is None:
+            return value
+
+        if multiple:
+            return tuple(converter.model_validate_json(item) for item in value)
+
+        if value is None:
+            return None
+
+        return converter.model_validate_json(value)
+
+    def __call__(self):
+        method = getattr(api_class(self.client.api_client), target_method)
+        request_data = {}
+        for name, field, _, multiple, converter in field_definitions:
+            value = getattr(self, name)
+            value = _convert_value(value, converter, multiple=multiple)
+            if multiple:
+                if value:
+                    request_data[name] = value
+            elif value != field.default and value is not None:
+                request_data[name] = value
+
+        request_model = model_class.model_validate(request_data)
+        result = _invoke_api_method(method, request_model)
+        _render_result(result, json_mode=self.json, jq_expression=self.jq)
+
+    namespace = {
+        '__config__': classyclick.Command.Config(
+            name=command_name,
+            help=_get_command_help(api_class, target_method),
+        ),
+        '__call__': __call__,
+        'client': classyclick.ContextMeta('client'),
+        '__annotations__': {
+            'client': DefectDojo,
+        },
+    }
+
+    for field_name, field, click_type, multiple, _converter in required_fields:
+        namespace['__annotations__'][field_name] = click_type
+        option_kwargs = {
+            'help': _get_model_field_help(field),
+            'required': True,
+        }
+        if click_type is not Any:
+            option_kwargs['type'] = click_type
+        if multiple:
+            option_kwargs['multiple'] = True
+        if len(field_name) == 1:
+            namespace[field_name] = classyclick.Option(f'-{field_name}', default_parameter=False, **option_kwargs)
+        else:
+            namespace[field_name] = classyclick.Option(**option_kwargs)
+
+    namespace['json'] = classyclick.Option(help='Dump responses as JSON')
+    namespace['jq'] = classyclick.Option(help='Apply a JMESPath expression to each response item', default=None)
+    namespace['__annotations__']['json'] = bool
+    namespace['__annotations__']['jq'] = str
+
+    for field_name, field, click_type, multiple, _converter in optional_fields:
+        namespace['__annotations__'][field_name] = click_type
+        option_kwargs = {
+            'help': _get_model_field_help(field),
+            'default': field.default,
+        }
+        if click_type is not Any:
+            option_kwargs['type'] = click_type
+        if multiple:
+            option_kwargs['multiple'] = True
+        if len(field_name) == 1:
+            namespace[field_name] = classyclick.Option(f'-{field_name}', default_parameter=False, **option_kwargs)
+        else:
+            namespace[field_name] = classyclick.Option(**option_kwargs)
+
+    return type(
+        'ApiCommand',
+        (parent_class, classyclick.Command),
+        namespace,
+    )
 
 
 def _iter_output_items(result):
@@ -174,6 +320,43 @@ def _apply_jq(value: Any, jq_expression: str | None) -> Any:
     return jmespath.search(jq_expression, _to_jsonable(value))
 
 
+def _get_bad_request_detail(exc: BadRequestException) -> str:
+    for candidate in (exc.data, exc.body, exc.reason):
+        if candidate is None:
+            continue
+
+        if isinstance(candidate, BaseModel):
+            candidate = candidate.model_dump(mode='json', exclude_none=True)
+
+        if isinstance(candidate, str):
+            try:
+                candidate = json.loads(candidate)
+            except json.JSONDecodeError:
+                if candidate.strip():
+                    return candidate
+                continue
+
+        if isinstance(candidate, dict):
+            for key in ('detail', 'message', 'error'):
+                value = candidate.get(key)
+                if value:
+                    return str(value)
+            continue
+
+        text = str(candidate).strip()
+        if text:
+            return text
+
+    return str(exc)
+
+
+def _invoke_api_method(method, *args, **kwargs):
+    try:
+        return method(*args, **kwargs)
+    except BadRequestException as exc:
+        raise click.ClickException(_get_bad_request_detail(exc)) from exc
+
+
 def _format_text_value(value: Any) -> str:
     if isinstance(value, (dict, list, tuple, BaseModel)):
         return json.dumps(_to_jsonable(value, exclude_none=True), ensure_ascii=False, default=str)
@@ -212,22 +395,54 @@ def _render_result(result: Any, *, json_mode: bool, jq_expression: str | None):
 
 
 def make_api_command(api_class: type, command_name: str, target_method: str, *, parent_class: type):
-    command_parameters = [
-        (name, parameter, *_get_click_type(parameter.annotation))
-        for name, parameter in _iter_command_parameters(api_class, target_method)
-    ]
+    raw_parameters = list(_iter_command_parameters(api_class, target_method))
+    if len(raw_parameters) == 1:
+        parameter_name, parameter = raw_parameters[0]
+        request_model_type = _get_request_model_type(parameter.annotation)
+        if request_model_type is not None:
+            return _build_model_field_command(
+                api_class,
+                command_name,
+                target_method,
+                parent_class=parent_class,
+                model_class=request_model_type,
+            )
+
+    command_parameters = sorted(
+        [
+            (name, parameter, *_get_click_type(parameter.annotation, parameter_name=name))
+            for name, parameter in raw_parameters
+        ],
+        key=lambda item: item[1].default is not inspect.Signature.empty,
+    )
+    required_parameters = [item for item in command_parameters if item[1].default is inspect.Signature.empty]
+    optional_parameters = [item for item in command_parameters if item[1].default is not inspect.Signature.empty]
+
+    def _convert_value(value: Any, converter: type[BaseModel] | None, *, multiple: bool):
+        if converter is None:
+            return value
+
+        if multiple:
+            return tuple(converter.model_validate_json(item) for item in value)
+
+        if value is None:
+            return None
+
+        return converter.model_validate_json(value)
 
     def __call__(self):
         method = getattr(api_class(self.client.api_client), target_method)
         kwargs = {}
-        for name, parameter, _, multiple in command_parameters:
+        for name, parameter, _, multiple, converter in command_parameters:
             value = getattr(self, name)
+            value = _convert_value(value, converter, multiple=multiple)
             if multiple:
                 if value:
                     kwargs[name] = value
             elif value != parameter.default:
                 kwargs[name] = value
-        _render_result(method(**kwargs), json_mode=self.json, jq_expression=self.jq)
+        result = _invoke_api_method(method, **kwargs)
+        _render_result(result, json_mode=self.json, jq_expression=self.jq)
 
     namespace = {
         '__config__': classyclick.Command.Config(
@@ -236,16 +451,33 @@ def make_api_command(api_class: type, command_name: str, target_method: str, *, 
         ),
         '__call__': __call__,
         'client': classyclick.ContextMeta('client'),
-        'json': classyclick.Option(help='Dump responses as JSON'),
-        'jq': classyclick.Option(help='Apply a JMESPath expression to each response item', default=None),
         '__annotations__': {
             'client': DefectDojo,
-            'json': bool,
-            'jq': str,
         },
     }
 
-    for name, parameter, click_type, multiple in command_parameters:
+    for name, parameter, click_type, multiple, _converter in required_parameters:
+        # required request-body models are passed as JSON strings and converted before the API call
+        namespace['__annotations__'][name] = click_type
+        option_kwargs = {
+            'help': _get_help_from_annotation(parameter.annotation),
+            'required': True,
+        }
+        if click_type is not Any:
+            option_kwargs['type'] = click_type
+        if multiple:
+            option_kwargs['multiple'] = True
+        if len(name) == 1:
+            namespace[name] = classyclick.Option(f'-{name}', default_parameter=False, **option_kwargs)
+        else:
+            namespace[name] = classyclick.Option(**option_kwargs)
+
+    namespace['json'] = classyclick.Option(help='Dump responses as JSON')
+    namespace['jq'] = classyclick.Option(help='Apply a JMESPath expression to each response item', default=None)
+    namespace['__annotations__']['json'] = bool
+    namespace['__annotations__']['jq'] = str
+
+    for name, parameter, click_type, multiple, _converter in optional_parameters:
         namespace['__annotations__'][name] = click_type
         option_kwargs = {
             'help': _get_help_from_annotation(parameter.annotation),
@@ -267,13 +499,18 @@ def make_api_command(api_class: type, command_name: str, target_method: str, *, 
     )
 
 
-def make_api_group(module_name: str, api_class: type) -> type:
+def make_api_group(module_name: str, api_class: type, *, strict: bool = True) -> type | None:
     group_name = module_name.removesuffix('_api').replace('_', '-')
     command_methods = list(_iter_command_methods(api_class))
 
     if len(command_methods) == 1:
         _, target_method = command_methods[0]
-        return make_api_command(api_class, group_name, target_method, parent_class=CLI.Command)
+        try:
+            return make_api_command(api_class, group_name, target_method, parent_class=CLI.Command)
+        except TypeError:
+            if strict:
+                raise
+            return None
 
     class ApiGroup(CLI.SubGroup, classyclick.Group):
         __config__ = classyclick.Group.Config(
@@ -281,12 +518,23 @@ def make_api_group(module_name: str, api_class: type) -> type:
             help=f'methods from `{api_class.__name__}`.',
         )
 
+    added_commands = 0
     for command_name, target_method in command_methods:
-        make_api_command(api_class, command_name, target_method, parent_class=ApiGroup.Command)
+        try:
+            make_api_command(api_class, command_name, target_method, parent_class=ApiGroup.Command)
+        except TypeError:
+            if strict:
+                raise
+            continue
+        added_commands += 1
+
+    if added_commands == 0 and not strict:
+        return None
 
     return ApiGroup
 
 
 for _module_name, _api_class in _iter_api_modules():
-    _command = make_api_group(_module_name, _api_class)
-    API_COMMANDS[_module_name] = _command
+    _command = make_api_group(_module_name, _api_class, strict=False)
+    if _command is not None:
+        API_COMMANDS[_module_name] = _command

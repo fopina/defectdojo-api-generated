@@ -10,8 +10,10 @@ from pydantic import Field
 from typing_extensions import Annotated
 
 from defectdojo_api_generated.api.findings_api import FindingsApi
+from defectdojo_api_generated.api.products_api import ProductsApi
 from defectdojo_api_generated.cli.commands.apis import API_COMMANDS, make_api_group
 from defectdojo_api_generated.cli.commands.cli import CLI
+from defectdojo_api_generated.exceptions import BadRequestException
 from defectdojo_api_generated.helpers import IteratorResult
 
 
@@ -39,10 +41,24 @@ class TestCLI(unittest.TestCase):
 
             with (
                 mock.patch.object(FindingsApi, 'list_iterator', new=lambda self: 'list-result'),
-                mock.patch.object(FindingsApi, 'create', new=lambda self: 'create-result'),
+                mock.patch.object(
+                    FindingsApi,
+                    'create',
+                    new=lambda self, finding_create_request, **kwargs: finding_create_request.title,
+                ),
             ):
                 list_result = runner.invoke(CLI.click, ['--config', str(config_path), 'findings', 'list'])
-                create_result = runner.invoke(CLI.click, ['--config', str(config_path), 'findings', 'create'])
+                create_result = runner.invoke(
+                    CLI.click,
+                    [
+                        '--config',
+                        str(config_path),
+                        'findings',
+                        'create',
+                        '--title',
+                        'create-result',
+                    ],
+                )
 
         self.assertEqual(list_result.exit_code, 0)
         self.assertEqual(create_result.exit_code, 0)
@@ -224,6 +240,86 @@ class TestCLI(unittest.TestCase):
         self.assertEqual(help_result.exit_code, 0)
         self.assertIn('--limit', help_result.output)
         self.assertNotIn('_request_timeout', help_result.output)
+
+    def test_non_primitive_parameters_raise_type_error(self):
+        class NonPrimitiveApi:
+            def __init__(self, api_client):
+                self.api_client = api_client
+
+            def fetch(self, payload: dict[str, str] | None = None):
+                return payload
+
+        with self.assertRaisesRegex(TypeError, 'dict\\[str, str\\]'):
+            make_api_group('non_primitive_api', NonPrimitiveApi)
+
+    def test_required_request_body_parameters_become_field_flags(self):
+        command = API_COMMANDS['products_api'].click.commands['create']
+        option = next(param for param in command.params if getattr(param, 'name', None) == 'name')
+        self.assertFalse(any(getattr(param, 'name', None) == 'product_request' for param in command.params))
+        self.assertEqual(option.required, False)
+        self.assertEqual(option.type.name, 'text')
+
+        runner = CliRunner()
+        with runner.isolated_filesystem():
+            config_path = Path('config.toml')
+            config_path.write_text("host = 'https://example.com'\ntoken = 'token'\n")
+
+            with mock.patch.object(
+                ProductsApi,
+                'create',
+                new=lambda self, product_request, **kwargs: product_request.model_dump(),
+            ):
+                run_result = runner.invoke(
+                    CLI.click,
+                    [
+                        '--config',
+                        str(config_path),
+                        'products',
+                        'create',
+                        '--name',
+                        'Example',
+                        '--json',
+                    ],
+                )
+
+        self.assertEqual(run_result.exit_code, 0)
+        payload = json.loads(run_result.output)
+        self.assertEqual(payload['name'], 'Example')
+
+    def test_bad_request_exception_uses_detail_message(self):
+        runner = CliRunner()
+
+        def raise_bad_request(self, product_request, **kwargs):
+            raise BadRequestException(
+                status=400,
+                body='{"detail":"Invalid product"}',
+                data={'detail': 'Invalid product'},
+            )
+
+        with runner.isolated_filesystem():
+            config_path = Path('config.toml')
+            config_path.write_text("host = 'https://example.com'\ntoken = 'token'\n")
+
+            with mock.patch.object(
+                ProductsApi,
+                'create',
+                new=raise_bad_request,
+            ):
+                result = runner.invoke(
+                    CLI.click,
+                    [
+                        '--config',
+                        str(config_path),
+                        'products',
+                        'create',
+                        '--name',
+                        'Example',
+                    ],
+                )
+
+        self.assertEqual(result.exit_code, 1)
+        self.assertIn('Error: Invalid product', result.output)
+        self.assertNotIn('BadRequestException', result.output)
 
     def test_single_letter_parameters_use_short_options_only(self):
         command = API_COMMANDS['findings_api'].click.commands['list']

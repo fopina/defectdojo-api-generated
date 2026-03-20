@@ -4,6 +4,7 @@ import argparse
 import json
 import subprocess
 from pathlib import Path
+from typing import Optional
 
 import requests
 
@@ -26,7 +27,7 @@ def fetch_instance(host, output: Path):
     write_schema(r.json(), output)
 
 
-def fetch_github(version: str | None, output: Path):
+def fetch_github(version: Optional[str], output: Path):
     url = OAS_URL % version if version else LATEST_OAS_URL
     r = requests.get(url)
     r.raise_for_status()

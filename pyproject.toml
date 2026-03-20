@@ -9,7 +9,24 @@ dynamic = ["version"]
 description = "Python library to interact with DefectDojo - generated from OpenAPI"
 readme = "README.md"
 requires-python = ">=3.9,<4"
-dependencies = ["pydantic>= 2", "python-dateutil>= 2.8.2", "urllib3>= 2.1.0, < 3.0.0", "typing-extensions>= 4.7.1"]
+dependencies = [
+    "pydantic>= 2",
+    "python-dateutil>= 2.8.2",
+    "urllib3>= 2.1.0, < 3.0.0",
+    "typing-extensions>= 4.7.1",
+]
+
+[project.optional-dependencies]
+cli = [
+    "classyclick==0.8.0",
+    "jmespath>=1.0.1",
+    "platformdirs>=4.4.0",
+]
+
+[project.scripts]
+dojo = "defectdojo_api_generated.cli.__main__:main"
+# duplicated entrypoint to be able to use uvx without `--from`
+defectdojo-api-generated = "defectdojo_api_generated.cli.__main__:main"
 
 [dependency-groups]
 dev = [
@@ -34,7 +51,7 @@ version = {attr = "defectdojo_api_generated.__version__"}
 line-length = 120
 indent-width = 4
 
-target-version = "py310"
+target-version = "py39"
 
 [tool.ruff.lint]
 # Enable Pyflakes (`F`) and a subset of the pycodestyle (`E`)  codes by default.

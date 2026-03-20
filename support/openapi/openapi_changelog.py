@@ -3,6 +3,7 @@
 import argparse
 import json
 from pathlib import Path
+from typing import Optional
 
 CHANGELOG = Path(__file__).parent / 'OPENAPI_CHANGELOG.md'
 HTTP_METHODS = {'get', 'post', 'put', 'patch', 'delete', 'options', 'head', 'trace'}
@@ -13,7 +14,7 @@ def load_json(path: Path) -> dict:
         return json.load(handle)
 
 
-def normalize_version(version: str | None) -> str:
+def normalize_version(version: Optional[str]) -> str:
     if not version:
         return 'unknown'
     return version[1:] if version.startswith('v') else version

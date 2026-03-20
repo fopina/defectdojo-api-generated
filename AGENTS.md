@@ -68,6 +68,8 @@ The codebase is mostly generated. The important mental model is:
 - `tests/data/`
   Fixtures for integration scenarios, such as import/reimport payloads.
 
+ALWAYS use unittest.TestCase to write new tests unless you really cannot.
+
 ### Local integration environment
 
 - `support/integration/docker-compose.yml`

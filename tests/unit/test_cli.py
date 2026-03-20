@@ -1,7 +1,6 @@
 import json
 import sys
 import unittest
-from importlib.metadata import version
 from pathlib import Path
 from typing import Optional
 from unittest import mock
@@ -19,6 +18,10 @@ from defectdojo_api_generated.helpers import IteratorResult
 
 
 class TestCLI(unittest.TestCase):
+    def _register_test_api_group(self, module_name: str, api_class: type) -> None:
+        group = make_api_group(module_name, api_class)
+        CLI.click.commands['api'].add_command(group.click)
+
     def test_findings_list_command_runs(self):
         self.assertIn('findings_api', API_COMMANDS)
 
@@ -27,12 +30,11 @@ class TestCLI(unittest.TestCase):
             config_path = Path('config.toml')
             config_path.write_text("host = 'https://example.com'\ntoken = 'token'\n")
 
-            result = runner.invoke(CLI.click)
+            result = runner.invoke(CLI.click, ['--config', str(config_path), 'api', 'findings', '--help'])
 
-        click_version = tuple(int(part) for part in version('click').split('.')[:2])
-        expected_exit_code = 2 if click_version >= (8, 2) else 0
-        self.assertEqual(result.exit_code, expected_exit_code)
-        self.assertRegex(result.output, r'findings\s+methods from `FindingsApi`\.')
+        self.assertEqual(result.exit_code, 0)
+        self.assertIn('Usage: cli api findings', result.output)
+        self.assertIn('methods from `FindingsApi`.', result.output)
 
     def test_api_commands_capture_their_own_method(self):
         runner = CliRunner()
@@ -48,12 +50,13 @@ class TestCLI(unittest.TestCase):
                     new=lambda self, finding_create_request, **kwargs: finding_create_request.title,
                 ),
             ):
-                list_result = runner.invoke(CLI.click, ['--config', str(config_path), 'findings', 'list'])
+                list_result = runner.invoke(CLI.click, ['--config', str(config_path), 'api', 'findings', 'list'])
                 create_result = runner.invoke(
                     CLI.click,
                     [
                         '--config',
                         str(config_path),
+                        'api',
                         'findings',
                         'create',
                         '--title',
@@ -73,7 +76,10 @@ class TestCLI(unittest.TestCase):
             config_path.write_text("host = 'https://example.com'\ntoken = 'token'\n")
 
             with mock.patch.object(FindingsApi, 'list_iterator', new=lambda self, **kwargs: kwargs):
-                result = runner.invoke(CLI.click, ['--config', str(config_path), 'findings', 'list', '--limit', '1'])
+                result = runner.invoke(
+                    CLI.click,
+                    ['--config', str(config_path), 'api', 'findings', 'list', '--limit', '1'],
+                )
 
         self.assertEqual(result.exit_code, 0)
         self.assertIn('limit: 1', result.output)
@@ -92,7 +98,7 @@ class TestCLI(unittest.TestCase):
                     IteratorResult(result='second', page='page-2'),
                 ],
             ):
-                result = runner.invoke(CLI.click, ['--config', str(config_path), 'findings', 'list'])
+                result = runner.invoke(CLI.click, ['--config', str(config_path), 'api', 'findings', 'list'])
 
         self.assertEqual(result.exit_code, 0)
         self.assertEqual(result.output.splitlines(), ['first', '', '---', '', 'second'])
@@ -110,7 +116,10 @@ class TestCLI(unittest.TestCase):
                 'list_iterator',
                 new=lambda self, **kwargs: [IteratorResult(result=Finding(id=1, title='Example'), page='page-1')],
             ):
-                result = runner.invoke(CLI.click, ['--config', str(config_path), 'findings', 'list', '--json'])
+                result = runner.invoke(
+                    CLI.click,
+                    ['--config', str(config_path), 'api', 'findings', 'list', '--json'],
+                )
 
         self.assertEqual(result.exit_code, 0)
         payload = json.loads(result.output)
@@ -135,7 +144,7 @@ class TestCLI(unittest.TestCase):
                 ):
                     result = runner.invoke(
                         CLI.click,
-                        ['--config', str(config_path), 'findings', 'list', '--jq', 'title'],
+                        ['--config', str(config_path), 'api', 'findings', 'list', '--jq', 'title'],
                     )
 
         self.assertEqual(result.exit_code, 0)
@@ -158,7 +167,7 @@ class TestCLI(unittest.TestCase):
                 ):
                     result = runner.invoke(
                         CLI.click,
-                        ['--config', str(config_path), 'findings', 'list', '--json', '--jq', 'title'],
+                        ['--config', str(config_path), 'api', 'findings', 'list', '--json', '--jq', 'title'],
                     )
 
         self.assertEqual(result.exit_code, 0)
@@ -173,14 +182,14 @@ class TestCLI(unittest.TestCase):
                 """Fetch a single item."""
                 return 'ok'
 
-        make_api_group('docstring_api', DocstringApi)
+        self._register_test_api_group('docstring_api', DocstringApi)
 
         runner = CliRunner()
         with runner.isolated_filesystem():
             config_path = Path('config.toml')
             config_path.write_text("host = 'https://example.com'\ntoken = 'token'\n")
 
-            result = runner.invoke(CLI.click, ['--config', str(config_path), 'docstring', '--help'])
+            result = runner.invoke(CLI.click, ['--config', str(config_path), 'api', 'docstring', '--help'])
 
         self.assertEqual(result.exit_code, 0)
         self.assertIn('Fetch a single item.', result.output)
@@ -192,7 +201,7 @@ class TestCLI(unittest.TestCase):
             config_path = Path('config.toml')
             config_path.write_text("host = 'https://example.com'\ntoken = 'token'\n")
 
-            result = runner.invoke(CLI.click, ['--config', str(config_path), 'findings', 'list', '--help'])
+            result = runner.invoke(CLI.click, ['--config', str(config_path), 'api', 'findings', 'list', '--help'])
 
         self.assertEqual(result.exit_code, 0)
         self.assertNotIn('`list_iterator`.', result.output)
@@ -205,15 +214,15 @@ class TestCLI(unittest.TestCase):
             def fetch(self, limit: Annotated[int, Field(description='How many items to return')] = 10):
                 return f'limit={limit}'
 
-        make_api_group('annotated_api', AnnotatedApi)
+        self._register_test_api_group('annotated_api', AnnotatedApi)
 
         runner = CliRunner()
         with runner.isolated_filesystem():
             config_path = Path('config.toml')
             config_path.write_text("host = 'https://example.com'\ntoken = 'token'\n")
 
-            help_result = runner.invoke(CLI.click, ['--config', str(config_path), 'annotated', '--help'])
-            run_result = runner.invoke(CLI.click, ['--config', str(config_path), 'annotated', '--limit', '7'])
+            help_result = runner.invoke(CLI.click, ['--config', str(config_path), 'api', 'annotated', '--help'])
+            run_result = runner.invoke(CLI.click, ['--config', str(config_path), 'api', 'annotated', '--limit', '7'])
 
         self.assertEqual(help_result.exit_code, 0)
         self.assertIn('--limit', help_result.output)
@@ -229,14 +238,14 @@ class TestCLI(unittest.TestCase):
             def fetch(self, limit: int = 10, _request_timeout: int = 5):
                 return f'limit={limit}'
 
-        make_api_group('internal_param_api', InternalParamApi)
+        self._register_test_api_group('internal_param_api', InternalParamApi)
 
         runner = CliRunner()
         with runner.isolated_filesystem():
             config_path = Path('config.toml')
             config_path.write_text("host = 'https://example.com'\ntoken = 'token'\n")
 
-            help_result = runner.invoke(CLI.click, ['--config', str(config_path), 'internal-param', '--help'])
+            help_result = runner.invoke(CLI.click, ['--config', str(config_path), 'api', 'internal-param', '--help'])
 
         self.assertEqual(help_result.exit_code, 0)
         self.assertIn('--limit', help_result.output)
@@ -254,7 +263,7 @@ class TestCLI(unittest.TestCase):
             make_api_group('non_primitive_api', NonPrimitiveApi)
 
     def test_required_request_body_parameters_become_field_flags(self):
-        command = API_COMMANDS['products_api'].click.commands['create']
+        command = CLI.click.commands['api'].commands['products'].commands['create']
         option = next(param for param in command.params if getattr(param, 'name', None) == 'name')
         self.assertFalse(any(getattr(param, 'name', None) == 'product_request' for param in command.params))
         self.assertEqual(option.required, False)
@@ -275,6 +284,7 @@ class TestCLI(unittest.TestCase):
                     [
                         '--config',
                         str(config_path),
+                        'api',
                         'products',
                         'create',
                         '--name',
@@ -311,6 +321,7 @@ class TestCLI(unittest.TestCase):
                     [
                         '--config',
                         str(config_path),
+                        'api',
                         'products',
                         'create',
                         '--name',
@@ -323,7 +334,7 @@ class TestCLI(unittest.TestCase):
         self.assertNotIn('BadRequestException', result.output)
 
     def test_single_letter_parameters_use_short_options_only(self):
-        command = API_COMMANDS['findings_api'].click.commands['list']
+        command = CLI.click.commands['api'].commands['findings'].commands['list']
         option = next(param for param in command.params if getattr(param, 'name', None) == 'o')
 
         self.assertEqual(option.opts, ['-o'])
@@ -340,7 +351,7 @@ class TestCLI(unittest.TestCase):
             def ping_with_http_info(self):
                 raise AssertionError('should be filtered out')
 
-        make_api_group('single_method_api', SingleMethodApi)
+        self._register_test_api_group('single_method_api', SingleMethodApi)
 
         runner = CliRunner()
         with runner.isolated_filesystem():
@@ -349,7 +360,7 @@ class TestCLI(unittest.TestCase):
 
             with mock.patch('defectdojo_api_generated.cli.commands.cli.DefectDojo') as defectdojo:
                 defectdojo.return_value = mock.Mock(api_client=object())
-                result = runner.invoke(CLI.click, ['--config', str(config_path), 'single-method'])
+                result = runner.invoke(CLI.click, ['--config', str(config_path), 'api', 'single-method'])
 
         self.assertEqual(result.exit_code, 0)
         self.assertEqual(result.output.strip(), 'pong')

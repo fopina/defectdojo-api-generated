@@ -29,9 +29,12 @@ class Test(E2ETestCase):
             self.CLI.click, ['--config', Path(__file__).parent / 'config.integration.toml', *args]
         )
 
+    def _run_cli_api(self, *args):
+        return self._run_cli('api', *args)
+
     def test_product_types_list(self):
         self.maxDiff = None
-        res = self._run_cli('product-types', 'list', '--name', 'Research and Development')
+        res = self._run_cli_api('product-types', 'list', '--name', 'Research and Development')
         self.assertEqual(
             res.output,
             """\
@@ -49,7 +52,7 @@ authorization_groups: []
         args = ['products', 'create', '--prod-type', '1', '--name', f'Product Test {uniq}', '--description', 'e2e test']
         if json:
             args.append('--json')
-        res = self._run_cli(*args)
+        res = self._run_cli_api(*args)
         self.assertEqual(res.exit_code, 0, str(res.exception) + res.output)
         if json:
             return _json.loads(res.output)
@@ -61,7 +64,7 @@ authorization_groups: []
 
     def test_reimport_scan(self):
         product = self.skip_if_fail(self._create_product, json=True)
-        res = self._run_cli(
+        res = self._run_cli_api(
             'reimport-scan',
             '--product-name',
             product['name'],

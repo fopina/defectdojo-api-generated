@@ -17,13 +17,13 @@ Multiple changes done on top of default openapi-generator:
 * A nice CLI exposing all the API methods <3
   * installed only as an extra, to keep everything clean when package is used as library only
 
-## Install
+## Example
+
+### Library
 
 ```
 pip install defectojo-api-generated
 ```
-
-## Usage
 
 ```python
 from defectdojo_api_generated import DefectDojo
@@ -33,6 +33,36 @@ from defectdojo_api_generated import DefectDojo
 dojo = DefectDojo('https://demo.defectdojo.org/', token=...)
 r = dojo.findings_api.list()
 print(r.json())
+```
+
+### CLI
+
+
+(`uv` or `pipx` recommended)
+```
+uv tool install 'defectojo-api-generated[cli]'
+```
+
+```
+$ dojo 
+Usage: dojo [OPTIONS] COMMAND [ARGS]...
+
+  DefectDojo CLI
+
+Options:
+  ...
+Commands:
+  api     Interact directly with any API/method
+  config  Show or edit the current CLI configuration
+  status  Quick connectivity check
+```
+
+You can also skip tool install and just run it with:
+
+```
+$ uvx 'defectojo-api-generated[cli]'
+Usage: dojo [OPTIONS] COMMAND [ARGS]...
+...
 ```
 
 ## Build

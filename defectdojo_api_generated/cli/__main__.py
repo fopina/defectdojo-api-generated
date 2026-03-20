@@ -7,7 +7,7 @@ from pathlib import Path
 
 
 def discover_commands():
-    for _, module_name, _ in pkgutil.iter_modules([Path(__file__).parent / 'commands']):
+    for _, module_name, _ in pkgutil.iter_modules([str(Path(__file__).parent / 'commands')]):
         importlib.import_module(f'{__package__}.commands.{module_name}')
 
 

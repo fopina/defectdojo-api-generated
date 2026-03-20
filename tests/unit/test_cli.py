@@ -417,7 +417,7 @@ class TestCLI(unittest.TestCase):
         self.assertEqual(result.exit_code, 0)
         run_mock.assert_called_once_with(['vim', '-f', str(config_path)], check=True)
 
-    def test_config_command_edit_requires_configured_editor(self):
+    def test_config_command_edit_falls_back_to_first_available_editor(self):
         runner = CliRunner()
         with runner.isolated_filesystem():
             config_path = Path('config.toml')
@@ -426,9 +426,30 @@ class TestCLI(unittest.TestCase):
             with (
                 mock.patch('defectdojo_api_generated.cli.commands.cli.DefectDojo') as defectdojo,
                 mock.patch.dict('os.environ', {}, clear=True),
+                mock.patch('defectdojo_api_generated.cli.commands.config.shutil.which') as which_mock,
+                mock.patch('defectdojo_api_generated.cli.commands.config.subprocess.run') as run_mock,
+            ):
+                defectdojo.return_value = mock.Mock(config=mock.Mock())
+                which_mock.side_effect = [None, '/usr/bin/vi', '/usr/bin/nano']
+                result = runner.invoke(CLI.click, ['--config', str(config_path), 'config', '--edit'])
+
+        self.assertEqual(result.exit_code, 0)
+        self.assertEqual(which_mock.call_args_list, [mock.call('vim'), mock.call('vi')])
+        run_mock.assert_called_once_with(['vi', str(config_path)], check=True)
+
+    def test_config_command_edit_requires_configured_or_installed_editor(self):
+        runner = CliRunner()
+        with runner.isolated_filesystem():
+            config_path = Path('config.toml')
+            config_path.write_text("host = 'https://example.com'\ntoken = 'token'\n")
+
+            with (
+                mock.patch('defectdojo_api_generated.cli.commands.cli.DefectDojo') as defectdojo,
+                mock.patch.dict('os.environ', {}, clear=True),
+                mock.patch('defectdojo_api_generated.cli.commands.config.shutil.which', return_value=None),
             ):
                 defectdojo.return_value = mock.Mock(config=mock.Mock())
                 result = runner.invoke(CLI.click, ['--config', str(config_path), 'config', '--edit'])
 
         self.assertEqual(result.exit_code, 1)
-        self.assertIn('No editor configured. Set VISUAL or EDITOR.', result.output)
+        self.assertIn('No editor configured. Set VISUAL or EDITOR, or install vim, vi, or nano.', result.output)

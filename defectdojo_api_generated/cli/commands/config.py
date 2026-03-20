@@ -3,6 +3,7 @@
 import json
 import os
 import shlex
+import shutil
 import subprocess
 
 import classyclick
@@ -32,10 +33,14 @@ def _mask_value(key: str, value):
 
 def _resolve_editor() -> str:
     editor = os.environ.get('VISUAL') or os.environ.get('EDITOR')
-    if not editor:
-        raise click.ClickException('No editor configured. Set VISUAL or EDITOR.')
+    if editor:
+        return editor
 
-    return editor
+    for fallback in ('vim', 'vi', 'nano'):
+        if shutil.which(fallback):
+            return fallback
+
+    raise click.ClickException('No editor configured. Set VISUAL or EDITOR, or install vim, vi, or nano.')
 
 
 class Config(CLI.Command, classyclick.Command):

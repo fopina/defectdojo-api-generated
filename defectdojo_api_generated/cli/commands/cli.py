@@ -20,7 +20,7 @@ except ModuleNotFoundError:
     import tomli as tomllib  # type: ignore
 
 
-DEFAULT_PATH = Path(user_config_dir('defectdojo-cli')) / 'config.toml'
+DEFAULT_PATH = Path(user_config_dir('defectdojo-generated-api')) / 'config.toml'
 
 
 def ensure_config_file(config_path: Optional[Path]) -> Path:

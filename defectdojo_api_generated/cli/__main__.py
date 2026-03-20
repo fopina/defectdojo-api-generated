@@ -7,6 +7,7 @@ from pathlib import Path
 
 
 def discover_commands():
+    # str() required because of py3.10
     for _, module_name, _ in pkgutil.iter_modules([str(Path(__file__).parent / 'commands')]):
         importlib.import_module(f'{__package__}.commands.{module_name}')
 

@@ -3,10 +3,13 @@
 # highlight "env" config is merged with root config
 
 # explain envs and default_env
-# default_env = 'xx'
+default_env = 'demo'
 
-# host = "https://demo.defectdojo.org/"
-# token = "..."
+[env.demo]
+host = "https://demo.defectdojo.org/"
+user = "admin"
+# password but not a secret - https://github.com/DefectDojo/django-DefectDojo/?tab=readme-ov-file#demo
+password = "1Defectdojo@demo#appsec"
 
 # [env.local]
 # host = "http://localhost:8080"

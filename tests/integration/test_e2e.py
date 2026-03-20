@@ -10,6 +10,8 @@ import defectdojo_api_generated
 from defectdojo_api_generated import DefectDojo
 from defectdojo_api_generated.models import AddNewNoteOptionRequest, ProductRequest, ProductTypeRequest
 
+from . import skip_if_fail
+
 DOJO_SCRIPTS = Path(__file__).parent.parent.parent / 'support' / 'integration'
 DATA_DIR = Path(__file__).parent.parent / 'data'
 
@@ -52,7 +54,7 @@ class Test(unittest.TestCase):
         self.assertEqual(product.description, 'test')
 
     def _reimport_scan(self):
-        product = _skip_if_fail(self._create_product)
+        product = skip_if_fail(self._create_product)
         report = self.client.reimport_scan_api.create(
             scan_type='Semgrep JSON Report',
             product_name=product.name,
@@ -71,7 +73,7 @@ class Test(unittest.TestCase):
         """This a test to assert issue https://github.com/fopina/defectdojo-api-generated/issues/39"""
         # this has been disabled as https://github.com/fopina/defectdojo-api-generated/pull/45 made all properties optional
         # this can be re-introduced by removing `tweak_required` from `tweak_openapi.py`
-        report = _skip_if_fail(self._reimport_scan)
+        report = skip_if_fail(self._reimport_scan)
         page = self.client.findings_api.list(test=report.test)
         self.assertEqual(page.count, 3)
         self.assertEqual(page.results[0].notes, [])
@@ -101,7 +103,7 @@ class Test(unittest.TestCase):
         This test relates to DISABLED_test_bad_api_model_definitions as it asserts the OPPOSITE
         This is to ensure the issue no longer happens given all properties were made optional
         """
-        report = _skip_if_fail(self._reimport_scan)
+        report = skip_if_fail(self._reimport_scan)
         page = self.client.findings_api.list(test=report.test)
         self.assertEqual(page.count, 3)
         self.assertEqual(page.results[0].notes, [])
@@ -109,14 +111,7 @@ class Test(unittest.TestCase):
         self.assertEqual(note.note_type, None)
 
     def test_iterator(self):
-        report = _skip_if_fail(self._reimport_scan)
+        report = skip_if_fail(self._reimport_scan)
         result = next(self.client.findings_api.list_iterator(test=report.test))
         self.assertEqual(result.page.count, 3)
         self.assertEqual(result.result.title, 'java.lang.security.audit.cbc-padding-oracle.cbc-padding-oracle')
-
-
-def _skip_if_fail(test_dependency):
-    try:
-        return test_dependency()
-    except Exception:
-        raise unittest.SkipTest('dependency failed')

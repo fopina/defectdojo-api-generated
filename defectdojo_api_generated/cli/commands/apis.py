@@ -179,7 +179,7 @@ def _get_click_type(
 
         if origin is Union or origin is getattr(types, 'UnionType', None):
             if _is_file_upload_union(current):
-                return click.Path(exists=True, dir_okay=False, path_type=Path), multiple, None
+                return Path, multiple, None
 
             union_args = [arg for arg in get_args(current) if arg is not type(None)]
             if not union_args:
@@ -197,11 +197,8 @@ def _get_click_type(
 
 
 def _get_class_annotation(click_type: Any) -> type:
-    # Classyclick inspects annotations at import time and expects a runtime type.
     if click_type is Any:
         return str
-    if isinstance(click_type, click.Path):
-        return Path
     return click_type
 
 
@@ -247,9 +244,7 @@ def _build_model_field_command(
     required_fields = [item for item in field_definitions if item[1].is_required()]
     optional_fields = [item for item in field_definitions if not item[1].is_required()]
 
-    def _convert_value(
-        name: str, value: Any, converter: Optional[type[BaseModel]], *, multiple: bool
-    ):
+    def _convert_value(name: str, value: Any, converter: Optional[type[BaseModel]], *, multiple: bool):
         if name == 'file':
             if multiple:
                 return tuple(_coerce_file_upload_value(item) for item in value)
@@ -481,9 +476,7 @@ def make_api_command(api_class: type, command_name: str, target_method: str, *, 
     required_parameters = [item for item in command_parameters if item[1].default is inspect.Signature.empty]
     optional_parameters = [item for item in command_parameters if item[1].default is not inspect.Signature.empty]
 
-    def _convert_value(
-        name: str, value: Any, converter: Optional[type[BaseModel]], *, multiple: bool
-    ):
+    def _convert_value(name: str, value: Any, converter: Optional[type[BaseModel]], *, multiple: bool):
         if name == 'file':
             if multiple:
                 return tuple(_coerce_file_upload_value(item) for item in value)

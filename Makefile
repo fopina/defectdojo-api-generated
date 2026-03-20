@@ -6,6 +6,10 @@ lint-check:
 	uv run ruff format --diff
 	uv run ruff check
 
+test39:
+	VIRTUAL_ENV=.venv39 uv run --active --python 3.9 --extra cli pytest --cov
+
+
 test:
 	if [ -n "$(GITHUB_RUN_ID)" ]; then \
 		uv run pytest --cov --cov-report=xml --junitxml=junit.xml -o junit_family=legacy; \

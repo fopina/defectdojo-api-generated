@@ -10,6 +10,13 @@
 
 Python library to interact with DefectDojo - generated from OpenAPI definition using https://openapi-generator.tech/
 
+Multiple changes done on top of default openapi-generator:
+* A friendlier Client class
+* Tweak validations to reduce package import time to about 1/3
+* Remove most of pydantic/schema validations due to inconsistencies with actual database schema/requirements (tracked in https://github.com/fopina/defectdojo-api-generated/issues/39)
+* A nice CLI exposing all the API methods <3
+  * installed only as an extra, to keep everything clean when package is used as library only
+
 ## Install
 
 ```

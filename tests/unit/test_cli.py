@@ -3,11 +3,11 @@ import sys
 import unittest
 from importlib.metadata import version
 from pathlib import Path
-from typing import Optional
+from typing import Any, Optional, Tuple, Union
 from unittest import mock
 
 from click.testing import CliRunner
-from pydantic import Field
+from pydantic import BaseModel, Field
 from typing_extensions import Annotated
 
 from defectdojo_api_generated.api.findings_api import FindingsApi
@@ -286,6 +286,40 @@ class TestCLI(unittest.TestCase):
         self.assertEqual(run_result.exit_code, 0)
         payload = json.loads(run_result.output)
         self.assertEqual(payload['name'], 'Example')
+
+    def test_request_model_fields_typed_as_any_register_without_import_errors(self):
+        class AnyRequest(BaseModel):
+            payload: Any = None
+
+        class AnyRequestApi:
+            def __init__(self, api_client):
+                self.api_client = api_client
+
+            def create(self, any_request: AnyRequest):
+                return any_request.model_dump()
+
+        command = make_api_group('any_request_api', AnyRequestApi).click
+        option = next(param for param in command.params if getattr(param, 'name', None) == 'payload')
+
+        self.assertEqual(option.type.name, 'text')
+
+    def test_request_model_file_fields_annotate_as_path(self):
+        class FileRequest(BaseModel):
+            file: Optional[Union[bytes, str, Tuple[str, bytes]]] = None
+
+        class FileRequestApi:
+            def __init__(self, api_client):
+                self.api_client = api_client
+
+            def create(self, file_request: FileRequest):
+                return file_request.model_dump()
+
+        command_class = make_api_group('file_request_api', FileRequestApi)
+        command = command_class.click
+        option = next(param for param in command.params if getattr(param, 'name', None) == 'file')
+
+        self.assertIs(command_class.__annotations__['file'], Path)
+        self.assertEqual(option.type.name, 'file')
 
     def test_bad_request_exception_uses_detail_message(self):
         runner = CliRunner()

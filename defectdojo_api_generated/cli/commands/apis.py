@@ -196,6 +196,15 @@ def _get_click_type(
         raise TypeError(f'Unsupported CLI parameter type{param_name}: {current!r}. Only primitive types are supported.')
 
 
+def _get_class_annotation(click_type: Any) -> type:
+    # Classyclick inspects annotations at import time and expects a runtime type.
+    if click_type is Any:
+        return str
+    if isinstance(click_type, click.Path):
+        return Path
+    return click_type
+
+
 def _iter_command_parameters(api_class: type, target_method: str):
     signature = inspect.signature(getattr(api_class, target_method))
 
@@ -286,7 +295,7 @@ def _build_model_field_command(
     }
 
     for field_name, field, click_type, multiple, _converter in required_fields:
-        namespace['__annotations__'][field_name] = click_type
+        namespace['__annotations__'][field_name] = _get_class_annotation(click_type)
         option_kwargs = {
             'help': _get_model_field_help(field),
             'required': True,
@@ -306,7 +315,7 @@ def _build_model_field_command(
     namespace['__annotations__']['jq'] = str
 
     for field_name, field, click_type, multiple, _converter in optional_fields:
-        namespace['__annotations__'][field_name] = click_type
+        namespace['__annotations__'][field_name] = _get_class_annotation(click_type)
         option_kwargs = {
             'help': _get_model_field_help(field),
             'default': field.default,
@@ -519,7 +528,7 @@ def make_api_command(api_class: type, command_name: str, target_method: str, *, 
 
     for name, parameter, click_type, multiple, _converter in required_parameters:
         # required request-body models are passed as JSON strings and converted before the API call
-        namespace['__annotations__'][name] = click_type
+        namespace['__annotations__'][name] = _get_class_annotation(click_type)
         option_kwargs = {
             'help': _get_help_from_annotation(parameter.annotation),
             'required': True,
@@ -539,7 +548,7 @@ def make_api_command(api_class: type, command_name: str, target_method: str, *, 
     namespace['__annotations__']['jq'] = str
 
     for name, parameter, click_type, multiple, _converter in optional_parameters:
-        namespace['__annotations__'][name] = click_type
+        namespace['__annotations__'][name] = _get_class_annotation(click_type)
         option_kwargs = {
             'help': _get_help_from_annotation(parameter.annotation),
             'default': parameter.default,

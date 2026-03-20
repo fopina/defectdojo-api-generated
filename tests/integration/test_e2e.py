@@ -1,5 +1,3 @@
-import os
-import subprocess
 import unittest
 import uuid
 from pathlib import Path
@@ -10,26 +8,14 @@ import defectdojo_api_generated
 from defectdojo_api_generated import DefectDojo
 from defectdojo_api_generated.models import AddNewNoteOptionRequest, ProductRequest, ProductTypeRequest
 
-from . import skip_if_fail
+from . import E2ETestCase
 
-DOJO_SCRIPTS = Path(__file__).parent.parent.parent / 'support' / 'integration'
 DATA_DIR = Path(__file__).parent.parent / 'data'
 
-# Run `run_dojo.sh` manually (and stop after), set this one to True and then you can run individual tests here quickly
-_PARTIAL_RUN = False
 
-
-@unittest.skipUnless(_PARTIAL_RUN or os.getenv('DD_INTEGRATION_TESTS'), 'Integration tests not enabled')
-class Test(unittest.TestCase):
-    @classmethod
-    def setUpClass(cls):
-        if not _PARTIAL_RUN:
-            subprocess.check_call([DOJO_SCRIPTS / 'run_dojo.sh'])
-
-    @classmethod
-    def tearDownClass(cls):
-        if not _PARTIAL_RUN:
-            subprocess.check_call([DOJO_SCRIPTS / 'stop_dojo.sh'])
+class Test(E2ETestCase):
+    # Run `run_dojo.sh` manually (and stop after), set this one to True and then you can run individual tests here quickly
+    _PARTIAL_RUN = False
 
     def setUp(self):
         self.client = self._client()
@@ -54,7 +40,7 @@ class Test(unittest.TestCase):
         self.assertEqual(product.description, 'test')
 
     def _reimport_scan(self):
-        product = skip_if_fail(self._create_product)
+        product = self.skip_if_fail(self._create_product)
         report = self.client.reimport_scan_api.create(
             scan_type='Semgrep JSON Report',
             product_name=product.name,
@@ -73,7 +59,7 @@ class Test(unittest.TestCase):
         """This a test to assert issue https://github.com/fopina/defectdojo-api-generated/issues/39"""
         # this has been disabled as https://github.com/fopina/defectdojo-api-generated/pull/45 made all properties optional
         # this can be re-introduced by removing `tweak_required` from `tweak_openapi.py`
-        report = skip_if_fail(self._reimport_scan)
+        report = self.skip_if_fail(self._reimport_scan)
         page = self.client.findings_api.list(test=report.test)
         self.assertEqual(page.count, 3)
         self.assertEqual(page.results[0].notes, [])
@@ -103,7 +89,7 @@ class Test(unittest.TestCase):
         This test relates to DISABLED_test_bad_api_model_definitions as it asserts the OPPOSITE
         This is to ensure the issue no longer happens given all properties were made optional
         """
-        report = skip_if_fail(self._reimport_scan)
+        report = self.skip_if_fail(self._reimport_scan)
         page = self.client.findings_api.list(test=report.test)
         self.assertEqual(page.count, 3)
         self.assertEqual(page.results[0].notes, [])
@@ -111,7 +97,7 @@ class Test(unittest.TestCase):
         self.assertEqual(note.note_type, None)
 
     def test_iterator(self):
-        report = skip_if_fail(self._reimport_scan)
+        report = self.skip_if_fail(self._reimport_scan)
         result = next(self.client.findings_api.list_iterator(test=report.test))
         self.assertEqual(result.page.count, 3)
         self.assertEqual(result.result.title, 'java.lang.security.audit.cbc-padding-oracle.cbc-padding-oracle')

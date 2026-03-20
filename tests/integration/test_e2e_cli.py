@@ -1,7 +1,4 @@
 import json as _json
-import os
-import subprocess
-import unittest
 import uuid
 from pathlib import Path
 
@@ -9,28 +6,20 @@ from click.testing import CliRunner
 
 from defectdojo_api_generated.cli import __main__
 
-from . import skip_if_fail
+from . import E2ETestCase
 
-DOJO_SCRIPTS = Path(__file__).parent.parent.parent / 'support' / 'integration'
 DATA_DIR = Path(__file__).parent.parent / 'data'
 
-# Run `run_dojo.sh` manually (and stop after), set this one to True and then you can run individual tests here quickly
-_PARTIAL_RUN = False
 
+class Test(E2ETestCase):
+    # Run `run_dojo.sh` manually (and stop after), set this one to True and then you can run individual tests here quickly
+    _PARTIAL_RUN = False
 
-@unittest.skipUnless(_PARTIAL_RUN or os.getenv('DD_INTEGRATION_TESTS'), 'Integration tests not enabled')
-class Test(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         __main__.discover_commands()
         cls.CLI = __main__.load_cli()
-        if not _PARTIAL_RUN:
-            subprocess.check_call([DOJO_SCRIPTS / 'run_dojo.sh'])
-
-    @classmethod
-    def tearDownClass(cls):
-        if not _PARTIAL_RUN:
-            subprocess.check_call([DOJO_SCRIPTS / 'stop_dojo.sh'])
+        super().setUpClass()
 
     def setUp(self):
         self.runner = CliRunner()
@@ -71,7 +60,7 @@ authorization_groups: []
         self.assertIn('description: e2e test', res.output)
 
     def test_reimport_scan(self):
-        product = skip_if_fail(self._create_product, json=True)
+        product = self.skip_if_fail(self._create_product, json=True)
         res = self._run_cli(
             'reimport-scan',
             '--product-name',

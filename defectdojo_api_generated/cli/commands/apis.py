@@ -7,6 +7,7 @@ import inspect
 import json
 import pkgutil
 import types
+from pathlib import Path
 from typing import Annotated, Any, Union, get_args, get_origin
 
 import classyclick
@@ -98,6 +99,47 @@ def _is_model_click_type(annotation: Any) -> bool:
     return inspect.isclass(annotation) and issubclass(annotation, BaseModel)
 
 
+def _is_file_upload_union(annotation: Any) -> bool:
+    origin = get_origin(annotation)
+    if origin is Annotated:
+        return _is_file_upload_union(get_args(annotation)[0])
+
+    if origin is Union or origin is getattr(types, 'UnionType', None):
+        args = [arg for arg in get_args(annotation) if arg is not type(None)]
+        normalized = set()
+        for arg in args:
+            arg_origin = get_origin(arg)
+            if arg_origin is Annotated:
+                arg = get_args(arg)[0]
+                arg_origin = get_origin(arg)
+
+            if arg is bytes:
+                normalized.add('bytes')
+            elif arg is str:
+                normalized.add('str')
+            elif arg_origin is tuple:
+                tuple_args = []
+                for item in get_args(arg):
+                    item_origin = get_origin(item)
+                    if item_origin is Annotated:
+                        item = get_args(item)[0]
+                    tuple_args.append(item)
+                if tuple_args == [str, bytes]:
+                    normalized.add('tuple[str,bytes]')
+
+        return normalized == {'bytes', 'str', 'tuple[str,bytes]'}
+
+    return False
+
+
+def _coerce_file_upload_value(value: Any):
+    if value is None:
+        return None
+
+    path = Path(value)
+    return (path.name, path.read_bytes())
+
+
 def _get_click_type(annotation: Any, *, parameter_name: str | None = None) -> tuple[Any, bool, type[BaseModel] | None]:
     multiple = False
     current = annotation
@@ -134,6 +176,9 @@ def _get_click_type(annotation: Any, *, parameter_name: str | None = None) -> tu
             continue
 
         if origin is Union or origin is getattr(types, 'UnionType', None):
+            if _is_file_upload_union(current):
+                return click.Path(exists=True, dir_okay=False, path_type=Path), multiple, None
+
             union_args = [arg for arg in get_args(current) if arg is not type(None)]
             if not union_args:
                 return Any, multiple, None
@@ -191,7 +236,12 @@ def _build_model_field_command(
     required_fields = [item for item in field_definitions if item[1].is_required()]
     optional_fields = [item for item in field_definitions if not item[1].is_required()]
 
-    def _convert_value(value: Any, converter: type[BaseModel] | None, *, multiple: bool):
+    def _convert_value(name: str, value: Any, converter: type[BaseModel] | None, *, multiple: bool):
+        if name == 'file':
+            if multiple:
+                return tuple(_coerce_file_upload_value(item) for item in value)
+            return _coerce_file_upload_value(value)
+
         if converter is None:
             return value
 
@@ -208,7 +258,7 @@ def _build_model_field_command(
         request_data = {}
         for name, field, _, multiple, converter in field_definitions:
             value = getattr(self, name)
-            value = _convert_value(value, converter, multiple=multiple)
+            value = _convert_value(name, value, converter, multiple=multiple)
             if multiple:
                 if value:
                     request_data[name] = value
@@ -418,7 +468,12 @@ def make_api_command(api_class: type, command_name: str, target_method: str, *, 
     required_parameters = [item for item in command_parameters if item[1].default is inspect.Signature.empty]
     optional_parameters = [item for item in command_parameters if item[1].default is not inspect.Signature.empty]
 
-    def _convert_value(value: Any, converter: type[BaseModel] | None, *, multiple: bool):
+    def _convert_value(name: str, value: Any, converter: type[BaseModel] | None, *, multiple: bool):
+        if name == 'file':
+            if multiple:
+                return tuple(_coerce_file_upload_value(item) for item in value)
+            return _coerce_file_upload_value(value)
+
         if converter is None:
             return value
 
@@ -435,7 +490,7 @@ def make_api_command(api_class: type, command_name: str, target_method: str, *, 
         kwargs = {}
         for name, parameter, _, multiple, converter in command_parameters:
             value = getattr(self, name)
-            value = _convert_value(value, converter, multiple=multiple)
+            value = _convert_value(name, value, converter, multiple=multiple)
             if multiple:
                 if value:
                     kwargs[name] = value

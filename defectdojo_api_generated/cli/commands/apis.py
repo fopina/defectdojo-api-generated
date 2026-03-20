@@ -8,7 +8,7 @@ import json
 import pkgutil
 import types
 from pathlib import Path
-from typing import Annotated, Any, Union, get_args, get_origin
+from typing import Annotated, Any, Optional, Union, get_args, get_origin
 
 import classyclick
 import click
@@ -80,7 +80,7 @@ def _get_command_help(api_class: type, target_method: str) -> str:
     return f'`{target_method}`.'
 
 
-def _get_help_from_annotation(annotation: Any) -> str | None:
+def _get_help_from_annotation(annotation: Any) -> Optional[str]:
     if get_origin(annotation) is Annotated:
         _, *metadata = get_args(annotation)
         for item in metadata:
@@ -140,7 +140,9 @@ def _coerce_file_upload_value(value: Any):
     return (path.name, path.read_bytes())
 
 
-def _get_click_type(annotation: Any, *, parameter_name: str | None = None) -> tuple[Any, bool, type[BaseModel] | None]:
+def _get_click_type(
+    annotation: Any, *, parameter_name: Optional[str] = None
+) -> tuple[Any, bool, Optional[type[BaseModel]]]:
     multiple = False
     current = annotation
 
@@ -206,14 +208,14 @@ def _iter_command_parameters(api_class: type, target_method: str):
         yield name, parameter
 
 
-def _get_request_model_type(annotation: Any) -> type[BaseModel] | None:
+def _get_request_model_type(annotation: Any) -> Optional[type[BaseModel]]:
     _, _, converter = _get_click_type(annotation)
     if converter is not None and converter.__name__.endswith('Request'):
         return converter
     return None
 
 
-def _get_model_field_help(field: Any) -> str | None:
+def _get_model_field_help(field: Any) -> Optional[str]:
     return field.description or _get_help_from_annotation(field.annotation)
 
 
@@ -236,7 +238,9 @@ def _build_model_field_command(
     required_fields = [item for item in field_definitions if item[1].is_required()]
     optional_fields = [item for item in field_definitions if not item[1].is_required()]
 
-    def _convert_value(name: str, value: Any, converter: type[BaseModel] | None, *, multiple: bool):
+    def _convert_value(
+        name: str, value: Any, converter: Optional[type[BaseModel]], *, multiple: bool
+    ):
         if name == 'file':
             if multiple:
                 return tuple(_coerce_file_upload_value(item) for item in value)
@@ -358,7 +362,7 @@ def _to_jsonable(value: Any, *, exclude_none: bool = False) -> Any:
     return value
 
 
-def _apply_jq(value: Any, jq_expression: str | None) -> Any:
+def _apply_jq(value: Any, jq_expression: Optional[str]) -> Any:
     if not jq_expression:
         return value
 
@@ -429,7 +433,7 @@ def _format_text_item(item: Any) -> str:
     return '\n'.join(lines)
 
 
-def _render_result(result: Any, *, json_mode: bool, jq_expression: str | None):
+def _render_result(result: Any, *, json_mode: bool, jq_expression: Optional[str]):
     div = False
     for item in _iter_output_items(result):
         item = _apply_jq(item, jq_expression)
@@ -468,7 +472,9 @@ def make_api_command(api_class: type, command_name: str, target_method: str, *, 
     required_parameters = [item for item in command_parameters if item[1].default is inspect.Signature.empty]
     optional_parameters = [item for item in command_parameters if item[1].default is not inspect.Signature.empty]
 
-    def _convert_value(name: str, value: Any, converter: type[BaseModel] | None, *, multiple: bool):
+    def _convert_value(
+        name: str, value: Any, converter: Optional[type[BaseModel]], *, multiple: bool
+    ):
         if name == 'file':
             if multiple:
                 return tuple(_coerce_file_upload_value(item) for item in value)
@@ -554,7 +560,7 @@ def make_api_command(api_class: type, command_name: str, target_method: str, *, 
     )
 
 
-def make_api_group(module_name: str, api_class: type, *, strict: bool = True) -> type | None:
+def make_api_group(module_name: str, api_class: type, *, strict: bool = True) -> Optional[type]:
     group_name = module_name.removesuffix('_api').replace('_', '-')
     command_methods = list(_iter_command_methods(api_class))
 

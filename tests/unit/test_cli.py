@@ -3,6 +3,7 @@ import sys
 import unittest
 from importlib.metadata import version
 from pathlib import Path
+from typing import Optional
 from unittest import mock
 
 from click.testing import CliRunner
@@ -246,7 +247,7 @@ class TestCLI(unittest.TestCase):
             def __init__(self, api_client):
                 self.api_client = api_client
 
-            def fetch(self, payload: dict[str, str] | None = None):
+            def fetch(self, payload: Optional[dict[str, str]] = None):
                 return payload
 
         with self.assertRaisesRegex(TypeError, 'dict\\[str, str\\]'):

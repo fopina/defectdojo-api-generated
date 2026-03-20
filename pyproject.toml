@@ -51,7 +51,7 @@ version = {attr = "defectdojo_api_generated.__version__"}
 line-length = 120
 indent-width = 4
 
-target-version = "py310"
+target-version = "py39"
 
 [tool.ruff.lint]
 # Enable Pyflakes (`F`) and a subset of the pycodestyle (`E`)  codes by default.

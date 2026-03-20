@@ -2,6 +2,7 @@
 
 import logging
 from pathlib import Path
+from typing import Optional
 
 import classyclick
 import click
@@ -16,10 +17,25 @@ try:
     import tomllib
 except ModuleNotFoundError:
     # Python < 3.11
-    import tomli as tomllib
+    import tomli as tomllib  # type: ignore
 
 
 DEFAULT_PATH = Path(user_config_dir('defectdojo-cli')) / 'config.toml'
+
+
+def ensure_config_file(config_path: Optional[Path]) -> Path:
+    config_path = config_path or DEFAULT_PATH
+    if not config_path.exists():
+        config_path.parent.mkdir(parents=True, exist_ok=True)
+        config_path.write_text((Path(__file__).parent.parent / 'config.example.toml').read_text())
+        print(f'Info: No configuration file found at {config_path}, a sample config has been placed there.')
+
+    return config_path
+
+
+def load_config_data(config_path: Path) -> dict:
+    with config_path.open('rb') as f:
+        return tomllib.load(f)
 
 
 class CLI(classyclick.Group):
@@ -60,15 +76,8 @@ class CLI(classyclick.Group):
     ctx: classyclick.Context = classyclick.Context()
 
     def __call__(self):
-        if self.config is None:
-            self.config = DEFAULT_PATH
-            if not self.config.exists():
-                self.config.parent.mkdir(parents=True, exist_ok=True)
-                self.config.write_text((Path(__file__).parent.parent / 'config.example.toml').read_text())
-                print(f'Info: No configuration file found at {self.config}, a sample config has been placed there.')
-
-        with self.config.open('rb') as f:
-            config_data = tomllib.load(f)
+        self.config = ensure_config_file(self.config)
+        config_data = load_config_data(self.config)
 
         if self.env is None:
             self.env = config_data.get('default_env')
@@ -111,6 +120,9 @@ class CLI(classyclick.Group):
             auth=None if self.token else (self.user, self.password),
             verify_ssl=not self.disable_tls,
         )
+        self.ctx.meta['config_path'] = self.config
+        self.ctx.meta['config_data'] = config_data
+        self.ctx.meta['selected_env'] = self.env
 
         self.ctx.default_map = config_data
 

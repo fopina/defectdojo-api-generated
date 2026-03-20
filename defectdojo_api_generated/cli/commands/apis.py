@@ -21,7 +21,6 @@ from defectdojo_api_generated.helpers import IteratorResult
 
 from .cli import CLI
 
-API_COMMANDS = {}
 _PRIMITIVE_CLICK_TYPES = (
     bool,
     bytes,
@@ -565,18 +564,13 @@ def make_api_command(api_class: type, command_name: str, target_method: str, *, 
     return _build_command_class(parent_class, namespace)
 
 
-def make_api_group(module_name: str, api_class: type, *, strict: bool = True) -> Optional[type]:
+def make_api_group(module_name: str, api_class: type) -> type:
     group_name = module_name.removesuffix('_api').replace('_', '-')
     command_methods = list(_iter_command_methods(api_class))
 
     if len(command_methods) == 1:
         _, target_method = command_methods[0]
-        try:
-            return make_api_command(api_class, group_name, target_method, parent_class=API.Command)
-        except TypeError:
-            if strict:
-                raise
-            return None
+        return make_api_command(api_class, group_name, target_method, parent_class=API.Command)
 
     class ApiGroup(API.SubGroup, classyclick.Group):
         __config__ = classyclick.Group.Config(
@@ -584,23 +578,11 @@ def make_api_group(module_name: str, api_class: type, *, strict: bool = True) ->
             help=f'methods from `{api_class.__name__}`.',
         )
 
-    added_commands = 0
     for command_name, target_method in command_methods:
-        try:
-            make_api_command(api_class, command_name, target_method, parent_class=ApiGroup.Command)
-        except TypeError:
-            if strict:
-                raise
-            continue
-        added_commands += 1
-
-    if added_commands == 0 and not strict:
-        return None
+        make_api_command(api_class, command_name, target_method, parent_class=ApiGroup.Command)
 
     return ApiGroup
 
 
 for _module_name, _api_class in _iter_api_modules():
-    _command = make_api_group(_module_name, _api_class, strict=False)
-    if _command is not None:
-        API_COMMANDS[_module_name] = _command
+    make_api_group(_module_name, _api_class)

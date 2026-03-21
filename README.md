@@ -65,7 +65,7 @@ Usage: dojo [OPTIONS] COMMAND [ARGS]...
 ...
 ```
 
-## Build
+## Contributing
 
 Check out [CONTRIBUTING.md](CONTRIBUTING.md)
 

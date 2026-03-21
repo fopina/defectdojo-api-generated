@@ -34,6 +34,8 @@ r = dojo.findings_api.list()
 print(r.json())
 ```
 
+#### **Full documentation** [in docs](docs/README.md)
+
 ### CLI
 
 

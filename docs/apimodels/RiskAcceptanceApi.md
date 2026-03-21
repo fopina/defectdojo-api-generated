@@ -9,6 +9,8 @@ Method | HTTP request | Description
 [**destroy**](RiskAcceptanceApi.md#destroy) | **DELETE** /api/v2/risk_acceptance/{id}/ | 
 [**download_proof_retrieve**](RiskAcceptanceApi.md#download_proof_retrieve) | **GET** /api/v2/risk_acceptance/{id}/download_proof/ | 
 [**list**](RiskAcceptanceApi.md#list) | **GET** /api/v2/risk_acceptance/ | 
+[**notes_create**](RiskAcceptanceApi.md#notes_create) | **POST** /api/v2/risk_acceptance/{id}/notes/ | 
+[**notes_retrieve**](RiskAcceptanceApi.md#notes_retrieve) | **GET** /api/v2/risk_acceptance/{id}/notes/ | 
 [**partial_update**](RiskAcceptanceApi.md#partial_update) | **PATCH** /api/v2/risk_acceptance/{id}/ | 
 [**retrieve**](RiskAcceptanceApi.md#retrieve) | **GET** /api/v2/risk_acceptance/{id}/ | 
 [**update**](RiskAcceptanceApi.md#update) | **PUT** /api/v2/risk_acceptance/{id}/ | 
@@ -470,6 +472,185 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PaginatedRiskAcceptanceList**](PaginatedRiskAcceptanceList.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **notes_create**
+> Note notes_create(id, add_new_note_option_request)
+
+### Example
+
+* Basic Authentication (basicAuth):
+* Api Key Authentication (cookieAuth):
+* Api Key Authentication (tokenAuth):
+
+```python
+import defectdojo_api_generated
+from defectdojo_api_generated.models.add_new_note_option_request import AddNewNoteOptionRequest
+from defectdojo_api_generated.models.note import Note
+from defectdojo_api_generated.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = defectdojo_api_generated.Configuration(
+    host = "http://localhost"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = defectdojo_api_generated.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Configure API key authorization: cookieAuth
+configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
+
+# Configure API key authorization: tokenAuth
+configuration.api_key['tokenAuth'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['tokenAuth'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with defectdojo_api_generated.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = defectdojo_api_generated.RiskAcceptanceApi(api_client)
+    id = 56 # int | A unique integer value identifying this risk_ acceptance.
+    add_new_note_option_request = defectdojo_api_generated.AddNewNoteOptionRequest() # AddNewNoteOptionRequest | 
+
+    try:
+        api_response = api_instance.notes_create(id, add_new_note_option_request)
+        print("The response of RiskAcceptanceApi->notes_create:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling RiskAcceptanceApi->notes_create: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this risk_ acceptance. | 
+ **add_new_note_option_request** | [**AddNewNoteOptionRequest**](AddNewNoteOptionRequest.md)|  | 
+
+### Return type
+
+[**Note**](Note.md)
+
+### Authorization
+
+[basicAuth](../README.md#basicAuth), [cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** |  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **notes_retrieve**
+> RiskAcceptanceToNotes notes_retrieve(id)
+
+### Example
+
+* Basic Authentication (basicAuth):
+* Api Key Authentication (cookieAuth):
+* Api Key Authentication (tokenAuth):
+
+```python
+import defectdojo_api_generated
+from defectdojo_api_generated.models.risk_acceptance_to_notes import RiskAcceptanceToNotes
+from defectdojo_api_generated.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = defectdojo_api_generated.Configuration(
+    host = "http://localhost"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: basicAuth
+configuration = defectdojo_api_generated.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Configure API key authorization: cookieAuth
+configuration.api_key['cookieAuth'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['cookieAuth'] = 'Bearer'
+
+# Configure API key authorization: tokenAuth
+configuration.api_key['tokenAuth'] = os.environ["API_KEY"]
+
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['tokenAuth'] = 'Bearer'
+
+# Enter a context with an instance of the API client
+with defectdojo_api_generated.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = defectdojo_api_generated.RiskAcceptanceApi(api_client)
+    id = 56 # int | A unique integer value identifying this risk_ acceptance.
+
+    try:
+        api_response = api_instance.notes_retrieve(id)
+        print("The response of RiskAcceptanceApi->notes_retrieve:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling RiskAcceptanceApi->notes_retrieve: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int**| A unique integer value identifying this risk_ acceptance. | 
+
+### Return type
+
+[**RiskAcceptanceToNotes**](RiskAcceptanceToNotes.md)
 
 ### Authorization
 

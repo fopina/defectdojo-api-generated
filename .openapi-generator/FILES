@@ -404,6 +404,7 @@ defectdojo_api_generated/docs/RiskAcceptance.md
 defectdojo_api_generated/docs/RiskAcceptanceApi.md
 defectdojo_api_generated/docs/RiskAcceptanceProof.md
 defectdojo_api_generated/docs/RiskAcceptanceRequest.md
+defectdojo_api_generated/docs/RiskAcceptanceToNotes.md
 defectdojo_api_generated/docs/Role.md
 defectdojo_api_generated/docs/RolesApi.md
 defectdojo_api_generated/docs/SLAConfiguration.md
@@ -744,6 +745,7 @@ defectdojo_api_generated/models/report_generate_option_request.py
 defectdojo_api_generated/models/risk_acceptance.py
 defectdojo_api_generated/models/risk_acceptance_proof.py
 defectdojo_api_generated/models/risk_acceptance_request.py
+defectdojo_api_generated/models/risk_acceptance_to_notes.py
 defectdojo_api_generated/models/role.py
 defectdojo_api_generated/models/severity_status_statistics.py
 defectdojo_api_generated/models/severity_status_statistics_request.py
@@ -1123,6 +1125,7 @@ defectdojo_api_generated/test/test_risk_acceptance.py
 defectdojo_api_generated/test/test_risk_acceptance_api.py
 defectdojo_api_generated/test/test_risk_acceptance_proof.py
 defectdojo_api_generated/test/test_risk_acceptance_request.py
+defectdojo_api_generated/test/test_risk_acceptance_to_notes.py
 defectdojo_api_generated/test/test_role.py
 defectdojo_api_generated/test/test_roles_api.py
 defectdojo_api_generated/test/test_severity_status_statistics.py

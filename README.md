@@ -34,7 +34,7 @@ r = dojo.findings_api.list()
 print(r.json())
 ```
 
-#### **Full documentation** [in docs](docs/README.md)
+#### **Full documentation** [readthedocs](https://defectdojo-api-generated.readthedocs.io/)
 
 ### CLI
 

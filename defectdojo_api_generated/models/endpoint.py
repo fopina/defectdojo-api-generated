@@ -28,6 +28,7 @@ class Endpoint(BaseModel):
 
     id: Optional[StrictInt] = None
     tags: Optional[List[StrictStr]] = None
+    active_finding_count: Optional[StrictInt] = None
     protocol: Optional[Annotated[str, Field(strict=True, max_length=20)]] = Field(
         default=None, description="The communication protocol/scheme such as 'http', 'ftp', 'dns', etc."
     )
@@ -58,6 +59,7 @@ class Endpoint(BaseModel):
     __properties: ClassVar[List[str]] = [
         'id',
         'tags',
+        'active_finding_count',
         'protocol',
         'userinfo',
         'host',
@@ -103,10 +105,12 @@ class Endpoint(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set(
             [
                 'id',
+                'active_finding_count',
                 'endpoint_params',
                 'findings',
             ]
@@ -172,6 +176,7 @@ class Endpoint(BaseModel):
             {
                 'id': obj.get('id'),
                 'tags': obj.get('tags'),
+                'active_finding_count': obj.get('active_finding_count'),
                 'protocol': obj.get('protocol'),
                 'userinfo': obj.get('userinfo'),
                 'host': obj.get('host'),

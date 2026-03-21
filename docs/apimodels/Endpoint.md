@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] [readonly] 
 **tags** | **List[str]** |  | [optional] 
+**active_finding_count** | **int** |  | [optional] [readonly] 
 **protocol** | **str** | The communication protocol/scheme such as &#39;http&#39;, &#39;ftp&#39;, &#39;dns&#39;, etc. | [optional] 
 **userinfo** | **str** | User info as &#39;alice&#39;, &#39;bob&#39;, etc. | [optional] 
 **host** | **str** | The host name or IP address. It must not include the port number. For example &#39;127.0.0.1&#39;, &#39;localhost&#39;, &#39;yourdomain.com&#39;. | [optional] 

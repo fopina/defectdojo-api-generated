@@ -371,6 +371,7 @@ __all__ = [
     'RiskAcceptance',
     'RiskAcceptanceProof',
     'RiskAcceptanceRequest',
+    'RiskAcceptanceToNotes',
     'Role',
     'SLAConfiguration',
     'SLAConfigurationRequest',
@@ -1024,6 +1025,7 @@ from defectdojo_api_generated.models.report_generate_option_request import (
 from defectdojo_api_generated.models.risk_acceptance import RiskAcceptance as RiskAcceptance
 from defectdojo_api_generated.models.risk_acceptance_proof import RiskAcceptanceProof as RiskAcceptanceProof
 from defectdojo_api_generated.models.risk_acceptance_request import RiskAcceptanceRequest as RiskAcceptanceRequest
+from defectdojo_api_generated.models.risk_acceptance_to_notes import RiskAcceptanceToNotes as RiskAcceptanceToNotes
 from defectdojo_api_generated.models.role import Role as Role
 from defectdojo_api_generated.models.sla_configuration import SLAConfiguration as SLAConfiguration
 from defectdojo_api_generated.models.sla_configuration_request import SLAConfigurationRequest as SLAConfigurationRequest

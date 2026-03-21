@@ -341,6 +341,7 @@ class TestPaginatedFindingList(unittest.TestCase):
                             endpoint_set = {
                                 'key' : defectdojo_api_generated.models.endpoint.Endpoint(
                                     id = 56, 
+                                    active_finding_count = 56, 
                                     protocol = '', 
                                     userinfo = '', 
                                     host = '', 
@@ -684,6 +685,7 @@ class TestPaginatedFindingList(unittest.TestCase):
                                 endpoint_set = {
                                     'key' : defectdojo_api_generated.models.endpoint.Endpoint(
                                         id = 56, 
+                                        active_finding_count = 56, 
                                         protocol = '', 
                                         userinfo = '', 
                                         host = '', 
@@ -798,6 +800,7 @@ class TestPaginatedFindingList(unittest.TestCase):
                     endpoint_set = {
                         'key' : defectdojo_api_generated.models.endpoint.Endpoint(
                             id = 56, 
+                            active_finding_count = 56, 
                             protocol = '', 
                             userinfo = '', 
                             host = '', 

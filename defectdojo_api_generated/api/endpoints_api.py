@@ -1011,7 +1011,7 @@ class EndpointsApi:
         o: Annotated[
             Optional[List[StrictStr]],
             Field(
-                description='Ordering  * `host` - Host * `-host` - Host (descending) * `product` - Product * `-product` - Product (descending) * `id` - Id * `-id` - Id (descending)'
+                description='Ordering  * `host` - Host * `-host` - Host (descending) * `product` - Product * `-product` - Product (descending) * `id` - Id * `-id` - Id (descending) * `active_finding_count` - Active Findings Count * `-active_finding_count` - Active Findings Count (descending)'
             ),
         ] = None,
         offset: Annotated[
@@ -1059,7 +1059,7 @@ class EndpointsApi:
         :type not_tag: str
         :param not_tags: Comma separated list of exact tags not present on model
         :type not_tags: List[str]
-        :param o: Ordering  * `host` - Host * `-host` - Host (descending) * `product` - Product * `-product` - Product (descending) * `id` - Id * `-id` - Id (descending)
+        :param o: Ordering  * `host` - Host * `-host` - Host (descending) * `product` - Product * `-product` - Product (descending) * `id` - Id * `-id` - Id (descending) * `active_finding_count` - Active Findings Count * `-active_finding_count` - Active Findings Count (descending)
         :type o: List[str]
         :param offset: The initial index from which to return the results.
         :type offset: int
@@ -1152,7 +1152,7 @@ class EndpointsApi:
         o: Annotated[
             Optional[List[StrictStr]],
             Field(
-                description='Ordering  * `host` - Host * `-host` - Host (descending) * `product` - Product * `-product` - Product (descending) * `id` - Id * `-id` - Id (descending)'
+                description='Ordering  * `host` - Host * `-host` - Host (descending) * `product` - Product * `-product` - Product (descending) * `id` - Id * `-id` - Id (descending) * `active_finding_count` - Active Findings Count * `-active_finding_count` - Active Findings Count (descending)'
             ),
         ] = None,
         offset: Annotated[
@@ -1200,7 +1200,7 @@ class EndpointsApi:
         :type not_tag: str
         :param not_tags: Comma separated list of exact tags not present on model
         :type not_tags: List[str]
-        :param o: Ordering  * `host` - Host * `-host` - Host (descending) * `product` - Product * `-product` - Product (descending) * `id` - Id * `-id` - Id (descending)
+        :param o: Ordering  * `host` - Host * `-host` - Host (descending) * `product` - Product * `-product` - Product (descending) * `id` - Id * `-id` - Id (descending) * `active_finding_count` - Active Findings Count * `-active_finding_count` - Active Findings Count (descending)
         :type o: List[str]
         :param offset: The initial index from which to return the results.
         :type offset: int
@@ -1293,7 +1293,7 @@ class EndpointsApi:
         o: Annotated[
             Optional[List[StrictStr]],
             Field(
-                description='Ordering  * `host` - Host * `-host` - Host (descending) * `product` - Product * `-product` - Product (descending) * `id` - Id * `-id` - Id (descending)'
+                description='Ordering  * `host` - Host * `-host` - Host (descending) * `product` - Product * `-product` - Product (descending) * `id` - Id * `-id` - Id (descending) * `active_finding_count` - Active Findings Count * `-active_finding_count` - Active Findings Count (descending)'
             ),
         ] = None,
         offset: Annotated[
@@ -1341,7 +1341,7 @@ class EndpointsApi:
         :type not_tag: str
         :param not_tags: Comma separated list of exact tags not present on model
         :type not_tags: List[str]
-        :param o: Ordering  * `host` - Host * `-host` - Host (descending) * `product` - Product * `-product` - Product (descending) * `id` - Id * `-id` - Id (descending)
+        :param o: Ordering  * `host` - Host * `-host` - Host (descending) * `product` - Product * `-product` - Product (descending) * `id` - Id * `-id` - Id (descending) * `active_finding_count` - Active Findings Count * `-active_finding_count` - Active Findings Count (descending)
         :type o: List[str]
         :param offset: The initial index from which to return the results.
         :type offset: int
@@ -1553,7 +1553,7 @@ class EndpointsApi:
         o: Annotated[
             Optional[List[StrictStr]],
             Field(
-                description='Ordering  * `host` - Host * `-host` - Host (descending) * `product` - Product * `-product` - Product (descending) * `id` - Id * `-id` - Id (descending)'
+                description='Ordering  * `host` - Host * `-host` - Host (descending) * `product` - Product * `-product` - Product (descending) * `id` - Id * `-id` - Id (descending) * `active_finding_count` - Active Findings Count * `-active_finding_count` - Active Findings Count (descending)'
             ),
         ] = None,
         offset: Annotated[

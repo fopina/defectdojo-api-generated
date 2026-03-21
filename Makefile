@@ -38,8 +38,8 @@ testpub:
 	uv run twine upload --repository testpypi dist/*
 
 schema:
-	./support/openapi/fetch_openapi.py --output ./support/openapi/openapi-new.json
-	./support/openapi/openapi_changelog.py ./support/openapi/openapi.json ./support/openapi/openapi-new.json
+	uv run ./support/openapi/fetch_openapi.py --output ./support/openapi/openapi-new.json
+	uv run ./support/openapi/openapi_changelog.py ./support/openapi/openapi.json ./support/openapi/openapi-new.json
 	mv ./support/openapi/openapi-new.json ./support/openapi/openapi.json
 
 templates:

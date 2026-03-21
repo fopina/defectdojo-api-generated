@@ -44,6 +44,14 @@ class TestRiskAcceptanceApi(unittest.TestCase):
         """Test case for list"""
         pass
 
+    def test_notes_create(self) -> None:
+        """Test case for notes_create"""
+        pass
+
+    def test_notes_retrieve(self) -> None:
+        """Test case for notes_retrieve"""
+        pass
+
     def test_partial_update(self) -> None:
         """Test case for partial_update"""
         pass

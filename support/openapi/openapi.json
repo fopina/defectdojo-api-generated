@@ -2,7 +2,7 @@
     "openapi": "3.0.3",
     "info": {
         "title": "DefectDojo API v2",
-        "version": "2.56.1",
+        "version": "2.56.2",
         "description": "DefectDojo - Open Source vulnerability Management made easy. Prefetch related parameters/responses not yet in the schema."
     },
     "paths": {
@@ -4973,16 +4973,18 @@
                             "items": {
                                 "type": "string",
                                 "enum": [
+                                    "-active_finding_count",
                                     "-host",
                                     "-id",
                                     "-product",
+                                    "active_finding_count",
                                     "host",
                                     "id",
                                     "product"
                                 ]
                             }
                         },
-                        "description": "Ordering\n\n* `host` - Host\n* `-host` - Host (descending)\n* `product` - Product\n* `-product` - Product (descending)\n* `id` - Id\n* `-id` - Id (descending)",
+                        "description": "Ordering\n\n* `host` - Host\n* `-host` - Host (descending)\n* `product` - Product\n* `-product` - Product (descending)\n* `id` - Id\n* `-id` - Id (descending)\n* `active_finding_count` - Active Findings Count\n* `-active_finding_count` - Active Findings Count (descending)",
                         "explode": false,
                         "style": "form"
                     },
@@ -23593,6 +23595,108 @@
                 }
             }
         },
+        "/api/v2/risk_acceptance/{id}/notes/": {
+            "get": {
+                "operationId": "risk_acceptance_notes_retrieve",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "description": "A unique integer value identifying this risk_ acceptance.",
+                        "required": true
+                    }
+                ],
+                "tags": [
+                    "risk_acceptance"
+                ],
+                "security": [
+                    {
+                        "cookieAuth": []
+                    },
+                    {
+                        "basicAuth": []
+                    },
+                    {
+                        "tokenAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/RiskAcceptanceToNotes"
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            },
+            "post": {
+                "operationId": "risk_acceptance_notes_create",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "description": "A unique integer value identifying this risk_ acceptance.",
+                        "required": true
+                    }
+                ],
+                "tags": [
+                    "risk_acceptance"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AddNewNoteOptionRequest"
+                            }
+                        },
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AddNewNoteOptionRequest"
+                            }
+                        },
+                        "multipart/form-data": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AddNewNoteOptionRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    },
+                    {
+                        "basicAuth": []
+                    },
+                    {
+                        "tokenAuth": []
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Note"
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
         "/api/v2/roles/": {
             "get": {
                 "operationId": "roles_list",
@@ -31458,6 +31562,10 @@
                             "type": "string"
                         }
                     },
+                    "active_finding_count": {
+                        "type": "integer",
+                        "readOnly": true
+                    },
                     "protocol": {
                         "type": "string",
                         "nullable": true,
@@ -31521,6 +31629,7 @@
                     }
                 },
                 "required": [
+                    "active_finding_count",
                     "endpoint_params",
                     "findings",
                     "id"
@@ -47039,6 +47148,25 @@
                     "accepted_findings",
                     "name",
                     "owner"
+                ]
+            },
+            "RiskAcceptanceToNotes": {
+                "type": "object",
+                "properties": {
+                    "risk_acceptance_id": {
+                        "type": "integer",
+                        "nullable": true
+                    },
+                    "notes": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Note"
+                        }
+                    }
+                },
+                "required": [
+                    "notes",
+                    "risk_acceptance_id"
                 ]
             },
             "Role": {

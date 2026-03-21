@@ -426,7 +426,7 @@ with defectdojo_api_generated.ApiClient(configuration) as api_client:
     limit = 56 # int | Number of results to return per page. (optional)
     not_tag = 'not_tag_example' # str | Not Tag name contains (optional)
     not_tags = ['not_tags_example'] # List[str] | Comma separated list of exact tags not present on model (optional)
-    o = ['o_example'] # List[str] | Ordering  * `host` - Host * `-host` - Host (descending) * `product` - Product * `-product` - Product (descending) * `id` - Id * `-id` - Id (descending) (optional)
+    o = ['o_example'] # List[str] | Ordering  * `host` - Host * `-host` - Host (descending) * `product` - Product * `-product` - Product (descending) * `id` - Id * `-id` - Id (descending) * `active_finding_count` - Active Findings Count * `-active_finding_count` - Active Findings Count (descending) (optional)
     offset = 56 # int | The initial index from which to return the results. (optional)
     path = 'path_example' # str |  (optional)
     port = 56 # int |  (optional)
@@ -460,7 +460,7 @@ Name | Type | Description  | Notes
  **limit** | **int**| Number of results to return per page. | [optional] 
  **not_tag** | **str**| Not Tag name contains | [optional] 
  **not_tags** | [**List[str]**](str.md)| Comma separated list of exact tags not present on model | [optional] 
- **o** | [**List[str]**](str.md)| Ordering  * &#x60;host&#x60; - Host * &#x60;-host&#x60; - Host (descending) * &#x60;product&#x60; - Product * &#x60;-product&#x60; - Product (descending) * &#x60;id&#x60; - Id * &#x60;-id&#x60; - Id (descending) | [optional] 
+ **o** | [**List[str]**](str.md)| Ordering  * &#x60;host&#x60; - Host * &#x60;-host&#x60; - Host (descending) * &#x60;product&#x60; - Product * &#x60;-product&#x60; - Product (descending) * &#x60;id&#x60; - Id * &#x60;-id&#x60; - Id (descending) * &#x60;active_finding_count&#x60; - Active Findings Count * &#x60;-active_finding_count&#x60; - Active Findings Count (descending) | [optional] 
  **offset** | **int**| The initial index from which to return the results. | [optional] 
  **path** | **str**|  | [optional] 
  **port** | **int**|  | [optional] 

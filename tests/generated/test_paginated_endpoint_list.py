@@ -43,6 +43,7 @@ class TestPaginatedEndpointList(unittest.TestCase):
                         tags = [
                             ''
                             ], 
+                        active_finding_count = 56, 
                         protocol = '', 
                         userinfo = '', 
                         host = '', 

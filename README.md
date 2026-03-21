@@ -29,8 +29,7 @@ pip install defectojo-api-generated
 from defectdojo_api_generated import DefectDojo
 
 # password publicly available in https://github.com/DefectDojo/django-DefectDojo/?tab=readme-ov-file#demo
-# then get API token from https://demo.defectdojo.org/api/key-v2
-dojo = DefectDojo('https://demo.defectdojo.org/', token=...)
+dojo = DefectDojo('https://demo.defectdojo.org/', username='admin', password='...')
 r = dojo.findings_api.list()
 print(r.json())
 ```
@@ -38,7 +37,9 @@ print(r.json())
 ### CLI
 
 
-(`uv` or `pipx` recommended)
+
+> [uv](https://docs.astral.sh/uv/) recommended or [pipx](https://github.com/pypa/pipx)
+
 ```
 uv tool install 'defectojo-api-generated[cli]'
 ```

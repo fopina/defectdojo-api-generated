@@ -38,7 +38,7 @@ print(r.json())
 
 ### CLI
 
-
+[![asciicast](https://asciinema.org/a/fIPDy8iYxGL85pXb.svg)](https://asciinema.org/a/fIPDy8iYxGL85pXb)
 
 > [uv](https://docs.astral.sh/uv/) recommended or [pipx](https://github.com/pypa/pipx)
 

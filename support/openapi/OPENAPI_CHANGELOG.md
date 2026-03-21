@@ -1,3 +1,22 @@
+## v 2.56.2 (from v 2.56.1)
+
+### New
+
+#### Endpoints
+- `GET /api/v2/risk_acceptance/{id}/notes/`
+- `POST /api/v2/risk_acceptance/{id}/notes/`
+
+#### Models
+- `RiskAcceptanceToNotes`
+
+### Changed
+
+#### Endpoints
+- `GET /api/v2/endpoints/`
+
+#### Models
+- `Endpoint`
+
 ## v 2.56.1 (from v 2.46.2)
 
 ### New

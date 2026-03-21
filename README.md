@@ -10,25 +10,65 @@
 
 Python library to interact with DefectDojo - generated from OpenAPI definition using https://openapi-generator.tech/
 
-## Install
+Multiple changes done on top of default openapi-generator:
+* A friendlier Client class
+* Tweak validations to reduce package import time to about 1/3
+* Remove most of pydantic/schema validations due to inconsistencies with actual database schema/requirements (tracked in https://github.com/fopina/defectdojo-api-generated/issues/39)
+* A nice CLI exposing all the API methods <3
+  * installed only as an extra, to keep everything clean when package is used as library only
+
+## Example
+
+### Library
 
 ```
 pip install defectojo-api-generated
 ```
 
-## Usage
-
 ```python
 from defectdojo_api_generated import DefectDojo
 
 # password publicly available in https://github.com/DefectDojo/django-DefectDojo/?tab=readme-ov-file#demo
-# then get API token from https://demo.defectdojo.org/api/key-v2
-dojo = DefectDojo('https://demo.defectdojo.org/', token=...)
+dojo = DefectDojo('https://demo.defectdojo.org/', username='admin', password='...')
 r = dojo.findings_api.list()
 print(r.json())
 ```
 
-## Build
+#### **Full documentation** [in docs](docs/README.md)
+
+### CLI
+
+[![asciicast](https://asciinema.org/a/fIPDy8iYxGL85pXb.svg)](https://asciinema.org/a/fIPDy8iYxGL85pXb)
+
+> [uv](https://docs.astral.sh/uv/) recommended or [pipx](https://github.com/pypa/pipx)
+
+```
+uv tool install 'defectojo-api-generated[cli]'
+```
+
+```
+$ dojo 
+Usage: dojo [OPTIONS] COMMAND [ARGS]...
+
+  DefectDojo CLI
+
+Options:
+  ...
+Commands:
+  api     Interact directly with any API/method
+  config  Show or edit the current CLI configuration
+  status  Quick connectivity check
+```
+
+You can also skip tool install and just run it with:
+
+```
+$ uvx 'defectojo-api-generated[cli]'
+Usage: dojo [OPTIONS] COMMAND [ARGS]...
+...
+```
+
+## Contributing
 
 Check out [CONTRIBUTING.md](CONTRIBUTING.md)
 

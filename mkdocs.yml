@@ -1,1 +1,19 @@
 site_name: defectdojo-api-generated
+
+nav:
+  - Contents:
+    - Library: README.md
+    - CLI: cli.md
+  - Project Links:
+    - Github: https://github.com/fopina/defectdojo-api-generated/
+    - PyPI: https://test.pypi.org/project/defectdojo-api-generated/
+
+theme:
+  name: readthedocs
+
+markdown_extensions:
+    - attr_list
+    - mkdocs-click
+
+hooks:
+  - docs/hooks.py

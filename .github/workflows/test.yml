@@ -81,3 +81,23 @@ jobs:
       - name: Run e2e tests
         run: |
           make test-e2e
+
+  docs-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          pip install uv
+          uv sync --dev --extra cli
+
+      - name: build docs
+        run: |
+          uv run mkdocs build

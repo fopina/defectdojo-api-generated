@@ -1,32 +1,15 @@
+<!-- example-id: example.py -->
 ```python
-{{#apiInfo}}{{#apis}}{{#-last}}{{#hasHttpSignatureMethods}}import datetime{{/hasHttpSignatureMethods}}{{/-last}}{{/apis}}{{/apiInfo}}
-import {{{packageName}}}
-from {{{packageName}}}.rest import ApiException
-from pprint import pprint
-{{#apiInfo}}{{#apis}}{{#-first}}{{#operations}}{{#operation}}{{#-first}}
-{{> python_doc_auth_partial}}
+    from defectdojo_api_generated import DefectDojo
 
-
-# Enter a context with an instance of the API client
-{{#async}}async {{/async}}with {{{packageName}}}.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = {{{packageName}}}.{{{classname}}}(api_client)
-    {{#allParams}}
-    {{paramName}} = {{{example}}} # {{{dataType}}} | {{{description}}}{{^required}} (optional){{/required}}{{#defaultValue}} (default to {{{.}}}){{/defaultValue}}
-    {{/allParams}}
-
-    try:
-        {{#summary}}
-        # {{{.}}}
-        {{/summary}}
-        {{#returnType}}api_response = {{/returnType}}{{#async}}await {{/async}}api_instance.{{{operationId}}}({{#allParams}}{{#required}}{{paramName}}{{/required}}{{^required}}{{paramName}}={{paramName}}{{/required}}{{^-last}}, {{/-last}}{{/allParams}})
-        {{#returnType}}
-        print("The response of {{classname}}->{{operationId}}:\n")
-        pprint(api_response)
-        {{/returnType}}
-    except ApiException as e:
-        print("Exception when calling {{classname}}->{{operationId}}: %s\n" % e)
-{{/-first}}{{/operation}}{{/operations}}{{/-first}}{{/apis}}{{/apiInfo}}
+    # password publicly available in https://github.com/DefectDojo/django-DefectDojo/?tab=readme-ov-file#demo
+    dojo = DefectDojo(base_url='https://demo.defectdojo.org/', auth=('admin', PASSWORD))
+    for ind, finding in enumerate(dojo.findings_api.list_iterator(title='Stored XSS')):
+        if not ind:
+            print(f'Total matched findings: {finding.page.count}')
+        print(f'- [{finding.result.severity}] {finding.result.title} - {finding.result.description}')
+    r = dojo.system_settings_api.list(limit=1)
+    print(f'- {r.results[0]}')
 ```
 
 ## Documentation for API Endpoints
@@ -78,8 +61,3 @@ Class | Method | HTTP request | Description
 {{/isOAuth}}
 
 {{/authMethods}}
-
-## Author
-
-{{#apiInfo}}{{#apis}}{{#-last}}{{infoEmail}}
-{{/-last}}{{/apis}}{{/apiInfo}}

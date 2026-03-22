@@ -1,1 +1,15 @@
 site_name: defectdojo-api-generated
+
+nav:
+  - Library: README.md
+  - CLI: cli.md
+
+theme:
+  name: readthedocs
+
+markdown_extensions:
+    - attr_list
+    - mkdocs-click
+
+hooks:
+  - docs/hooks.py

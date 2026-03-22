@@ -7,7 +7,6 @@ from unittest import TestCase, mock
 
 class Test(TestCase):
     def test_example(self) -> None:
-
         sys.path.append(Path(__file__).resolve().parents[2])
 
         import example

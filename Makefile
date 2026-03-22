@@ -32,9 +32,6 @@ test-e2e: export DD_INTEGRATION_TESTS=1
 test-e2e:
 	uv run pytest tests/integration
 
-test-docs:
-	uv run mkdocs serve
-
 testpub:
 	rm -fr dist
 	uv run pyproject-build
@@ -48,6 +45,12 @@ schema:
 templates:
 	./support/api_generation/dump_templates.sh
 
-generate:
+# random generated file as target, just for timestamp
+defectdojo_api_generated/configuration.py: support/api_generation/custom_templates/*
 	./support/api_generation/generate.sh
 	$(MAKE) lint
+
+generate: defectdojo_api_generated/configuration.py
+
+test-docs: generate
+	uv run mkdocs serve

@@ -19,8 +19,8 @@ cd ..
 rm -fr tests/generated
 mkdir -p tests/generated
 mv defectdojo_api_generated/test/* tests/generated/
-rm -fr docs
-mkdir docs
+rm -fr docs/apimodels/
+mkdir -p docs
 mv defectdojo_api_generated/docs/ docs/apimodels/
 # not using -i to work on both macOS and linux
 sed -e 's#(defectdojo_api_generated/docs/#(apimodels/#g' defectdojo_api_generated_README.md > docs/README.md

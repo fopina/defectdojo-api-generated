@@ -31,6 +31,7 @@ defectdojo-api-generated = "defectdojo_api_generated.cli.__main__:main"
 [dependency-groups]
 dev = [
     "build",
+    "mkdocs>=1.6.1",
     "pytest",
     "pytest-cov",
     "pytest-socket",

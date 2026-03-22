@@ -32,6 +32,9 @@ test-e2e: export DD_INTEGRATION_TESTS=1
 test-e2e:
 	uv run pytest tests/integration
 
+test-docs:
+	uv run mkdocs serve
+
 testpub:
 	rm -fr dist
 	uv run pyproject-build

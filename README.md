@@ -26,7 +26,7 @@ Multiple changes done on top of default openapi-generator:
 pip install defectojo-api-generated
 ```
 
-<!-- example-id: ../example.py -->
+<!-- example-id: ../../example.py -->
 ```python
     from defectdojo_api_generated import DefectDojo
 

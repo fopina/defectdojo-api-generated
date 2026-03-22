@@ -18,4 +18,4 @@ class Test(unittest.TestCase):
 
 class TestReadme(ReadmeTestCase):
     README_PATH = Path(__file__).parent.parent.parent / 'README.md'
-    TESTS_DIR = Path(__file__).parent.parent
+    TESTS_DIR = Path(__file__).parent.parent / 'examples'

@@ -1,8 +1,12 @@
 site_name: defectdojo-api-generated
 
 nav:
-  - Library: README.md
-  - CLI: cli.md
+  - Contents:
+    - Library: README.md
+    - CLI: cli.md
+  - Project Links:
+    - Github: https://github.com/fopina/defectdojo-api-generated/
+    - PyPI: https://test.pypi.org/project/defectdojo-api-generated/
 
 theme:
   name: readthedocs

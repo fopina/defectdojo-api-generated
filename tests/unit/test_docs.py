@@ -2,6 +2,8 @@ import re
 import unittest
 from pathlib import Path
 
+from readme_example_tester import ReadmeTestCase
+
 
 class Test(unittest.TestCase):
     def test_asciinema(self) -> None:
@@ -12,3 +14,8 @@ class Test(unittest.TestCase):
         links_docs = link_re.findall((d / 'docs' / 'cli.md').read_text())
         self.assertEqual(len(links), 1)
         self.assertEqual(links, links_docs)
+
+
+class TestReadme(ReadmeTestCase):
+    README_PATH = Path(__file__).parent.parent.parent / 'README.md'
+    TESTS_DIR = Path(__file__).parent.parent

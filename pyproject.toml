@@ -36,6 +36,7 @@ dev = [
     "pytest",
     "pytest-cov",
     "pytest-socket",
+    "readme-example-tester>=0.0.2",
     "ruff",
     "twine",
 ]

@@ -14,6 +14,7 @@ Multiple changes done on top of default openapi-generator:
 * A friendlier Client class
 * Tweak validations to reduce package import time to about 1/3
 * Remove most of pydantic/schema validations due to inconsistencies with actual database schema/requirements (tracked in https://github.com/fopina/defectdojo-api-generated/issues/39)
+* *Iterator* methods for every *list* API method to handle pagination automatically
 * A nice CLI exposing all the API methods <3
   * installed only as an extra, to keep everything clean when package is used as library only
 
@@ -25,13 +26,18 @@ Multiple changes done on top of default openapi-generator:
 pip install defectojo-api-generated
 ```
 
+<!-- example-id: ../example.py -->
 ```python
-from defectdojo_api_generated import DefectDojo
+    from defectdojo_api_generated import DefectDojo
 
-# password publicly available in https://github.com/DefectDojo/django-DefectDojo/?tab=readme-ov-file#demo
-dojo = DefectDojo('https://demo.defectdojo.org/', username='admin', password='...')
-r = dojo.findings_api.list()
-print(r.json())
+    # password publicly available in https://github.com/DefectDojo/django-DefectDojo/?tab=readme-ov-file#demo
+    dojo = DefectDojo(base_url='https://demo.defectdojo.org/', auth=('admin', PASSWORD))
+    for ind, finding in enumerate(dojo.findings_api.list_iterator(title='Stored XSS')):
+        if not ind:
+            print(f'Total matched findings: {finding.page.count}')
+        print(f'- [{finding.result.severity}] {finding.result.title} - {finding.result.description}')
+    r = dojo.system_settings_api.list(limit=1)
+    print(f'- {r.results[0]}')
 ```
 
 #### **Full documentation** [readthedocs](https://defectdojo-api-generated.readthedocs.io/)

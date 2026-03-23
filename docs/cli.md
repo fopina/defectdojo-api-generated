@@ -16,3 +16,6 @@ uv tool install 'defectojo-api-generated[cli]'
     :prog_name: dojo
     :list_subcommands: true
     :depth: 2
+
+### config.toml
+

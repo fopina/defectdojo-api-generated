@@ -11,7 +11,8 @@ build:
     python: "3.13"
   jobs:
     post_install:
-      - pip install mkdocs-click>=0.9.0
+      - pip install uv
+      - UV_PROJECT_ENVIRONMENT=$READTHEDOCS_VIRTUALENV_PATH uv sync --dev --extra cli
 
 # Build documentation with Mkdocs
 mkdocs:

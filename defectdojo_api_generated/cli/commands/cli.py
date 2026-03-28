@@ -149,3 +149,5 @@ def merge_dicts(base: dict, override: dict) -> dict:
 
 # TODO: classyclick missing @click.version_option - https://github.com/fopina/classyclick/issues/48
 CLI.click = click.version_option(version=__version__, message='%(version)s')(CLI.click)
+
+classyclick.helpers.discover_commands(__package__)

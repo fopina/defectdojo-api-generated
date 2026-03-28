@@ -1,15 +1,6 @@
 """Command-line entrypoint for defectdojo_api_generated."""
 
-import importlib
-import pkgutil
 import sys
-from pathlib import Path
-
-
-def discover_commands():
-    # str() required because of py3.10
-    for _, module_name, _ in pkgutil.iter_modules([str(Path(__file__).parent / 'commands')]):
-        importlib.import_module(f'{__package__}.commands.{module_name}')
 
 
 def load_cli():
@@ -28,7 +19,6 @@ def load_cli():
 
 def main():
     CLI = load_cli()
-    discover_commands()
     CLI.click()
 
 

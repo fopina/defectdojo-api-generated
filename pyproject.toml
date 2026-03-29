@@ -18,7 +18,7 @@ dependencies = [
 
 [project.optional-dependencies]
 cli = [
-    "classyclick==0.8.0",
+    "classyclick==0.10.0",
     "jmespath>=1.0.1",
 ]
 

@@ -1,6 +1,7 @@
 """Command-line entrypoint for defectdojo_api_generated."""
 
 import logging
+from pathlib import Path
 
 import classyclick
 import click
@@ -13,9 +14,9 @@ from ... import __version__
 class CLI(classyclick.helpers.ConfigFileMixin, classyclick.Group):
     """DefectDojo CLI"""
 
-    # DEFAULT_PATH = Path(user_config_dir('defectdojo-generated-api')) / 'config.toml'
-    # EXAMPLE_PATH = None
     __config__ = classyclick.Group.Config(context_settings=dict(show_default=True))
+    CONFIG_DEFAULT_NAME = 'defectdojo-generated-api'
+    CONFIG_EXAMPLE_PATH = Path(__file__).parent.parent / 'config.example.toml'
 
     host: str = classyclick.Option(
         '-h',

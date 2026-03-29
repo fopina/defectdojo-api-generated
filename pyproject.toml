@@ -20,7 +20,6 @@ dependencies = [
 cli = [
     "classyclick==0.8.0",
     "jmespath>=1.0.1",
-    "platformdirs>=4.4.0",
 ]
 
 [project.scripts]

@@ -572,8 +572,6 @@ dependencies = [
 cli = [
     { name = "classyclick" },
     { name = "jmespath" },
-    { name = "platformdirs", version = "4.4.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.10'" },
-    { name = "platformdirs", version = "4.9.4", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.10'" },
 ]
 
 [package.dev-dependencies]
@@ -594,7 +592,6 @@ dev = [
 requires-dist = [
     { name = "classyclick", marker = "extra == 'cli'", specifier = "==0.8.0" },
     { name = "jmespath", marker = "extra == 'cli'", specifier = ">=1.0.1" },
-    { name = "platformdirs", marker = "extra == 'cli'", specifier = ">=4.4.0" },
     { name = "pydantic", specifier = ">=2" },
     { name = "python-dateutil", specifier = ">=2.8.2" },
     { name = "typing-extensions", specifier = ">=4.7.1" },

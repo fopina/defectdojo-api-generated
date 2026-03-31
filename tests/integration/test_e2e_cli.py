@@ -4,7 +4,7 @@ from pathlib import Path
 
 from click.testing import CliRunner
 
-from defectdojo_api_generated.cli import __main__
+from defectdojo_api_generated.cli.commands.cli import CLI
 
 from . import E2ETestCase
 
@@ -15,19 +15,11 @@ class Test(E2ETestCase):
     # Run `run_dojo.sh` manually (and stop after), set this one to True and then you can run individual tests here quickly
     _PARTIAL_RUN = False
 
-    @classmethod
-    def setUpClass(cls):
-        __main__.discover_commands()
-        cls.CLI = __main__.load_cli()
-        super().setUpClass()
-
     def setUp(self):
         self.runner = CliRunner()
 
     def _run_cli(self, *args):
-        return self.runner.invoke(
-            self.CLI.click, ['--config', Path(__file__).parent / 'config.integration.toml', *args]
-        )
+        return self.runner.invoke(CLI.click, ['--config', Path(__file__).parent / 'config.integration.toml', *args])
 
     def _run_cli_api(self, *args):
         return self._run_cli('api', *args)

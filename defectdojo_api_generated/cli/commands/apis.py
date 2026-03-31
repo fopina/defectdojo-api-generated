@@ -33,7 +33,7 @@ _PRIMITIVE_CLICK_TYPES = (
 )
 
 
-class API(CLI.SubGroup, classyclick.Group):
+class API(CLI.SubGroup):
     """Interact directly with any API/method"""
 
 
@@ -326,7 +326,7 @@ def _build_command_namespace(command_name: str, api_class: type, target_method: 
 def _build_command_class(parent_class: type, namespace: dict[str, Any]) -> type:
     return type(
         'ApiCommand',
-        (parent_class, classyclick.Command),
+        (parent_class,),
         namespace,
     )
 
@@ -572,7 +572,7 @@ def make_api_group(module_name: str, api_class: type) -> type:
         _, target_method = command_methods[0]
         return make_api_command(api_class, group_name, target_method, parent_class=API.Command)
 
-    class ApiGroup(API.SubGroup, classyclick.Group):
+    class ApiGroup(API.SubGroup):
         __config__ = classyclick.Group.Config(
             name=group_name,
             help=f'methods from `{api_class.__name__}`.',

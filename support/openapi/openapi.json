@@ -2,7 +2,7 @@
     "openapi": "3.0.3",
     "info": {
         "title": "DefectDojo API v2",
-        "version": "2.56.2",
+        "version": "2.56.4",
         "description": "DefectDojo - Open Source vulnerability Management made easy. Prefetch related parameters/responses not yet in the schema."
     },
     "paths": {
@@ -44183,10 +44183,6 @@
                         "title": "Allow Anonymous Survey Responses",
                         "description": "Enable anyone with a link to the survey to answer a survey"
                     },
-                    "credentials": {
-                        "type": "string",
-                        "maxLength": 3000
-                    },
                     "disclaimer_notifications": {
                         "type": "string",
                         "title": "Custom Disclaimer for Notifications",
@@ -47990,10 +47986,6 @@
                         "title": "Allow Anonymous Survey Responses",
                         "description": "Enable anyone with a link to the survey to answer a survey"
                     },
-                    "credentials": {
-                        "type": "string",
-                        "maxLength": 3000
-                    },
                     "disclaimer_notifications": {
                         "type": "string",
                         "title": "Custom Disclaimer for Notifications",
@@ -48392,10 +48384,6 @@
                         "type": "boolean",
                         "title": "Allow Anonymous Survey Responses",
                         "description": "Enable anyone with a link to the survey to answer a survey"
-                    },
-                    "credentials": {
-                        "type": "string",
-                        "maxLength": 3000
                     },
                     "disclaimer_notifications": {
                         "type": "string",

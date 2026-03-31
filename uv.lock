@@ -218,7 +218,7 @@ wheels = [
 
 [[package]]
 name = "classyclick"
-version = "0.10.0"
+version = "1.0.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "click", version = "8.1.8", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.10'" },
@@ -228,9 +228,9 @@ dependencies = [
     { name = "tomli", marker = "python_full_version < '3.11'" },
     { name = "typing-extensions", marker = "python_full_version < '3.13'" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/dc/8b/c032f1cb70317b85644daf4dcb44e283d09e31ec03734eb5030547f596b4/classyclick-0.10.0.tar.gz", hash = "sha256:47590453cba34963d25d2e1849a2c26ffb73043acf37b7fcaedd2505bf280ae6", size = 24305, upload-time = "2026-03-29T01:46:57.439Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/db/98/ab14c35fd3ee048cd30e8520ec3187f369f12a451e8dd58a6b5cedc4cafa/classyclick-1.0.0.tar.gz", hash = "sha256:9dbf5e9267b80d9f8b7a0fe9b13a999a45b064edf4a4263f16aabd858f6b0709", size = 23601, upload-time = "2026-03-30T23:45:34.771Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/2d/43/06e4980414940801e2f77cd24e31b5b9c06f9b68918210c8b931dee45de7/classyclick-0.10.0-py3-none-any.whl", hash = "sha256:38b60af386444622cc2f4ee271a7113bdd01b5b32fd70705ee69701752fdae0f", size = 16071, upload-time = "2026-03-29T01:46:56.335Z" },
+    { url = "https://files.pythonhosted.org/packages/dc/8b/94e3074f054aa1f73cd7450ad2485321eb5afa043f28926ab979615cdd3a/classyclick-1.0.0-py3-none-any.whl", hash = "sha256:f52429c5bc6fb1c396bbb0d8947d94eb8d83ee6a8ed3fe3b9de7f435a7056e7c", size = 15274, upload-time = "2026-03-30T23:45:33.823Z" },
 ]
 
 [[package]]
@@ -593,7 +593,7 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "classyclick", marker = "extra == 'cli'", specifier = "==0.10.0" },
+    { name = "classyclick", marker = "extra == 'cli'", specifier = "==1.0.0" },
     { name = "jmespath", marker = "extra == 'cli'", specifier = ">=1.0.1" },
     { name = "pydantic", specifier = ">=2" },
     { name = "python-dateutil", specifier = ">=2.8.2" },

@@ -52,7 +52,6 @@ Name | Type | Description | Notes
 **enable_notify_sla_jira_only** | **bool** | Enables Notify when time to remediate according to Finding SLA&#39;s is breached for Findings that are linked to JIRA issues. Notification is disabled for Findings not linked to JIRA issues | [optional] 
 **enable_notify_sla_exponential_backoff** | **bool** | Enable an exponential backoff strategy for SLA breach notifications, e.g. 1, 2, 4, 8, etc. Otherwise it alerts every day | [optional] 
 **allow_anonymous_survey_repsonse** | **bool** | Enable anyone with a link to the survey to answer a survey | [optional] 
-**credentials** | **str** |  | [optional] 
 **disclaimer_notifications** | **str** | Include this custom disclaimer on all notifications | [optional] 
 **disclaimer_reports** | **str** | Include this custom disclaimer on generated reports | [optional] 
 **disclaimer_reports_forced** | **bool** | Disclaimer will be added to all reports even if user didn&#39;t selected &#39;Include disclaimer&#39;. | [optional] 

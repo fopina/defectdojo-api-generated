@@ -49,7 +49,7 @@ templates:
 	./support/api_generation/dump_templates.sh
 
 # random generated file as target, just for timestamp
-defectdojo_api_generated/configuration.py: support/api_generation/custom_templates/*
+defectdojo_api_generated/configuration.py: support/api_generation/custom_templates/* support/openapi/openapi.json
 	./support/api_generation/generate.sh
 	$(MAKE) lint
 

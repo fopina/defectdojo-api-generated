@@ -82,7 +82,6 @@ class TestSystemSettings(unittest.TestCase):
                 enable_notify_sla_jira_only = True,
                 enable_notify_sla_exponential_backoff = True,
                 allow_anonymous_survey_repsonse = True,
-                credentials = '',
                 disclaimer_notifications = '',
                 disclaimer_reports = '',
                 disclaimer_reports_forced = True,

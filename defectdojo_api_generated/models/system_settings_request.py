@@ -164,7 +164,6 @@ class SystemSettingsRequest(BaseModel):
     allow_anonymous_survey_repsonse: Optional[StrictBool] = Field(
         default=None, description='Enable anyone with a link to the survey to answer a survey'
     )
-    credentials: Optional[Annotated[str, Field(strict=True, max_length=3000)]] = None
     disclaimer_notifications: Optional[Annotated[str, Field(strict=True, max_length=3000)]] = Field(
         default=None, description='Include this custom disclaimer on all notifications'
     )
@@ -305,7 +304,6 @@ class SystemSettingsRequest(BaseModel):
         'enable_notify_sla_jira_only',
         'enable_notify_sla_exponential_backoff',
         'allow_anonymous_survey_repsonse',
-        'credentials',
         'disclaimer_notifications',
         'disclaimer_reports',
         'disclaimer_reports_forced',
@@ -491,7 +489,6 @@ class SystemSettingsRequest(BaseModel):
                 'enable_notify_sla_jira_only': obj.get('enable_notify_sla_jira_only'),
                 'enable_notify_sla_exponential_backoff': obj.get('enable_notify_sla_exponential_backoff'),
                 'allow_anonymous_survey_repsonse': obj.get('allow_anonymous_survey_repsonse'),
-                'credentials': obj.get('credentials'),
                 'disclaimer_notifications': obj.get('disclaimer_notifications'),
                 'disclaimer_reports': obj.get('disclaimer_reports'),
                 'disclaimer_reports_forced': obj.get('disclaimer_reports_forced'),

@@ -14,7 +14,10 @@ from ... import __version__
 class CLI(classyclick.helpers.ConfigFileMixin, classyclick.Group):
     """DefectDojo CLI"""
 
-    __config__ = classyclick.Group.Config(context_settings=dict(show_default=True))
+    __config__ = classyclick.Group.Config(
+        context_settings=dict(show_default=True),
+        decorators=[click.version_option(version=__version__, message='%(version)s')],
+    )
     CONFIG_DEFAULT_NAME = 'defectdojo-generated-api'
     CONFIG_EXAMPLE_PATH = Path(__file__).parent.parent / 'config.example.toml'
 
@@ -65,7 +68,8 @@ class CLI(classyclick.helpers.ConfigFileMixin, classyclick.Group):
         )
 
 
-# TODO: classyclick missing @click.version_option - https://github.com/fopina/classyclick/issues/48
-CLI.click = click.version_option(version=__version__, message='%(version)s')(CLI.click)
+class Config(classyclick.helpers.ConfigBaseCommand, CLI.Command):
+    pass
+
 
 classyclick.helpers.discover_commands(__package__)

@@ -1,10 +1,10 @@
 import pathlib
 import re
-import tomllib
 import unittest
 
-import defectdojo_api_generated
+import tomllib
 
+import defectdojo_api_generated
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 

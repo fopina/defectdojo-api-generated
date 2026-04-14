@@ -121,6 +121,11 @@ Formatting and lint:
 - `make lint`
 - `make lint-check`
 
+Repo-specific expectation:
+
+- After any code, template, packaging, or GitHub Actions change, run `make lint`.
+- Do not treat `make lint` as optional or defer it unless the user explicitly asks not to run it or you are blocked.
+
 Tests:
 
 - `make test`

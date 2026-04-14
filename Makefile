@@ -11,7 +11,7 @@ sync:
 
 .venv39: export VIRTUAL_ENV=.venv39
 .venv39:
-	uv sync --dev --extra cli --python 3.9 --active
+	uv sync --dev --all-extras --python 3.9 --active
 
 test39: .venv39
 test39: export VIRTUAL_ENV=.venv39

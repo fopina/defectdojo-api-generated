@@ -57,12 +57,15 @@ jobs:
         run: |
           .github/change_version.py --set '${{ inputs.version }}'
       - name: Build
-        run: uv run pyproject-build
+        run: |
+          rm -rf dist packages/cli/dist
+          uv run pyproject-build
+          uv run pyproject-build packages/cli
       - name: Publish
         env:
           TWINE_USERNAME: __token__
           TWINE_PASSWORD: ${{ secrets.twine_token }}
-        run: uv run twine upload --verbose --repository ${{ inputs.repository }} dist/*
+        run: uv run twine upload --verbose --repository ${{ inputs.repository }} dist/* packages/cli/dist/*
       - name: highlight
         run: |
           INDEX=""
@@ -70,8 +73,9 @@ jobs:
             INDEX=" -i ${{ inputs.repository }}"
           fi
           cat <<EOF >> ${GITHUB_STEP_SUMMARY}
-          \`example\` uploaded to ${{ inputs.repository }}
+          Packages uploaded to ${{ inputs.repository }}
           \`\`\`
           pip install${INDEX} defectdojo-api-generated==${{ inputs.version }}
+          pip install${INDEX} defectdojo-api-generated-cli==${{ inputs.version }}
           \`\`\`
           EOF

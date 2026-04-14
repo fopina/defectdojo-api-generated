@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=69.5.0,<80.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "defectdojo-api-generated-cli"
+version = "1.0.0"
+description = "CLI wrapper for defectdojo-api-generated"
+readme = "README.md"
+requires-python = ">=3.9,<4"
+dependencies = [
+    "classyclick==1.0.0",
+    "defectdojo-api-generated==1.0.0",
+    "jmespath>=1.0.1",
+]
+
+[project.scripts]
+dojo = "defectdojo_api_generated_cli.__main__:main"
+defectdojo-api-generated = "defectdojo_api_generated_cli.__main__:main"
+
+[project.urls]
+Homepage = "https://github.com/fopina/defectdojo-api-generated"
+
+[tool.uv.sources]
+defectdojo-api-generated = { path = "../.." }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["defectdojo_api_generated_cli"]

@@ -2,7 +2,10 @@ import pathlib
 import re
 import unittest
 
-import tomllib
+try:
+    import tomllib
+except ModuleNotFoundError:  # pragma: no cover - Python < 3.11
+    import tomli as tomllib
 
 import defectdojo_api_generated
 

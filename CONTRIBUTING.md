@@ -10,6 +10,15 @@ Use `make test` to make sure all tests pass before pushing.
 
 Use `make lint` to make sure lint check passes before pushing.
 
+## Packaging layout
+
+The main package, `defectdojo-api-generated`, is intentionally library-only.
+It does not publish console scripts and should remain installable without CLI-only dependencies.
+
+The `dojo` entrypoint lives in the thin wrapper package under `packages/cli/`.
+That package depends on the main library plus the CLI stack and should stay small:
+keep CLI packaging, entrypoints, and CLI-only dependency wiring there, while the actual CLI implementation can continue to live under `defectdojo_api_generated/cli/`.
+
 ## Guidelines
 
 ### Update openapi-generator version

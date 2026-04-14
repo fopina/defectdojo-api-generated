@@ -30,9 +30,7 @@ def main():
         cli_version_data = CLI_VERSION_PY.read_text()
         CLI_VERSION_PY.write_text(VERSION_RE.sub(f"__version__ = '{args.set}'", cli_version_data))
         cli_pyproject_data = CLI_DEPENDENCY_PYPROJECT.read_text()
-        CLI_DEPENDENCY_PYPROJECT.write_text(
-            CLI_DEPENDENCY_RE.sub(rf'\g<1>{args.set}\g<3>', cli_pyproject_data)
-        )
+        CLI_DEPENDENCY_PYPROJECT.write_text(CLI_DEPENDENCY_RE.sub(rf'\g<1>{args.set}\g<3>', cli_pyproject_data))
         print(f'New version: {args.set}')
 
 

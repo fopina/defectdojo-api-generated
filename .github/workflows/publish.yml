@@ -81,9 +81,9 @@ jobs:
           EOF
           if [ "${{ inputs.repository }}" != "pypi" ]; then
             cat <<EOF >> ${GITHUB_STEP_SUMMARY}
-            Run with \`uvx\`
-            \`\`\`
-            uvx defectdojo-api-generated-cli==${{ inputs.version }}
-            \`\`\`
-            EOF
+          Run with \`uvx\`
+          \`\`\`
+          uvx defectdojo-api-generated-cli==${{ inputs.version }}
+          \`\`\`
+          EOF
           fi

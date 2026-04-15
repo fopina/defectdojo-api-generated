@@ -15,15 +15,11 @@ dependencies = [
 ]
 
 [project.scripts]
-dojo = "defectdojo_api_generated_cli.__main__:main"
-defectdojo-api-generated = "defectdojo_api_generated_cli.__main__:main"
+dojo = "defectdojo_api_generated.cli.__main__:main"
+defectdojo-api-generated = "defectdojo_api_generated.cli.__main__:main"
 
 [project.urls]
 Homepage = "https://github.com/fopina/defectdojo-api-generated"
 
 [tool.uv.sources]
 defectdojo-api-generated = { path = "../.." }
-
-[tool.setuptools.packages.find]
-where = ["src"]
-include = ["defectdojo_api_generated_cli"]

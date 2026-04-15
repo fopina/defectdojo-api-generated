@@ -1,5 +1,4 @@
 import pathlib
-import re
 import unittest
 
 try:
@@ -18,25 +17,23 @@ class TestPackagingLayout(unittest.TestCase):
 
         self.assertNotIn('scripts', pyproject['project'])
 
-    def test_cli_wrapper_package_owns_console_scripts(self):
+    def test_cli_distribution_points_console_scripts_to_library_entrypoint(self):
         pyproject = tomllib.loads((ROOT / 'packages' / 'cli' / 'pyproject.toml').read_text())
 
         self.assertEqual(
             pyproject['project']['scripts'],
             {
-                'dojo': 'defectdojo_api_generated_cli.__main__:main',
-                'defectdojo-api-generated': 'defectdojo_api_generated_cli.__main__:main',
+                'dojo': 'defectdojo_api_generated.cli.__main__:main',
+                'defectdojo-api-generated': 'defectdojo_api_generated.cli.__main__:main',
             },
         )
 
-    def test_cli_wrapper_version_matches_library_version(self):
-        wrapper_init = (ROOT / 'packages' / 'cli' / 'src' / 'defectdojo_api_generated_cli' / '__init__.py').read_text()
-        match = re.search(r"__version__ = '([^']+)'", wrapper_init)
+    def test_cli_distribution_version_matches_library_version(self):
+        pyproject = tomllib.loads((ROOT / 'packages' / 'cli' / 'pyproject.toml').read_text())
 
-        self.assertIsNotNone(match)
-        self.assertEqual(match.group(1), defectdojo_api_generated.__version__)
+        self.assertEqual(pyproject['project']['version'], defectdojo_api_generated.__version__)
 
-    def test_cli_wrapper_dependency_matches_library_version(self):
+    def test_cli_distribution_dependency_matches_library_version(self):
         pyproject = tomllib.loads((ROOT / 'packages' / 'cli' / 'pyproject.toml').read_text())
 
         self.assertIn(

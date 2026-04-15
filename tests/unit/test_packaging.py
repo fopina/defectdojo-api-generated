@@ -24,7 +24,7 @@ class TestPackagingLayout(unittest.TestCase):
             pyproject['project']['scripts'],
             {
                 'dojo': 'defectdojo_api_generated.cli.__main__:main',
-                'defectdojo-api-generated': 'defectdojo_api_generated.cli.__main__:main',
+                'defectdojo-api-generated-cli': 'defectdojo_api_generated.cli.__main__:main',
             },
         )
 

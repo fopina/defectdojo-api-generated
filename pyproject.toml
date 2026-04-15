@@ -37,6 +37,9 @@ Homepage = "https://github.com/fopina/defectdojo-api-generated"
 [tool.setuptools.packages.find]
 include = ["defectdojo_api_generated", "defectdojo_api_generated.*"]
 
+[tool.setuptools.package-data]
+"defectdojo_api_generated.cli" = ["config.example.toml"]
+
 [tool.setuptools.dynamic]
 version = {attr = "defectdojo_api_generated.__version__"}
 

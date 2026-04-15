@@ -93,4 +93,5 @@ jobs:
           \`\`\`
           uvx defectdojo-api-generated-cli==${{ inputs.version }}
           \`\`\`
+          EOF
           fi

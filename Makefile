@@ -36,9 +36,10 @@ test-e2e:
 	uv run pytest tests/integration
 
 testpub:
-	rm -fr dist
+	rm -rf dist packages/cli/dist
 	uv run pyproject-build
-	uv run twine upload --repository testpypi dist/*
+	uv run pyproject-build packages/cli
+	uv run twine upload --repository testpypi dist/* packages/cli/dist/*
 
 schema:
 	uv run ./support/openapi/fetch_openapi.py --output ./support/openapi/openapi-new.json

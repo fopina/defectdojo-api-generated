@@ -79,3 +79,19 @@ jobs:
           pip install${INDEX} defectdojo-api-generated-cli==${{ inputs.version }}
           \`\`\`
           EOF
+          if [ "${{ inputs.repository }}" != "pypi" ]; then
+            cat <<EOF >> ${GITHUB_STEP_SUMMARY}
+          Run with \`uvx\`
+          \`\`\`
+          uvx --with 'defectdojo-api-generated @ https://test-files.pythonhosted.org/packages/source/d/defectdojo-api-generated/defectdojo_api_generated-${{ inputs.version }}.tar.gz' \\
+              'defectdojo-api-generated-cli @ https://test-files.pythonhosted.org/packages/source/d/defectdojo-api-generated-cli/defectdojo_api_generated_cli-${{ inputs.version }}.tar.gz'
+          \`\`\`
+          EOF
+          else
+            cat <<EOF >> ${GITHUB_STEP_SUMMARY}
+          Run with \`uvx\`
+          \`\`\`
+          uvx defectdojo-api-generated-cli==${{ inputs.version }}
+          \`\`\`
+          EOF
+          fi

@@ -2,7 +2,7 @@
     "openapi": "3.0.3",
     "info": {
         "title": "DefectDojo API v2",
-        "version": "2.56.4",
+        "version": "2.57.2",
         "description": "DefectDojo - Open Source vulnerability Management made easy. Prefetch related parameters/responses not yet in the schema."
     },
     "paths": {
@@ -2439,6 +2439,168 @@
                 }
             }
         },
+        "/api/v2/celery/queue/details/": {
+            "get": {
+                "operationId": "celery_queue_details_list",
+                "description": "Scans every message in the queue (O(N)) and returns task name, count, and oldest/newest queue positions. May be slow for large queues.",
+                "summary": "Get per-task breakdown of the Celery queue",
+                "tags": [
+                    "celery"
+                ],
+                "security": [
+                    {
+                        "cookieAuth": []
+                    },
+                    {
+                        "basicAuth": []
+                    },
+                    {
+                        "tokenAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/CeleryQueueTaskDetail"
+                                    }
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/v2/celery/queue/purge/": {
+            "post": {
+                "operationId": "celery_queue_purge_create",
+                "description": "Removes all pending tasks from the default Celery queue. Tasks already being executed by workers are not affected. Note: if deduplication tasks were queued, you may need to re-run deduplication manually via `python manage.py dedupe`.",
+                "summary": "Purge all pending Celery tasks from the queue",
+                "tags": [
+                    "celery"
+                ],
+                "security": [
+                    {
+                        "cookieAuth": []
+                    },
+                    {
+                        "basicAuth": []
+                    },
+                    {
+                        "tokenAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "purged": {
+                                            "type": "integer"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/v2/celery/queue/task/purge/": {
+            "post": {
+                "operationId": "celery_queue_task_purge_create",
+                "description": "Removes all pending tasks matching the given task name from the default Celery queue.",
+                "summary": "Purge all queued tasks with a given task name",
+                "tags": [
+                    "celery"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "task_name": {
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "task_name"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    },
+                    {
+                        "basicAuth": []
+                    },
+                    {
+                        "tokenAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "purged": {
+                                            "type": "integer"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/api/v2/celery/status/": {
+            "get": {
+                "operationId": "celery_status_retrieve",
+                "description": "Returns Celery worker liveness, pending queue length, and the active task timeout/expiry configuration. Uses the Celery control channel (pidbox) for worker status so it works correctly even when the task queue is clogged.",
+                "summary": "Get Celery worker and queue status",
+                "tags": [
+                    "celery"
+                ],
+                "security": [
+                    {
+                        "cookieAuth": []
+                    },
+                    {
+                        "basicAuth": []
+                    },
+                    {
+                        "tokenAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CeleryStatus"
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
         "/api/v2/configuration_permissions/": {
             "get": {
                 "operationId": "configuration_permissions_list",
@@ -2556,6 +2718,7 @@
         "/api/v2/credential_mappings/": {
             "get": {
                 "operationId": "credential_mappings_list",
+                "description": "This endpoint is deprecated and will be removed on 2026-06-01.",
                 "parameters": [
                     {
                         "in": "query",
@@ -2639,6 +2802,7 @@
                         "tokenAuth": []
                     }
                 ],
+                "deprecated": true,
                 "responses": {
                     "200": {
                         "content": {
@@ -2654,6 +2818,7 @@
             },
             "post": {
                 "operationId": "credential_mappings_create",
+                "description": "This endpoint is deprecated and will be removed on 2026-06-01.",
                 "tags": [
                     "credential_mappings"
                 ],
@@ -2688,6 +2853,7 @@
                         "tokenAuth": []
                     }
                 ],
+                "deprecated": true,
                 "responses": {
                     "201": {
                         "content": {
@@ -2705,6 +2871,7 @@
         "/api/v2/credential_mappings/{id}/": {
             "get": {
                 "operationId": "credential_mappings_retrieve",
+                "description": "This endpoint is deprecated and will be removed on 2026-06-01.",
                 "parameters": [
                     {
                         "in": "path",
@@ -2730,6 +2897,7 @@
                         "tokenAuth": []
                     }
                 ],
+                "deprecated": true,
                 "responses": {
                     "200": {
                         "content": {
@@ -2745,6 +2913,7 @@
             },
             "put": {
                 "operationId": "credential_mappings_update",
+                "description": "This endpoint is deprecated and will be removed on 2026-06-01.",
                 "parameters": [
                     {
                         "in": "path",
@@ -2790,6 +2959,7 @@
                         "tokenAuth": []
                     }
                 ],
+                "deprecated": true,
                 "responses": {
                     "200": {
                         "content": {
@@ -2805,6 +2975,7 @@
             },
             "patch": {
                 "operationId": "credential_mappings_partial_update",
+                "description": "This endpoint is deprecated and will be removed on 2026-06-01.",
                 "parameters": [
                     {
                         "in": "path",
@@ -2849,6 +3020,7 @@
                         "tokenAuth": []
                     }
                 ],
+                "deprecated": true,
                 "responses": {
                     "200": {
                         "content": {
@@ -2864,6 +3036,7 @@
             },
             "delete": {
                 "operationId": "credential_mappings_destroy",
+                "description": "This endpoint is deprecated and will be removed on 2026-06-01.",
                 "parameters": [
                     {
                         "in": "path",
@@ -2889,6 +3062,7 @@
                         "tokenAuth": []
                     }
                 ],
+                "deprecated": true,
                 "responses": {
                     "204": {
                         "description": "No response body"
@@ -2959,6 +3133,7 @@
         "/api/v2/credentials/": {
             "get": {
                 "operationId": "credentials_list",
+                "description": "This endpoint is deprecated and will be removed on 2026-06-01.",
                 "parameters": [
                     {
                         "name": "limit",
@@ -3008,6 +3183,7 @@
                         "tokenAuth": []
                     }
                 ],
+                "deprecated": true,
                 "responses": {
                     "200": {
                         "content": {
@@ -3023,6 +3199,7 @@
             },
             "post": {
                 "operationId": "credentials_create",
+                "description": "This endpoint is deprecated and will be removed on 2026-06-01.",
                 "tags": [
                     "credentials"
                 ],
@@ -3057,6 +3234,7 @@
                         "tokenAuth": []
                     }
                 ],
+                "deprecated": true,
                 "responses": {
                     "201": {
                         "content": {
@@ -3074,6 +3252,7 @@
         "/api/v2/credentials/{id}/": {
             "get": {
                 "operationId": "credentials_retrieve",
+                "description": "This endpoint is deprecated and will be removed on 2026-06-01.",
                 "parameters": [
                     {
                         "in": "path",
@@ -3114,6 +3293,7 @@
                         "tokenAuth": []
                     }
                 ],
+                "deprecated": true,
                 "responses": {
                     "200": {
                         "content": {
@@ -3129,6 +3309,7 @@
             },
             "put": {
                 "operationId": "credentials_update",
+                "description": "This endpoint is deprecated and will be removed on 2026-06-01.",
                 "parameters": [
                     {
                         "in": "path",
@@ -3174,6 +3355,7 @@
                         "tokenAuth": []
                     }
                 ],
+                "deprecated": true,
                 "responses": {
                     "200": {
                         "content": {
@@ -3189,6 +3371,7 @@
             },
             "patch": {
                 "operationId": "credentials_partial_update",
+                "description": "This endpoint is deprecated and will be removed on 2026-06-01.",
                 "parameters": [
                     {
                         "in": "path",
@@ -3233,6 +3416,7 @@
                         "tokenAuth": []
                     }
                 ],
+                "deprecated": true,
                 "responses": {
                     "200": {
                         "content": {
@@ -3248,6 +3432,7 @@
             },
             "delete": {
                 "operationId": "credentials_destroy",
+                "description": "This endpoint is deprecated and will be removed on 2026-06-01.",
                 "parameters": [
                     {
                         "in": "path",
@@ -3273,6 +3458,7 @@
                         "tokenAuth": []
                     }
                 ],
+                "deprecated": true,
                 "responses": {
                     "204": {
                         "description": "No response body"
@@ -7809,6 +7995,14 @@
                     },
                     {
                         "in": "query",
+                        "name": "exact_title",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Finding title exact match (case-insensitive)"
+                    },
+                    {
+                        "in": "query",
                         "name": "false_p",
                         "schema": {
                             "type": "boolean"
@@ -10183,6 +10377,67 @@
                 }
             }
         },
+        "/api/v2/findings/{id}/verify/": {
+            "post": {
+                "operationId": "findings_verify_create",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "description": "A unique integer value identifying this finding.",
+                        "required": true
+                    }
+                ],
+                "tags": [
+                    "findings"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/FindingVerifyRequest"
+                            }
+                        },
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "$ref": "#/components/schemas/FindingVerifyRequest"
+                            }
+                        },
+                        "multipart/form-data": {
+                            "schema": {
+                                "$ref": "#/components/schemas/FindingVerifyRequest"
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "cookieAuth": []
+                    },
+                    {
+                        "basicAuth": []
+                    },
+                    {
+                        "tokenAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Finding"
+                                }
+                            }
+                        },
+                        "description": ""
+                    }
+                }
+            }
+        },
         "/api/v2/findings/accept_risks/": {
             "post": {
                 "operationId": "findings_accept_risks_create",
@@ -10422,6 +10677,14 @@
                             "nullable": true
                         },
                         "description": "The range of EPSS score percentages to filter on; the min input is a lower bound, the max is an upper bound. Leaving one empty will skip that bound (e.g., leaving the min bound input empty will filter only on the max bound -- filtering on \"less than or equal\"). Leading 0 required."
+                    },
+                    {
+                        "in": "query",
+                        "name": "exact_title",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Finding title exact match (case-insensitive)"
                     },
                     {
                         "in": "query",
@@ -24932,6 +25195,7 @@
         "/api/v2/stub_findings/": {
             "get": {
                 "operationId": "stub_findings_list",
+                "description": "This endpoint is deprecated and will be removed on 2026-06-01.",
                 "parameters": [
                     {
                         "in": "query",
@@ -25002,6 +25266,7 @@
                         "tokenAuth": []
                     }
                 ],
+                "deprecated": true,
                 "responses": {
                     "200": {
                         "content": {
@@ -25017,6 +25282,7 @@
             },
             "post": {
                 "operationId": "stub_findings_create",
+                "description": "This endpoint is deprecated and will be removed on 2026-06-01.",
                 "tags": [
                     "stub_findings"
                 ],
@@ -25051,6 +25317,7 @@
                         "tokenAuth": []
                     }
                 ],
+                "deprecated": true,
                 "responses": {
                     "201": {
                         "content": {
@@ -25068,6 +25335,7 @@
         "/api/v2/stub_findings/{id}/": {
             "get": {
                 "operationId": "stub_findings_retrieve",
+                "description": "This endpoint is deprecated and will be removed on 2026-06-01.",
                 "parameters": [
                     {
                         "in": "path",
@@ -25093,6 +25361,7 @@
                         "tokenAuth": []
                     }
                 ],
+                "deprecated": true,
                 "responses": {
                     "200": {
                         "content": {
@@ -25108,6 +25377,7 @@
             },
             "put": {
                 "operationId": "stub_findings_update",
+                "description": "This endpoint is deprecated and will be removed on 2026-06-01.",
                 "parameters": [
                     {
                         "in": "path",
@@ -25153,6 +25423,7 @@
                         "tokenAuth": []
                     }
                 ],
+                "deprecated": true,
                 "responses": {
                     "200": {
                         "content": {
@@ -25168,6 +25439,7 @@
             },
             "patch": {
                 "operationId": "stub_findings_partial_update",
+                "description": "This endpoint is deprecated and will be removed on 2026-06-01.",
                 "parameters": [
                     {
                         "in": "path",
@@ -25212,6 +25484,7 @@
                         "tokenAuth": []
                     }
                 ],
+                "deprecated": true,
                 "responses": {
                     "200": {
                         "content": {
@@ -25227,6 +25500,7 @@
             },
             "delete": {
                 "operationId": "stub_findings_destroy",
+                "description": "This endpoint is deprecated and will be removed on 2026-06-01.",
                 "parameters": [
                     {
                         "in": "path",
@@ -25252,6 +25526,7 @@
                         "tokenAuth": []
                     }
                 ],
+                "deprecated": true,
                 "responses": {
                     "204": {
                         "description": "No response body"
@@ -30980,6 +31255,98 @@
                     "req_resp"
                 ]
             },
+            "CeleryQueueTaskDetail": {
+                "type": "object",
+                "properties": {
+                    "task_name": {
+                        "type": "string",
+                        "readOnly": true
+                    },
+                    "count": {
+                        "type": "integer",
+                        "readOnly": true
+                    },
+                    "oldest_position": {
+                        "type": "integer",
+                        "readOnly": true
+                    },
+                    "newest_position": {
+                        "type": "integer",
+                        "readOnly": true
+                    },
+                    "oldest_eta": {
+                        "type": "string",
+                        "readOnly": true,
+                        "nullable": true
+                    },
+                    "newest_eta": {
+                        "type": "string",
+                        "readOnly": true,
+                        "nullable": true
+                    },
+                    "earliest_expires": {
+                        "type": "string",
+                        "readOnly": true,
+                        "nullable": true
+                    },
+                    "latest_expires": {
+                        "type": "string",
+                        "readOnly": true,
+                        "nullable": true
+                    }
+                },
+                "required": [
+                    "count",
+                    "earliest_expires",
+                    "latest_expires",
+                    "newest_eta",
+                    "newest_position",
+                    "oldest_eta",
+                    "oldest_position",
+                    "task_name"
+                ]
+            },
+            "CeleryStatus": {
+                "type": "object",
+                "properties": {
+                    "worker_status": {
+                        "type": "boolean",
+                        "readOnly": true
+                    },
+                    "broker_status": {
+                        "type": "boolean",
+                        "readOnly": true
+                    },
+                    "queue_length": {
+                        "type": "integer",
+                        "readOnly": true,
+                        "nullable": true
+                    },
+                    "task_time_limit": {
+                        "type": "integer",
+                        "readOnly": true,
+                        "nullable": true
+                    },
+                    "task_soft_time_limit": {
+                        "type": "integer",
+                        "readOnly": true,
+                        "nullable": true
+                    },
+                    "task_default_expires": {
+                        "type": "integer",
+                        "readOnly": true,
+                        "nullable": true
+                    }
+                },
+                "required": [
+                    "broker_status",
+                    "queue_length",
+                    "task_default_expires",
+                    "task_soft_time_limit",
+                    "task_time_limit",
+                    "worker_status"
+                ]
+            },
             "ConfigurationPermission": {
                 "type": "object",
                 "properties": {
@@ -35401,6 +35768,18 @@
                     "notes"
                 ]
             },
+            "FindingVerifyRequest": {
+                "type": "object",
+                "properties": {
+                    "note": {
+                        "type": "string"
+                    },
+                    "note_type": {
+                        "type": "integer",
+                        "nullable": true
+                    }
+                }
+            },
             "GlobalRole": {
                 "type": "object",
                 "properties": {
@@ -35666,6 +36045,7 @@
                             "Anchore Engine Scan",
                             "Anchore Enterprise Policy Check",
                             "Anchore Grype",
+                            "Anchore Grype detailed",
                             "AnchoreCTL Policies Report",
                             "AnchoreCTL Vuln Report",
                             "AppCheck Web Application Scanner",
@@ -35763,6 +36143,7 @@
                             "Immuniweb Scan",
                             "IntSights Report",
                             "Invicti Scan",
+                            "IriusRisk Threats Scan",
                             "JFrog Xray API Summary Artifact Scan",
                             "JFrog Xray On Demand Binary Scan",
                             "JFrog Xray Scan",
@@ -35802,6 +36183,7 @@
                             "Openscap Vulnerability Scan",
                             "OpenVAS Parser",
                             "OpenVAS Parser v2",
+                            "Orca Security Alerts",
                             "ORT evaluated model Importer",
                             "OssIndex Devaudit SCA Scan Importer",
                             "OSV Scan",
@@ -35885,8 +36267,8 @@
                             "Zora Parser"
                         ],
                         "type": "string",
-                        "description": "* `Acunetix Scan` - Acunetix Scanner\n* `Anchore Engine Scan` - Anchore Engine Scan\n* `Anchore Enterprise Policy Check` - Anchore Enterprise Policy Check\n* `Anchore Grype` - Anchore Grype\n* `AnchoreCTL Policies Report` - AnchoreCTL Policies Report\n* `AnchoreCTL Vuln Report` - AnchoreCTL Vuln Report\n* `AppCheck Web Application Scanner` - AppCheck Web Application Scanner\n* `AppSpider Scan` - AppSpider Scan\n* `Aqua Scan` - Aqua Scan\n* `Arachni Scan` - Arachni Scan\n* `AuditJS Scan` - AuditJS Scan\n* `AWS Inspector2 Scan` - AWS Inspector2 Scan\n* `AWS Prowler Scan` - AWS Prowler Scan\n* `AWS Prowler V3` - AWS Prowler V3\n* `AWS Security Finding Format (ASFF) Scan` - AWS Security Finding Format (ASFF)\n* `AWS Security Hub Scan` - AWS Security Hub Scan\n* `Azure Security Center Recommendations Scan` - Azure Security Center Recommendations Scan\n* `Bandit Scan` - Bandit Scan\n* `Bearer CLI` - Bearer CLI\n* `BlackDuck API` - BlackDuck API\n* `Blackduck Binary Analysis` - Blackduck Binary Analysis\n* `Blackduck Component Risk` - Blackduck Component Risk\n* `Blackduck Hub Scan` - Blackduck Hub Scan\n* `Brakeman Scan` - Brakeman Scan\n* `Bugcrowd API Import` - Bugcrowd API Import\n* `BugCrowd Scan` - BugCrowd Scan\n* `Bundler-Audit Scan` - Bundler-Audit Scan\n* `Burp Dastardly Scan` - Burp Dastardly Scan\n* `Burp Enterprise Scan` - Burp Enterprise Scan (RENAMED to Burp Suite DAST Scan)\n* `Burp REST API` - Burp REST API\n* `Burp Scan` - Burp Scan\n* `Burp GraphQL API` - Burp Suite DAST GraphQL API\n* `Burp Suite DAST Scan` - Burp Suite DAST Scan\n* `CargoAudit Scan` - CargoAudit Scan\n* `Checkmarx CxFlow SAST` - Checkmarx CxFlow SAST\n* `Checkmarx One Scan` - Checkmarx One Scan\n* `Checkmarx OSA` - Checkmarx OSA\n* `Checkmarx Scan` - Checkmarx Scan\n* `Checkmarx Scan detailed` - Checkmarx Scan detailed\n* `Checkov Scan` - Checkov Scan\n* `Chef Inspect Log` - Chef Inspect Log\n* `Choctaw Hog Scan` - Choctaw Hog Scan\n* `Clair Scan` - Clair Scan\n* `Cloudflare Insights` - Cloudflare Insights\n* `Cloudsploit Scan` - Cloudsploit Scan\n* `Cobalt.io API Import` - Cobalt.io API Import\n* `Cobalt.io Scan` - Cobalt.io Scan\n* `Codechecker Report native` - Codechecker Report native\n* `Contrast Scan` - Contrast Scan\n* `Coverity API` - Coverity API\n* `Coverity Scan JSON Report` - Coverity Scan JSON Report\n* `Crashtest Security JSON File` - Crashtest Security JSON File\n* `Crashtest Security XML File` - Crashtest Security XML File\n* `CredScan Scan` - CredScan Scan\n* `Crunch42 Scan` - Crunch42 Scan\n* `Cyberwatch scan (Galeax)` - Cyberwatch scan (Galeax)\n* `CycloneDX Scan` - CycloneDX Scan\n* `Cycognito Scan` - Cycognito Scan\n* `DawnScanner Scan` - DawnScanner Scan\n* `Deepfence Threatmapper Report` - Deepfence Threatmapper Report\n* `Dependency Check Scan` - Dependency Check Scan\n* `Dependency Track Finding Packaging Format (FPF) Export` - Dependency Track Finding Packaging Format (FPF) Export\n* `Detect-secrets Scan` - Detect-secrets Scan\n* `docker-bench-security Scan` - docker-bench-security Scan\n* `Dockle Scan` - Dockle Scan\n* `DrHeader JSON Importer` - DrHeader JSON Importer\n* `DSOP Scan` - DSOP Scan\n* `Duroc Hog Scan` - Duroc Hog Scan\n* `Edgescan Scan` - Edgescan Scan\n* `ESLint Scan` - ESLint Scan\n* `Essex Hog Scan` - Essex Hog Scan\n* `Fortify Scan` - Fortify Scan\n* `Generic Findings Import` - Generic Findings Import\n* `Ggshield Scan` - Ggshield Scan\n* `Github SAST Scan` - Github SAST Scan\n* `Github Secrets Detection Report Scan` - Github Secrets Detection Report Scan\n* `Github Vulnerability Scan` - Github Vulnerability Scan\n* `GitLab API Fuzzing Report Scan` - GitLab API Fuzzing Report Scan\n* `GitLab Container Scan` - GitLab Container Scan Scan\n* `GitLab DAST Report` - GitLab DAST Report\n* `GitLab Dependency Scanning Report` - GitLab Dependency Scanning Report\n* `GitLab SAST Report` - GitLab SAST Report\n* `GitLab Secret Detection Report` - GitLab Secret Detection Report\n* `Gitleaks Scan` - Gitleaks Scan\n* `Google Cloud Artifact Vulnerability Scan` - Google Cloud Artifact Vulnerability Scan\n* `Gosec Scanner` - Gosec Scanner\n* `Gottingen Hog Scan` - Gottingen Hog Scan\n* `Govulncheck Scanner` - Govulncheck Scanner\n* `HackerOne Cases` - HackerOne Cases\n* `Hadolint Dockerfile check` - Hadolint Dockerfile check\n* `Harbor Vulnerability Scan` - Harbor Vulnerability Scan\n* `HCL AppScan on Cloud SAST XML` - HCL AppScan on Cloud SAST XML\n* `HCLAppScan XML` - HCLAppScan XML\n* `Horusec Scan` - Horusec Scan\n* `Humble Json Importer` - Humble Json Importer\n* `HuskyCI Report` - HuskyCI Report\n* `Hydra Scan` - Hydra Scan\n* `IBM AppScan DAST` - IBM AppScan DAST\n* `Immuniweb Scan` - Immuniweb Scan\n* `IntSights Report` - IntSights Report\n* `Invicti Scan` - Invicti Scan\n* `JFrog Xray API Summary Artifact Scan` - JFrog Xray API Summary Artifact Scan\n* `JFrog Xray On Demand Binary Scan` - JFrog Xray On Demand Binary Scan\n* `JFrog Xray Scan` - JFrog Xray Scan\n* `JFrog Xray Unified Scan` - JFrog Xray Unified Scan\n* `KICS Scan` - KICS Scan\n* `Kiuwan SCA Scan` - Kiuwan SCA Scan\n* `Kiuwan Scan` - Kiuwan Scan\n* `KrakenD Audit Scan` - KrakenD Audit Scan\n* `kube-bench Scan` - kube-bench Scan\n* `Kubeaudit Scan` - Kubeaudit Scan\n* `KubeHunter Scan` - KubeHunter Scan\n* `Kubescape JSON Importer` - Kubescape JSON Importer\n* `Legitify Scan` - Legitify Scan\n* `Mayhem SARIF Report` - Mayhem SARIF Report\n* `Mend Scan` - Mend Scan\n* `Meterian Scan` - Meterian Scan\n* `Microfocus Webinspect Scan` - Microfocus Webinspect Scan\n* `MobSF Scan` - MobSF Scan\n* `Mobsfscan Scan` - MobSF Scan\n* `MobSF Scorecard Scan` - MobSF Scorecard Scan\n* `Mozilla Observatory Scan` - Mozilla Observatory Scan\n* `MSDefender Parser` - MSDefender Parser\n* `n0s1 Scanner` - n0s1 Scanner\n* `Nancy Scan` - Nancy Scan\n* `Netsparker Scan` - Netsparker Scan\n* `NeuVector (compliance)` - NeuVector (compliance)\n* `NeuVector (REST)` - NeuVector (REST)\n* `Nexpose Scan` - Nexpose Scan\n* `Nikto Scan` - Nikto Scan\n* `Nmap Scan` - Nmap Scan\n* `Node Security Platform Scan` - Node Security Platform Scan\n* `Nosey Parker Scan` - Nosey Parker Scan\n* `NPM Audit Scan` - NPM Audit Scan\n* `NPM Audit v7+ Scan` - NPM Audit v7+ Scan\n* `Nuclei Scan` - Nuclei Scan\n* `OpenReports` - OpenReports\n* `Openscap Vulnerability Scan` - Openscap Vulnerability Scan\n* `OpenVAS Parser` - OpenVAS Parser\n* `OpenVAS Parser v2` - OpenVAS Parser v2\n* `ORT evaluated model Importer` - ORT evaluated model Importer\n* `OssIndex Devaudit SCA Scan Importer` - OssIndex Devaudit SCA Scan Importer\n* `OSV Scan` - OSV Scan\n* `Outpost24 Scan` - Outpost24 Scan\n* `PHP Security Audit v2` - PHP Security Audit v2\n* `PHP Symfony Security Check` - PHP Symfony Security Check\n* `PingCastle` - PingCastle\n* `pip-audit Scan` - pip-audit Scan\n* `PMD Scan` - PMD Scan\n* `Popeye Scan` - Popeye Scan\n* `Progpilot Scan` - Progpilot Scan\n* `Prowler Scan` - Prowler Scan\n* `PTART Report` - PTART Report\n* `PWN SAST` - PWN SAST\n* `Qualys Hacker Guardian Scan` - Qualys Hacker Guardian Scan\n* `Qualys Infrastructure Scan (WebGUI XML)` - Qualys Infrastructure Scan (WebGUI XML)\n* `Qualys Scan` - Qualys Scan\n* `Qualys Webapp Scan` - Qualys Webapp Scan\n* `Rapplex Scan` - Rapplex Scan\n* `Red Hat Satellite` - Red Hat Satellite\n* `Retire.js Scan` - Retire.js Scan\n* `ReversingLabs Spectra Assure` - ReversingLabs Spectra Assure\n* `Risk Recon API Importer` - Risk Recon API Importer\n* `Rubocop Scan` - Rubocop Scan\n* `Rusty Hog Scan` - Rusty Hog Scan\n* `SARIF` - SARIF\n* `Scantist Scan` - Scantist Scan\n* `Scout Suite Scan` - Scout Suite Scan\n* `Semgrep JSON Report` - Semgrep JSON Report\n* `Semgrep Pro JSON Report` - Semgrep Pro JSON Report\n* `SKF Scan` - SKF Scan\n* `Snyk Code Scan` - Snyk Code Scan\n* `Snyk Issue API Scan` - Snyk Issue API Scan\n* `Snyk Scan` - Snyk Scan\n* `Solar Appscreener Scan` - Solar Appscreener Scan Detailed_Results.csv\n* `SonarQube API Import` - SonarQube API Import\n* `SonarQube Scan` - SonarQube Scan\n* `SonarQube Scan detailed` - SonarQube Scan detailed\n* `Sonatype Application Scan` - Sonatype Application Scan\n* `SpotBugs Scan` - SpotBugs Scan\n* `SSH Audit Importer` - SSH Audit Importer\n* `SSL Labs Scan` - SSL Labs Scan\n* `Sslscan` - Sslscan\n* `Sslyze Scan` - Sslyze Scan\n* `SSLyze Scan (JSON)` - SSLyze Scan (JSON)\n* `StackHawk HawkScan` - StackHawk HawkScan\n* `Sysdig CLI Report` - Sysdig CLI Report Scan\n* `Sysdig Vulnerability Report` - Sysdig Vulnerability Report Scan\n* `Talisman Scan` - Talisman Scan\n* `Tenable Scan` - Tenable Scan\n* `Terrascan Scan` - Terrascan Scan\n* `Testssl Scan` - Testssl Scan\n* `TFSec Scan` - TFSec Scan\n* `Threagile risks report` - Threagile risks report\n* `ThreatComposer Scan` - ThreatComposer Scan\n* `Trivy Operator Scan` - Trivy Operator Scan\n* `Trivy Scan` - Trivy Scan\n* `Trufflehog Scan` - Trufflehog Scan\n* `Trufflehog3 Scan` - Trufflehog3 Scan\n* `Trustwave Fusion API Scan` - Trustwave Fusion API Scan\n* `Trustwave Scan (CSV)` - Trustwave Scan (CSV)\n* `Twistlock Image Scan` - Twistlock Image Scan\n* `VCG Scan` - VCG Scan\n* `Veracode Scan` - Veracode Scan\n* `Veracode SourceClear Scan` - Veracode SourceClear Scan\n* `Vulners` - Vulners\n* `Wapiti Scan` - Wapiti Scan\n* `Wazuh` - Wazuh\n* `WFuzz JSON report` - WFuzz JSON report\n* `Whispers Scan` - Whispers Scan\n* `WhiteHat Sentinel` - WhiteHat Sentinel\n* `Wiz Scan` - Wiz Scan\n* `Wizcli Dir Scan` - Wizcli Dir Scan\n* `Wizcli IaC Scan` - Wizcli IaC Scan\n* `Wizcli Img Scan` - Wizcli Img Scan\n* `Wpscan` - Wpscan\n* `Xanitizer Scan` - Xanitizer Scan\n* `Xeol Parser` - Xeol Parser\n* `Yarn Audit Scan` - Yarn Audit Scan\n* `ZAP Scan` - ZAP Scan\n* `Zora Parser` - Zora Parser",
-                        "x-spec-enum-id": "c23365f5f03f8fc9"
+                        "description": "* `Acunetix Scan` - Acunetix Scanner\n* `Anchore Engine Scan` - Anchore Engine Scan\n* `Anchore Enterprise Policy Check` - Anchore Enterprise Policy Check\n* `Anchore Grype` - Anchore Grype\n* `Anchore Grype detailed` - Anchore Grype detailed\n* `AnchoreCTL Policies Report` - AnchoreCTL Policies Report\n* `AnchoreCTL Vuln Report` - AnchoreCTL Vuln Report\n* `AppCheck Web Application Scanner` - AppCheck Web Application Scanner\n* `AppSpider Scan` - AppSpider Scan\n* `Aqua Scan` - Aqua Scan\n* `Arachni Scan` - Arachni Scan\n* `AuditJS Scan` - AuditJS Scan\n* `AWS Inspector2 Scan` - AWS Inspector2 Scan\n* `AWS Prowler Scan` - AWS Prowler Scan\n* `AWS Prowler V3` - AWS Prowler V3\n* `AWS Security Finding Format (ASFF) Scan` - AWS Security Finding Format (ASFF)\n* `AWS Security Hub Scan` - AWS Security Hub Scan\n* `Azure Security Center Recommendations Scan` - Azure Security Center Recommendations Scan\n* `Bandit Scan` - Bandit Scan\n* `Bearer CLI` - Bearer CLI\n* `BlackDuck API` - BlackDuck API\n* `Blackduck Binary Analysis` - Blackduck Binary Analysis\n* `Blackduck Component Risk` - Blackduck Component Risk\n* `Blackduck Hub Scan` - Blackduck Hub Scan\n* `Brakeman Scan` - Brakeman Scan\n* `Bugcrowd API Import` - Bugcrowd API Import\n* `BugCrowd Scan` - BugCrowd Scan\n* `Bundler-Audit Scan` - Bundler-Audit Scan\n* `Burp Dastardly Scan` - Burp Dastardly Scan\n* `Burp Enterprise Scan` - Burp Enterprise Scan (RENAMED to Burp Suite DAST Scan)\n* `Burp REST API` - Burp REST API\n* `Burp Scan` - Burp Scan\n* `Burp GraphQL API` - Burp Suite DAST GraphQL API\n* `Burp Suite DAST Scan` - Burp Suite DAST Scan\n* `CargoAudit Scan` - CargoAudit Scan\n* `Checkmarx CxFlow SAST` - Checkmarx CxFlow SAST\n* `Checkmarx One Scan` - Checkmarx One Scan\n* `Checkmarx OSA` - Checkmarx OSA\n* `Checkmarx Scan` - Checkmarx Scan\n* `Checkmarx Scan detailed` - Checkmarx Scan detailed\n* `Checkov Scan` - Checkov Scan\n* `Chef Inspect Log` - Chef Inspect Log\n* `Choctaw Hog Scan` - Choctaw Hog Scan\n* `Clair Scan` - Clair Scan\n* `Cloudflare Insights` - Cloudflare Insights\n* `Cloudsploit Scan` - Cloudsploit Scan\n* `Cobalt.io API Import` - Cobalt.io API Import\n* `Cobalt.io Scan` - Cobalt.io Scan\n* `Codechecker Report native` - Codechecker Report native\n* `Contrast Scan` - Contrast Scan\n* `Coverity API` - Coverity API\n* `Coverity Scan JSON Report` - Coverity Scan JSON Report\n* `Crashtest Security JSON File` - Crashtest Security JSON File\n* `Crashtest Security XML File` - Crashtest Security XML File\n* `CredScan Scan` - CredScan Scan\n* `Crunch42 Scan` - Crunch42 Scan\n* `Cyberwatch scan (Galeax)` - Cyberwatch scan (Galeax)\n* `CycloneDX Scan` - CycloneDX Scan\n* `Cycognito Scan` - Cycognito Scan\n* `DawnScanner Scan` - DawnScanner Scan\n* `Deepfence Threatmapper Report` - Deepfence Threatmapper Report\n* `Dependency Check Scan` - Dependency Check Scan\n* `Dependency Track Finding Packaging Format (FPF) Export` - Dependency Track Finding Packaging Format (FPF) Export\n* `Detect-secrets Scan` - Detect-secrets Scan\n* `docker-bench-security Scan` - docker-bench-security Scan\n* `Dockle Scan` - Dockle Scan\n* `DrHeader JSON Importer` - DrHeader JSON Importer\n* `DSOP Scan` - DSOP Scan\n* `Duroc Hog Scan` - Duroc Hog Scan\n* `Edgescan Scan` - Edgescan Scan\n* `ESLint Scan` - ESLint Scan\n* `Essex Hog Scan` - Essex Hog Scan\n* `Fortify Scan` - Fortify Scan\n* `Generic Findings Import` - Generic Findings Import\n* `Ggshield Scan` - Ggshield Scan\n* `Github SAST Scan` - Github SAST Scan\n* `Github Secrets Detection Report Scan` - Github Secrets Detection Report Scan\n* `Github Vulnerability Scan` - Github Vulnerability Scan\n* `GitLab API Fuzzing Report Scan` - GitLab API Fuzzing Report Scan\n* `GitLab Container Scan` - GitLab Container Scan Scan\n* `GitLab DAST Report` - GitLab DAST Report\n* `GitLab Dependency Scanning Report` - GitLab Dependency Scanning Report\n* `GitLab SAST Report` - GitLab SAST Report\n* `GitLab Secret Detection Report` - GitLab Secret Detection Report\n* `Gitleaks Scan` - Gitleaks Scan\n* `Google Cloud Artifact Vulnerability Scan` - Google Cloud Artifact Vulnerability Scan\n* `Gosec Scanner` - Gosec Scanner\n* `Gottingen Hog Scan` - Gottingen Hog Scan\n* `Govulncheck Scanner` - Govulncheck Scanner\n* `HackerOne Cases` - HackerOne Cases\n* `Hadolint Dockerfile check` - Hadolint Dockerfile check\n* `Harbor Vulnerability Scan` - Harbor Vulnerability Scan\n* `HCL AppScan on Cloud SAST XML` - HCL AppScan on Cloud SAST XML\n* `HCLAppScan XML` - HCLAppScan XML\n* `Horusec Scan` - Horusec Scan\n* `Humble Json Importer` - Humble Json Importer\n* `HuskyCI Report` - HuskyCI Report\n* `Hydra Scan` - Hydra Scan\n* `IBM AppScan DAST` - IBM AppScan DAST\n* `Immuniweb Scan` - Immuniweb Scan\n* `IntSights Report` - IntSights Report\n* `Invicti Scan` - Invicti Scan\n* `IriusRisk Threats Scan` - IriusRisk Threats Scan\n* `JFrog Xray API Summary Artifact Scan` - JFrog Xray API Summary Artifact Scan\n* `JFrog Xray On Demand Binary Scan` - JFrog Xray On Demand Binary Scan\n* `JFrog Xray Scan` - JFrog Xray Scan\n* `JFrog Xray Unified Scan` - JFrog Xray Unified Scan\n* `KICS Scan` - KICS Scan\n* `Kiuwan SCA Scan` - Kiuwan SCA Scan\n* `Kiuwan Scan` - Kiuwan Scan\n* `KrakenD Audit Scan` - KrakenD Audit Scan\n* `kube-bench Scan` - kube-bench Scan\n* `Kubeaudit Scan` - Kubeaudit Scan\n* `KubeHunter Scan` - KubeHunter Scan\n* `Kubescape JSON Importer` - Kubescape JSON Importer\n* `Legitify Scan` - Legitify Scan\n* `Mayhem SARIF Report` - Mayhem SARIF Report\n* `Mend Scan` - Mend Scan\n* `Meterian Scan` - Meterian Scan\n* `Microfocus Webinspect Scan` - Microfocus Webinspect Scan\n* `MobSF Scan` - MobSF Scan\n* `Mobsfscan Scan` - MobSF Scan\n* `MobSF Scorecard Scan` - MobSF Scorecard Scan\n* `Mozilla Observatory Scan` - Mozilla Observatory Scan\n* `MSDefender Parser` - MSDefender Parser\n* `n0s1 Scanner` - n0s1 Scanner\n* `Nancy Scan` - Nancy Scan\n* `Netsparker Scan` - Netsparker Scan\n* `NeuVector (compliance)` - NeuVector (compliance)\n* `NeuVector (REST)` - NeuVector (REST)\n* `Nexpose Scan` - Nexpose Scan\n* `Nikto Scan` - Nikto Scan\n* `Nmap Scan` - Nmap Scan\n* `Node Security Platform Scan` - Node Security Platform Scan\n* `Nosey Parker Scan` - Nosey Parker Scan\n* `NPM Audit Scan` - NPM Audit Scan\n* `NPM Audit v7+ Scan` - NPM Audit v7+ Scan\n* `Nuclei Scan` - Nuclei Scan\n* `OpenReports` - OpenReports\n* `Openscap Vulnerability Scan` - Openscap Vulnerability Scan\n* `OpenVAS Parser` - OpenVAS Parser\n* `OpenVAS Parser v2` - OpenVAS Parser v2\n* `Orca Security Alerts` - Orca Security Alerts\n* `ORT evaluated model Importer` - ORT evaluated model Importer\n* `OssIndex Devaudit SCA Scan Importer` - OssIndex Devaudit SCA Scan Importer\n* `OSV Scan` - OSV Scan\n* `Outpost24 Scan` - Outpost24 Scan\n* `PHP Security Audit v2` - PHP Security Audit v2\n* `PHP Symfony Security Check` - PHP Symfony Security Check\n* `PingCastle` - PingCastle\n* `pip-audit Scan` - pip-audit Scan\n* `PMD Scan` - PMD Scan\n* `Popeye Scan` - Popeye Scan\n* `Progpilot Scan` - Progpilot Scan\n* `Prowler Scan` - Prowler Scan\n* `PTART Report` - PTART Report\n* `PWN SAST` - PWN SAST\n* `Qualys Hacker Guardian Scan` - Qualys Hacker Guardian Scan\n* `Qualys Infrastructure Scan (WebGUI XML)` - Qualys Infrastructure Scan (WebGUI XML)\n* `Qualys Scan` - Qualys Scan\n* `Qualys Webapp Scan` - Qualys Webapp Scan\n* `Rapplex Scan` - Rapplex Scan\n* `Red Hat Satellite` - Red Hat Satellite\n* `Retire.js Scan` - Retire.js Scan\n* `ReversingLabs Spectra Assure` - ReversingLabs Spectra Assure\n* `Risk Recon API Importer` - Risk Recon API Importer\n* `Rubocop Scan` - Rubocop Scan\n* `Rusty Hog Scan` - Rusty Hog Scan\n* `SARIF` - SARIF\n* `Scantist Scan` - Scantist Scan\n* `Scout Suite Scan` - Scout Suite Scan\n* `Semgrep JSON Report` - Semgrep JSON Report\n* `Semgrep Pro JSON Report` - Semgrep Pro JSON Report\n* `SKF Scan` - SKF Scan\n* `Snyk Code Scan` - Snyk Code Scan\n* `Snyk Issue API Scan` - Snyk Issue API Scan\n* `Snyk Scan` - Snyk Scan\n* `Solar Appscreener Scan` - Solar Appscreener Scan Detailed_Results.csv\n* `SonarQube API Import` - SonarQube API Import\n* `SonarQube Scan` - SonarQube Scan\n* `SonarQube Scan detailed` - SonarQube Scan detailed\n* `Sonatype Application Scan` - Sonatype Application Scan\n* `SpotBugs Scan` - SpotBugs Scan\n* `SSH Audit Importer` - SSH Audit Importer\n* `SSL Labs Scan` - SSL Labs Scan\n* `Sslscan` - Sslscan\n* `Sslyze Scan` - Sslyze Scan\n* `SSLyze Scan (JSON)` - SSLyze Scan (JSON)\n* `StackHawk HawkScan` - StackHawk HawkScan\n* `Sysdig CLI Report` - Sysdig CLI Report Scan\n* `Sysdig Vulnerability Report` - Sysdig Vulnerability Report Scan\n* `Talisman Scan` - Talisman Scan\n* `Tenable Scan` - Tenable Scan\n* `Terrascan Scan` - Terrascan Scan\n* `Testssl Scan` - Testssl Scan\n* `TFSec Scan` - TFSec Scan\n* `Threagile risks report` - Threagile risks report\n* `ThreatComposer Scan` - ThreatComposer Scan\n* `Trivy Operator Scan` - Trivy Operator Scan\n* `Trivy Scan` - Trivy Scan\n* `Trufflehog Scan` - Trufflehog Scan\n* `Trufflehog3 Scan` - Trufflehog3 Scan\n* `Trustwave Fusion API Scan` - Trustwave Fusion API Scan\n* `Trustwave Scan (CSV)` - Trustwave Scan (CSV)\n* `Twistlock Image Scan` - Twistlock Image Scan\n* `VCG Scan` - VCG Scan\n* `Veracode Scan` - Veracode Scan\n* `Veracode SourceClear Scan` - Veracode SourceClear Scan\n* `Vulners` - Vulners\n* `Wapiti Scan` - Wapiti Scan\n* `Wazuh` - Wazuh\n* `WFuzz JSON report` - WFuzz JSON report\n* `Whispers Scan` - Whispers Scan\n* `WhiteHat Sentinel` - WhiteHat Sentinel\n* `Wiz Scan` - Wiz Scan\n* `Wizcli Dir Scan` - Wizcli Dir Scan\n* `Wizcli IaC Scan` - Wizcli IaC Scan\n* `Wizcli Img Scan` - Wizcli Img Scan\n* `Wpscan` - Wpscan\n* `Xanitizer Scan` - Xanitizer Scan\n* `Xeol Parser` - Xeol Parser\n* `Yarn Audit Scan` - Yarn Audit Scan\n* `ZAP Scan` - ZAP Scan\n* `Zora Parser` - Zora Parser",
+                        "x-spec-enum-id": "dcadd6f0ac3ee0bf"
                     },
                     "engagement": {
                         "type": "integer"
@@ -36069,6 +36451,7 @@
                             "Anchore Engine Scan",
                             "Anchore Enterprise Policy Check",
                             "Anchore Grype",
+                            "Anchore Grype detailed",
                             "AnchoreCTL Policies Report",
                             "AnchoreCTL Vuln Report",
                             "AppCheck Web Application Scanner",
@@ -36166,6 +36549,7 @@
                             "Immuniweb Scan",
                             "IntSights Report",
                             "Invicti Scan",
+                            "IriusRisk Threats Scan",
                             "JFrog Xray API Summary Artifact Scan",
                             "JFrog Xray On Demand Binary Scan",
                             "JFrog Xray Scan",
@@ -36205,6 +36589,7 @@
                             "Openscap Vulnerability Scan",
                             "OpenVAS Parser",
                             "OpenVAS Parser v2",
+                            "Orca Security Alerts",
                             "ORT evaluated model Importer",
                             "OssIndex Devaudit SCA Scan Importer",
                             "OSV Scan",
@@ -36288,8 +36673,8 @@
                             "Zora Parser"
                         ],
                         "type": "string",
-                        "description": "* `Acunetix Scan` - Acunetix Scanner\n* `Anchore Engine Scan` - Anchore Engine Scan\n* `Anchore Enterprise Policy Check` - Anchore Enterprise Policy Check\n* `Anchore Grype` - Anchore Grype\n* `AnchoreCTL Policies Report` - AnchoreCTL Policies Report\n* `AnchoreCTL Vuln Report` - AnchoreCTL Vuln Report\n* `AppCheck Web Application Scanner` - AppCheck Web Application Scanner\n* `AppSpider Scan` - AppSpider Scan\n* `Aqua Scan` - Aqua Scan\n* `Arachni Scan` - Arachni Scan\n* `AuditJS Scan` - AuditJS Scan\n* `AWS Inspector2 Scan` - AWS Inspector2 Scan\n* `AWS Prowler Scan` - AWS Prowler Scan\n* `AWS Prowler V3` - AWS Prowler V3\n* `AWS Security Finding Format (ASFF) Scan` - AWS Security Finding Format (ASFF)\n* `AWS Security Hub Scan` - AWS Security Hub Scan\n* `Azure Security Center Recommendations Scan` - Azure Security Center Recommendations Scan\n* `Bandit Scan` - Bandit Scan\n* `Bearer CLI` - Bearer CLI\n* `BlackDuck API` - BlackDuck API\n* `Blackduck Binary Analysis` - Blackduck Binary Analysis\n* `Blackduck Component Risk` - Blackduck Component Risk\n* `Blackduck Hub Scan` - Blackduck Hub Scan\n* `Brakeman Scan` - Brakeman Scan\n* `Bugcrowd API Import` - Bugcrowd API Import\n* `BugCrowd Scan` - BugCrowd Scan\n* `Bundler-Audit Scan` - Bundler-Audit Scan\n* `Burp Dastardly Scan` - Burp Dastardly Scan\n* `Burp Enterprise Scan` - Burp Enterprise Scan (RENAMED to Burp Suite DAST Scan)\n* `Burp REST API` - Burp REST API\n* `Burp Scan` - Burp Scan\n* `Burp GraphQL API` - Burp Suite DAST GraphQL API\n* `Burp Suite DAST Scan` - Burp Suite DAST Scan\n* `CargoAudit Scan` - CargoAudit Scan\n* `Checkmarx CxFlow SAST` - Checkmarx CxFlow SAST\n* `Checkmarx One Scan` - Checkmarx One Scan\n* `Checkmarx OSA` - Checkmarx OSA\n* `Checkmarx Scan` - Checkmarx Scan\n* `Checkmarx Scan detailed` - Checkmarx Scan detailed\n* `Checkov Scan` - Checkov Scan\n* `Chef Inspect Log` - Chef Inspect Log\n* `Choctaw Hog Scan` - Choctaw Hog Scan\n* `Clair Scan` - Clair Scan\n* `Cloudflare Insights` - Cloudflare Insights\n* `Cloudsploit Scan` - Cloudsploit Scan\n* `Cobalt.io API Import` - Cobalt.io API Import\n* `Cobalt.io Scan` - Cobalt.io Scan\n* `Codechecker Report native` - Codechecker Report native\n* `Contrast Scan` - Contrast Scan\n* `Coverity API` - Coverity API\n* `Coverity Scan JSON Report` - Coverity Scan JSON Report\n* `Crashtest Security JSON File` - Crashtest Security JSON File\n* `Crashtest Security XML File` - Crashtest Security XML File\n* `CredScan Scan` - CredScan Scan\n* `Crunch42 Scan` - Crunch42 Scan\n* `Cyberwatch scan (Galeax)` - Cyberwatch scan (Galeax)\n* `CycloneDX Scan` - CycloneDX Scan\n* `Cycognito Scan` - Cycognito Scan\n* `DawnScanner Scan` - DawnScanner Scan\n* `Deepfence Threatmapper Report` - Deepfence Threatmapper Report\n* `Dependency Check Scan` - Dependency Check Scan\n* `Dependency Track Finding Packaging Format (FPF) Export` - Dependency Track Finding Packaging Format (FPF) Export\n* `Detect-secrets Scan` - Detect-secrets Scan\n* `docker-bench-security Scan` - docker-bench-security Scan\n* `Dockle Scan` - Dockle Scan\n* `DrHeader JSON Importer` - DrHeader JSON Importer\n* `DSOP Scan` - DSOP Scan\n* `Duroc Hog Scan` - Duroc Hog Scan\n* `Edgescan Scan` - Edgescan Scan\n* `ESLint Scan` - ESLint Scan\n* `Essex Hog Scan` - Essex Hog Scan\n* `Fortify Scan` - Fortify Scan\n* `Generic Findings Import` - Generic Findings Import\n* `Ggshield Scan` - Ggshield Scan\n* `Github SAST Scan` - Github SAST Scan\n* `Github Secrets Detection Report Scan` - Github Secrets Detection Report Scan\n* `Github Vulnerability Scan` - Github Vulnerability Scan\n* `GitLab API Fuzzing Report Scan` - GitLab API Fuzzing Report Scan\n* `GitLab Container Scan` - GitLab Container Scan Scan\n* `GitLab DAST Report` - GitLab DAST Report\n* `GitLab Dependency Scanning Report` - GitLab Dependency Scanning Report\n* `GitLab SAST Report` - GitLab SAST Report\n* `GitLab Secret Detection Report` - GitLab Secret Detection Report\n* `Gitleaks Scan` - Gitleaks Scan\n* `Google Cloud Artifact Vulnerability Scan` - Google Cloud Artifact Vulnerability Scan\n* `Gosec Scanner` - Gosec Scanner\n* `Gottingen Hog Scan` - Gottingen Hog Scan\n* `Govulncheck Scanner` - Govulncheck Scanner\n* `HackerOne Cases` - HackerOne Cases\n* `Hadolint Dockerfile check` - Hadolint Dockerfile check\n* `Harbor Vulnerability Scan` - Harbor Vulnerability Scan\n* `HCL AppScan on Cloud SAST XML` - HCL AppScan on Cloud SAST XML\n* `HCLAppScan XML` - HCLAppScan XML\n* `Horusec Scan` - Horusec Scan\n* `Humble Json Importer` - Humble Json Importer\n* `HuskyCI Report` - HuskyCI Report\n* `Hydra Scan` - Hydra Scan\n* `IBM AppScan DAST` - IBM AppScan DAST\n* `Immuniweb Scan` - Immuniweb Scan\n* `IntSights Report` - IntSights Report\n* `Invicti Scan` - Invicti Scan\n* `JFrog Xray API Summary Artifact Scan` - JFrog Xray API Summary Artifact Scan\n* `JFrog Xray On Demand Binary Scan` - JFrog Xray On Demand Binary Scan\n* `JFrog Xray Scan` - JFrog Xray Scan\n* `JFrog Xray Unified Scan` - JFrog Xray Unified Scan\n* `KICS Scan` - KICS Scan\n* `Kiuwan SCA Scan` - Kiuwan SCA Scan\n* `Kiuwan Scan` - Kiuwan Scan\n* `KrakenD Audit Scan` - KrakenD Audit Scan\n* `kube-bench Scan` - kube-bench Scan\n* `Kubeaudit Scan` - Kubeaudit Scan\n* `KubeHunter Scan` - KubeHunter Scan\n* `Kubescape JSON Importer` - Kubescape JSON Importer\n* `Legitify Scan` - Legitify Scan\n* `Mayhem SARIF Report` - Mayhem SARIF Report\n* `Mend Scan` - Mend Scan\n* `Meterian Scan` - Meterian Scan\n* `Microfocus Webinspect Scan` - Microfocus Webinspect Scan\n* `MobSF Scan` - MobSF Scan\n* `Mobsfscan Scan` - MobSF Scan\n* `MobSF Scorecard Scan` - MobSF Scorecard Scan\n* `Mozilla Observatory Scan` - Mozilla Observatory Scan\n* `MSDefender Parser` - MSDefender Parser\n* `n0s1 Scanner` - n0s1 Scanner\n* `Nancy Scan` - Nancy Scan\n* `Netsparker Scan` - Netsparker Scan\n* `NeuVector (compliance)` - NeuVector (compliance)\n* `NeuVector (REST)` - NeuVector (REST)\n* `Nexpose Scan` - Nexpose Scan\n* `Nikto Scan` - Nikto Scan\n* `Nmap Scan` - Nmap Scan\n* `Node Security Platform Scan` - Node Security Platform Scan\n* `Nosey Parker Scan` - Nosey Parker Scan\n* `NPM Audit Scan` - NPM Audit Scan\n* `NPM Audit v7+ Scan` - NPM Audit v7+ Scan\n* `Nuclei Scan` - Nuclei Scan\n* `OpenReports` - OpenReports\n* `Openscap Vulnerability Scan` - Openscap Vulnerability Scan\n* `OpenVAS Parser` - OpenVAS Parser\n* `OpenVAS Parser v2` - OpenVAS Parser v2\n* `ORT evaluated model Importer` - ORT evaluated model Importer\n* `OssIndex Devaudit SCA Scan Importer` - OssIndex Devaudit SCA Scan Importer\n* `OSV Scan` - OSV Scan\n* `Outpost24 Scan` - Outpost24 Scan\n* `PHP Security Audit v2` - PHP Security Audit v2\n* `PHP Symfony Security Check` - PHP Symfony Security Check\n* `PingCastle` - PingCastle\n* `pip-audit Scan` - pip-audit Scan\n* `PMD Scan` - PMD Scan\n* `Popeye Scan` - Popeye Scan\n* `Progpilot Scan` - Progpilot Scan\n* `Prowler Scan` - Prowler Scan\n* `PTART Report` - PTART Report\n* `PWN SAST` - PWN SAST\n* `Qualys Hacker Guardian Scan` - Qualys Hacker Guardian Scan\n* `Qualys Infrastructure Scan (WebGUI XML)` - Qualys Infrastructure Scan (WebGUI XML)\n* `Qualys Scan` - Qualys Scan\n* `Qualys Webapp Scan` - Qualys Webapp Scan\n* `Rapplex Scan` - Rapplex Scan\n* `Red Hat Satellite` - Red Hat Satellite\n* `Retire.js Scan` - Retire.js Scan\n* `ReversingLabs Spectra Assure` - ReversingLabs Spectra Assure\n* `Risk Recon API Importer` - Risk Recon API Importer\n* `Rubocop Scan` - Rubocop Scan\n* `Rusty Hog Scan` - Rusty Hog Scan\n* `SARIF` - SARIF\n* `Scantist Scan` - Scantist Scan\n* `Scout Suite Scan` - Scout Suite Scan\n* `Semgrep JSON Report` - Semgrep JSON Report\n* `Semgrep Pro JSON Report` - Semgrep Pro JSON Report\n* `SKF Scan` - SKF Scan\n* `Snyk Code Scan` - Snyk Code Scan\n* `Snyk Issue API Scan` - Snyk Issue API Scan\n* `Snyk Scan` - Snyk Scan\n* `Solar Appscreener Scan` - Solar Appscreener Scan Detailed_Results.csv\n* `SonarQube API Import` - SonarQube API Import\n* `SonarQube Scan` - SonarQube Scan\n* `SonarQube Scan detailed` - SonarQube Scan detailed\n* `Sonatype Application Scan` - Sonatype Application Scan\n* `SpotBugs Scan` - SpotBugs Scan\n* `SSH Audit Importer` - SSH Audit Importer\n* `SSL Labs Scan` - SSL Labs Scan\n* `Sslscan` - Sslscan\n* `Sslyze Scan` - Sslyze Scan\n* `SSLyze Scan (JSON)` - SSLyze Scan (JSON)\n* `StackHawk HawkScan` - StackHawk HawkScan\n* `Sysdig CLI Report` - Sysdig CLI Report Scan\n* `Sysdig Vulnerability Report` - Sysdig Vulnerability Report Scan\n* `Talisman Scan` - Talisman Scan\n* `Tenable Scan` - Tenable Scan\n* `Terrascan Scan` - Terrascan Scan\n* `Testssl Scan` - Testssl Scan\n* `TFSec Scan` - TFSec Scan\n* `Threagile risks report` - Threagile risks report\n* `ThreatComposer Scan` - ThreatComposer Scan\n* `Trivy Operator Scan` - Trivy Operator Scan\n* `Trivy Scan` - Trivy Scan\n* `Trufflehog Scan` - Trufflehog Scan\n* `Trufflehog3 Scan` - Trufflehog3 Scan\n* `Trustwave Fusion API Scan` - Trustwave Fusion API Scan\n* `Trustwave Scan (CSV)` - Trustwave Scan (CSV)\n* `Twistlock Image Scan` - Twistlock Image Scan\n* `VCG Scan` - VCG Scan\n* `Veracode Scan` - Veracode Scan\n* `Veracode SourceClear Scan` - Veracode SourceClear Scan\n* `Vulners` - Vulners\n* `Wapiti Scan` - Wapiti Scan\n* `Wazuh` - Wazuh\n* `WFuzz JSON report` - WFuzz JSON report\n* `Whispers Scan` - Whispers Scan\n* `WhiteHat Sentinel` - WhiteHat Sentinel\n* `Wiz Scan` - Wiz Scan\n* `Wizcli Dir Scan` - Wizcli Dir Scan\n* `Wizcli IaC Scan` - Wizcli IaC Scan\n* `Wizcli Img Scan` - Wizcli Img Scan\n* `Wpscan` - Wpscan\n* `Xanitizer Scan` - Xanitizer Scan\n* `Xeol Parser` - Xeol Parser\n* `Yarn Audit Scan` - Yarn Audit Scan\n* `ZAP Scan` - ZAP Scan\n* `Zora Parser` - Zora Parser",
-                        "x-spec-enum-id": "c23365f5f03f8fc9"
+                        "description": "* `Acunetix Scan` - Acunetix Scanner\n* `Anchore Engine Scan` - Anchore Engine Scan\n* `Anchore Enterprise Policy Check` - Anchore Enterprise Policy Check\n* `Anchore Grype` - Anchore Grype\n* `Anchore Grype detailed` - Anchore Grype detailed\n* `AnchoreCTL Policies Report` - AnchoreCTL Policies Report\n* `AnchoreCTL Vuln Report` - AnchoreCTL Vuln Report\n* `AppCheck Web Application Scanner` - AppCheck Web Application Scanner\n* `AppSpider Scan` - AppSpider Scan\n* `Aqua Scan` - Aqua Scan\n* `Arachni Scan` - Arachni Scan\n* `AuditJS Scan` - AuditJS Scan\n* `AWS Inspector2 Scan` - AWS Inspector2 Scan\n* `AWS Prowler Scan` - AWS Prowler Scan\n* `AWS Prowler V3` - AWS Prowler V3\n* `AWS Security Finding Format (ASFF) Scan` - AWS Security Finding Format (ASFF)\n* `AWS Security Hub Scan` - AWS Security Hub Scan\n* `Azure Security Center Recommendations Scan` - Azure Security Center Recommendations Scan\n* `Bandit Scan` - Bandit Scan\n* `Bearer CLI` - Bearer CLI\n* `BlackDuck API` - BlackDuck API\n* `Blackduck Binary Analysis` - Blackduck Binary Analysis\n* `Blackduck Component Risk` - Blackduck Component Risk\n* `Blackduck Hub Scan` - Blackduck Hub Scan\n* `Brakeman Scan` - Brakeman Scan\n* `Bugcrowd API Import` - Bugcrowd API Import\n* `BugCrowd Scan` - BugCrowd Scan\n* `Bundler-Audit Scan` - Bundler-Audit Scan\n* `Burp Dastardly Scan` - Burp Dastardly Scan\n* `Burp Enterprise Scan` - Burp Enterprise Scan (RENAMED to Burp Suite DAST Scan)\n* `Burp REST API` - Burp REST API\n* `Burp Scan` - Burp Scan\n* `Burp GraphQL API` - Burp Suite DAST GraphQL API\n* `Burp Suite DAST Scan` - Burp Suite DAST Scan\n* `CargoAudit Scan` - CargoAudit Scan\n* `Checkmarx CxFlow SAST` - Checkmarx CxFlow SAST\n* `Checkmarx One Scan` - Checkmarx One Scan\n* `Checkmarx OSA` - Checkmarx OSA\n* `Checkmarx Scan` - Checkmarx Scan\n* `Checkmarx Scan detailed` - Checkmarx Scan detailed\n* `Checkov Scan` - Checkov Scan\n* `Chef Inspect Log` - Chef Inspect Log\n* `Choctaw Hog Scan` - Choctaw Hog Scan\n* `Clair Scan` - Clair Scan\n* `Cloudflare Insights` - Cloudflare Insights\n* `Cloudsploit Scan` - Cloudsploit Scan\n* `Cobalt.io API Import` - Cobalt.io API Import\n* `Cobalt.io Scan` - Cobalt.io Scan\n* `Codechecker Report native` - Codechecker Report native\n* `Contrast Scan` - Contrast Scan\n* `Coverity API` - Coverity API\n* `Coverity Scan JSON Report` - Coverity Scan JSON Report\n* `Crashtest Security JSON File` - Crashtest Security JSON File\n* `Crashtest Security XML File` - Crashtest Security XML File\n* `CredScan Scan` - CredScan Scan\n* `Crunch42 Scan` - Crunch42 Scan\n* `Cyberwatch scan (Galeax)` - Cyberwatch scan (Galeax)\n* `CycloneDX Scan` - CycloneDX Scan\n* `Cycognito Scan` - Cycognito Scan\n* `DawnScanner Scan` - DawnScanner Scan\n* `Deepfence Threatmapper Report` - Deepfence Threatmapper Report\n* `Dependency Check Scan` - Dependency Check Scan\n* `Dependency Track Finding Packaging Format (FPF) Export` - Dependency Track Finding Packaging Format (FPF) Export\n* `Detect-secrets Scan` - Detect-secrets Scan\n* `docker-bench-security Scan` - docker-bench-security Scan\n* `Dockle Scan` - Dockle Scan\n* `DrHeader JSON Importer` - DrHeader JSON Importer\n* `DSOP Scan` - DSOP Scan\n* `Duroc Hog Scan` - Duroc Hog Scan\n* `Edgescan Scan` - Edgescan Scan\n* `ESLint Scan` - ESLint Scan\n* `Essex Hog Scan` - Essex Hog Scan\n* `Fortify Scan` - Fortify Scan\n* `Generic Findings Import` - Generic Findings Import\n* `Ggshield Scan` - Ggshield Scan\n* `Github SAST Scan` - Github SAST Scan\n* `Github Secrets Detection Report Scan` - Github Secrets Detection Report Scan\n* `Github Vulnerability Scan` - Github Vulnerability Scan\n* `GitLab API Fuzzing Report Scan` - GitLab API Fuzzing Report Scan\n* `GitLab Container Scan` - GitLab Container Scan Scan\n* `GitLab DAST Report` - GitLab DAST Report\n* `GitLab Dependency Scanning Report` - GitLab Dependency Scanning Report\n* `GitLab SAST Report` - GitLab SAST Report\n* `GitLab Secret Detection Report` - GitLab Secret Detection Report\n* `Gitleaks Scan` - Gitleaks Scan\n* `Google Cloud Artifact Vulnerability Scan` - Google Cloud Artifact Vulnerability Scan\n* `Gosec Scanner` - Gosec Scanner\n* `Gottingen Hog Scan` - Gottingen Hog Scan\n* `Govulncheck Scanner` - Govulncheck Scanner\n* `HackerOne Cases` - HackerOne Cases\n* `Hadolint Dockerfile check` - Hadolint Dockerfile check\n* `Harbor Vulnerability Scan` - Harbor Vulnerability Scan\n* `HCL AppScan on Cloud SAST XML` - HCL AppScan on Cloud SAST XML\n* `HCLAppScan XML` - HCLAppScan XML\n* `Horusec Scan` - Horusec Scan\n* `Humble Json Importer` - Humble Json Importer\n* `HuskyCI Report` - HuskyCI Report\n* `Hydra Scan` - Hydra Scan\n* `IBM AppScan DAST` - IBM AppScan DAST\n* `Immuniweb Scan` - Immuniweb Scan\n* `IntSights Report` - IntSights Report\n* `Invicti Scan` - Invicti Scan\n* `IriusRisk Threats Scan` - IriusRisk Threats Scan\n* `JFrog Xray API Summary Artifact Scan` - JFrog Xray API Summary Artifact Scan\n* `JFrog Xray On Demand Binary Scan` - JFrog Xray On Demand Binary Scan\n* `JFrog Xray Scan` - JFrog Xray Scan\n* `JFrog Xray Unified Scan` - JFrog Xray Unified Scan\n* `KICS Scan` - KICS Scan\n* `Kiuwan SCA Scan` - Kiuwan SCA Scan\n* `Kiuwan Scan` - Kiuwan Scan\n* `KrakenD Audit Scan` - KrakenD Audit Scan\n* `kube-bench Scan` - kube-bench Scan\n* `Kubeaudit Scan` - Kubeaudit Scan\n* `KubeHunter Scan` - KubeHunter Scan\n* `Kubescape JSON Importer` - Kubescape JSON Importer\n* `Legitify Scan` - Legitify Scan\n* `Mayhem SARIF Report` - Mayhem SARIF Report\n* `Mend Scan` - Mend Scan\n* `Meterian Scan` - Meterian Scan\n* `Microfocus Webinspect Scan` - Microfocus Webinspect Scan\n* `MobSF Scan` - MobSF Scan\n* `Mobsfscan Scan` - MobSF Scan\n* `MobSF Scorecard Scan` - MobSF Scorecard Scan\n* `Mozilla Observatory Scan` - Mozilla Observatory Scan\n* `MSDefender Parser` - MSDefender Parser\n* `n0s1 Scanner` - n0s1 Scanner\n* `Nancy Scan` - Nancy Scan\n* `Netsparker Scan` - Netsparker Scan\n* `NeuVector (compliance)` - NeuVector (compliance)\n* `NeuVector (REST)` - NeuVector (REST)\n* `Nexpose Scan` - Nexpose Scan\n* `Nikto Scan` - Nikto Scan\n* `Nmap Scan` - Nmap Scan\n* `Node Security Platform Scan` - Node Security Platform Scan\n* `Nosey Parker Scan` - Nosey Parker Scan\n* `NPM Audit Scan` - NPM Audit Scan\n* `NPM Audit v7+ Scan` - NPM Audit v7+ Scan\n* `Nuclei Scan` - Nuclei Scan\n* `OpenReports` - OpenReports\n* `Openscap Vulnerability Scan` - Openscap Vulnerability Scan\n* `OpenVAS Parser` - OpenVAS Parser\n* `OpenVAS Parser v2` - OpenVAS Parser v2\n* `Orca Security Alerts` - Orca Security Alerts\n* `ORT evaluated model Importer` - ORT evaluated model Importer\n* `OssIndex Devaudit SCA Scan Importer` - OssIndex Devaudit SCA Scan Importer\n* `OSV Scan` - OSV Scan\n* `Outpost24 Scan` - Outpost24 Scan\n* `PHP Security Audit v2` - PHP Security Audit v2\n* `PHP Symfony Security Check` - PHP Symfony Security Check\n* `PingCastle` - PingCastle\n* `pip-audit Scan` - pip-audit Scan\n* `PMD Scan` - PMD Scan\n* `Popeye Scan` - Popeye Scan\n* `Progpilot Scan` - Progpilot Scan\n* `Prowler Scan` - Prowler Scan\n* `PTART Report` - PTART Report\n* `PWN SAST` - PWN SAST\n* `Qualys Hacker Guardian Scan` - Qualys Hacker Guardian Scan\n* `Qualys Infrastructure Scan (WebGUI XML)` - Qualys Infrastructure Scan (WebGUI XML)\n* `Qualys Scan` - Qualys Scan\n* `Qualys Webapp Scan` - Qualys Webapp Scan\n* `Rapplex Scan` - Rapplex Scan\n* `Red Hat Satellite` - Red Hat Satellite\n* `Retire.js Scan` - Retire.js Scan\n* `ReversingLabs Spectra Assure` - ReversingLabs Spectra Assure\n* `Risk Recon API Importer` - Risk Recon API Importer\n* `Rubocop Scan` - Rubocop Scan\n* `Rusty Hog Scan` - Rusty Hog Scan\n* `SARIF` - SARIF\n* `Scantist Scan` - Scantist Scan\n* `Scout Suite Scan` - Scout Suite Scan\n* `Semgrep JSON Report` - Semgrep JSON Report\n* `Semgrep Pro JSON Report` - Semgrep Pro JSON Report\n* `SKF Scan` - SKF Scan\n* `Snyk Code Scan` - Snyk Code Scan\n* `Snyk Issue API Scan` - Snyk Issue API Scan\n* `Snyk Scan` - Snyk Scan\n* `Solar Appscreener Scan` - Solar Appscreener Scan Detailed_Results.csv\n* `SonarQube API Import` - SonarQube API Import\n* `SonarQube Scan` - SonarQube Scan\n* `SonarQube Scan detailed` - SonarQube Scan detailed\n* `Sonatype Application Scan` - Sonatype Application Scan\n* `SpotBugs Scan` - SpotBugs Scan\n* `SSH Audit Importer` - SSH Audit Importer\n* `SSL Labs Scan` - SSL Labs Scan\n* `Sslscan` - Sslscan\n* `Sslyze Scan` - Sslyze Scan\n* `SSLyze Scan (JSON)` - SSLyze Scan (JSON)\n* `StackHawk HawkScan` - StackHawk HawkScan\n* `Sysdig CLI Report` - Sysdig CLI Report Scan\n* `Sysdig Vulnerability Report` - Sysdig Vulnerability Report Scan\n* `Talisman Scan` - Talisman Scan\n* `Tenable Scan` - Tenable Scan\n* `Terrascan Scan` - Terrascan Scan\n* `Testssl Scan` - Testssl Scan\n* `TFSec Scan` - TFSec Scan\n* `Threagile risks report` - Threagile risks report\n* `ThreatComposer Scan` - ThreatComposer Scan\n* `Trivy Operator Scan` - Trivy Operator Scan\n* `Trivy Scan` - Trivy Scan\n* `Trufflehog Scan` - Trufflehog Scan\n* `Trufflehog3 Scan` - Trufflehog3 Scan\n* `Trustwave Fusion API Scan` - Trustwave Fusion API Scan\n* `Trustwave Scan (CSV)` - Trustwave Scan (CSV)\n* `Twistlock Image Scan` - Twistlock Image Scan\n* `VCG Scan` - VCG Scan\n* `Veracode Scan` - Veracode Scan\n* `Veracode SourceClear Scan` - Veracode SourceClear Scan\n* `Vulners` - Vulners\n* `Wapiti Scan` - Wapiti Scan\n* `Wazuh` - Wazuh\n* `WFuzz JSON report` - WFuzz JSON report\n* `Whispers Scan` - Whispers Scan\n* `WhiteHat Sentinel` - WhiteHat Sentinel\n* `Wiz Scan` - Wiz Scan\n* `Wizcli Dir Scan` - Wizcli Dir Scan\n* `Wizcli IaC Scan` - Wizcli IaC Scan\n* `Wizcli Img Scan` - Wizcli Img Scan\n* `Wpscan` - Wpscan\n* `Xanitizer Scan` - Xanitizer Scan\n* `Xeol Parser` - Xeol Parser\n* `Yarn Audit Scan` - Yarn Audit Scan\n* `ZAP Scan` - ZAP Scan\n* `Zora Parser` - Zora Parser",
+                        "x-spec-enum-id": "dcadd6f0ac3ee0bf"
                     },
                     "engagement": {
                         "type": "integer"
@@ -46004,6 +46389,7 @@
                             "Anchore Engine Scan",
                             "Anchore Enterprise Policy Check",
                             "Anchore Grype",
+                            "Anchore Grype detailed",
                             "AnchoreCTL Policies Report",
                             "AnchoreCTL Vuln Report",
                             "AppCheck Web Application Scanner",
@@ -46101,6 +46487,7 @@
                             "Immuniweb Scan",
                             "IntSights Report",
                             "Invicti Scan",
+                            "IriusRisk Threats Scan",
                             "JFrog Xray API Summary Artifact Scan",
                             "JFrog Xray On Demand Binary Scan",
                             "JFrog Xray Scan",
@@ -46140,6 +46527,7 @@
                             "Openscap Vulnerability Scan",
                             "OpenVAS Parser",
                             "OpenVAS Parser v2",
+                            "Orca Security Alerts",
                             "ORT evaluated model Importer",
                             "OssIndex Devaudit SCA Scan Importer",
                             "OSV Scan",
@@ -46223,8 +46611,8 @@
                             "Zora Parser"
                         ],
                         "type": "string",
-                        "description": "* `Acunetix Scan` - Acunetix Scanner\n* `Anchore Engine Scan` - Anchore Engine Scan\n* `Anchore Enterprise Policy Check` - Anchore Enterprise Policy Check\n* `Anchore Grype` - Anchore Grype\n* `AnchoreCTL Policies Report` - AnchoreCTL Policies Report\n* `AnchoreCTL Vuln Report` - AnchoreCTL Vuln Report\n* `AppCheck Web Application Scanner` - AppCheck Web Application Scanner\n* `AppSpider Scan` - AppSpider Scan\n* `Aqua Scan` - Aqua Scan\n* `Arachni Scan` - Arachni Scan\n* `AuditJS Scan` - AuditJS Scan\n* `AWS Inspector2 Scan` - AWS Inspector2 Scan\n* `AWS Prowler Scan` - AWS Prowler Scan\n* `AWS Prowler V3` - AWS Prowler V3\n* `AWS Security Finding Format (ASFF) Scan` - AWS Security Finding Format (ASFF)\n* `AWS Security Hub Scan` - AWS Security Hub Scan\n* `Azure Security Center Recommendations Scan` - Azure Security Center Recommendations Scan\n* `Bandit Scan` - Bandit Scan\n* `Bearer CLI` - Bearer CLI\n* `BlackDuck API` - BlackDuck API\n* `Blackduck Binary Analysis` - Blackduck Binary Analysis\n* `Blackduck Component Risk` - Blackduck Component Risk\n* `Blackduck Hub Scan` - Blackduck Hub Scan\n* `Brakeman Scan` - Brakeman Scan\n* `Bugcrowd API Import` - Bugcrowd API Import\n* `BugCrowd Scan` - BugCrowd Scan\n* `Bundler-Audit Scan` - Bundler-Audit Scan\n* `Burp Dastardly Scan` - Burp Dastardly Scan\n* `Burp Enterprise Scan` - Burp Enterprise Scan (RENAMED to Burp Suite DAST Scan)\n* `Burp REST API` - Burp REST API\n* `Burp Scan` - Burp Scan\n* `Burp GraphQL API` - Burp Suite DAST GraphQL API\n* `Burp Suite DAST Scan` - Burp Suite DAST Scan\n* `CargoAudit Scan` - CargoAudit Scan\n* `Checkmarx CxFlow SAST` - Checkmarx CxFlow SAST\n* `Checkmarx One Scan` - Checkmarx One Scan\n* `Checkmarx OSA` - Checkmarx OSA\n* `Checkmarx Scan` - Checkmarx Scan\n* `Checkmarx Scan detailed` - Checkmarx Scan detailed\n* `Checkov Scan` - Checkov Scan\n* `Chef Inspect Log` - Chef Inspect Log\n* `Choctaw Hog Scan` - Choctaw Hog Scan\n* `Clair Scan` - Clair Scan\n* `Cloudflare Insights` - Cloudflare Insights\n* `Cloudsploit Scan` - Cloudsploit Scan\n* `Cobalt.io API Import` - Cobalt.io API Import\n* `Cobalt.io Scan` - Cobalt.io Scan\n* `Codechecker Report native` - Codechecker Report native\n* `Contrast Scan` - Contrast Scan\n* `Coverity API` - Coverity API\n* `Coverity Scan JSON Report` - Coverity Scan JSON Report\n* `Crashtest Security JSON File` - Crashtest Security JSON File\n* `Crashtest Security XML File` - Crashtest Security XML File\n* `CredScan Scan` - CredScan Scan\n* `Crunch42 Scan` - Crunch42 Scan\n* `Cyberwatch scan (Galeax)` - Cyberwatch scan (Galeax)\n* `CycloneDX Scan` - CycloneDX Scan\n* `Cycognito Scan` - Cycognito Scan\n* `DawnScanner Scan` - DawnScanner Scan\n* `Deepfence Threatmapper Report` - Deepfence Threatmapper Report\n* `Dependency Check Scan` - Dependency Check Scan\n* `Dependency Track Finding Packaging Format (FPF) Export` - Dependency Track Finding Packaging Format (FPF) Export\n* `Detect-secrets Scan` - Detect-secrets Scan\n* `docker-bench-security Scan` - docker-bench-security Scan\n* `Dockle Scan` - Dockle Scan\n* `DrHeader JSON Importer` - DrHeader JSON Importer\n* `DSOP Scan` - DSOP Scan\n* `Duroc Hog Scan` - Duroc Hog Scan\n* `Edgescan Scan` - Edgescan Scan\n* `ESLint Scan` - ESLint Scan\n* `Essex Hog Scan` - Essex Hog Scan\n* `Fortify Scan` - Fortify Scan\n* `Generic Findings Import` - Generic Findings Import\n* `Ggshield Scan` - Ggshield Scan\n* `Github SAST Scan` - Github SAST Scan\n* `Github Secrets Detection Report Scan` - Github Secrets Detection Report Scan\n* `Github Vulnerability Scan` - Github Vulnerability Scan\n* `GitLab API Fuzzing Report Scan` - GitLab API Fuzzing Report Scan\n* `GitLab Container Scan` - GitLab Container Scan Scan\n* `GitLab DAST Report` - GitLab DAST Report\n* `GitLab Dependency Scanning Report` - GitLab Dependency Scanning Report\n* `GitLab SAST Report` - GitLab SAST Report\n* `GitLab Secret Detection Report` - GitLab Secret Detection Report\n* `Gitleaks Scan` - Gitleaks Scan\n* `Google Cloud Artifact Vulnerability Scan` - Google Cloud Artifact Vulnerability Scan\n* `Gosec Scanner` - Gosec Scanner\n* `Gottingen Hog Scan` - Gottingen Hog Scan\n* `Govulncheck Scanner` - Govulncheck Scanner\n* `HackerOne Cases` - HackerOne Cases\n* `Hadolint Dockerfile check` - Hadolint Dockerfile check\n* `Harbor Vulnerability Scan` - Harbor Vulnerability Scan\n* `HCL AppScan on Cloud SAST XML` - HCL AppScan on Cloud SAST XML\n* `HCLAppScan XML` - HCLAppScan XML\n* `Horusec Scan` - Horusec Scan\n* `Humble Json Importer` - Humble Json Importer\n* `HuskyCI Report` - HuskyCI Report\n* `Hydra Scan` - Hydra Scan\n* `IBM AppScan DAST` - IBM AppScan DAST\n* `Immuniweb Scan` - Immuniweb Scan\n* `IntSights Report` - IntSights Report\n* `Invicti Scan` - Invicti Scan\n* `JFrog Xray API Summary Artifact Scan` - JFrog Xray API Summary Artifact Scan\n* `JFrog Xray On Demand Binary Scan` - JFrog Xray On Demand Binary Scan\n* `JFrog Xray Scan` - JFrog Xray Scan\n* `JFrog Xray Unified Scan` - JFrog Xray Unified Scan\n* `KICS Scan` - KICS Scan\n* `Kiuwan SCA Scan` - Kiuwan SCA Scan\n* `Kiuwan Scan` - Kiuwan Scan\n* `KrakenD Audit Scan` - KrakenD Audit Scan\n* `kube-bench Scan` - kube-bench Scan\n* `Kubeaudit Scan` - Kubeaudit Scan\n* `KubeHunter Scan` - KubeHunter Scan\n* `Kubescape JSON Importer` - Kubescape JSON Importer\n* `Legitify Scan` - Legitify Scan\n* `Mayhem SARIF Report` - Mayhem SARIF Report\n* `Mend Scan` - Mend Scan\n* `Meterian Scan` - Meterian Scan\n* `Microfocus Webinspect Scan` - Microfocus Webinspect Scan\n* `MobSF Scan` - MobSF Scan\n* `Mobsfscan Scan` - MobSF Scan\n* `MobSF Scorecard Scan` - MobSF Scorecard Scan\n* `Mozilla Observatory Scan` - Mozilla Observatory Scan\n* `MSDefender Parser` - MSDefender Parser\n* `n0s1 Scanner` - n0s1 Scanner\n* `Nancy Scan` - Nancy Scan\n* `Netsparker Scan` - Netsparker Scan\n* `NeuVector (compliance)` - NeuVector (compliance)\n* `NeuVector (REST)` - NeuVector (REST)\n* `Nexpose Scan` - Nexpose Scan\n* `Nikto Scan` - Nikto Scan\n* `Nmap Scan` - Nmap Scan\n* `Node Security Platform Scan` - Node Security Platform Scan\n* `Nosey Parker Scan` - Nosey Parker Scan\n* `NPM Audit Scan` - NPM Audit Scan\n* `NPM Audit v7+ Scan` - NPM Audit v7+ Scan\n* `Nuclei Scan` - Nuclei Scan\n* `OpenReports` - OpenReports\n* `Openscap Vulnerability Scan` - Openscap Vulnerability Scan\n* `OpenVAS Parser` - OpenVAS Parser\n* `OpenVAS Parser v2` - OpenVAS Parser v2\n* `ORT evaluated model Importer` - ORT evaluated model Importer\n* `OssIndex Devaudit SCA Scan Importer` - OssIndex Devaudit SCA Scan Importer\n* `OSV Scan` - OSV Scan\n* `Outpost24 Scan` - Outpost24 Scan\n* `PHP Security Audit v2` - PHP Security Audit v2\n* `PHP Symfony Security Check` - PHP Symfony Security Check\n* `PingCastle` - PingCastle\n* `pip-audit Scan` - pip-audit Scan\n* `PMD Scan` - PMD Scan\n* `Popeye Scan` - Popeye Scan\n* `Progpilot Scan` - Progpilot Scan\n* `Prowler Scan` - Prowler Scan\n* `PTART Report` - PTART Report\n* `PWN SAST` - PWN SAST\n* `Qualys Hacker Guardian Scan` - Qualys Hacker Guardian Scan\n* `Qualys Infrastructure Scan (WebGUI XML)` - Qualys Infrastructure Scan (WebGUI XML)\n* `Qualys Scan` - Qualys Scan\n* `Qualys Webapp Scan` - Qualys Webapp Scan\n* `Rapplex Scan` - Rapplex Scan\n* `Red Hat Satellite` - Red Hat Satellite\n* `Retire.js Scan` - Retire.js Scan\n* `ReversingLabs Spectra Assure` - ReversingLabs Spectra Assure\n* `Risk Recon API Importer` - Risk Recon API Importer\n* `Rubocop Scan` - Rubocop Scan\n* `Rusty Hog Scan` - Rusty Hog Scan\n* `SARIF` - SARIF\n* `Scantist Scan` - Scantist Scan\n* `Scout Suite Scan` - Scout Suite Scan\n* `Semgrep JSON Report` - Semgrep JSON Report\n* `Semgrep Pro JSON Report` - Semgrep Pro JSON Report\n* `SKF Scan` - SKF Scan\n* `Snyk Code Scan` - Snyk Code Scan\n* `Snyk Issue API Scan` - Snyk Issue API Scan\n* `Snyk Scan` - Snyk Scan\n* `Solar Appscreener Scan` - Solar Appscreener Scan Detailed_Results.csv\n* `SonarQube API Import` - SonarQube API Import\n* `SonarQube Scan` - SonarQube Scan\n* `SonarQube Scan detailed` - SonarQube Scan detailed\n* `Sonatype Application Scan` - Sonatype Application Scan\n* `SpotBugs Scan` - SpotBugs Scan\n* `SSH Audit Importer` - SSH Audit Importer\n* `SSL Labs Scan` - SSL Labs Scan\n* `Sslscan` - Sslscan\n* `Sslyze Scan` - Sslyze Scan\n* `SSLyze Scan (JSON)` - SSLyze Scan (JSON)\n* `StackHawk HawkScan` - StackHawk HawkScan\n* `Sysdig CLI Report` - Sysdig CLI Report Scan\n* `Sysdig Vulnerability Report` - Sysdig Vulnerability Report Scan\n* `Talisman Scan` - Talisman Scan\n* `Tenable Scan` - Tenable Scan\n* `Terrascan Scan` - Terrascan Scan\n* `Testssl Scan` - Testssl Scan\n* `TFSec Scan` - TFSec Scan\n* `Threagile risks report` - Threagile risks report\n* `ThreatComposer Scan` - ThreatComposer Scan\n* `Trivy Operator Scan` - Trivy Operator Scan\n* `Trivy Scan` - Trivy Scan\n* `Trufflehog Scan` - Trufflehog Scan\n* `Trufflehog3 Scan` - Trufflehog3 Scan\n* `Trustwave Fusion API Scan` - Trustwave Fusion API Scan\n* `Trustwave Scan (CSV)` - Trustwave Scan (CSV)\n* `Twistlock Image Scan` - Twistlock Image Scan\n* `VCG Scan` - VCG Scan\n* `Veracode Scan` - Veracode Scan\n* `Veracode SourceClear Scan` - Veracode SourceClear Scan\n* `Vulners` - Vulners\n* `Wapiti Scan` - Wapiti Scan\n* `Wazuh` - Wazuh\n* `WFuzz JSON report` - WFuzz JSON report\n* `Whispers Scan` - Whispers Scan\n* `WhiteHat Sentinel` - WhiteHat Sentinel\n* `Wiz Scan` - Wiz Scan\n* `Wizcli Dir Scan` - Wizcli Dir Scan\n* `Wizcli IaC Scan` - Wizcli IaC Scan\n* `Wizcli Img Scan` - Wizcli Img Scan\n* `Wpscan` - Wpscan\n* `Xanitizer Scan` - Xanitizer Scan\n* `Xeol Parser` - Xeol Parser\n* `Yarn Audit Scan` - Yarn Audit Scan\n* `ZAP Scan` - ZAP Scan\n* `Zora Parser` - Zora Parser",
-                        "x-spec-enum-id": "c23365f5f03f8fc9"
+                        "description": "* `Acunetix Scan` - Acunetix Scanner\n* `Anchore Engine Scan` - Anchore Engine Scan\n* `Anchore Enterprise Policy Check` - Anchore Enterprise Policy Check\n* `Anchore Grype` - Anchore Grype\n* `Anchore Grype detailed` - Anchore Grype detailed\n* `AnchoreCTL Policies Report` - AnchoreCTL Policies Report\n* `AnchoreCTL Vuln Report` - AnchoreCTL Vuln Report\n* `AppCheck Web Application Scanner` - AppCheck Web Application Scanner\n* `AppSpider Scan` - AppSpider Scan\n* `Aqua Scan` - Aqua Scan\n* `Arachni Scan` - Arachni Scan\n* `AuditJS Scan` - AuditJS Scan\n* `AWS Inspector2 Scan` - AWS Inspector2 Scan\n* `AWS Prowler Scan` - AWS Prowler Scan\n* `AWS Prowler V3` - AWS Prowler V3\n* `AWS Security Finding Format (ASFF) Scan` - AWS Security Finding Format (ASFF)\n* `AWS Security Hub Scan` - AWS Security Hub Scan\n* `Azure Security Center Recommendations Scan` - Azure Security Center Recommendations Scan\n* `Bandit Scan` - Bandit Scan\n* `Bearer CLI` - Bearer CLI\n* `BlackDuck API` - BlackDuck API\n* `Blackduck Binary Analysis` - Blackduck Binary Analysis\n* `Blackduck Component Risk` - Blackduck Component Risk\n* `Blackduck Hub Scan` - Blackduck Hub Scan\n* `Brakeman Scan` - Brakeman Scan\n* `Bugcrowd API Import` - Bugcrowd API Import\n* `BugCrowd Scan` - BugCrowd Scan\n* `Bundler-Audit Scan` - Bundler-Audit Scan\n* `Burp Dastardly Scan` - Burp Dastardly Scan\n* `Burp Enterprise Scan` - Burp Enterprise Scan (RENAMED to Burp Suite DAST Scan)\n* `Burp REST API` - Burp REST API\n* `Burp Scan` - Burp Scan\n* `Burp GraphQL API` - Burp Suite DAST GraphQL API\n* `Burp Suite DAST Scan` - Burp Suite DAST Scan\n* `CargoAudit Scan` - CargoAudit Scan\n* `Checkmarx CxFlow SAST` - Checkmarx CxFlow SAST\n* `Checkmarx One Scan` - Checkmarx One Scan\n* `Checkmarx OSA` - Checkmarx OSA\n* `Checkmarx Scan` - Checkmarx Scan\n* `Checkmarx Scan detailed` - Checkmarx Scan detailed\n* `Checkov Scan` - Checkov Scan\n* `Chef Inspect Log` - Chef Inspect Log\n* `Choctaw Hog Scan` - Choctaw Hog Scan\n* `Clair Scan` - Clair Scan\n* `Cloudflare Insights` - Cloudflare Insights\n* `Cloudsploit Scan` - Cloudsploit Scan\n* `Cobalt.io API Import` - Cobalt.io API Import\n* `Cobalt.io Scan` - Cobalt.io Scan\n* `Codechecker Report native` - Codechecker Report native\n* `Contrast Scan` - Contrast Scan\n* `Coverity API` - Coverity API\n* `Coverity Scan JSON Report` - Coverity Scan JSON Report\n* `Crashtest Security JSON File` - Crashtest Security JSON File\n* `Crashtest Security XML File` - Crashtest Security XML File\n* `CredScan Scan` - CredScan Scan\n* `Crunch42 Scan` - Crunch42 Scan\n* `Cyberwatch scan (Galeax)` - Cyberwatch scan (Galeax)\n* `CycloneDX Scan` - CycloneDX Scan\n* `Cycognito Scan` - Cycognito Scan\n* `DawnScanner Scan` - DawnScanner Scan\n* `Deepfence Threatmapper Report` - Deepfence Threatmapper Report\n* `Dependency Check Scan` - Dependency Check Scan\n* `Dependency Track Finding Packaging Format (FPF) Export` - Dependency Track Finding Packaging Format (FPF) Export\n* `Detect-secrets Scan` - Detect-secrets Scan\n* `docker-bench-security Scan` - docker-bench-security Scan\n* `Dockle Scan` - Dockle Scan\n* `DrHeader JSON Importer` - DrHeader JSON Importer\n* `DSOP Scan` - DSOP Scan\n* `Duroc Hog Scan` - Duroc Hog Scan\n* `Edgescan Scan` - Edgescan Scan\n* `ESLint Scan` - ESLint Scan\n* `Essex Hog Scan` - Essex Hog Scan\n* `Fortify Scan` - Fortify Scan\n* `Generic Findings Import` - Generic Findings Import\n* `Ggshield Scan` - Ggshield Scan\n* `Github SAST Scan` - Github SAST Scan\n* `Github Secrets Detection Report Scan` - Github Secrets Detection Report Scan\n* `Github Vulnerability Scan` - Github Vulnerability Scan\n* `GitLab API Fuzzing Report Scan` - GitLab API Fuzzing Report Scan\n* `GitLab Container Scan` - GitLab Container Scan Scan\n* `GitLab DAST Report` - GitLab DAST Report\n* `GitLab Dependency Scanning Report` - GitLab Dependency Scanning Report\n* `GitLab SAST Report` - GitLab SAST Report\n* `GitLab Secret Detection Report` - GitLab Secret Detection Report\n* `Gitleaks Scan` - Gitleaks Scan\n* `Google Cloud Artifact Vulnerability Scan` - Google Cloud Artifact Vulnerability Scan\n* `Gosec Scanner` - Gosec Scanner\n* `Gottingen Hog Scan` - Gottingen Hog Scan\n* `Govulncheck Scanner` - Govulncheck Scanner\n* `HackerOne Cases` - HackerOne Cases\n* `Hadolint Dockerfile check` - Hadolint Dockerfile check\n* `Harbor Vulnerability Scan` - Harbor Vulnerability Scan\n* `HCL AppScan on Cloud SAST XML` - HCL AppScan on Cloud SAST XML\n* `HCLAppScan XML` - HCLAppScan XML\n* `Horusec Scan` - Horusec Scan\n* `Humble Json Importer` - Humble Json Importer\n* `HuskyCI Report` - HuskyCI Report\n* `Hydra Scan` - Hydra Scan\n* `IBM AppScan DAST` - IBM AppScan DAST\n* `Immuniweb Scan` - Immuniweb Scan\n* `IntSights Report` - IntSights Report\n* `Invicti Scan` - Invicti Scan\n* `IriusRisk Threats Scan` - IriusRisk Threats Scan\n* `JFrog Xray API Summary Artifact Scan` - JFrog Xray API Summary Artifact Scan\n* `JFrog Xray On Demand Binary Scan` - JFrog Xray On Demand Binary Scan\n* `JFrog Xray Scan` - JFrog Xray Scan\n* `JFrog Xray Unified Scan` - JFrog Xray Unified Scan\n* `KICS Scan` - KICS Scan\n* `Kiuwan SCA Scan` - Kiuwan SCA Scan\n* `Kiuwan Scan` - Kiuwan Scan\n* `KrakenD Audit Scan` - KrakenD Audit Scan\n* `kube-bench Scan` - kube-bench Scan\n* `Kubeaudit Scan` - Kubeaudit Scan\n* `KubeHunter Scan` - KubeHunter Scan\n* `Kubescape JSON Importer` - Kubescape JSON Importer\n* `Legitify Scan` - Legitify Scan\n* `Mayhem SARIF Report` - Mayhem SARIF Report\n* `Mend Scan` - Mend Scan\n* `Meterian Scan` - Meterian Scan\n* `Microfocus Webinspect Scan` - Microfocus Webinspect Scan\n* `MobSF Scan` - MobSF Scan\n* `Mobsfscan Scan` - MobSF Scan\n* `MobSF Scorecard Scan` - MobSF Scorecard Scan\n* `Mozilla Observatory Scan` - Mozilla Observatory Scan\n* `MSDefender Parser` - MSDefender Parser\n* `n0s1 Scanner` - n0s1 Scanner\n* `Nancy Scan` - Nancy Scan\n* `Netsparker Scan` - Netsparker Scan\n* `NeuVector (compliance)` - NeuVector (compliance)\n* `NeuVector (REST)` - NeuVector (REST)\n* `Nexpose Scan` - Nexpose Scan\n* `Nikto Scan` - Nikto Scan\n* `Nmap Scan` - Nmap Scan\n* `Node Security Platform Scan` - Node Security Platform Scan\n* `Nosey Parker Scan` - Nosey Parker Scan\n* `NPM Audit Scan` - NPM Audit Scan\n* `NPM Audit v7+ Scan` - NPM Audit v7+ Scan\n* `Nuclei Scan` - Nuclei Scan\n* `OpenReports` - OpenReports\n* `Openscap Vulnerability Scan` - Openscap Vulnerability Scan\n* `OpenVAS Parser` - OpenVAS Parser\n* `OpenVAS Parser v2` - OpenVAS Parser v2\n* `Orca Security Alerts` - Orca Security Alerts\n* `ORT evaluated model Importer` - ORT evaluated model Importer\n* `OssIndex Devaudit SCA Scan Importer` - OssIndex Devaudit SCA Scan Importer\n* `OSV Scan` - OSV Scan\n* `Outpost24 Scan` - Outpost24 Scan\n* `PHP Security Audit v2` - PHP Security Audit v2\n* `PHP Symfony Security Check` - PHP Symfony Security Check\n* `PingCastle` - PingCastle\n* `pip-audit Scan` - pip-audit Scan\n* `PMD Scan` - PMD Scan\n* `Popeye Scan` - Popeye Scan\n* `Progpilot Scan` - Progpilot Scan\n* `Prowler Scan` - Prowler Scan\n* `PTART Report` - PTART Report\n* `PWN SAST` - PWN SAST\n* `Qualys Hacker Guardian Scan` - Qualys Hacker Guardian Scan\n* `Qualys Infrastructure Scan (WebGUI XML)` - Qualys Infrastructure Scan (WebGUI XML)\n* `Qualys Scan` - Qualys Scan\n* `Qualys Webapp Scan` - Qualys Webapp Scan\n* `Rapplex Scan` - Rapplex Scan\n* `Red Hat Satellite` - Red Hat Satellite\n* `Retire.js Scan` - Retire.js Scan\n* `ReversingLabs Spectra Assure` - ReversingLabs Spectra Assure\n* `Risk Recon API Importer` - Risk Recon API Importer\n* `Rubocop Scan` - Rubocop Scan\n* `Rusty Hog Scan` - Rusty Hog Scan\n* `SARIF` - SARIF\n* `Scantist Scan` - Scantist Scan\n* `Scout Suite Scan` - Scout Suite Scan\n* `Semgrep JSON Report` - Semgrep JSON Report\n* `Semgrep Pro JSON Report` - Semgrep Pro JSON Report\n* `SKF Scan` - SKF Scan\n* `Snyk Code Scan` - Snyk Code Scan\n* `Snyk Issue API Scan` - Snyk Issue API Scan\n* `Snyk Scan` - Snyk Scan\n* `Solar Appscreener Scan` - Solar Appscreener Scan Detailed_Results.csv\n* `SonarQube API Import` - SonarQube API Import\n* `SonarQube Scan` - SonarQube Scan\n* `SonarQube Scan detailed` - SonarQube Scan detailed\n* `Sonatype Application Scan` - Sonatype Application Scan\n* `SpotBugs Scan` - SpotBugs Scan\n* `SSH Audit Importer` - SSH Audit Importer\n* `SSL Labs Scan` - SSL Labs Scan\n* `Sslscan` - Sslscan\n* `Sslyze Scan` - Sslyze Scan\n* `SSLyze Scan (JSON)` - SSLyze Scan (JSON)\n* `StackHawk HawkScan` - StackHawk HawkScan\n* `Sysdig CLI Report` - Sysdig CLI Report Scan\n* `Sysdig Vulnerability Report` - Sysdig Vulnerability Report Scan\n* `Talisman Scan` - Talisman Scan\n* `Tenable Scan` - Tenable Scan\n* `Terrascan Scan` - Terrascan Scan\n* `Testssl Scan` - Testssl Scan\n* `TFSec Scan` - TFSec Scan\n* `Threagile risks report` - Threagile risks report\n* `ThreatComposer Scan` - ThreatComposer Scan\n* `Trivy Operator Scan` - Trivy Operator Scan\n* `Trivy Scan` - Trivy Scan\n* `Trufflehog Scan` - Trufflehog Scan\n* `Trufflehog3 Scan` - Trufflehog3 Scan\n* `Trustwave Fusion API Scan` - Trustwave Fusion API Scan\n* `Trustwave Scan (CSV)` - Trustwave Scan (CSV)\n* `Twistlock Image Scan` - Twistlock Image Scan\n* `VCG Scan` - VCG Scan\n* `Veracode Scan` - Veracode Scan\n* `Veracode SourceClear Scan` - Veracode SourceClear Scan\n* `Vulners` - Vulners\n* `Wapiti Scan` - Wapiti Scan\n* `Wazuh` - Wazuh\n* `WFuzz JSON report` - WFuzz JSON report\n* `Whispers Scan` - Whispers Scan\n* `WhiteHat Sentinel` - WhiteHat Sentinel\n* `Wiz Scan` - Wiz Scan\n* `Wizcli Dir Scan` - Wizcli Dir Scan\n* `Wizcli IaC Scan` - Wizcli IaC Scan\n* `Wizcli Img Scan` - Wizcli Img Scan\n* `Wpscan` - Wpscan\n* `Xanitizer Scan` - Xanitizer Scan\n* `Xeol Parser` - Xeol Parser\n* `Yarn Audit Scan` - Yarn Audit Scan\n* `ZAP Scan` - ZAP Scan\n* `Zora Parser` - Zora Parser",
+                        "x-spec-enum-id": "dcadd6f0ac3ee0bf"
                     },
                     "test": {
                         "type": "integer"
@@ -46407,6 +46795,7 @@
                             "Anchore Engine Scan",
                             "Anchore Enterprise Policy Check",
                             "Anchore Grype",
+                            "Anchore Grype detailed",
                             "AnchoreCTL Policies Report",
                             "AnchoreCTL Vuln Report",
                             "AppCheck Web Application Scanner",
@@ -46504,6 +46893,7 @@
                             "Immuniweb Scan",
                             "IntSights Report",
                             "Invicti Scan",
+                            "IriusRisk Threats Scan",
                             "JFrog Xray API Summary Artifact Scan",
                             "JFrog Xray On Demand Binary Scan",
                             "JFrog Xray Scan",
@@ -46543,6 +46933,7 @@
                             "Openscap Vulnerability Scan",
                             "OpenVAS Parser",
                             "OpenVAS Parser v2",
+                            "Orca Security Alerts",
                             "ORT evaluated model Importer",
                             "OssIndex Devaudit SCA Scan Importer",
                             "OSV Scan",
@@ -46626,8 +47017,8 @@
                             "Zora Parser"
                         ],
                         "type": "string",
-                        "description": "* `Acunetix Scan` - Acunetix Scanner\n* `Anchore Engine Scan` - Anchore Engine Scan\n* `Anchore Enterprise Policy Check` - Anchore Enterprise Policy Check\n* `Anchore Grype` - Anchore Grype\n* `AnchoreCTL Policies Report` - AnchoreCTL Policies Report\n* `AnchoreCTL Vuln Report` - AnchoreCTL Vuln Report\n* `AppCheck Web Application Scanner` - AppCheck Web Application Scanner\n* `AppSpider Scan` - AppSpider Scan\n* `Aqua Scan` - Aqua Scan\n* `Arachni Scan` - Arachni Scan\n* `AuditJS Scan` - AuditJS Scan\n* `AWS Inspector2 Scan` - AWS Inspector2 Scan\n* `AWS Prowler Scan` - AWS Prowler Scan\n* `AWS Prowler V3` - AWS Prowler V3\n* `AWS Security Finding Format (ASFF) Scan` - AWS Security Finding Format (ASFF)\n* `AWS Security Hub Scan` - AWS Security Hub Scan\n* `Azure Security Center Recommendations Scan` - Azure Security Center Recommendations Scan\n* `Bandit Scan` - Bandit Scan\n* `Bearer CLI` - Bearer CLI\n* `BlackDuck API` - BlackDuck API\n* `Blackduck Binary Analysis` - Blackduck Binary Analysis\n* `Blackduck Component Risk` - Blackduck Component Risk\n* `Blackduck Hub Scan` - Blackduck Hub Scan\n* `Brakeman Scan` - Brakeman Scan\n* `Bugcrowd API Import` - Bugcrowd API Import\n* `BugCrowd Scan` - BugCrowd Scan\n* `Bundler-Audit Scan` - Bundler-Audit Scan\n* `Burp Dastardly Scan` - Burp Dastardly Scan\n* `Burp Enterprise Scan` - Burp Enterprise Scan (RENAMED to Burp Suite DAST Scan)\n* `Burp REST API` - Burp REST API\n* `Burp Scan` - Burp Scan\n* `Burp GraphQL API` - Burp Suite DAST GraphQL API\n* `Burp Suite DAST Scan` - Burp Suite DAST Scan\n* `CargoAudit Scan` - CargoAudit Scan\n* `Checkmarx CxFlow SAST` - Checkmarx CxFlow SAST\n* `Checkmarx One Scan` - Checkmarx One Scan\n* `Checkmarx OSA` - Checkmarx OSA\n* `Checkmarx Scan` - Checkmarx Scan\n* `Checkmarx Scan detailed` - Checkmarx Scan detailed\n* `Checkov Scan` - Checkov Scan\n* `Chef Inspect Log` - Chef Inspect Log\n* `Choctaw Hog Scan` - Choctaw Hog Scan\n* `Clair Scan` - Clair Scan\n* `Cloudflare Insights` - Cloudflare Insights\n* `Cloudsploit Scan` - Cloudsploit Scan\n* `Cobalt.io API Import` - Cobalt.io API Import\n* `Cobalt.io Scan` - Cobalt.io Scan\n* `Codechecker Report native` - Codechecker Report native\n* `Contrast Scan` - Contrast Scan\n* `Coverity API` - Coverity API\n* `Coverity Scan JSON Report` - Coverity Scan JSON Report\n* `Crashtest Security JSON File` - Crashtest Security JSON File\n* `Crashtest Security XML File` - Crashtest Security XML File\n* `CredScan Scan` - CredScan Scan\n* `Crunch42 Scan` - Crunch42 Scan\n* `Cyberwatch scan (Galeax)` - Cyberwatch scan (Galeax)\n* `CycloneDX Scan` - CycloneDX Scan\n* `Cycognito Scan` - Cycognito Scan\n* `DawnScanner Scan` - DawnScanner Scan\n* `Deepfence Threatmapper Report` - Deepfence Threatmapper Report\n* `Dependency Check Scan` - Dependency Check Scan\n* `Dependency Track Finding Packaging Format (FPF) Export` - Dependency Track Finding Packaging Format (FPF) Export\n* `Detect-secrets Scan` - Detect-secrets Scan\n* `docker-bench-security Scan` - docker-bench-security Scan\n* `Dockle Scan` - Dockle Scan\n* `DrHeader JSON Importer` - DrHeader JSON Importer\n* `DSOP Scan` - DSOP Scan\n* `Duroc Hog Scan` - Duroc Hog Scan\n* `Edgescan Scan` - Edgescan Scan\n* `ESLint Scan` - ESLint Scan\n* `Essex Hog Scan` - Essex Hog Scan\n* `Fortify Scan` - Fortify Scan\n* `Generic Findings Import` - Generic Findings Import\n* `Ggshield Scan` - Ggshield Scan\n* `Github SAST Scan` - Github SAST Scan\n* `Github Secrets Detection Report Scan` - Github Secrets Detection Report Scan\n* `Github Vulnerability Scan` - Github Vulnerability Scan\n* `GitLab API Fuzzing Report Scan` - GitLab API Fuzzing Report Scan\n* `GitLab Container Scan` - GitLab Container Scan Scan\n* `GitLab DAST Report` - GitLab DAST Report\n* `GitLab Dependency Scanning Report` - GitLab Dependency Scanning Report\n* `GitLab SAST Report` - GitLab SAST Report\n* `GitLab Secret Detection Report` - GitLab Secret Detection Report\n* `Gitleaks Scan` - Gitleaks Scan\n* `Google Cloud Artifact Vulnerability Scan` - Google Cloud Artifact Vulnerability Scan\n* `Gosec Scanner` - Gosec Scanner\n* `Gottingen Hog Scan` - Gottingen Hog Scan\n* `Govulncheck Scanner` - Govulncheck Scanner\n* `HackerOne Cases` - HackerOne Cases\n* `Hadolint Dockerfile check` - Hadolint Dockerfile check\n* `Harbor Vulnerability Scan` - Harbor Vulnerability Scan\n* `HCL AppScan on Cloud SAST XML` - HCL AppScan on Cloud SAST XML\n* `HCLAppScan XML` - HCLAppScan XML\n* `Horusec Scan` - Horusec Scan\n* `Humble Json Importer` - Humble Json Importer\n* `HuskyCI Report` - HuskyCI Report\n* `Hydra Scan` - Hydra Scan\n* `IBM AppScan DAST` - IBM AppScan DAST\n* `Immuniweb Scan` - Immuniweb Scan\n* `IntSights Report` - IntSights Report\n* `Invicti Scan` - Invicti Scan\n* `JFrog Xray API Summary Artifact Scan` - JFrog Xray API Summary Artifact Scan\n* `JFrog Xray On Demand Binary Scan` - JFrog Xray On Demand Binary Scan\n* `JFrog Xray Scan` - JFrog Xray Scan\n* `JFrog Xray Unified Scan` - JFrog Xray Unified Scan\n* `KICS Scan` - KICS Scan\n* `Kiuwan SCA Scan` - Kiuwan SCA Scan\n* `Kiuwan Scan` - Kiuwan Scan\n* `KrakenD Audit Scan` - KrakenD Audit Scan\n* `kube-bench Scan` - kube-bench Scan\n* `Kubeaudit Scan` - Kubeaudit Scan\n* `KubeHunter Scan` - KubeHunter Scan\n* `Kubescape JSON Importer` - Kubescape JSON Importer\n* `Legitify Scan` - Legitify Scan\n* `Mayhem SARIF Report` - Mayhem SARIF Report\n* `Mend Scan` - Mend Scan\n* `Meterian Scan` - Meterian Scan\n* `Microfocus Webinspect Scan` - Microfocus Webinspect Scan\n* `MobSF Scan` - MobSF Scan\n* `Mobsfscan Scan` - MobSF Scan\n* `MobSF Scorecard Scan` - MobSF Scorecard Scan\n* `Mozilla Observatory Scan` - Mozilla Observatory Scan\n* `MSDefender Parser` - MSDefender Parser\n* `n0s1 Scanner` - n0s1 Scanner\n* `Nancy Scan` - Nancy Scan\n* `Netsparker Scan` - Netsparker Scan\n* `NeuVector (compliance)` - NeuVector (compliance)\n* `NeuVector (REST)` - NeuVector (REST)\n* `Nexpose Scan` - Nexpose Scan\n* `Nikto Scan` - Nikto Scan\n* `Nmap Scan` - Nmap Scan\n* `Node Security Platform Scan` - Node Security Platform Scan\n* `Nosey Parker Scan` - Nosey Parker Scan\n* `NPM Audit Scan` - NPM Audit Scan\n* `NPM Audit v7+ Scan` - NPM Audit v7+ Scan\n* `Nuclei Scan` - Nuclei Scan\n* `OpenReports` - OpenReports\n* `Openscap Vulnerability Scan` - Openscap Vulnerability Scan\n* `OpenVAS Parser` - OpenVAS Parser\n* `OpenVAS Parser v2` - OpenVAS Parser v2\n* `ORT evaluated model Importer` - ORT evaluated model Importer\n* `OssIndex Devaudit SCA Scan Importer` - OssIndex Devaudit SCA Scan Importer\n* `OSV Scan` - OSV Scan\n* `Outpost24 Scan` - Outpost24 Scan\n* `PHP Security Audit v2` - PHP Security Audit v2\n* `PHP Symfony Security Check` - PHP Symfony Security Check\n* `PingCastle` - PingCastle\n* `pip-audit Scan` - pip-audit Scan\n* `PMD Scan` - PMD Scan\n* `Popeye Scan` - Popeye Scan\n* `Progpilot Scan` - Progpilot Scan\n* `Prowler Scan` - Prowler Scan\n* `PTART Report` - PTART Report\n* `PWN SAST` - PWN SAST\n* `Qualys Hacker Guardian Scan` - Qualys Hacker Guardian Scan\n* `Qualys Infrastructure Scan (WebGUI XML)` - Qualys Infrastructure Scan (WebGUI XML)\n* `Qualys Scan` - Qualys Scan\n* `Qualys Webapp Scan` - Qualys Webapp Scan\n* `Rapplex Scan` - Rapplex Scan\n* `Red Hat Satellite` - Red Hat Satellite\n* `Retire.js Scan` - Retire.js Scan\n* `ReversingLabs Spectra Assure` - ReversingLabs Spectra Assure\n* `Risk Recon API Importer` - Risk Recon API Importer\n* `Rubocop Scan` - Rubocop Scan\n* `Rusty Hog Scan` - Rusty Hog Scan\n* `SARIF` - SARIF\n* `Scantist Scan` - Scantist Scan\n* `Scout Suite Scan` - Scout Suite Scan\n* `Semgrep JSON Report` - Semgrep JSON Report\n* `Semgrep Pro JSON Report` - Semgrep Pro JSON Report\n* `SKF Scan` - SKF Scan\n* `Snyk Code Scan` - Snyk Code Scan\n* `Snyk Issue API Scan` - Snyk Issue API Scan\n* `Snyk Scan` - Snyk Scan\n* `Solar Appscreener Scan` - Solar Appscreener Scan Detailed_Results.csv\n* `SonarQube API Import` - SonarQube API Import\n* `SonarQube Scan` - SonarQube Scan\n* `SonarQube Scan detailed` - SonarQube Scan detailed\n* `Sonatype Application Scan` - Sonatype Application Scan\n* `SpotBugs Scan` - SpotBugs Scan\n* `SSH Audit Importer` - SSH Audit Importer\n* `SSL Labs Scan` - SSL Labs Scan\n* `Sslscan` - Sslscan\n* `Sslyze Scan` - Sslyze Scan\n* `SSLyze Scan (JSON)` - SSLyze Scan (JSON)\n* `StackHawk HawkScan` - StackHawk HawkScan\n* `Sysdig CLI Report` - Sysdig CLI Report Scan\n* `Sysdig Vulnerability Report` - Sysdig Vulnerability Report Scan\n* `Talisman Scan` - Talisman Scan\n* `Tenable Scan` - Tenable Scan\n* `Terrascan Scan` - Terrascan Scan\n* `Testssl Scan` - Testssl Scan\n* `TFSec Scan` - TFSec Scan\n* `Threagile risks report` - Threagile risks report\n* `ThreatComposer Scan` - ThreatComposer Scan\n* `Trivy Operator Scan` - Trivy Operator Scan\n* `Trivy Scan` - Trivy Scan\n* `Trufflehog Scan` - Trufflehog Scan\n* `Trufflehog3 Scan` - Trufflehog3 Scan\n* `Trustwave Fusion API Scan` - Trustwave Fusion API Scan\n* `Trustwave Scan (CSV)` - Trustwave Scan (CSV)\n* `Twistlock Image Scan` - Twistlock Image Scan\n* `VCG Scan` - VCG Scan\n* `Veracode Scan` - Veracode Scan\n* `Veracode SourceClear Scan` - Veracode SourceClear Scan\n* `Vulners` - Vulners\n* `Wapiti Scan` - Wapiti Scan\n* `Wazuh` - Wazuh\n* `WFuzz JSON report` - WFuzz JSON report\n* `Whispers Scan` - Whispers Scan\n* `WhiteHat Sentinel` - WhiteHat Sentinel\n* `Wiz Scan` - Wiz Scan\n* `Wizcli Dir Scan` - Wizcli Dir Scan\n* `Wizcli IaC Scan` - Wizcli IaC Scan\n* `Wizcli Img Scan` - Wizcli Img Scan\n* `Wpscan` - Wpscan\n* `Xanitizer Scan` - Xanitizer Scan\n* `Xeol Parser` - Xeol Parser\n* `Yarn Audit Scan` - Yarn Audit Scan\n* `ZAP Scan` - ZAP Scan\n* `Zora Parser` - Zora Parser",
-                        "x-spec-enum-id": "c23365f5f03f8fc9"
+                        "description": "* `Acunetix Scan` - Acunetix Scanner\n* `Anchore Engine Scan` - Anchore Engine Scan\n* `Anchore Enterprise Policy Check` - Anchore Enterprise Policy Check\n* `Anchore Grype` - Anchore Grype\n* `Anchore Grype detailed` - Anchore Grype detailed\n* `AnchoreCTL Policies Report` - AnchoreCTL Policies Report\n* `AnchoreCTL Vuln Report` - AnchoreCTL Vuln Report\n* `AppCheck Web Application Scanner` - AppCheck Web Application Scanner\n* `AppSpider Scan` - AppSpider Scan\n* `Aqua Scan` - Aqua Scan\n* `Arachni Scan` - Arachni Scan\n* `AuditJS Scan` - AuditJS Scan\n* `AWS Inspector2 Scan` - AWS Inspector2 Scan\n* `AWS Prowler Scan` - AWS Prowler Scan\n* `AWS Prowler V3` - AWS Prowler V3\n* `AWS Security Finding Format (ASFF) Scan` - AWS Security Finding Format (ASFF)\n* `AWS Security Hub Scan` - AWS Security Hub Scan\n* `Azure Security Center Recommendations Scan` - Azure Security Center Recommendations Scan\n* `Bandit Scan` - Bandit Scan\n* `Bearer CLI` - Bearer CLI\n* `BlackDuck API` - BlackDuck API\n* `Blackduck Binary Analysis` - Blackduck Binary Analysis\n* `Blackduck Component Risk` - Blackduck Component Risk\n* `Blackduck Hub Scan` - Blackduck Hub Scan\n* `Brakeman Scan` - Brakeman Scan\n* `Bugcrowd API Import` - Bugcrowd API Import\n* `BugCrowd Scan` - BugCrowd Scan\n* `Bundler-Audit Scan` - Bundler-Audit Scan\n* `Burp Dastardly Scan` - Burp Dastardly Scan\n* `Burp Enterprise Scan` - Burp Enterprise Scan (RENAMED to Burp Suite DAST Scan)\n* `Burp REST API` - Burp REST API\n* `Burp Scan` - Burp Scan\n* `Burp GraphQL API` - Burp Suite DAST GraphQL API\n* `Burp Suite DAST Scan` - Burp Suite DAST Scan\n* `CargoAudit Scan` - CargoAudit Scan\n* `Checkmarx CxFlow SAST` - Checkmarx CxFlow SAST\n* `Checkmarx One Scan` - Checkmarx One Scan\n* `Checkmarx OSA` - Checkmarx OSA\n* `Checkmarx Scan` - Checkmarx Scan\n* `Checkmarx Scan detailed` - Checkmarx Scan detailed\n* `Checkov Scan` - Checkov Scan\n* `Chef Inspect Log` - Chef Inspect Log\n* `Choctaw Hog Scan` - Choctaw Hog Scan\n* `Clair Scan` - Clair Scan\n* `Cloudflare Insights` - Cloudflare Insights\n* `Cloudsploit Scan` - Cloudsploit Scan\n* `Cobalt.io API Import` - Cobalt.io API Import\n* `Cobalt.io Scan` - Cobalt.io Scan\n* `Codechecker Report native` - Codechecker Report native\n* `Contrast Scan` - Contrast Scan\n* `Coverity API` - Coverity API\n* `Coverity Scan JSON Report` - Coverity Scan JSON Report\n* `Crashtest Security JSON File` - Crashtest Security JSON File\n* `Crashtest Security XML File` - Crashtest Security XML File\n* `CredScan Scan` - CredScan Scan\n* `Crunch42 Scan` - Crunch42 Scan\n* `Cyberwatch scan (Galeax)` - Cyberwatch scan (Galeax)\n* `CycloneDX Scan` - CycloneDX Scan\n* `Cycognito Scan` - Cycognito Scan\n* `DawnScanner Scan` - DawnScanner Scan\n* `Deepfence Threatmapper Report` - Deepfence Threatmapper Report\n* `Dependency Check Scan` - Dependency Check Scan\n* `Dependency Track Finding Packaging Format (FPF) Export` - Dependency Track Finding Packaging Format (FPF) Export\n* `Detect-secrets Scan` - Detect-secrets Scan\n* `docker-bench-security Scan` - docker-bench-security Scan\n* `Dockle Scan` - Dockle Scan\n* `DrHeader JSON Importer` - DrHeader JSON Importer\n* `DSOP Scan` - DSOP Scan\n* `Duroc Hog Scan` - Duroc Hog Scan\n* `Edgescan Scan` - Edgescan Scan\n* `ESLint Scan` - ESLint Scan\n* `Essex Hog Scan` - Essex Hog Scan\n* `Fortify Scan` - Fortify Scan\n* `Generic Findings Import` - Generic Findings Import\n* `Ggshield Scan` - Ggshield Scan\n* `Github SAST Scan` - Github SAST Scan\n* `Github Secrets Detection Report Scan` - Github Secrets Detection Report Scan\n* `Github Vulnerability Scan` - Github Vulnerability Scan\n* `GitLab API Fuzzing Report Scan` - GitLab API Fuzzing Report Scan\n* `GitLab Container Scan` - GitLab Container Scan Scan\n* `GitLab DAST Report` - GitLab DAST Report\n* `GitLab Dependency Scanning Report` - GitLab Dependency Scanning Report\n* `GitLab SAST Report` - GitLab SAST Report\n* `GitLab Secret Detection Report` - GitLab Secret Detection Report\n* `Gitleaks Scan` - Gitleaks Scan\n* `Google Cloud Artifact Vulnerability Scan` - Google Cloud Artifact Vulnerability Scan\n* `Gosec Scanner` - Gosec Scanner\n* `Gottingen Hog Scan` - Gottingen Hog Scan\n* `Govulncheck Scanner` - Govulncheck Scanner\n* `HackerOne Cases` - HackerOne Cases\n* `Hadolint Dockerfile check` - Hadolint Dockerfile check\n* `Harbor Vulnerability Scan` - Harbor Vulnerability Scan\n* `HCL AppScan on Cloud SAST XML` - HCL AppScan on Cloud SAST XML\n* `HCLAppScan XML` - HCLAppScan XML\n* `Horusec Scan` - Horusec Scan\n* `Humble Json Importer` - Humble Json Importer\n* `HuskyCI Report` - HuskyCI Report\n* `Hydra Scan` - Hydra Scan\n* `IBM AppScan DAST` - IBM AppScan DAST\n* `Immuniweb Scan` - Immuniweb Scan\n* `IntSights Report` - IntSights Report\n* `Invicti Scan` - Invicti Scan\n* `IriusRisk Threats Scan` - IriusRisk Threats Scan\n* `JFrog Xray API Summary Artifact Scan` - JFrog Xray API Summary Artifact Scan\n* `JFrog Xray On Demand Binary Scan` - JFrog Xray On Demand Binary Scan\n* `JFrog Xray Scan` - JFrog Xray Scan\n* `JFrog Xray Unified Scan` - JFrog Xray Unified Scan\n* `KICS Scan` - KICS Scan\n* `Kiuwan SCA Scan` - Kiuwan SCA Scan\n* `Kiuwan Scan` - Kiuwan Scan\n* `KrakenD Audit Scan` - KrakenD Audit Scan\n* `kube-bench Scan` - kube-bench Scan\n* `Kubeaudit Scan` - Kubeaudit Scan\n* `KubeHunter Scan` - KubeHunter Scan\n* `Kubescape JSON Importer` - Kubescape JSON Importer\n* `Legitify Scan` - Legitify Scan\n* `Mayhem SARIF Report` - Mayhem SARIF Report\n* `Mend Scan` - Mend Scan\n* `Meterian Scan` - Meterian Scan\n* `Microfocus Webinspect Scan` - Microfocus Webinspect Scan\n* `MobSF Scan` - MobSF Scan\n* `Mobsfscan Scan` - MobSF Scan\n* `MobSF Scorecard Scan` - MobSF Scorecard Scan\n* `Mozilla Observatory Scan` - Mozilla Observatory Scan\n* `MSDefender Parser` - MSDefender Parser\n* `n0s1 Scanner` - n0s1 Scanner\n* `Nancy Scan` - Nancy Scan\n* `Netsparker Scan` - Netsparker Scan\n* `NeuVector (compliance)` - NeuVector (compliance)\n* `NeuVector (REST)` - NeuVector (REST)\n* `Nexpose Scan` - Nexpose Scan\n* `Nikto Scan` - Nikto Scan\n* `Nmap Scan` - Nmap Scan\n* `Node Security Platform Scan` - Node Security Platform Scan\n* `Nosey Parker Scan` - Nosey Parker Scan\n* `NPM Audit Scan` - NPM Audit Scan\n* `NPM Audit v7+ Scan` - NPM Audit v7+ Scan\n* `Nuclei Scan` - Nuclei Scan\n* `OpenReports` - OpenReports\n* `Openscap Vulnerability Scan` - Openscap Vulnerability Scan\n* `OpenVAS Parser` - OpenVAS Parser\n* `OpenVAS Parser v2` - OpenVAS Parser v2\n* `Orca Security Alerts` - Orca Security Alerts\n* `ORT evaluated model Importer` - ORT evaluated model Importer\n* `OssIndex Devaudit SCA Scan Importer` - OssIndex Devaudit SCA Scan Importer\n* `OSV Scan` - OSV Scan\n* `Outpost24 Scan` - Outpost24 Scan\n* `PHP Security Audit v2` - PHP Security Audit v2\n* `PHP Symfony Security Check` - PHP Symfony Security Check\n* `PingCastle` - PingCastle\n* `pip-audit Scan` - pip-audit Scan\n* `PMD Scan` - PMD Scan\n* `Popeye Scan` - Popeye Scan\n* `Progpilot Scan` - Progpilot Scan\n* `Prowler Scan` - Prowler Scan\n* `PTART Report` - PTART Report\n* `PWN SAST` - PWN SAST\n* `Qualys Hacker Guardian Scan` - Qualys Hacker Guardian Scan\n* `Qualys Infrastructure Scan (WebGUI XML)` - Qualys Infrastructure Scan (WebGUI XML)\n* `Qualys Scan` - Qualys Scan\n* `Qualys Webapp Scan` - Qualys Webapp Scan\n* `Rapplex Scan` - Rapplex Scan\n* `Red Hat Satellite` - Red Hat Satellite\n* `Retire.js Scan` - Retire.js Scan\n* `ReversingLabs Spectra Assure` - ReversingLabs Spectra Assure\n* `Risk Recon API Importer` - Risk Recon API Importer\n* `Rubocop Scan` - Rubocop Scan\n* `Rusty Hog Scan` - Rusty Hog Scan\n* `SARIF` - SARIF\n* `Scantist Scan` - Scantist Scan\n* `Scout Suite Scan` - Scout Suite Scan\n* `Semgrep JSON Report` - Semgrep JSON Report\n* `Semgrep Pro JSON Report` - Semgrep Pro JSON Report\n* `SKF Scan` - SKF Scan\n* `Snyk Code Scan` - Snyk Code Scan\n* `Snyk Issue API Scan` - Snyk Issue API Scan\n* `Snyk Scan` - Snyk Scan\n* `Solar Appscreener Scan` - Solar Appscreener Scan Detailed_Results.csv\n* `SonarQube API Import` - SonarQube API Import\n* `SonarQube Scan` - SonarQube Scan\n* `SonarQube Scan detailed` - SonarQube Scan detailed\n* `Sonatype Application Scan` - Sonatype Application Scan\n* `SpotBugs Scan` - SpotBugs Scan\n* `SSH Audit Importer` - SSH Audit Importer\n* `SSL Labs Scan` - SSL Labs Scan\n* `Sslscan` - Sslscan\n* `Sslyze Scan` - Sslyze Scan\n* `SSLyze Scan (JSON)` - SSLyze Scan (JSON)\n* `StackHawk HawkScan` - StackHawk HawkScan\n* `Sysdig CLI Report` - Sysdig CLI Report Scan\n* `Sysdig Vulnerability Report` - Sysdig Vulnerability Report Scan\n* `Talisman Scan` - Talisman Scan\n* `Tenable Scan` - Tenable Scan\n* `Terrascan Scan` - Terrascan Scan\n* `Testssl Scan` - Testssl Scan\n* `TFSec Scan` - TFSec Scan\n* `Threagile risks report` - Threagile risks report\n* `ThreatComposer Scan` - ThreatComposer Scan\n* `Trivy Operator Scan` - Trivy Operator Scan\n* `Trivy Scan` - Trivy Scan\n* `Trufflehog Scan` - Trufflehog Scan\n* `Trufflehog3 Scan` - Trufflehog3 Scan\n* `Trustwave Fusion API Scan` - Trustwave Fusion API Scan\n* `Trustwave Scan (CSV)` - Trustwave Scan (CSV)\n* `Twistlock Image Scan` - Twistlock Image Scan\n* `VCG Scan` - VCG Scan\n* `Veracode Scan` - Veracode Scan\n* `Veracode SourceClear Scan` - Veracode SourceClear Scan\n* `Vulners` - Vulners\n* `Wapiti Scan` - Wapiti Scan\n* `Wazuh` - Wazuh\n* `WFuzz JSON report` - WFuzz JSON report\n* `Whispers Scan` - Whispers Scan\n* `WhiteHat Sentinel` - WhiteHat Sentinel\n* `Wiz Scan` - Wiz Scan\n* `Wizcli Dir Scan` - Wizcli Dir Scan\n* `Wizcli IaC Scan` - Wizcli IaC Scan\n* `Wizcli Img Scan` - Wizcli Img Scan\n* `Wpscan` - Wpscan\n* `Xanitizer Scan` - Xanitizer Scan\n* `Xeol Parser` - Xeol Parser\n* `Yarn Audit Scan` - Yarn Audit Scan\n* `ZAP Scan` - ZAP Scan\n* `Zora Parser` - Zora Parser",
+                        "x-spec-enum-id": "dcadd6f0ac3ee0bf"
                     },
                     "test": {
                         "type": "integer"

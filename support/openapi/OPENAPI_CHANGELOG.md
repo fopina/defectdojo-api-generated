@@ -1,3 +1,49 @@
+## v 2.57.2 (from v 2.56.4)
+
+### New
+
+#### Endpoints
+- `GET /api/v2/celery/queue/details/`
+- `GET /api/v2/celery/status/`
+- `POST /api/v2/celery/queue/purge/`
+- `POST /api/v2/celery/queue/task/purge/`
+- `POST /api/v2/findings/{id}/verify/`
+
+#### Models
+- `CeleryQueueTaskDetail`
+- `CeleryStatus`
+- `FindingVerifyRequest`
+
+### Changed
+
+#### Endpoints
+- `DELETE /api/v2/credential_mappings/{id}/`
+- `DELETE /api/v2/credentials/{id}/`
+- `DELETE /api/v2/stub_findings/{id}/`
+- `GET /api/v2/credential_mappings/`
+- `GET /api/v2/credential_mappings/{id}/`
+- `GET /api/v2/credentials/`
+- `GET /api/v2/credentials/{id}/`
+- `GET /api/v2/findings/`
+- `GET /api/v2/stub_findings/`
+- `GET /api/v2/stub_findings/{id}/`
+- `PATCH /api/v2/credential_mappings/{id}/`
+- `PATCH /api/v2/credentials/{id}/`
+- `PATCH /api/v2/stub_findings/{id}/`
+- `POST /api/v2/credential_mappings/`
+- `POST /api/v2/credentials/`
+- `POST /api/v2/findings/accept_risks/`
+- `POST /api/v2/stub_findings/`
+- `PUT /api/v2/credential_mappings/{id}/`
+- `PUT /api/v2/credentials/{id}/`
+- `PUT /api/v2/stub_findings/{id}/`
+
+#### Models
+- `ImportScan`
+- `ImportScanRequest`
+- `ReImportScan`
+- `ReImportScanRequest`
+
 ## v 2.56.4 (from v 2.56.2)
 
 ### Changed

@@ -111,6 +111,12 @@ class DefectDojo:
         return AssetsApi(self.api_client)
 
     @property
+    def celery_api(self):
+        from defectdojo_api_generated.api.celery_api import CeleryApi
+
+        return CeleryApi(self.api_client)
+
+    @property
     def configuration_permissions_api(self):
         from defectdojo_api_generated.api.configuration_permissions_api import ConfigurationPermissionsApi
 

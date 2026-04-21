@@ -37,5 +37,5 @@ keep CLI packaging, entrypoints, and CLI-only dependency wiring there, while the
 
 ### Update Dojo OpenAPI schema
 
-* Run `support/openapi/fetch_openapi.py` to refresh local copy
-* `make generate`
+* `make schema` to refresh local copy and update API changelog
+* `make generate` to generate classes

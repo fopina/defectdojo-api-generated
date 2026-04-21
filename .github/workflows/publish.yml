@@ -76,7 +76,7 @@ jobs:
           Packages uploaded to ${{ inputs.repository }}
           \`\`\`
           pip install${INDEX} defectdojo-api-generated==${{ inputs.version }}
-          pip install${INDEX} defectdojo-api-generated-cli==${{ inputs.version }}
+          pip install${INDEX} defectdojo-cli==${{ inputs.version }}
           \`\`\`
           EOF
           if [ "${{ inputs.repository }}" != "pypi" ]; then
@@ -84,14 +84,14 @@ jobs:
           Run with \`uvx\`
           \`\`\`
           uvx --with 'defectdojo-api-generated @ https://test-files.pythonhosted.org/packages/source/d/defectdojo-api-generated/defectdojo_api_generated-${{ inputs.version }}.tar.gz' \\
-              'defectdojo-api-generated-cli @ https://test-files.pythonhosted.org/packages/source/d/defectdojo-api-generated-cli/defectdojo_api_generated_cli-${{ inputs.version }}.tar.gz'
+              'defectdojo-cli @ https://test-files.pythonhosted.org/packages/source/d/defectdojo-cli/defectdojo_cli-${{ inputs.version }}.tar.gz'
           \`\`\`
           EOF
           else
             cat <<EOF >> ${GITHUB_STEP_SUMMARY}
           Run with \`uvx\`
           \`\`\`
-          uvx defectdojo-api-generated-cli==${{ inputs.version }}
+          uvx defectdojo-cli==${{ inputs.version }}
           \`\`\`
           EOF
           fi

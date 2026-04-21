@@ -3,7 +3,7 @@ requires = ["setuptools>=69.5.0,<80.0.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "defectdojo-api-generated-cli"
+name = "defectdojo-cli"
 version = "1.0.0"
 description = "CLI wrapper for defectdojo-api-generated"
 readme = "README.md"

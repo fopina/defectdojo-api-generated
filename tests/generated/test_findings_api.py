@@ -140,6 +140,10 @@ class TestFindingsApi(unittest.TestCase):
         """Test case for update"""
         pass
 
+    def test_verify_create(self) -> None:
+        """Test case for verify_create"""
+        pass
+
 
 if __name__ == '__main__':
     unittest.main()

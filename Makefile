@@ -56,5 +56,9 @@ defectdojo_api_generated/configuration.py: support/api_generation/custom_templat
 
 generate: defectdojo_api_generated/configuration.py
 
+schema-mr: schema generate
+schema-mr:
+	echo "Updated, now create and push branch update/schema-$(shell cat ./support/openapi/openapi.json | jq -r .info.version)"
+
 test-docs: generate
 	uv run mkdocs serve

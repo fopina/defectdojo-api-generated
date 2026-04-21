@@ -16,7 +16,7 @@ dependencies = [
 
 [project.scripts]
 dojo = "defectdojo_api_generated.cli.__main__:main"
-defectdojo-api-generated-cli = "defectdojo_api_generated.cli.__main__:main"
+defectdojo-cli = "defectdojo_api_generated.cli.__main__:main"
 
 [project.urls]
 Homepage = "https://github.com/fopina/defectdojo-api-generated"

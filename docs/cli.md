@@ -7,7 +7,7 @@ This page provides documentation for the command line tool `dojo`.
 > [uv](https://docs.astral.sh/uv/) recommended or [pipx](https://github.com/pypa/pipx)
 
 ```
-uv tool install 'defectojo-api-generated[cli]'
+uv tool install defectdojo-cli
 ```
 
 ::: mkdocs-click

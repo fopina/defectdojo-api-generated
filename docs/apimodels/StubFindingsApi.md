@@ -16,6 +16,8 @@ Method | HTTP request | Description
 # **create**
 > StubFindingCreate create(stub_finding_create_request)
 
+This endpoint is deprecated and will be removed on 2026-06-01.
+
 ### Example
 
 * Basic Authentication (basicAuth):
@@ -197,6 +199,8 @@ Name | Type | Description  | Notes
 # **destroy**
 > destroy(id)
 
+This endpoint is deprecated and will be removed on 2026-06-01.
+
 ### Example
 
 * Basic Authentication (basicAuth):
@@ -281,6 +285,8 @@ void (empty response body)
 
 # **list**
 > PaginatedStubFindingList list(var_date=var_date, description=description, id=id, limit=limit, offset=offset, severity=severity, title=title)
+
+This endpoint is deprecated and will be removed on 2026-06-01.
 
 ### Example
 
@@ -382,6 +388,8 @@ Name | Type | Description  | Notes
 # **partial_update**
 > StubFinding partial_update(id, patched_stub_finding_request=patched_stub_finding_request)
 
+This endpoint is deprecated and will be removed on 2026-06-01.
+
 ### Example
 
 * Basic Authentication (basicAuth):
@@ -473,6 +481,8 @@ Name | Type | Description  | Notes
 # **retrieve**
 > StubFinding retrieve(id)
 
+This endpoint is deprecated and will be removed on 2026-06-01.
+
 ### Example
 
 * Basic Authentication (basicAuth):
@@ -560,6 +570,8 @@ Name | Type | Description  | Notes
 
 # **update**
 > StubFinding update(id, stub_finding_request)
+
+This endpoint is deprecated and will be removed on 2026-06-01.
 
 ### Example
 

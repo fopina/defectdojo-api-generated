@@ -16,14 +16,14 @@ Multiple changes done on top of default openapi-generator:
 * Remove most of pydantic/schema validations due to inconsistencies with actual database schema/requirements (tracked in https://github.com/fopina/defectdojo-api-generated/issues/39)
 * *Iterator* methods for every *list* API method to handle pagination automatically
 * A nice CLI exposing all the API methods <3
-  * installed only as an extra, to keep everything clean when package is used as library only
+  * published as `defectdojo-cli`, a separate package to keep library-only installs free of console-script conflicts
 
 ## Example
 
 ### Library
 
 ```
-pip install defectojo-api-generated
+pip install defectdojo-api-generated
 ```
 
 <!-- example-id: example.py -->
@@ -49,7 +49,7 @@ pip install defectojo-api-generated
 > [uv](https://docs.astral.sh/uv/) recommended or [pipx](https://github.com/pypa/pipx)
 
 ```
-uv tool install 'defectojo-api-generated[cli]'
+uv tool install defectdojo-cli
 ```
 
 ```
@@ -69,7 +69,7 @@ Commands:
 You can also skip tool install and just run it with:
 
 ```
-$ uvx 'defectojo-api-generated[cli]'
+$ uvx defectdojo-cli
 Usage: dojo [OPTIONS] COMMAND [ARGS]...
 ...
 ```

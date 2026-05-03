@@ -1,0 +1,4 @@
+.venv/
+dist/
+src/*.egg-info/
+uv.lock

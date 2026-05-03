@@ -32,6 +32,7 @@ from defectdojo_api_generated.models.finding_meta_request import FindingMetaRequ
 from defectdojo_api_generated.models.finding_request import FindingRequest
 from defectdojo_api_generated.models.finding_to_files import FindingToFiles
 from defectdojo_api_generated.models.finding_to_notes import FindingToNotes
+from defectdojo_api_generated.models.finding_verify_request import FindingVerifyRequest
 from defectdojo_api_generated.models.note import Note
 from defectdojo_api_generated.models.paginated_delete_preview_list import PaginatedDeletePreviewList
 from defectdojo_api_generated.models.paginated_finding_list import PaginatedFindingList
@@ -141,6 +142,9 @@ class FindingsApi:
             Field(
                 description='The range of EPSS score percentages to filter on; the min input is a lower bound, the max is an upper bound. Leaving one empty will skip that bound (e.g., leaving the min bound input empty will filter only on the max bound -- filtering on "less than or equal"). Leading 0 required.'
             ),
+        ] = None,
+        exact_title: Annotated[
+            Optional[StrictStr], Field(description='Finding title exact match (case-insensitive)')
         ] = None,
         false_p: Optional[StrictBool] = None,
         file_path: Optional[StrictStr] = None,
@@ -394,6 +398,8 @@ class FindingsApi:
         :type epss_score_max: float
         :param epss_score_min: The range of EPSS score percentages to filter on; the min input is a lower bound, the max is an upper bound. Leaving one empty will skip that bound (e.g., leaving the min bound input empty will filter only on the max bound -- filtering on \"less than or equal\"). Leading 0 required.
         :type epss_score_min: float
+        :param exact_title: Finding title exact match (case-insensitive)
+        :type exact_title: str
         :param false_p:
         :type false_p: bool
         :param file_path:
@@ -618,6 +624,7 @@ class FindingsApi:
             epss_percentile_min=epss_percentile_min,
             epss_score_max=epss_score_max,
             epss_score_min=epss_score_min,
+            exact_title=exact_title,
             false_p=false_p,
             file_path=file_path,
             finding_group=finding_group,
@@ -800,6 +807,9 @@ class FindingsApi:
             Field(
                 description='The range of EPSS score percentages to filter on; the min input is a lower bound, the max is an upper bound. Leaving one empty will skip that bound (e.g., leaving the min bound input empty will filter only on the max bound -- filtering on "less than or equal"). Leading 0 required.'
             ),
+        ] = None,
+        exact_title: Annotated[
+            Optional[StrictStr], Field(description='Finding title exact match (case-insensitive)')
         ] = None,
         false_p: Optional[StrictBool] = None,
         file_path: Optional[StrictStr] = None,
@@ -1053,6 +1063,8 @@ class FindingsApi:
         :type epss_score_max: float
         :param epss_score_min: The range of EPSS score percentages to filter on; the min input is a lower bound, the max is an upper bound. Leaving one empty will skip that bound (e.g., leaving the min bound input empty will filter only on the max bound -- filtering on \"less than or equal\"). Leading 0 required.
         :type epss_score_min: float
+        :param exact_title: Finding title exact match (case-insensitive)
+        :type exact_title: str
         :param false_p:
         :type false_p: bool
         :param file_path:
@@ -1277,6 +1289,7 @@ class FindingsApi:
             epss_percentile_min=epss_percentile_min,
             epss_score_max=epss_score_max,
             epss_score_min=epss_score_min,
+            exact_title=exact_title,
             false_p=false_p,
             file_path=file_path,
             finding_group=finding_group,
@@ -1459,6 +1472,9 @@ class FindingsApi:
             Field(
                 description='The range of EPSS score percentages to filter on; the min input is a lower bound, the max is an upper bound. Leaving one empty will skip that bound (e.g., leaving the min bound input empty will filter only on the max bound -- filtering on "less than or equal"). Leading 0 required.'
             ),
+        ] = None,
+        exact_title: Annotated[
+            Optional[StrictStr], Field(description='Finding title exact match (case-insensitive)')
         ] = None,
         false_p: Optional[StrictBool] = None,
         file_path: Optional[StrictStr] = None,
@@ -1712,6 +1728,8 @@ class FindingsApi:
         :type epss_score_max: float
         :param epss_score_min: The range of EPSS score percentages to filter on; the min input is a lower bound, the max is an upper bound. Leaving one empty will skip that bound (e.g., leaving the min bound input empty will filter only on the max bound -- filtering on \"less than or equal\"). Leading 0 required.
         :type epss_score_min: float
+        :param exact_title: Finding title exact match (case-insensitive)
+        :type exact_title: str
         :param false_p:
         :type false_p: bool
         :param file_path:
@@ -1936,6 +1954,7 @@ class FindingsApi:
             epss_percentile_min=epss_percentile_min,
             epss_score_max=epss_score_max,
             epss_score_min=epss_score_min,
+            exact_title=exact_title,
             false_p=false_p,
             file_path=file_path,
             finding_group=finding_group,
@@ -2063,6 +2082,7 @@ class FindingsApi:
         epss_percentile_min,
         epss_score_max,
         epss_score_min,
+        exact_title,
         false_p,
         file_path,
         finding_group,
@@ -2296,6 +2316,9 @@ class FindingsApi:
 
         if epss_score_min is not None:
             _query_params.append(('epss_score_min', epss_score_min))
+
+        if exact_title is not None:
+            _query_params.append(('exact_title', exact_title))
 
         if false_p is not None:
             _query_params.append(('false_p', false_p))
@@ -5034,6 +5057,9 @@ class FindingsApi:
                 description='The range of EPSS score percentages to filter on; the min input is a lower bound, the max is an upper bound. Leaving one empty will skip that bound (e.g., leaving the min bound input empty will filter only on the max bound -- filtering on "less than or equal"). Leading 0 required.'
             ),
         ] = None,
+        exact_title: Annotated[
+            Optional[StrictStr], Field(description='Finding title exact match (case-insensitive)')
+        ] = None,
         false_p: Optional[StrictBool] = None,
         file_path: Optional[StrictStr] = None,
         finding_group: Annotated[
@@ -5294,6 +5320,8 @@ class FindingsApi:
         :type epss_score_max: float
         :param epss_score_min: The range of EPSS score percentages to filter on; the min input is a lower bound, the max is an upper bound. Leaving one empty will skip that bound (e.g., leaving the min bound input empty will filter only on the max bound -- filtering on \"less than or equal\"). Leading 0 required.
         :type epss_score_min: float
+        :param exact_title: Finding title exact match (case-insensitive)
+        :type exact_title: str
         :param false_p:
         :type false_p: bool
         :param file_path:
@@ -5521,6 +5549,7 @@ class FindingsApi:
             epss_percentile_min=epss_percentile_min,
             epss_score_max=epss_score_max,
             epss_score_min=epss_score_min,
+            exact_title=exact_title,
             false_p=false_p,
             file_path=file_path,
             finding_group=finding_group,
@@ -5704,6 +5733,9 @@ class FindingsApi:
             Field(
                 description='The range of EPSS score percentages to filter on; the min input is a lower bound, the max is an upper bound. Leaving one empty will skip that bound (e.g., leaving the min bound input empty will filter only on the max bound -- filtering on "less than or equal"). Leading 0 required.'
             ),
+        ] = None,
+        exact_title: Annotated[
+            Optional[StrictStr], Field(description='Finding title exact match (case-insensitive)')
         ] = None,
         false_p: Optional[StrictBool] = None,
         file_path: Optional[StrictStr] = None,
@@ -5965,6 +5997,8 @@ class FindingsApi:
         :type epss_score_max: float
         :param epss_score_min: The range of EPSS score percentages to filter on; the min input is a lower bound, the max is an upper bound. Leaving one empty will skip that bound (e.g., leaving the min bound input empty will filter only on the max bound -- filtering on \"less than or equal\"). Leading 0 required.
         :type epss_score_min: float
+        :param exact_title: Finding title exact match (case-insensitive)
+        :type exact_title: str
         :param false_p:
         :type false_p: bool
         :param file_path:
@@ -6192,6 +6226,7 @@ class FindingsApi:
             epss_percentile_min=epss_percentile_min,
             epss_score_max=epss_score_max,
             epss_score_min=epss_score_min,
+            exact_title=exact_title,
             false_p=false_p,
             file_path=file_path,
             finding_group=finding_group,
@@ -6375,6 +6410,9 @@ class FindingsApi:
             Field(
                 description='The range of EPSS score percentages to filter on; the min input is a lower bound, the max is an upper bound. Leaving one empty will skip that bound (e.g., leaving the min bound input empty will filter only on the max bound -- filtering on "less than or equal"). Leading 0 required.'
             ),
+        ] = None,
+        exact_title: Annotated[
+            Optional[StrictStr], Field(description='Finding title exact match (case-insensitive)')
         ] = None,
         false_p: Optional[StrictBool] = None,
         file_path: Optional[StrictStr] = None,
@@ -6636,6 +6674,8 @@ class FindingsApi:
         :type epss_score_max: float
         :param epss_score_min: The range of EPSS score percentages to filter on; the min input is a lower bound, the max is an upper bound. Leaving one empty will skip that bound (e.g., leaving the min bound input empty will filter only on the max bound -- filtering on \"less than or equal\"). Leading 0 required.
         :type epss_score_min: float
+        :param exact_title: Finding title exact match (case-insensitive)
+        :type exact_title: str
         :param false_p:
         :type false_p: bool
         :param file_path:
@@ -6863,6 +6903,7 @@ class FindingsApi:
             epss_percentile_min=epss_percentile_min,
             epss_score_max=epss_score_max,
             epss_score_min=epss_score_min,
+            exact_title=exact_title,
             false_p=false_p,
             file_path=file_path,
             finding_group=finding_group,
@@ -6991,6 +7032,7 @@ class FindingsApi:
         epss_percentile_min,
         epss_score_max,
         epss_score_min,
+        exact_title,
         false_p,
         file_path,
         finding_group,
@@ -7226,6 +7268,9 @@ class FindingsApi:
 
         if epss_score_min is not None:
             _query_params.append(('epss_score_min', epss_score_min))
+
+        if exact_title is not None:
+            _query_params.append(('exact_title', exact_title))
 
         if false_p is not None:
             _query_params.append(('false_p', false_p))
@@ -7665,6 +7710,9 @@ class FindingsApi:
             Field(
                 description='The range of EPSS score percentages to filter on; the min input is a lower bound, the max is an upper bound. Leaving one empty will skip that bound (e.g., leaving the min bound input empty will filter only on the max bound -- filtering on "less than or equal"). Leading 0 required.'
             ),
+        ] = None,
+        exact_title: Annotated[
+            Optional[StrictStr], Field(description='Finding title exact match (case-insensitive)')
         ] = None,
         false_p: Optional[StrictBool] = None,
         file_path: Optional[StrictStr] = None,
@@ -11907,6 +11955,250 @@ class FindingsApi:
         return self.api_client.param_serialize(
             method='PUT',
             resource_path='/api/v2/findings/{id}/',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth,
+        )
+
+    def verify_create(
+        self,
+        id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
+        finding_verify_request: Optional[FindingVerifyRequest] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]],
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> Finding:
+        """verify_create
+
+
+        :param id: A unique integer value identifying this finding. (required)
+        :type id: int
+        :param finding_verify_request:
+        :type finding_verify_request: FindingVerifyRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """  # noqa: E501
+
+        _param = self._verify_create_serialize(
+            id=id,
+            finding_verify_request=finding_verify_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index,
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': 'Finding',
+        }
+        response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+    def verify_create_with_http_info(
+        self,
+        id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
+        finding_verify_request: Optional[FindingVerifyRequest] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]],
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[Finding]:
+        """verify_create
+
+
+        :param id: A unique integer value identifying this finding. (required)
+        :type id: int
+        :param finding_verify_request:
+        :type finding_verify_request: FindingVerifyRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """  # noqa: E501
+
+        _param = self._verify_create_serialize(
+            id=id,
+            finding_verify_request=finding_verify_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index,
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': 'Finding',
+        }
+        response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+    def verify_create_without_preload_content(
+        self,
+        id: Annotated[StrictInt, Field(description='A unique integer value identifying this finding.')],
+        finding_verify_request: Optional[FindingVerifyRequest] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]],
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """verify_create
+
+
+        :param id: A unique integer value identifying this finding. (required)
+        :type id: int
+        :param finding_verify_request:
+        :type finding_verify_request: FindingVerifyRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """  # noqa: E501
+
+        _param = self._verify_create_serialize(
+            id=id,
+            finding_verify_request=finding_verify_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index,
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': 'Finding',
+        }
+        response_data = self.api_client.call_api(*_param, _request_timeout=_request_timeout)
+        return response_data.response
+
+    def _verify_create_serialize(
+        self,
+        id,
+        finding_verify_request,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+        _host = None
+
+        _collection_formats: Dict[str, str] = {}
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if id is not None:
+            _path_params['id'] = id
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if finding_verify_request is not None:
+            _body_params = finding_verify_request
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(['application/json'])
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = self.api_client.select_header_content_type(
+                ['application/json', 'application/x-www-form-urlencoded', 'multipart/form-data']
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = ['basicAuth', 'cookieAuth', 'tokenAuth']
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/api/v2/findings/{id}/verify/',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

@@ -16,6 +16,8 @@ Method | HTTP request | Description
 # **create**
 > Credential create(credential_request)
 
+This endpoint is deprecated and will be removed on 2026-06-01.
+
 ### Example
 
 * Basic Authentication (basicAuth):
@@ -197,6 +199,8 @@ Name | Type | Description  | Notes
 # **destroy**
 > destroy(id)
 
+This endpoint is deprecated and will be removed on 2026-06-01.
+
 ### Example
 
 * Basic Authentication (basicAuth):
@@ -281,6 +285,8 @@ void (empty response body)
 
 # **list**
 > PaginatedCredentialList list(limit=limit, offset=offset, prefetch=prefetch)
+
+This endpoint is deprecated and will be removed on 2026-06-01.
 
 ### Example
 
@@ -374,6 +380,8 @@ Name | Type | Description  | Notes
 # **partial_update**
 > Credential partial_update(id, patched_credential_request=patched_credential_request)
 
+This endpoint is deprecated and will be removed on 2026-06-01.
+
 ### Example
 
 * Basic Authentication (basicAuth):
@@ -465,6 +473,8 @@ Name | Type | Description  | Notes
 # **retrieve**
 > Credential retrieve(id, prefetch=prefetch)
 
+This endpoint is deprecated and will be removed on 2026-06-01.
+
 ### Example
 
 * Basic Authentication (basicAuth):
@@ -554,6 +564,8 @@ Name | Type | Description  | Notes
 
 # **update**
 > Credential update(id, credential_request)
+
+This endpoint is deprecated and will be removed on 2026-06-01.
 
 ### Example
 

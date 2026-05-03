@@ -22,6 +22,7 @@ __all__ = [
     'AssetGroupsApi',
     'AssetMembersApi',
     'AssetsApi',
+    'CeleryApi',
     'ConfigurationPermissionsApi',
     'CredentialMappingsApi',
     'CredentialsApi',
@@ -122,6 +123,10 @@ __all__ = [
     'BurpRawRequestResponseMulti',
     'BurpRawRequestResponseMultiRequest',
     'BurpRawRequestResponseRequest',
+    'CeleryQueuePurgeCreate200Response',
+    'CeleryQueueTaskDetail',
+    'CeleryQueueTaskPurgeCreateRequest',
+    'CeleryStatus',
     'ConfigurationPermission',
     'Credential',
     'CredentialMapping',
@@ -180,6 +185,7 @@ __all__ = [
     'FindingTestType',
     'FindingToFiles',
     'FindingToNotes',
+    'FindingVerifyRequest',
     'GlobalRole',
     'GlobalRoleRequest',
     'ImportLanguages',
@@ -433,6 +439,7 @@ from defectdojo_api_generated.api.asset_api_scan_configurations_api import (
 from defectdojo_api_generated.api.asset_groups_api import AssetGroupsApi as AssetGroupsApi
 from defectdojo_api_generated.api.asset_members_api import AssetMembersApi as AssetMembersApi
 from defectdojo_api_generated.api.assets_api import AssetsApi as AssetsApi
+from defectdojo_api_generated.api.celery_api import CeleryApi as CeleryApi
 from defectdojo_api_generated.api.configuration_permissions_api import (
     ConfigurationPermissionsApi as ConfigurationPermissionsApi,
 )
@@ -566,6 +573,14 @@ from defectdojo_api_generated.models.burp_raw_request_response_multi_request imp
 from defectdojo_api_generated.models.burp_raw_request_response_request import (
     BurpRawRequestResponseRequest as BurpRawRequestResponseRequest,
 )
+from defectdojo_api_generated.models.celery_queue_purge_create200_response import (
+    CeleryQueuePurgeCreate200Response as CeleryQueuePurgeCreate200Response,
+)
+from defectdojo_api_generated.models.celery_queue_task_detail import CeleryQueueTaskDetail as CeleryQueueTaskDetail
+from defectdojo_api_generated.models.celery_queue_task_purge_create_request import (
+    CeleryQueueTaskPurgeCreateRequest as CeleryQueueTaskPurgeCreateRequest,
+)
+from defectdojo_api_generated.models.celery_status import CeleryStatus as CeleryStatus
 from defectdojo_api_generated.models.configuration_permission import ConfigurationPermission as ConfigurationPermission
 from defectdojo_api_generated.models.credential import Credential as Credential
 from defectdojo_api_generated.models.credential_mapping import CredentialMapping as CredentialMapping
@@ -640,6 +655,7 @@ from defectdojo_api_generated.models.finding_test import FindingTest as FindingT
 from defectdojo_api_generated.models.finding_test_type import FindingTestType as FindingTestType
 from defectdojo_api_generated.models.finding_to_files import FindingToFiles as FindingToFiles
 from defectdojo_api_generated.models.finding_to_notes import FindingToNotes as FindingToNotes
+from defectdojo_api_generated.models.finding_verify_request import FindingVerifyRequest as FindingVerifyRequest
 from defectdojo_api_generated.models.global_role import GlobalRole as GlobalRole
 from defectdojo_api_generated.models.global_role_request import GlobalRoleRequest as GlobalRoleRequest
 from defectdojo_api_generated.models.import_languages import ImportLanguages as ImportLanguages

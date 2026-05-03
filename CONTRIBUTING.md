@@ -3,12 +3,21 @@
 This project uses `uv`, so set up the virtualenv by running
 
 ```
-uv sync --dev --extra cli
+uv sync --dev
 ```
 
 Use `make test` to make sure all tests pass before pushing.
 
 Use `make lint` to make sure lint check passes before pushing.
+
+## Packaging layout
+
+The main package, `defectdojo-api-generated`, is intentionally library-only.
+It does not publish console scripts and should remain installable without CLI-only dependencies.
+
+The `dojo` entrypoint lives in the thin wrapper package under `packages/cli/`.
+That package depends on the main library plus the CLI stack and should stay small:
+keep CLI packaging, entrypoints, and CLI-only dependency wiring there, while the actual CLI implementation can continue to live under `defectdojo_api_generated/cli/`.
 
 ## Guidelines
 
@@ -28,5 +37,5 @@ Use `make lint` to make sure lint check passes before pushing.
 
 ### Update Dojo OpenAPI schema
 
-* Run `support/openapi/fetch_openapi.py` to refresh local copy
-* `make generate`
+* `make schema` to refresh local copy and update API changelog
+* `make generate` to generate classes

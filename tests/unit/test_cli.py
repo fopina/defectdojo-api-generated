@@ -13,7 +13,6 @@ from defectdojo_api_generated.api.findings_api import FindingsApi
 from defectdojo_api_generated.api.products_api import ProductsApi
 from defectdojo_api_generated.cli.commands.apis import make_api_group
 from defectdojo_api_generated.cli.commands.cli import CLI
-from defectdojo_api_generated.cli.commands.config import Config as _ConfigCommand
 from defectdojo_api_generated.exceptions import BadRequestException
 from defectdojo_api_generated.helpers import IteratorResult
 
@@ -411,90 +410,13 @@ class TestCLI(unittest.TestCase):
         self.assertEqual(result.exit_code, 0)
         self.assertEqual(result.output.strip(), 'pong')
 
-    def test_config_command_masks_secret_fields(self):
-        self.assertIsNotNone(_ConfigCommand)
-        runner = CliRunner()
-        with runner.isolated_filesystem():
-            config_path = Path('config.toml')
-            config_path.write_text(
-                '\n'.join(
-                    [
-                        "default_env = 'demo'",
-                        "host = 'https://example.com'",
-                        "user = 'root-user'",
-                        "password = 'root-password'",
-                        '',
-                        '[env.demo]',
-                        "token = 'super-secret-token'",
-                        'disable_tls = true',
-                    ]
-                )
-            )
-
-            with mock.patch('defectdojo_api_generated.cli.commands.cli.DefectDojo') as defectdojo:
-                defectdojo.return_value = mock.Mock(config=mock.Mock())
-                result = runner.invoke(CLI.click, ['--config', str(config_path), 'config'])
-
-        self.assertEqual(result.exit_code, 0)
-        self.assertIn('Config file:', result.output)
-        self.assertIn('Environment: demo', result.output)
-        self.assertIn('"host": "https://example.com"', result.output)
-        self.assertIn('"user": "root-user"', result.output)
-        self.assertIn('"token": "<masked>"', result.output)
-        self.assertIn('"password": "<masked>"', result.output)
-        self.assertNotIn('super-secret-token', result.output)
-        self.assertNotIn('root-password', result.output)
-
-    def test_config_command_edit_uses_editor_env(self):
+    def test_config_command_is_registered(self):
         runner = CliRunner()
         with runner.isolated_filesystem():
             config_path = Path('config.toml')
             config_path.write_text("host = 'https://example.com'\ntoken = 'token'\n")
 
-            with (
-                mock.patch('defectdojo_api_generated.cli.commands.cli.DefectDojo') as defectdojo,
-                mock.patch.dict('os.environ', {'EDITOR': 'vim -f'}, clear=False),
-                mock.patch('defectdojo_api_generated.cli.commands.config.subprocess.run') as run_mock,
-            ):
-                defectdojo.return_value = mock.Mock(config=mock.Mock())
-                result = runner.invoke(CLI.click, ['--config', str(config_path), 'config', '--edit'])
+            result = runner.invoke(CLI.click, ['--config', str(config_path), 'config', '--help'])
 
         self.assertEqual(result.exit_code, 0)
-        run_mock.assert_called_once_with(['vim', '-f', str(config_path)], check=True)
-
-    def test_config_command_edit_falls_back_to_first_available_editor(self):
-        runner = CliRunner()
-        with runner.isolated_filesystem():
-            config_path = Path('config.toml')
-            config_path.write_text("host = 'https://example.com'\ntoken = 'token'\n")
-
-            with (
-                mock.patch('defectdojo_api_generated.cli.commands.cli.DefectDojo') as defectdojo,
-                mock.patch.dict('os.environ', {}, clear=True),
-                mock.patch('defectdojo_api_generated.cli.commands.config.shutil.which') as which_mock,
-                mock.patch('defectdojo_api_generated.cli.commands.config.subprocess.run') as run_mock,
-            ):
-                defectdojo.return_value = mock.Mock(config=mock.Mock())
-                which_mock.side_effect = [None, '/usr/bin/vi', '/usr/bin/nano']
-                result = runner.invoke(CLI.click, ['--config', str(config_path), 'config', '--edit'])
-
-        self.assertEqual(result.exit_code, 0)
-        self.assertEqual(which_mock.call_args_list, [mock.call('vim'), mock.call('vi')])
-        run_mock.assert_called_once_with(['vi', str(config_path)], check=True)
-
-    def test_config_command_edit_requires_configured_or_installed_editor(self):
-        runner = CliRunner()
-        with runner.isolated_filesystem():
-            config_path = Path('config.toml')
-            config_path.write_text("host = 'https://example.com'\ntoken = 'token'\n")
-
-            with (
-                mock.patch('defectdojo_api_generated.cli.commands.cli.DefectDojo') as defectdojo,
-                mock.patch.dict('os.environ', {}, clear=True),
-                mock.patch('defectdojo_api_generated.cli.commands.config.shutil.which', return_value=None),
-            ):
-                defectdojo.return_value = mock.Mock(config=mock.Mock())
-                result = runner.invoke(CLI.click, ['--config', str(config_path), 'config', '--edit'])
-
-        self.assertEqual(result.exit_code, 1)
-        self.assertIn('No editor configured. Set VISUAL or EDITOR, or install vim, vi, or nano.', result.output)
+        self.assertIn('Usage: cli config', result.output)

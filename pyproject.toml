@@ -16,21 +16,11 @@ dependencies = [
     "typing-extensions>= 4.7.1",
 ]
 
-[project.optional-dependencies]
-cli = [
-    "classyclick==0.8.0",
-    "jmespath>=1.0.1",
-    "platformdirs>=4.4.0",
-]
-
-[project.scripts]
-dojo = "defectdojo_api_generated.cli.__main__:main"
-# duplicated entrypoint to be able to use uvx without `--from`
-defectdojo-api-generated = "defectdojo_api_generated.cli.__main__:main"
-
 [dependency-groups]
 dev = [
     "build",
+    "classyclick==1.0.0",
+    "jmespath>=1.0.1",
     "mkdocs>=1.6.1",
     "mkdocs-click>=0.9.0",
     "pytest",
@@ -45,7 +35,10 @@ dev = [
 Homepage = "https://github.com/fopina/defectdojo-api-generated"
 
 [tool.setuptools.packages.find]
-include = ["defectdojo_api_generated*"]
+include = ["defectdojo_api_generated", "defectdojo_api_generated.*"]
+
+[tool.setuptools.package-data]
+"defectdojo_api_generated.cli" = ["config.example.toml"]
 
 [tool.setuptools.dynamic]
 version = {attr = "defectdojo_api_generated.__version__"}

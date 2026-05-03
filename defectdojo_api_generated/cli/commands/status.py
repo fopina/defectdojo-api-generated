@@ -8,7 +8,7 @@ from defectdojo_api_generated.client import DefectDojo
 from .cli import CLI
 
 
-class Status(CLI.Command, classyclick.Command):
+class Status(CLI.Command):
     """Quick connectivity check"""
 
     client: DefectDojo = classyclick.ContextMeta('client')

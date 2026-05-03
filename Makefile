@@ -6,9 +6,12 @@ lint-check:
 	uv run ruff format --diff
 	uv run ruff check
 
+sync:
+	uv sync --dev --all-extras
+
 .venv39: export VIRTUAL_ENV=.venv39
 .venv39:
-	uv sync --dev --extra cli --python 3.9 --active
+	uv sync --dev --all-extras --python 3.9 --active
 
 test39: .venv39
 test39: export VIRTUAL_ENV=.venv39
@@ -33,9 +36,10 @@ test-e2e:
 	uv run pytest tests/integration
 
 testpub:
-	rm -fr dist
+	rm -rf dist packages/cli/dist
 	uv run pyproject-build
-	uv run twine upload --repository testpypi dist/*
+	uv run pyproject-build packages/cli
+	uv run twine upload --repository testpypi dist/* packages/cli/dist/*
 
 schema:
 	uv run ./support/openapi/fetch_openapi.py --output ./support/openapi/openapi-new.json
@@ -46,11 +50,15 @@ templates:
 	./support/api_generation/dump_templates.sh
 
 # random generated file as target, just for timestamp
-defectdojo_api_generated/configuration.py: support/api_generation/custom_templates/*
+defectdojo_api_generated/configuration.py: support/api_generation/custom_templates/* support/openapi/openapi.json
 	./support/api_generation/generate.sh
 	$(MAKE) lint
 
 generate: defectdojo_api_generated/configuration.py
+
+schema-mr: schema generate
+schema-mr:
+	echo "Updated, now create and push branch update/schema-$(shell cat ./support/openapi/openapi.json | jq -r .info.version)"
 
 test-docs: generate
 	uv run mkdocs serve

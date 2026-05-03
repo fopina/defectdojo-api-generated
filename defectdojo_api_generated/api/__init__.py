@@ -7,6 +7,7 @@ from defectdojo_api_generated.api.asset_api_scan_configurations_api import Asset
 from defectdojo_api_generated.api.asset_groups_api import AssetGroupsApi
 from defectdojo_api_generated.api.asset_members_api import AssetMembersApi
 from defectdojo_api_generated.api.assets_api import AssetsApi
+from defectdojo_api_generated.api.celery_api import CeleryApi
 from defectdojo_api_generated.api.configuration_permissions_api import ConfigurationPermissionsApi
 from defectdojo_api_generated.api.credential_mappings_api import CredentialMappingsApi
 from defectdojo_api_generated.api.credentials_api import CredentialsApi

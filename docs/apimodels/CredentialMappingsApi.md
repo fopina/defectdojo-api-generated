@@ -16,6 +16,8 @@ Method | HTTP request | Description
 # **create**
 > CredentialMapping create(credential_mapping_request)
 
+This endpoint is deprecated and will be removed on 2026-06-01.
+
 ### Example
 
 * Basic Authentication (basicAuth):
@@ -197,6 +199,8 @@ Name | Type | Description  | Notes
 # **destroy**
 > destroy(id)
 
+This endpoint is deprecated and will be removed on 2026-06-01.
+
 ### Example
 
 * Basic Authentication (basicAuth):
@@ -281,6 +285,8 @@ void (empty response body)
 
 # **list**
 > PaginatedCredentialMappingList list(cred_id=cred_id, engagement=engagement, finding=finding, is_authn_provider=is_authn_provider, limit=limit, offset=offset, product=product, test=test, url=url)
+
+This endpoint is deprecated and will be removed on 2026-06-01.
 
 ### Example
 
@@ -386,6 +392,8 @@ Name | Type | Description  | Notes
 # **partial_update**
 > CredentialMapping partial_update(id, patched_credential_mapping_request=patched_credential_mapping_request)
 
+This endpoint is deprecated and will be removed on 2026-06-01.
+
 ### Example
 
 * Basic Authentication (basicAuth):
@@ -477,6 +485,8 @@ Name | Type | Description  | Notes
 # **retrieve**
 > CredentialMapping retrieve(id)
 
+This endpoint is deprecated and will be removed on 2026-06-01.
+
 ### Example
 
 * Basic Authentication (basicAuth):
@@ -564,6 +574,8 @@ Name | Type | Description  | Notes
 
 # **update**
 > CredentialMapping update(id, credential_mapping_request)
+
+This endpoint is deprecated and will be removed on 2026-06-01.
 
 ### Example
 

@@ -342,7 +342,12 @@ def _collect_command_values(parameters, getter, *, should_include):
 
 
 def _render_api_result(result: Any, instance: Any) -> None:
-    _render_result(result, json_mode=instance.json, jq_expression=instance.jq)
+    _render_result(
+        result,
+        json_mode=instance.json,
+        jq_expression=instance.jq,
+        max_records=getattr(instance, 'max_records', None),
+    )
 
 
 def _create_standard_command_call(api_class: type, target_method: str, command_parameters):
@@ -515,9 +520,13 @@ def _format_text_item(item: Any) -> str:
     return '\n'.join(lines)
 
 
-def _render_result(result: Any, *, json_mode: bool, jq_expression: Optional[str]):
+def _render_result(result: Any, *, json_mode: bool, jq_expression: Optional[str], max_records: Optional[int] = None):
     div = False
+    emitted = 0
     for item in _iter_output_items(result):
+        if max_records is not None and emitted >= max_records:
+            break
+
         item = _apply_jq(item, jq_expression)
 
         if json_mode:
@@ -528,6 +537,8 @@ def _render_result(result: Any, *, json_mode: bool, jq_expression: Optional[str]
             else:
                 div = True
             click.echo(_format_text_item(item))
+
+        emitted += 1
 
 
 def make_api_command(api_class: type, command_name: str, target_method: str, *, parent_class: type):
@@ -560,6 +571,15 @@ def make_api_command(api_class: type, command_name: str, target_method: str, *, 
         help_getter=lambda parameter: _get_help_from_annotation(parameter.annotation),
         default_getter=lambda item: item[1].default,
     )
+
+    if target_method.endswith('_iterator'):
+        namespace['__annotations__']['max_records'] = Optional[int]
+        namespace['max_records'] = classyclick.Option(
+            '-m',
+            type=click.IntRange(min=1),
+            default=None,
+            help='Maximum number of records to emit.',
+        )
 
     return _build_command_class(parent_class, namespace)
 

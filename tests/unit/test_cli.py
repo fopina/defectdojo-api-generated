@@ -85,6 +85,51 @@ class TestCLI(unittest.TestCase):
         self.assertEqual(result.exit_code, 0)
         self.assertIn('limit: 1', result.output)
 
+    def test_findings_list_accepts_max_records_option(self):
+        runner = CliRunner()
+        with runner.isolated_filesystem():
+            config_path = Path('config.toml')
+            config_path.write_text("host = 'https://example.com'\ntoken = 'token'\n")
+
+            result = runner.invoke(CLI.click, ['--config', str(config_path), 'api', 'findings', 'list', '--help'])
+
+        self.assertEqual(result.exit_code, 0)
+        self.assertIn('--max-records', result.output)
+        self.assertIn('-m', result.output)
+
+    def test_findings_list_max_records_stops_output(self):
+        runner = CliRunner()
+        with runner.isolated_filesystem():
+            config_path = Path('config.toml')
+            config_path.write_text("host = 'https://example.com'\ntoken = 'token'\n")
+
+            with mock.patch.object(
+                FindingsApi,
+                'list_iterator',
+                new=lambda self, **kwargs: [
+                    IteratorResult(result='first', page='page-1'),
+                    IteratorResult(result='second', page='page-2'),
+                    IteratorResult(result='third', page='page-3'),
+                ],
+            ):
+                result = runner.invoke(
+                    CLI.click,
+                    [
+                        '--config',
+                        str(config_path),
+                        'api',
+                        'findings',
+                        'list',
+                        '--limit',
+                        '1',
+                        '--max-records',
+                        '2',
+                    ],
+                )
+
+        self.assertEqual(result.exit_code, 0)
+        self.assertEqual(result.output.splitlines(), ['first', '', '---', '', 'second'])
+
     def test_findings_list_prints_iterator_items_one_per_line(self):
         runner = CliRunner()
         with runner.isolated_filesystem():

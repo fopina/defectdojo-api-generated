@@ -8,6 +8,9 @@
 [![Very popular](https://img.shields.io/pypi/dm/defectdojo-api-generated)](https://pypistats.org/packages/defectdojo-api-generated)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
+> Project no longer maintained.
+> [RIP Dojo OS](https://github.com/DefectDojo/django-DefectDojo/pull/14865)
+
 Python library to interact with DefectDojo - generated from OpenAPI definition using https://openapi-generator.tech/
 
 Multiple changes done on top of default openapi-generator:
